@@ -1,9 +1,13 @@
 import discord
+import os
+from dotenv import load_dotenv
 from discord.ext import commands
 from lxml import etree as ET
 from thefuzz import fuzz
 from dataclasses import dataclass
 
+load_dotenv()
+TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -234,4 +238,4 @@ async def on_message(message):
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
 
-client.run('MTI0MDEwOTUyMzU0OTU1MjcxMw.GpjwW6.4GH7lLwXdHAgN-AlaEf1NJpONoKRvrEDo-n_3s')
+client.run(TOKEN)
