@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<influence add="2"/>
+				<research add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="Eldar/Autarch"/>
+		<produceUnit unit="Eldar/Spiritseer" requiredUpgrade="Eldar/Spiritseer"/>
+		<produceUnit unit="Eldar/FarseerSkyrunner" requiredUpgrade="Eldar/FarseerSkyrunner"/>
+		<produceUnit unit="Eldar/AvatarOfKhaine" requiredUpgrade="Eldar/AvatarOfKhaine"/>
+	</actions>
+</building>

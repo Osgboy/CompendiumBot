@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visible="0">
+	<onTileEntered>
+		<tile>
+			<area affect="UnitPlayer" randomizeRank="1" weight="100" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noFaction name="Neutral"/>
+							</unit>
+						</conditions>
+						<effects>
+							<energy addMin="35" addMax="45"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" randomizeRank="1" weight="100" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noFaction name="Neutral"/>
+							</unit>
+						</conditions>
+						<effects>
+							<chips addMin="15" addMax="25"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" randomizeRank="1" weight="100" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noFaction name="Neutral"/>
+							</unit>
+						</conditions>
+						<effects>
+							<influence addMin="35" addMax="45"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" randomizeRank="1" weight="100" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noFaction name="Neutral"/>
+							</unit>
+						</conditions>
+						<effects>
+							<minerals addMin="35" addMax="45"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" randomizeRank="1" weight="100" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<research addMin="35" addMax="45"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="75" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addItem type="AkavishRig"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="75" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addItem type="CacheOfTheInsensate"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="75" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addItem type="Archaegis"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Tile" weight="25" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addUnit type="MalakimDestroyer" consumedAction="1" consumedMovement="1" playerFromUnitOnTile="1" hitpointsPercentage="0.49"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Tile" weight="25" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addUnit type="ChayotExterminator" consumedAction="1" consumedMovement="1" playerFromUnitOnTile="1" hitpointsPercentage="0.49"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noFaction name="Neutral"/>
+							</unit>
+						</conditions>
+						<effects>
+							<removeFeature type="AdvancedCyberCache"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTileEntered>
+</trait>

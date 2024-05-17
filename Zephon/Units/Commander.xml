@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit bloodBone="Chest"
+				material="Units/Commander"
+				mesh="Units/Commander"
+				normalWeight="0.1"
+				scale="0.7 0.7 0.7"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="ExoskeletonGatlingGun" count="2">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="ExoskeletonFist">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="4"/>
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<influenceCost base="40"/> <!-- %influenceCost base tier=6 factor=1 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<moraleMax base="10"/>
+				<movementMax base="3"/>
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=6 factor=0.5 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="0.5"/>
+				<increaseHumanScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/CommanderAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/CommanderAttack"
+						beginFire="1.0"
+						endFire="2.0"
+						chargeAnimation="Units/CommanderCharge"
+						chargeBeginFire="0.2"
+						chargeEndFire="1.2"
+						meleeAnimation="Units/CommanderMelee"
+						meleeBeginSwing="0.001"
+						meleeEndSwing="0.002"
+						meleeSound="Units/CommanderMelee"
+						responseSound="Units/Responses/CommanderAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CommanderDie0"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="2.0"
+						voiceSound="Units/CommanderDie"
+						voiceSoundCount="3"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CommanderImpact"
+						responseSound="Units/Responses/CommanderEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/CommanderIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/CommanderKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/CommanderMove"
+						responseSound="Units/Responses/CommanderMove"
+						responseSoundCount="3"
+						sound="Units/CommanderMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/CommanderPoke"
+						responseSoundCount="1"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/CommanderSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="TakeCover"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/CommanderAbility0"
+						blueprint="Effects/TakeCover"
+						casterBlueprint="Effects/ShoutWaves"
+						responseSound="Units/Responses/CommanderTakeCover"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
+									<conditions>
+										<unit>
+											<ally/>
+											<noTrait type="Large"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="TakeCover" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+ 				<modifier>
+					<conditions>
+						<targetUnit>
+							<enemyStrengthInTheArea greater="0"/>
+							<ally/>
+							<noTrait type="Large"/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0" max="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitCast name="NeverSurrender"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/CommanderAbility0"
+						blueprint="Effects/NeverSurrender"
+						casterBlueprint="Effects/ShoutWaves"
+						responseSound="Units/Responses/CommanderNeverSurrender"/>
+			</model>
+			<beginTargets>
+				<selfTarget>				
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
+									<conditions>
+										<unit>
+											<ally/>
+											<noTrait type="Large"/>
+										</unit>
+									</conditions>	
+									<effects>
+										<morale addMin="2" addMax="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetUnit>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetUnit>
+						<targetUnit match="Any">
+							<trait type="Broken"/>
+							<trait type="Shaken"/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0" max="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+		<unitAction name="AuraOfDiscipline"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
+									<effects>
+										<addTrait type="AuraOfDiscipline"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<unitCast name="Bombardment"
+				cooldown="5"
+				elite="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<cast animation="Units/CommanderAbility1"
+						blueprint="Effects/Bombardment"
+						sound="Actions/Bombardment"
+						targetsTile="1"
+						responseSound="Units/Responses/CommanderBombardment"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="Bombardment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+		<levelUp/>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Hero"/>
+	</traits>
+</unit>

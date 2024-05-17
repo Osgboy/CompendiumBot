@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnPlayer="1">
+	<modifiers>
+		<modifier effectDescription="ForNonAffinityTechnologies">
+ 			<conditions>
+				<player>
+					<noBranch name="Human"/>
+				</player>
+ 				<upgrade>
+					<branch name="Human"/>
+				</upgrade>
+			</conditions>
+			<effects>
+				<researchCost mul="-0.1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForNonAffinityTechnologies" visible="0">
+			<conditions>
+				<player>
+					<noBranch name="Voice"/>
+				</player>
+				<upgrade>
+					<branch name="Voice"/>
+				</upgrade>
+			</conditions>
+			<effects>
+				<researchCost mul="-0.1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForNonAffinityTechnologies" visible="0">
+			<conditions>
+				<player>
+					<noBranch name="Cyber"/>
+				</player>
+				<upgrade>
+					<branch name="Cyber"/>
+				</upgrade>
+			</conditions>
+			<effects>
+				<researchCost mul="-0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

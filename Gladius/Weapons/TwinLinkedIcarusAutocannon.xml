@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/IcarusAutocannon"
+				fireSoundCount="3"
+				fireInterval="0.2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Skyfire"/>
+		<trait name="TwinLinked"/>
+		<trait name="AdeptusMechanicus/HeavyWeaponBonus" requiredUpgrade="AdeptusMechanicus/HeavyWeaponBonus"/>
+	</traits>
+</weapon>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ScythingTalons"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=6 -->
+				<strengthDamage mul="0"/> <!-- %strengthDamage mul strength=0 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="Tyranids/MeleeDamage" requiredUpgrade="Tyranids/MeleeDamage"/>
+	</traits>
+</weapon>

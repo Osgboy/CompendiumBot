@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Shockwave">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="7"/>
+				<rangedAccuracy min="12"/> <!-- Novas don't roll to hit. -->
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Pinning"/>
+		<trait name="PsychicPower"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

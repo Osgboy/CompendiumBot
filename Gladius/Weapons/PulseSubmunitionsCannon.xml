@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/PulseSubmunitionsCannon"
+				fireSoundCount="3"
+				muzzleFlashesBlueprint="Effects/PlasmaMuzzleFlashes"
+				directionalMuzzleFlashesBlueprint="Effects/PlasmaDirectionalMuzzleFlashes"
+				projectilesBlueprint="Effects/PlasmaProjectiles"
+				projectilesEmitterBlueprint="Effects/PulseSubmunitionProjectilesEmitter"
+				explosionsBlueprint="Effects/PlasmaExplosions"
+				explosionsEmitterBlueprint="Effects/PulseSubmunitionExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="LargeBlast"/>
+		<trait name="Tau/ClusterFire"/>
+		<trait name="Tau/LasDamage" requiredUpgrade="Tau/LasDamage"/>
+	</traits>
+</weapon>

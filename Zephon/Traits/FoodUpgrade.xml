@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="FoodUpgrade">
+			<conditions>
+				<tile>
+					<trait type="Coast"/>
+				</tile>
+			</conditions>
+			<effects>
+				<food add="1.5"/>	
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

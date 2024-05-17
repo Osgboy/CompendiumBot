@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/WarWalker"
+				material="Units/Eldar/WarWalker"
+				idleAnimation="Units/Eldar/WarWalkerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.4 1.4 1.4"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="90" memberDeltaY="90"/>
+	<weapons>
+		<weapon name="BrightLance">
+			<model>	
+				<beamWeapon muzzleBone="Muzzle1"/>
+			</model>
+		</weapon>
+		<weapon name="Starcannon">
+			<model>	
+				<projectileWeapon muzzleBone="Muzzle0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<oreCost base="160.0"/> <!-- %oreCost base tier=10 factor=1 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=2 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/WarWalkerAttack"
+						beginFire="0.85"
+						endFire="2.1"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/WarWalkerDie"
+						animationCount="2"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/Eldar/WalkerDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/WarWalkerMove"
+						sound="Units/Eldar/WalkerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<scout consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</scout>
+		<crystalTargetingMatrix consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/CrystalTargetingMatrix"
+				requiredUpgrade="Eldar/CrystalTargetingMatrix">
+			<model>
+				<action sound="Actions/CrystalTargetingMatrix"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/CrystalTargetingMatrix"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</crystalTargetingMatrix>
+		<vectoredEngines consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/VectoredEngines"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/VectoredEngines">
+			<model>
+				<action sound="Actions/VectoredEngines"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectoredEngines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectoredEngines>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/BattleFocus"/>
+		<trait name="MoveThroughCover" requiredUpgrade="Eldar/GhostwalkMatrix"/>
+		<trait name="Eldar/PowerField"/>
+		<trait name="Eldar/SpiritStones" requiredUpgrade="Eldar/SpiritStones"/>
+		<trait name="Eldar/StarEngines" requiredUpgrade="Eldar/StarEngines"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="Fleet"/>
+		<trait name="OpenTopped"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

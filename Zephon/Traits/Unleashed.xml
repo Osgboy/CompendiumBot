@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<onTraitAdded>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="Leashed"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onTraitAdded>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="Leashed"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

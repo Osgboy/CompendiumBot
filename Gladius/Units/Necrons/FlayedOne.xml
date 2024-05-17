@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement6">
+	<model>
+		<unit mesh="Units/Necrons/FlayedOne"
+				material="Units/Necrons/FlayedOne"
+				idleAnimation="Units/Necrons/FlayedOneIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="FlayerClaws" count="2">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=5 factor=1 -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="1.5"/> <!-- %oreUpkeep base tier=5 factor=1 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="2"/> <!-- %rangedAccuracy base ballisticSkill=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/Necrons/FlayedOneCharge"
+						meleeAnimation="Units/Necrons/FlayedOneMelee"
+						meleeBeginSwing="0.43"
+						meleeEndSwing="1.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/FlayedOneDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/Necrons/Die"
+						voiceSoundCount="7"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/FlayedOneMove"
+						sound="Units/Necrons/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<dimensionalCorridor cooldown="3"
+				name="Necrons/DimensionalCorridor"
+				requiredUpgrade="Necrons/DimensionalCorridor">
+			<model>
+				<action sound="Actions/Teleport"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="30"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor2">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor3">
+					<effects>
+						<consumedActionPoints max="0"/>
+						<consumedMovement max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</dimensionalCorridor>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Necrons/ExtraInfantryArmour"/>
+		<trait name="Necrons/ReanimationProtocols"/>
+		<trait name="Infiltrate"/>
+	</traits>
+</unit>

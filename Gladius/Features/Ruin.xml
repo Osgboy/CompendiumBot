@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/RuinOfVaul"
+		ambientSoundLayer="1"
+		ambientSoundPriority="2"
+		audioEffectSystem="Ruin"
+		category="Resource" 
+		explorable="1">
+	<model>
+		<simpleModel mesh="Features/Ruin" material="Features/Ruin"
+				groundMaterial="Features/RuinGround"
+				explorationEffectBlueprint="Effects/Glow"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<research mul="0.2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+				<research mul="0.2"/>
+				<research add="2"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="AdeptusMechanicus/XenariteAcceptance">
+			<effects>
+				<research add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rewards>
+		<biomass amount="20" amountVariation="5"/>
+		<energy amount="20" amountVariation="5"/>
+		<!-- <experience amount="4" amountVariation="0"/> -->
+		<food amount="20" amountVariation="5"/>
+		<influence amount="20" amountVariation="5"/>
+		<ore amount="20" amountVariation="5"/>
+		<requisitions amount="20" amountVariation="5"/>
+		<research amount="20" amountVariation="5"/>
+		
+		<unit type="AstraMilitarum/Guardsman"/>
+		<unit type="ChaosSpaceMarines/ChaosCultist"/>
+		<unit type="Necrons/Warrior"/>
+		<unit type="Neutral/Artefacts/VaulSentry"/>
+		<unit type="Neutral/KrootHound"/>
+		<unit type="Orks/Boy"/>
+		<unit type="SpaceMarines/TacticalSpaceMarine"/>
+		<unit type="Tau/FireWarrior"/>
+		<unit type="Tyranids/Termagant"/>
+		
+		<item type="AdamantiumWeaveVest"/>
+		<item type="AegisHarness"/>
+		<item type="ArmaplasBracers"/>
+		<item type="AxeOfBlindFury"/>
+		<item type="BlightGrenade"/>
+		<item type="BlindGrenade"/>
+		<item type="CombatStimulant"/>
+		<item type="ConcealedWeaponSystem"/>
+		<item type="DuskBlade"/>
+		<item type="DimensionalKey"/>
+		<item type="EnduranceImplant"/>
+		<item type="EntropicLocum"/>
+		<item type="FaolchusWing"/>
+		<item type="ForbiddenKnowledge"/>
+		<item type="JokaeroDigitalWeapon"/>
+		<item type="LaurelsOfCommand"/>
+		<item type="LightningGauntlet"/>
+		<item type="ManCatcher"/>
+		<item type="MourningBladeOfLazaerek"/>
+		<item type="OmniScope"/>
+		<item type="PoweredBolas"/>
+		<item type="PoweredGauntlet"/>
+		<item type="RecoveryPackage"/>
+		<item type="ScrollsOfMagnus"/>
+		<item type="StunGrenade"/>
+		<item type="TantalisingIcon"/>
+		<item type="TemporaryShield"/>
+		<item type="VolcanisShroud"/>
+		<item type="ZoatHideJerkin"/>
+	</rewards>
+</feature>

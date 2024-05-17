@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Weapons/SkyOfFallingStars">
+	<model>
+		<weapon explosionsBlueprint="Effects/LightExplosions"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Barrage"/>
+		<trait name="LargeBlast"/>
+	</traits>
+</weapon>

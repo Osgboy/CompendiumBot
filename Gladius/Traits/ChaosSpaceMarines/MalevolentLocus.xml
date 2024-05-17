@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/ChaosSpaceMarines/MalevolentLocus">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+					<noFaction name="ChaosSpaceMarines"/>
+					<trait name="Psyker"/>
+				</unit>
+			</conditions>
+			<effects>
+				<hitpointsFactorFromMax add="-0.1"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

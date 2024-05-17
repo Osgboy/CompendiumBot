@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>		
+		<unit mesh="Units/SistersOfBattle/Exorcist"
+				material="Units/SistersOfBattle/Exorcist"
+				idleAnimation="Units/SistersOfBattle/ExorcistIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				portraitFocusHeightModifier="-10"
+				scale="1.1 1.1 1.1"
+				explosionsBone="Hull_Shake"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="ExorcistMissileLauncher">
+			<model>
+				<missileWeapon muzzleBone="MissileMuzzle"
+						muzzleCount="3"
+						fireInterval="0.75"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter" requiredUpgrade="SistersOfBattle/AdditionalHeavyBolter">
+			<model>
+				<projectileWeapon mesh="Weapons/SistersOfBattle/ExorcistHeavyBolter"
+						material="Weapons/SistersOfBattle/ExorcistUpgrades"
+						bone="Front_Gun"
+						muzzleBone="BolterMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="HunterKillerMissile" slotName="HunterKillerMissile"
+				enabled="0"
+				requiredUpgrade="SistersOfBattle/HunterKillerMissile">
+			<model>
+				<missileWeapon mesh="Weapons/SistersOfBattle/ExorcistHunterKiller"
+						material="Weapons/SistersOfBattle/ExorcistUpgrades" 
+						bone="Hull_Shake"
+						muzzleBone="SeekerMuzzle"
+						fireInterval="5.0"/>
+			</model>	
+		</weapon>
+		<weapon name="None" enabled="0"
+				requiredUpgrade="SistersOfBattle/SmokeLauncher">
+			<model>
+				<weapon mesh="Weapons/SistersOfBattle/ExorcistSmokeLaunchers"
+						material="Weapons/SistersOfBattle/ExorcistUpgrades" 
+						bone="Hull_Shake"/>
+			</model>
+		</weapon>		
+		<weapon name="None" enabled="0"
+				requiredUpgrade="SistersOfBattle/DozerBlade">
+			<model>
+				<weapon mesh="Weapons/SistersOfBattle/ExorcistDozerBlade"
+						material="Weapons/SistersOfBattle/ExorcistUpgrades" 
+						bone="Front_Grate"/>
+			</model>	
+		</weapon>			
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=13/11/10 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=13/11/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="4.0"/> <!-- %requisitionsUpkeep base tier=8 factor=1 -->
+				<requisitionsCost base="80.0"/> <!-- %requisitionsCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/SistersOfBattle/ExorcistAttack"
+						beginFire="0.77"
+						endFire="2.1"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/ExorcistDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/ExorcistMove"
+						sound="Units/SpaceMarines/TankMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="SistersOfBattle/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<genericUnitAbility passive="1"
+				name="SistersOfBattle/LaudHailer"
+				requiredUpgrade="SistersOfBattle/LaudHailer">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/LaudHailer"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<useWeapon weaponSlotName="HunterKillerMissile"
+				cooldown="10"
+				requiredUpgrade="SistersOfBattle/HunterKillerMissile">
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="DozerBlade" requiredUpgrade="SistersOfBattle/DozerBlade"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SistersOfBattle/ExtraVehicleArmour"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

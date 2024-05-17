@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="SurvivorsBazaarResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel blueprint="Features/SurvivorsBazaar" 
+				groundMaterial="Features/SurvivorsBazaarGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/SurvivorsBazaar"
+				mesh="Features/SurvivorsBazaar/"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+		<trait type="SurvivorsBazaar"/>
+	</traits>
+</feature>

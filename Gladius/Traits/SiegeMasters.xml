@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" icon="Actions/SiegeMasters">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="City"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage mul="0.33"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="City"/>
+						<trait name="Fortification"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

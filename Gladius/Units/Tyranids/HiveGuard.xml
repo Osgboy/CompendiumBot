@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement10">
+	<model>
+		<unit mesh="Units/Tyranids/HiveGuard"
+				material="Units/Tyranids/HiveGuard"
+				idleAnimation="Units/Tyranids/HiveGuardIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.2 1.2 1.2"
+				bloodBone="Spine2"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="70" memberDeltaY="100"/>
+	<weapons>
+		<weapon name="ImpalerCannon">
+			<model>
+				<missileWeapon muzzleBone="Muzzle" fireInterval="0.5"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<biomassUpkeep base="3.0"/> <!-- %biomassUpkeep base tier=7 factor=1 -->
+				<biomassCost base="60.0"/> <!-- %biomassCost base tier=7 factor=1 -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=6 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/HiveGuardAttack"
+						beginFire="1.13"
+						endFire="1.73"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/HiveGuardDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/Tyranids/MediumDie"
+						voiceSoundCount="4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/HiveGuardMove"
+						sound="Units/Tyranids/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<instinctiveBehaviourOverride consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/InstinctiveBehaviourOverride"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tyranids/InstinctiveBehaviourOverride2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/InstinctiveBehaviourOverride" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</instinctiveBehaviourOverride>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<!-- <trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/> -->
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Tyranids/InstinctiveBehaviour"/>
+		<!-- <trait name="Tyranids/ToxinSacs" requiredUpgrade="Tyranids/ToxinSacs"/> -->
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="Flyer"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangedAccuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

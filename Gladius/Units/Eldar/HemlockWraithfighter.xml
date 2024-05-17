@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/HemlockWraithfighter"
+				material="Units/Eldar/HemlockWraithfighter"
+				idleAnimation="Units/Eldar/HemlockWraithfighterIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="1.0"
+				position="0 0 64"
+				scale="1.2 1.2 1.2"
+				explosionsBone="BloodBone"/>
+	</model>
+	<weapons>
+		<weapon name="HeavyDScythe" count="2">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" muzzleCount="2"
+						fireInterval="10.0" cycleMuzzles="0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<energyCost base="60.0"/> <!-- %energyCost base tier=9 factor=0.5 -->
+				<energyUpkeep base="6.0"/> <!-- %energyUpkeep base tier=9 factor=1 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="6"/>
+				<oreCost base="60.0"/> <!-- %oreCost base tier=9 factor=0.5 -->
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/HemlockWraithfighterAttack"
+						beginFire="1.1"
+						endFire="3.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/HemlockWraithfighterDie0"
+						sound="Units/Eldar/VehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Eldar/FlyerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<vectorDancer consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				requiredActionPoints="0" 
+				name="Eldar/VectorDancer">
+			<model>
+				<action sound="Actions/VectorDancer"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectorDancer"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectorDancer>
+		<shrouding consumedActionPoints="1" 
+				cooldown="3"
+				requiredActionPoints="1" 
+				name="Shrouding">
+			<model>
+				<action sound="Actions/Shrouding"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Shrouded"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</shrouding>
+		<dominate consumedActionPoints="1" 
+				cooldown="1"
+				name="Dominate"
+				requiredActionPoints="1" 
+				requiredUpgrade="Eldar/Dominate">
+			<model>
+				<action sound="Actions/Dominate"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Stunned"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Stunned"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</dominate>
+	</actions>
+	<traits>
+		<trait name="Eldar/SpiritStones"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="Flyer"/>
+		<trait name="Vehicle"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

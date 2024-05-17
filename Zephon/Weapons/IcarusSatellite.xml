@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/IcarusSatellite">
+	<model>
+		<weapon explosionsBlueprint="Effects/CannonExplosions"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="6" max="6"/>
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<attacks add="1"/>
+				<damage base="12"/> <!-- %damage base tier=8 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="-1"/>
+	<traits>
+
+	</traits>
+</weapon>

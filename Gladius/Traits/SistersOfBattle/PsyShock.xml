@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Psyker"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage mul="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Psyker"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<addTrait name="Stunned" duration="1"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>	
+</trait>

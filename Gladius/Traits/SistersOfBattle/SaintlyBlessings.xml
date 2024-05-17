@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff"
+		rankMax="2">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+				</unit>
+			</conditions>
+			<effects>
+				<feelNoPainDamageReduction addMin="0.04" addMax="0.12"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

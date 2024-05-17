@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnDistanceMin="6" dlc="Supplement12">
+	<model>
+		<unit mesh="Units/Neutral/Poxwalker"
+				material="Units/Neutral/Poxwalker"
+				idleAnimation="Units/Neutral/PoxwalkerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="10" rowSize="5" memberDeltaX="70" memberDeltaY="50"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+ 			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Neutral/PoxwalkerCharge"
+						meleeAnimation="Units/Neutral/PoxwalkerMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/PoxwalkerDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.7"
+						voiceSound="Units/Neutral/PoxwalkerDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Neutral/PoxwalkerMove"
+						sound="Units/Tyranids/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="CurseOfTheWalkingPox"/>
+		<trait name="Fearless"/>
+		<trait name="MoveThroughCover"/>
+		<!-- <trait name="Relentless"/> -->
+		<trait name="UnendingHorde"/>
+	</traits>
+</unit>

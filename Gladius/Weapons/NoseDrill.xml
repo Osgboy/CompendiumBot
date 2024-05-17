@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/NoseDrill"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="4"/> <!-- %meleeArmorPenetration add armorPiercing=-2 -->
+				<strengthDamage mul="1"/> <!-- %strengthDamage mul strength=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+	</traits>
+</weapon>

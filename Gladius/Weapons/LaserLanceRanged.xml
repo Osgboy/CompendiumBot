@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Weapons/RodOfCovenant">
+	<model>
+		<beamWeapon fireSound="Weapons/LaserLanceRanged"
+		 		fireSoundCount="3"
+		 		fireInterval="0.5"
+		 		beamsBlueprint="Effects/LaserBeams"
+		 		beamsEmitterBlueprint="Effects/MeltaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/LaserMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Eldar/AssaultWeaponBonus" requiredUpgrade="Eldar/AssaultWeaponBonus"/>
+		<trait name="Lance"/>
+	</traits>
+</weapon>

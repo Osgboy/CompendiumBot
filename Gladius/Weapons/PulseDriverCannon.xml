@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/PlasmaExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"
+				fireSound="Weapons/PulseDriverCannon"
+				fireSoundCount="1"
+				muzzleFlashesBlueprint="Effects/PlasmaMuzzleFlashes"
+				directionalMuzzleFlashesBlueprint="Effects/PlasmaDirectionalMuzzleFlashes"
+				projectilesBlueprint="Effects/PlasmaProjectiles"/>
+	</model>	
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="Ordnance"/>
+		<trait name="LargeBlast"/>
+		<trait name="Tau/LasDamage" requiredUpgrade="Tau/LasDamage"/>
+	</traits>
+</weapon>

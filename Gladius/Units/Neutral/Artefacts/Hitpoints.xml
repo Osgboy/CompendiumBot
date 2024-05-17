@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Neutral/Artefact"
+				material="Units/Neutral/Artefact"
+				scale="0.75 0.75 0.75"
+				idleAnimation="Units/Neutral/ArtefactIdle"
+				idleAnimationCount="1"
+				idleContinuously="1"
+				explosionsBone="Top"/>
+	</model>
+	<group size="1"/>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<hitpointsMax base="1"/>
+				<levelMax base="0"/>
+				<moraleMax base="0"/>
+				<movementMax max="0"/>
+				<sight base="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<tactic icon="Units/Neutral/Artefacts/Hitpoints"
+				name="Artefacts/Hitpoints"
+				passive="1">
+			<model>
+				<action sound="Actions/PowerUpArtefact"/>
+			</model>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait name="Artefacts/Hitpoints"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+	</actions>
+	<traits>
+		<trait name="Artefact"/>
+		<trait name="Invulnerable"/>
+	</traits>	
+</unit>

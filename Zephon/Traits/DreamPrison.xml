@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/DreamPrison" visibleOnUnit="1">
+	<onTraitAdded>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<changePlayer changeOwner="0"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitAdded>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="DreamPrisonRestore">
+						<effects>
+							<changePlayerToOwner/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

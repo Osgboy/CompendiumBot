@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2">
+	<model>
+		<structureUnit mesh="Units/Tyranids/Tunnel"
+				material="Buildings/Tyranids/Buildings"
+				groundMaterial="Units/Neutral/CatachanDevilLairGround"
+				idleAnimationCount="0"
+				kineticImpactSoundCount="5"
+				scale="1 1 1"
+				explosionsBone="Bone025"
+				position="0 0 0"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<biomassUpkeep base="1.0"/> <!-- %biomassUpkeep base tier=6 factor=0.5 -->
+				<biomassCost base="20.0"/> <!-- %biomassCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=3 -->
+				<influenceUpkeep base="1.0"/> <!-- %influenceUpkeep base tier=6 factor=0.5 -->
+				<influenceCost base="20.0"/> <!-- %influenceCost base tier=6 factor=0.5 -->
+				<moraleMax base="0"/>
+				<movementMax max="0"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 --> 
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<die>
+			<model>
+				<action sound="Units/LightBuildingDie"
+						soundCount="3"
+						voiceSound="Units/Tyranids/LargeDie"
+						voiceSoundCount="4"/>
+			</model>
+		</die>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+		<trait name="Tyranids/Tunnel2" requiredUpgrade="Tyranids/Tunnel2"/>
+	</traits>
+</unit>

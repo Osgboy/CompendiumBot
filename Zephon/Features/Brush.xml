@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Brush">
+	<model>
+		<vegetation material="Terrain/Vegetation"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<food mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>	
+	<vegetation>
+		<bushes clusterOriginRadius="16" clusterRadius="48"
+				clusterSizeMax="20" clusterSizeMin="10"
+				scaleMax="1.0" scaleMin="0.5"/>
+	</vegetation>
+</feature>

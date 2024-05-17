@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" portrait="Units/Engineer">
+	<model>
+		<unit bloodBone="Chest"
+				explosionsBone="Chest"
+				explosionSound="Explosions/Units/SmallHuman"
+				explosionSoundCount="16"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="70"
+				material="Units/Engineer"
+				mesh="Units/Engineer"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="Pistol">
+			<models>
+				<projectileWeapon fireInterval="0.33" muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="4"/>
+				<foodCost base="5"/> <!-- %foodCost base tier=2 factor=0.5 -->
+				<foodUpkeep base="0.25"/> <!-- %foodUpkeep base tier=2 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="6"/> <!-- %hitpointsMax base tier=4 -->
+				<mineralsCost base="5"/> <!-- %mineralsCost base tier=2 factor=0.5 -->
+				<mineralsUpkeep base="0.25"/> <!-- %mineralsUpkeep base tier=2 factor=0.5 -->
+				<moraleMax base="12"/>
+				<movementMax base="1"/>
+				<productionCost base="12.0"/> <!-- %productionCost base tier=2 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/EngineerAttack"
+						beginFire="1.15"
+						endFire="1.9"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/EngineerDie"
+						animationCount="2"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/EngineerImpact"/> 
+			</model>			
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/EngineerIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/EngineerMove"
+						sound="Units/EngineerMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<unitCast name="ConstructFarm"
+				cooldown="5"
+				icon="Buildings/Food">
+			<model>
+				<cast animation="Units/EngineerAbility0"
+						sound="Units/EngineerWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Units/Responses/EngineerConstructBunker"
+						responseSoundCount="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<city>
+							<own/>
+						</city>
+						<tile>
+							<buildingSlotsRemaining greater="0"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addBuilding type="Food"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

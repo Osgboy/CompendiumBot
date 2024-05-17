@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff" icon="Items/AxeOfBlindFury">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<additionalMembersHit add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="EnergyUpgrade">
+ 			<conditions>
+				<tile match="Any">
+					<feature type="Arctic"/>
+					<feature type="Swamp"/>
+				</tile>
+			</conditions>
+			<effects>
+				<energy add="1.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

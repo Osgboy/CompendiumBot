@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForHumanBiologicalUnits">
+			<conditions>
+				<unit>
+					<branch name="Human"/>
+					<trait type="Biological"/>
+				</unit>
+			</conditions>
+			<effects>
+				<hitpointsMax mul="0.05"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

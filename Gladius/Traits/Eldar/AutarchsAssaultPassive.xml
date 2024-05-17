@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visible="0"
+		category="Buff"
+		icon="Actions/Eldar/AutarchsAssault"
+		rankMax="2">
+	<onEnemyKilledSelf>
+		<area affects="Unit" radius="3">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="Eldar"/>
+						</unit>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="Eldar/AutarchsAssault"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onEnemyKilledSelf>
+</trait>

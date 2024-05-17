@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<missileWeapon fireSound="Weapons/HellstrikeMissile"
+				fireSoundCount="3"
+				fireInterval="5.0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Tau/BlastDamage" requiredUpgrade="Tau/BlastDamage"/>
+	</traits>
+</weapon>

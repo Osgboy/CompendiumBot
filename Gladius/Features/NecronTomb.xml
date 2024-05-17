@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/NecronsCity"
+		ambientSoundLayer="1"
+		ambientSoundPriority="0"
+		audioEffectSystem="City"
+		category="NecronTomb">
+	<model>
+		<necronTomb blueprint="Features/NecronTombGlow"
+				effectBlueprint="Effects/NecronTombGlow"
+				groundMaterial="Features/NecronTombGround"/>
+	</model>
+</feature>

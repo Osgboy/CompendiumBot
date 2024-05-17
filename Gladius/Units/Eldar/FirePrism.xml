@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/FirePrism"
+				material="Units/Eldar/FirePrism"
+				idleAnimation="Units/Eldar/FirePrismIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 16"
+				scale="0.9 0.9 0.9"
+				explosionsBone="BloodBone"/>
+	</model>
+	<weapons>
+		<weapon name="PrismCannonLance" slotName="PrismCannonLance">
+			<model>
+				<beamWeapon muzzleBone="Muzzle0"/>
+			</model>
+		</weapon>
+		<weapon name="PrismCannonFocused" slotName="PrismCannonFocused" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="Muzzle0"/>
+			</model>
+		</weapon>
+		<weapon name="PrismCannonDispersed" slotName="PrismCannonDispersed" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="Muzzle0"/>
+			</model>
+		</weapon>
+		<weapon name="ShurikenCannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<oreCost base="80.0"/> <!-- %oreCost base tier=8 factor=1 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/FirePrismAttack"
+						beginFire="1.0"
+						endFire="2.1"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/FirePrismDie0"
+						sound="Units/Eldar/VehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/FirePrismMove"
+						sound="Units/Eldar/SkimmerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<cycleWeapon interfaceSound="Actions/Reload" 
+				weaponSlotNames="PrismCannonLance PrismCannonFocused PrismCannonDispersed"/>
+		<linkedFire cooldown="1"
+				name="Eldar/LinkedFire">
+			<model>
+				<action	animation="Units/Eldar/FirePrismAttack"
+						sound="Actions/LinkedFire"
+						beginFire="1.0"
+						endFire="2.1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1"
+						rangeMin="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<type name="Eldar/FirePrism"/>
+							<noTrait name="Eldar/LinkedFire"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/LinkedFire"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</linkedFire>
+		<crystalTargetingMatrix consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/CrystalTargetingMatrix"
+				requiredUpgrade="Eldar/CrystalTargetingMatrix">
+			<model>
+				<action sound="Actions/CrystalTargetingMatrix"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/CrystalTargetingMatrix"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</crystalTargetingMatrix>
+		<vectoredEngines consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/VectoredEngines"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/VectoredEngines">
+			<model>
+				<action sound="Actions/VectoredEngines"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectoredEngines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectoredEngines>
+	</actions>
+	<traits>
+		<trait name="MoveThroughCover" requiredUpgrade="Eldar/GhostwalkMatrix"/>
+		<trait name="Eldar/HoloFields" requiredUpgrade="Eldar/HoloFields"/>
+		<trait name="Eldar/SpiritStones" requiredUpgrade="Eldar/SpiritStones"/>
+		<trait name="Eldar/StarEngines" requiredUpgrade="Eldar/StarEngines"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

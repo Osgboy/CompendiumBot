@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/Ruins" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForLargeGroundUnits">
+			<conditions>
+				<unit>
+					<trait type="Large"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Pathcutter"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForNonAgileGroundUnits">
+			<conditions>
+				<unit>
+					<noTrait type="Agile"/>
+					<noTrait type="DozerBlade"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Pathcutter"/>
+				</unit>	
+			</conditions>
+			<effects>
+				<movementCost add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForNonLargeGroundUnitsAgainstRangedWeapons">
+			<conditions>
+				<unit>
+					<noTrait type="City"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Large"/>
+				</unit>
+				<weapon ignoreForTraitVisibility="1">
+					<noTrait type="Melee"/>
+				</weapon>				
+			</conditions>
+			<effects>
+				<coverDamageReduction add="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>
+		<unit mesh="Units/Eldar/DarkReaper"
+				material="Units/Eldar/DarkReaper"
+				idleAnimation="Units/Eldar/DarkReaperIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="ReaperLauncherStarshotMissile" slotName="ReaperLauncherStarshotMissile">
+			<model>
+				<missileWeapon muzzleBone="Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="ReaperLauncherStarswarmMissile" slotName="ReaperLauncherStarswarmMissile" enabled="0">
+			<model>
+				<missileWeapon muzzleBone="Muzzle"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<!-- <meleeInitiative base="3"/> -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Eldar/DarkReaperAttack"
+						beginFire="1.46"
+						endFire="1.56"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/DarkReaperDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/Eldar/MaleInfantryDie"
+						voiceSoundCount="10"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/DarkReaperMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="ReaperLauncherStarshotMissile ReaperLauncherStarswarmMissile"/>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Eldar/InescapableAccuracy"/>
+		<trait name="SlowAndPurposeful"/>
+		<trait name="Eldar/ReaperRangefinder"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

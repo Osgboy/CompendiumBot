@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Building">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence less="40"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="-0.2"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="39"/>
+					<influence less="80"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="-0.16"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="79"/>
+					<influence less="120"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="-0.12"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="119"/>
+					<influence less="160"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="-0.08"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="159"/>
+					<influence less="200"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="-0.04"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="199"/>
+					<influence less="240"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.0"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="239"/>
+					<influence less="280"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.04"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="279"/>
+					<influence less="320"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.08"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="319"/>
+					<influence less="360"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.12"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="359"/>
+					<influence less="400"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.16"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<influence greater="399"/>
+				</player>
+				<building>
+					<loyalty greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

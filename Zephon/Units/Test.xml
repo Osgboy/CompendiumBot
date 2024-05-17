@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit visible="0">
+	<model>
+		<unit bloodBone="Body3"
+				material="Units/DarkVassael"
+				mesh="Units/DarkVassael"
+				normalWeight="0.1"
+				scale="55 55 55"
+				walker="1"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="99"/>
+				<coverDamageReduction add="0.833"/>
+				<evasionDamageReduction add="0.833"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="999"/>
+				<invulnerableDamageReduction add="0.833"/>
+				<movementMax base="9"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<die>
+			<model>
+				<die animation="Units/DarkVassaelDie0"
+						groundImpact="0.87"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/DarkVassaelImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/DarkVassaelIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/DarkVassaelMove"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+		<trait type="Stealth"/>
+	</traits>
+</unit>

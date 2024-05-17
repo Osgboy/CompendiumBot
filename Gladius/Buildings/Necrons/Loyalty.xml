@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<energyCost base="50"/>
+				<oreUpkeep add="2"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<loyalty add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseLoyaltyScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait name="Necrons/LoyaltyBuildingBonus" requiredUpgrade="Necrons/LoyaltyBuildingBonus"/>
+	</traits>
+</building>

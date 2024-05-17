@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<explosiveWeapon explosionsBlueprint="Effects/BioPlasmaExplosions" 
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"
+				effectScale="1.5"
+				fireSound="Weapons/FloatingDeath"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAccuracy min="12"/> <!-- Don't roll to hit. -->
+				<meleeArmorPenetration add="2"/> <!-- %meleeArmorPenetration add armorPiercing=4 -->
+				<strengthDamage mul="1"/> <!-- %strengthDamage mul strength=2 -->
+				<damageSelfFactor add="999"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Tyranids/BiomorphDamage" requiredUpgrade="Tyranids/BiomorphDamage"/>
+		<trait name="LargeBlast"/>
+		<trait name="Melee"/>
+	</traits>
+</weapon>

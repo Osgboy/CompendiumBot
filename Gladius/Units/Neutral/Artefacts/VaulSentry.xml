@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnWeight="0" icon="Units/Neutral/Artefacts/AncientExterminatusDevice">
+	<model>
+		<unit mesh="Units/Neutral/Artefact"
+				material="Units/Neutral/Artefact"
+				scale="0.75 0.75 0.75"
+				idleAnimation="Units/Neutral/ArtefactIdle"
+				idleAnimationCount="1"
+				idleContinuously="1"
+				explosionsBone="Top"/>
+	</model>
+	<weapons>
+		<weapon name="Frazzle">
+			<model>
+				<beamWeapon muzzleBone=".Muzzle"
+						effectFaceWeight="1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=14/14/14 -->
+				<hitpointsMax base="32.0"/> <!-- %hitpointsMax base armor=14/14/14 wounds=2 -->
+				<moraleMax base="10"/>
+				<movementMax base="2"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<sight base="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<move>
+			<model>
+				<action sound="Units/Neutral/ArtefactMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+	</actions>
+</unit>

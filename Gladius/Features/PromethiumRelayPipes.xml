@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Resource">
+	<model>
+		<simpleModel mesh="Features/PromethiumRelayPipes"
+				material="Features/PromethiumRelayPipes"
+				groundFlow="1"
+				groundMaterial="Features/PromethiumRelayPipesGround"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<energy mul="0.2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<conditions>
+						<player>
+							<faction name="Tyranids"/>
+						</player>
+					</conditions>
+					<effects>
+						<biomass mul="0.05"/>
+						<influence mul="0.1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+				<energy mul="0.2"/>
+				<energy add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="Tyranids"/>
+				</player>
+			</conditions>
+			<effects>
+				<biomass mul="0.05"/>
+				<biomass add="1"/>
+				<influence mul="0.1"/>
+				<influence add="1"/>
+			</effects>
+		</modifier>	
+	</modifiers>
+</feature>

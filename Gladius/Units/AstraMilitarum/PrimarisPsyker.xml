@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/AstraMilitarum/PrimarisPsyker"
+				material="Units/AstraMilitarum/PrimarisPsyker"
+				idleAnimation="Units/AstraMilitarum/PrimarisPsykerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="Laspistol">
+			<model>
+				<beamWeapon	mesh="Weapons/AstraMilitarum/PrimarisPsykerLaspistol"
+						material="Weapons/AstraMilitarum/WyrdvanePsykerLaspistol"
+						bone="RightHandBone0"
+						muzzleBone="Muzzle0"
+						fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="ForceStave">
+			<model>
+				<powerWeapon effectBone="StaffBone" 
+						effectBoundingVolume="Blade"
+						fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHandBone0"/>
+			</model>		
+		</weapon>
+		<weapon name="MoltenBeam" slotName="MoltenBeam" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="RightHandBone0"/>
+			</model>
+		</weapon>
+		<weapon name="LifeLeech" slotName="LifeLeech" enabled="0"/>
+		<weapon name="PsychicMaelstrom" slotName="PsychicMaelstrom" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<energyUpkeep base="1.5"/> <!-- %energyUpkeep base tier=5 factor=1 -->
+				<energyCost base="15.0"/> <!-- %energyCost base tier=5 factor=0.5 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="3.0"/> <!-- %influenceUpkeep base tier=5 factor=2 -->
+				<influenceCost base="60.0"/> <!-- %influenceCost base tier=5 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 --> 
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/PrimarisPsykerAttack"
+						beginFire="0.4"
+						endFire="2.53"
+						chargeAnimation="Units/AstraMilitarum/PrimarisPsykerCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="0.8"
+						chargeDefenseAnimation="Units/AstraMilitarum/PrimarisPsykerChargeDefense"
+						chargeDefenseBeginFire="0.3"
+						chargeDefenseEndFire="1.2"
+						meleeAnimation="Units/AstraMilitarum/PrimarisPsykerMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.5"
+						meleeDefenseAnimation="Units/AstraMilitarum/PrimarisPsykerMeleeDefense"
+						meleeDefenseBeginSwing="0.15"
+						meleeDefenseEndSwing="0.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/PrimarisPsykerDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/PrimarisPsykerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<throwGrenade cooldown="10" weaponSlotName="FragGrenade"
+				requiredUpgrade="AstraMilitarum/FragGrenade">
+			<model>
+				<action animation="Units/AstraMilitarum/PrimarisPsykerGrenade"
+						beginFire="0.55"/>
+			</model>
+		</throwGrenade>
+		<moltenBeam cooldown="2"
+				levelUpPriority="0.15"
+				psychicPower="1"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="MoltenBeam">
+			<model>
+				<action	animation="Units/AstraMilitarum/PrimarisPsykerMoltenBeam"
+						bone="RightHandBone0"
+						beginFire="0.8"
+						endFire="2.6"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</moltenBeam>
+		<lifeLeech cooldown="2"
+				levelUpPriority="0.1"
+				psychicPower="1"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="LifeLeech">
+			<model>
+				<action animation="Units/AstraMilitarum/PrimarisPsykerLifeLeech"
+						bone="RightHandBone0"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<attacks mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>		
+		</lifeLeech>
+		<sciersGaze cooldownMin="3"
+				cooldownMax="1"
+				psychicPower="1"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/AstraMilitarum/PrimarisPsykerSciersGaze"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1" sighted="0">
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</sciersGaze>
+		<psychicMaelstrom cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				psychicPower="1"
+				rank="-1"
+				rankMax="0"
+				weaponSlotName="PsychicMaelstrom">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+		</psychicMaelstrom>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="Psyker"/>
+		<trait name="RefractorField"/>
+	</traits>
+</unit>

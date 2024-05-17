@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>		
+		<unit mesh="Units/ChaosSpaceMarines/Defiler"
+				material="Units/ChaosSpaceMarines/Defiler"
+				idleAnimation="Units/ChaosSpaceMarines/DefilerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.1 1.1 1.1"
+				explosionsBone="Bone014"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="BattleCannon">
+			<model>
+				<projectileWeapon muzzleBone=".BattleCannonMuzzle"
+						 fireInterval="1.37"/>
+			</model>
+		</weapon>
+		<weapon name="HavocLauncher">
+			<model>
+				<missileWeapon muzzleBone=".HavocMuzzle"
+						muzzleCount="6"
+						missileScale="0.8"/>
+			</model>
+		</weapon>
+		<weapon name="PowerFist" count="2">
+			<model>
+				<weapon fireInterval="0.33"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedLascannon">
+			<model>
+				<beamWeapon muzzleBone=".LascannonMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=4 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="6"/> <!-- %strengthDamage base strength=8 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<oreCost base="160.0"/> <!-- %oreCost base tier=10 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/DefilerAttack"
+						beginFire="0.67"
+						endFire="2.5"
+						chargeAnimation="Units/ChaosSpaceMarines/DefilerCharge"
+						chargeBeginFire="0.17"
+						chargeEndFire="1.33"
+						meleeAnimation="Units/ChaosSpaceMarines/DefilerMelee"
+						meleeBeginSwing="0.33"
+						meleeEndSwing="0.83"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/DefilerDie"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.4"
+						voiceSound="Units/ChaosSpaceMarines/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/DefilerMove"
+						sound="Units/ChaosSpaceMarines/DefilerMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="ChaosSpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<genericUnitAbility name="ChaosSpaceMarines/DirgeCaster"
+				passive="1"
+				requiredUpgrade="ChaosSpaceMarines/DirgeCaster">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/DirgeCaster"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<daemonforge consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				name="ChaosSpaceMarines/Daemonforge">
+			<model>
+				<action sound="Actions/ChaosBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<addTrait name="ChaosSpaceMarines/Daemonforge" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</daemonforge>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="ChaosSpaceMarines/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+	</actions>
+	<traits>
+		<trait name="Daemon"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="ChaosSpaceMarines/ExtraVehicleArmour"/>
+		<trait name="Fleet"/>
+		<trait name="ItWillNotDie"/>
+		<trait name="SoulBlaze" requiredUpgrade="ChaosSpaceMarines/WarpflameGargoyles"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

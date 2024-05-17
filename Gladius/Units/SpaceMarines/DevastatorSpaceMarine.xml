@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/DevastatorSpaceMarine"
+				material="Units/SpaceMarines/DevastatorSpaceMarine"
+				idleAnimation="Units/SpaceMarines/DevastatorSpaceMarineIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="Lascannon">
+			<model>
+				<beamWeapon mesh="Weapons/SpaceMarines/DevastatorSpaceMarineLascannon"
+						material="Weapons/SpaceMarines/DevastatorSpaceMarineLascannon"
+						bone="RightHand"
+						muzzleBone="Muzzle0"
+						fireInterval="0.53"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="LeftHand"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="LeftHand"/>
+			</model>		
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="LeftHand"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/SpaceMarines/DevastatorSpaceMarineAttack"
+						beginFire="0.75" endFire="2.0"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/DevastatorSpaceMarineDie0"
+						animationCount="1"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/DevastatorSpaceMarineMove"
+						sound="Units/SpaceMarines/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/DevastatorSpaceMarineGrenade"
+						beginFire="1"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/DevastatorSpaceMarineGrenade"
+						beginFire="1"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="SpaceMarines/MeltaBomb">
+			<model>
+				<action animation="Units/SpaceMarines/DevastatorSpaceMarineGrenade"
+						beginFire="1"/>
+			</model>				
+		</throwGrenade>
+		<signum cooldown="5"
+				consumedActionPoints="0" consumedMovement="0"
+				requiredUpgrade="SpaceMarines/Signum">
+			<model>
+				<action sound="Actions/Reload"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Relentless"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</signum>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+	</traits>
+</unit>

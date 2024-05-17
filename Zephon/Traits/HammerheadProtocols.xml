@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+        <modifier>
+            <effects>
+                <canCaptureOutposts add="1"/>
+            </effects>
+        </modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<faction name="Neutral"/>
+				</player>
+				<unit>
+					<trait type="Leashed"/>
+				</unit>
+			</conditions>
+			<effects>
+				<attackScore max="0"/>
+				<canOverwatch add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onUnitAttacked>
+		<defender>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="ToAttackedEnemy">
+						<effects>
+							<addTrait type="HammerheadTarget" duration="2"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onUnitAttacked>
+</trait>

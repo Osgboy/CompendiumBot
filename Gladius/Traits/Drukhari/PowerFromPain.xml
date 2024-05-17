@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<level greater="1"/>
+				</unit>
+			</conditions>
+			<effects>
+				<feelNoPainDamageReduction add="0.17"/>
+			</effects>
+		</modifier>
+		<modifier >
+			<conditions>
+				<unit>
+					<level greater="4"/>
+				</unit>
+			</conditions>
+			<effects>
+				<circumstanceMeleeDamage mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier >
+			<conditions>
+				<unit>
+					<level greater="8"/>
+				</unit>
+			</conditions>
+			<effects>
+				<moraleLossFactor add="-0.67"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

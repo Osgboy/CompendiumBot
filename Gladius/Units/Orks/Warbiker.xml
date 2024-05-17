@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement6">
+	<model>
+		<unit mesh="Units/Orks/Warbiker"
+				material="Units/Orks/Warbiker"
+				idleAnimation="Units/Orks/WarbikerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				explosionsBone="BloodBone"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="TwinLinkedDakkagun">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="Choppa">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=5 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>	
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 --> 
+				<movementMax base="5"/>
+				<influenceUpkeep base="1.5"/> <!-- %influenceUpkeep base tier=5 factor=1 -->
+				<oreUpkeep base="1.5"/> <!-- %oreUpkeep base tier=5 factor=1 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=5 factor=1 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/WarbikerAttack"
+						beginFire="1"
+						endFire="2.33"
+						chargeAnimation="Units/Orks/WarbikerCharge"
+						chargeBeginFire="0.5"
+						chargeEndFire="1.17"
+						meleeAnimation="Units/Orks/WarbikerMelee"
+						meleeBeginSwing="0.16"
+						meleeEndSwing="1.5"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/WarbikerDie"
+						animationCount="2"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/WarbikerMove"
+						sound="Units/SpaceMarines/ScoutBikerMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<turboBoost name="Orks/WarbikeTurboBoost"
+				consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Orks/WarbikeTurboBoost"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</turboBoost>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Orks/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Bike"/>
+		<trait name="Bosspole" requiredUpgrade="Orks/Bosspole"/>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="FuriousCharge"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

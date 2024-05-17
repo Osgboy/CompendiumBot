@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff"
+		icon="Actions/AdeptusMechanicus/RadSaturation"
+		stacking="1">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<weaponDamage weapon="RadSaturation"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

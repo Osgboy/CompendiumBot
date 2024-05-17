@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade branch="Voice" tier="4">
+	<requiredUpgrades>
+		<upgrade name="SurthodaisEmbrace"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

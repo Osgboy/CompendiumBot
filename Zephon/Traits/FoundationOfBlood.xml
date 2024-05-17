@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/FoundationOfBlood" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<production greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<production mul="0.333"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="FoundationOfBloodUpgrade">
+			<conditions>
+				<building>
+					<production greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<production mul="0.167"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

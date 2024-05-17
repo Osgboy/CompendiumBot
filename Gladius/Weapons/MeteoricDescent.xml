@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ScythingTalons"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks base="1"/>
+				<meleeAccuracy min="12"/> <!-- Don't roll to hit. -->
+				<meleeArmorPenetration add="6"/> <!-- %meleeArmorPenetration add armorPiercing=2 -->
+				<strengthDamage base="4"/> <!-- %strengthDamage base strength=7 -->
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Flyer"/>					
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<meleeAttacks add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+	</traits>
+</weapon>

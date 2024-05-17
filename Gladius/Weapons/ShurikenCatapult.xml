@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/ShurikenCatapult"
+				fireSoundCount="3"
+				fireInterval="0.1"
+				muzzleFlashesBlueprint="Effects/ShurikenMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/ShurikenMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/ShurikenProjectiles"
+				projectilesEmitterBlueprint="Effects/ShurikenProjectilesEmitter"
+				explosionsBlueprint="Effects/DustExplosions"
+				smokeBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Eldar/AssaultWeaponBonus" requiredUpgrade="Eldar/AssaultWeaponBonus"/>
+		<trait name="Assault"/>
+		<trait name="Bladestorm"/>
+	</traits>
+</weapon>

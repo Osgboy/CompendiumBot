@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<modifiers>
+		<modifier effectDescription="AgainstNonLargeUnits">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<noTrait type="Large"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damage mul="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="AgainstUnitsAtRange1">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<distance equal="1"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

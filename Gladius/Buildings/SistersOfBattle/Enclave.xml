@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building disablable="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="336"/>
+				<populationRequired base="0"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<cityRadius add="1"/>
+				<energy add="6"/>
+				<loyalty add="6"/>
+				<influence add="6"/>
+				<populationLimit add="6"/>
+				<requisitions add="12"/>
+				<research add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Headquarters"/>
+	</traits>
+</building>

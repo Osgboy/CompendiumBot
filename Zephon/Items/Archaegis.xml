@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Cyber">
+	<actions>
+		<unitAction passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Archaegis"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="BreachCollector"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

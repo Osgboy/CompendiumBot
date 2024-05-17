@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/Helbrute"
+				material="Units/ChaosSpaceMarines/Helbrute"
+				idleAnimation="Units/ChaosSpaceMarines/HelbruteIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				syncMovementSounds="1"
+				explosionsBone="Bone001"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PowerScourge">
+			<model>
+				<weapon fireInterval="0.6"/>
+			</model>
+		</weapon>
+		<weapon name="ReaperAutocannon">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						effectScale="1.0"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<oreUpkeep base="3.0"/> <!-- %oreUpkeep base tier=7 factor=1 -->
+				<oreCost base="60.0"/> <!-- %oreCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/ChaosSpaceMarines/HelbruteAttack"
+						beginFire="1"
+						endFire="2"
+						chargeAnimation="Units/ChaosSpaceMarines/HelbruteCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.1"						
+						meleeAnimation="Units/ChaosSpaceMarines/HelbruteMelee"
+						meleeBeginSwing="0.17"
+						meleeEndSwing="1"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/HelbruteDie"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/ChaosSpaceMarines/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/HelbruteMove"
+						sound="Units/SpaceMarines/DreadnoughtMove"
+						soundCount="2"/>
+			</model>				
+		</move>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="ChaosSpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="ChaosSpaceMarines/Crazed"/>
+		<trait name="Flail"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="ChaosSpaceMarines/ExtraVehicleArmour"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait>
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<faction name="SpaceMarines"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<meleeAccuracy add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<moraleLossFactor add="-0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/UrtySyringe"
+				fireSoundCount="3"/>
+	</model>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="Necrons/MeleeDamage" requiredUpgrade="Necrons/MeleeDamage"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="Poisoned" rank="2"/>
+	</traits>
+</weapon>

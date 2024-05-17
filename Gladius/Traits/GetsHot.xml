@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<noTrait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damageSelfFactor add="0.05"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

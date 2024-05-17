@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<mediPack charges="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<conditions>
+						<unit>
+							<damaged/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="0.25"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</mediPack>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</item>

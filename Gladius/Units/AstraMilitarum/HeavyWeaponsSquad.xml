@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/AstraMilitarum/HeavyWeaponsSquad"
+				material="Units/AstraMilitarum/HeavyWeaponsSquad"
+				idleAnimation="Units/AstraMilitarum/HeavyWeaponsSquadIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<group size="4" rowSize="2" memberDeltaX="90" memberDeltaY="100"/>
+	<weapons>
+		<weapon name="FragMissileLauncher" slotName="FragMissileLauncher" enabled="0">
+			<model>
+				<missileWeapon muzzleBone="Muzzle0"
+						fireInterval="0.83"/>
+			</model>	
+		</weapon>
+		<weapon name="KrakMissileLauncher" slotName="KrakMissileLauncher">
+			<model>
+				<missileWeapon muzzleBone="Muzzle0"
+						fireInterval="0.83"/>
+			</model>	
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHandBone1"/>
+			</model>	
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHandBone1"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=5 factor=1 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=3 wounds=2 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<oreCost base="15.0"/> <!-- %oreCost base tier=5 factor=0.5 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/HeavyWeaponsSquadAttack"
+						beginFire="0.5"
+						endFire="2.4"/>
+			</model>			
+		</attack>
+		<die>
+			<model>
+				<action	animation="Units/AstraMilitarum/HeavyWeaponsSquadDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action	animation="Units/AstraMilitarum/HeavyWeaponsSquadMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="KrakMissileLauncher FragMissileLauncher"/>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/FragGrenade">
+			<model>
+				<action	animation="Units/AstraMilitarum/HeavyWeaponsSquadGrenade"
+						beginFire="0.666666666667"/>
+			</model>		
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/KrakGrenade">
+			<model>
+				<action	animation="Units/AstraMilitarum/HeavyWeaponsSquadGrenade"
+						beginFire="0.666666666667"/>
+			</model>				
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+	</traits>
+</unit>

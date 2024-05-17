@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="PhaseGeneratorResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel effectsBlueprint="Effects/ElectricityArcs" 
+				groundMaterial="Features/PhaseGeneratorGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/PhaseGenerator"
+				mesh="Features/PhaseGenerator"
+				scale="1 1 1"
+				transparent="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+		<trait type="PhaseGeneratorResource"/>
+		<trait type="PhaseGeneratorUnit"/>
+	</traits>
+</feature>

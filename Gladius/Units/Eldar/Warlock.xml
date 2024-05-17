@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/Eldar/Warlock"
+				material="Units/Eldar/Warlock"
+				idleAnimation="Units/Eldar/WarlockIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="4" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="SingingSpearMelee">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>		
+		</weapon>
+		<weapon name="SingingSpearRanged">
+			<model>
+				<weapon fireInterval="10.0"
+						chargeFireDelay="0.7"/>
+			</model>
+		</weapon>
+		<weapon name="ShurikenPistol">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireDelay="0.83"/>
+			</model>
+		</weapon>
+		<weapon name="CleansingFlame" slotName="CleansingFlame" enabled="0">>
+			<model>
+				<beamWeapon muzzleBone="Spear"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<energyUpkeep base="3.0"/> <!-- %energyUpkeep base tier=7 factor=1 -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Eldar/WarlockAttack"
+						beginFire="0.27"
+						endFire="2.0"
+						chargeAnimation="Units/Eldar/WarlockCharge"
+						chargeBeginFire="0.4"
+						chargeEndFire="1.2"
+						meleeAnimation="Units/Eldar/WarlockMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/WarlockDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/Eldar/MaleInfantryDie"
+						voiceSoundCount="10"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/WarlockMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<gateOfInfinity cooldown="5"
+				name="GateOfInfinity"
+				psychicPower="1">
+			<model>
+				<action animation="Units/Eldar/WarlockAbility"
+						sound="Actions/GateOfInfinity"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</gateOfInfinity>
+		<hammerhand consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				name="Hammerhand"
+				psychicPower="1">
+			<model>
+				<action animation="Units/Eldar/WarlockAbility"
+						sound="Actions/Hammerhand"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Hammerhand"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerhand>
+		<useWeapon cooldown="5"
+				psychicPower="1"
+				requiredUpgrade="Eldar/CleansingFlame"
+				weaponSlotName="CleansingFlame">
+			<model>
+				<action animation="Units/Eldar/WarlockAbility"
+						beginFire="1.6"
+						endFire="2.2"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/BattleFocus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Fleet"/>
+		<trait name="Psyker"/>
+		<trait name="Eldar/RuneArmour"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

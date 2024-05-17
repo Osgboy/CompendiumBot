@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building disablable="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="336"/>
+				<populationRequired base="0"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<biomass add="12"/>
+				<cityRadius add="1"/>
+				<influence add="12"/>
+				<loyalty add="6"/>
+				<populationLimit add="6"/>
+				<research add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Tyranids/CityGrowth" requiredUpgrade="Tyranids/CityGrowth"/>
+		<trait name="Tyranids/CityPopulationLimit" requiredUpgrade="Tyranids/CityPopulationLimit"/>
+		<trait name="Tyranids/CityTier2" requiredUpgrade="Tyranids/CityTier2"/>
+		<trait name="Headquarters"/>
+	</traits>
+</building>

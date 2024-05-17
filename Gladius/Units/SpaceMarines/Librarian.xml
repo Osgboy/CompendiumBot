@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/Librarian"
+				material="Units/SpaceMarines/Librarian"
+				idleAnimation="Units/SpaceMarines/LibrarianIdle"
+				idleAnimationCount="5"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Chest003"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="BoltPistol">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/BoltPistol"
+						material="Weapons/SpaceMarines/BoltPistol"
+						bone="RightHand003"
+						muzzleBone=".Muzzle0"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+		<weapon name="ForceStave">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+						mesh="Weapons/SpaceMarines/LibrarianForceStave"
+						material="Weapons/SpaceMarines/LibrarianForceStave"
+						bone="LeftHand003"
+						fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand003"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand003"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>				
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyUpkeep base="2.0"/> <!-- %energyUpkeep base tier=6 factor=1 -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsCost base="20.0"/> <!-- %requisitionsCost base tier=6 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianAttack"
+						beginFire="0.333"
+						endFire="2.5"
+						chargeAnimation="Units/SpaceMarines/LibrarianCharge"
+						chargeBeginFire="0.333"
+						chargeEndFire="1.167"
+						chargeDefenseAnimation="Units/SpaceMarines/LibrarianChargeDefense"
+						chargeDefenseBeginFire="0.333"
+						chargeDefenseEndFire="1.167"
+						meleeAnimation="Units/SpaceMarines/LibrarianMelee"
+						meleeBeginSwing="0.333"
+						meleeEndSwing="0.666"
+						meleeDefenseAnimation="Units/SpaceMarines/LibrarianMeleeDefense"
+						meleeDefenseBeginSwing="0.333"
+						meleeDefenseEndSwing="0.666"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianMove"
+						sound="Units/SpaceMarines/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianGrenade"
+						beginFire="0.9"/>
+			</model>
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianGrenade"
+						beginFire="0.9"/>
+			</model>
+		</throwGrenade>
+		<!-- <armoriumCherub consumedActionPoints="0" consumedMovement="0"
+				cooldown="10">
+			<model>
+				<action sound="Actions/Reload"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ArmoriumCherub" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</armoriumCherub> -->
+		<objurationMechanicum cooldown="2"
+				levelUpPriority="0.1"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianObjurationMechanicum"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit match="Any">
+											<trait name="Fortification"/>
+											<trait name="Vehicle"/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints add="-6" addMax="-18"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="GetsHot"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</objurationMechanicum>
+		<shockwave cooldown="2"
+				levelUpPriority="0.2"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianShockwave"
+						bone="RightHand003"
+						beginFire="0.67"
+						sound="Actions/Shockwave"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<attacks mulMin="0.33" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="Shockwave"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</shockwave>
+		<levitate cooldownMin="3"
+				cooldownMax="1"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianLevitate"
+						sound="Actions/Levitate"/> 
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</levitate>
+		<telekineDome cooldown="5"
+				elite="1"
+				levelUpPriority="0.3"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/SpaceMarines/LibrarianShockwave"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="TelekineDome"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Tile" radius="0">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addFeature duration="3" name="TelekineDome"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</telekineDome>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="PsychicHood"/>
+		<trait name="Psyker"/>
+	</traits>
+</unit>

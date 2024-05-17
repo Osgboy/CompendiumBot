@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Bike"/>
+					<noTrait name="Fearless"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Jetbike"/>
+					<noTrait name="Eldar/KhaineAwakened"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+					<noTrait name="Vehicle"/>
+					<noTrait name="Zealot"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax mul="-0.67"/>
+				<rangedAccuracy mul="-0.17"/>
+				<rangedDamageReduction add="0.17"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<noTrait name="Bike"/>
+					<noTrait name="Fearless"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Jetbike"/>
+					<noTrait name="Eldar/KhaineAwakened"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+					<noTrait name="Vehicle"/>
+					<noTrait name="Zealot"/>
+				</unit>
+			</conditions>
+			<effects>
+				<preventOverwatch add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

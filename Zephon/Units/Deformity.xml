@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" spawnDistanceMin="6">
+	<model>
+		<unit bloodBone="Chest"
+				groupMemberDeltaX="70"
+				groupMemberDeltaY="70"
+				material="Units/Deformity"
+				mesh="Units/Deformity"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="DeformingRake">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="0"/>
+				<algaeCost base="10"/> <!-- %algaeCost base tier=5 factor=0.333 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=5 factor=0.333 -->
+				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.333 -->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
+				<groupSizeMax base="5"/>
+				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/DeformityAbility0"
+						effectBlueprint="Effects/DeformityAppear"
+						beginEffect="0.2"
+						responseSound="Units/Responses/DeformityAppear"
+						sound="Units/DeformityAppear"
+						soundDelay="0.2"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/DeformityCharge"
+						meleeAnimation="Units/DeformityMelee"
+						meleeBeginSwing="0.001"
+						meleeEndSwing="0.002"
+						responseSound="Units/Responses/DeformityAttack"
+						responseSoundCount="3"
+						sound="Units/DeformityMelee"
+						soundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/DeformityDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.8"
+						voiceSound="Units/DeformityDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/DeformityImpact"
+						responseSound="Units/Responses/DeformityEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/DeformityIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/DeformityKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/DeformityMove"
+						responseSound="Units/Responses/DeformityMove"
+						responseSoundCount="3"
+						sound="Units/DeformityMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/DeformityPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/DeformitySelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Deforming"/>
+		<trait type="Decaying"/>
+	</traits>
+</unit>

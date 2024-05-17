@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building branch="Human" position="13">
+	<actions>
+		<constructPlayerAction action="SatelliteScan">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="10"/> <!-- %mineralsCost base tier=2 factor=1 -->
+						<productionCost base="12.0"/> <!-- %productionCost base tier=2 factor=1 -->
+					</effects>
+				</modifier>
+				<modifier effectDescription="ForSatelliteScan" requiredUpgrade="SatelliteScanUpgrade">
+					<effects>
+						<mineralsCost mul="-1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseHumanScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+		<constructPlayerAction action="LogisticsExperts" requiredUpgrade="LogisticsExperts">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseHumanScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+		<constructPlayerAction action="ExperimentalDrugs" requiredUpgrade="ExperimentalDrugs">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<energyCost base="10"/> <!-- %energyCost base tier=2 factor=1 -->
+						<productionCost base="12.0"/> <!-- %productionCost base tier=2 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseOperationsScore base="1.0"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+	</actions>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=4 factor=1 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>		
+				<research add="1"/>
+				<influence add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseOperationsProductionScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait type="HumanOperationsUpgrade" requiredUpgrade="HumanOperationsUpgrade"/>
+	</traits>	
+</building>

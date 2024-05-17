@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human">
+	<actions>
+		<clearTileUnitCast name="GauntletOfRuin"
+				cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				icon="Items/GauntletOfRuin"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/GauntletOfRuinTile"
+						casterBlueprint="Effects/GauntletOfRuin"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target>
+					<conditions/>
+					<areas/>
+				</target>
+			</beginTargets>
+		</clearTileUnitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="CorpseCities"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

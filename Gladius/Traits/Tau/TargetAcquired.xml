@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Debuff" icon="Actions/Tau/Markerlight">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<faction name="Tau"/>
+						<noTrait name="Tau/NetworkedMarkerlight"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<opponentRangedAccuracy add="1"/>
+				<rangedDamageReduction max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onCombatSelfModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<attacking/>
+						<faction name="Tau"/>
+						<noTrait name="Tau/NetworkedMarkerlight"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<removeTrait name="Tau/TargetAcquired"/>
+			</effects>
+		</modifier>
+	</onCombatSelfModifiers>
+</trait>

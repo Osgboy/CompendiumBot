@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ThresherScythe"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks max="1"/>
+				<meleeDamage add="6"/> <!-- %meleeDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Tyranids/Biomorph"/>
+		<trait name="Tyranids/BiomorphDamage" requiredUpgrade="Tyranids/BiomorphDamage"/>
+		<trait name="Melee"/>
+		<trait name="Rending"/>
+	</traits>
+</weapon>

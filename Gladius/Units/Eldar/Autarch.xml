@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/Autarch"
+				material="Units/Eldar/Autarch"
+				idleAnimation="Units/Eldar/AutarchIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.1 1.1 1.1"
+				bloodBone="Autarch_Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PowerSword">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+				 		effectBone="Autarch_Sword3"
+						fireInterval="10.0"/>
+			</model>
+		</weapon>
+		<weapon name="FusionPistol">
+			<model>
+				<beamWeapon muzzleBone="Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="Mandiblasters">
+			<model>
+				<projectileWeapon/>
+			</model>
+		</weapon>
+		<weapon name="HaywireGrenade" slotName="HaywireGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Autarch_Hand_R" />
+			</model>
+		</weapon>
+		<weapon name="PlasmaGrenade" slotName="PlasmaGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Autarch_Hand_R"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="12"/> <!-- %meleeAccuracy base weaponSkill=6 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="6"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="12"/> <!-- %rangedAccuracy base ballisticSkill=6 -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/AutarchAttack"
+						beginFire="1.0"
+						endFire="1.67"
+						chargeAnimation="Units/Eldar/AutarchCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.0"
+						meleeAnimation="Units/Eldar/AutarchMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/AutarchDie0"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.33"
+						voiceSound="Units/Eldar/AutarchDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/AutarchMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>				
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<throwGrenade weaponSlotName="HaywireGrenade" cooldown="10">
+			<model>
+				<action animation="Units/Eldar/AutarchGrenade"
+						beginFire="1.0"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="PlasmaGrenade" cooldown="10"
+				requiredUpgrade="Eldar/PlasmaGrenade">
+			<model>
+				<action animation="Units/Eldar/AutarchGrenade"
+						beginFire="1.0"/>
+			</model>				
+		</throwGrenade>
+		<jumpPack cooldown="3">
+			<model>
+				<action animation="Units/Eldar/AutarchJumpMove"
+						sound="Actions/AutarchJumpPack"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Eldar/HammerOfWrath">
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+		<khainesMight cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Eldar/KhainesMight"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Eldar/AutarchAbility"
+						bone="Autarch_Chest"
+						sound="Actions/KhainesMight"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/KhainesMight"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</khainesMight>
+		<command cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Eldar/Command"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Eldar/AutarchAbility"
+						bone="Autarch_Chest"
+						sound="Actions/Command"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<faction name="Eldar"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Eldar/Command"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</command>
+		<genericUnitAbility name="Eldar/AutarchsAssault"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/CaptainHealingSurge"
+						bone="Chest"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Eldar/AutarchsAssaultPassive"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility elite="1"
+				levelUpPriority="1"
+				name="Eldar/ReturnOfTheAeldari"
+				passive="1" 
+				rank="-1"
+				rankMax="0">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Eldar/ReturnOfTheAeldari"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/BattleFocus"/>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Eldar/Forceshield"/>
+		<trait name="Hero"/>
+		<trait name="Psyker"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

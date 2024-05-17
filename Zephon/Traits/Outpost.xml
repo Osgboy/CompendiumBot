@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForNonLargeGroundUnitsAgainstRangedWeapons">
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<noTrait type="City"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Large"/>
+				</unit>
+				<weapon ignoreForTraitVisibility="1">
+					<noTrait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<coverDamageReduction add="0.167"/>
+			</effects>
+		</modifier>	
+		<modifier effectDescription="ForAlliedUnits">
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<ally/>
+					<noTrait type="City"/>
+				</unit>
+			</conditions>
+			<effects>
+				<cityDamageReduction add="0.167"/>
+				<healingRate mul="0.5"/>
+			</effects>
+		</modifier>	
+	</modifiers>
+</trait>

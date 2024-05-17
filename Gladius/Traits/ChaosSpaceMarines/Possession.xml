@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" icon="Actions/ChaosSpaceMarines/Possession" rankMax="2">
+	<onEnemyKilledOpponentTileModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="IronWill"/>
+					</opponent>
+					<opponentTile>
+						<land/>
+					</opponentTile>
+				</encounter>
+			</conditions>
+			<effects>
+				<addUnit name="ChaosSpaceMarines/ChaosSpawn"/>
+			</effects>
+		</modifier>
+	</onEnemyKilledOpponentTileModifiers>
+	<onEnemyKilledSelfModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="IronWill"/>
+					</opponent>
+					<opponentTile>
+						<land/>
+					</opponentTile>
+				</encounter>
+			</conditions>
+			<effects>
+				<processUse action="ChaosSpaceMarines/Possession"/>
+			</effects>
+		</modifier>
+	</onEnemyKilledSelfModifiers>
+</trait>

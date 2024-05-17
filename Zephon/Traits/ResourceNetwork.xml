@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnPlayer="1" visibleOnTile="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<trait type="Outpost"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="1.0"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ResourceNetworkUpgrade">
+			<conditions>
+				<tile>
+					<trait type="Outpost"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="0.25"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

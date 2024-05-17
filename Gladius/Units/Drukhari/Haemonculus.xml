@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement13">
+	<model>
+		<unit mesh="Units/Drukhari/Haemonculus"
+				material="Units/Drukhari/Haemonculus"
+				idleAnimation="Units/Drukhari/HaemonculusIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitFocusHeightModifier="24"
+				portraitZoomModifier="1.1"
+				scale="0.75 0.75 0.75"
+				bloodBone="Chest"/>
+	</model>
+	<weapons>
+		<weapon name="Scissorhand">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+		<weapon name="StingerPistol">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle" fireInterval="0.4"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=6 factor=0.5 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Drukhari/HaemonculusAttack"
+						beginFire="1.0"
+						endFire="1.5"
+						chargeAnimation="Units/Drukhari/HaemonculusCharge"
+						chargeBeginFire="0.4"
+						chargeEndFire="0.9"
+						meleeAnimation="Units/Drukhari/HaemonculusMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/HaemonculusDie0"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.6"
+						voiceSound="Units/Drukhari/HaemonculusDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/HaemonculusMove"
+						sound="Units/Tyranids/RavenerMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<combatDrugs consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="Drukhari/CombatDrugs"
+				requiredUpgrade="Drukhari/CombatDrugsUpgrade">
+			<model>
+				<action sound="Actions/CombatDrugs"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/CombatDrugs" duration="10"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Drukhari/Hypex">
+									<effects>
+										<addTrait duration="10" name="MoveThroughCover"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</combatDrugs>
+		<blessingsOfTheOmnissiah cooldown="1"
+				name="Drukhari/TwistedAnimator"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/AdeptusMechanicus/TechPriestDominusAbility"
+						sound="Actions/TwistedAnimator"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+							<type name="Drukhari/Wrack"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<genericUnitAbility passive="1"
+				name="Drukhari/MasterOfPain"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/MasterOfPain"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<blessingsOfTheOmnissiah cooldown="3"
+				name="Drukhari/Fleshcraft"
+				rank="-1"
+				rankMax="2"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Drukhari/HaemonculusAbility"
+						sound="Actions/Fleshcraft"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="Fortification"/>
+							<faction name="Drukhari"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="8" addMax="24"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<crucibleOfMalediction cooldown="3"
+				name="Drukhari/CrucibleOfMalediction"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Drukhari/HaemonculusAbility"
+						bone="Chest"
+						sound="Actions/CrucibleOfMalediction"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="3" lineOfSight="1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="CrucibleOfMalediction"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</crucibleOfMalediction>
+		<genericUnitAbility elite="1"
+				passive="1"
+				levelUpPriority="1"
+				name="Drukhari/ToweringArrogance"
+				rank="-1"
+				rankMax="0">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/ToweringArrogance"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Drukhari/ExtraInfantryArmour"/>
+		<trait name="FeelNoPain"/>
+		<trait name="Hero"/>
+		<trait name="Drukhari/BladeArtists"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Drukhari/RaidersTactics"/>
+		<trait name="Drukhari/RaidersTacticsHealingRate" requiredUpgrade="Drukhari/RaidersTacticsHealingRate"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

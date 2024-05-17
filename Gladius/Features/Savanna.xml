@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Savanna"
+		ambientSoundLayer="0"
+		ambientSoundPriority="0"
+		audioEffectSystem="Plains"
+		category="Ground">
+	<ground channel="1"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomassOnConsume add="15"/>
+				<buildingSlots add="3"/>
+				<energy mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="AdeptusMechanicus"/>
+				</player>
+			</conditions>
+			<effects>
+				<buildingSlots add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/TundraRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rocks0"/>
+			<mesh name="Terrain/Rocks/Rocks1"/>
+			<mesh name="Terrain/Rocks/Rocks2"/>
+			<mesh name="Terrain/Rocks/Rocks3"/>
+			<mesh name="Terrain/Rocks/Rocks4"/>
+			<mesh name="Terrain/Rocks/Rocks5"/>
+			<mesh name="Terrain/Rocks/Rocks6"/>
+			<mesh name="Terrain/Rocks/Rocks7"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/SavannaBush0"/>
+				<mesh name="Terrain/Vegetation/SavannaBush13"/>
+				<mesh name="Terrain/Vegetation/SavannaBush14"/>
+				<mesh name="Terrain/Vegetation/SavannaBush15"/>
+				<mesh name="Terrain/Vegetation/SavannaBush16"/>
+				<mesh name="Terrain/Vegetation/SavannaBush17"/>
+				<mesh name="Terrain/Vegetation/SavannaBush18"/>
+				<mesh name="Terrain/Vegetation/SavannaBush19"/>
+				<mesh name="Terrain/Vegetation/SavannaBush1"/>
+				<mesh name="Terrain/Vegetation/SavannaBush20"/>
+				<mesh name="Terrain/Vegetation/SavannaBush21"/>
+				<mesh name="Terrain/Vegetation/SavannaBush22"/>
+				<mesh name="Terrain/Vegetation/SavannaBush2"/>
+				<mesh name="Terrain/Vegetation/SavannaBush3"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertBush23"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertBush24"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleBush25"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush26"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush27"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush28"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush29"/>
+				<mesh name="Terrain/Vegetation/SavannaJungleBush30"/>
+				<mesh name="Terrain/Vegetation/SavannaJungleBush31"/>
+				<mesh name="Terrain/Vegetation/SavannaTundraBush0" weight="11.5"/>
+				<mesh name="Terrain/Vegetation/SavannaTundraBush1" weight="11.5"/>
+			</meshes>
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree25"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree26"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree27"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree28"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree29"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree30"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree31"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree32"/>
+				<mesh name="Terrain/Vegetation/SavannaTree33"/>
+				<mesh name="Terrain/Vegetation/SavannaTree34"/>
+				<mesh name="Terrain/Vegetation/SavannaTree35"/>
+				<mesh name="Terrain/Vegetation/SavannaTree36"/>
+			</meshes>
+		</trees>
+	</vegetation>	
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/BrownDecal0"/>
+			<mesh name="Terrain/Decals/BrownDecal1"/>
+			<mesh name="Terrain/Decals/GeneralDecal0"/>
+			<mesh name="Terrain/Decals/GeneralDecal1"/>				
+		</meshes>
+	</decals>
+</feature>

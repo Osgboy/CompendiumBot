@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Voice">
+	<actions>
+		<unitCast cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/CursecharmOfCrla"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" type="CursecharmOfCrla"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="AmoetiasEmbrace"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

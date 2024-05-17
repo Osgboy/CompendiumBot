@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/KataphronDestroyer"
+				material="Units/AdeptusMechanicus/KataphronDestroyer"
+				idleAnimation="Units/AdeptusMechanicus/KataphronDestroyerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Chest"
+				uvAnimated="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="HeavyGravCannon">
+			<model>
+				<beamWeapon muzzleBone="GunArmMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="PhosphorBlaster">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="0.3"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodUpkeep base="4.0"/> <!-- %foodUpkeep base tier=8 factor=1 -->
+				<foodCost base="40.0"/> <!-- %foodCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="8.0"/> <!-- %hitpointsMax base toughness=5 wounds=2 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronDestroyerAttack"
+						beginFire="0.9"
+						endFire="1.9"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronDestroyerDie"
+						animationCount="2"
+						sound="Units/AdeptusMechanicus/VehicleDie"
+						soundCount="3"
+						soundDelay="0.0"
+						voiceSound="Units/AdeptusMechanicus/InfantryVoiceDie"
+						voiceSoundCount="5"/>/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronDestroyerMove"
+						sound="Units/AdeptusMechanicus/KataphronDestroyerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/CanticlesOfTheOmnissiah"/>
+		<trait name="AdeptusMechanicus/Bionics"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AdeptusMechanicus/ExtraInfantryArmour"/>
+		<trait name="Relentless"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

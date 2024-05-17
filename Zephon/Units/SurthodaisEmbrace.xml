@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Back"
+				material="Units/SurthodaisEmbrace"
+				mesh="Units/SurthodaisEmbrace"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="SurthodaisHand" count="2">
+			<models>
+				<weapon fireInterval="10"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<algaeCost base="15"/> <!-- %algaeCost base tier=7 factor=0.25 -->
+				<algaeUpkeep base="0.75"/> <!-- %algaeUpkeep base tier=7 factor=0.25 -->
+				<armor base="2"/>
+				<cargoSlots base="3"/>
+				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/SurthodaisEmbraceCharge"
+						meleeAnimation="Units/SurthodaisEmbraceMelee"
+						meleeBeginSwing="0.4"
+						meleeEndSwing="0.5"
+						sound="Units/SurthodaisEmbraceMelee"
+						responseSound="Units/Responses/SurthodaisEmbraceAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/SurthodaisEmbraceDie0"
+						groundImpact="1.1"
+						sound="Units/SurthodaisEmbraceDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/SurthodaisEmbraceImpact"
+						responseSound="Units/Responses/SurthodaisEmbraceEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/SurthodaisEmbraceIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/SurthodaisEmbraceMove"
+						responseSound="Units/Responses/SurthodaisEmbraceMove"
+						responseSoundCount="3"
+						sound="Units/SurthodaisEmbraceMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbracePoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+			</model>
+		</skip>
+		<unitAction name="DarkCaress"
+				passive="1"
+				requiredUpgrade="DarkCaress">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedUnits">
+									<effects>
+										<addTrait type="DarkCaress"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<unitCast name="AbyssalRage"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/SurthodaisEmbraceAbility0"
+						blueprint="Effects/AbyssalRage"
+						responseSound="Units/Responses/SurthodaisEmbraceAbyssalRage"
+						sound="Units/SurthodaisEmbraceAbyssalRage"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="AbyssalRage" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

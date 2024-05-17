@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Swamp"
+		category="Ground">
+	<ground channel="0"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<food mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/SwampRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PalmBush3"/>
+				<mesh name="Terrain/Vegetation/PalmBush4"/>
+				<mesh name="Terrain/Vegetation/PalmBush5"/>
+				<mesh name="Terrain/Vegetation/PalmBush7"/>
+				<mesh name="Terrain/Vegetation/PalmBush8"/>
+				<mesh name="Terrain/Vegetation/PalmBush9"/>
+				<mesh name="Terrain/Vegetation/PalmBush10"/>
+				<mesh name="Terrain/Vegetation/PalmBush11"/>
+				<mesh name="Terrain/Vegetation/Grass4"/>
+				<mesh name="Terrain/Vegetation/Grass0"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/Palm12"/>
+				<mesh name="Terrain/Vegetation/Palm11"/>
+				<mesh name="Terrain/Vegetation/Tree4"/>
+				<mesh name="Terrain/Vegetation/Tree5"/>
+				<mesh name="Terrain/Vegetation/Tree6"/>
+				<mesh name="Terrain/Vegetation/Tree7"/>
+				<mesh name="Terrain/Vegetation/Tree8"/>
+				<mesh name="Terrain/Vegetation/Tree2"/>
+				<mesh name="Terrain/Vegetation/Tree9"/>
+				<mesh name="Terrain/Vegetation/Tree10"/>
+				<mesh name="Terrain/Vegetation/Tree0"/>
+				<mesh name="Terrain/Vegetation/Tree1"/>
+				<mesh name="Terrain/Vegetation/Tree12"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>	
+			<mesh name="Terrain/Decals/SlimeDecal1"/>	
+			<mesh name="Terrain/Decals/SlimeDecal2"/>		
+			<mesh name="Terrain/Decals/MossDecal0"/>		
+			<mesh name="Terrain/Decals/MossDecal1"/>	
+			<mesh name="Terrain/Decals/FlowersDecal0"/>	
+			<mesh name="Terrain/Decals/FlowersDecal1"/>		
+		</meshes>
+	</decals>
+</feature>

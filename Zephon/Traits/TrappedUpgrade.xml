@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

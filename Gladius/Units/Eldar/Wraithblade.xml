@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/Wraithblade"
+				material="Units/Eldar/Wraithblade"
+				idleAnimation="Units/Eldar/WraithbladeIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				explosionsBone="Wraithblade_Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="90"/>
+	<weapons>
+		<weapon name="Ghostaxe">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=6 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<!-- <meleeInitiative base="3"/> -->
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Eldar/WraithbladeCharge"
+						meleeAnimation="Units/Eldar/WraithbladeMelee"
+						meleeBeginSwing="0.25"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/WraithbladeDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/Eldar/MaleInfantryDie"
+						voiceSoundCount="10"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/WraithbladeMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/Forceshield"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Rage"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Traits/Blighted" attributesModifiedByUnit="0">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedAccuracy min="12"/> <!-- Don't roll to hit. -->
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="IgnoresCover"/>
+	</traits>
+</weapon>

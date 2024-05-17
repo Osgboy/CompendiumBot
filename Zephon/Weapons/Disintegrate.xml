@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/DisintegrateBeams"
+				chargeBlueprint="Effects/DisintegrateCharge"
+				fireInterval="0.05"
+				fireSound="Weapons/Disintegrate"
+				fireSoundBeginCount="1"
+				muzzleFlashesBlueprint="Effects/DisintegrateMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="8"/> <!-- %armorPenetration base tier=9 -->
+				<attacks base="3"/>
+				<damage base="16"/> <!-- %damage base tier=9 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+</weapon>

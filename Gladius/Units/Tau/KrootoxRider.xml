@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/Tau/KrootoxRider"
+				material="Units/Tau/KrootoxRider"
+				idleAnimation="Units/Tau/KrootoxRiderIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Rider_Belly"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="70" memberDeltaY="60"/>
+	<weapons>
+		<weapon name="KrootGun">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="0.43"/>
+			</model>
+		</weapon>
+		<weapon name="CloseCombatWeapon">
+ 			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=3 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/KrootoxRiderAttack"
+						beginFire="0.97"
+						endFire="1.73"
+						chargeAnimation="Units/Tau/KrootoxRiderCharge"
+						chargeBeginFire="0.63"
+						chargeEndFire="0.73"
+						meleeAnimation="Units/Tau/KrootoxRiderMelee"
+						meleeBeginSwing="0.4"
+						meleeEndSwing="0.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/KrootoxRiderDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/Tau/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tau/KrootoxRiderMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+		<trait name="Infiltrate"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="ForestStealth"/>
+	</traits>
+</unit>

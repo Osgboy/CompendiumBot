@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement4">
+	<model>
+		<structureUnit mesh="Units/SpaceMarines/AquilaMacroCannon"
+				material="Units/SpaceMarines/AquilaMacroCannon"
+				groundMaterial="Units/SpaceMarines/AquilaMacroCannonGround"
+				idleAnimation=""
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1 1 1"
+				explosionsBone="Base"
+				portraitFocusHeightModifier="16"/>
+	</model>
+	<weapons>
+		<weapon name="AquilaMacroCannon">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/AquilaMacroCannonTurret"
+						material="Units/SpaceMarines/AquilaMacroCannon"
+						bone="Turret"
+						muzzleBone=".Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter" count="4" requiredUpgrade="SpaceMarines/PredatorLascannon">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/AquilaMacroCannonHeavyBolters"
+						material="Units/SpaceMarines/AquilaMacroCannon"
+						bone="Turret"
+						muzzleBone=".Muzzle"
+						muzzleCount="4"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="11"/> <!-- %armor base armor=15/15/15 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<hitpointsMax base="96.0"/> <!-- %hitpointsMax base armor=15/15/15 wounds=4 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax max="0"/>
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 --> 
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="12.0"/> <!-- %requisitionsUpkeep base tier=11 factor=1 -->
+				<requisitionsCost base="240.0"/> <!-- %requisitionsCost base tier=11 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Fortification"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Transport"/>
+	</traits>
+</unit>

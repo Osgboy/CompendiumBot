@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon fireSound="Weapons/BioPlasma"
+		 		fireSoundCount="3"
+		 		flamesBlueprint="Effects/BioPlasma"
+		 		flamesEmitterBlueprint="Effects/BioPlasmaEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Blast"/>
+		<trait name="Tyranids/ShortRangedDamage" requiredUpgrade="Tyranids/ShortRangedDamage"/>
+	</traits>
+</weapon>

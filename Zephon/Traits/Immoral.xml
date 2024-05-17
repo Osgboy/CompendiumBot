@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" rankMax="19" rankPerTurn="1" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty addMin="-0.5" addMax="-10"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/Weirdboy"
+				material="Units/Orks/Weirdboy"
+				idleAnimation="Units/Orks/WeirdboyIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Torso"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="WeirdboyStaff"/>
+		<weapon name="Frazzle" slotName="Frazzle" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="Staff"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<energyUpkeep base="1.5"/> <!-- %energyUpkeep base tier=5 factor=1 -->
+				<energyCost base="15.0"/> <!-- %energyCost base tier=5 factor=0.5 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="3.0"/> <!-- %influenceUpkeep base tier=5 factor=2 -->
+				<influenceCost base="60.0"/> <!-- %influenceCost base tier=5 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/WeirdboyMeleeAttack"
+						chargeAnimation="Units/Orks/WeirdboyCharge"
+						chargeDefenseAnimation="Units/Orks/WeirdboyChargeDefense"
+						meleeAnimation="Units/Orks/WeirdboyMelee"
+						meleeDefenseAnimation="Units/Orks/WeirdboyMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/WeirdboyDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/WeirdboyMove"
+						sound="Units/Orks/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<frazzle cooldown="1"
+				levelUpPriority="0.1"
+				name="Orks/Frazzle"
+				psychicPower="1"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="Frazzle">
+			<model>
+				<action animation="Units/Orks/WeirdboyAbility"
+						beginFire="1.0"
+						endFire="2.0"/>
+			</model>	
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>	
+		</frazzle>
+		<warpath cooldown="2"
+				levelUpPriority="0.3"
+				name="Orks/Warpath"
+				rank="-1"
+				rankMax="2"> <!-- growing axe icon -->
+			<model>
+				<action animation="Units/Orks/WeirdboyAbility"
+						sound="Actions/DrawSword"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<trait name="MobRule"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Orks/Warpath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</warpath>
+		<channelMentalEmissions name="Orks/ChannelMentalEmissions"
+				levelUpPriority="0.2"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Orks/ChannelMentalEmissions"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</channelMentalEmissions>
+		<daJump cooldownMin="5"
+				cooldownMax="5"
+				elite="1"
+				levelUpPriority="0"
+				name="Orks/DaJump"
+				radius="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/Orks/WeirdboyAbility"
+						sound="Actions/Teleport"/>
+			</model>
+		</daJump> <!-- use the bubble effect with inverted transparency to hide teleporting dudes + arcs shooting out -->
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Orks/ExtraInfantryArmour"/>
+		<trait name="FuriousCharge"/>
+		<trait name="Hero"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="Psyker"/>
+	</traits>
+</unit>

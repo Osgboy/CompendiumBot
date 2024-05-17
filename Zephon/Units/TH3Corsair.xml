@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull_Shake"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				groupMemberDeltaX="90"
+				groupMemberDeltaY="50"
+				material="Units/TH3Corsair"
+				mesh="Units/TH3Corsair"
+				normalWeight="0.1"
+				position="0 0 48"
+				scale="0.7 0.7 0.7">
+		</unit>
+	</model>
+	<weapons>
+		<weapon type="MissileLauncher" count="2">
+			<models>
+				<missileWeapon muzzleBone="Missile_L"/>
+				<missileWeapon muzzleBone="Missile_R"/>
+			</models>
+		</weapon>
+		<weapon type="HeavyMachineGun">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle0"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="DecoyFlares">
+			<models>
+				<weapon mesh="Units/TH3CorsairDecoyFlares"
+						material="Units/TH3Corsair"
+						bone="Hull_Shake"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="3"/>
+				<energyCost base="60"/> <!-- %energyCost base tier=7 factor=1 -->
+				<energyUpkeep base="3.0"/> <!-- %energyUpkeep base tier=7 factor=1 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<mineralsCost base="60"/> <!-- %mineralsCost base tier=7 factor=1 -->
+				<mineralsUpkeep base="3.0"/> <!-- %mineralsUpkeep base tier=7 factor=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="6"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseAircraftScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/TH3CorsairAttack"
+						beginFire="0.33"
+						endFire="2.3"
+						responseSound="Units/Responses/TH3CorsairAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/TH3CorsairDie0"
+						sound="Units/TH3CorsairDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/TH3CorsairImpact"
+						responseSound="Units/Responses/TH3CorsairEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/TH3CorsairIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/TH3CorsairMove"
+						responseSound="Units/Responses/TH3CorsairMove"
+						responseSoundCount="3"
+						sound="Units/TH3CorsairMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

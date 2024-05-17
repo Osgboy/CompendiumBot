@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent match="Any">
+						<noTrait name="Fortification"/>
+						<noTrait name="Vehicle"/>
+						<noTrait name="MonstrousCreature"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<lifeStealFactor add="0.83"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Acrin">
+	<model>
+		<unit explosionsBone="Body"
+				material="Units/AcrinTitan"
+				mesh="Units/AcrinTitan"
+				normalWeight="0.1"
+				scale="1.3 1.3 1.3"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="SurthodaisHand" count="2">
+			<models>
+				<weapon fireInterval="10"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<algaeCost base="20"/> <!-- %algaeCost base tier=8 factor=0.25 -->
+				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=8 factor=0.25 -->
+				<armor base="2"/>
+				<cargoSlots base="2"/>
+				<foodCost base="40"/> <!-- %foodCost base tier=8 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=8 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
+				<moraleMax base="12"/>
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/AcrinTitanCharge"
+						meleeAnimation="Units/AcrinTitanMelee"
+						meleeBeginSwing="0.4"
+						meleeEndSwing="0.5"
+						sound="Units/DarkVassaelAttack"
+						responseSound="Units/Responses/DarkVassaelAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AcrinTitanDie0"
+						groundImpact="1.1"
+						sound="Units/DarkVassaelDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AcrinTitanImpact"
+						responseSound="Units/Responses/DarkVassaelEndureHighDamage"
+						responseSoundCount="1"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AcrinTitanIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelKill"
+						responseSoundCount="1"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AcrinTitanMove"
+						responseSound="Units/Responses/DarkVassaelMove"
+						responseSoundCount="3"
+						sound="Units/DarkVassaelMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+		<trait type="Transport"/>
+		<trait type="Titan"/>
+	</traits>
+</unit>

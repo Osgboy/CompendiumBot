@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human">
+	<actions>
+		<unitCast consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/ArgosyTarge"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="ArgosyTarge" duration="2"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="TacticalArcheology"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

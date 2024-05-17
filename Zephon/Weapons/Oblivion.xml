@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/OblivionCannonlExplosions"
+				fireEffectDelay="0.25"
+				fireInterval="1"
+				fireSound="Weapons/Oblivion"
+				fireSoundCount="4"
+				muzzleFlashesBlueprint="Effects/OblivionCannonlMuzzleFlashes"
+				projectilesBlueprint="Effects/OblivionProjectiles"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<attacks base="1"/>
+				<damage base="12"/> <!-- %damage base tier=8 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMin="2" rangeMax="6"/>
+	<traits>
+		<trait type="IndirectFire"/>
+		<trait type="LargeSplash"/>
+		<trait type="OblivionUpgrade" requiredUpgrade="OblivionUpgrade"/>
+	</traits>
+</weapon>

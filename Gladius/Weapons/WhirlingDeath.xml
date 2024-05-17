@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Drukhari/WhirlingDeath">
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks base="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<meleeDamage add="3"/>
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="Drukhari/WhirlingDeath"/>
+		<trait name="Drukhari/MeleeWeaponBonus" requiredUpgrade="Drukhari/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

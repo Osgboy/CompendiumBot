@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/ChaosSpaceMarines/WorthyOffering" rankMax="2">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<trait name="ChaosSpaceMarines/ChampionOfChaos"/>
+				</unit>
+			</conditions>
+			<effects>
+				<boonOfChaosChance mulMin="0.25" mulMax="0.75"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

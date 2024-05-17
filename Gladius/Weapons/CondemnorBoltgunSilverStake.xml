@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/CondemnorBoltgun"
+				fireSoundCount="1"
+				muzzleFlashesBlueprint=""
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/CondemnorProjectiles"
+				projectilesEmitterBlueprint="Effects/StranglethornProjectilesEmitter"
+				smokeBlueprint=""
+				explosionsBlueprint="Effects/DustExplosions"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="2"/> <!-- %rangedDamage add strength=5 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="SistersOfBattle/PsyShock"/>
+		<trait name="SistersOfBattle/AssaultWeaponBonus" requiredUpgrade="SistersOfBattle/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

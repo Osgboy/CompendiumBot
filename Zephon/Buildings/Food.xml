@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building position="41">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=4 factor=1 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<food add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseFoodScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait type="FoodUpgrade" requiredUpgrade="FoodUpgrade"/>
+	</traits>
+</building>

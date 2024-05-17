@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/Mortifier"
+				material="Units/SistersOfBattle/Mortifier"
+				idleAnimation="Units/SistersOfBattle/MortifierIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Hull"
+				explosionsBone="Hull"
+				walker="1"/>
+	</model>
+	<group size="1" rowSize="1" memberDeltaX="64" memberDeltaY="120"/>
+	<weapons>
+		<weapon name="HeavyFlamer" count="2">
+			<model>
+				<flamerWeapon muzzleBone="Muzzle"
+						muzzleCount="4"/>
+			</model>
+		</weapon>
+		<weapon name="PenitentBuzzBlade" count="2">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="None" enabled="0"
+				requiredUpgrade="SistersOfBattle/AnchoriteSarcophagus">
+			<model>
+				<weapon mesh="Weapons/SistersOfBattle/MortifierCasket"
+						material="Weapons/SistersOfBattle/MortifierCasket" 
+						bone="Lid"/>
+			</model>
+		</weapon>	
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<hitpointsMax base="20.0"/> <!-- %hitpointsMax base toughness=5 wounds=5 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions> count="2"
+		<attack>
+			<model>
+				<action	animation="Units/SistersOfBattle/MortifierAttack"
+						beginFire="1.0"
+						endFire="2.0"
+						chargeAnimation="Units/SistersOfBattle/MortifierCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="1.2"				
+						meleeAnimation="Units/SistersOfBattle/MortifierMelee"
+						meleeBeginSwing="0.33"
+						meleeEndSwing="0.43"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/MortifierDie0"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.2"
+						voiceSound="Units/SmallVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0.15"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/MortifierMove"
+						sound="Units/ChaosSpaceMarines/MaulerfiendMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="SistersOfBattle/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Zealot"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+		<trait name="SistersOfBattle/AnguishOfTheUnredeemed"/>
+		<trait name="SistersOfBattle/BerserkKillingMachine"/>
+		<trait name="SistersOfBattle/AnchoriteSarcophagus" requiredUpgrade="SistersOfBattle/AnchoriteSarcophagus"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SistersOfBattle/ExtraVehicleArmour"/>
+	</traits>
+</unit>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<loyalty add="1"/>
+				<production add="6"/>
+				<research add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="Eldar/Guardian"/>
+		<produceUnit unit="Eldar/Ranger" requiredUpgrade="Eldar/Ranger"/>
+		<produceUnit unit="Eldar/HowlingBanshee" requiredUpgrade="Eldar/HowlingBanshee"/>
+		<produceUnit unit="Eldar/DarkReaper" requiredUpgrade="Eldar/DarkReaper"/>
+		<produceUnit unit="Eldar/FireDragon" requiredUpgrade="Eldar/FireDragon"/>
+		<produceUnit unit="Eldar/Warlock" requiredUpgrade="Eldar/Warlock"/>
+		<produceUnit unit="Eldar/Wraithblade" requiredUpgrade="Eldar/Wraithblade"/>
+		<produceUnit unit="Eldar/Wraithknight" requiredUpgrade="Eldar/Wraithknight"/>
+	</actions>
+	<traits>
+		<trait name="Eldar/InfantryBuildingBonus" requiredUpgrade="Eldar/InfantryBuildingBonus"/>
+	</traits>
+</building>

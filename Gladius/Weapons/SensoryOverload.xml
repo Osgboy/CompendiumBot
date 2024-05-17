@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/PsychicScream"
+				fireSoundCount="3"
+				fireInterval="10.0"
+		 		beamsBlueprint="Effects/SensoryOverload"
+				beamsEmitterBlueprint="Effects/SensoryOverloadEmitter"
+				muzzleFlashesBlueprint="Effects/SensoryOverloadMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/SensoryOverloadMuzzleFlashesEmitter"
+				effectFaceWeight="1.0"
+				effectScale="1.0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="4"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Blinding"/>
+		<trait name="Concussive"/>
+		<trait name="Pinning"/>
+		<trait name="PsychicPower"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

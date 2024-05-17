@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>
+		<unit mesh="Units/Tau/HammerheadGunship"
+				material="Units/Tau/HammerheadGunship"
+				idleAnimation="Units/Tau/HammerheadGunshipIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				position="0 0 24"
+				explosionsBone="Hull"/>
+	</model>
+	<weapons>
+		<weapon name="RailgunWithSolidShot">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle2" fireInterval="0.67"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedBurstCannon">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						muzzleCount="2"/>		
+			</model>
+		</weapon>
+		<weapon name="SeekerMissile" enabled="0" slotName="SeekerMissile">
+			<model>
+				<missileWeapon muzzleBone=".MissileMuzzle"
+						muzzleCount="2"
+						missileScale="0.8"
+						fireInterval="1.25"/>		
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="7"/> <!-- %armor base armor=12/11/10 -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/11/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Tau/HammerheadGunshipAttack"
+						beginFire="0.86"
+						endFire="2.39"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/HammerheadGunshipDie"
+						animationCount="2"
+						sound="Units/Tau/VehicleDie"
+						soundCount="1"
+						soundDelay="0.1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Tau/SkimmerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<useWeapon cooldown="5" 
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				requiredUpgrade="Tau/SeekerMissile"
+				weaponSlotName="SeekerMissile">
+			<model>
+				<action	beginFire="1.0"
+						endFire="2.25"/>
+			</model>				
+		</useWeapon>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+	</actions>
+	<traits>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Tau/ExtraVehicleArmour"/>
+		<trait name="Tau/FireTeam"/>
+		<trait name="Tau/AdvancedTargetingSystem" requiredUpgrade="Tau/AdvancedTargetingSystem"/>
+		<trait name="Tau/AutomatedRepairSystem" requiredUpgrade="Tau/AutomatedRepairSystem"/>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="Tau/DisruptionPod" requiredUpgrade="Tau/DisruptionPod"/>
+		<trait name="Tau/FlechetteDischarger" requiredUpgrade="Tau/FlechetteDischarger"/>
+		<trait name="Tau/PointDefenceTargetingRelay" requiredUpgrade="Tau/PointDefenceTargetingRelay"/>
+		<trait name="MoveThroughCover" requiredUpgrade="Tau/SensorSpines"/>
+	</traits>
+</unit>

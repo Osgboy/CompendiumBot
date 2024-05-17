@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Traits/Tau/TidewallShieldline">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<faction name="Tau"/>
+					<noTrait name="Flyer"/>
+				</unit>
+				<encounter>
+					<weapon>
+						<noTrait name="Melee"/>
+						<noTrait name="Witchfire"/>
+						<additionalMembersHit equal="0"/>
+					</weapon>
+				</encounter>
+			</conditions>
+			<effects>
+				<damageReturnFactor add="0.17"/>
+			</effects>
+		</modifier>
+		
+		<!-- So the trait appears on all Tau Non-Flyers. -->
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<faction name="Tau"/>
+					<noTrait name="Flyer"/>
+				</unit>
+			</conditions>
+		</modifier>
+		
+	</modifiers>
+</trait>

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement13">
+	<model>
+		<unit mesh="Units/Drukhari/Archon"
+				material="Units/Drukhari/Archon"
+				idleAnimation="Units/Drukhari/ArchonIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitZoomModifier="1.1"
+				scale="0.7 0.7 0.7"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="BlastPistol">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="Huskblade">
+			<model>
+				<weapon/>
+			</model>
+		</weapon>
+		<weapon name="PlasmaGrenade" slotName="PlasmaGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_R"
+						grenadeScale="0.8 0.8 0.8"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="12"/> <!-- %meleeAccuracy base weaponSkill=7 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="7"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="4"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="12"/> <!-- %rangedAccuracy base ballisticSkill=7 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Drukhari/ArchonAttack"
+						beginFire="1.2"
+						endFire="1.8"
+						chargeAnimation="Units/Drukhari/ArchonCharge"
+						chargeBeginFire="0.5"
+						chargeEndFire="1.1"
+						meleeAnimation="Units/Drukhari/ArchonMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.25"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/ArchonDie0"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.8"
+						voiceSound="Units/Drukhari/ArchonDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/ArchonMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="PlasmaGrenade" cooldown="10"
+				requiredUpgrade="Drukhari/PlasmaGrenade">
+			<model>
+				<action animation="Units/Drukhari/ArchonGrenade"
+						beginFire="1.7"/>
+			</model>				
+		</throwGrenade>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<combatDrugs consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="Drukhari/CombatDrugs"
+				requiredUpgrade="Drukhari/CombatDrugsUpgrade">
+			<model>
+				<action sound="Actions/CombatDrugs"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/CombatDrugs" duration="10"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Drukhari/Hypex">
+									<effects>
+										<addTrait duration="10" name="MoveThroughCover"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</combatDrugs>
+		<genericUnitAbility cooldown="3"
+				name="Drukhari/Shadowfield"
+				passive="1">
+			<perTurnProcessUseConditions>
+				<unit>
+					<damagedThisTurn/>
+				</unit>
+			</perTurnProcessUseConditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/Shadowfield"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="Drukhari/Overlord"
+				passive="1"
+				rank="-1" 
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/Overlord"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<ancientEvil cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Drukhari/AncientEvil"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Drukhari/ArchonAbility"
+						sound="Actions/AncientEvil"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radiusMin="1" radiusMax="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<faction name="Drukhari"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="2" name="Drukhari/AncientEvil"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ancientEvil>
+		<soulHarvest cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Drukhari/SoulHarvest"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Drukhari/ArchonAbility"
+						sound="Actions/SoulHarvest"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="3">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="Drukhari"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Drukhari/SoulHarvest"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</soulHarvest>
+		<splinteredGenius cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Drukhari/SplinteredGenius"
+				elite="1"
+				rank="-1"
+				rankMax="0"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Drukhari/ArchonAbility"
+						sound="Actions/SplinteredGenius"/>
+			</model>
+			<conditions>
+				<unit>
+					<actionPoints equal="0"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<actionPoints add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</splinteredGenius>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Drukhari/BladeArtists"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Drukhari/ExtraInfantryArmour"/>
+		<trait name="Fleet"/>
+		<trait name="Hero"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Drukhari/RaidersTactics"/>
+		<trait name="Drukhari/RaidersTacticsHealingRate" requiredUpgrade="Drukhari/RaidersTacticsHealingRate"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

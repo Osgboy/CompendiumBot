@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement1" spawnDistanceMin="6">
+	<model>
+		<unit mesh="Units/Neutral/NeophyteHybrid"
+				material="Units/Neutral/NeophyteHybrid"
+				idleAnimation="Units/Neutral/NeophyteHybridIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="6" rowSize="3" memberDeltaX="70" memberDeltaY="60"/>
+	<weapons>
+		<weapon name="Autogun">
+			<model>
+				<projectileWeapon mesh="Weapons/Neutral/Autogun"
+						material="Units/Neutral/NeophyteHybrid"
+						bone="Bone099"
+						muzzleBone=".Muzzle"
+						fireInterval="0.1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=4 factor=1 -->
+				<foodCost base="10.0"/> <!-- %foodCost base tier=4 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<oreCost base="10.0"/> <!-- %oreCost base tier=4 factor=0.5 -->
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Neutral/NeophyteHybridAttack"
+						beginFire="0.8"
+						endFire="2.3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/NeophyteHybridDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Neutral/NeophyteHybridMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<returnToTheShadows cooldown="2"
+				consumedActionPoints="0" consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/ReturnToTheShadows"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Shrouded"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</returnToTheShadows>
+	</actions>
+	<traits>
+		<trait name="CultAmbush"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+	</traits>
+</unit>

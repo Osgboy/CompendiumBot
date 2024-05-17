@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2">
+	<model>
+		<unit mesh="Units/Tyranids/Tervigon"
+				material="Units/Tyranids/Tervigon"
+				idleAnimation="Units/Tyranids/TervigonIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.1 1.1 1.1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="CrushingClaws">
+			<model>
+				<weapon fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="DesiccatorLarvae" requiredUpgrade="Tyranids/DesiccatorLarvae">
+			<model>
+				<flamerWeapon muzzleBone="BloodBone"/>
+			</model>
+		</weapon>
+		<weapon name="StingerSalvo">
+			<model>
+				<projectileWeapon muzzleBone=".BackSpikes" fireInterval="0.666666666667"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<biomassUpkeep base="4.0"/> <!-- %biomassUpkeep base tier=8 factor=1 -->
+				<biomassCost base="80.0"/> <!-- %biomassCost base tier=8 factor=1 -->
+				<hitpointsMax base="42.0"/> <!-- %hitpointsMax base toughness=6 wounds=7 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=8 factor=1.5 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=8 factor=1.5 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/TervigonAttack"
+						beginFire="1.1"
+						endFire="2.16666666667"
+						chargeAnimation="Units/Tyranids/TervigonCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="0.733333333333"
+						meleeAnimation="Units/Tyranids/TervigonMelee"
+						meleeBeginSwing="0"
+						meleeEndSwing="0.666"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/TervigonDie"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Tyranids/LargeDie"
+						voiceSoundCount="4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/TervigonMove"
+						sound="Units/Tyranids/TervigonMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<genericUnitAbility name="Tyranids/SynapseCreature" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/SynapseLink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="Tyranids/ShadowInTheWarp" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/ShadowInTheWarp"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Tyranids/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+		<livingIncubator cooldown="3"
+				name="Tyranids/LivingIncubator"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Tyranids/TervigonAbility"
+						sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<conditions>
+						<unit>
+							<trait name="Tyranids/MassIncubation"/>
+						</unit>
+					</conditions>
+					<effects>
+						<cooldown add="-2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<land/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tyranids/Termagant" consumedAction="0" consumedMovement="0" levelMin="0" levelMax="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</livingIncubator>
+		<catalyst cooldown="1"
+				name="Tyranids/Catalyst"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Tyranids/TervigonAbility"
+						sound="Actions/HiveMindBuff"/>
+			</model>			
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+							<faction name="Tyranids"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="4" addMax="12"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="4" addMax="12"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</catalyst>
+		<genericUnitAbility name="Tyranids/BroodProgenitor"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radiusMin="1" radiusMax="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/BroodProgenitor"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<massIncubation consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				elite="1"
+				name="Tyranids/MassIncubation" 
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/Tyranids/TervigonAbility"
+						sound="Actions/HiveMindEliteBuff"/>
+			</model>			
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/MassIncubation" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</massIncubation>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Tyranids/AcidBlood" requiredUpgrade="Tyranids/AcidBlood"/>
+		<trait name="ExtraMonstrousCreatureArmour" requiredUpgrade="Tyranids/ExtraMonstrousCreatureArmour"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Hero"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="Psyker"/>
+		<trait name="Regeneration" requiredUpgrade="Tyranids/Regeneration"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+		<trait name="Tyranids/SynapticBacklash"/>
+		<trait name="Tyranids/ToxinSacs" requiredUpgrade="Tyranids/ToxinSacs"/>
+		<trait name="Tyranids/VehiclesUpkeep" requiredUpgrade="Tyranids/VehiclesUpkeep"/>
+	</traits>
+</unit>

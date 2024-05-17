@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building branch="Zephon" icon="Buildings/CyberInfantry" position="10" visible="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="2.0"/> <!-- %energyUpkeep base tier=6 factor=1 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<minerals add="2"/>
+				<chips add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseInfantryProductionScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="Sentry"/>
+		<produceUnit unit="Hammerhead"/>
+		<produceUnit unit="Warden"/>
+	</actions>
+</building>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/ChaosSpaceMarines/PrinceOfChaos">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="ChaosSpaceMarines"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

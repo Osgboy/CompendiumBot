@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<unitsInRange count="1" range="1">
+						<allied/>
+						<type name="SpaceMarines/Whirlwind"/>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<self>
+						<attacking/>
+					</self>
+					<opponent>
+						<noAttacking/>
+						<noTrait name="Bike"/>
+						<noTrait name="Fearless"/>
+						<noTrait name="Fortification"/>
+						<noTrait name="Jetbike"/>
+						<noTrait name="Eldar/KhaineAwakened"/>
+						<noTrait name="MonstrousCreature"/>
+						<noTrait name="Tyranids/SynapseLink"/>
+						<noTrait name="Vehicle"/>
+						<noTrait name="Zealot"/>
+					</opponent>
+				</encounter>
+				<unit>
+					<unitsInRange count="1" range="1">
+						<allied/>
+						<type name="SpaceMarines/Whirlwind"/>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<addTrait name="Pinned" duration="1"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>
+</trait>

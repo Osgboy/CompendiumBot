@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/AstraMilitarum/LordCommissar"
+				material="Units/AstraMilitarum/LordCommissar"
+				idleAnimation="Units/AstraMilitarum/LordCommissarIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="BoltPistol" slotName="BoltPistol">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/LordCommissarBoltPistol"
+						material="Weapons/AstraMilitarum/LordCommissarBoltPistol"
+						bone="RightHandBone"
+						muzzleBone=".Muzzle0"
+						fireInterval="0.35"/>
+			</model>
+		</weapon>
+		<weapon name="PowerSword">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade" 
+						mesh="Weapons/AstraMilitarum/LordCommissarSword"
+						material="Weapons/AstraMilitarum/LordCommissarSword"
+						bone="LeftHandBone"
+						fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHandBone"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHandBone"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarAttack"
+						beginFire="0.4"
+						endFire="2.53"
+						chargeAnimation="Units/AstraMilitarum/LordCommissarCharge"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.1"
+						chargeDefenseAnimation="Units/AstraMilitarum/LordCommissarChargeDefense"
+						chargeDefenseBeginFire="0.25"
+						chargeDefenseEndFire="0.9"
+						meleeAnimation="Units/AstraMilitarum/LordCommissarMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.5"
+						meleeDefenseAnimation="Units/AstraMilitarum/LordCommissarMeleeDefense"
+						meleeDefenseBeginSwing="0.15"
+						meleeDefenseEndSwing="0.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/FragGrenade">
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarGrenade"
+						beginFire="0.9"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/KrakGrenade">
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarGrenade"
+						beginFire="0.9"/>
+			</model>
+		</throwGrenade>
+		<auraOfDiscipline passive="1" rank="-1" rankMax="2" levelUpPriority="0.1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Discipline"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfDiscipline>
+		<bringItDown cooldown="3"
+				levelUpPriority="0.1"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				shoutString="Actions/BringItDown">
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarShout"
+						bone="ChestBone"
+						sound="Actions/AstraMilitarumBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<faction name="AstraMilitarum"/>
+											<noTrait name="Fortification"/>
+											<noTrait name="MonstrousCreature"/>
+											<noTrait name="Vehicle"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="BringItDown"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</bringItDown>
+		<summaryExecution cooldown="3" rank="-1" 
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				rankMax="2">
+			<model>
+				<action animation="Units/AstraMilitarum/LordCommissarAttack"
+						beginFire="0.4"
+						endFire="2.53"
+						sound="Actions/Reload"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1" rangeMin="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<groupSize add="-1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="3" addMax="9"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>			
+		</summaryExecution>
+		<ironWill beginOnDisappear="1"
+				cooldown="10"
+				elite="1"
+				levelUpPriority="1"
+				passive="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action sound="Actions/MysticBuff"
+						soundDelay="0.5"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="IronWill"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<destroyed/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpointsFactorFromMax add="1.0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ironWill>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="RefractorField"/>
+		<trait name="Stubborn"/>
+	</traits>
+</unit>

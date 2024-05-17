@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/AdeptusMechanicus/BulwarkImperative">
+	<modifiers>
+		<modifier>
+			<effects>
+				<armor add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="AdeptusMechanicus/ControlEdict"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

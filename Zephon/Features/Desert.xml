@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Desert"
+		category="Ground">
+	<ground channel="2"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<energy mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/DesertRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PalmBush0"/>
+				<mesh name="Terrain/Vegetation/PalmBush1"/>
+				<mesh name="Terrain/Vegetation/PalmBush2"/>
+				<mesh name="Terrain/Vegetation/Cactus0"/>
+				<mesh name="Terrain/Vegetation/Cactus1"/>
+				<mesh name="Terrain/Vegetation/Cactus2"/>
+				<mesh name="Terrain/Vegetation/PalmBush6"/>
+				<mesh name="Terrain/Vegetation/PalmBush3"/>
+				<mesh name="Terrain/Vegetation/PalmBush4"/>
+				<mesh name="Terrain/Vegetation/PalmBush5"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/Palm0"/>
+				<mesh name="Terrain/Vegetation/Palm1"/>
+				<mesh name="Terrain/Vegetation/Palm2"/>
+				<mesh name="Terrain/Vegetation/Palm3"/>
+				<mesh name="Terrain/Vegetation/Palm4"/>
+				<mesh name="Terrain/Vegetation/Palm5"/>
+				<mesh name="Terrain/Vegetation/Palm6"/>
+				<mesh name="Terrain/Vegetation/Palm7"/>
+				<mesh name="Terrain/Vegetation/Palm8"/>
+				<mesh name="Terrain/Vegetation/Palm9"/>
+				<mesh name="Terrain/Vegetation/Palm10"/>
+				<mesh name="Terrain/Vegetation/Palm11"/>
+				<mesh name="Terrain/Vegetation/Palm12"/>
+				<mesh name="Terrain/Vegetation/PalmBush0"/>
+				<mesh name="Terrain/Vegetation/PalmBush1"/>
+				<mesh name="Terrain/Vegetation/PalmBush2"/>
+				<mesh name="Terrain/Vegetation/Tree0"/>
+				<mesh name="Terrain/Vegetation/Tree1"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/CraterDecal0"/>	
+			<mesh name="Terrain/Decals/CraterDecal1"/>	
+			<mesh name="Terrain/Decals/CraterDecal2"/>
+			<mesh name="Terrain/Decals/StoneGroundDecal1"/>
+			<mesh name="Terrain/Decals/StoneGroundDecal2"/>
+			<mesh name="Terrain/Decals/StoneGroundDecal0"/>
+			<mesh name="Terrain/Decals/CorpseDecal0"/>
+			<mesh name="Terrain/Decals/CorpseDecal1"/>
+			<mesh name="Terrain/Decals/CorpseDecal2"/>
+		</meshes>
+	</decals>
+</feature>

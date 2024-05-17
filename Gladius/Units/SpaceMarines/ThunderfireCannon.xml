@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/ThunderfireCannon"
+				material="Units/SpaceMarines/ThunderfireCannon"
+				idleAnimation="Units/SpaceMarines/ThunderfireCannonIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.75 0.75 0.75"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="ThunderfireCannon">
+			<model>
+				<projectileWeapon muzzleBone=".ThunderFire"
+						fireInterval="0.1"
+						effectScale="1.5"/>
+			</model>
+		</weapon>
+		<weapon name="PlasmaCutter">
+			<model>
+				<beamWeapon muzzleBone=".PlasmaCutter0"/>			
+			</model>
+		</weapon>
+		<weapon name="Flamer">
+			<model>
+				<flamerWeapon muzzleBone=".FlamerMuzzle0"
+						fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone009(mirrored)"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone009(mirrored)"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=6 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<requisitionsCost base="30.0"/> <!-- %requisitionsCost base tier=7 factor=0.5 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SpaceMarines/ThunderfireCannonAttack"
+						beginFire="0.35" endFire="2.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/ThunderfireCannonDie"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/ThunderfireCannonMove"
+						sound="Units/SpaceMarines/ThunderfireCannonMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/ThunderfireCannonGrenade"
+						beginFire="0.9"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/ThunderfireCannonGrenade"
+						beginFire="0.9"/>
+			</model>				
+		</throwGrenade>
+		<clearTileUnitAbility cooldown="1"
+				icon="Actions/ClearTile"
+				name="ClearTile">
+			<model>
+				<action/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions/>
+					<areas/>
+				</target>
+			</beginTargets>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="5"/>
+						<requisitionsCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>			
+		</clearTileUnitAbility>		
+		<blessingsOfTheOmnissiah cooldown="1">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="8"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<bolsterDefences cooldown="3"
+				requiredUpgrade="SpaceMarines/BolsterDefences">
+			<model>
+				<action sound="Actions/ArmourUp"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="BolsterDefences"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</bolsterDefences>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Bulky"/>
+		<trait name="ConvergentTargeting"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+	</traits>
+</unit>

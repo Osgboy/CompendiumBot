@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Traits/Tyranids/CityDamage" attributesModifiedByUnit="0">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedAccuracy max="12" min="12"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Blast"/>
+		<trait name="IgnoresCover"/>
+	</traits>
+</weapon>

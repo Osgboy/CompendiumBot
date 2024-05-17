@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<notMovedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedAttacks mul="1.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<modifiers>
+		<modifier effectDescription="AgainstUnitsAtRange1Or2">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<distance less="3"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

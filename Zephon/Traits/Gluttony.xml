@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<populationFoodUpkeep mul="0.25"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="GluttonyUpgrade" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building ignoreForTraitVisibility="1">
+					<type name="Headquarters"/>
+				</building>
+				<city ignoreForTraitVisibility="1">
+					<population equal="1"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population equal="2"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="1.0"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population equal="3"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="1.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population equal="4"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="2.0"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population equal="5"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="2.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="5"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="3.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

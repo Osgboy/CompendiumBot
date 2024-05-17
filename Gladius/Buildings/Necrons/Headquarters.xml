@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building disablable="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="336"/>
+				<populationRequired base="0"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<cityRadius add="1"/>
+				<energy add="9"/>
+				<loyalty add="6"/>
+				<influence add="6"/>
+				<ore add="9"/>
+				<populationLimit add="6"/>
+				<research add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Necrons/CityTier2" requiredUpgrade="Necrons/CityTier2"/>
+		<trait name="Necrons/CityTier3" requiredUpgrade="Necrons/CityTier3"/>
+		<trait name="Necrons/GrowthBonus" requiredUpgrade="Necrons/GrowthBonus"/>
+		<trait name="Headquarters"/>
+	</traits>
+</building>

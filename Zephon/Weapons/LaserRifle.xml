@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon explosionsBlueprint="Effects/LaserExplosions"
+				fireSound="Weapons/LaserRifle"
+				fireSoundBeginCount="1"
+				fireSoundContinuously="1"
+				fireSoundCount="1"
+				fireSoundEndCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="1"/> <!-- %armorPenetration base tier=2 -->
+				<attacks base="1"/>
+				<damage base="1.5"/> <!-- %damage base tier=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="Laser"/>
+	</traits>
+</weapon>

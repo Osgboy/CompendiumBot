@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="0.33"
+				fireSound="Weapons/MultiLaser"
+		 		fireSoundCount="5"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=6 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="AstraMilitarum/LasDamage" requiredUpgrade="AstraMilitarum/LasDamage"/>
+		<trait name="ChaosSpaceMarines/LasDamage" requiredUpgrade="ChaosSpaceMarines/LasDamage"/>
+		<trait name="SpaceMarines/LasDamage" requiredUpgrade="SpaceMarines/LasDamage"/>
+	</traits>
+</weapon>

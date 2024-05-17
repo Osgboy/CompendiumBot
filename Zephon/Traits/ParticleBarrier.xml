@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/ParticleBarrier" rankMax="2" visibleOnTile="1" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="AgainstRangedWeapons">
+			<conditions ignoreForTraitVisibility="1">
+				<weapon>
+					<noTrait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.2" addMax="0.6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBlueprint="Effects/ShochitrisLairBlood"
+				bloodBone="Core2"
+				bloodTrailBlueprint="Effects/ShochitrisLairBloodTrail"
+				material="Units/ShochitrisLair"
+				mesh="Units/ShochitrisLair"
+				normalWeight="0.0"
+				position="0 0 0"
+				scale="1.2 1.2 1.2"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<algaeCost base="15"/> <!-- %algaeCost base tier=7 factor=0.25 -->
+				<algaeUpkeep base="0.75"/> <!-- %algaeUpkeep base tier=7 factor=0.25 -->
+				<armor base="0"/>
+				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="0"/>
+				<movementMax base="0"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/ShochitrisLairAppear"
+						effectBlueprint="Effects/LairSpawn"
+						beginEffect="0.2"
+						responseSound="Units/Responses/ShochitrisLairAppear"
+						sound="Units/ShochitrisLairAppear"
+						soundCount="1"
+						soundDelay="0.5"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/ShochitrisLairDie0"
+						sound="Units/ShochitrisLairDie"
+						soundCount="1"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/ShochitrisLairImpact"
+						responseSound="Units/Responses/ShochitrisLairEndureHighDamage"/>
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/ShochitrisLairIdle0"/>
+			</model>
+		</idle>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/ShochitrisLairPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/ShochitrisLairSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast blueprint="BreedDeformities" name="BreedDeformities0"/>
+		<unitCast blueprint="BreedDeformities" name="BreedDeformities1"/>
+		<unitCast blueprint="BreedDeformities" name="BreedDeformities2"/>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+	</traits>
+</unit>

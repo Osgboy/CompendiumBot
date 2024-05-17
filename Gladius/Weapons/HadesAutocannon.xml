@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/HadesAutocannon"
+				fireSoundCount="5"
+				muzzleFlashesBlueprint="Effects/CannonMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="4"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Pinning"/>
+		<trait name="ChaosSpaceMarines/BoltDamage" requiredUpgrade="ChaosSpaceMarines/BoltDamage"/>
+	</traits>
+</weapon>

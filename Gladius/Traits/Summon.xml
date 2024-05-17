@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomassUpkeep max="0"/>
+				<foodUpkeep max="0"/>
+				<oreUpkeep max="0"/>
+				<requisitionsUpkeep max="0"/>
+				<energyUpkeep max="0"/>
+				<influenceUpkeep max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTraitRemovedModifiers>
+		<modifier>
+			<effects>
+				<removeUnit/>
+			</effects>
+		</modifier>
+	</onTraitRemovedModifiers>
+</trait>

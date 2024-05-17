@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull_Guide"
+				material="Units/PhoenixInterceptor"
+				mesh="Units/PhoenixInterceptor"
+				normalWeight="0.1"
+				position="0 0 36"
+				scale="1.1 1.1 1.1"/>
+	</model>
+	<weapons>
+		<weapon type="GaussAutocannon">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+ 	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<antimatterCost base="60"/> <!-- %antimatterCost base tier=9 factor=0.5 -->
+				<antimatterUpkeep base="3.0"/> <!-- %antimatterUpkeep base tier=9 factor=0.5 -->
+				<armor base="8"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="7"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<transuraniumCost base="60"/> <!-- %transuraniumCost base tier=9 factor=0.5 -->
+				<transuraniumUpkeep base="3.0"/> <!-- %transuraniumUpkeep base tier=9 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="0.5"/>
+				<increaseHumanScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/PhoenixInterceptorAttack"
+						beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/PhoenixInterceptorAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/PhoenixInterceptorDie0"
+						groundImpact="1.0"
+						sound="Units/PhoenixInterceptorDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/PhoenixInterceptorImpact"
+						responseSound="Units/Responses/PhoenixInterceptorEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/PhoenixInterceptorIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/PhoenixInterceptorMove"
+						responseSound="Units/Responses/PhoenixInterceptorMove"
+						responseSoundCount="3"
+						sound="Units/PhoenixInterceptorMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="EvasiveManeuvers">
+			<model>
+				<cast animation="Units/PhoenixInterceptorAbility0"
+						responseSound="Units/Responses/PhoenixInterceptorEvasiveManeuvers"
+						sound="Units/PhoenixInterceptorEvasiveManeuvers"/>
+			</model>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

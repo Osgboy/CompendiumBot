@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/Necrons/CanoptekWraith"
+				material="Units/Necrons/CanoptekWraith"
+				idleAnimation="Units/Necrons/CanoptekWraithIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				explosionsBone="SpineCore"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="70" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="WhipCoils">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="60.0"/> <!-- %energyCost base tier=7 factor=1 -->
+				<hitpointsMax base="8.0"/> <!-- %hitpointsMax base toughness=5 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="5"/>
+				<oreUpkeep base="3.0"/> <!-- %oreUpkeep base tier=7 factor=1 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/Necrons/CanoptekWraithCharge"
+						meleeAnimation="Units/Necrons/CanoptekWraithMelee"
+						meleeBeginSwing="0.2"
+						meleeEndSwing="0.3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/CanoptekWraithDie"
+						animationCount="2"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.3"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/CanoptekWraithMove"
+						sound="Units/Necrons/CanoptekSpyderMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Necrons/ExtraVehicleArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Fleet"/>
+		<trait name="Necrons/LivingMetal"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Rending"/>
+		<trait name="VeryBulky"/>
+		<trait name="Necrons/WraithForm"/>
+		<trait name="Necrons/Wraithflight"/>
+	</traits>
+</unit>

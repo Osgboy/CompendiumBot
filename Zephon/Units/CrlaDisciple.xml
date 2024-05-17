@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Chest"
+				effectsBlueprint="Effects/CrlaDisciple"
+				groupMemberDeltaX="70"
+				groupMemberDeltaY="70"
+				material="Units/CrlaDisciple"
+				mesh="Units/CrlaDisciple"
+				normalWeight="0.1"
+				position="0 0 0"
+				scale="0.6 0.6 0.6"
+				transparent="1"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="BanefulOmen">
+			<models>
+				<beamWeapon effectFaceWeight="1"
+						muzzleBone="Censer"
+						windupDuration="1.0"/>
+			</models>
+		</weapon>
+		<weapon type="CrlasGambit"
+				enabled="0"
+				slotName="CrlasGambit">
+			<models>
+				<beamWeapon effectFaceWeight="1"
+						muzzleBone="Censer"
+						windupDuration="0.7"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="2"/>
+				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
+				<energyCost base="10"/> <!-- %energyCost base tier=6 factor=0.25 -->
+				<energyUpkeep base="0.5"/> <!-- %energyUpkeep base tier=6 factor=0.25 -->
+				<foodCost base="10"/> <!-- %foodCost base tier=6 factor=0.25 -->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=6 factor=0.25 -->
+				<groupSizeMax base="6"/>
+				<hitpointsMax base="2"/> <!-- %hitpointsMax base tier=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/CrlaDiscipleAttack"
+						beginFire="0.2"
+						endFire="2.0"
+						responseSound="Units/Responses/CrlaDiscipleAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CrlaDiscipleDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="1.0"
+						voiceSound="Units/CrlaDiscipleDie"
+						voiceSoundCount="5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CrlaDiscipleImpact"
+						responseSound="Units/Responses/CrlaDiscipleEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/CrlaDiscipleIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/CrlaDiscipleMove"
+						responseSound="Units/Responses/CrlaDiscipleMove"
+						responseSoundCount="3"
+						sound="Units/CrlaDiscipleMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.75"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/CrlaDisciplePoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="CrlasGambit">
+			<model>
+				<attack animation="Units/CrlaDiscipleAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						responseSound="Units/Responses/CrlaDiscipleCrlasGambit"/>
+			</model>
+		</useWeapon>
+		<unitCast name="InevitableEnd"
+				cooldown="3">
+			<model>
+				<cast animation="Units/CrlaDiscipleAbility0"
+						blueprint="Effects/InevitableEnd"
+						responseSound="Units/Responses/CrlaDiscipleInevitableEnd"
+						sound="Actions/InevitableEndCaster"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="InevitableEnd" duration="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetUnit>
+							<noTrait type="InevitableEnd"/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitCast name="UnholyHaste"
+				cooldown="3"
+				requiredUpgrade="UnholyHaste">
+			<model>
+				<cast animation="Units/CrlaDiscipleAbility0"
+						blueprint="Effects/UnholyHaste"
+						responseSound="Units/Responses/CrlaDiscipleUnholyHaste"
+						sound="Actions/InevitableEndCaster"/>
+			</model>
+			<beginTargets>
+				<target rangeMin="1" rangeMax="2">
+					<conditions>
+						<unit>
+							<ally/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<addTrait type="UnholyHaste" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+		<teleport name="TheDeepWays"
+				cooldown="5"
+				requiredUpgrade="TheDeepWays">
+			<model>
+				<cast animation="Units/CrlaDiscipleAbility0"
+						responseSound="Units/Responses/CrlaDiscipleProfanePilgrimage"/>
+			</model>
+		</teleport>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="PilgrimOfTheVoice"/>
+	</traits>
+</unit>

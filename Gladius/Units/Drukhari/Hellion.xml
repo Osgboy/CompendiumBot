@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement13">
+	<model>
+		<unit mesh="Units/Drukhari/Hellion"
+				material="Units/Drukhari/Hellion"
+				idleAnimation="Units/Drukhari/HellionIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitFocusHeightModifier="24"
+				portraitZoomModifier="1.25"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="SplinterPods">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>			
+			</model>
+		</weapon>
+		<weapon name="Hellglaive">
+			<model>
+				<weapon/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="6"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Drukhari/HellionAttack"
+						beginFire="0.83"
+						endFire="1.83"
+						chargeAnimation="Units/Drukhari/HellionCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="1.3"						
+						meleeAnimation="Units/Drukhari/HellionMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.25"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/HellionDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/Drukhari/HellionDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/HellionMove"
+						sound="Units/Tau/DroneMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<jumpPack cooldown="3">
+			<model>
+				<action animation="Units/Drukhari/HellionMove"
+						sound="Actions/JumpPack"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/HammerOfWrath">
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<combatDrugs consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="Drukhari/CombatDrugs">
+			<model>
+				<action sound="Actions/CombatDrugs"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/CombatDrugs" duration="10"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Drukhari/Hypex">
+									<effects>
+										<addTrait duration="10" name="MoveThroughCover"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</combatDrugs>
+	</actions>
+	<traits>
+		<trait name="Drukhari/BladeArtists"/>
+		<trait name="Bulky"/>
+		<trait name="Fleet"/>
+		<trait name="HitAndRun"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Drukhari/ExtraInfantryArmour"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Drukhari/RaidersTactics"/>
+		<trait name="Drukhari/RaidersTacticsHealingRate" requiredUpgrade="Drukhari/RaidersTacticsHealingRate"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

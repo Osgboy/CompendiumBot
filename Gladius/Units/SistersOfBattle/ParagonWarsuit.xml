@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/ParagonWarsuit"
+				material="Units/SistersOfBattle/ParagonWarsuit"
+				idleAnimation="Units/SistersOfBattle/ParagonWarsuitIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.2 1.2 1.2"
+				bloodBone="Chest"
+				explosionsBone="Chest"
+				portraitFocusHeightModifier="-12"
+				portraitZoomModifier="1.25"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="110" memberDeltaY="110"/>
+	<weapons>
+		<weapon name="MultiMelta">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" fireDelay="0.3" chargeFireDelay="0.3"/>
+			</model>
+		</weapon>
+		<weapon name="ParagonGrenadeLauncher">
+			<model>
+				<grenadeWeapon muzzleBone="GrenadeMuzzle" muzzleCount="4"/>
+			</model>
+		</weapon>
+		<weapon name="ParagonWarBlade">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+				 		effectBone="Effect"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_R"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_R"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base toughness=5 wounds=4 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1.5"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<requisitionsUpkeep base="6.0"/> <!-- %requisitionsUpkeep base tier=9 factor=1 -->
+				<requisitionsCost base="120.0"/> <!-- %requisitionsCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SistersOfBattle/ParagonWarsuitAttack"
+						beginFire="0.7"
+						endFire="1.9"
+						chargeAnimation="Units/SistersOfBattle/ParagonWarsuitCharge"
+						chargeDefenseAnimation="Units/SistersOfBattle/ParagonWarsuitChargeDefense"
+						chargeBeginFire="0.23"
+						chargeEndFire="1.1"
+						meleeAnimation="Units/SistersOfBattle/ParagonWarsuitMelee"
+						meleeDefenseAnimation="Units/SistersOfBattle/ParagonWarsuitMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/ParagonWarsuitDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.8"
+						voiceSound="Units/SistersOfBattle/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/ParagonWarsuitMove"
+						sound="Units/SistersOfBattle/ParagonMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/FragGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/ParagonWarsuitGrenade"
+						beginFire="1.77"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/KrakGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/ParagonWarsuitGrenade"
+						beginFire="1.77"/>
+			</model>				
+		</throwGrenade>
+		<lightOfTheEmperor consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="SistersOfBattle/LightOfTheEmperor"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/LightOfTheEmperor"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="SistersOfBattle/SimulacrumImperialis">
+					<effects>
+						<cooldown mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="SistersOfBattle/LightOfTheEmperor"/>
+										<addTrait duration="1" name="SistersOfBattle/UsedActOfFaith"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</lightOfTheEmperor>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="SistersOfBattle/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="SistersOfBattle/ParagonWarsuit"/>
+		<trait name="SistersOfBattle/SisterSuperior" requiredUpgrade="SistersOfBattle/SisterSuperior"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SistersOfBattle/ExtraVehicleArmour"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

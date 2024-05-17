@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/BanefulOmen"
+				chargeBlueprint="Effects/BanefulOmenCharge"
+				explosionOffsetRadius="0"
+				explosionsBlueprint="Effects/BanefulOmenExplosions"
+				fireSound="Weapons/BanefulOmen"
+				fireSoundBeginCount="4"
+				muzzleFlashesBlueprint="Effects/BanefulOmenMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
+				<attacks base="2"/>
+				<damage base="1"/> <!-- %damage base tier=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="IgnoresCover"/>
+		<trait type="IndirectFire"/>
+		<trait type="Weakening"/>
+	</traits>
+</weapon>

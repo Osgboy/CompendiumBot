@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>		
+		<unit mesh="Units/ChaosSpaceMarines/Venomcrawler"
+				material="Units/ChaosSpaceMarines/Venomcrawler"
+				idleAnimation="Units/ChaosSpaceMarines/VenomcrawlerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.2 1.2 1.2"
+				explosionsBone="Bone001"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="ExcruciatorCannon" count="2">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						muzzleCount="2"
+						fireInterval="0.43"/>
+			</model>
+		</weapon>
+		<weapon name="SoulflayerTendrils">
+			<model>
+
+			</model>
+		</weapon>
+		<weapon name="EvisceratingClaws">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>	
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/VenomcrawlerAttack"
+						beginFire="0.9"
+						endFire="2.4"
+						chargeAnimation="Units/ChaosSpaceMarines/VenomcrawlerCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.33"						
+						meleeAnimation="Units/ChaosSpaceMarines/VenomcrawlerMelee"
+						meleeBeginSwing="0.56"
+						meleeEndSwing="1"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/VenomcrawlerDie"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.25"
+						voiceSound="Units/ChaosSpaceMarines/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/VenomcrawlerMove"
+						sound="Units/ChaosSpaceMarines/VenomcrawlerMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="ChaosSpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<genericUnitAbility name="ChaosSpaceMarines/ReservoirOfDaemonicEnergy"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/ReservoirOfDaemonicEnergy"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<daemonforge consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				name="ChaosSpaceMarines/Daemonforge">
+			<model>
+				<action sound="Actions/ChaosBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<addTrait name="ChaosSpaceMarines/Daemonforge" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</daemonforge>
+	</actions>
+	<traits>
+		<trait name="Daemon"/>
+		<trait name="ChaosSpaceMarines/DevourerOfSouls"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="ChaosSpaceMarines/ExtraVehicleArmour"/>
+		<trait name="Fleet"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

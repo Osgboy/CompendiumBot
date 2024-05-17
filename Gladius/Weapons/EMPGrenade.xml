@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<grenadeWeapon effectScale="0.75"
+				fireSound="Weapons/GrenadeThrow"
+				fireSoundCount="6"
+				explosionSound="Explosions/EMPGrenade"
+				explosionSoundCount="1"
+				explosionsBlueprint="Effects/EMPExplosions"
+				explosionsEmitterBlueprint="Effects/EMPExplosionsEmitter"
+				displaceExplosions="0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="0.75"/> <!-- %rangedDamage add strength=2 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Grenade"/>
+		<trait name="Haywire"/>
+		<trait name="Tau/BlastDamage" requiredUpgrade="Tau/BlastDamage"/>
+	</traits>
+</weapon>

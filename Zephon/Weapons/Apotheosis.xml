@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Apotheosis">
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="6" max="6"/>
+				<armorPenetration base="3"/> <!-- %armorPenetration base tier=4 -->
+				<attacks base="1"/>
+				<damage base="4"/> <!-- %damage base tier=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="LargeSplash"/>
+	</traits>
+</weapon>

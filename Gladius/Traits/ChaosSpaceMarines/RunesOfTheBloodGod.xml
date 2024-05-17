@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<weapon>
+						<trait name="Witchfire"/>
+					</weapon>
+				</encounter>
+			</conditions>
+			<effects>
+				<damageReturnFactor add="0.17"/>
+			</effects>
+		</modifier>		
+	</modifiers>
+</trait>

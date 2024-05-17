@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/MekGun"
+				material="Units/Orks/MekGun"
+				idleAnimation="Units/Orks/MekGunIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				scale="0.7 0.7 0.7"
+				explosionsBone="Head"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="64" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="TraktorKannon">
+			<model>
+				<beamWeapon muzzleBone=".Barrel"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=8 wounds=1 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="0.75"/> <!-- %strengthDamage base strength=2 -->
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=6 factor=1 -->
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/Orks/MekGunAttack"
+						beginFire="0.5"
+						endFire="2.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/MekGunDie"
+						animationCount="2"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0.35"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/MekGunMove"
+						sound="Units/Orks/MekGunMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<ammoRunt requiredUpgrade="Orks/AmmoRunt" consumedActionPoints="0" consumedMovement="0"
+				cooldown="5">
+			<model>
+				<action sound="Actions/Reload"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AmmoRunt" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ammoRunt>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Orks/ExtraInfantryArmour"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+	</traits>
+</unit>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Desert"
+		ambientSoundLayer="0"
+		ambientSoundPriority="0"
+		audioEffectSystem="Plains"
+		category="Ground">
+	<ground channel="0"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomassOnConsume add="10"/>
+				<buildingSlots add="3"/>
+				<food mul="-0.2"/>
+				<energy mul="0.2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="AdeptusMechanicus"/>
+				</player>
+			</conditions>
+			<effects>
+				<buildingSlots add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/DesertRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rocks0"/>
+			<mesh name="Terrain/Rocks/Rocks1"/>
+			<mesh name="Terrain/Rocks/Rocks2"/>
+			<mesh name="Terrain/Rocks/Rocks3"/>
+			<mesh name="Terrain/Rocks/Rocks4"/>
+			<mesh name="Terrain/Rocks/Rocks5"/>
+			<mesh name="Terrain/Rocks/Rocks6"/>
+			<mesh name="Terrain/Rocks/Rocks7"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/SavannaDesertBush23"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertBush24"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleBush25"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush26"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush27"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush28"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraBush29"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree25"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree26"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertJungleTree27"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree28"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree29"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree30"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree31"/>
+				<mesh name="Terrain/Vegetation/SavannaDesertTundraTree32"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/SandDecal0"/>
+			<mesh name="Terrain/Decals/SandDecal1"/>	
+		</meshes>
+	</decals>
+</feature>

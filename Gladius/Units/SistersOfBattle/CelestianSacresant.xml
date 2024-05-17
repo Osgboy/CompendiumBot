@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/CelestianSacresant"
+				material="Units/SistersOfBattle/CelestianSacresant"
+				idleAnimation="Units/SistersOfBattle/CelestianSacresantIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitFocusHeightModifier="-10"
+				portraitZoomModifier="1.5"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="AnointedHalberd">
+			<model>
+				<powerWeapon effectBoundingVolume="Empty"
+				 		effectBone="HalberdEffect"
+				 		fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="BoltPistol">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_R"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_R"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3	"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="4.0"/> <!-- %requisitionsUpkeep base tier=8 factor=1 -->
+				<requisitionsCost base="80.0"/> <!-- %requisitionsCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SistersOfBattle/CelestianSacresantAttack"
+						beginFire="1.13"
+						endFire="1.93"
+						chargeAnimation="Units/SistersOfBattle/CelestianSacresantCharge"
+						chargeDefenseAnimation="Units/SistersOfBattle/CelestianSacresantChargeDefense"
+						chargeBeginFire="0.47"
+						chargeEndFire="1.4"
+						meleeAnimation="Units/SistersOfBattle/CelestianSacresantMelee"
+						meleeDefenseAnimation="Units/SistersOfBattle/CelestianSacresantMeleeDefense"
+						meleeBeginSwing="0.53"
+						meleeEndSwing="0.63"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/CelestianSacresantDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/SistersOfBattle/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/CelestianSacresantMove"
+						sound="Units/SistersOfBattle/InfantryMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<genericUnitAbility passive="1"
+				name="SistersOfBattle/Bodyguard">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/Protected"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility disableable="1"
+				passive="1"
+				name="SistersOfBattle/KeepersOfTheFaith">
+			<conditions>
+				<unit>
+					<actionPoints greater="0"/>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/KeepersOfTheFaith"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/FragGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/CelestianSacresantGrenade"
+						beginFire="1.63"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/KrakGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/CelestianSacresantGrenade"
+						beginFire="1.63"/>
+			</model>				
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/SacresantShield"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>		
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SistersOfBattle/ExtraInfantryArmour"/>
+		<trait name="SistersOfBattle/SisterSuperior" requiredUpgrade="SistersOfBattle/SisterSuperior"/>
+	</traits>
+</unit>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks base="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1">
+		<conditions>
+			<unit>
+				<noTrait name="Flyer"/>
+				<noTrait name="SuperHeavy"/>
+				<noTrait name="Gargantuan"/>
+				<noTrait name="Fortification"/>
+			</unit>
+		</conditions>
+	</target>
+	<traits>
+		<trait name="LargeBlast"/>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+		<trait name="Eldar/MeleeWeaponBonus" requiredUpgrade="Eldar/MeleeWeaponBonus"/>
+		<trait name="Necrons/MeleeDamage" requiredUpgrade="Necrons/MeleeDamage"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+		<trait name="SistersOfBattle/MeleeWeaponBonus" requiredUpgrade="SistersOfBattle/MeleeWeaponBonus"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+		<trait name="Tyranids/MeleeDamage" requiredUpgrade="Tyranids/MeleeDamage"/>
+	</traits>
+</weapon>

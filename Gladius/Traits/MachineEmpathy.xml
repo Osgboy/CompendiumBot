@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/MachineEmpathy">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit match="Any">
+					<trait name="Fortification"/>
+					<trait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<hitpoints add="3"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

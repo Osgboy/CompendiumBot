@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Traits/TheInformant" visibleOnCity="1" visibleOnPlayer="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

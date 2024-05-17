@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Arctic"
+		ambientSoundLayer="0"
+		ambientSoundPriority="0"
+		audioEffectSystem="Plains"
+		category="Ground">
+	<ground channel="4"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomassOnConsume add="10"/>
+				<buildingSlots add="3"/>
+				<food mul="-0.2"/>
+				<research mul="0.2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="AdeptusMechanicus"/>
+				</player>
+			</conditions>
+			<effects>
+				<buildingSlots add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/SnowRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rocks0"/>
+			<mesh name="Terrain/Rocks/Rocks1"/>
+			<mesh name="Terrain/Rocks/Rocks2"/>
+			<mesh name="Terrain/Rocks/Rocks3"/>
+			<mesh name="Terrain/Rocks/Rocks4"/>
+			<mesh name="Terrain/Rocks/Rocks5"/>
+			<mesh name="Terrain/Rocks/Rocks6"/>
+			<mesh name="Terrain/Rocks/Rocks7"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/ArcticBush10"/>
+				<mesh name="Terrain/Vegetation/ArcticBush11"/>
+				<mesh name="Terrain/Vegetation/ArcticBush4"/>
+				<mesh name="Terrain/Vegetation/ArcticBush5"/>
+				<mesh name="Terrain/Vegetation/ArcticBush6"/>
+				<mesh name="Terrain/Vegetation/ArcticBush7"/>
+				<mesh name="Terrain/Vegetation/ArcticBush8"/>
+				<mesh name="Terrain/Vegetation/ArcticBush9"/>
+			</meshes>
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/ArcticTree0"/>
+				<mesh name="Terrain/Vegetation/ArcticTree10"/>
+				<mesh name="Terrain/Vegetation/ArcticTree1"/>
+				<mesh name="Terrain/Vegetation/ArcticTree2"/>
+				<mesh name="Terrain/Vegetation/ArcticTree3"/>
+				<mesh name="Terrain/Vegetation/ArcticTree4"/>
+				<mesh name="Terrain/Vegetation/ArcticTree5"/>
+				<mesh name="Terrain/Vegetation/ArcticTree6"/>
+				<mesh name="Terrain/Vegetation/ArcticTree7"/>
+				<mesh name="Terrain/Vegetation/ArcticTree8"/>
+				<mesh name="Terrain/Vegetation/ArcticTree9"/>
+				<mesh name="Terrain/Vegetation/TundraArcticTree37"/>
+				<mesh name="Terrain/Vegetation/TundraArcticTree38"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/SnowDecal0"/>
+			<mesh name="Terrain/Decals/SnowDecal1"/>	
+		</meshes>
+	</decals>
+</feature>

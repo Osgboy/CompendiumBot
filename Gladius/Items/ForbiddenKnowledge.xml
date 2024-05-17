@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<forbiddenKnowledge charges="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<level add="1"/>
+										<influencePerExperience max="0"/>
+										<researchPerExperience max="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</forbiddenKnowledge>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Artefact"/>
+	</traits>
+</item>

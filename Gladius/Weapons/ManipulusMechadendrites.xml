@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ManipulusMechadendrites"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks mul="1.0"/>
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=- -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement4">
+	<model>
+		<structureUnit mesh="Units/AstraMilitarum/VoidShieldGenerator"
+				material="Units/AstraMilitarum/VoidShieldGenerator"
+				groundMaterial="Units/AstraMilitarum/VoidShieldGeneratorGround"
+				idleAnimation=""
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1 1 1"
+				explosionsBone="Hull">
+			<effects>
+				<effect blueprint="Effects/VoidShieldSparks"
+						position="7.846479 31.787687 139.958389"
+						bone="Hull"/>
+				<effect blueprint="Effects/VoidShieldSparks"
+						position="-31.616924 9.067568 139.958389"
+						bone="Hull"/>
+				<effect blueprint="Effects/VoidShieldSparks"
+						position="31.430038 -8.655769 139.958389"
+						bone="Hull"/>
+				<effect blueprint="Effects/VoidShieldSparks"
+						position="-8.033364 -31.375889 139.958389"
+						bone="Hull"/>
+			</effects>		
+		</structureUnit>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="9"/> <!-- %armor base armor=13/13/13 -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=6 factor=0.5 -->
+				<energyUpkeep base="2.0"/> <!-- %energyUpkeep base tier=6 factor=1 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=13/13/13 wounds=1 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax max="0"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 --> 
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<genericUnitAbility icon="Traits/VoidShield" 
+				cooldownRemaining="1"
+				name="AstraMilitarum/ProjectedVoidShield"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="2">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="VoidShield"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+	</traits>
+</unit>

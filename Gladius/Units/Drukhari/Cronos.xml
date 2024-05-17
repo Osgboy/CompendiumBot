@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement13" productionWeight="0.01">
+	<model>
+		<unit mesh="Units/Drukhari/Cronos"
+				material="Units/Drukhari/Cronos"
+				idleAnimation="Units/Drukhari/CronosIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				portraitZoomModifier="1.25"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="SpiritSyphon">
+			<model>
+				<beamWeapon muzzleBone="Head" fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base toughness=7 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Drukhari/CronosAttack"
+						beginFire="1.33"
+						endFire="1.83"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/CronosDie0"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="1"
+						voiceSound="Units/Drukhari/CronosDie"
+						voiceSoundCount="1"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/CronosMove"
+						sound="Units/Drukhari/CronosMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Drukhari/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<blessingsOfTheOmnissiah cooldown="1"
+				consumedActionPoints="0" 
+				requiredActionPoints="0"
+				name="Drukhari/ReservoirOfPain">
+			<model>
+				<action animation="Units/Drukhari/CronosAbility"
+						sound="Actions/ReservoirOfPain"/>
+			</model>
+			<conditions>
+				<unit>
+					<attackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+							<faction name="Drukhari"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<genericUnitAbility passive="1"
+				name="Drukhari/SpiritProbe">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/SpiritProbe"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Drukhari/ExtraVehicleArmour"/>
+		<trait name="Fearless"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="FeelNoPain"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

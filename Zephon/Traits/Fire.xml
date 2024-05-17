@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Traits/OnFire" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait type="Flying"/>
+					<noTrait type="Hovering"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Fire"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

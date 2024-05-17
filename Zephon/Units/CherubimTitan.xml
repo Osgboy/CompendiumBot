@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Hull"
+				material="Units/CherubimTitan"
+				mesh="Units/CherubimTitan"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="1.2 1.2 1.2"/>
+	</model>
+	<weapons>
+		<weapon type="TachyonCannon">
+			<models>
+				<beamWeapon muzzleBone="MainMuzzle"/>
+			</models>
+		</weapon>
+		<weapon type="TachyonRay" count="6">
+			<models>
+				<beamWeapon muzzleBone="Muzzle"
+						muzzleCount="6"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Hull"
+						material="Units/CherubimTitanDeflectorShield"
+						mesh="Units/CherubimTitanDeflectorShield"/>			
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Generator"
+						material="Units/CherubimTitanPowerGenerator"
+						mesh="Units/CherubimTitanPowerGenerator"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<antimatterCost base="120"/> <!-- %antimatterCost base tier=11 factor=0.5 -->
+				<antimatterUpkeep base="6.0"/> <!-- %antimatterUpkeep base tier=11 factor=0.5 -->
+				<armor base="9"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
+				<moraleMax base="12"/>
+				<movementMax base="6"/>
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+				<singularityCoresCost base="12"/> <!-- %singularityCoresCost base tier=11 factor=0.05 -->
+				<singularityCoresUpkeep base="0.6"/> <!-- %singularityCoresUpkeep base tier=11 factor=0.05 -->
+				<transuraniumCost base="120"/> <!-- %transuraniumCost base tier=11 factor=0.5 -->
+				<transuraniumUpkeep base="6.0"/> <!-- %transuraniumUpkeep base tier=11 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="0.5"/>
+				<increaseCyberScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/CherubimTitanAttack"
+						beginFire="1.0"
+						endFire="1.73"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CherubimTitanDie0"
+						groundImpact="1.0"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CherubimTitanImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/CherubimTitanIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/CherubimTitanMove"
+						sound="Units/CherubimTitanMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait type="DeflectorShield"/>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Titan"/>
+	</traits>
+</unit>

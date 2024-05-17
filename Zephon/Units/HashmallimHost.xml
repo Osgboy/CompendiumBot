@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Body"
+				explosionSound="Explosions/Units/MediumCyber"
+				explosionSoundCount="8"
+				material="Units/HashmallimHost"
+				mesh="Units/HashmallimHost"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="1 1 1"/>
+	</model>
+	<weapons>
+		<weapon type="GravitonProjector">
+			<models>
+				<beamWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<cargoSlots base="2"/>
+				<chipsCost base="20"/> <!-- %chipsCost base tier=8 factor=0.25 -->
+				<chipsUpkeep base="1.0"/> <!-- %chipsUpkeep base tier=8 factor=0.25 -->
+				<energyCost base="20"/> <!-- %energyCost base tier=8 factor=0.25 -->
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=8 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=8 factor=0.25 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=8 factor=0.25 -->
+				<moraleMax base="10"/>
+				<movementMax base="4"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/HashmallimHostAttack"
+						beginFire="1.1"
+						endFire="1.8"
+						responseSound="Units/Responses/HashmallimHostAttack"
+						responseSoundCount="3"
+						sound="Units/HashmallimHostAttack"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/HashmallimHostDie0"
+						 groundImpact="0.7"
+						 sound="Units/HashmallimHostDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/HashmallimHostImpact"
+						responseSound="Units/Responses/HashmallimHostEndureHighDamage"
+						responseSoundCount="1"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/HashmallimHostIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostKill"
+						responseSoundCount="1"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/HashmallimHostMove"
+						responseSound="Units/Responses/HashmallimHostMove"
+						responseSoundCount="3"
+						sound="Units/HashmallimHostMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/HashmallimHostHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="GravitonJammer"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/HashmallimHostAbility0"
+						blueprint="Effects/GravitonJammer"
+						casterBlueprint="Effects/GravitonJammerCaster"
+						sound="Units/HashmallimHostGravitonJammer"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnit">
+									<effects>
+										<addTrait type="GravitonJammer" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitCast name="ConstructTesseraCore"
+				cooldown="5"
+				icon="Units/TesseraCore"
+				requiredUpgrade="TesseraCore">
+			<model>
+				<cast animation="Units/HashmallimHostAbility0"
+						sound="Units/HashmallimHostConstructTesseraCore"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsCost base="30"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="TesseraCore" avoidCity="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+		<unitAction name="TargetingRelay"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedUnits">
+									<effects>
+										<addTrait type="TargetingRelay"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<traits>
+		<trait type="Hovering"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

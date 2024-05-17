@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon muzzleFlashesBlueprint="Effects/PlasmaMuzzleFlashes"
+				directionalMuzzleFlashesBlueprint="Effects/PlasmaDirectionalMuzzleFlashes"
+				projectilesBlueprint="Effects/PlasmaProjectiles"
+				explosionsBlueprint="Effects/PlasmaExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"
+				fireSound="Weapons/RadiumCarbine"
+				fireSoundCount="3"
+				fireInterval="0.2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="1"/> <!-- %rangedDamage add strength=3 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="AdeptusMechanicus/RadPoisoning"/>
+		<trait name="Assault"/>
+		<trait name="AdeptusMechanicus/AssaultWeaponBonus" requiredUpgrade="AdeptusMechanicus/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

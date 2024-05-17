@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/HeatLance"
+				fireSoundCount="3"
+				beamsBlueprint="Effects/PrismCannon"
+		 		beamsEmitterBlueprint="Effects/PrismCannonLanceEmitter"
+		 		muzzleFlashesBlueprint="Effects/LasMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"
+		 		explosionsBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Drukhari/AssaultWeaponBonus" requiredUpgrade="Drukhari/AssaultWeaponBonus"/>
+		<trait name="Lance"/>
+		<!-- <trait name="Melta"/> -->
+	</traits>
+</weapon>

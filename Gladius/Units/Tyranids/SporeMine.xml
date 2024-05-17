@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement4">
+	<model>
+		<unit mesh="Units/Tyranids/SporeMine"
+				material="Units/Tyranids/Biovore"
+				idleAnimation="Units/Tyranids/SporeMineIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.75 0.75 0.75"
+				bloodBone="Head"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="FloatingDeath">
+			<model>
+				<explosiveWeapon muzzleBone="Head"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>				
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<biomassUpkeep base="0.75"/> <!-- %biomassUpkeep base tier=3 factor=1 -->
+				<!-- <biomassCost base="15.0"/> %biomassCost base tier=3 factor=1 -->
+				<hitpointsMax base="1.0"/> <!-- %hitpointsMax base toughness=1 wounds=1 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="0.5"/> <!-- %strengthDamage base strength=1 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="1"/>
+				<productionCost base="18.0"/> <!-- %productionCost base tier=3 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Tyranids/SporeMineCharge"
+						meleeAnimation="Units/Tyranids/SporeMineMelee"
+						meleeBeginSwing="0.67"
+						meleeEndSwing="1.0"
+						suppressDieAnimation="1"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/SporeMineDie"
+						animationCount="2"
+						sound="Units/SmallUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Tyranids/MalanthropeMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Suicider"/>
+	</traits>
+</unit>

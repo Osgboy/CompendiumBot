@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<onUnitDisappearedModifiers>
+		<modifier visible="0">
+			<effects>
+				<addFeature duration="3" name="OrkoidFungus"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="Orks/CreatePermanentOrkoidFungusOnDeath">
+			<effects>
+				<addFeature name="OrkoidFungus"/>
+			</effects>
+		</modifier>
+	</onUnitDisappearedModifiers>
+</trait>

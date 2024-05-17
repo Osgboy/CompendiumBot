@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building position="47">
+	<actions>
+		<buildingGroupAction name="LoyaltyUpgrade"
+				passive="1"
+				requiredUpgrade="LoyaltyUpgrade">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="6">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnits">
+									<effects>
+										<addTrait type="LoyaltyUpgrade"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</buildingGroupAction>
+	</actions>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=4 factor=1 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<loyalty add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseLoyaltyScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</building>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<energyCost base="50"/>
+				<oreUpkeep add="2"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<energy add="2"/>
+				<loyalty add="1"/>
+				<production add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<rapidRise name="Necrons/RapidRise"
+				interfaceSound="Interface/RapidRise">
+			<modifiers>
+				<modifier requiredUpgrade="Necrons/RapidRiseBonus">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</rapidRise>
+		<produceUnit unit="Necrons/TombBlade"/>
+		<produceUnit unit="Necrons/GhostArk" requiredUpgrade="Necrons/GhostArk"/>
+		<produceUnit unit="Necrons/AnnihilationBarge" requiredUpgrade="Necrons/AnnihilationBarge"/>
+		<produceUnit unit="Necrons/TriarchStalker" requiredUpgrade="Necrons/TriarchStalker"/>
+		<produceUnit unit="Necrons/DoomsdayArk" requiredUpgrade="Necrons/DoomsdayArk"/>
+		<produceUnit unit="Necrons/Monolith" requiredUpgrade="Necrons/Monolith"/>
+		<produceUnit unit="Necrons/Obelisk" requiredUpgrade="Necrons/Obelisk"/>
+	</actions>
+	<traits>
+		<trait name="Necrons/VehiclesBuildingBonus" requiredUpgrade="Necrons/VehiclesBuildingBonus"/>
+	</traits>
+</building>

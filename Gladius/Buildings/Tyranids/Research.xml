@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<influenceUpkeep add="1"/>
+				<biomassCost base="30"/>
+				<productionCost base="24"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<research add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseResearchScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait name="Tyranids/ResourceBuildingUpkeep" requiredUpgrade="Tyranids/ResourceBuildingUpkeep"/>
+	</traits>
+</building>

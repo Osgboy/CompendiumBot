@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnCountMax="1" productionWeight="0.01">
+	<model>
+		<unit mesh="Units/AstraMilitarum/TechpriestEnginseer"
+				material="Units/AstraMilitarum/TechpriestEnginseer"
+				idleAnimation="Units/AstraMilitarum/TechpriestEnginseerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="PowerAxe">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+						mesh="Weapons/AstraMilitarum/TechpriestEnginseerPowerAxe"
+						material="Units/AstraMilitarum/TechpriestEnginseer"
+						bone="Axe"
+						fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="ServoArm" slotName="ServoArm" enabled="0">
+			<model>
+				<weapon fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightFingers2"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightFingers2"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<oreUpkeep base="1.5"/> <!-- %oreUpkeep base tier=5 factor=1 -->
+				<energyCost base="15.0"/> <!-- %energyCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreCost base="15.0"/> <!-- %oreCost base tier=5 factor=0.5 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersScore base="1.0"/>
+				<increaseSupportScore base="1.0"/>			
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/TechpriestEnginseerMeleeAttack0"
+						chargeAnimation="Units/AstraMilitarum/TechpriestEnginseerCharge0"
+						meleeAnimation="Units/AstraMilitarum/TechpriestEnginseerMeleeAttack0"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<foundCity>
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerBuild"
+						sound="Actions/FoundCity"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+						<oreCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</foundCity>
+		<clearTileUnitAbility cooldown="1"
+				icon="Actions/ClearTile"
+				name="ClearTile">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerBuild"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions/>
+					<areas/>
+				</target>
+			</beginTargets>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="5"/>
+						<oreCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</clearTileUnitAbility>
+		<useWeapon cooldown="1" weaponSlotName="ServoArm">
+			<model>
+				<action	chargeAnimation="Units/AstraMilitarum/TechpriestEnginseerCharge0"
+						meleeAnimation="Units/AstraMilitarum/TechpriestEnginseerServoArm"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>	
+		</useWeapon>
+		<blessingsOfTheOmnissiah cooldown="1">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerAbility"
+						sound="Actions/Heal"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="8"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/FragGrenade">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerGrenade"
+						beginFire="0.9"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/KrakGrenade">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerGrenade"
+						beginFire="0.9"/>
+			</model>				
+		</throwGrenade>
+		<awakenTheMachine cooldown="5"
+				requiredUpgrade="AstraMilitarum/AwakenTheMachine">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerAbility"
+						sound="Actions/MechanicalBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="PowerOfTheMachineSpirit"/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="5" name="PowerOfTheMachineSpirit"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</awakenTheMachine>
+		<constructImperialStrongpoint icon="Units/AstraMilitarum/ImperialStrongpoint"
+				requiredUpgrade="AstraMilitarum/ImperialStrongpoint"
+				cooldown="10">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerBuild"
+						sound="Actions/Construct"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<oreCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="Resource"/>
+							<noFeatureCategory name="WireWeed"/>
+							<land/>
+							<noEnemyCity/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="AstraMilitarum/ImperialStrongpoint"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</constructImperialStrongpoint>
+		<constructVoidShieldGenerator icon="Units/AstraMilitarum/VoidShieldGenerator"
+				requiredUpgrade="AstraMilitarum/VoidShieldGenerator"
+				cooldown="10">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerBuild"
+						sound="Actions/Construct"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<energyCost base="20"/>
+						<oreCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="Resource"/>
+							<noFeatureCategory name="WireWeed"/>
+							<land/>
+							<noEnemyCity/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="AstraMilitarum/VoidShieldGenerator"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</constructVoidShieldGenerator>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+	</traits>
+</unit>

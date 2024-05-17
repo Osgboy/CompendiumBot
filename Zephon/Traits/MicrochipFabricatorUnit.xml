@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/MicrochipFabricator" visibleOnTile="1" visibleOnUnit="1">
+	<onTurnStarted>
+		<tile>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="ForStationedMechanicalUnitEachTurn">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<trait type="Mechanical"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="2"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

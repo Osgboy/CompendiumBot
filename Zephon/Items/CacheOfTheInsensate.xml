@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Cyber">
+	<actions>
+		<unitCast cooldown="10"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/CacheOfTheInsensate"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" type="Stunned"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="BreachCollector"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

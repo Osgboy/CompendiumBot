@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Traits/SistersOfBattle/AnguishOfTheUnredeemed">
+	<model>
+		<flamerWeapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeArmorPenetration add="8"/> <!-- %meleeArmorPenetration add armorPiercing=-4 -->
+				<meleeAttacks base="5"/>
+				<meleeDamage add="1"/> <!-- %meleeDamage add strength=3 -->
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="IgnoresCover"/>
+		<trait name="SistersOfBattle/MeleeWeaponBonus" requiredUpgrade="SistersOfBattle/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

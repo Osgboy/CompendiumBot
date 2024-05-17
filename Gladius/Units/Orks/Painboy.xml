@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/Painboy"
+				material="Units/Orks/Painboy"
+				idleAnimation="Units/Orks/PainboyIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Torso"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="UrtySyringe">
+			<model>
+				
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=4 factor=1 -->
+				<foodCost base="10.0"/> <!-- %foodCost base tier=4 factor=0.5 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=4 factor=2 -->
+				<influenceCost base="40.0"/> <!-- %influenceCost base tier=4 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<oreCost base="10.0"/> <!-- %oreCost base tier=4 factor=0.5 -->
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Orks/PainboyCharge"
+						chargeDefenseAnimation="Units/Orks/PainboyChargeDefense"
+						meleeAnimation="Units/Orks/PainboyMelee"
+						meleeDefenseAnimation="Units/Orks/PainboyMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/PainboyDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/PainboyMove"
+						sound="Units/Orks/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<doksTools cooldown="1"
+				levelUpPriority="0.1"
+				name="Orks/DoksTools"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Orks/PainboyAbility"
+						sound="Actions/Heal"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="6" addMax="18"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</doksTools>
+		<extraBitz name="Orks/ExtraBitz"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Orks/ExtraBitz"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</extraBitz>
+		<cyborkImplants cooldown="3"
+				levelUpPriority="0.1"
+				name="Orks/CyborkImplants"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Orks/PainboyAbility"
+						sound="Actions/Injection"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="Orks/CyborkImplants"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Orks/CyborkImplants"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</cyborkImplants>
+		<experimentalProcedure cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				name="Orks/ExperimentalProcedure"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/Orks/PainboyAbility"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Orks/ExperimentalProcedure"/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Orks/ExperimentalProcedure"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</experimentalProcedure>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Orks/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="FuriousCharge"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+	</traits>
+</unit>

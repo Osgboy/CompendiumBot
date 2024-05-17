@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade branch="Human" tier="4">
+	<requiredUpgrades>
+		<upgrade name="AtlasTank"/>
+		<upgrade name="CrusaderBattleTank"/>
+		<upgrade name="Cyclone"/>
+		<upgrade name="VanquisherSiegeTank"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

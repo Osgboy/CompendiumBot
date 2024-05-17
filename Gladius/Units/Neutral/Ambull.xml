@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Neutral/Ambull"
+				material="Units/Neutral/Ambull"
+				scale="1.3 1.3 1.3"
+				idleAnimation="Units/Neutral/AmbullIdle"
+				idleAnimationCount="4"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="120" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="0.5"
+						fireSoundCount="0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=6 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Neutral/AmbullCharge"
+						meleeAnimation="Units/Neutral/AmbullMelee"
+						meleeBeginSwing="0.33"
+						meleeEndSwing="1.16666666667"
+						meleeDefenseAnimation="Units/Neutral/AmbullMelee"
+						meleeDefenseBeginSwing="0.33"
+						meleeDefenseEndSwing="1.16666666667"
+						meleeSound="Units/Neutral/AmbullAttack"
+						meleeSoundCount="2"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/AmbullDie"
+						animationCount="3"
+						sound="Units/Neutral/AmbullDie"
+						soundCount="3"
+						soundDelay="0.5"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Neutral/AmbullMove"
+						sound="Units/Neutral/AmbullMove"
+						soundCount="2"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="Regeneration"/>
+		<trait name="Rending"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

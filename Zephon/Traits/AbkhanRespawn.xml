@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleInCompendium="0" visibleOnTile="1">
+	<onTraitRemoved>
+		<tile>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Abkhan" homeTile="1"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</tile>
+	</onTraitRemoved>
+</trait>

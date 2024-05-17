@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Wasteland"
+		category="Ground">
+	<ground channel="4"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<algae mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/WastelandRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/DeadBush0"/>
+				<mesh name="Terrain/Vegetation/DeadBush1"/>
+				<mesh name="Terrain/Vegetation/DeadBush2"/>
+				<mesh name="Terrain/Vegetation/DeadTree0"/>
+				<mesh name="Terrain/Vegetation/DeadTree1"/>
+				<mesh name="Terrain/Vegetation/DeadTree2"/>
+				<mesh name="Terrain/Vegetation/DeadTree3"/>
+				<mesh name="Terrain/Vegetation/Algae0"/>
+				<mesh name="Terrain/Vegetation/Algae1"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/Algae2"/>
+				<mesh name="Terrain/Vegetation/Algae3"/>
+				<mesh name="Terrain/Vegetation/Algae4"/>
+				<mesh name="Terrain/Vegetation/Algae5"/>
+				<mesh name="Terrain/Vegetation/Algae6"/>
+				<mesh name="Terrain/Vegetation/Algae7"/>
+				<mesh name="Terrain/Vegetation/Algae8"/>
+				<mesh name="Terrain/Vegetation/Algae9"/>
+				<mesh name="Terrain/Vegetation/Algae10"/>
+				<mesh name="Terrain/Vegetation/Algae11"/>
+				<mesh name="Terrain/Vegetation/DeadTree7"/>
+				<mesh name="Terrain/Vegetation/DeadTree8"/>
+				<mesh name="Terrain/Vegetation/DeadTree9"/>
+				<mesh name="Terrain/Vegetation/DeadTree10"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>	
+			<mesh name="Terrain/Decals/HiveDecal0"/>	
+			<mesh name="Terrain/Decals/HiveDecal2"/>	
+			<mesh name="Terrain/Decals/HiveDecal1"/>		
+			<mesh name="Terrain/Decals/PodsDecal0"/>
+			<mesh name="Terrain/Decals/PodsDecal1"/>
+			<mesh name="Terrain/Decals/PodsDecal2"/>
+		</meshes>
+	</decals>
+</feature>

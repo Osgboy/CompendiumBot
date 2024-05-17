@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="24"/>
+				<energyUpkeep add="1"/>
+				<energyCost base="30"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<ore add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseOreScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait name="Necrons/OreBuildingBonus" requiredUpgrade="Necrons/OreBuildingBonus"/>
+	</traits>
+</building>

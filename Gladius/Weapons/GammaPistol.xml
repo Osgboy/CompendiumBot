@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/GammaPistol"
+				fireSoundCount="1"
+				fireInterval="0.33"
+				muzzleFlashesBlueprint="Effects/IonMuzzleFlashes"
+		 		beamsBlueprint="Effects/IonBeams"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Armourbane"/>
+		<trait name="Assault"/>
+		<!-- <trait name="Pistol"/> -->
+		<trait name="AdeptusMechanicus/AssaultWeaponBonus" requiredUpgrade="AdeptusMechanicus/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

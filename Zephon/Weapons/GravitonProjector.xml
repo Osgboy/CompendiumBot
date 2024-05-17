@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/GravitonProjector"
+				explosionOffsetRadius="0"
+				explosionTrigger="0.03"
+				explosionsBlueprint="Effects/GravitonExplosions"
+				muzzleFlashesBlueprint="Effects/GravitonProjectorFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="4"/> <!-- %armorPenetration base tier=5 -->
+				<attacks base="2"/>
+				<damage base="3"/> <!-- %damage base tier=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="GravitationalCompression"/>
+		<trait type="IgnoresCover"/>
+	</traits>
+</weapon>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="CannibalizeMachines">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<trait type="Mechanical"/>
+				</targetUnit>
+				<weapon ignoreForTraitVisibility="1">
+					<trait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<lifeStealFromDamage add="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

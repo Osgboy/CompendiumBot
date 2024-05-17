@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Bunker"
+				explosionSound="Explosions/Units/MediumCyber"
+				explosionSoundCount="8"
+				material="Units/Bunker"
+				mesh="Units/Bunker"
+				normalWeight="0.1"
+				position="0 0 0"
+				scale="1.5 1.5 1.5"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="8"/>
+				<cargoSlots base="2"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1.0 -->
+				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=6 factor=1.0 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<appear>
+			<model>
+				<action beginEffect="0.2"
+						effectBlueprint="Effects/CircularDust"
+						responseSound="Units/Responses/BunkerAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/BunkerAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die sound="Units/TesseraCoreDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action responseSound="Units/Responses/BunkerEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/BunkerKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/BunkerPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/BunkerSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Fortification"/>
+		<trait type="HexeskeltalCreche" requiredUpgrade="HexeskeltalCreche"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

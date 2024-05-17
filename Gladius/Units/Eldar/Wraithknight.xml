@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/Wraithknight"
+				material="Units/Eldar/Wraithknight"
+				idleAnimation="Units/Eldar/WraithknightIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				explosionsBone="WraithKnight_Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="Suncannon">
+			<model>
+				<projectileWeapon muzzleBone="SuncannonMuzzle"
+						effectScale="1.5"/>
+			</model>
+		</weapon>
+		<weapon name="Starcannon" count="2"
+				requiredUpgrade="Eldar/WraithknightStarcannon">
+			<model>
+				<projectileWeapon mesh="Weapons/Eldar/WraithknightStarcannons"
+						material="Units/Eldar/Wraithknight"
+						bone="WraithKnight_Chest"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						cycleMuzzles="0"/>
+			</model>
+		</weapon>
+		<weapon name="Stomp" slotName="Stomp" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="80.0"/> <!-- %energyCost base tier=10 factor=0.5 -->
+				<hitpointsMax base="56.0"/> <!-- %hitpointsMax base toughness=7 wounds=7 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<oreCost base="80.0"/> <!-- %oreCost base tier=10 factor=0.5 -->
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<strengthDamage base="6"/> <!-- %strengthDamage base strength=8 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Eldar/WraithknightAttack"
+						beginFire="1.2" endFire="2.2"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/WraithknightDie0"
+						sound="Units/HugeArmoredDie"
+						soundCount="1"
+						soundDelay="1.0"
+						voiceSound="Units/Eldar/GargantuanWalkerDie"
+						voiceSoundCount="1"
+						voiceSoundDelay="0.0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/WraithknightMove"
+						sound="Units/Eldar/GargantuanWalkerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<jumpPack cooldown="3">
+			<model>
+				<action animation="Units/Eldar/WraithknightJumpMove"
+						sound="Actions/WraithknightJumpPack"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="SpaceMarines/HammerOfWrath">
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+		<stomp consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0"
+				weaponSlotName="Stomp"/>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Eldar/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>		
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Fearless"/>
+		<trait name="FeelNoPain"/>
+		<trait name="Gargantuan"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Relentless"/>
+		<trait name="Eldar/Scattershield"/>
+		<trait name="Smash"/>
+		<trait name="Strikedown"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

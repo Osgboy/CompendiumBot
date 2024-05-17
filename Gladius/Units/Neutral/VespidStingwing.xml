@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit faction="Tau" spawnDistanceMin="6">
+	<model>
+		<unit mesh="Units/Neutral/VespidStingwing"
+				material="Units/Neutral/VespidStingwing"
+				scale="1.0 1.0 1.0"
+				idleAnimation="Units/Neutral/VespidStingwingIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="NeutronBlaster">
+			<model>
+				<beamWeapon muzzleBone=".Muzzle"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodCost base="10.0"/> <!-- %foodCost base tier=4 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=4 factor=1 -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<oreCost base="10.0"/> <!-- %oreCost base tier=4 factor=0.5 -->
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Neutral/VespidStingwingAttack"
+						beginFire="0.833"
+						endFire="1.867"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/VespidStingwingDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/Neutral/VespidStingwingDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Neutral/VespidStingwingMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<jumpPack cooldown="3">
+			<model>
+				<action animation="Units/Neutral/VespidStingwingJumpMove"
+						sound="Actions/VespidStingwingJumpPack"
+						soundCount="1"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="Fleet"/>
+		<trait name="HitAndRun"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="RuinsStealth"/>
+	</traits>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Cache">
+	<model>
+		<simpleModel blueprint="Features/AdvancedCyberCache" 
+				effectsBlueprint="Effects/AdvancedCyberCache"
+				material="Buildings/Buildings"
+				mesh="Features/Caches/"
+				removeEffectsBlueprint="Effects/CyberCacheRemoval"
+				scale="1 1 1"/>
+	</model>
+	<traits>
+		<trait type="AdvancedCyberCache"/>
+	</traits>
+</feature>

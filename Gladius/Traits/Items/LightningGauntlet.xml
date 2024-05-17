@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff" icon="Items/LightningGauntlet">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damage mul="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

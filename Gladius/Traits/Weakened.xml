@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Enfeeble">
+	<modifiers>
+		<modifier>
+			<effects>
+				<!-- <hitpointsMax mul="-0.33"/> -->
+				<circumstanceMeleeDamage mul="-0.33"/>
+				<movementMax mul="-0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

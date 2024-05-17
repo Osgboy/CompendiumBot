@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/SkorpiusDisintegrator"
+				material="Units/AdeptusMechanicus/SkorpiusDisintegrator"
+				idleAnimation="Units/AdeptusMechanicus/SkorpiusDisintegratorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.3 1.3 1.3"
+				explosionsBone="Hull_Vibrate"/>
+	</model>
+	<weapons>
+		<weapon name="FerrumiteCannon">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle" fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="DisruptorMissileLauncher">
+			<model>
+				<missileWeapon muzzleBone="Missile"
+						muzzleCount="6"
+						missileScale="0.4"
+						fireInterval="1.74"/>
+			</model>
+		</weapon>
+		<weapon name="CognisHeavyStubber" count="3">
+			<model>
+				<projectileWeapon muzzleBone="HeavyStubberMuzzle"
+						muzzleCount="3"
+						effectFaceWeight="0"/>
+			</model>
+		</weapon>
+		<weapon name="None" requiredUpgrade="AdeptusMechanicus/BroadSpectrumDataTether" enabled="0">
+			<model>
+				<weapon mesh="Weapons/AdeptusMechanicus/SkorpiusDisintegratorAntennas"
+						material="Units/AdeptusMechanicus/SkorpiusDisintegrator"
+						bone="Hull_Vibrate"/>
+			</model>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base toughness=7 wounds=6 -->
+				<meleeAccuracy base="2"/> <!-- %meleeAccuracy base weaponSkill=1 -->
+				<meleeAttacks base="2"/>
+				<oreUpkeep base="6.0"/> <!-- %oreUpkeep base tier=9 factor=1 -->
+				<oreCost base="120.0"/> <!-- %oreCost base tier=9 factor=1 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/AdeptusMechanicus/SkorpiusDisintegratorAttack"
+						beginFire="0.56" endFire="2.3"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkorpiusDisintegratorDie0"
+						sound="Units/AdeptusMechanicus/VehicleDie"
+						soundCount="3"/>
+			</model>		
+		</die>
+		<idle/>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkorpiusDisintegratorMove"
+						sound="Units/AdeptusMechanicus/VehicleMove"
+						soundCount="1"/>
+			</model>				
+		</move>
+		<genericUnitAbility name="AdeptusMechanicus/BroadSpectrumDataTether"
+				passive="1"
+				requiredUpgrade="AdeptusMechanicus/BroadSpectrumDataTether">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AdeptusMechanicus/BroadSpectrumDataTether"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/DoctrinaImperatives"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="AdeptusMechanicus/ExtraVehicleArmour"/>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

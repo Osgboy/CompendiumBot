@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/Captain"
+				material="Units/SpaceMarines/Captain"
+				idleAnimation="Units/SpaceMarines/CaptainIdle"
+				idleAnimationCount="4"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PowerSword" slotName="PowerSword">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+						mesh="Weapons/SpaceMarines/RelicBlade"
+						material="Weapons/SpaceMarines/RelicBlade"
+						bone="RightHand"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="BoltPistol">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/CaptainBoltPistol"
+						material="Weapons/SpaceMarines/BoltPistol"
+						bone="LeftHand"
+						muzzleBone="Muzzle0"
+						fireInterval="0.35"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="12"/> <!-- %meleeAccuracy base weaponSkill=6 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<requisitionsUpkeep base="2.0"/> <!-- %requisitionsUpkeep base tier=6 factor=1 -->
+				<requisitionsCost base="40.0"/> <!-- %requisitionsCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/CaptainAttack"
+						beginFire="0.4"
+						endFire="2.53"
+						chargeAnimation="Units/SpaceMarines/CaptainCharge"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.05"
+						chargeDefenseAnimation="Units/SpaceMarines/CaptainChargeDefense"
+						chargeDefenseBeginFire="0.25"
+						chargeDefenseEndFire="1.05"
+						meleeAnimation="Units/SpaceMarines/CaptainMelee"
+						meleeAnimationSpeed="1.0"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.8"
+						meleeDefenseAnimation="Units/SpaceMarines/CaptainMeleeDefense"
+						meleeDefenseBeginSwing="0.15"
+						meleeDefenseEndSwing="0.8"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/CaptainDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/CaptainMove"
+						sound="Units/SpaceMarines/InfantryMove"
+						soundCount="4"/>
+			</model>				
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/CaptainGrenade"
+						beginFire="1.16666666667"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/SpaceMarines/CaptainGrenade"
+						beginFire="1.16666666667"/>
+			</model>				
+		</throwGrenade>
+		<powerStrike cooldown="3"
+				icon="Actions/PowerStrike"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="PowerSword">
+			<model>
+				<action chargeAnimation="Units/SpaceMarines/CaptainPowerStrikeCharge"
+						meleeAnimation="Units/SpaceMarines/CaptainPowerStrikeMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.65"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.5" mulMax="1.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</powerStrike>
+		<healingSurge cooldown="3" 
+				levelUpPriority="0.15"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/CaptainHealingSurge"
+						bone="Chest"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax addMin="0.2" addMax="0.4"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</healingSurge>
+		<deedsOfGlory passive="1"
+				levelUpPriority="0.2"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="DeedsOfGlory"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</deedsOfGlory>
+		<orbitalStrike cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/SpaceMarines/CaptainOrbitalStrike"
+						sound="Actions/BombDrop"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="OrbitalBombardment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</orbitalStrike>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="IronHalo"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+	</traits>
+</unit>

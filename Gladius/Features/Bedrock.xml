@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/TyranidsCity"
+		ambientSoundLayer="1"
+		ambientSoundPriority="0"
+		category="Bedrock">
+	<model>
+		<bedrock material="Terrain/Bedrock"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<food mul="-1.0"/>
+				<biomassOnConsume max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

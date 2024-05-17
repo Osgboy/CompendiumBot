@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/FleshTree" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<food add="2"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<food mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="TilePlayer" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every10Turns">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="10"/>
+						</conditions>
+						<effects>
+							<addPlayerAction type="FleshTree" charges="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

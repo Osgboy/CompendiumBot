@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Building" icon="Actions/AstraMilitarumOreEdict">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="AstraMilitarum/Ore"/>
+				</building>
+			</conditions>
+			<effects>
+				<ore mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

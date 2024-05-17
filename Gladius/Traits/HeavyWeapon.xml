@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<movedThisTurn/>
+					<noTrait name="Flyer"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Relentless"/>
+					<noTrait name="SlowAndPurposeful"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<energyCost base="50"/>
+				<oreUpkeep add="2"/>
+				<populationRequired base="0"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<populationLimit add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increasePopulationLimitScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<traits>
+		<trait name="Necrons/HousingBuildingBonus" requiredUpgrade="Necrons/HousingBuildingBonus"/>
+	</traits>
+</building>

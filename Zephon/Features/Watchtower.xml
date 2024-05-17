@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="WatchtowerResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel groundMaterial="Features/WatchtowerGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/Watchtower"
+				mesh="Features/Watchtower"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+		<trait type="WatchtowerResource"/>
+		<trait type="WatchtowerUnit"/>
+	</traits>
+</feature>

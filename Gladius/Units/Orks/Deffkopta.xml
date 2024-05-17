@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/Deffkopta"
+				material="Units/Orks/Deffkopta"
+				position="0 0 32"
+				idleAnimation="Units/Orks/DeffkoptaIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="0.75 0.75 0.75"
+				explosionsBone="Hull"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="TwinLinkedBigShoota">
+			<model>
+				<projectileWeapon muzzleBone=".BigShootaMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="Slugga">
+			<model>
+				<projectileWeapon muzzleBone=".PistolMuzzle"
+						fireInterval="0.75"/>
+			</model>
+		</weapon>
+		<weapon name="Bigbomm" slotName="Bigbomm" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="8.0"/> <!-- %hitpointsMax base toughness=5 wounds=2 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="5"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/DeffkoptaAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						chargeAnimation="Units/Orks/DeffkoptaCharge"
+						chargeDefenseAnimation="Units/Orks/DeffkoptaChargeDefense"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.5"				
+						meleeAnimation="Units/Orks/DeffkoptaMelee"
+						meleeDefenseAnimation="Units/Orks/DeffkoptaMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/DeffkoptaDie"
+						animationCount="2"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0.3"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Orks/DeffkoptaMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<turboBoost consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="TurboBoost"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</turboBoost>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<scout consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</scout>
+		<hammerOfWrath consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Orks/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<throwGrenade consumedActionPoints="0"
+				cooldown="10"
+				requiredActionPoints="0"
+				requiredUpgrade="Orks/Bigbomm"
+				weaponSlotName="Bigbomm">
+			<model>
+				<action animation="Units/Orks/DeffkoptaGrenade"
+						beginFire="1.46666666667"/>
+			</model>	
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<!-- <trait name="FuriousCharge"/> -->
+		<trait name="HitAndRun"/>
+		<trait name="Jetbike"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Relentless"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

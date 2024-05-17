@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<modifiers>
+ 		<modifier effectDescription="IfHasMoved">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<movedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

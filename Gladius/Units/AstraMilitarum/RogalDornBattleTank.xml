@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>
+		<unit mesh="Units/AstraMilitarum/RogalDornBattleTank"
+				material="Units/AstraMilitarum/RogalDornBattleTank"
+				idleAnimation="Units/AstraMilitarum/RogalDornBattleTankIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.1 1.1 1.1"
+				explosionsBone="Hull_Shake"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="OppressorCannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle1" fireDelay="1.19"/>
+			</model>
+		</weapon>
+		<weapon name="Autocannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle2"/>
+			</model>
+		</weapon>
+		<weapon name="CastigatorGatlingCannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle0"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter"
+				requiredUpgrade="AstraMilitarum/AdditionalHeavyBolters">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/RogalDornBattleTankBolterL"
+						material="Units/AstraMilitarum/RogalDornBattleTank"
+						bone="Bolter_L"
+						muzzleBone="Muzzle3"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter"
+				requiredUpgrade="AstraMilitarum/AdditionalHeavyBolters">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/RogalDornBattleTankBolterR"
+						material="Units/AstraMilitarum/RogalDornBattleTank"
+						bone="Bolter_R"
+						muzzleBone="Muzzle4"/>
+			</model>
+		</weapon>
+		<weapon name="HunterKillerMissile" slotName="HunterKillerMissile"
+				enabled="0">
+			<model>
+				<missileWeapon muzzleBone="Hull_Shake"/>
+			</model>	
+		</weapon>
+		<weapon name="None" enabled="0" requiredUpgrade="AstraMilitarum/SmokeLauncher">
+			<model>
+				<weapon mesh="Weapons/AstraMilitarum/RogalDornBattleTankSmokeLauncherL"
+						material="Units/AstraMilitarum/RogalDornBattleTank"
+						bone="Flare_L"/>
+			</model>
+		</weapon>
+		<weapon name="None" enabled="0" requiredUpgrade="AstraMilitarum/SmokeLauncher">
+			<model>
+				<weapon mesh="Weapons/AstraMilitarum/RogalDornBattleTankSmokeLauncherR"
+						material="Units/AstraMilitarum/RogalDornBattleTank"
+						bone="Flare_R"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="9"/>
+				<hitpointsMax base="72.0"/> <!-- %hitpointsMax base toughness=10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<oreCost base="160.0"/> <!-- %oreCost base tier=10 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AstraMilitarum/RogalDornBattleTankAttack"
+						beginFire="0.67" endFire="1.89"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/RogalDornBattleTankDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.2"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/RogalDornBattleTankMove"
+						sound="Units/AstraMilitarum/TankMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="AstraMilitarum/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<useWeapon weaponSlotName="HunterKillerMissile"
+				cooldown="10"
+				requiredUpgrade="AstraMilitarum/HunterKillerMissile">
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="CamoNetting" requiredUpgrade="AstraMilitarum/CamoNetting"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="AstraMilitarum/ExtraVehicleArmour"/>
+		<trait name="RecoveryGear" requiredUpgrade="AstraMilitarum/RecoveryGear"/>
+		<trait name="RelicPlating" requiredUpgrade="AstraMilitarum/RelicPlating"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Chest"
+				material="Units/FallenOrolos"
+				effectsBlueprint="Effects/FallenOrolos"
+				mesh="Units/FallenOrolos"
+				normalWeight="0.1"
+				scale="1.2 1.2 1.2"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="OrolosCannon">
+			<models>
+				<projectileWeapon fireInterval="0.43" muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="4"/>
+				<algaeCost base="20"/> <!-- %algaeCost base tier=8 factor=0.25 -->
+				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=8 factor=0.25 -->
+				<armor base="2"/>
+				<energyCost base="20"/> <!-- %energyCost base tier=8 factor=0.25 -->
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=8 factor=0.25 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=8 factor=0.25 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=8 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/FallenOrolosAttack"
+						beginFire="1.26"
+						endFire="1.79"
+						sound="Units/FallenOrolosAttack"
+						responseSound="Units/Responses/FallenOrolosAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/FallenOrolosDie0"
+						groundImpact="1.1"
+						sound="Units/FallenOrolosDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/FallenOrolosImpact"
+						responseSound="Units/Responses/FallenOrolosEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/FallenOrolosIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/FallenOrolosMove"
+						responseSound="Units/Responses/FallenOrolosMove"
+						responseSoundCount="3"
+						sound="Units/FallenOrolosMove"
+						soundCount="1"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="Pestilence"
+				cooldown="3"
+				requiredUpgrade="Pestilence">
+			<model>
+				<cast animation="Units/FallenOrolosAbility0"
+						casterBlueprint="Effects/Pestilence"
+						responseSound="Units/Responses/FallenOrolosPestilence"
+						sound="Units/FallenOrolosPestilence"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToEnemyUnits">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="Blighted" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>	
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Contagious"/>
+		<trait type="Large"/>
+	</traits>
+</unit>

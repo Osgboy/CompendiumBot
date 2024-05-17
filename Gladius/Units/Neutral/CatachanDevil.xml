@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnCountMax="1" spawnWeight="0">
+	<model>
+		<unit mesh="Units/Neutral/CatachanDevil"
+				material="Units/Neutral/CatachanDevil"
+				scale="0.6 0.6 0.6"
+				idleAnimation="Units/Neutral/CatachanDevilIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="Bone023"
+				walker="1"/>
+	</model>
+	<group size="1" rowSize="3" memberDeltaX="80" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="0.5"
+						fireSoundCount="0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=5 wounds=3 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="5"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Neutral/CatachanDevilCharge"
+						meleeAnimation="Units/Neutral/CatachanDevilMelee"
+						meleeBeginSwing="0.0"
+						meleeEndSwing="1.0"
+						meleeDefenseAnimation="Units/Neutral/CatachanDevilMelee"
+						meleeDefenseBeginSwing="0.0"
+						meleeDefenseEndSwing="1.0"
+						meleeSound="Units/Neutral/CatachanDevilAttack"
+						meleeSoundCount="2"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/CatachanDevilDie"
+						animationCount="2"
+						sound="Units/Neutral/CatachanDevilDie"
+						soundCount="2"
+						soundDelay="0"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Neutral/CatachanDevilMove"
+						sound="Units/Neutral/CatachanDevilMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Fleet"/>
+		<trait name="Infiltrate"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+		<trait name="Stealth"/>
+	</traits>
+</unit>

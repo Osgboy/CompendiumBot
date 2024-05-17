@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/SerberysSulphurhound"
+				material="Units/AdeptusMechanicus/SerberysSulphurhound"
+				idleAnimation="Units/AdeptusMechanicus/SerberysSulphurhoundIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				explosionsBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="ClawedLimbs">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="PhosphorPistol" count="2">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="SulphurBreath">
+			<model>
+				<flamerWeapon muzzleBone="MuzzleFace"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SerberysSulphurhoundAttack"
+						beginFire="1.0"
+						endFire="1.9"
+						chargeAnimation="Units/AdeptusMechanicus/SerberysSulphurhoundCharge"
+						chargeBeginFire="0.6"
+						chargeEndFire="1.3"
+						meleeAnimation="Units/AdeptusMechanicus/SerberysSulphurhoundMelee"
+						meleeBeginSwing="0.3"
+						meleeEndSwing="0.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SerberysSulphurhoundDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/AdeptusMechanicus/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SerberysSulphurhoundMove"
+						sound="Units/AdeptusMechanicus/SerberysSulphurhoundMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<genericUnitAbility name="AdeptusMechanicus/RadSaturation"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AdeptusMechanicus/RadSaturation"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/DoctrinaImperatives"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AdeptusMechanicus/ExtraInfantryArmour"/>
+		<trait name="FeelNoPain"/>
+	</traits>
+</unit>

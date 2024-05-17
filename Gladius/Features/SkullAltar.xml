@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/SkullAltar"
+		ambientSoundLayer="1"
+		ambientSoundPriority="2"
+		audioEffectSystem="Ruin"
+		category="Resource" 
+		explorable="1"
+		exploreCooldown="10">
+	<model>
+		<simpleModel mesh="Features/SkullAltar" material="Features/SkullAltar"
+				groundMaterial="Features/SkullAltarGround"
+				scale="1 1 1"
+				explorationEffectBlueprint="Effects/SkullAltar"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<influence mul="0.2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+				<influence mul="0.2"/>
+				<influence add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rewards>
+		<unitTrait name="BloodBlessing" duration="10"/>
+	</rewards>
+	<traits>
+		<!-- <trait name="SkullAltar"/> --> <!-- TODO: Use <onTileExplored> instead of rewards, but figure out a way to send notification with the gained reward. -->
+	</traits>
+</feature>

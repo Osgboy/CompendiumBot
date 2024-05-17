@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<hitpointsFraction greater="0.66"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

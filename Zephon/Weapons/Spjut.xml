@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<missileWeapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="4"/> <!-- %armorPenetration base tier=5 -->
+				<attacks base="1"/>
+				<damage base="4"/> <!-- %damage base tier=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait type="AntiGround"/>
+	</traits>
+</weapon>

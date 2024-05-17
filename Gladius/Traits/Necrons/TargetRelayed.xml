@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Debuff" icon="Traits/Necrons/TargetingRelay">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<faction name="Necrons"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<opponentRangedAccuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

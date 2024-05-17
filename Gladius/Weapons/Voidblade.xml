@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<powerWeapon effectBlueprint="Effects/CroziusArcanum"
+				effectEmitterBlueprint="Effects/CroziusArcanumEmitter"
+				fireSound="Weapons/Voidblade"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="2"/> <!-- %meleeArmorPenetration add armorPiercing=4 -->
+				<strengthDamage mul="0"/> <!-- %strengthDamage mul strength=0 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Necrons/EntropicStrike"/>
+		<trait name="Melee"/>
+		<trait name="Necrons/MeleeDamage" requiredUpgrade="Necrons/MeleeDamage"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="Rending"/>
+	</traits>
+</weapon>

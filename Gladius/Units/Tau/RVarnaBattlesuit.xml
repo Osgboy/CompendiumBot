@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>
+		<unit mesh="Units/Tau/RVarnaBattlesuit"
+				material="Units/Tau/RVarnaBattlesuit"
+				idleAnimation="Units/Tau/RVarnaBattlesuitIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.5 1.5 1.5"
+				explosionsBone="Body"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PulseSubmunitionsCannon" count="2">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="10"
+						cycleMuzzles="0"
+						effectScale="3.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<energyCost base="80.0"/> <!-- %energyCost base tier=10 factor=0.5 -->
+				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base toughness=7 wounds=6 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreCost base="80.0"/> <!-- %oreCost base tier=10 factor=0.5 -->
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersScore base="1.0"/>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Tau/RVarnaBattlesuitAttack"
+						beginFire="1.4"
+						endFire="1.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/RVarnaBattlesuitDie0"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.66"
+						voiceSound="Units/Tau/MonstrousWalkerDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tau/RVarnaBattlesuitMove"
+						sound="Units/Tau/WalkerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<novaShield consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="2"
+				name="Tau/NovaShield">
+			<model>
+				<action sound="Actions/NovaShield"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<addTrait name="Tau/NovaShield" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/NovaBoost"/>
+				<action name="Tau/NovaFire"/>
+				<action name="Tau/NovaElectromagneticShockwave"/>
+			</sharedCooldowns>
+		</novaShield>
+		<novaBoost consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="2"
+				name="Tau/NovaBoost">
+			<model>
+				<action sound="Actions/NovaBoost"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<addTrait name="Tau/NovaBoost" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/NovaFire"/>
+				<action name="Tau/NovaShield"/>
+				<action name="Tau/NovaElectromagneticShockwave"/>
+			</sharedCooldowns>
+		</novaBoost>
+		<novaFire consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="2"
+				name="Tau/NovaFire">
+			<model>
+				<action sound="Actions/NovaFire"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<addTrait name="Tau/NovaFire" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/NovaBoost"/>
+				<action name="Tau/NovaShield"/>
+				<action name="Tau/NovaElectromagneticShockwave"/>
+			</sharedCooldowns>
+		</novaFire>
+		<novaElectromagneticShockwave consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="2"
+				name="Tau/NovaElectromagneticShockwave">
+			<model>
+				<action sound="Actions/NovaElectromagneticShockwave"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFactorFromMax add="-0.1"/>
+										<weaponDamage weapon="NovaElectromagneticShockwave"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/NovaBoost"/>
+				<action name="Tau/NovaFire"/>
+				<action name="Tau/NovaShield"/>
+			</sharedCooldowns>
+		</novaElectromagneticShockwave>
+		<deployShieldedMissileDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/ShieldedMissileDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/ShieldedMissileDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</deployShieldedMissileDrone>
+		<hammerOfWrath consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Tau/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="Tau/FlechetteDischarger"/>
+		<trait name="Tau/IntegratedShieldGenerator"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Relentless"/>
+		<!-- <trait name="Smash"/> -->
+		<trait name="Tau/SupportSystems" rank="1"/>
+		<trait name="Tau/SupportingFire"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+	</traits>
+</unit>

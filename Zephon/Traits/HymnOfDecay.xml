@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/HymnOfDecay" visibleOnUnit="1">
+	<onTurnStarted>
+		<tile>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<weaponDamage weapon="HymnOfDecay"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="EachTurn"
+							requiredUpgrade="AfflictionsAntiphon">
+						<effects>
+							<morale add="-1"/>
+						</effects>
+					</modifier>					
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

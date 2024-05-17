@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/KataphronBreacher"
+				material="Units/AdeptusMechanicus/KataphronBreacher"
+				idleAnimation="Units/AdeptusMechanicus/KataphronBreacherIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				explosionsBone="Chest"
+				uvAnimated="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="90" memberDeltaY="90"/>
+	<weapons>
+		<weapon name="HeavyArcRifle">
+			<model>
+				<beamWeapon muzzleBone="GunArmMuzzle" fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="ArcClaw">
+			<model>
+				<powerWeapon effectBone="Arm4_L"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="8.0"/> <!-- %hitpointsMax base toughness=5 wounds=2 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronBreacherAttack"
+						beginFire="1.0"
+						endFire="1.6"
+						chargeAnimation="Units/AdeptusMechanicus/KataphronBreacherCharge"
+						chargeBeginFire="0.1"
+						chargeEndFire="0.7"
+						meleeAnimation="Units/AdeptusMechanicus/KataphronBreacherMelee"
+						meleeBeginSwing="0.0"
+						meleeEndSwing="0.1"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronBreacherDie"
+						animationCount="2"
+						sound="Units/AdeptusMechanicus/VehicleDie"
+						soundCount="3"
+						soundDelay="0.0"
+						voiceSound="Units/AdeptusMechanicus/InfantryVoiceDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KataphronBreacherMove"
+						sound="Units/AdeptusMechanicus/KataphronDestroyerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/CanticlesOfTheOmnissiah"/>
+		<trait name="AdeptusMechanicus/Bionics"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AdeptusMechanicus/ExtraInfantryArmour"/>
+		<trait name="Relentless"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

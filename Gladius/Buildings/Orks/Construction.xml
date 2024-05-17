@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="48"/>
+				<oreCost base="80"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="3"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<influence add="2"/>
+				<ore add="2"/>
+				<populationLimit add="1"/>
+				<production add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseConstructionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<acquireTile>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost add="5"/>
+						<oreCost add="5"/>
+						<productionCost add="12"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</acquireTile>
+		<clearTile>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<productionCost add="12"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</clearTile>
+		<constructFeature feature="OrkoidFungus"/>
+		<constructBuilding building="Orks/Food"/>
+		<constructBuilding building="Orks/Ore"/>
+		<constructBuilding building="Orks/Energy"/>
+		<constructBuilding building="Orks/Research"/>
+		<constructBuilding building="Orks/Influence"/>
+		<constructBuilding building="Orks/Loyalty" requiredUpgrade="Orks/Loyalty"/>
+		<constructBuilding building="Orks/Housing" requiredUpgrade="Orks/Housing"/>
+		<constructBuilding building="Orks/Infantry"/>
+		<constructBuilding building="Orks/Heroes" requiredUpgrade="Orks/Heroes"/>
+		<constructBuilding building="Orks/Colonizers" requiredUpgrade="Orks/Colonizers"/>
+		<constructBuilding building="Orks/Vehicles" requiredUpgrade="Orks/Vehicles"/>
+		<constructBuilding building="Orks/Beasts" requiredUpgrade="Orks/Beasts"/>
+		<constructBuilding building="Orks/Construction" requiredUpgrade="Orks/Construction"/>
+	</actions>
+	<traits>
+		<trait name="Orks/CityGrowth" requiredUpgrade="Orks/CityGrowth"/>
+	</traits>
+</building>

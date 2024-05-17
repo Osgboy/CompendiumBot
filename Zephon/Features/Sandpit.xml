@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature>
+	<model>
+		<simpleModel blueprint="Features/Sandpit" 
+				flow="1"
+				groundMaterial="Features/SandpitGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/Sandpit"
+				mesh="Features/Sandpit/"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

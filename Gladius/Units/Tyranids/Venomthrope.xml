@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/Tyranids/Venomthrope"
+				material="Units/Tyranids/Venomthrope"
+				scale="0.9 0.9 0.9"
+				idleAnimation="Units/Tyranids/VenomthropeIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="Spine3"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="LashWhips">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="ToxicMiasma" slotName="ToxicMiasma" enabled="0">
+			<model>
+				<flamerWeapon muzzleBone="FaceTentacle2_1"
+						effectFaceWeight="1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<biomassUpkeep base="2.0"/> <!-- %biomassUpkeep base tier=6 factor=1 -->
+				<biomassCost base="40.0"/> <!-- %biomassCost base tier=6 factor=1 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Tyranids/VenomthropeCharge"
+						meleeAnimation="Units/Tyranids/VenomthropeMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.25"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/VenomthropeDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.1"
+						voiceSound="Units/Tyranids/MediumDie"
+						voiceSoundCount="4"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/VenomthropeMove"
+						sound="Units/Tyranids/MalanthropeMove"
+						soundCount="2"/>
+			</model>		
+		</move>
+		<useWeapon cooldown="2" weaponSlotName="ToxicMiasma">
+			<model>
+				<action animation="Units/Tyranids/VenomthropeAbility"
+						beginFire="1.27" endFire="2.27"/>
+			</model>
+		</useWeapon>
+		<genericUnitAbility name="Tyranids/SporeCloud" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/SporeCloud"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<instinctiveBehaviourOverride consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/InstinctiveBehaviourOverride"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tyranids/InstinctiveBehaviourOverride2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/InstinctiveBehaviourOverride" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</instinctiveBehaviourOverride>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Tyranids/InstinctiveBehaviour"/>
+		<trait name="Poisoned" rank="4"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

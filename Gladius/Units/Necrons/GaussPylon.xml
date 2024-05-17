@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement4" spawnCountMax="1">
+	<model>
+		<structureUnit mesh="Units/Necrons/GaussPylon"
+				material="Units/Necrons/GaussPylon"
+				groundMaterial="Units/Necrons/GaussPylonGround"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1.0 1.0 1.0"
+				explosionsBone="Hull"
+				portraitZoomModifier="0.6"
+				portraitFocusHeightModifier="64"/>
+	</model>
+	<weapons>
+		<weapon name="GaussAnnihilator">
+			<model>
+				<beamWeapon mesh="Weapons/Necrons/GaussPylonTurret"
+						material="Units/Necrons/GaussPylon"
+						bone="Turret"
+						muzzleBone=".Muzzle"
+						effectFaceWeight="0.9"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=14/14/14 -->
+				<energyCost base="240.0"/> <!-- %energyCost base tier=11 factor=1 -->
+				<hitpointsMax base="96.0"/> <!-- %hitpointsMax base armor=14/14/14 wounds=6 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax max="0"/>
+				<oreUpkeep base="12.0"/> <!-- %oreUpkeep base tier=11 factor=1 -->
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<genericUnitAbility name="Necrons/PhaseShiftGenerator"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Necrons/PhaseShiftGenerator"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+		<trait name="Necrons/LivingMetal"/>
+		<trait name="SuperHeavy"/>
+	</traits>	
+</unit>

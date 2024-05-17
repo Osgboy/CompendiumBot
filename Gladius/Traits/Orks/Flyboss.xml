@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent match="Any">
+						<trait name="Flyer"/>
+						<trait name="JetPack"/>
+						<trait name="Jetbike"/>
+						<trait name="Skimmer"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangedAccuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

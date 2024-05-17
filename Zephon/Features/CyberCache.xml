@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/CyberCache"
+		category="Cache">
+	<model>
+		<simpleModel blueprint="Features/CyberCache" 
+				effectsBlueprint="Effects/CyberCache"
+				material="Buildings/Buildings"
+				mesh="Features/Caches/"
+				removeEffectsBlueprint="Effects/CyberCacheRemoval"
+				scale="1 1 1"/>
+	</model>
+	<traits>
+		<trait type="CyberCache"/>
+	</traits>
+</feature>

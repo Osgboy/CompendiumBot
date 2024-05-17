@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Traits/Pharmaceutics" visibleOnUnit="1">
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnRemoval">
+						<effects>
+							<changePlayer/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<effects>
+							<movement add="100"/>
+							<actionPoints add="100"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building disablable="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="336"/>
+				<populationRequired base="0"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<cityRadius add="1"/>
+				<energy add="6"/>
+				<food add="6"/>
+				<loyalty add="6"/>
+				<influence add="6"/>
+				<ore add="6"/>
+				<populationLimit add="6"/>
+				<research add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="AdeptusMechanicus/CityTier2" requiredUpgrade="AdeptusMechanicus/CityTier2"/>
+		<trait name="AdeptusMechanicus/CityTier3" requiredUpgrade="AdeptusMechanicus/CityTier3"/>
+		<trait name="Headquarters"/>
+		<trait name="AdeptusMechanicus/ReclaimatorProtocols" requiredUpgrade="AdeptusMechanicus/ReclaimatorProtocols"/>
+	</traits>
+</building>

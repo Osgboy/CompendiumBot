@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/SistersOfBattle/MiraculousIntervention">
+	<modifiers>
+		<modifier>
+			<effects>
+				<deathExperience max="0"/>
+				<deathMorale max="0"/>
+				<addTrait duration="1" name="SistersOfBattle/UsedActOfFaith"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

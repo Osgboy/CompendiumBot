@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="0.5"
+				fireSound="Weapons/ParticleWhip"
+		 		fireSoundCount="3"
+				beamsBlueprint="Effects/ParticleBeams"
+		 		beamsEmitterBlueprint="Effects/ParticleBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+		 		explosionsBlueprint="Effects/NecronExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Necrons/BlastDamage" requiredUpgrade="Necrons/BlastDamage"/>
+		<trait name="LargeBlast"/>
+		<trait name="Ordnance"/>
+	</traits>
+</weapon>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Voice">
+	<actions>
+		<teleport cooldown="10"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/AttarOfPhenaris"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1"/>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+							<!-- <distance greater="6"/> -->
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</teleport>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="AmoetiasEmbrace"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

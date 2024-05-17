@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature blockingSight="1"
+		category="Ruins">
+	<model>
+		<ruins groundMaterial="Terrain/RuinsGround"
+				material="Terrain/Ruins"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<minerals mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<buildingSlots max="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Ruins"/>
+	</traits>
+</feature>

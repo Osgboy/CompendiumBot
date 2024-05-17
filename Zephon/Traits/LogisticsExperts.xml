@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/LogisticsExperts" visibleOnTile="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<flatResourcesFromOutposts mul="4.0"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="AssetStripping">
+			<effects>
+				<flatResourcesFromOutposts mul="1.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

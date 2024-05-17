@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<requisitionsCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<populationLimit add="1"/>
+				<production add="6"/>
+				<requisitions add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="SistersOfBattle/BattleSister"/>
+		<produceUnit unit="SistersOfBattle/Zephyrim" requiredUpgrade="SistersOfBattle/Zephyrim"/>
+		<produceUnit unit="SistersOfBattle/SisterRepentia" requiredUpgrade="SistersOfBattle/SisterRepentia"/>
+		<produceUnit unit="SistersOfBattle/Dominion" requiredUpgrade="SistersOfBattle/Dominion"/>
+		<produceUnit unit="SistersOfBattle/Retributor" requiredUpgrade="SistersOfBattle/Retributor"/>
+		<produceUnit unit="SistersOfBattle/CelestianSacresant" requiredUpgrade="SistersOfBattle/CelestianSacresant"/>
+	</actions>
+</building>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>
+		<unit mesh="Units/Tau/CrisisBattlesuit"
+				material="Units/Tau/CrisisBattlesuit"
+				idleAnimation="Units/Tau/CrisisBattlesuitIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="Flamer">
+			<model>
+				<flamerWeapon muzzleBone=".Muzzle"/>			
+			</model>
+		</weapon>
+		<weapon name="MissilePod">
+			<model>
+				<missileWeapon muzzleBone=".Missile" muzzleCount="3"
+						missileScale="0.5"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/CrisisBattlesuitAttack"
+						beginFire="1"
+						endFire="2"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/CrisisBattlesuitDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/Tau/WalkerDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tau/CrisisBattlesuitMove"
+						sound="Units/Tau/JetPackMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<bondingKnifeRitual cooldown="10"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0"
+				name="Tau/BondingKnifeRitual" 
+				requiredUpgrade="Tau/BondingKnifeRitual">
+			<model>
+				<action bone="ChestBone"
+						sound="Actions/BondingKnifeRitual"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<morale add="100"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</bondingKnifeRitual>
+		<deployGunDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredUpgrade="Tau/GunDrone"
+				unitType="Tau/GunDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/GunDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/ShieldDrone"/>
+				<action name="Tau/DeployDrone/Tau/MarkerDrone"/>
+			</sharedCooldowns>
+		</deployGunDrone>
+		<deployShieldDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredUpgrade="Tau/ShieldDrone"
+				unitType="Tau/ShieldDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/ShieldDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/GunDrone"/>
+				<action name="Tau/DeployDrone/Tau/MarkerDrone"/>
+			</sharedCooldowns>
+		</deployShieldDrone>
+		<deployMarkerDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredUpgrade="Tau/MarkerDrone"
+				unitType="Tau/MarkerDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/MarkerDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/GunDrone"/>
+				<action name="Tau/DeployDrone/Tau/ShieldDrone"/>
+			</sharedCooldowns>
+		</deployMarkerDrone>
+	</actions>
+	<traits>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="JetPack"/>
+		<trait name="Tau/SupportSystems" rank="0"/>
+		<trait name="Tau/SupportingFire"/>
+		<trait name="Relentless"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

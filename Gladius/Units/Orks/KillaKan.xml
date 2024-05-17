@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/KillaKan"
+				material="Units/Orks/KillaKan"
+				idleAnimation="Units/Orks/KillaKanIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				explosionsBone="Body"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="4" memberDeltaX="64" memberDeltaY="120"/>
+	<weapons>
+		<weapon name="Skorcha">
+			<model>
+				<flamerWeapon muzzleBone=".Muzzle"
+						fireInterval="0.35"/>
+			</model>
+		</weapon>
+		<weapon name="KanKlaw">
+			<model>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="7"/> <!-- %armor base armor=11/11/10 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=11/11/10 wounds=2 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<oreCost base="40.0"/> <!-- %oreCost base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/KillaKanAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						chargeAnimation="Units/Orks/KillaKanCharge"
+						chargeDefenseAnimation="Units/Orks/KillaKanChargeDefense"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.5"				
+						meleeAnimation="Units/Orks/KillaKanMelee"
+						meleeDefenseAnimation="Units/Orks/KillaKanMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/KillaKanDie"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0.5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/KillaKanMove"
+						sound="Units/Orks/KillaKanMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Orks/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="GrotRiggers" requiredUpgrade="Orks/GrotRiggers"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

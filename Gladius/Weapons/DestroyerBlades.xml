@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks base="3"/>
+				<meleeAccuracy min="12"/> <!-- Don't roll to hit. -->
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=- -->
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1">
+		<conditions>
+			<unit>
+				<noTrait name="Flyer"/>
+				<noTrait name="Fortification"/>
+				<noTrait name="Vehicle"/>
+			</unit>
+		</conditions>
+	</target>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+	</traits>
+</weapon>

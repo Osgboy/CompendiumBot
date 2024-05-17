@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Cyber" visible="0">
+	<actions>
+		<unitCast name="QuantumReflector" charges="1">
+			<model>
+				<cast blueprint="Effects/QuantumReflector"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="1"/>
+							<noFeature type="City"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<foundCity/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

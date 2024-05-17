@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<movement equal="0"/>
+					<movementMax greater="0"/>
+					<noTrait name="Flyer"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Relentless"/>
+					<noTrait name="SlowAndPurposeful"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedAccuracy min="-999" max="-999"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent match="Any">
+						<trait name="Fortification"/>
+						<trait name="Vehicle"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<armorPenetration mul="0.25"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

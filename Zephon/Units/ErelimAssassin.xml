@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Chest"
+				explosionSound="Explosions/Units/SmallCyber"
+				explosionSoundCount="17"
+				material="Units/ErelimAssassin"
+				mesh="Units/ErelimAssassin"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="ErelimBlades" slotName="ErelimBlades">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="10"/>
+				<armor base="6"/>
+				<chipsCost base="10"/> <!-- %chipsCost base tier=6 factor=0.25 -->
+				<chipsUpkeep base="0.5"/> <!-- %chipsUpkeep base tier=6 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<influenceCost base="40"/> <!-- %influenceCost base tier=6 factor=1 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<moraleMax base="12"/>
+				<movementMax base="3"/>
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=6 factor=0.5 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseHeroesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/ErelimAssassinCharge"
+						meleeAnimation="Units/ErelimAssassinMelee"
+						meleeBeginSwing="0.001"
+						meleeEndSwing="0.002"
+						meleeSound="Units/ErelimAssassinMelee"
+						responseSound="Units/Responses/ErelimAssassinAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/ErelimAssassinDie0"
+						sound="Units/MediumMechanicalGroundHit"
+						soundCount="3"
+						soundDelay="1.5"
+						voiceSound="Units/ErelimAssassinDie"
+						voiceSoundCount="2"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/ErelimAssassinImpact"
+						responseSound="Units/Responses/ErelimAssassinEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/ErelimAssassinIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/ErelimAssassinMove"
+						responseSound="Units/Responses/ErelimAssassinMove"
+						responseSoundCount="3"
+						sound="Units/ErelimAssassinMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon name="Assassinate"
+				cooldown="3"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="ErelimBlades">
+			<model>
+				<attack chargeAnimation="Units/ErelimAssassinCharge"
+						meleeAnimation="Units/ErelimAssassinAbility0"
+						meleeSound="Units/ErelimAssassinAssassinate"
+						responseSound="Units/Responses/ErelimAssassinAssassinate"/>
+			</model>
+			<modifiers>
+				<modifier effectDescription="ToTargetEnemyUnit">
+					<conditions>
+						<unit>
+							<noAttacking/>
+						</unit>
+					</conditions>
+					<effects>
+						<hitpoints addMin="-2" addMax="-6"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<destroyed/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit" radius="3">
+							<modifiers>
+								<modifier effectDescription="Assassinate">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="-1" addMax="-3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</useWeapon>
+		<ghostWalk name="GhostWalk"
+				cooldownMax="2"
+				cooldownMin="4"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/ErelimAssassinMove"
+						effectBlueprint="Effects/ErelimAssassinGhostWalk"
+						responseSound="Units/Responses/ErelimAssassinGhostWalk"
+						sound="Units/ErelimAssassinGhostWalk"
+						soundCount="1"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<ignoreZoneOfControl add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</ghostWalk>
+		<unitCast name="EvasionProcessor"
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<cast blueprint="Effects/EvasionProcessor"
+						responseSound="Units/Responses/ErelimAssassinEvasionProcessor"
+						sound="Actions/EvasionProcessor"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait duration="1" type="EvasionProcessor"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+		<unitCast name="DanceOfTheErelim"
+				cooldown="5"
+				elite="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<cast animation="Units/ErelimAssassinAbility1"
+						responseSound="Units/Responses/ErelimAssassinDanceOfTheErelim"
+						sound="Units/ErelimAssassinDance"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="ErelimBlades"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>	
+		</unitCast>
+		<levelUp/>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Hero"/>
+		<trait type="Mechanical"/>
+		<trait type="Stealth"/>
+	</traits>
+</unit>

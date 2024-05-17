@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<powerWeapon effectBlueprint="Effects/PowerWeapon"
+				effectEmitterBlueprint="Effects/PowerWeaponEmitter" 
+				fireSound="Weapons/ParagonWarBlade"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeAttacks add="0.5"/>
+				<meleeArmorPenetration add="6"/> <!-- %meleeArmorPenetration add armorPiercing=-3 -->
+				<meleeDamage add="1"/> <!-- %meleeDamage add strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="SistersOfBattle/MeleeWeaponBonus" requiredUpgrade="SistersOfBattle/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

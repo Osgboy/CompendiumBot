@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=- -->
+				<strengthDamage mul="3"/> <!-- %strengthDamage mul strength=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+		<trait name="Necrons/MeleeDamage" requiredUpgrade="Necrons/MeleeDamage"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="LargeBlast"/>
+	</traits>
+</weapon>

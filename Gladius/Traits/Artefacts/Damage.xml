@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Units/Neutral/Artefacts/Damage" stacking="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+			</conditions>
+			<effects>
+				<damage mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

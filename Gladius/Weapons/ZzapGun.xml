@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/ZzapGun"
+				fireSoundCount="3"
+				beamsBlueprint="Effects/Frazzle"
+		 		muzzleFlashesBlueprint="Effects/ZzapMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="8"/> <!-- %rangedDamage add strength=9 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Zzap"/>
+	</traits>
+</weapon>

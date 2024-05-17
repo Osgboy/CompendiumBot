@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent match="Any">
+						<trait name="Flyer"/>
+						<trait name="Skimmer"/>
+					</opponent>
+				</encounter>
+				<unit>
+					<unitsInRange count="1" range="1">
+						<allied/>
+						<type name="SpaceMarines/Hunter"/>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedAccuracy add="4"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

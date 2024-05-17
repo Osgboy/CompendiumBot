@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Building">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<noTrait name="Headquarters"/>
+				</building>
+				<building match="Any">
+					<energy greater="0"/>
+					<food greater="0"/>
+					<influence greater="0"/>
+					<loyalty greater="0"/>
+					<ore greater="0"/>
+					<production greater="0"/>
+					<research greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<monolithicBuildingsBonus add="0.017"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent match="Any">
+						<trait name="Fortification"/>
+						<trait name="Vehicle"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage add="3"/>
+				<armorPenetration min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Arctic"
+		category="Ground">
+	<ground channel="3"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<research mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/ArcticRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PineBush0"/>
+				<mesh name="Terrain/Vegetation/PineBush1"/>
+				<mesh name="Terrain/Vegetation/PineBush2"/>
+				<mesh name="Terrain/Vegetation/PineBush3"/>
+				<mesh name="Terrain/Vegetation/PineBush4"/>
+				<mesh name="Terrain/Vegetation/PineBush5"/>
+				<mesh name="Terrain/Vegetation/PineBush6"/>
+				<mesh name="Terrain/Vegetation/PineBush7"/>
+				<mesh name="Terrain/Vegetation/PineBush8"/>
+				<mesh name="Terrain/Vegetation/PineBush9"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PineBush0"/>
+				<mesh name="Terrain/Vegetation/PineBush1"/>
+				<mesh name="Terrain/Vegetation/PineBush7"/>
+				<mesh name="Terrain/Vegetation/PineBush8"/>
+				<mesh name="Terrain/Vegetation/PineTree0"/>
+				<mesh name="Terrain/Vegetation/PineTree1"/>
+				<mesh name="Terrain/Vegetation/PineTree2"/>
+				<mesh name="Terrain/Vegetation/PineTree3"/>
+				<mesh name="Terrain/Vegetation/PineTree4"/>
+				<mesh name="Terrain/Vegetation/PineTree5"/>
+				<mesh name="Terrain/Vegetation/PineTree6"/>
+				<mesh name="Terrain/Vegetation/PineTree7"/>
+				<mesh name="Terrain/Vegetation/PineTree8"/>
+				<mesh name="Terrain/Vegetation/PineTree9"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/CraterDecal0"/>	
+			<mesh name="Terrain/Decals/CraterDecal1"/>	
+			<mesh name="Terrain/Decals/CraterDecal2"/>
+			<mesh name="Terrain/Decals/IceCracksDecal0"/>
+			<mesh name="Terrain/Decals/IceCracksDecal1"/>
+			<mesh name="Terrain/Decals/IceCracksDecal2"/>
+			<mesh name="Terrain/Decals/SlimeDecal1"/>	
+			<mesh name="Terrain/Decals/SlimeDecal2"/>	
+			<mesh name="Terrain/Decals/SlimeDecal0"/>	
+			<mesh name="Terrain/Decals/CorpseDecal0"/>
+			<mesh name="Terrain/Decals/CorpseDecal1"/>
+			<mesh name="Terrain/Decals/CorpseDecal2"/>
+		</meshes>
+	</decals>
+</feature>

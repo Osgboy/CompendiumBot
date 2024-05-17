@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="AcrinCrashSiteResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel effectsBlueprint="Effects/AcrinCrashSite"
+				groundMaterial="Features/AcrinCrashSiteGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/AcrinCrashSite"
+				mesh="Features/AcrinCrashSite"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="AcrinCrashSite"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

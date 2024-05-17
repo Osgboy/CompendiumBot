@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Voice">
+	<actions>
+		<unitCast cooldown="10"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/VassaelSpawn"
+						casterBlueprint="Effects/BoneWhistle"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<land/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="DarkVassael" avoidBleed="0" avoidCity="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Summon" duration="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="AmoetiasCaress"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

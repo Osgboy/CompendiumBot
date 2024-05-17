@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="ResearchUpgrade">
+			<conditions>
+				<tile>
+					<feature type="Forest"/>
+				</tile>
+			</conditions>
+			<effects>
+				<research add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

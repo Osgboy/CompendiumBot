@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/UzhodaisZeal" rankMax="2" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="UzhodaisZeal">
+ 			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+ 					<unitsInRange equal="1">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.02" addMax="0.06"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+ 					<unitsInRange equal="2">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.04" addMax="0.12"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+ 					<unitsInRange equal="3">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.06" addMax="0.18"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+  					<unitsInRange equal="4">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.08" addMax="0.24"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+  					<unitsInRange equal="5">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.10" addMax="0.30"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+  					<unitsInRange equal="6">
+ 						<unit>
+ 							<enemy/>
+ 						</unit>
+ 					</unitsInRange>
+ 				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction addMin="0.12" addMax="0.36"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

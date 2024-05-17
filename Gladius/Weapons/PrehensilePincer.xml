@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/GraspingTongue"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="1"/> <!-- %meleeArmorPenetration add armorPiercing=5 -->
+				<meleeDamage add="3"/> <!-- %meleeDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Tyranids/Biomorph"/>
+		<trait name="Tyranids/BiomorphDamage" requiredUpgrade="Tyranids/BiomorphDamage"/>
+		<trait name="Melee"/>
+	</traits>
+</weapon>

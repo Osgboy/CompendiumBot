@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit effectsBlueprint=""
+				explosionsBone="Hull"
+				explosionSound="Explosions/Units/MediumCyber"
+				explosionSoundCount="8"
+				material="Units/ChayotExterminator"
+				mesh="Units/ChayotExterminator"
+				position="0 0 0"
+				scale="1 1 1"/>
+	</model>
+	<weapons>
+		<weapon type="LaserCannon">
+			<models>
+				<beamWeapon muzzleBone="Muzzle0"
+						effectFaceWeight="0.75"
+						windupDuration="0.4"/>
+			</models>
+		</weapon>
+		<weapon type="Flamethrower">
+			<models>
+				<flamerWeapon muzzleBone="Muzzle1"
+						windupDuration="0.5"/>
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon bone="Drone0"
+						material="Units/Drone"
+						mesh="Units/ChayotExterminatorDrone"/>
+				<weapon bone="Drone1"
+						material="Units/Drone"
+						mesh="Units/ChayotExterminatorDrone"/>
+				<weapon bone="Drone2"
+						material="Units/Drone"
+						mesh="Units/ChayotExterminatorDrone"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<chipsCost base="15"/> <!-- %chipsCost base tier=7 factor=0.25 -->
+				<chipsUpkeep base="0.75"/> <!-- %chipsUpkeep base tier=7 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=7 factor=0.5 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=7 factor=0.5 -->
+				<moraleMax base="10"/>
+				<movementMax base="4"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/ChayotExterminatorAttack"
+						beginFire="0.17"
+						endFire="1.67"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/ChayotExterminatorDie0"
+						 groundImpact="1.0"
+						 sound="Units/ChayotExterminatorDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/ChayotExterminatorImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/ChayotExterminatorIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChayotExterminatorMove"
+						sound="Units/ChayotExterminatorMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<unitCast name="DeployCombatDrone"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				icon="Units/CombatDrone"
+				requiredActionPoints="0"
+				requiredUpgrade="CombatDrone">
+			<model>
+				<cast animation="Units/ChayotExterminatorAbility0"
+						sound="Units/ChayotExterminatorDeployCombatDrones"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="CombatDrone"
+												appearFromSourceUnit="1"
+												avoidBleed="0"
+												avoidCity="0"
+												avoidWater="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Summon" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<enemyStrengthInTheArea greater="0"/>	
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Hovering"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

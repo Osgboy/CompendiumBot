@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<foodUpkeep max="0"/>
+				<mineralsUpkeep max="0"/>
+				<transuraniumUpkeep max="0"/>
+				<energyUpkeep max="0"/>
+				<antimatterUpkeep max="0"/>
+				<algaeUpkeep max="0"/>
+				<dimensionalEchoesUpkeep max="0"/>
+				<chipsUpkeep max="0"/>
+				<singularityCoresUpkeep max="0"/>
+				<influenceUpkeep max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onTraitRemoved>
+	<opponentModifiers>
+		<modifier visible="0">
+			<effects>
+				<attackScore mul="-0.5"/>
+			</effects>
+		</modifier>
+	</opponentModifiers>
+</trait>

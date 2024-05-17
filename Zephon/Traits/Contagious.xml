@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<onUnitDefended>
+		<attacker>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="ToMeleeAttackers">
+						<conditions>
+							<unit ignoreForTraitVisibility="1">
+								<firingMeleeWeapons/>
+							</unit>
+						</conditions>
+						<effects>
+							<addTrait type="Blighted" duration="3"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onUnitDefended>
+</trait>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/PenitentBuzzBlade"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="8"/> <!-- %meleeArmorPenetration add armorPiercing=-4 -->
+				<meleeDamage add="4"/> <!-- %meleeDamage add strength=7 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="SistersOfBattle/MeleeWeaponBonus" requiredUpgrade="SistersOfBattle/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/Obliterator"
+				material="Units/ChaosSpaceMarines/Obliterator"
+				idleAnimation="Units/ChaosSpaceMarines/ObliteratorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Bone001"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="PowerFist">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="AssaultCannon" slotName="AssaultCannon">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle0"/>
+			</model>		
+		</weapon>
+		<weapon name="HeavyFlamer" slotName="HeavyFlamer" enabled="0">
+			<model>
+				<flamerWeapon muzzleBone=".Muzzle1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<foodUpkeep base="6.0"/> <!-- %foodUpkeep base tier=9 factor=1 -->
+				<foodCost base="60.0"/> <!-- %foodCost base tier=9 factor=0.5 -->
+				<oreCost base="60.0"/> <!-- %oreCost base tier=9 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ObliteratorAttack"
+						beginFire="0.83"
+						endFire="2.0"
+						chargeAnimation="Units/ChaosSpaceMarines/ObliteratorCharge"
+						chargeBeginFire="0.8"
+						chargeEndFire="1.33"
+						meleeAnimation="Units/ChaosSpaceMarines/ObliteratorMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ObliteratorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/ChaosSpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ObliteratorMove"
+						sound="Units/ChaosSpaceMarines/ObliteratorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<cycleWeaponOnUse weaponSlotNames="AssaultCannon HeavyFlamer" enabled="0" visible="0"/>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" weaponSlotNames="AssaultCannon HeavyFlamer"/>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="Daemon"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+		<trait name="SlowAndPurposeful"/>
+		<trait name="ChaosSpaceMarines/VeteransOfTheLongWar" requiredUpgrade="ChaosSpaceMarines/VeteransOfTheLongWar"/>
+	</traits>
+</unit>

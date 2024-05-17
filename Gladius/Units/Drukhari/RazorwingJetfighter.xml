@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement13">
+	<model>
+		<unit mesh="Units/Drukhari/RazorwingJetfighter"
+				material="Units/Drukhari/RazorwingJetfighter"
+				idleAnimation="Units/Drukhari/RazorwingJetfighterIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="1.0"
+				portraitFocusHeightModifier="64"
+				portraitZoomModifier="1.1"
+				position="0 0 16"
+				scale="1.0 1.0 1.0"
+				explosionsBone="Hull"/>
+	</model>
+	<weapons>
+		<weapon name="DisintegratorCannon" count="2">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="SplinterCannon">
+			<model>
+				<projectileWeapon muzzleBone="FrontMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="ShatterfieldMissile" count="2">
+			<model>
+				<missileWeapon muzzleBone="MissileMuzzle"
+						muzzleCount="2"
+						fireInterval="0.5"
+						missileScale="0.5"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<energyUpkeep base="4.0"/> <!-- %energyUpkeep base tier=8 factor=1 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=3 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="6"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Drukhari/RazorwingJetfighterAttack"
+						beginFire="1.1"
+						endFire="2.1"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/RazorwingJetfighterDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="1.6"
+						voiceSound="Units/Drukhari/DrukhariVehicleDie"
+						voiceSoundCount="4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/RazorwingJetfighterMove"
+						sound="Units/Eldar/FlyerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<supersonic consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Supersonic"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</supersonic>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="2"
+				name="Drukhari/FieldRepairs"
+				requiredActionPoints="0"
+				requiredUpgrade="Drukhari/FieldRepairs">
+			<model>
+				<action sound="Actions/FieldRepairs"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="12"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+	</actions>
+	<traits>
+		<trait name="Drukhari/NightShields" requiredUpgrade="Drukhari/NightShields"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Drukhari/ExtraVehicleArmour"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Flyer"/>
+		<trait name="Vehicle"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

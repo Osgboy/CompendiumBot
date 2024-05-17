@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2">
+	<model>
+		<unit mesh="Units/Tyranids/Tyrannofex"
+				material="Units/Tyranids/Tyrannofex"
+				idleAnimation="Units/Tyranids/TyrannofexIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="DesiccatorLarvae" requiredUpgrade="Tyranids/DesiccatorLarvae">
+			<model>
+				<flamerWeapon muzzleBone="BloodBone"/>
+			</model>
+		</weapon>
+		<weapon name="RuptureCannon">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						fireInterval="0.333333333333"/>
+			</model>
+		</weapon>
+		<weapon name="StingerSalvo">
+			<model>
+				<projectileWeapon muzzleBone=".BackSpikes"
+						fireInterval="0.666666666667"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<biomassUpkeep base="6.0"/> <!-- %biomassUpkeep base tier=9 factor=1 -->
+				<biomassCost base="120.0"/> <!-- %biomassCost base tier=9 factor=1 -->
+				<hitpointsMax base="42.0"/> <!-- %hitpointsMax base toughness=6 wounds=7 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/TyrannofexAttack"
+						beginFire="1.33333333333"
+						endFire="2.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/TyrannofexDie"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Tyranids/LargeDie"
+						voiceSoundCount="4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/TyrannofexMove"
+						sound="Units/Tyranids/HaruspexMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Tyranids/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<instinctiveBehaviourOverride consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/InstinctiveBehaviourOverride"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tyranids/InstinctiveBehaviourOverride2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/InstinctiveBehaviourOverride" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</instinctiveBehaviourOverride>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="Tyranids/AcidBlood" requiredUpgrade="Tyranids/AcidBlood"/>
+		<trait name="Fearless"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<!-- <trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/> -->
+		<trait name="ExtraMonstrousCreatureArmour" requiredUpgrade="Tyranids/ExtraMonstrousCreatureArmour"/>
+		<trait name="Tyranids/InstinctiveBehaviour"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Regeneration" requiredUpgrade="Tyranids/Regeneration"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+		<!-- <trait name="Tyranids/ToxinSacs" requiredUpgrade="Tyranids/ToxinSacs"/> -->
+		<trait name="Tyranids/VehiclesUpkeep" requiredUpgrade="Tyranids/VehiclesUpkeep"/>
+	</traits>
+</unit>

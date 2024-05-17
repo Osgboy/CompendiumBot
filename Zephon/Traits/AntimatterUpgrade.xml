@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="AntimatterUpgrade">
+			<conditions>
+				<tile match="Any">
+					<feature type="Construct"/>
+					<feature type="Desert"/>
+				</tile>
+			</conditions>
+			<effects>
+				<energy add="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Necrons/Cryptek"
+				material="Units/Necrons/Cryptek"
+				idleAnimation="Units/Necrons/CryptekIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.1 1.1 1.1"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="StaffOfLight">
+			<model>
+				<beamWeapon mesh="Weapons/Necrons/CryptekStaffOfLight"
+						material="Units/Necrons/Cryptek"
+						muzzleBone=".Muzzle"
+						bone="Bone074"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=6 factor=1 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Necrons/CryptekAttack"
+						beginFire="0.7"
+						endFire="2.7"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/CryptekDie"
+						animationCount="1"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.3"
+						voiceSound="Units/Necrons/Die"
+						voiceSoundCount="7"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/CryptekMove"
+						sound="Units/Necrons/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<dimensionalCorridor cooldown="3"
+				name="Necrons/DimensionalCorridor"
+				requiredUpgrade="Necrons/DimensionalCorridor">
+			<model>
+				<action sound="Actions/Teleport"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="30"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor2">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor3">
+					<effects>
+						<consumedActionPoints max="0"/>
+						<consumedMovement max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</dimensionalCorridor>
+		<resurrectionOrb cooldown="3"
+				levelUpPriority="0.15"
+				name="Necrons/ResurrectionOrb"
+				rank="-1"
+				rankMax="2"> <!-- like molten beam but all directions out of his chest-->
+			<model>
+				<action animation="Units/Necrons/CryptekAbility"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="6" addMax="18"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</resurrectionOrb>
+		<chronometron cooldown="1"
+				levelUpPriority="0.1"
+				name="Necrons/Chronometron"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Necrons/CryptekAbility"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Necrons/Chronometron"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</chronometron>
+		<mindshackleScarabs	cooldown="1"
+				name="Necrons/MindshackleScarabs"
+				rank="-1"
+				rankMax="2"> <!-- axis aligned billboard scarabs traveling towards unit center -->
+			<model>
+				<action animation="Units/Necrons/CryptekAbility"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="3">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="AndTheyShallKnowNoFear"/>
+							<noTrait name="Fearless"/>
+							<noTrait name="Zealot"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<morale addMin="-4" addMax="-12"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</mindshackleScarabs>
+		<solarPulse	cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				name="Necrons/SolarPulse"
+				rank="-1"
+				rankMax="0"> <!-- growing billboard at his staff -->
+			<model>
+				<action animation="Units/Necrons/CryptekSolarPulse"
+						bone=".Muzzle"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+											<noTrait name="Fortification"/>
+											<noTrait name="Vehicle"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Blind"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</solarPulse>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Necrons/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="Necrons/ReanimationProtocols"/>
+		<trait name="Necrons/Technomancer"/>
+	</traits>
+</unit>

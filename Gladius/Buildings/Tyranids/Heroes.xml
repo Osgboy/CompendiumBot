@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<influenceUpkeep add="2"/>
+				<biomassCost base="50"/>
+				<productionCost base="36"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<biomass add="2"/>
+				<loyalty add="1"/>
+				<production add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<reclaimUnit cooldown="1"
+				name="Tyranids/ReclaimUnit"
+				interfaceSound="Interface/ReclaimUnit">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost add="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Tyranids/Reclamation2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Tyranids/Reclamation3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</reclaimUnit>
+		<produceUnit unit="Tyranids/TyranidPrime"/>
+		<produceUnit unit="Tyranids/Tervigon" requiredUpgrade="Tyranids/Tervigon"/>
+		<produceUnit unit="Tyranids/HiveTyrant" requiredUpgrade="Tyranids/HiveTyrant"/>
+	</actions>
+	<traits>
+		<trait name="Tyranids/ProductionBuildingUpkeep" requiredUpgrade="Tyranids/ProductionBuildingUpkeep"/>
+	</traits>
+</building>

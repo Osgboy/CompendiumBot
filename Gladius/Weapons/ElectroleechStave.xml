@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ElectroleechStave"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="2"/> <!-- %meleeArmorPenetration add armorPiercing=4 -->
+				<strengthDamage mul="1.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Concussive"/>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

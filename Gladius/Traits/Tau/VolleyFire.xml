@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" rankMax="2" icon="Actions/Tau/VolleyFire">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<movement greater="0"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Vehicle"/>	
+				</unit>
+			</conditions>
+			<effects>
+				<rangedAttacks mulMin="0.25" mulMax="0.75"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

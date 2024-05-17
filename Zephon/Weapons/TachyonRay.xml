@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="3"/> <!-- %armorPenetration base tier=4 -->
+				<attacks base="2"/>
+				<damage base="2"/> <!-- %damage base tier=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+</weapon>

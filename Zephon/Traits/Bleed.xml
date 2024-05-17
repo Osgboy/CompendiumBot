@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Features/Bleed" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<noCity/>
+				</tile>
+				<unit>
+					<noTrait type="Bleedwalker"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Hovering"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<city>
+					<noAlly/>
+				</city>
+				<unit>
+					<noTrait type="Bleedwalker"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Hovering"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<city>
+					<ally/>
+					<player>
+						<noUpgrade name="BleedCultivation"/>
+					</player>
+				</city>
+				<unit>
+					<noTrait type="Bleedwalker"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Hovering"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<conditions>
+							<tile>
+								<noCity/>
+							</tile>
+							<unit>
+								<noTrait type="Bleedwalker"/>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Bleed"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="EachTurn" visible="0">
+						<conditions>
+							<city>
+								<noAlly/>
+							</city>
+							<unit>
+								<noTrait type="Bleedwalker"/>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Bleed"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="EachTurn" visible="0">
+						<conditions>
+							<city>
+								<ally/>
+								<player>
+									<noUpgrade name="BleedCultivation"/>
+								</player>
+							</city>
+							<unit>
+								<noTrait type="Bleedwalker"/>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Bleed"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

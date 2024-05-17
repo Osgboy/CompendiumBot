@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Necrons/Monolith"
+				material="Units/Necrons/Monolith"
+				idleAnimation="Units/Necrons/MonolithIdle"
+				idleAnimationCount="1"
+				idleContinuously="1"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Hull"/>
+	</model>
+	<weapons>
+		<weapon name="ParticleWhip">
+			<model>
+				<projectileWeapon muzzleBone="MuzzleParticleWhip0"
+						fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="GaussFluxArc" slotName="GaussFluxArc" count="4" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						muzzleCount="12"
+						fireInterval="0.3"
+						effectFaceWeight="0"/>	
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=14/14/14 -->
+				<energyCost base="160.0"/> <!-- %energyCost base tier=10 factor=1 -->
+				<hitpointsMax base="64.0"/> <!-- %hitpointsMax base armor=14/14/14 wounds=4 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Necrons/MonolithAttack"
+						beginFire="1.4"
+						endFire="2.55"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/MonolithDie"
+						sound="Units/LargeVehicleDie"
+						soundCount="3"
+						soundDelay="0.4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Necrons/MonolithMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<useWeapon cooldown="1"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				weaponSlotName="GaussFluxArc">
+			<model>
+				<action	animation="Units/Necrons/MonolithGaussFluxArc"
+						beginFire="0.5"
+						endFire="2.0"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="Necrons/EternityGate"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Necrons/ExtraVehicleArmour"/>
+		<trait name="Necrons/LivingMetal"/>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

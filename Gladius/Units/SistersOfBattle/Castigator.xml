@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/Castigator"
+				material="Units/SistersOfBattle/Castigator"
+				idleAnimation="Units/SistersOfBattle/CastigatorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="0.95 0.95 0.95"
+				explosionsBone="Hull_Shake"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="CastigatorBattleCannonPyreShell" slotName="CastigatorBattleCannonPyreShell" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle"
+						fireInterval="10.0"
+						fireDelay="1.2"/>
+			</model>
+		</weapon>
+		<weapon name="CastigatorBattleCannonSanctifiedShell" slotName="CastigatorBattleCannonSanctifiedShell">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle"
+						fireInterval="10.0"
+						fireDelay="1.2"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter" count="2">
+			<model>
+				<projectileWeapon muzzleBone="BolterMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter"
+				requiredUpgrade="SistersOfBattle/AdditionalHeavyBolter">
+			<model>
+				<projectileWeapon mesh="Weapons/SistersOfBattle/CastigatorBolter"
+						material="Weapons/SistersOfBattle/CastigatorUpgrades"
+						bone="Gun_Front"
+						muzzleBone="FrontMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="HunterKillerMissile" slotName="HunterKillerMissile"
+				enabled="0"
+				requiredUpgrade="SistersOfBattle/HunterKillerMissile">
+			<model>
+				<missileWeapon mesh="Weapons/SistersOfBattle/CastigatorHunterKiller"
+						material="Weapons/SistersOfBattle/CastigatorUpgrades"
+						bone="Hull_Shake"
+						muzzleBone="MissileMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="None" enabled="0"
+				requiredUpgrade="SistersOfBattle/SmokeLauncher">
+			<model>
+				<weapon mesh="Weapons/SistersOfBattle/CastigatorSmokeLaunchers"
+						material="Weapons/SistersOfBattle/CastigatorUpgrades" 
+						bone="Hull_Shake"/>
+			</model>
+		</weapon>			
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=13/11/10 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=13/11/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<requisitionsUpkeep base="4.0"/> <!-- %requisitionsUpkeep base tier=8 factor=1 -->
+				<requisitionsCost base="80.0"/> <!-- %requisitionsCost base tier=8 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SistersOfBattle/CastigatorAttack"
+						beginFire="0.67" endFire="2.0"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/CastigatorDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.15"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/CastigatorMove"
+						sound="Units/AstraMilitarum/TankMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="CastigatorBattleCannonSanctifiedShell CastigatorBattleCannonPyreShell"/>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="SistersOfBattle/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<genericUnitAbility passive="1"
+				name="SistersOfBattle/LaudHailer"
+				requiredUpgrade="SistersOfBattle/LaudHailer">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/LaudHailer"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<useWeapon weaponSlotName="HunterKillerMissile"
+				cooldown="10"
+				requiredUpgrade="SistersOfBattle/HunterKillerMissile">
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="DozerBlade" requiredUpgrade="SistersOfBattle/DozerBlade"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SistersOfBattle/ExtraVehicleArmour"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

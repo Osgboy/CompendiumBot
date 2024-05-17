@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnCity="1" visibleOnPlayer="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<influence mul="-0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

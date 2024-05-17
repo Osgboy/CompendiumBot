@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/Devourer"
+		 		fireSoundCount="3"
+		 		muzzleFlashesBlueprint="Effects/StranglethornMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/StranglethornMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint="Effects/StranglethornDirectionalMuzzleFlashes"
+				directionalMuzzleFlashesEmitterBlueprint="Effects/StranglethornDirectionalMuzzleFlashesEmitter"
+				projectilesBlueprint="Effects/FleshborerProjectiles"
+				projectilesEmitterBlueprint="Effects/StranglethornProjectilesEmitter"
+				smokeBlueprint=""
+				explosionsBlueprint="Effects/DustExplosions"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Tyranids/ShortRangedDamage" requiredUpgrade="Tyranids/ShortRangedDamage"/>
+	</traits>
+</weapon>

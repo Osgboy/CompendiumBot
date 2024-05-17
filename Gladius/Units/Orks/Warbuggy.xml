@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Orks/Warbuggy"
+				material="Units/Orks/Warbuggy"
+				idleAnimation="Units/Orks/WarbuggyIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.1 1.1 1.1"
+				explosionsBone="Hull_Warbuggy"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="64" memberDeltaY="100"/>
+	<weapons>
+		<weapon name="TwinLinkedBigShoota">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=2 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 --> 
+				<movementMax base="4"/>
+				<influenceUpkeep base="1.5"/> <!-- %influenceUpkeep base tier=5 factor=1 -->
+				<oreUpkeep base="1.5"/> <!-- %oreUpkeep base tier=5 factor=1 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=5 factor=1 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/WarbuggyAttack"
+						beginFire="0.5"
+						endFire="1.5"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/WarbuggyDie"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/WarbuggyMove"
+						sound="Units/Orks/WarbuggyMove"
+						soundCount="3"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="GrotRiggers" requiredUpgrade="Orks/GrotRiggers"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="OpenTopped"/>
+		<trait name="Outflank"/>
+		<trait name="RedPaintJob" requiredUpgrade="Orks/RedPaintJob"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

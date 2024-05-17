@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForMeleeWeapons">
+			<conditions>
+				<weapon>
+					<trait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<attacks max="0.0"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<movementMax max="0.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

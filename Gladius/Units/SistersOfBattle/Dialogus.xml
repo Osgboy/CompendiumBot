@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/Dialogus"
+				material="Units/SistersOfBattle/Dialogus"
+				idleAnimation="Units/SistersOfBattle/DialogusIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitZoomModifier="1.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Chest"
+				position="0 0 0"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="DialogusStaff">
+			<model>
+				<weapon/>
+			</model>
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon/>
+			</model>		
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon/>
+			</model>		
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyUpkeep base="2.0"/> <!-- %energyUpkeep base tier=6 factor=1 -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=6 factor=0.5 -->
+				<requisitionsCost base="20.0"/> <!-- %requisitionsCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 --> 
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/SistersOfBattle/DialogusCharge"
+						meleeAnimation="Units/SistersOfBattle/DialogusMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusDie0"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/SistersOfBattle/DialogusVoiceDie"
+						voiceSoundCount="1"
+						voiceSoundDelay="0.1"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusMove"
+						sound="Units/SistersOfBattle/InfantryMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/FragGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusGrenade"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/KrakGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusGrenade"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="SistersOfBattle/MeltaBomb">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusGrenade"/>
+			</model>				
+		</throwGrenade>
+		<genericUnitAbility passive="1"
+				name="SistersOfBattle/LaudHailer">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/LaudHailer"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<endlessCrusade consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="SistersOfBattle/EndlessCrusade"
+				requiredActionPoints="0"
+				requiredMovement="1">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusAbility"
+						sound="Actions/EndlessCrusade"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="SistersOfBattle/SimulacrumImperialis">
+					<effects>
+						<cooldown mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Fleet"/>
+										<addTrait duration="1" name="MoveThroughCover"/>
+										<addTrait duration="1" name="SistersOfBattle/UsedActOfFaith"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</endlessCrusade>
+		<verseOfHolyPiety cooldown="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="SistersOfBattle/VerseOfHolyPiety"
+				requiredActionPoints="0"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusAbility"
+						sound="Actions/VerseOfHolyPiety"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+						</unit>
+						<unit match="Any">
+							<cooldownAction name="SistersOfBattle/EndlessCrusade"/>
+							<cooldownAction name="SistersOfBattle/ThePassion"/>
+							<cooldownAction name="SistersOfBattle/SolaceInAnguish"/>
+							<cooldownAction name="SistersOfBattle/MiraculousIntervention"/>
+							<cooldownAction name="SistersOfBattle/LightOfTheEmperor"/>
+							<cooldownAction name="SistersOfBattle/DivineGuidance"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="UnitAction">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit match="Any">
+											<cooldownAction name="SistersOfBattle/EndlessCrusade"/>
+											<cooldownAction name="SistersOfBattle/ThePassion"/>
+											<cooldownAction name="SistersOfBattle/SolaceInAnguish"/>
+											<cooldownAction name="SistersOfBattle/MiraculousIntervention"/>
+											<cooldownAction name="SistersOfBattle/LightOfTheEmperor"/>
+											<cooldownAction name="SistersOfBattle/DivineGuidance"/>
+										</unit>
+									</conditions>
+									<effects>
+										<cooldown addMin="-3" addMax="-9"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</verseOfHolyPiety>
+		<catechismOfRepugnance cooldown="1"
+				consumedActionPoints="1"
+				consumedMovement="0"
+				name="SistersOfBattle/CatechismOfRepugnance"
+				requiredActionPoints="1"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusAbility"
+						sound="Actions/CatechismOfRepugnance"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="SistersOfBattle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="SistersOfBattle/CatechismOfRepugnance"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</catechismOfRepugnance>
+		<genericUnitAbility passive="1"
+				name="SistersOfBattle/StirringRhetoric"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="2">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/StirringRhetoric"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<warHymn cooldown="3"
+				elite="1"
+				name="SistersOfBattle/WarHymn"
+				consumedMovement="0"
+				consumedActionPoints="1"
+				requiredActionPoints="1"
+				levelUpPriority="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/SistersOfBattle/DialogusAbility"
+						sound="Actions/WarHymn"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="SistersOfBattle"/>
+							<noTrait name="SuperHeavy"/>
+						</unit>
+						<weapon>
+							<trait name="Melee"/>
+						</weapon>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="2" name="SistersOfBattle/WarHymn"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</warHymn>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="Rosarius"/>		
+		<trait name="Hero"/>
+		<trait name="Stubborn"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SistersOfBattle/ExtraInfantryArmour"/>
+	</traits>
+</unit>

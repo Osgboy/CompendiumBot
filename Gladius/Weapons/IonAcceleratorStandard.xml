@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="0.33"
+				fireSound="Weapons/IonAcceleratorStandard"
+		 		fireSoundCount="1"
+		 		muzzleFlashesBlueprint="Effects/IonMuzzleFlashes"
+		 		beamsBlueprint="Effects/IonBeams"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Tau/LasDamage" requiredUpgrade="Tau/LasDamage"/>
+	</traits>
+</weapon>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/TyranidsCity"
+		ambientSoundLayer="1"
+		ambientSoundPriority="1"
+		audioEffectSystem="City"
+		blockingSight="1"
+		category="Building"
+		icon="Factions/Tyranids">
+	<model>
+		<buildings/>
+	</model>
+	<traits>
+		<trait name="City"/>
+		<trait name="Tyranids/CityDamage" requiredUpgrade="Tyranids/CityDamage"/>
+	</traits>
+</feature>

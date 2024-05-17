@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade branch="Human" tier="5">
+	<requiredUpgrades>
+		<upgrade name="LogisticsExperts"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseOperationsScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

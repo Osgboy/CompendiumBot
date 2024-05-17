@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<trait name="Broken"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building disablable="0" position="40">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<cityLoyaltyUpkeep base="6"/>
+				<influencePerTile base="-1"/>
+				<populationFoodUpkeep base="1"/>
+				<populationLoyaltyUpkeep base="1"/>
+				<populationRequired base="0"/>
+				<productionCost base="336"/>
+				<slotsRequired base="1"/>
+				<tileAcquisitionRange add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<faction name="Zephon"/>
+				</player>
+			</conditions>
+			<effects>
+				<food max="0"/>
+				<growth add="2"/>
+				<minerals add="6"/>
+				<populationFoodUpkeep max="0"/>
+				<populationMineralsUpkeep base="1"/>
+				<tileAcquisitionRange min="100"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<populationLimit add="6"/>
+				<loyalty add="6"/>
+				<food add="6"/>
+				<minerals add="6"/>
+				<energy add="6"/>
+				<research add="6"/>
+				<influence add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<produceUnit unit="Commander" requiredUpgrade="Commander"/>
+		<produceUnit unit="Valkyrie" requiredUpgrade="Valkyrie"/>
+		<produceUnit unit="WhispererOfGoldrauch" requiredUpgrade="WhispererOfGoldrauch"/>
+		<produceUnit unit="ElectOfUzhodai" requiredUpgrade="ElectOfUzhodai"/>
+		<produceUnit unit="ErelimAssassin" requiredUpgrade="ErelimAssassin"/>
+		<produceUnit unit="KryptArchai" requiredUpgrade="KryptArchai"/>
+	</actions>
+	<traits>
+		<trait type="CityTileAcquisitionRange" requiredUpgrade="CityTileAcquisitionRange"/>
+		<trait type="CityTileAcquisitionRange2" requiredUpgrade="CityTileAcquisitionRange2"/>
+		<trait type="Headquarters"/>
+		<trait type="HeadquartersAlgae" requiredUpgrade="HeadquartersAlgae"/>
+		<trait type="HeadquartersChips" requiredUpgrade="HeadquartersChips"/>
+		<trait type="HeadquartersGrowth" requiredUpgrade="HeadquartersGrowth"/>
+		<trait type="LifestyleImplants" requiredUpgrade="LifestyleImplants"/>
+	</traits>
+</building>

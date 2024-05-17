@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<combatStimulant charges="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="2" name="Items/CombatStimulant"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</combatStimulant>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</item>

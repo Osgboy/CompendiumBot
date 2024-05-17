@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/AcrinExplosions"
+				fireInterval="10"
+				fireSound="Weapons/Subjugator"
+				fireSoundCount="5"
+				fireSoundBeginCount="1"
+				muzzleFlashesBlueprint="Effects/AcrinRifleMuzzleFlashes"
+				projectilesBlueprint="Effects/AcrinRifleProjectiles"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="2"/> <!-- %armorPenetration base tier=3 -->
+				<attacks base="1"/>
+				<damage base="2"/> <!-- %damage base tier=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="Concussive"/>
+	</traits>
+</weapon>

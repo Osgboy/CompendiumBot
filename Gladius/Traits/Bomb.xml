@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy max="6" min="6"/> <!-- Bombs don't roll to scatter. -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<targetConditions>
+		<unit>
+			<noTrait name="Flyer"/>
+		</unit>
+	</targetConditions>
+</trait>

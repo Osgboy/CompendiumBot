@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>		
+		<unit mesh="Units/ChaosSpaceMarines/GreaterBrassScorpion"
+				material="Units/ChaosSpaceMarines/GreaterBrassScorpion"
+				idleAnimation="Units/ChaosSpaceMarines/GreaterBrassScorpionIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.7 1.7 1.7"
+				explosionsBone="Spine2"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="ScorpionCannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle3"/>
+			</model>
+		</weapon>
+		<weapon name="HellmawCannon" count="2">
+			<model>
+				<flamerWeapon muzzleBone="FlamerMuzzle" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="SoulburnerCannon" slotName="SoulburnerCannon" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle0" fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="Stomp" slotName="Stomp" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="9"/> <!-- %armor base armor=14/13/10 -->
+				<hitpointsMax base="144.0"/> <!-- %hitpointsMax base armor=14/13/10 wounds=9 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="12"/> <!-- %strengthDamage base strength=10 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+				<oreUpkeep base="16.0"/> <!-- %oreUpkeep base tier=12 factor=1 -->
+				<oreCost base="320.0"/> <!-- %oreCost base tier=12 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/GreaterBrassScorpionAttack"
+						beginFire="0.83"
+						endFire="1.86"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/GreaterBrassScorpionDie0"
+						sound="Units/LargeVehicleDie"
+						soundCount="3"
+						soundDelay="1.2"
+						voiceSound="Units/ChaosSpaceMarines/GreaterBrassScorpionOfKhorneDie"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/GreaterBrassScorpionMove"
+						sound="Units/ChaosSpaceMarines/GreaterBrassScorpionMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="ChaosSpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<useWeapon cooldown="1"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				weaponSlotName="SoulburnerCannon">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/GreaterBrassScorpionAbility"
+						beginFire="1.0"
+						endFire="1.1"/>
+			</model>
+		</useWeapon>
+		<stomp consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0"
+				weaponSlotName="Stomp"/>
+	</actions>
+	<traits>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="ChaosSpaceMarines/ExtraVehicleArmour"/>
+		<trait name="Daemon"/>
+		<trait name="ItWillNotDie"/>
+		<trait name="ChaosSpaceMarines/MultiLeggedTerror"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="ChaosSpaceMarines/RunesOfTheBloodGod"/>
+		<trait name="Smash"/>
+		<trait name="Strikedown"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Bunker"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Units/Bunker"
+				mesh="Units/Bunker"
+				normalWeight="0.1"
+				position="0 0 0"
+				scale="1.5 1.5 1.5"/>
+	</model>
+	<weapons>
+		<weapon type="HeavyMachineGun" count="3">
+			<models>
+				<projectileWeapon bone="Muzzle"
+						material="Units/Bunker"
+						mesh="Units/BunkerGuns"
+						muzzleBone="Muzzle"
+						muzzleCount="3"/>
+			</models>
+		</weapon>
+ 		<weapon type="HeavyMachineGun" requiredUpgrade="BunkerExtension">
+			<models>
+				<projectileWeapon bone="Muzzle" 
+						material="Units/Bunker"
+						mesh="Units/BunkerExtensionGun"
+						muzzleBone="Muzzle3"/>			
+			</models>
+		</weapon>
+ 		<weapon type="None" requiredUpgrade="BunkerExtension">
+			<models>
+				<weapon material="Units/Bunker"
+						mesh="Units/BunkerExtension"/>			
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="8"/>
+				<cargoSlots base="2"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1.0 -->
+				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=6 factor=1.0 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<appear>
+			<model>
+				<action beginEffect="0.2"
+						effectBlueprint="Effects/CircularDust"
+						responseSound="Units/Responses/BunkerAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/BunkerAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action responseSound="Units/Responses/BunkerEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/BunkerKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/BunkerPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/BunkerSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="BunkerExtension" requiredUpgrade="BunkerExtension"/>
+		<trait type="Fortification"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

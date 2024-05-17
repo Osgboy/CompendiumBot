@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9" icon="Buildings/AdeptusMechanicus/Headquarters">
+	<model>
+		<structureUnit mesh="Units/AdeptusMechanicus/Headquarters"
+				material="Units/AdeptusMechanicus/Headquarters"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				explosionsBone="HQBone"
+				scale="1.0 1.0 1.0"/>
+	</model>
+	<weapons>
+		<weapon name="CognisHeavyStubber" count="2">
+			<model>
+				<projectileWeapon mesh="Weapons/AdeptusMechanicus/HeadquartersGuns"
+						material="Buildings/AstraMilitarum/Buildings"
+						bone="HQBone"
+						fireInterval="0.2"
+						muzzleBone="LightMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="GatlingRocketLauncher" count="2">
+			<model>
+				<missileWeapon mesh="Weapons/AdeptusMechanicus/HeadquartersGuns"
+						material="Buildings/AstraMilitarum/Buildings"
+						bone="HQBone"
+						fireInterval="0.5"
+						muzzleBone="HeavyMuzzle"
+						muzzleCount="2"
+						missileScale="0.6"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax max="0"/>
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+		<trait name="Headquarters"/>
+		<trait name="Transport"/>
+	</traits>
+</unit>

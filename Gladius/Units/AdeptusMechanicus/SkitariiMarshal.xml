@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/SkitariiMarshal"
+				material="Units/AdeptusMechanicus/SkitariiMarshal"
+				idleAnimation="Units/AdeptusMechanicus/SkitariiMarshalIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="RadiumSerpenta">
+			<model>
+				<projectileWeapon muzzleBone="GunMuzzle" fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="ControlStave">
+			<model>
+				<powerWeapon effectBone="SceptreTop" fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalAttack"
+						beginFire="1.1"
+						endFire="2.0"
+						chargeAnimation="Units/AdeptusMechanicus/SkitariiMarshalCharge"
+						chargeBeginFire="0.43"
+						chargeEndFire="1.0"
+						meleeAnimation="Units/AdeptusMechanicus/SkitariiMarshalMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalDie0"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/AdeptusMechanicus/SkitariiMarshalVoiceDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalMove"
+						sound="Units/AdeptusMechanicus/InfantryMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<controlEdict cooldown="2"
+				name="AdeptusMechanicus/ControlEdict"
+				rank="-1" 
+				rankMax="2">
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalAbility"
+						sound="Actions/ControlEdict"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radiusMin="1" radiusMax="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<faction name="AdeptusMechanicus"/>
+											<noTrait name="Vehicle"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="AdeptusMechanicus/ControlEdict"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</controlEdict>
+		<aggressionOverride cooldown="2"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="AdeptusMechanicus/AggressionOverride"
+				rank="-1" 
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalAbility"
+						sound="Actions/AggressionOverride"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="AdeptusMechanicus"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="AdeptusMechanicus/AggressionOverride"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</aggressionOverride>
+		<genericUnitAbility name="AdeptusMechanicus/ServoSkullUplink"
+				passive="1" 
+				rank="-1" 
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radiusMin="1" radiusMax="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AdeptusMechanicus/ServoSkullUplink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>		
+		<enrichedRounds cooldown="2"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				elite="1"
+				levelUpPriority="1"
+				name="AdeptusMechanicus/EnrichedRounds"
+				rank="-1" 
+				rankMax="0"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/AdeptusMechanicus/SkitariiMarshalAbility"
+						sound="Actions/EnrichedRounds"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="AdeptusMechanicus"/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="Fortification"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="AdeptusMechanicus/EnrichedRounds"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</enrichedRounds>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/DoctrinaImperatives"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AdeptusMechanicus/ExtraInfantryArmour"/>
+		<trait name="FeelNoPain"/>
+		<trait name="Hero"/>
+	</traits>
+</unit>

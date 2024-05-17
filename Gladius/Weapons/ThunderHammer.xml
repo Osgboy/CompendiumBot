@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<powerWeapon effectBlueprint="Effects/PowerWeapon"
+				effectEmitterBlueprint="Effects/PowerWeaponEmitter"
+				fireSound="Weapons/PowerMaul"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="6"/> <!-- %meleeArmorPenetration add armorPiercing=2 -->
+				<strengthDamage mul="2"/> <!-- %strengthDamage mul strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Concussive"/>
+		<trait name="Melee"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+		<trait name="Unwieldy"/>
+	</traits>
+</weapon>

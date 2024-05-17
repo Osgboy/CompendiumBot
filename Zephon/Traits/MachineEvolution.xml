@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Traits/AreMachinesAlive" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<growth add="-1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<city/>
+			</conditions>
+			<effects>
+				<research mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

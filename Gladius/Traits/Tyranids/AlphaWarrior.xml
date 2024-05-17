@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/Tyranids/AlphaWarrior">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<type name="Tyranids/Warrior"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

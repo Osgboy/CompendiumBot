@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/TheArdentBladeRanged"
+				fireSoundCount="1"
+		 		beamsBlueprint="Effects/WailingDoom"
+		 		muzzleFlashesBlueprint="Effects/WailingDoomMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="2"/> <!-- %rangedDamage add strength=5 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Template"/>
+		<trait name="IgnoresCover"/>
+		<trait name="Flame"/>
+		<trait name="SistersOfBattle/AssaultWeaponBonus" requiredUpgrade="SistersOfBattle/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

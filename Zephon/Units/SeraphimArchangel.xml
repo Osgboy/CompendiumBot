@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Guide"
+				explosionSound="Explosions/Units/MediumCyber"
+				explosionSoundCount="8"
+				material="Units/SeraphimArchangel"
+				mesh="Units/SeraphimArchangel"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="1.8 1.8 1.8"/>
+	</model>
+	<weapons>
+		<weapon type="SingularityBlade">
+			<models>
+				<beamWeapon muzzleBone="Muzzle0"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Body"
+						material="Units/SeraphimArchangelShard"
+						mesh="Units/SeraphimArchangelShard"/>			
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="10"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="192"/> <!-- %hitpointsMax base tier=14 -->
+				<moraleMax base="0"/>
+				<movementMax base="3"/>
+				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
+				<singularityCoresCost base="16"/> <!-- %singularityCoresCost base tier=12 factor=0.05 -->
+				<singularityCoresUpkeep base="0.8"/> <!-- %singularityCoresUpkeep base tier=12 factor=0.05 -->
+				<transuraniumCost base="304"/> <!-- %transuraniumCost base tier=12 factor=0.95 -->
+				<transuraniumUpkeep base="15.2"/> <!-- %transuraniumUpkeep base tier=12 factor=0.95 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/SeraphimArchangelAttack"
+						beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/SeraphimArchangelAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/SeraphimArchangelDie0"
+						groundImpact="1.0"
+						sound="Units/SeraphimArchangelDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/SeraphimArchangelImpact"
+						responseSound="Units/Responses/SeraphimArchangelEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/SeraphimArchangelIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/SeraphimArchangelMove"
+						responseSound="Units/Responses/SeraphimArchangelMove"
+						responseSoundCount="3"
+						sound="Units/SeraphimArchangelMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+			</model>
+		</skip>
+		<fly name="AngelFlight">
+			<model>
+				<action animation="Units/SeraphimArchangelAltMove"
+						responseSound="Units/Responses/SeraphimArchangelAngelFlight"
+						sound="Units/SeraphimArchangelFlight"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</fly>
+		<unitCast name="HolyInferno">
+			<model>
+				<cast animation="Units/SeraphimArchangelAbility0"
+						responseSound="Units/Responses/SeraphimArchangelHolyInferno"/>
+			</model>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="DeflectorShield"/>
+		<trait type="Hovering"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Titan"/>
+	</traits>
+</unit>

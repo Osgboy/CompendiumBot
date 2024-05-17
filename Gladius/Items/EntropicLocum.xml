@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<genericUnitAbility passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Items/EntropicLocum"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</item>

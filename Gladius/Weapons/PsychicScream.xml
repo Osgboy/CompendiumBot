@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Tyranids/PsychicScream">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="7"/>
+				<rangedAccuracy min="12"/> <!-- Novas don't roll to hit. -->
+				<rangedDamage add="1"/> <!-- %rangedDamage add strength=3 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="MoraleSoak"/>
+		<trait name="IgnoresCover"/>
+		<trait name="PsychicPower"/>
+		<trait name="PsychicLash"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

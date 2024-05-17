@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Rocks">
+	<model>
+		<rocks/>
+	</model>
+	<modifiers>
+		<modifier> 
+			<effects>
+				<buildingSlots max="2"/>
+				<minerals mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks clusterOriginRadius="32" clusterRadius="32"
+			clusterSizeMax="8" clusterSizeMin="2"
+			scaleMax="1.5" scaleMin="0.5"/>
+</feature>

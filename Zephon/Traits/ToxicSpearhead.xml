@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnWeapon="1">
+	<modifiers>
+		<modifier effectDescription="AgainstBiologicalUnits">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<trait type="Biological"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<attacks mul="0.667"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

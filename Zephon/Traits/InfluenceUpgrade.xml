@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="OnRivers">
+			<conditions>
+				<tile>
+					<feature type="River"/>
+				</tile>
+			</conditions>
+			<effects>
+				<influence add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

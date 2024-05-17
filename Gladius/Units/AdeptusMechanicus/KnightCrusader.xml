@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/KnightCrusader"
+				material="Units/AdeptusMechanicus/KnightCrusader"
+				idleAnimation="Units/AdeptusMechanicus/KnightCrusaderIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.0 1.0 1.0"
+				explosionsBone="Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="AvengerGatlingCannon">
+			<model>
+				<projectileWeapon muzzleBone="GatlingMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="RapidFireBattleCannon">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle" fireInterval="0.73"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyStubber" count="2">
+			<model>
+				<projectileWeapon muzzleBone="StubberMuzzle" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyFlamer">
+			<model>
+				<flamerWeapon muzzleBone="FlamerMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedIcarusAutocannon"
+				requiredUpgrade="AdeptusMechanicus/TwinLinkedIcarusAutocannon">
+			<model>
+				<projectileWeapon mesh="Weapons/AdeptusMechanicus/KnightCrusaderGun"
+						material="Units/AdeptusMechanicus/KnightCrusader" 
+						bone="Turret"
+						muzzleBone="IcarusMuzzle"
+						muzzleCount="2"
+						effectFaceWeight="0"/>
+			</model>
+		</weapon>
+		<weapon name="Stomp" slotName="Stomp" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=13/12/12 -->
+				<hitpointsMax base="72.0"/> <!-- %hitpointsMax base armor=13/12/12 wounds=6 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<oreUpkeep base="12.0"/> <!-- %oreUpkeep base tier=11 factor=1 -->
+				<oreCost base="240.0"/> <!-- %oreCost base tier=11 factor=1 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<strengthDamage base="12"/> <!-- %strengthDamage base strength=10 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/AdeptusMechanicus/KnightCrusaderAttack"
+						beginFire="0.86" endFire="2.0"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KnightCrusaderDie0"
+						sound="Units/HugeArmoredDie"
+						soundCount="1"
+						soundDelay="1.1"
+						voiceSound="Units/LargeVehicleDie"
+						voiceSoundCount="3"/>
+			</model>		
+		</die>
+		<idle>
+		<model>
+			<action animationSpeed="0.75"/>
+		</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/KnightCrusaderMove"
+						sound="Units/Tau/MonstrousWalkerMove"
+						soundCount="1"/>
+			</model>				
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="AdeptusMechanicus/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<stomp consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0"
+				weaponSlotName="Stomp"/>
+	</actions>
+	<traits>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="AdeptusMechanicus/ExtraVehicleArmour"/>
+		<trait name="AdeptusMechanicus/IonShield"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Smash"/>
+		<trait name="Strikedown"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

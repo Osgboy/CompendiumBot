@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<onUnitDisappeared>
+		<area affects="Player">
+			<modifiers>
+				<modifier>
+					<effects>
+						<energyFromExperienceValueFactor add="3"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/SpiritPreservationBonus">
+					<effects>
+						<energyFromExperienceValueFactor add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onUnitDisappeared>
+</trait>

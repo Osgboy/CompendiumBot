@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Weapon" 
+		icon="Actions/SistersOfBattle/RagingFervour">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="BoltWeapon"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damage mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>
+

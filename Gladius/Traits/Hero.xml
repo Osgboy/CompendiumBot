@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Flyer"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<heroDamageReduction add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<duplicateTypeCost mul="1.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

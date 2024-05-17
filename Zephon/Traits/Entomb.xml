@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Entomb" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<actionPoints max="0"/>
+				<movement max="0"/>
+				<movementMax max="0"/>
+				<healingReceived mul="-0.75"/>
+				<damageTaken mul="0.333"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

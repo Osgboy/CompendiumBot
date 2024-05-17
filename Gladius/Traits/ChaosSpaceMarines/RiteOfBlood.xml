@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Building" icon="Actions/ChaosSpaceMarines/RiteOfBlood">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building match="Any">
+					<type name="ChaosSpaceMarines/Aircraft"/>
+					<type name="ChaosSpaceMarines/Cult"/>
+					<type name="ChaosSpaceMarines/Heroes"/>
+					<type name="ChaosSpaceMarines/Infantry"/>
+					<type name="ChaosSpaceMarines/Vehicles"/>
+				</building>
+			</conditions>
+			<effects>
+				<production mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

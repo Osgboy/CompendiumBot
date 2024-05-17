@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysColored="1" category="Buff" icon="Actions/Tyranids/InstinctiveBehaviourOverride">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="Tyranids"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+		</modifier>
+	</modifiers>
+</trait>

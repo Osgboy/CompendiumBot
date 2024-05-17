@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/SingularityBlade"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
+				<attacks base="2"/>
+				<damage base="24"/> <!-- %damage base tier=10 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="IgnoresCover"/>
+		<trait type="LargeSplash"/>
+		<trait type="LifeSteal"/>
+		<trait type="SlowPriming"/>
+	</traits>
+</weapon>

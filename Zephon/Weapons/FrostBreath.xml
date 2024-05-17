@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon flamesBlueprint="Effects/FrostBreath"
+				fireSound="Weapons/FrostBreath"
+				fireSoundContinuously="1"
+				fireSoundBeginCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="1"/> <!-- %armorPenetration base tier=2 -->
+				<attacks base="1"/>
+				<damage base="3"/> <!-- %damage base tier=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="Cone"/>
+		<trait type="LargeSplash"/>
+	</traits>
+</weapon>

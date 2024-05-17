@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Resource">
+	<model>
+		<vegetation material="Features/RecafLeaf"
+				depthMaterial="Features/RecafLeafDepth"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<production mul="0.1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomass add="1"/>
+				<buildingSlots max="0"/>
+				<food add="1"/>
+				<influence add="1"/>
+				<requisitions add="1"/>
+				<loyalty mul="0.2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="Necrons"/>
+				</player>
+			</conditions>
+			<effects>
+				<energy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<vegetation>
+		<trees clusterSizeMin="10" clusterSizeMax="20"
+				scaleMin="0.5" scaleMax="2.0">
+			<meshes>
+				<mesh name="Terrain/Vegetation/RecafPlant0"/>
+				<mesh name="Terrain/Vegetation/RecafPlant1"/>
+				<mesh name="Terrain/Vegetation/RecafPlant2"/>
+				<mesh name="Terrain/Vegetation/RecafPlant3"/>
+				<mesh name="Terrain/Vegetation/RecafPlant4"/>
+				<mesh name="Terrain/Vegetation/RecafPlant5"/>
+				<mesh name="Terrain/Vegetation/RecafPlant6"/>
+				<mesh name="Terrain/Vegetation/RecafPlant7"/>
+			</meshes>
+		</trees>
+	</vegetation>
+</feature>

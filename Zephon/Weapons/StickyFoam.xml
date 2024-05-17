@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/StickyFoam">
+	<model>
+		<flamerWeapon flamesBlueprint="Effects/StickyFoam"
+				explosionsBlueprint="Effects/FoamExplosions"
+				fireSound="Weapons/StickyFoam"
+				fireSoundContinuously="1"
+				fireSoundCount="1"
+				fireSoundBeginCount="1"
+				fireSoundEndCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="0"/> <!-- %armorPenetration base tier=0 -->
+				<attacks base="1"/>
+				<damage base="0"/> <!-- %damage base tier=0 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="Immobilizing"/>
+	</traits>
+</weapon> 

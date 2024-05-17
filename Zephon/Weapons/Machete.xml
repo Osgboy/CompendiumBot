@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="0"/> <!-- %armorPenetration base tier=1 -->
+				<attacks base="1"/>
+				<damage base="1"/> <!-- %damage base tier=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="Melee"/>
+	</traits>	
+</weapon>

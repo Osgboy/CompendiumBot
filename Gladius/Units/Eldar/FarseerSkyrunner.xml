@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/FarseerSkyrunner"
+				material="Units/Eldar/FarseerSkyrunner"
+				idleAnimation="Units/Eldar/FarseerSkyrunnerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.1 1.1 1.1"
+				position="0 0 16"
+				explosionsBone="BloodBone"/>
+	</model>
+	<weapons>
+		<weapon name="Witchblade">
+			<model>
+				<powerWeapon effectBoundingVolume="Sword"
+				 		effectBone="SwordEffect"
+				 		fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedShurikenCatapult">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="EldritchStorm" slotName="EldritchStorm" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="5"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<energyUpkeep base="3.0"/> <!-- %energyUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/FarseerSkyrunnerAttack"
+						beginFire="0.9"
+						endFire="2.2"
+						chargeAnimation="Units/Eldar/FarseerSkyrunnerCharge"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.05"
+						meleeAnimation="Units/Eldar/FarseerSkyrunnerMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.8"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerDie0"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/Eldar/FarseerSkyrunnerDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerMove"
+						sound="Units/Eldar/JetbikeMove"
+						soundCount="1"/>
+			</model>				
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<scout consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</scout>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<mindWar cooldown="3"
+				name="Eldar/MindWar"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerAbility"
+						bone="Chest"
+						sound="Actions/MindWar"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/MindWar"/>
+										<hitpointsFactorFromMoraleDifference addMin="-0.5" addMax="-1.5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</mindWar>
+		<doom cooldown="3"
+				name="Eldar/Doom"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerAbility"
+						bone="Chest"
+						sound="Actions/Doom"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Eldar/Doom"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/Doom"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</doom>
+		<willOfAsuryan cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				name="Eldar/WillOfAsuryan"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0">
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerAbility"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="2" addMax="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</willOfAsuryan>
+		<eldritchStorm cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				psychicPower="1"
+				rank="-1"
+				rankMax="0"
+				weaponSlotName="EldritchStorm">
+			<model>
+				<action animation="Units/Eldar/FarseerSkyrunnerAbility"
+						sound="Actions/EldritchStorm"/>
+			</model>
+		</eldritchStorm>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/BattleFocus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="Jetbike"/>
+		<trait name="Psyker"/>
+		<trait name="Relentless"/>
+		<trait name="Eldar/RuneArmour"/>
+		<trait name="Eldar/SpiritPreservation"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/Outpost">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<allied/>
+					<noTrait name="City"/>
+				</unit>
+			</conditions>
+			<effects>
+				<cityDamageReduction add="0.17"/>
+				<healingRate mul="0.5"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+				<unit>
+					<noTrait name="City"/>
+					<noTrait name="Flyer"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedDamageReduction add="0.17"/>
+			</effects>
+		</modifier>		
+	</modifiers>
+</trait>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="24"/>
+				<requisitionsCost base="30"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<requisitionsUpkeep add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<energy add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseEnergyScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</building>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>
+		<unit mesh="Units/Tau/Pathfinder"
+				material="Units/Tau/Pathfinder"
+				idleAnimation="Units/Tau/PathfinderIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<group size="4" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="IonRifleStandard"
+				slotName="IonRifleStandard">
+			<model>
+				<beamWeapon muzzleBone=".Muzzle"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="IonRifleOvercharged"
+				slotName="IonRifleOvercharged"
+				enabled="0">
+			<model>
+				<beamWeapon muzzleBone=".Muzzle"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="PhotonGrenade" slotName="PhotonGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone.004.R"/>
+			</model>
+		</weapon>
+		<weapon name="EMPGrenade" slotName="EMPGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone.004.R"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/PathfinderAttack"
+						beginFire="1.8" endFire="2.0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/PathfinderDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/Tau/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tau/PathfinderMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="IonRifleStandard IonRifleOvercharged"/>
+		<throwGrenade weaponSlotName="PhotonGrenade" cooldown="10"
+				requiredUpgrade="Tau/PhotonGrenade">
+			<model>
+				<action animation="Units/Tau/PathfinderGrenade"
+						beginFire="1.8"/>
+			</model>
+		</throwGrenade>
+		<throwGrenade weaponSlotName="EMPGrenade" cooldown="10"
+				requiredUpgrade="Tau/EMPGrenade">
+			<model>
+				<action animation="Units/Tau/PathfinderGrenade"
+						beginFire="1.8"/>
+			</model>				
+		</throwGrenade>
+		<bondingKnifeRitual cooldown="10"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0"
+				name="Tau/BondingKnifeRitual" 
+				requiredUpgrade="Tau/BondingKnifeRitual">
+			<model>
+				<action bone="ChestBone"
+						sound="Actions/BondingKnifeRitual"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<morale add="100"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</bondingKnifeRitual>
+		<markerlight cooldown="1"
+				name="Tau/Markerlight">
+			<model>
+				<action animation=""
+						sound="Actions/Markerlight"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2" lineOfSight="1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Tau/TargetAcquired"/>
+							<noTrait name="Fortification"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Tau/TargetAcquired"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</markerlight>
+		<deployReconDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/ReconDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/ReconDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/PulseAcceleratorDrone"/>
+				<action name="Tau/DeployDrone/Tau/GravInhibitorDrone"/>
+			</sharedCooldowns>
+		</deployReconDrone>
+		<deployPulseAcceleratorDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/PulseAcceleratorDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/PulseAcceleratorDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/ReconDrone"/>
+				<action name="Tau/DeployDrone/Tau/GravInhibitorDrone"/>
+			</sharedCooldowns>
+		</deployPulseAcceleratorDrone>
+		<deployGravInhibitorDrone cooldown="10"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/GravInhibitorDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/GravInhibitorDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="Tau/DeployDrone/Tau/PulseAcceleratorDrone"/>
+				<action name="Tau/DeployDrone/Tau/ReconDrone"/>
+			</sharedCooldowns>
+		</deployGravInhibitorDrone>
+		<scout consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</scout>
+	</actions>
+	<traits>
+		<trait name="Tau/SupportingFire"/>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+	</traits>
+</unit>

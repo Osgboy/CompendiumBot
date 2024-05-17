@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="3.0"
+				fireSound="Weapons/DeathRay"
+		 		fireSoundCount="3"
+				beamsBlueprint="Effects/DeathRay"
+				beamsEmitterBlueprint="Effects/DeathRayEmitter"
+				muzzleFlashesBlueprint=""
+				emitterShots="10"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Blast"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="Lance"/>
+	</traits>
+</weapon>

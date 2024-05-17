@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human">
+	<actions>
+		<unitAction passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Weapon">
+							<modifiers>
+								<modifier effectDescription="ToWeapons">
+									<effects>
+										<addTrait type="GladialEmanator"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<buyConditions>
+		<player>
+			<unlockedTrait type="TacticalArcheology"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

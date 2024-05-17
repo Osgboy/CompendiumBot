@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit icon="Buildings/Necrons/Headquarters">
+	<model>
+		<structureUnit mesh="Units/Necrons/Headquarters"
+				material="Buildings/Necrons/Buildings"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1.0 1.0 1.0"
+				explosionsBone="HQBone"/>
+	</model>
+	<weapons>
+		<weapon name="GaussFlayer" count="5">
+			<model>
+				<beamWeapon	mesh="Weapons/Necrons/HeadquartersGaussFlayers"
+						material="Buildings/Necrons/Buildings"
+						bone="HQBone"
+						fireInterval="0.5"
+						muzzleBone=".Muzzle"
+						muzzleCount="5"/>
+			</model>
+		</weapon>
+		<weapon name="ParticleWhip" count="1">
+			<model>
+ 				<beamWeapon mesh="Weapons/Necrons/HeadquartersParticleWhip"
+ 						material="Buildings/Necrons/Buildings"
+						bone="HQBone"
+						fireInterval="1.0"
+						muzzleBone=".ParticleWhipMuzzle"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax max="0"/>
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<setRallyPoint/>
+		<constructGaussPylon icon="Units/Necrons/GaussPylon"
+				requiredUpgrade="Necrons/GaussPylon"
+				cooldown="5">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="240"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="3">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="Resource"/>
+							<noFeatureCategory name="WireWeed"/>
+							<land/>
+							<noEnemyCity/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Necrons/GaussPylon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</constructGaussPylon>
+	</actions>
+	<traits>
+		<trait name="Necrons/EternityGate"/>
+		<trait name="Fortification"/>
+		<trait name="Headquarters"/>
+		<trait name="Transport"/>
+	</traits>	
+</unit>

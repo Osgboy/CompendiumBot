@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit productionWeight="0.01">
+	<model>
+		<unit mesh="Units/Orks/Mek"
+				material="Units/Orks/Mek"
+				idleAnimation="Units/Orks/MekIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Torso"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="KustomMegaSlugga">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"
+						fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="Stikkbomb" slotName="Stikkbomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="RightHand"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<oreUpkeep base="1.5"/> <!-- %oreUpkeep base tier=5 factor=1 -->
+				<oreCost base="15.0"/> <!-- %oreCost base tier=5 factor=0.5 -->		
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<influenceUpkeep base="1.5"/> <!-- %influenceUpkeep base tier=5 factor=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersScore base="1.0"/>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/MekAttack"
+						beginFire="1.27"
+						endFire="1.87"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/MekDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/MekMove"
+						sound="Units/Orks/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<foundCity>
+			<model>
+				<action sound="Actions/FoundCity"
+						animation="Units/Orks/MekBuild"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+						<oreCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</foundCity>
+		<clearTileUnitAbility cooldown="1"
+				icon="Actions/ClearTile"
+				name="ClearTile">
+			<model>
+				<action animation="Units/Orks/MekBuild"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions/>
+					<areas/>
+				</target>
+			</beginTargets>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="5"/>
+						<oreCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</clearTileUnitAbility>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<meksTools cooldown="1">
+			<model>
+				<action sound="Actions/MechanicalBuff"
+						animation="Units/Orks/MekBuild"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="8"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</meksTools>
+		<throwGrenade weaponSlotName="Stikkbomb" cooldown="10"
+				requiredUpgrade="Orks/Stikkbomb">
+			<model>
+				<action animation="Units/Orks/MekGrenade"
+						beginFire="1.26666666667"/>
+			</model>
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Orks/ExtraInfantryArmour"/>
+		<!-- <trait name="FuriousCharge"/> -->
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+	</traits>
+</unit>

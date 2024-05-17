@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2">
+	<model>
+		<unit mesh="Units/Tyranids/Gargoyle"
+				material="Units/Tyranids/Gargoyle"
+				scale="1.2 1.2 1.2"
+				idleAnimation="Units/Tyranids/GargoyleIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 48"
+				normalWeight="1.0"
+				bloodBone="BloodBone"/>
+	</model>
+	<group size="8" rowSize="4" memberDeltaX="80" memberDeltaY="60"/>
+	<weapons>
+		<weapon name="BlindingVenom">
+			<model>
+				<weapon fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="Fleshborer">
+			<model>
+				<projectileWeapon mesh="Weapons/Tyranids/GargoyleGun"
+						material="Units/Tyranids/Gargoyle"
+						bone="Bone014(mirrored)"
+						muzzleBone=".Muzzle"
+						fireInterval="0.3"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<biomassUpkeep base="1.5"/> <!-- %biomassUpkeep base tier=5 factor=1 -->
+				<biomassCost base="30.0"/> <!-- %biomassCost base tier=5 factor=1 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="4"/> <!-- %moraleMax base leadership=5 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/GargoyleAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						chargeAnimation="Units/Tyranids/GargoyleCharge"
+						chargeBeginFire="0.333333333333"
+						chargeEndFire="1.33333333333"
+						meleeAnimation="Units/Tyranids/GargoyleMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.833333333333"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/GargoyleDie"
+						animationCount="2"
+						sound="Units/SmallUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.33"
+						voiceSound="Units/Tyranids/SmallDie"
+						voiceSoundCount="4"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/GargoyleMove"
+						sound="Units/Tyranids/GargoyleMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<jumpPack cooldown="3">
+			<model>
+				<action sound="Actions/GargoyleJumpPack"
+						soundCount="2"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Tyranids/HammerOfWrath">
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+		<instinctiveBehaviourOverride consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/InstinctiveBehaviourOverride"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tyranids/InstinctiveBehaviourOverride2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/InstinctiveBehaviourOverride" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</instinctiveBehaviourOverride>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Tyranids/InstinctiveBehaviour"/>
+		<trait name="Tyranids/ToxinSacs" requiredUpgrade="Tyranids/ToxinSacs"/>
+		<trait name="MoveThroughCover"/>
+	</traits>
+</unit>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/Orks/KillBursta"
+				material="Units/Orks/KillBursta"
+				idleAnimation="Units/Orks/KillBurstaIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.3 1.3 1.3"
+				explosionsBone="Hull"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="BurstaKannon">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle"
+						fireInterval="0.56"/>
+			</model>	
+		</weapon>
+		<weapon name="TwinLinkedBigShoota" count="2">
+			<model>
+				<projectileWeapon muzzleBone="SidegunMuzzle"
+						muzzleCount="2"
+						fireInterval="0.1"
+						effectFaceWeight="0"/>			
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="9"/> <!-- %armor base armor=14/13/10 -->
+				<cargoSlots base="4"/> <!-- %cargoSlots base capacity=12 -->
+				<hitpointsMax base="112.0"/> <!-- %hitpointsMax base armor=14/13/10 wounds=7 -->
+				<influenceUpkeep base="8.0"/> <!-- %influenceUpkeep base tier=10 factor=1 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="8.0"/> <!-- %oreUpkeep base tier=10 factor=1 -->
+				<oreCost base="160.0"/> <!-- %oreCost base tier=10 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/KillBurstaAttack"
+						beginFire="1.0"
+						endFire="2.0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/KillBurstaDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.3"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/KillBurstaMove"
+						sound="Units/Orks/BattlewagonMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+	</actions>
+	<traits>
+		<trait name="AssaultVehicle"/>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="Orks/GrotGunner"/>
+		<trait name="GrotRiggers" requiredUpgrade="Orks/GrotRiggers"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Transport"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

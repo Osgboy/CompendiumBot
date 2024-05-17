@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="FromHammerheads">
+			<conditions>
+				<targetUnit ignoreForTraitVisibility="1">
+					<type name="Hammerhead"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damageTaken mul="0.333"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

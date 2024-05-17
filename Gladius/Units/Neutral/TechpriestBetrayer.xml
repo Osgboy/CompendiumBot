@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit visible="0">
+	<model>
+		<unit mesh="Units/AstraMilitarum/TechpriestEnginseer"
+				material="Units/AstraMilitarum/TechpriestEnginseer"
+				idleAnimation="Units/AstraMilitarum/TechpriestEnginseerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.25 1.25 1.25"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PowerAxe">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade"
+						mesh="Weapons/AstraMilitarum/TechpriestEnginseerPowerAxe"
+						material="Units/AstraMilitarum/TechpriestEnginseer"
+						bone="Axe"
+						fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="ServoArm" slotName="ServoArm" enabled="0">
+			<model>
+				<weapon fireInterval="1.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyUpkeep base="16.0"/> <!-- %energyUpkeep base tier=12 factor=1 -->
+				<energyCost base="160.0"/> <!-- %energyCost base tier=12 factor=0.5 -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=5 wounds=3 -->
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="6"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<foodCost base="160.0"/> <!-- %foodCost base tier=12 factor=0.5 -->
+				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/TechpriestEnginseerMeleeAttack0"
+						chargeAnimation="Units/AstraMilitarum/TechpriestEnginseerCharge0"
+						meleeAnimation="Units/AstraMilitarum/TechpriestEnginseerMeleeAttack0"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<useWeapon cooldown="3" weaponSlotName="ServoArm">
+			<model>
+				<action	chargeAnimation="Units/AstraMilitarum/TechpriestEnginseerCharge0"
+						meleeAnimation="Units/AstraMilitarum/TechpriestEnginseerServoArm"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"/>
+			</model>	
+		</useWeapon>
+		<blessingsOfTheOmnissiah cooldown="1">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerAbility"
+						sound="Actions/Heal"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="16"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</blessingsOfTheOmnissiah>
+		<awakenTheMachine cooldown="1">
+			<model>
+				<action animation="Units/AstraMilitarum/TechpriestEnginseerAbility"
+						sound="Actions/MechanicalBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="PowerOfTheMachineSpirit"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</awakenTheMachine>
+	</actions>
+	<traits>
+		<trait name="FeelNoPain"/>
+		<trait name="Hero"/>
+		<trait name="RefractorField"/>
+	</traits>
+</unit>

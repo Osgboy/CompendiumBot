@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Features/SkullAltar" visibilityCategory="None" visible="0">
+	<!-- <onTileExplored> would allow us to call this when feature becomes explorable with a unit already on it and not conflicted with <onTileEntered>. -->
+	<!-- <onTileExplored> 
+		<area affects="Unit">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<noFaction name="Neutral"/>
+						</player>
+						<tile>
+							<explorable/>
+						</tile>
+						<unit>
+							<noTrait name="Flyer"/>
+						</unit>
+					</conditions>
+					<effects>
+						<addTrait name="BloodBlessing" duration="10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+		<area affects="Tile">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<noFaction name="Neutral"/>
+						</player>
+						<tile>
+							<explorable/>
+						</tile>
+						<unit>
+							<noTrait name="Flyer"/>
+						</unit>
+					</conditions>
+					<effects>
+						<explore/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onTileExplored> -->
+</trait>

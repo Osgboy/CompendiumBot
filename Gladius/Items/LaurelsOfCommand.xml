@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<laurelsOfCommand cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				icon="Items/LaurelsOfCommand"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale add="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</laurelsOfCommand>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Uncommon"/>
+	</traits>
+</item>

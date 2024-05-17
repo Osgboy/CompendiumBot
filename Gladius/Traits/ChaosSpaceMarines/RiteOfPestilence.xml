@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Building" icon="Actions/ChaosSpaceMarines/RiteOfPestilence">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="ChaosSpaceMarines/Food"/>
+				</building>
+			</conditions>
+			<effects>
+				<food mul="0.33"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="ChaosSpaceMarines/Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<growth mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

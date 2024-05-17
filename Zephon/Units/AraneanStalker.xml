@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit effectsBlueprint="Effects/AraneanStalker"
+				explosionsBone="Head"
+				explosionSound="Explosions/Units/SmallCyber"
+				explosionSoundCount="17"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="60"
+				material="Units/AraneanStalker"
+				mesh="Units/AraneanStalker"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AraneanEye">
+			<models>
+				<beamWeapon effectFaceWeight="0.9"
+						fireInterval="10"
+						muzzleBone="Eye"
+						windupDuration="0.5"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="AraneanCloak">
+			<models>
+				<weapon bone="Head"
+						material="Units/AraneanStalkerCloak"
+						mesh="Units/AraneanStalkerCloak"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<chipsCost base="15"/> <!-- %chipsCost base tier=7 factor=0.25 -->
+				<chipsUpkeep base="0.75"/> <!-- %chipsUpkeep base tier=7 factor=0.25 -->
+				<groupSizeMax base="5"/>
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=7 factor=0.5 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=7 factor=0.5 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/AraneanStalkerAttack"
+						beginFire="1.13"
+						endFire="1.73"
+						responseSound="Units/Responses/AraneanStalkerAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AraneanStalkerDie"
+						animationCount="2"
+						sound="Units/MediumMechanicalGroundHit"
+						soundCount="3"
+						soundDelay="0.8"
+						voiceSound="Units/AraneanStalkerDie"
+						voiceSoundCount="5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AraneanStalkerImpact"
+						responseSound="Units/Responses/AraneanStalkerEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AraneanStalkerIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AraneanStalkerMove"
+						responseSound="Units/Responses/AraneanStalkerMove"
+						responseSoundCount="3"
+						sound="Units/AraneanStalkerMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="MarkTarget"
+				cooldown="1">
+			<model>
+				<cast animation="Units/AraneanStalkerAbility0"
+						blueprint="Effects/MarkTarget"
+						responseSound="Units/Responses/AraneanStalkerMarkTarget"
+						sound="Actions/MarkTargetCaster"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="MarkedTarget"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="AraneanCloak" requiredUpgrade="AraneanCloak"/>
+		<trait type="Mechanical"/>
+		<trait type="Stealth"/>
+	</traits>
+</unit>

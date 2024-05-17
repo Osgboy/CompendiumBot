@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<unitsInRange count="1" range="1">
+						<enemy/>
+						<noTrait name="Invulnerable"/>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<rangeMax add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

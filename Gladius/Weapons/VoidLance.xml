@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/VoidLance"
+				fireSoundCount="3"
+				fireInterval="0.5"
+		 		beamsBlueprint="Effects/LaserBeams"
+		 		beamsEmitterBlueprint="Effects/MeltaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/LaserMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="8"/> <!-- %rangedDamage add strength=9 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Drukhari/AssaultWeaponBonus" requiredUpgrade="Drukhari/AssaultWeaponBonus"/>
+		<trait name="Lance"/>
+	</traits>
+</weapon>

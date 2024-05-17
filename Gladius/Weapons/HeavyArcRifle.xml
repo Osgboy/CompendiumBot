@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/HeavyArcRifle"
+		 		fireSoundCount="3"
+		 		beamsBlueprint="Effects/HeavyArcBeams"
+				beamsEmitterBlueprint="Effects/FrazzleEmitter"
+				muzzleFlashesBlueprint="Effects/PlasmaMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Haywire"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="AdeptusMechanicus/HeavyWeaponBonus" requiredUpgrade="AdeptusMechanicus/HeavyWeaponBonus"/>
+	</traits>
+</weapon>

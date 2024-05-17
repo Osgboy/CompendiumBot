@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/RuptureCannon"
+		 		fireSoundCount="3"
+		 		muzzleFlashesBlueprint="Effects/BioPlasmaMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/StranglethornMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint="Effects/BioPlasmaDirectionalMuzzleFlashes"
+				directionalMuzzleFlashesEmitterBlueprint="Effects/StranglethornDirectionalMuzzleFlashesEmitter"
+				projectilesBlueprint="Effects/FleshborerProjectiles"
+				projectilesEmitterBlueprint="Effects/StranglethornProjectilesEmitter"
+				explosionsBlueprint="Effects/BioPlasmaExplosions" 
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Tyranids/LongRangedDamage" requiredUpgrade="Tyranids/LongRangedDamage"/>
+	</traits>
+</weapon>

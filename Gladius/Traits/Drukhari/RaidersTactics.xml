@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visible="1" >
+	<onUnitDisembarked>
+		<area affects="Unit">
+			<modifiers>
+				<modifier requiredUpgrade="Drukhari/RaidersTacticsDamage">
+					<effects>
+						<addTrait name="Drukhari/RaidersTacticsDamage" duration="1"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/RaidersTacticsDamageReduction">
+					<effects>
+						<addTrait name="Drukhari/RaidersTacticsDamageReduction" duration="1"/>
+					</effects>	
+				</modifier>
+			</modifiers>
+		</area>
+	</onUnitDisembarked>
+</trait>

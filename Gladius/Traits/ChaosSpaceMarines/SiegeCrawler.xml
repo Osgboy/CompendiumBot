@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Fortification"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<armorPenetration add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" icon="Actions/Tau/VelocityTracker">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Flyer"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangedAccuracy mul="0.33"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<supportSystemSlots add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

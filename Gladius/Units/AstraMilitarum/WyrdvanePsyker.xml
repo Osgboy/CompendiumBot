@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/AstraMilitarum/WyrdvanePsyker"
+				material="Units/AstraMilitarum/WyrdvanePsyker"
+				scale="1.0 1.0 1.0"
+				idleAnimation="Units/AstraMilitarum/WyrdvanePsykerIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="ChestBone"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="Laspistol">
+			<model>
+				<beamWeapon mesh="Weapons/AstraMilitarum/WyrdvanePsykerLaspistol"
+						material="Weapons/AstraMilitarum/WyrdvanePsykerLaspistol"
+						bone="LeftHandBone0"
+						muzzleBone="Muzzle0"
+						fireInterval="0.75"/>
+			</model>
+		</weapon>
+		<weapon name="None" enabled="0">
+			<model>
+				<weapon mesh="Weapons/AstraMilitarum/WyrdvanePsykerStave"
+						material="Weapons/AstraMilitarum/WyrdvanePsykerStave"
+						bone="RightHandBone0"/>
+			</model>
+		</weapon>
+		<weapon name="FlameBreath" slotName="FlameBreath" enabled="0">
+			<model>
+				<flamerWeapon muzzleBone=".Mouth"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<energyUpkeep base="1.5"/> <!-- %energyUpkeep base tier=5 factor=1 -->
+				<energyCost base="15.0"/> <!-- %energyCost base tier=5 factor=0.5 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="0.75"/> <!-- %strengthDamage base strength=2 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AstraMilitarum/WyrdvanePsykerAttack"
+						beginFire="0.67" endFire="2.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/WyrdvanePsykerDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/WyrdvanePsykerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>		
+		</move>
+		<flameBreath cooldown="1"
+				psychicPower="1"
+				weaponSlotName="FlameBreath">
+			<model>
+				<action	animation="Units/AstraMilitarum/WyrdvanePsykerFlameBreath"
+						beginFire="0.6"
+						endFire="2.4"/>
+			</model>				
+		</flameBreath>
+		<enfeeble cooldown="1"
+				psychicPower="1">
+			<model>
+				<action animation="Units/AstraMilitarum/WyrdvanePsykerEnfeeble"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Weakened"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Weakened"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</enfeeble>
+		<misfortune cooldown="1"
+				psychicPower="1"
+				requiredUpgrade="AstraMilitarum/Misfortune">
+			<model>
+				<action animation="Units/AstraMilitarum/WyrdvanePsykerEnfeeble"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Misfortune"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Misfortune"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</misfortune>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+		<trait name="Psyker"/>
+	</traits>
+</unit>

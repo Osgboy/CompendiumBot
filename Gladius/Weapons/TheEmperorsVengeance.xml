@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/SistersOfBattle/TheEmperorsVengeance" attributesModifiedByUnit="0">
+	<model>
+		<weapon explosionsBlueprint="Effects/LightExplosions"
+				explosionsEmitterBlueprint="Effects/LightExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="8" max="8"/>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="-1"/>
+	<traits>
+		<trait name="Barrage"/>
+		<trait name="LargeBlast"/>
+		<trait name="Assault"/>
+		<trait name="SistersOfBattle/AssaultWeaponBonus" requiredUpgrade="SistersOfBattle/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

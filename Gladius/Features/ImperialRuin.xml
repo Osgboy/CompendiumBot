@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/ImperialRuin"
+		ambientSoundLayer="1"
+		ambientSoundPriority="0"
+		audioEffectSystem="City"
+		blockingSight="1"
+		category="ImperialRuins">
+	<model>
+		<imperialRuin material="Buildings/AstraMilitarum/Buildings"/>
+	</model>
+	<modifiers>
+		<modifier> 
+			<effects>
+				<buildingSlots add="-1"/>
+				<ore mul="0.1"/>
+				<requisitions mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Flyer"/>
+					<noTrait name="MoveThroughCover"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<trait name="Vehicle"/>
+					<noTrait name="Flyer"/>
+					<noTrait name="Skimmer"/>
+					<noTrait name="Walker"/>
+					<noTrait name="MoveThroughCover"/>
+					<noTrait name="DozerBlade"/>
+					<noTrait name="SiegeShield"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="ImperialRuin"/>
+	</traits>
+</feature>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/SystemOverload" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForRangedWeapons">
+			<conditions>
+				<weapon ignoreForTraitVisibility="1">
+					<noTrait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damageSelf addMin="0.2" addMax="0.6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

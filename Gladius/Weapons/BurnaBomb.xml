@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon explosionSound="Explosions/BurnaBomb"
+				explosionSoundCount="3"
+				explosionsBlueprint="Effects/MissileExplosions"
+				explosionsEmitterBlueprint="Effects/HeavyBombClusterExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="AstraMilitarum/BlastDamage" requiredUpgrade="AstraMilitarum/BlastDamage"/>
+		<trait name="Orks/BlastDamage" requiredUpgrade="Orks/BlastDamage"/>
+		<trait name="SpaceMarines/BlastDamage" requiredUpgrade="SpaceMarines/BlastDamage"/>
+		<trait name="Bomb"/>
+		<trait name="IgnoresCover"/>
+		<trait name="LargeBlast"/>
+	</traits>
+</weapon>

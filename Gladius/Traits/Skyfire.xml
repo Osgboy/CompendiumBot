@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Flyer"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangedAccuracy mul="0.33"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="Flyer"/>
+						<noTrait name="JetPack"/>
+						<noTrait name="Jetbike"/>
+						<noTrait name="Skimmer"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangedAccuracy mul="-0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

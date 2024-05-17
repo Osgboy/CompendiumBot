@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnBuilding="1">
+	<modifiers>
+		<perBuildingInCityModifier effectDescription="HumanVehiclesUpgrade">
+			<perBuildingConditions>
+				<building>
+					<type name="HumanVehicles"/>
+				</building>
+			</perBuildingConditions>
+			<effects>
+				<production add="0.5"/>
+			</effects>
+		</perBuildingInCityModifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireInterval="1.0"
+				fireSound="Weapons/AquilaMacroCannon"
+				fireSoundCount="3"
+				muzzleFlashesBlueprint="Effects/CannonMuzzleFlashes"/>
+	</model>	
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="5"/>
+	<traits>
+		<trait name="AstraMilitarum/BlastDamage" requiredUpgrade="AstraMilitarum/BlastDamage"/>
+		<trait name="SpaceMarines/BlastDamage" requiredUpgrade="SpaceMarines/BlastDamage"/>
+		<trait name="ApocalypticMegaBlast"/>
+		<trait name="PrimaryWeapon"/>
+		<trait name="SonicBoom"/>
+	</traits>
+</weapon>

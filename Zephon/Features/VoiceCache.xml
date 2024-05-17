@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/VoiceCache"
+		category="Cache">
+	<model>
+		<simpleModel blueprint="Features/VoiceCache" 
+				effectsBlueprint="Effects/VoiceCache"
+				material="Buildings/Buildings"
+				mesh="Features/Caches/"
+				removeEffectsBlueprint="Effects/VoiceCacheRemoval"
+				scale="1 1 1"/>
+	</model>
+	<traits>
+		<trait type="VoiceCache"/>
+	</traits>
+</feature>

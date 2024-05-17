@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/Spiritseer"
+				material="Units/Eldar/Spiritseer"
+				idleAnimation="Units/Eldar/SpiritseerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.1 1.1 1.1"
+				bloodBone="SpiritSeer_Chest"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+			</model>
+		</weapon>
+		<weapon name="WitchStaff">
+			<model>
+ 				<powerWeapon effectBoundingVolume="Staff"
+				 		effectBone="StaffEffect"
+						fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<influenceUpkeep base="3.0"/> <!-- %influenceUpkeep base tier=5 factor=2 -->
+				<influenceCost base="60.0"/> <!-- %influenceCost base tier=5 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<energyUpkeep base="1.5"/> <!-- %energyUpkeep base tier=5 factor=1 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<energyCost base="15.0"/> <!-- %energyCost base tier=5 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/Eldar/SpiritseerCharge"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.05"
+						meleeAnimation="Units/Eldar/SpiritseerMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.8"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/SpiritseerDie0"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Eldar/SpiritseerDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/SpiritseerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>				
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<genericUnitAbility name="Eldar/SpiritMark"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Eldar/SpiritMark"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<destructorRenewer cooldown="2"
+				name="Eldar/DestructorRenewer"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Eldar/SpiritseerAbility"
+						bone="Chest"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit/>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints addMin="4" addMax="12"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="Destructor"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</destructorRenewer>
+		<protectJinx cooldown="2"
+				name="Eldar/ProtectJinx"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Eldar/SpiritseerAbility"
+						bone="Chest"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit/>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Eldar/Protect"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Eldar/Jinx"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</protectJinx>
+		<emboldenHorrify cooldown="2"
+				name="Eldar/EmboldenHorrify"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/Eldar/SpiritseerAbility"
+						bone="Chest"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit/>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="3" addMax="9"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="-3" addMax="-9"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</emboldenHorrify>
+		<hallucination cooldown="3"
+				elite="1"
+				levelUpPriority="1"
+				name="Hallucination"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/Eldar/SpiritseerAbility"
+						sound="Actions/Hallucination"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Hallucination"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Hallucination"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</hallucination>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Eldar/AncientDoom"/>
+		<trait name="Eldar/BattleFocus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Eldar/ExtraInfantryArmour"/>
+		<trait name="Fleet"/>
+		<trait name="Hero"/>
+		<trait name="Psyker"/>
+		<trait name="Eldar/RuneArmour"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

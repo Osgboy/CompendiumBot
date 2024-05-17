@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<missileWeapon fireSound="Weapons/MissilePod"
+				fireSoundCount="4"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="4"/> <!-- %armorPenetration base tier=5 -->
+				<attacks base="2"/>
+				<damage base="4"/> <!-- %damage base tier=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+</weapon>

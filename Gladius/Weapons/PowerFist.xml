@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/PowerFist"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="6"/> <!-- %meleeArmorPenetration add armorPiercing=2 -->
+				<strengthDamage mul="2"/> <!-- %strengthDamage mul strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+		<trait name="ChaosSpaceMarines/MeleeDamage" requiredUpgrade="ChaosSpaceMarines/MeleeDamage"/>
+		<trait name="Necrons/MeleeDamage" requiredUpgrade="Necrons/MeleeDamage"/>
+		<trait name="Orks/MeleeDamage" requiredUpgrade="Orks/MeleeDamage"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="Unwieldy"/>
+	</traits>
+</weapon>

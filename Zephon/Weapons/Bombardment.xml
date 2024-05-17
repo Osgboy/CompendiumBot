@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon attributesModifiedByUnit="0">
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="6" max="6"/>
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<attacks add="2"/>
+				<damage base="8"/> <!-- %damage base tier=7 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="-1"/>
+	<traits>
+		<trait type="IndirectFire"/>
+		<trait type="LargeSplash"/>
+	</traits>
+</weapon>

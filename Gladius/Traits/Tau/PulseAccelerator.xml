@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" icon="Actions/Tau/PulseAccelerator">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon match="Any">
+					<type name="PulseDriverCannon"/>
+					<type name="PulseRifle"/>
+					<type name="PulseSubmunitionsCannon"/>
+					<type name="TwinLinkedPulseCarbine"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<rangeMax add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

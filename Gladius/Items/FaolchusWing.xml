@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<faolchusWing cooldown="1"
+				consumedMovement="0">
+			<model>
+				<action sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Items/FaolchusWing" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</faolchusWing>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Artefact"/>
+	</traits>
+</item>

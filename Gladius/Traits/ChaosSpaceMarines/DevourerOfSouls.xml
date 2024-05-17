@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<onCombatSelfModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<destroyed/>
+						<!-- <noAttacking/> -->
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<hitpoints add="2"/>
+			</effects>
+		</modifier>
+	</onCombatSelfModifiers>
+	<perTurnModifiers endure="0">
+		<modifier visible="0">
+			<effects>
+				<hitpoints add="2"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

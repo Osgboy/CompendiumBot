@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/River"
+		ambientSoundLayer="2"
+		ambientSoundPriority="0"
+		category="River">
+	<model>
+		<river/>
+	</model>
+	<modifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<noFeature name="Coast"/>
+				</tile>
+			</conditions>
+			<effects>
+				<biomassOnConsume add="5"/>
+				<food mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Amphibious"/>
+					<noTrait name="Flyer"/>
+					<noTrait name="Necrons/ImmuneToNaturalLaw"/>
+					<noTrait name="JetPack"/>
+					<noTrait name="Jetbike"/>
+					<noTrait name="Skimmer"/>
+					<noTrait name="Tyranids/BoundingLeap"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

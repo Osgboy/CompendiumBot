@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Drukhari/SoulShelling">
+	<model>
+		<weapon explosionsBlueprint="Effects/WebwayArtilleryExplosions"
+				explosionsEmitterBlueprint="Effects/BombardmentExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="8" max="8"/>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="-1"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Drukhari/HeavyWeaponBonus" requiredUpgrade="Drukhari/HeavyWeaponBonus"/>
+		<trait name="ApocalypticBlast"/>
+		<trait name="Haywire"/>
+		<trait name="Fleshbane"/>
+	</traits>
+</weapon>

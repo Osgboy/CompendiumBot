@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnBuilding="1">
+	<modifiers>
+		<perBuildingInCityModifier effectDescription="AlgaeUpgrade">
+			<perBuildingConditions>
+				<building>
+					<type name="Food"/>
+				</building>
+			</perBuildingConditions>
+			<effects>
+				<algae add="0.5"/>
+			</effects>
+		</perBuildingInCityModifier>
+	</modifiers>
+</trait>

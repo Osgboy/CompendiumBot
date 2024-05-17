@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Body3"
+				material="Units/DarkVassael"
+				mesh="Units/DarkVassael"
+				normalWeight="0.1"
+				scale="50 50 50"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="LarvaeCannon">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle_Mouth" effectFaceWeight="0.75"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="ShochitrisLair">
+			<models>
+				<weapon animationSuffix="Tick"
+						material="Units/DarkVassaelTick"
+						mesh="Units/DarkVassaelTick"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
+				<armor base="0"/>
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelAppear"
+						responseSoundCount="1"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/DarkVassaelAttack"
+						beginFire="1.5"
+						endFire="2.0"
+						sound="Units/DarkVassaelAttack"
+						responseSound="Units/Responses/DarkVassaelAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/DarkVassaelDie0"
+						groundImpact="0.87"
+						sound="Units/DarkVassaelDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/DarkVassaelImpact"
+						responseSound="Units/Responses/DarkVassaelEndureHighDamage"
+						responseSoundCount="1"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/DarkVassaelIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelKill"
+						responseSoundCount="1"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/DarkVassaelMove"
+						responseSound="Units/Responses/DarkVassaelMove"
+						responseSoundCount="3"
+						sound="Units/DarkVassaelMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</skip>
+		<unitCast name="CreateShochitrisLair"
+				cooldown="10"
+				icon="Units/ShochitrisLair"
+				requiredUpgrade="ShochitrisLair">
+			<model>
+				<cast animation="Units/DarkVassaelAbility0"
+						responseSound="Units/Responses/DarkVassaelConstructLair"
+						sound="Units/DarkVassaelConstructLair"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="15"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="ShochitrisLair" avoidCity="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+	</traits>
+</unit>

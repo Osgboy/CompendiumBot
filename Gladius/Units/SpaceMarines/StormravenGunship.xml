@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>		
+		<unit mesh="Units/SpaceMarines/StormravenGunship"
+				material="Units/SpaceMarines/StormravenGunship"
+				idleAnimation="Units/SpaceMarines/StormravenGunshipIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				position="0 0 64"
+				scale="1.0 1.0 1.0"
+				normalWeight="1.0"
+				explosionsBone="Hull"
+				uvAnimated="0"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedAssaultCannon">
+			<model>
+				<projectileWeapon muzzleBone=".AssaultCannon"/>
+			</model>					
+		</weapon>
+		<weapon name="TwinLinkedHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone=".Boltgun"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinLinkedBoltgun"
+				count="6"
+				requiredUpgrade="SpaceMarines/HurricaneBolter">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/StormravenGunshipHurricaneBolter"
+						material="Weapons/SpaceMarines/StormravenGunshipHurricaneBolter"
+						bone="Hull"
+						muzzleBone=".BoltgunMuzzle"
+						muzzleCount="12"/>
+			</model>
+		</weapon>
+		<weapon name="StormstrikeMissile" slotName="StormstrikeMissile">
+			<model>
+				<missileWeapon muzzleBone=".StormstrikeMissiles"
+						muzzleCount="4"
+						fireInterval="1.2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/12 -->
+				<cargoSlots base="4"/> <!-- %cargoSlots base capacity=12 -->
+				<energyUpkeep base="6.0"/> <!-- %energyUpkeep base tier=9 factor=1 -->
+				<energyCost base="60.0"/> <!-- %energyCost base tier=9 factor=0.5 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/12 wounds=3 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="6"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=9 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/SpaceMarines/StormravenGunshipIdle1"
+						beginFire="0.2"
+						endFire="2.4"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/StormravenGunshipDie"
+						sound="Units/LargeVehicleDie"
+						soundCount="3"
+						soundDelay="0.1"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action sound="Units/SpaceMarines/StormravenGunshipMove"
+						soundCount="3"/>
+			</model>				
+		</move>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<powerOfTheMachineSpirit consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="5">
+			<model>
+				<action sound="Actions/MechanicalBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="PowerOfTheMachineSpirit"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</powerOfTheMachineSpirit>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="AssaultVehicle"/>
+		<trait name="CeramitePlating" requiredUpgrade="SpaceMarines/CeramitePlating"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="LocatorBeacon" requiredUpgrade="SpaceMarines/LocatorBeacon"/>
+		<trait name="Flyer"/>
+		<!-- <trait name="Hover"/> -->
+		<trait name="Transport"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

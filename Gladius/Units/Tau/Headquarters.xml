@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5" icon="Buildings/Tau/Headquarters">
+	<model>
+		<structureUnit mesh="Units/Tau/Headquarters"
+				material="Buildings/Tau/Buildings"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				explosionsBone="Bone"
+				scale="1.0 1.0 1.0"/>
+	</model>
+	<weapons>
+		<weapon name="PulseRifle" count="3">
+			<model>
+				<projectileWeapon mesh="Weapons/Tau/HeadquartersWeapons"
+						material="Buildings/Tau/Buildings"
+						bone="Bone"
+						fireInterval="0.17"
+						muzzleBone="Muzzle"
+						muzzleCount="5"/>
+			</model>
+		</weapon>
+		<weapon name="IonAcceleratorStandard" count="1"
+				slotName="IonAcceleratorStandard">
+			<model>
+				<beamWeapon mesh="Weapons/Tau/HeadquartersWeapons"
+						material="Buildings/Tau/Buildings"
+						bone="Bone"
+						fireInterval="0.33"
+						muzzleBone="HeavyMuzzle"
+						muzzleCount="1"/>
+			</model>
+		</weapon>
+		<weapon name="IonAcceleratorOvercharged" count="1"
+				slotName="IonAcceleratorOvercharged"
+				enabled="0">
+			<model>
+				<beamWeapon mesh="Weapons/Tau/HeadquartersWeapons"
+						material="Buildings/Tau/Buildings"
+						bone="Bone"
+						muzzleBone="HeavyMuzzle"
+						muzzleCount="1"/>
+			</model>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax max="0"/>
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/Tau/VehicleDie"
+						soundCount="1"/>
+			</model>
+		</die>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="IonAcceleratorStandard IonAcceleratorOvercharged"/>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+		<trait name="Headquarters"/>
+		<trait name="Tau/SupportingFire"/>
+		<trait name="Transport"/>
+	</traits>
+</unit>

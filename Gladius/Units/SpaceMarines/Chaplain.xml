@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/Chaplain"
+				material="Units/SpaceMarines/Chaplain"
+				idleAnimation="Units/SpaceMarines/ChaplainIdle"
+				idleAnimationCount="5"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Chest002"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="Flamer" slotName="Flamer" >
+			<model>
+				<flamerWeapon mesh="Weapons/SpaceMarines/CombiFlamer"
+						material="Weapons/SpaceMarines/CombiFlamer"
+						bone="RightHand002"
+						muzzleBone="Muzzle0"
+						fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="CroziusArcanum">
+			<model>
+				<powerWeapon effectBoundingVolume="Blade" 
+						mesh="Weapons/SpaceMarines/CroziusArcanum"
+						material="Units/SpaceMarines/Chaplain"
+						bone="LeftHand002"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="10"/> <!-- %meleeAccuracy base weaponSkill=5 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/ChaplainAttack"
+						beginFire="0.33"
+						endFire="2.6"
+						chargeAnimation="Units/SpaceMarines/ChaplainCharge"
+						chargeBeginFire="0.333"
+						chargeEndFire="1.167"
+						chargeDefenseAnimation="Units/SpaceMarines/ChaplainChargeDefense"
+						chargeDefenseBeginFire="0.333"
+						chargeDefenseEndFire="1.167"
+						meleeAnimation="Units/SpaceMarines/ChaplainMelee"
+						meleeBeginSwing="0.15"
+						meleeEndSwing="0.8"
+						meleeDefenseAnimation="Units/SpaceMarines/ChaplainMeleeDefense"
+						meleeDefenseBeginSwing="0.15"
+						meleeDefenseEndSwing="0.8"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/ChaplainDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/ChaplainMove"
+						sound="Units/SpaceMarines/TerminatorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<ritesOfWar cooldown="3"
+				levelUpPriority="0.1"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/ChaplainCanticlesOfWrath"
+						sound="Actions/MysticBuff"/>
+			</model>			
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="RitesOfWar"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ritesOfWar>
+		<canticlesOfWrath cooldown="3"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/SpaceMarines/ChaplainCanticlesOfWrath"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="2" addMax="6"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale addMin="-2" addMax="-6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</canticlesOfWrath>
+		<dogmaAstrates passive="1" 
+				levelUpPriority="0.5"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="DogmaAstrates"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</dogmaAstrates>
+		<orationOfRestoration cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				rank="-1"
+				rankMax="0">
+			<model>
+				<action animation="Units/SpaceMarines/ChaplainOrationOfRestoration"
+						sound="Actions/MysticBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints add="6"/>
+										<addTrait duration="2" name="OrationOfRestoration"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</orationOfRestoration>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<!-- <trait name="AndTheyShallKnowNoFear"/> -->
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Relentless"/>
+		<trait name="Rosarius"/>
+		<trait name="TerminatorArmour"/>
+		<trait name="Zealot"/>
+	</traits>
+</unit>

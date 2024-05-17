@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<player ignoreForTraitVisibility="1">
+					<faction name="Neutral"/>
+				</player>
+			</conditions>
+			<effects>
+				<attackScore add="10"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

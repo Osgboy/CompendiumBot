@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Weapons/HeatRay">
+	<model>
+		<beamWeapon beamsBlueprint="Effects/DeathRay"
+				beamsEmitterBlueprint="Effects/HeatRayDispersedEmitter"
+				muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/DeathRayMuzzleFlashesEmitter"
+				fireSound="Weapons/HeatRayDispersed"
+		 		fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="2"/> <!-- %rangedDamage add strength=5 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Flame"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="IgnoresCover"/>
+		<trait name="NoEscape"/>
+		<trait name="Template"/>
+		<trait name="Necrons/BlastDamage" requiredUpgrade="Necrons/BlastDamage"/>
+	</traits>
+</weapon>

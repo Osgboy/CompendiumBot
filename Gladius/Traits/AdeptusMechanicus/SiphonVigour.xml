@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff">
+	<onEnemyKilledSelfModifiers>
+		<modifier>
+			<effects>
+				<addTrait duration="10" name="AdeptusMechanicus/SiphonedVigour"/>
+			</effects>
+		</modifier>
+	</onEnemyKilledSelfModifiers>
+</trait>

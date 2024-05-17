@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2">
+	<model>
+		<unit mesh="Units/Tyranids/Haruspex"
+				material="Units/Tyranids/Haruspex"
+				scale="1.1 1.1 1.1"
+				idleAnimation="Units/Tyranids/HaruspexIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="Bone002"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="CrushingClaws">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+		<weapon name="GraspingTongue">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+		<weapon name="ThresherScythe" requiredUpgrade="Tyranids/ThresherScythe">
+			<model>
+				<weapon fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>				
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<biomassUpkeep base="4.0"/> <!-- %biomassUpkeep base tier=8 factor=1 -->
+				<biomassCost base="80.0"/> <!-- %biomassCost base tier=8 factor=1 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base toughness=6 wounds=6 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/HaruspexAttack"
+						beginFire="1.06666666667"
+						endFire="1.2"
+						chargeAnimation="Units/Tyranids/HaruspexCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="0.4"
+						meleeAnimation="Units/Tyranids/HaruspexMelee"
+						meleeBeginSwing="0.2"
+						meleeEndSwing="0.3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/HaruspexDie"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.5"
+						voiceSound="Units/Tyranids/LargeDie"
+						voiceSoundCount="4"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/HaruspexMove"
+						sound="Units/Tyranids/HaruspexMove"
+						soundCount="2"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="Tyranids/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<rapaciousHunger consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/RapaciousHunger"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/RapaciousHunger" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</rapaciousHunger>
+		<instinctiveBehaviourOverride consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				name="Tyranids/InstinctiveBehaviourOverride"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HiveMindBuff"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tyranids/InstinctiveBehaviourOverride2">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+					<conditions>
+						<unit>
+							<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+							<noTrait name="Tyranids/SynapseLink"/>
+						</unit>
+					</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/InstinctiveBehaviourOverride" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</instinctiveBehaviourOverride>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="Tyranids/AcidBlood"/>
+		<trait name="ExtraMonstrousCreatureArmour" requiredUpgrade="Tyranids/ExtraMonstrousCreatureArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Tyranids/FeederBeast"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="Tyranids/InstinctiveBehaviour"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Regeneration" requiredUpgrade="Tyranids/Regeneration"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+		<trait name="Strikedown"/>
+		<trait name="Tyranids/ToxinSacs" requiredUpgrade="Tyranids/ToxinSacs"/>
+		<trait name="Tyranids/VehiclesUpkeep" requiredUpgrade="Tyranids/VehiclesUpkeep"/>
+	</traits>
+</unit>

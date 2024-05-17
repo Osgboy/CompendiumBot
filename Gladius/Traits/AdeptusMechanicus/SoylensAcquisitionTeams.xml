@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Building">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<food greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<foodFromAdjacentBuildings add="0.01"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

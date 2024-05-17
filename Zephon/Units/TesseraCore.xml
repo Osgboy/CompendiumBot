@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Body"
+				explosionSound="Explosions/Units/MediumCyber"
+				explosionSoundCount="8"
+				material="Units/TesseraCore"
+				mesh="Units/TesseraCore"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="0.9 0.9 0.9"/>
+	</model>
+	<weapons>
+		<weapon type="GravitonAccelerator">
+			<models>
+				<projectileWeapon muzzleBone="Body"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Body"
+						material="Units/TesseraCoreAttachment"
+						mesh="Units/TesseraCoreAttachment"/>			
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<chipsCost base="15"/> <!-- %chipsCost base tier=7 factor=0.25 -->
+				<chipsUpkeep base="0.75"/> <!-- %chipsUpkeep base tier=7 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<transuraniumCost base="30"/> <!-- %transuraniumCost base tier=7 factor=0.5 -->
+				<transuraniumUpkeep base="1.5"/> <!-- %transuraniumUpkeep base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/TesseraCoreAttack"
+						beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/TesseraCoreAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/TesseraCoreDie0"
+						groundImpact="1.0"
+						sound="Units/TesseraCoreDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/TesseraCoreImpact"
+						responseSound="Units/Responses/TesseraCoreEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/TesseraCoreIdle0"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/TesseraCorePoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="DeployGravityField"
+				cooldown="1">
+			<model>
+				<cast animation="Units/TesseraCoreAbility0"
+						blueprint="Effects/MarkTarget"
+						responseSound="Units/Responses/TesseraCoreDeployGravityField"
+						sound="Units/TesseraCoreDeployGravityField"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="MarkedTarget"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="DefenseMatrix"/>
+		<trait type="Hovering"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

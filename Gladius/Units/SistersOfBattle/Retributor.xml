@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/Retributor"
+				material="Units/SistersOfBattle/Retributor"
+				idleAnimation="Units/SistersOfBattle/RetributorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.7 0.7 0.7"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="MultiMelta">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/SistersOfBattle/RetributorAttack"
+						beginFire="0.63" endFire="1.63"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/RetributorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.5"
+						voiceSound="Units/SistersOfBattle/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/RetributorMove"
+						sound="Units/SistersOfBattle/InfantryMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/FragGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/RetributorGrenade"
+						beginFire="1.63"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/KrakGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/RetributorGrenade"
+						beginFire="1.63"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="SistersOfBattle/MeltaBomb">
+			<model>
+				<action animation="Units/SistersOfBattle/RetributorGrenade"
+						beginFire="1.63"/>
+			</model>				
+		</throwGrenade>
+		<lightOfTheEmperor consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="SistersOfBattle/LightOfTheEmperor"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/LightOfTheEmperor"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="SistersOfBattle/SimulacrumImperialis">
+					<effects>
+						<cooldown mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="SistersOfBattle/LightOfTheEmperor"/>
+										<addTrait duration="1" name="SistersOfBattle/UsedActOfFaith"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</lightOfTheEmperor>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SistersOfBattle/ExtraInfantryArmour"/>
+		<trait name="SistersOfBattle/SisterSuperior" requiredUpgrade="SistersOfBattle/SisterSuperior"/>
+	</traits>
+</unit>

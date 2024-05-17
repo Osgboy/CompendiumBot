@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/MultiMelta"
+		 		fireSoundCount="4"
+		 		fireInterval="0.5"
+		 		beamsBlueprint="Effects/LaserBeams"
+		 		beamsEmitterBlueprint="Effects/MeltaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/LaserMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="Eldar/HeavyWeaponBonus" requiredUpgrade="Eldar/HeavyWeaponBonus"/>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

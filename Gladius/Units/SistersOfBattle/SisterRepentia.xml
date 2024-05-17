@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/SisterRepentia"
+				material="Units/SistersOfBattle/SisterRepentia"
+				scale="0.8 0.8 0.8"
+				idleAnimation="Units/SistersOfBattle/SisterRepentiaIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitFocusHeightModifier="-5"
+				portraitZoomModifier="1.15"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="Eviscerator">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="2.0"/> <!-- %requisitionsUpkeep base tier=6 factor=1 -->
+				<requisitionsCost base="40.0"/> <!-- %requisitionsCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/SistersOfBattle/SisterRepentiaCharge"
+						meleeAnimation="Units/SistersOfBattle/SisterRepentiaMelee"
+						meleeBeginSwing="0.0"
+						meleeEndSwing="0.1"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/SisterRepentiaDie"
+						animationCount="2"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/SistersOfBattle/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/SisterRepentiaMove"
+						sound="Units/SistersOfBattle/InfantryMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/FragGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/SisterRepentiaGrenade"
+						beginFire="1.93"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="SistersOfBattle/KrakGrenade">
+			<model>
+				<action animation="Units/SistersOfBattle/SisterRepentiaGrenade"
+						beginFire="1.93"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="SistersOfBattle/MeltaBomb">
+			<model>
+				<action animation="Units/SistersOfBattle/SisterRepentiaGrenade"
+						beginFire="1.93"/>
+			</model>				
+		</throwGrenade>
+		<solaceInAnguish consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="SistersOfBattle/SolaceInAnguish"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/SolaceInAnguish"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="SistersOfBattle/SimulacrumImperialis">
+					<effects>
+						<cooldown mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="SistersOfBattle/SolaceInAnguish"/>
+										<addTrait duration="1" name="SistersOfBattle/UsedActOfFaith"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</solaceInAnguish>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/ShieldOfFaith"/>
+		<trait name="SistersOfBattle/MartyrSpirit"/>
+		<trait name="SistersOfBattle/OathOfFaith"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SistersOfBattle/ExtraInfantryArmour"/>
+		<trait name="SistersOfBattle/SisterSuperior" requiredUpgrade="SistersOfBattle/SisterSuperior"/>
+		<trait name="Rage"/>
+		<trait name="Fleet"/>
+		<trait name="Fearless"/>
+	</traits>
+</unit>

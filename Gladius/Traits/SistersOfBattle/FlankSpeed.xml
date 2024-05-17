@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/SistersOfBattle/FlankSpeed">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<preventOverwatch add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<movementMax add="1"/>
+				<rangedAttacks mul="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

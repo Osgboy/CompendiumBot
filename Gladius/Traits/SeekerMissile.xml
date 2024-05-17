@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" icon="Weapons/SeekerMissile">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<encounter>
+					<opponent>
+						<trait name="Tau/TargetAcquired"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<ignoreLineOfSight add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="Tau/TargetAcquired"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<rangeMax add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

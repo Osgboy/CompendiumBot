@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="0.33"
+				fireSound="Weapons/QuadIonTurretOvercharged"
+		 		fireSoundCount="3"
+		 		muzzleFlashesBlueprint="Effects/IonMuzzleFlashes"
+		 		beamsBlueprint="Effects/IonBeams"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="GetsHot"/>
+		<trait name="LargeBlast"/>
+		<trait name="Tau/BlastDamage" requiredUpgrade="Tau/BlastDamage"/>
+	</traits>
+</weapon>

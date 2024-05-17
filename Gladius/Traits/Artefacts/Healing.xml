@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Units/Neutral/Artefacts/Healing" stacking="1">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<player>
+					<noFaction name="Neutral"/>
+				</player>
+			</conditions>
+			<effects>
+				<hitpoints add="0.5"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

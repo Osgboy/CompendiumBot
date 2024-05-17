@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff"
+		icon="Weapons/Deathshriek">
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<self>
+						<destroyed/>
+					</self>
+					<opponent>
+						<attacking/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<weaponDamage weapon="Deathshriek"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>
+</trait>

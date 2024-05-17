@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<influence add="2"/>
+				<loyalty add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="Drukhari/Archon"/>
+		<produceUnit unit="Drukhari/Succubus" requiredUpgrade="Drukhari/Succubus"/>
+		<produceUnit unit="Drukhari/Haemonculus" requiredUpgrade="Drukhari/Haemonculus"/>
+	</actions>
+	<traits>
+		<trait name="Drukhari/BetrayalCultureUpgrade" requiredUpgrade="Drukhari/BetrayalCultureUpgrade"/>
+	</traits>
+</building>

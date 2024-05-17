@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="12" max="12"/>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Barrage"/>
+		<trait name="LargeBlast"/>
+		<trait name="PsychicPower"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

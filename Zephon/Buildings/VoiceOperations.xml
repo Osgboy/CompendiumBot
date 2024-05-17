@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building branch="Voice" position="33">
+	<actions>
+		<constructPlayerAction action="HymnOfDecay">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="10"/> <!-- %algaeCost base tier=4 factor=0.5 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="FurtiveTribunalAffinityUpgrade">
+					<effects>
+						<algaeCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseOperationsScore base="0.5"/>
+						<increaseVoiceScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+		<constructPlayerAction action="Apotheosis"
+				requiredUpgrade="Apotheosis">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="10"/> <!-- %algaeCost base tier=4 factor=0.5 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseOperationsScore base="0.5"/>
+						<increaseVoiceScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+ 		<rushProduction name="ChoralCelerity"
+				requiredUpgrade="VoiceOperationsUpgrade">
+			<model>
+				<cast blueprint="Effects/ChoralCelerity"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost add="4"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</rushProduction>
+	</actions>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=4 factor=1 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<influence add="1"/>
+				<algae add="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVoiceScore base="0.5"/>
+				<increaseOperationsProductionScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</building>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireInterval="0.4"
+				fireSound="Weapons/TeslaDestructor"
+		 		fireSoundCount="3"
+		 		beamsBlueprint="Effects/TeslaArc"
+		 		muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+		 		muzzleCount="2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="4"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Tesla"/>
+		<trait name="TeslaDamage" requiredUpgrade="Necrons/TeslaDamage"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="TwinLinked"/>
+	</traits>
+</weapon>

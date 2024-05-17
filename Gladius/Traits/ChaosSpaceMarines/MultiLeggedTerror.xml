@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<type name="Stomp"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<meleeAttacks mul="0.67"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

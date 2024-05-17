@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff">
+	<modifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+				</unit>
+				<unit match="Any">
+					<trait name="Gargantuan"/>
+					<trait name="SuperHeavy"/>
+				</unit>
+			</conditions>
+			<effects>
+				<meleeAccuracy add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

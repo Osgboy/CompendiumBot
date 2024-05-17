@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement1">
+	<model>
+		<unit mesh="Units/Orks/FlashGitz"
+				material="Units/Orks/FlashGitz"
+				idleAnimation="Units/Orks/FlashGitzIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="2 2 2"
+				bloodBone="Bloodbone"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="Snazzgun">
+			<model>
+				<projectileWeapon mesh="Weapons/Orks/Snazzgun"
+						material="Units/Orks/FlashGitz"
+						bone="Bone112(mirrored)" 
+						muzzleBone=".muzzle"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+		<weapon name="Stikkbomb" slotName="Stikkbomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone105"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/FlashGitzAttack"
+						beginFire="1.2"
+						endFire="1.9"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/FlashGitzDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/FlashGitzMove"
+						sound="Units/Orks/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+		<throwGrenade weaponSlotName="Stikkbomb" cooldown="10"
+				requiredUpgrade="Orks/Stikkbomb">
+			<model>
+				<action animation="Units/Orks/FlashGitzGrenade"
+						beginFire="0.6"/>
+			</model>
+		</throwGrenade>
+		<ammoRunt requiredUpgrade="Orks/AmmoRunt" consumedActionPoints="0" consumedMovement="0"
+				cooldown="5">
+			<model>
+				<action sound="Actions/Reload"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AmmoRunt" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ammoRunt>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Orks/ExtraInfantryArmour"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="MobRule"/>
+		<trait name="Orks/Gitfinda"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="Orks/Scavenger"/>
+	</traits>
+</unit>

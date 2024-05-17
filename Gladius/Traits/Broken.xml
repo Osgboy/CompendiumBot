@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="-0.33"/>
+				<damageTaken mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

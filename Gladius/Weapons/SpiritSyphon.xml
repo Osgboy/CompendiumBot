@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/SpiritSyphon"
+				fireSoundCount="1"
+				beamsBlueprint="Effects/SpiritSyphon"
+		 		beamsEmitterBlueprint="Effects/SpiritSyphonEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="1"/> <!-- %rangedDamage add strength=3 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Drukhari/AssaultWeaponBonus" requiredUpgrade="Drukhari/AssaultWeaponBonus"/>
+		<trait name="IgnoresCover"/>
+		<trait name="NoEscape"/>
+		<trait name="Template"/>
+	</traits>
+</weapon>

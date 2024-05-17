@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/CerastusShockLanceMelee"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=- -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="DestroyerWeapon"/>
+		<trait name="Melee"/>
+		<trait name="SistersOfBattle/MeleeWeaponBonus" requiredUpgrade="SistersOfBattle/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<requisitionsCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<loyalty add="1"/>
+				<influence add="2"/>
+				<production add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="SpaceMarines/Captain"/>
+		<produceUnit unit="SpaceMarines/Librarian" requiredUpgrade="SpaceMarines/Librarian"/>
+		<produceUnit unit="SpaceMarines/Chaplain" requiredUpgrade="SpaceMarines/Chaplain"/>
+	</actions>
+</building>

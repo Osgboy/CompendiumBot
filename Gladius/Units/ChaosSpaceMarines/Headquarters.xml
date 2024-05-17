@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3" icon="Buildings/ChaosSpaceMarines/Headquarters">
+	<model>
+		<structureUnit mesh="Units/ChaosSpaceMarines/Headquarters"
+				material="Buildings/ChaosSpaceMarines/Buildings"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				explosionsBone="HQBone"
+				scale="0.7 0.7 0.7"/>
+	</model>
+	<weapons>
+		<weapon name="CombiBolter" count="5">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/HeadquartersLasguns"
+						material="Buildings/ChaosSpaceMarines/Buildings"
+						bone="HQBone"
+						fireInterval="0.1"
+						muzzleBone=".Muzzle"
+						muzzleCount="5"/>
+			</model>
+		</weapon>
+		<weapon name="BattleCannon" count="1">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/HeadquartersKrakMissileLaunchers"
+						material="Buildings/ChaosSpaceMarines/Buildings"
+						bone="HQBone"
+						fireInterval="1.0"
+						muzzleBone=".Muzzle0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax max="0"/>
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"
+						voiceSound="Units/ChaosSpaceMarines/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+		<trait name="Headquarters"/>
+		<trait name="Transport"/>
+	</traits>
+</unit>

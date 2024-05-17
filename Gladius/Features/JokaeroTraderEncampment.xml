@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/OrksCity"
+		ambientSoundLayer="1"
+		ambientSoundPriority="2"
+		audioEffectSystem="City"
+		category="Resource">
+	<items>
+		<item type="AdamantiumWeaveVest"/>
+		<item type="AegisHarness"/>
+		<item type="ArmaplasBracers"/>
+		<item type="AxeOfBlindFury"/>
+		<item type="BlightGrenade"/>
+		<item type="BlindGrenade"/>
+		<item type="CombatStimulant"/>
+		<item type="ConcealedWeaponSystem"/>
+		<item type="DimensionalKey"/>
+		<item type="DuskBlade"/>
+		<item type="EnduranceImplant"/>
+		<item type="EntropicLocum"/>
+		<item type="FaolchusWing"/>
+		<item type="ForbiddenKnowledge"/>
+		<item type="JokaeroDigitalWeapon"/>
+		<item type="LaurelsOfCommand"/>
+		<item type="LightningGauntlet"/>
+		<item type="ManCatcher"/>
+		<item type="MourningBladeOfLazaerek"/>
+		<item type="OmniScope"/>
+		<item type="PoweredBolas"/>
+		<item type="PoweredGauntlet"/>
+		<item type="RecoveryPackage"/>
+		<item type="ScrollsOfMagnus"/>
+		<item type="SightlessHelm"/>
+		<item type="StunGrenade"/>
+		<item type="TantalisingIcon"/>
+		<item type="TemporaryShield"/>
+		<item type="UltraWidebandAuspex"/>
+		<item type="UncreatorGauntlet"/>
+		<item type="VolcanisShroud"/>
+		<item type="ZoatHideJerkin"/>
+	</items>
+	<model>
+		<simpleModel mesh="Features/JokaeroTraderEncampment"
+				material="Features/JokaeroTraderEncampment"
+				groundMaterial="Features/JokaeroTraderEncampmentGround"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<influence mul="0.2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<conditions>
+						<player>
+							<faction name="Tyranids"/>
+						</player>
+					</conditions>
+					<effects>
+						<biomass mul="0.05"/>
+						<influence mul="-0.1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+				<influence add="2"/>
+				<influence mul="0.2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="Tyranids"/>
+				</player>
+			</conditions>
+			<effects>
+				<biomass add="1"/>
+				<biomass mul="0.05"/>
+				<influence add="-1"/>
+				<influence mul="-0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Shop"/>
+	</traits>
+</feature>

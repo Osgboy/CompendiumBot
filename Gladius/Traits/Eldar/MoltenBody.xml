@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<attacking/>
+					</opponent>
+					<weapon match="Any">
+						<trait name="Flame"/>
+						<trait name="Melta"/>
+					</weapon>
+				</encounter>
+			</conditions>
+			<effects>
+				<damageTaken max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

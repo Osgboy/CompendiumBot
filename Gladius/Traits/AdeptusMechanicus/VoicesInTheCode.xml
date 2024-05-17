@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff"
+		icon="Actions/AdeptusMechanicus/VoicesInTheCode">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+				</unit>
+			</conditions>
+			<effects>
+				<moraleLossFactor add="0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff" icon="Items/MourningBladeOfLazaerek">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<armorPenetration add="2"/>
+				<damage mul="0.25"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

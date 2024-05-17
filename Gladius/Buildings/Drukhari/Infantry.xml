@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<food add="2"/>
+				<populationLimit add="1"/>
+				<production add="6"/>
+				<influence add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="Drukhari/KabaliteWarrior"/>
+		<produceUnit unit="Drukhari/Wyche" requiredUpgrade="Drukhari/Wyche"/>
+		<produceUnit unit="Drukhari/Wrack" requiredUpgrade="Drukhari/Wrack"/>
+		<produceUnit unit="Drukhari/Hellion" requiredUpgrade="Drukhari/Hellion"/>
+		<produceUnit unit="Drukhari/Scourge" requiredUpgrade="Drukhari/Scourge"/>
+		<produceUnit unit="Drukhari/KabaliteTrueborn" requiredUpgrade="Drukhari/KabaliteTrueborn"/>
+		<produceUnit unit="Drukhari/Incubi" requiredUpgrade="Drukhari/Incubi"/>
+	</actions>
+</building>

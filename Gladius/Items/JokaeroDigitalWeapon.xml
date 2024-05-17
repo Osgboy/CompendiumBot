@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<jokaeroDigitalWeapon
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				icon="Items/JokaeroDigitalWeapon"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Weapons/StaffOfLight" soundCount="3"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1" lineOfSight="1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="JokaeroDigitalWeapon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jokaeroDigitalWeapon>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Artefact"/>
+	</traits>
+</item>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>		
+		<unit mesh="Units/Tau/Devilfish"
+				material="Units/Tau/Devilfish"
+				idleAnimation="Units/Tau/DevilfishIdle"
+				idleAnimationCount="2"
+				idleContinuously="1"
+				position="0 0 24"
+				scale="1.2 1.2 1.2"
+				explosionsBone="BloodBone"
+				uvAnimated="0"/>
+	</model>
+	<weapons>
+		<weapon name="BurstCannon">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="SeekerMissile" count="2" enabled="0" 
+				slotName="SeekerMissile">
+			<model>
+				<missileWeapon muzzleBone="SeekerMissiles" muzzleCount="2"
+						missileScale="0.8"
+						fireInterval="1.33"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="7"/> <!-- %armor base armor=12/11/10 -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+				<cargoSlots base="4"/> <!-- %cargoSlots base capacity=12 -->
+				<oreUpkeep base="3.0"/> <!-- %oreUpkeep base tier=7 factor=1 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/11/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/DevilfishAttack"
+						beginFire="1"
+						endFire="2.33"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/DevilfishDie"
+						animationCount="2"
+						sound="Units/Tau/VehicleDie"
+						soundCount="1"
+						soundDelay="0.1"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Tau/DevilfishMove"
+						sound="Units/Tau/SkimmerMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<useWeapon cooldown="5" 
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				requiredUpgrade="Tau/SeekerMissile"
+				weaponSlotName="SeekerMissile">
+			<model>
+				<action beginFire="1"
+						endFire="2.33"/>
+			</model>				
+		</useWeapon>
+		<deployGunDrone cooldown="5"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/GunDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/GunDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</deployGunDrone>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+	</actions>
+	<traits>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+		<trait name="Transport"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Tau/ExtraVehicleArmour"/>
+		<trait name="Tau/AdvancedTargetingSystem" requiredUpgrade="Tau/AdvancedTargetingSystem"/>
+		<trait name="Tau/AutomatedRepairSystem" requiredUpgrade="Tau/AutomatedRepairSystem"/>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="Tau/DisruptionPod" requiredUpgrade="Tau/DisruptionPod"/>
+		<trait name="Tau/FlechetteDischarger" requiredUpgrade="Tau/FlechetteDischarger"/>
+		<trait name="Tau/PointDefenceTargetingRelay" requiredUpgrade="Tau/PointDefenceTargetingRelay"/>
+		<trait name="MoveThroughCover" requiredUpgrade="Tau/SensorSpines"/>
+	</traits>
+</unit>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="70"
+				material="Units/Praetorian"
+				mesh="Units/Praetorian"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AntimatterSword">
+			<models>
+				<weapon bone="Sword"
+						material="Units/PraetorianSword"
+						mesh="Units/PraetorianSword"/>
+			</models>
+		</weapon>
+ 		<weapon type="GaussCarbine">
+			<models>
+				<weapon bone="Gun"
+						material="Units/PraetorianGun"
+						mesh="Units/PraetorianGun"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Shield"
+						material="Units/PraetorianShield"
+						mesh="Units/PraetorianShield"/>
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon bone="Radio"
+						material="Units/PraetorianComDevice"
+						mesh="Units/PraetorianComDevice"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="8"/>
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<groupSizeMax base="6"/>
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<transuraniumCost base="20"/> <!-- %transuraniumCost base tier=6 factor=0.5 -->
+				<transuraniumUpkeep base="1.0"/> <!-- %transuraniumUpkeep base tier=6 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/PraetorianAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/PraetorianAttack"
+						beginFire="0.67"
+						endFire="2.0"
+						chargeAnimation="Units/PraetorianCharge"
+						meleeAnimation="Units/PraetorianMelee"
+						responseSound="Units/Responses/PraetorianAttack"
+						responseSoundCount="3"
+						sound="Units/PraetorianMelee"
+						soundCount="5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/PraetorianDie"
+						animationCount="2"
+						voiceSound="Units/PraetorianDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/PraetorianImpact"
+						responseSound="Units/Responses/PraetorianEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/PraetorianIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/PraetorianKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/PraetorianMove"
+						responseSound="Units/Responses/PraetorianMove"
+						responseSoundCount="3"
+						sound="Units/PraetorianMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/PraetorianPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/PraetorianSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+			</model>
+		</skip>
+		<fly name="JumpPack">
+			<model>
+				<action animation="Units/PraetorianAltMove"
+						responseSound="Units/Responses/PraetorianJumpPack"
+						sound="Units/PraetorianJumpPack"
+						soundCount="3"/>
+			</model>
+		</fly>
+		<unitCast name="IronWill">
+			<model>
+				<cast animation="Units/PraetorianAbility0"
+						responseSound="Units/Responses/PraetorianIronWill"/>
+			</model>
+		</unitCast>		
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+	</traits>
+</unit>

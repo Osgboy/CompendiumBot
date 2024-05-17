@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="MicrochipFabricatorResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel blueprint="Features/MicrochipFabricator" 
+				groundMaterial="Features/MicrochipFabricatorGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/MicrochipFabricator"
+				mesh="Features/MicrochipFabricator/"
+				scale="1 1 1"
+				transparent="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="MicrochipFabricatorResource"/>
+		<trait type="MicrochipFabricatorUnit"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

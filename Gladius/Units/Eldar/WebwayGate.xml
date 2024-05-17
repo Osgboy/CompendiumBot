@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<webwayGate mesh="Units/Eldar/Headquarters"
+				material="Buildings/Eldar/Buildings"
+				groundMaterial="Units/Eldar/WebwayGateGround"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				explosionsBone="Portal"
+				scale="1.2 1.2 1.2">
+			<effects>
+ 				<effect blueprint="Effects/WebwayGate"
+						name="Portal"
+						position="0.000000 0.000000 53.300999"
+						rotation="0 0 1 -55"
+						bone="Portal"/>
+ 			</effects>		
+		</webwayGate>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<actionPointsMax max="0"/>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=14/14/14 wounds=1 -->
+				<moraleMax base="0"/>
+				<movementMax max="0"/>
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+				<sight base="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<die>
+			<model>
+				<action sound="Units/Eldar/WebwayGateDie"
+						soundCount="1"/>
+			</model>
+		</die>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+	</traits>
+</unit>

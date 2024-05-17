@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/Warpsmith"
+				material="Units/ChaosSpaceMarines/Warpsmith"
+				idleAnimation="Units/ChaosSpaceMarines/WarpsmithIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Bone050"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="PowerAxe">
+			<model>
+				<powerWeapon effectBlueprint="Effects/ChaosPowerWeapon"
+						effectBoundingVolume="Blade" 
+						effectBone="Bone040"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="BoltPistol">
+			<model>
+				<projectileWeapon mesh="Weapons/ChaosSpaceMarines/WarpsmithGun"
+						material="Units/ChaosSpaceMarines/Warpsmith"
+						bone="Bone043"
+						muzzleBone=".Muzzle"
+						fireInterval="0.33"/>
+			</model>
+		</weapon>
+		<weapon name="Meltagun" slotName="Mechatendrils" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="Bone007"
+						muzzleCount="1"/>
+			</model>
+		</weapon>		
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone043"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone043"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>				
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<oreUpkeep base="3.0"/> <!-- %oreUpkeep base tier=7 factor=1 -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/ChaosSpaceMarines/WarpsmithAttack"
+						beginFire="1"
+						endFire="2.1"
+						chargeAnimation="Units/ChaosSpaceMarines/WarpsmithCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.4"
+						meleeAnimation="Units/ChaosSpaceMarines/WarpsmithMelee"
+						meleeAnimationSpeed="1.0"
+						meleeBeginSwing="0.67"
+						meleeEndSwing="0.8"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.2"
+						voiceSound="Units/ChaosSpaceMarines/WarpsmithDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithMove"
+						sound="Units/SpaceMarines/InfantryMove"
+						soundCount="4"/>
+			</model>				
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithGrenade"
+						beginFire="1"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithGrenade"
+						beginFire="1"/>
+			</model>				
+		</throwGrenade>
+		<masterOfMechanisms cooldown="1"
+				name="ChaosSpaceMarines/MasterOfMechanisms"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithAbility"
+						sound="Actions/Heal"/>
+			</model>
+			<beginTargets>
+				<target rangeMin="1" rangeMax="1">
+					<conditions>
+						<unit>
+							<allied/>
+							<damaged/>
+						</unit>
+						<unit match="Any">
+							<trait name="Fortification"/>
+							<trait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints addMin="8" addMax="24"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</masterOfMechanisms>
+		<shatterDefences cooldownMin="3"
+				cooldownMax="1"
+				name="ChaosSpaceMarines/ShatterDefences"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithAbility"
+						sound="Actions/ChaosDebuff"/>
+			</model>			
+			<beginTargets>
+				<target rangeMax="2">
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature name="ShatterDefences" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</shatterDefences>
+		<mechatendrils cooldown="2"
+				icon="Actions/ChaosSpaceMarines/Mechatendrils"
+				name="ChaosSpaceMarines/Mechatendrils"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="Mechatendrils">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/WarpsmithMelta2"
+						beginFire="1"
+						endFire="2.2"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<attacks mulMin="1" mulMax="3"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</mechatendrils>		
+		<genericUnitAbility elite="1"
+				levelUpPriority="1"
+				name="ChaosSpaceMarines/InfernalIndustry"
+				passive="1"
+				rank="-1"
+				rankMax="0">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/InfernalIndustry"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="ChaosSpaceMarines/ChampionOfChaos"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="ChaosSpaceMarines/VeteransOfTheLongWar" requiredUpgrade="ChaosSpaceMarines/VeteransOfTheLongWar"/>
+	</traits>
+</unit>

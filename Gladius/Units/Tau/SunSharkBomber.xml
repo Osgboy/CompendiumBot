@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>
+		<unit mesh="Units/Tau/SunSharkBomber"
+				material="Units/Tau/SunSharkBomber"
+				position="0 0 96"
+				idleAnimation="Units/Tau/SunSharkBomberIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="1.0"
+				scale="1.2 1.2 1.2"
+				explosionsBone="Hull"/>
+	</model>	
+	<weapons>
+		<weapon name="TwinLinkedMissilePod">
+			<model>
+				<missileWeapon muzzleBone=".Muzzle"
+						fireInterval="0.7"
+						missileScale="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="SeekerMissile" count="2" enabled="0"
+				 slotName="SeekerMissile">
+			<model>
+				<missileWeapon muzzleBone="SeekerMissileMuzzle"
+						muzzleCount="2"
+						missileScale="0.8"
+						fireInterval="1.4"/>
+			</model>	
+		</weapon>
+		<weapon name="PulseBomb" slotName="PulseBomb" enabled="0">
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=11/10/10 -->
+				<energyUpkeep base="4.0"/> <!-- %energyUpkeep base tier=8 factor=1 -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=11/10/10 wounds=3 -->
+				<cargoSlotsRequired base="0"/>
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="6"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/SunSharkBomberAttack"
+						beginFire="1" endFire="2.2"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/SunSharkBomberDie0"
+						sound="Units/Tau/VehicleDie"
+						soundCount="1"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action sound="Units/Tau/FlyerMove"
+						soundCount="1"/>
+			</model>				
+		</move>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<useWeapon cooldown="5" 
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				weaponSlotName="SeekerMissile">
+			<model>
+				<action beginFire="1" endFire="2.2"/>
+			</model>
+		</useWeapon>
+		<heavyBombClusters consumedActionPoints="0"
+				requiredActionPoints="0"
+				weaponSlotName="PulseBomb" cooldown="3">
+			<model>
+				<action beginFire="1.4" endFire="1.9"/>
+			</model>		
+		</heavyBombClusters>
+		<deployInterceptorDrone cooldown="5"
+				name="Tau/DeployDrone"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				unitType="Tau/InterceptorDrone">
+			<model>
+				<action animation=""
+						sound="Actions/DeployDrone"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Tau/InterceptorDrone" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</deployInterceptorDrone>		
+	</actions>
+	<traits>
+		<trait name="Flyer"/>
+		<trait name="Vehicle"/>
+		<trait name="Tau/NetworkedMarkerlight"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Tau/ExtraVehicleArmour"/>
+		<trait name="Tau/AdvancedTargetingSystem" requiredUpgrade="Tau/AdvancedTargetingSystem"/>
+		<trait name="Tau/AutomatedRepairSystem" requiredUpgrade="Tau/AutomatedRepairSystem"/>
+		<trait name="Tau/BlacksunFilter" requiredUpgrade="Tau/BlacksunFilter"/>
+		<trait name="Tau/DisruptionPod" requiredUpgrade="Tau/DisruptionPod"/>
+		<trait name="Tau/FlechetteDischarger" requiredUpgrade="Tau/FlechetteDischarger"/>
+		<trait name="Tau/PointDefenceTargetingRelay" requiredUpgrade="Tau/PointDefenceTargetingRelay"/>
+	</traits>
+</unit>

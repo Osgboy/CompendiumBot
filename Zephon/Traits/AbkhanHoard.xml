@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Units/Abkhan" visibleOnUnit="1">
+	<onUnitDisappeared>
+		<homeTile>
+			<area affect="Tile">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="AbkhanRespawn" duration="19"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</homeTile>
+	</onUnitDisappeared>
+	<onUnitKilled>
+		<attacker>
+			<area affect="UnitPlayer" randomizeRank="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<food addMin="15" addMax="25"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" randomizeRank="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<minerals addMin="15" addMax="25"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="TraumaKit"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="SpotterDrone"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="ReactiveTrigger"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="DistortedLens"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="CandleOfGlory"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="HungeringCirclet"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="ChayotCrospect"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="DynameisPlate"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="ExousiaParser"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="RallyingHolobeacon"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="PhaseFontead"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="GauntletOfRuin"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="AcrinBoneWhistle"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="ArkOfGoldrauch"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="Iokla"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="AkavishRig"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="CacheOfTheInsensate"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addItem type="Archaegis"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onUnitKilled>
+</trait>

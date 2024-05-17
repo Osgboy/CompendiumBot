@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/SistersOfBattle/StirringRhetoric"
+		rankMax="2">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit match="Any">
+					<trait name="SistersOfBattle/UsedActOfFaith"/>
+					<trait name="SistersOfBattle/KeepersOfTheFaith"/>
+					<trait name="SistersOfBattle/MiraculousIntervention"/>
+				</unit>
+				<unit>
+					<allied/>
+				</unit>
+			</conditions>
+			<effects>
+				<armor addMin="1" addMax="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

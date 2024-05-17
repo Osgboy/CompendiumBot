@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound=""
+		category="Ground">
+	<ground channel="1"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<minerals mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/VolcanicRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PalmBush6"/>
+				<mesh name="Terrain/Vegetation/Grass0"/>
+				<mesh name="Terrain/Vegetation/Grass1"/>
+				<mesh name="Terrain/Vegetation/Grass2"/>
+				<mesh name="Terrain/Vegetation/Grass3"/>
+				<mesh name="Terrain/Vegetation/Grass4"/>
+				<mesh name="Terrain/Vegetation/AlienBush0"/>
+				<mesh name="Terrain/Vegetation/AlienBush1"/>
+				<mesh name="Terrain/Vegetation/AlienBush2"/>
+				<mesh name="Terrain/Vegetation/AlienBush3"/>
+				<mesh name="Terrain/Vegetation/AlienBush4"/>
+				<mesh name="Terrain/Vegetation/AlienBush5"/>
+				<mesh name="Terrain/Vegetation/AlienBush6"/>
+				<mesh name="Terrain/Vegetation/AlienBush7"/>
+				<mesh name="Terrain/Vegetation/AlienBush8"/>
+				<mesh name="Terrain/Vegetation/AlienBush9"/>
+				<mesh name="Terrain/Vegetation/AlienBush10"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/AlienPlant0"/>
+				<mesh name="Terrain/Vegetation/AlienPlant1"/>
+				<mesh name="Terrain/Vegetation/AlienPlant2"/>
+				<mesh name="Terrain/Vegetation/AlienPlant3"/>
+				<mesh name="Terrain/Vegetation/AlienPlant4"/>
+				<mesh name="Terrain/Vegetation/AlienPlant5"/>
+				<mesh name="Terrain/Vegetation/AlienPlant6"/>
+				<mesh name="Terrain/Vegetation/AlienPlant7"/>
+				<mesh name="Terrain/Vegetation/AlienPlant8"/>
+				<mesh name="Terrain/Vegetation/AlienPlant9"/>
+				<mesh name="Terrain/Vegetation/AlienBush5"/>
+				<mesh name="Terrain/Vegetation/AlienBush6"/>
+				<mesh name="Terrain/Vegetation/AlienBush8"/>
+				<mesh name="Terrain/Vegetation/AlienBush10"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/SlimeDecal1"/>	
+			<mesh name="Terrain/Decals/SlimeDecal2"/>	
+			<mesh name="Terrain/Decals/SlimeDecal0"/>	
+			<mesh name="Terrain/Decals/LavaCrackDecal0"/>	
+			<mesh name="Terrain/Decals/LavaCrackDecal1"/>	
+			<mesh name="Terrain/Decals/LavaCrackDecal2"/>		
+			<mesh name="Terrain/Decals/CorpseDecal0"/>
+			<mesh name="Terrain/Decals/CorpseDecal1"/>
+			<mesh name="Terrain/Decals/CorpseDecal2"/>
+		</meshes>
+	</decals>
+</feature>

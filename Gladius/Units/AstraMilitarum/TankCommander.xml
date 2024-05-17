@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/AstraMilitarum/TankCommander"
+				material="Units/AstraMilitarum/TankCommander"
+				idleAnimation="Units/AstraMilitarum/TankCommanderIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.3 1.3 1.3"
+				explosionsBone="Hull"
+				bloodBone="Bone016"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="BattleCannon">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/LemanRussBattleTankBattleCannon"
+						material="Weapons/AstraMilitarum/LemanRussBattleTankBattleCannon"
+						bone=".BarrelAttachment"
+						muzzleBone="BarrelMuzzle0"
+						fireInterval="0.8"/>
+			</model>
+		</weapon>
+		<weapon name="Lascannon">
+			<model>
+				<beamWeapon muzzleBone=".FrontTurretMuzzle0"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter" count="2"
+				requiredUpgrade="AstraMilitarum/AdditionalHeavyBolters">
+			<model>
+				<projectileWeapon mesh="Weapons/AstraMilitarum/LemanRussBattleTankHeavyBolters"
+						material="Weapons/AstraMilitarum/LemanRussBattleTankHeavyBolters"
+						bone=".SideGunsAttachment"
+						muzzleBone="SideGunsMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="HunterKillerMissile" slotName="HunterKillerMissile"
+				enabled="0">
+			<model>
+				<missileWeapon muzzleBone=".SmokeLaunchersAttachment"/>
+			</model>	
+		</weapon>
+		<weapon name="RollOverThem" slotName="RollOverThem" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="9"/> <!-- %armor base armor=14/13/10 -->
+				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base armor=14/13/10 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=8 factor=1.5 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=8 factor=1.5 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="12"/> <!-- %meleeAccuracy base weaponSkill=6 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="4"/> <!-- %strengthDamage base strength=7 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+				<oreCost base="80.0"/> <!-- %oreCost base tier=8 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/TankCommanderAttack"
+						beginFire="0.7"
+						endFire="2.6"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderDie"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.2"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderMove"
+						sound="Units/AstraMilitarum/TankMove"
+						soundCount="3"/>
+			</model>				
+		</move>
+		<createSmokeScreen icon="Traits/SmokeScreen"
+				cooldown="10"
+				requiredUpgrade="AstraMilitarum/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<useWeapon weaponSlotName="HunterKillerMissile"
+				cooldown="10"
+				requiredUpgrade="AstraMilitarum/HunterKillerMissile">
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</useWeapon>
+		<fullThrottle cooldown="3"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				shoutString="Actions/FullThrottle">
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderAbility"
+						bone="Bone016"
+						sound="Actions/AstraMilitarumBuff"/>
+			</model>			
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<movement greater="0"/>
+											<trait name="Tank"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="FullThrottle"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</fullThrottle>
+		<gunnersKillOnSight	cooldown="3"
+				levelUpPriority="0.15"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				consumedActionPoints="0" consumedMovement="0"
+				shoutString="Actions/GunnersKillOnSight">
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderAbility"
+						bone="Bone016"
+						sound="Actions/AstraMilitarumBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<trait name="Tank"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="GunnersKillOnSight"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</gunnersKillOnSight>
+		<rollOverThem cooldown="3"
+				levelUpPriority="0.1"
+				rank="-1"
+				rankMax="2"
+				shoutString="Actions/RollOverThem"
+				weaponSlotName="RollOverThem">
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderAbility"
+						bone="Bone016"
+						sound="Actions/AstraMilitarumBuff"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<damage mulMin="0.0" mulMax="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</rollOverThem>
+		<strikeAndShroud cooldownMin="5"
+				cooldownMax="5"
+				elite="1"
+				levelUpPriority="1"
+				rank="-1"
+				rankMax="0"
+				requiredActionPoints="0"
+				consumedActionPoints="0" consumedMovement="0"
+				shoutString="Actions/StrikeAndShroud">
+			<model>
+				<action animation="Units/AstraMilitarum/TankCommanderAbility"
+						bone="Bone016"
+						sound="Actions/AstraMilitarumBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<trait name="Tank"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</strikeAndShroud>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="CamoNetting" requiredUpgrade="AstraMilitarum/CamoNetting"/>
+		<trait name="DozerBlade" requiredUpgrade="AstraMilitarum/DozerBlade"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="AstraMilitarum/ExtraVehicleArmour"/>
+		<trait name="Hero"/>
+		<trait name="RecoveryGear" requiredUpgrade="AstraMilitarum/RecoveryGear"/>
+		<trait name="RelicPlating" requiredUpgrade="AstraMilitarum/RelicPlating"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

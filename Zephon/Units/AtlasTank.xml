@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				groupMemberDeltaX="90"
+				groupMemberDeltaY="50"
+				material="Units/AtlasTank"
+				mesh="Units/AtlasTank"
+				scale="0.95 0.95 0.95">
+		</unit>
+	</model>
+	<weapons>
+		<weapon type="GoliathCannon">
+			<models>
+				<projectileWeapon muzzleBone="CannonMuzzle"/>
+			</models>
+		</weapon>
+		<weapon type="GaussCannon"
+				count="2"
+				enabled="0"
+				slotName="GaussCannon">
+			<models>
+				<projectileWeapon muzzleBone="GaussMuzzle"
+						muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="MissilePod">
+			<models>
+				<missileWeapon muzzleBone="MissileMuzzle"
+						muzzleCount="6"/>
+			</models>
+		</weapon>
+		<weapon type="HeavyMachineGun" requiredUpgrade="HeavyMachineGun">
+			<models>
+				<projectileWeapon mesh="Units/AtlasTankMachineGunTurret" 
+						material="Units/AtlasTankMachineGunTurret"
+						bone="Turret"
+						muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="ShirakiCruiseMissile"
+				enabled="0"
+				slotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<models>
+				<missileWeapon mesh="Units/CycloneCruiseMissile"
+						material="Units/CycloneCruiseMissile"
+						bone="Turret"
+						muzzleBone="MissileMuzzle"
+						muzzleCount="2"
+						fireInterval="10"
+						missileScale="0.4"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="DozerBlade">
+			<models>
+				<weapon mesh="Units/AtlasTankDozerBlade"
+						material="Units/AtlasTankDozerBlade"
+						bone="Hull"/>
+			</models>
+		</weapon>		
+		<weapon type="None" requiredUpgrade="AntimatterPlating">
+			<models>
+				<weapon mesh="Units/AtlasTankArmorPlatingBottom"
+						material="Units/AtlasTankArmorPlating"
+						bone="Hull"/>
+				<weapon mesh="Units/AtlasTankArmorPlatingTop"
+						material="Units/AtlasTankArmorPlating"
+						bone="Turret"/>						
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="SmokeLauncher">
+			<models>
+				<weapon mesh="Units/CycloneSmokeLauncher"
+						material="Units/CycloneSmokeLauncher"
+						bone="Hull"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="10"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
+				<mineralsCost base="240"/> <!-- %mineralsCost base tier=11 factor=1 -->
+				<mineralsUpkeep base="12.0"/> <!-- %mineralsUpkeep base tier=11 factor=1 -->
+				<moraleMax base="10"/>
+				<movementMax base="3"/>
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/AtlasTankAttack"
+						beginFire="0.33"
+						endFire="2.3"
+						responseSound="Units/Responses/AtlasTankAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AtlasTankDie0"
+						sound="Units/AtlasTankDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AtlasTankImpact"
+						responseSound="Units/Responses/AtlasTankEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AtlasTankIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AtlasTankMove"
+						responseSound="Units/Responses/AtlasTankMove"
+						responseSoundCount="4"
+						sound="Units/AtlasTankMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankSelect"
+						responseSoundCount="4"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="GaussCannon"
+				consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0">
+			<model>
+				<attack animation="Units/AtlasTankAbility0"
+						beginFire="1.0"
+						endFire="1.1"
+						responseSound="Units/Responses/AtlasTankGaussCannon"/>
+			</model>
+		</useWeapon>		
+		<useWeapon weaponSlotName="ShirakiCruiseMissile"
+				consumedActionPoints="0"
+				cooldown="10"
+				requiredActionPoints="0"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.1"
+						responseSound="Units/Responses/AtlasTankShirakiCruiseMissile"/>
+			</model>
+		</useWeapon>
+		<unitCast name="SmokeLauncher"
+				cooldown="10"
+				requiredUpgrade="SmokeLauncher">
+			<model>
+				<cast responseSound="Units/Responses/AtlasTankSmokeLauncher"
+						sound="Actions/SmokeLauncher"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="AntimatterPlating" requiredUpgrade="AntimatterPlating"/>
+		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Titan"/>
+	</traits>
+</unit>

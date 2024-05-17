@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="WireWeed">
+	<model>
+		<vegetation material="Terrain/Vegetation"
+				depthMaterial="Terrain/VegetationDepth"
+				effectBlueprint="Effects/WireWeedSpores"
+				effectEmitterBlueprint="Effects/WireWeedSporesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Flyer"/>
+					<noTrait name="Necrons/ImmuneToNaturalLaw"/>
+					<noTrait name="JetPack"/>
+					<noTrait name="Jetbike"/>
+					<noTrait name="Skimmer"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="WireWeed"/>
+	</traits>
+	<vegetation>
+		<trees clusterSizeMin="10" clusterSizeMax="20"
+				scaleMin="0.25" scaleMax="0.75">
+			<meshes>
+				<mesh name="Terrain/Vegetation/WireWeed0"/>
+				<mesh name="Terrain/Vegetation/WireWeed1"/>
+				<mesh name="Terrain/Vegetation/WireWeed2"/>
+				<mesh name="Terrain/Vegetation/WireWeed3"/>
+				<mesh name="Terrain/Vegetation/WireWeed4"/>
+			</meshes>
+		</trees>
+	</vegetation>
+</feature>

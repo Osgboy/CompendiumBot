@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/CloseCombatWeapon"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="2"/> <!-- %meleeArmorPenetration add armorPiercing=-1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

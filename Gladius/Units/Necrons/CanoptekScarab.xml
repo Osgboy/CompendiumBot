@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Necrons/CanoptekScarabs"
+				material="Units/Necrons/CanoptekScarabs"
+				idleAnimation="Units/Necrons/CanoptekScarabsIdle"
+				idleAnimationCount="4"
+				idleContinuously="1"
+				scale="0.6 0.6 0.6"
+				explosionsBone="Bone164"
+				walker="1"/>
+	</model>
+	<group size="4" rowSize="2" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="1.0"
+						fireSoundCount="0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<energyCost base="20.0"/> <!-- %energyCost base tier=4 factor=1 -->
+				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=3 wounds=3 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="5"/>
+				<oreUpkeep base="1.0"/> <!-- %oreUpkeep base tier=4 factor=1 -->
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	chargeAnimation="Units/Necrons/CanoptekScarabsCharge"
+						chargeBeginFire="0.25"
+						chargeEndFire="1.1"
+						chargeDefenseAnimation="Units/Necrons/CanoptekScarabsChargeDefense"
+						chargeDefenseBeginFire="0.25"
+						chargeDefenseEndFire="1.5"
+						meleeAnimation="Units/Necrons/CanoptekScarabsMelee"
+						meleeDefenseAnimation="Units/Necrons/CanoptekScarabsMeleeDefense"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="1.0"
+						meleeSound="Units/Necrons/CanoptekScarabAttack"
+						meleeSoundCount="2"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/CanoptekScarabsDie"
+						animationCount="2"
+						soundDelay="0"
+						sound="Units/Necrons/CanoptekScarabDie"
+						soundCount="2"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/CanoptekScarabsMove"
+						sound="Units/Necrons/CanoptekScarabMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="Necrons/EntropicStrike"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Necrons/ExtraVehicleArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Fleet"/>
+		<trait name="Necrons/LivingMetal"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Swarms"/>
+	</traits>
+</unit>

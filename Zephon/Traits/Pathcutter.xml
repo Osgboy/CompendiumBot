@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Items/Pathcutter" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<movementMax add="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<movement add="-3"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

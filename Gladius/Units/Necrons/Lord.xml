@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/Necrons/Lord"
+				material="Units/Necrons/Lord"
+				idleAnimation="Units/Necrons/LordIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.2 1.2 1.2"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="StaffOfLight">
+			<model>
+				<beamWeapon mesh="Weapons/Necrons/LordStaffOfLight"
+						material="Units/Necrons/Lord"
+						muzzleBone=".Muzzle"
+						bone="Bone074(mirrored)002"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+		<weapon name="Voidblade" slotName="Voidblade">
+			<model>
+				<weapon mesh="Weapons/Necrons/Voidblade"
+						material="Units/Necrons/Lord"
+						bone="Bone074(mirrored)(mirrored)"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=6 factor=1 -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=5 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=6 factor=2 -->
+				<influenceCost base="80.0"/> <!-- %influenceCost base tier=6 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Necrons/LordAttack"
+						beginFire="0.6"
+						endFire="2.0"
+						chargeAnimation="Units/Necrons/LordCharge"
+						chargeBeginFire="0.5"
+						chargeEndFire="1.5"
+						chargeDefenseAnimation="Units/Necrons/LordChargeDefense"
+						chargeDefenseBeginFire="0.5"
+						chargeDefenseEndFire="1.5"
+						meleeAnimation="Units/Necrons/LordMelee"
+						meleeDefenseAnimation="Units/Necrons/LordMeleeDefense"
+						meleeBeginSwing="0.2"
+						meleeEndSwing="0.9"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/LordDie"
+						animationCount="1"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.7"
+						voiceSound="Units/Necrons/Die"
+						voiceSoundCount="7"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/LordMove"
+						sound="Units/Necrons/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<dimensionalCorridor cooldown="3"
+				name="Necrons/DimensionalCorridor"
+				requiredUpgrade="Necrons/DimensionalCorridor"> <!-- growing and shrinking lens flare -->
+			<model>
+				<action sound="Actions/Teleport"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="30"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor2">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor3">
+					<effects>
+						<consumedActionPoints max="0"/>
+						<consumedMovement max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</dimensionalCorridor>
+		<voidStrike cooldown="3"
+				name="Necrons/VoidStrike"
+				rank="-1"
+				rankMax="2"
+				weaponSlotName="Voidblade">
+			<model>
+				<action meleeAnimation="Units/Necrons/LordMelee"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<attacks addMin="6" addMax="12"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</voidStrike>
+		<defensiveProtocols cooldown="3"
+				levelUpPriority="0.15"
+				name="Necrons/DefensiveProtocols"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				consumedActionPoints="0" consumedMovement="0">
+			<model>
+				<action animation="Units/Necrons/LordAbility"
+						sound="Actions/ArmourUp"/>
+			</model>		
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit" radiusMin="1" radiusMax="3">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<allied/>
+											<faction name="Necrons"/>
+											<!-- <noTrait name="Fortification"/>
+											<noTrait name="MonstrousCreature"/>
+											<noTrait name="Vehicle"/> -->
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait duration="1" name="Necrons/DefensiveProtocols"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</defensiveProtocols>
+		<dynasty name="Necrons/Dynasty"
+				levelUpPriority="0.1"
+				passive="1" 
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Necrons/Dynasty"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</dynasty>
+		<royalGuard cooldown="5"
+				elite="1"
+				levelUpPriority="1"
+				name="Necrons/RoyalGuard"
+				rank="-1"
+				rankMax="0"> <!-- growing billboarded particle growing from his chest -->
+			<model>
+				<action animation="Units/Necrons/LordAbility"
+						sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<land/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit name="Necrons/TriarchPraetorian" consumedAction="0" consumedMovement="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="3" name="Summon"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</royalGuard>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Necrons/ExtraInfantryArmour"/>
+		<trait name="Hero"/>
+		<trait name="Necrons/ReanimationProtocols"/>
+	</traits>
+</unit>

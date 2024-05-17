@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/RecyclingTanks" visibleInCompendium="0" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<algae add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<algae mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

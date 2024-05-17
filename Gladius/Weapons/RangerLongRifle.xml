@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/RangerLongRifle"
+				fireSoundCount="3"
+				fireInterval="0.5"
+				beamsBlueprint="Effects/LaserBeams"
+		 		beamsEmitterBlueprint="Effects/RangerLongRifleBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/LaserMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/RangerLongRifleMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=6 -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Eldar/HeavyWeaponBonus" requiredUpgrade="Eldar/HeavyWeaponBonus"/>
+		<trait name="Sniper"/>
+	</traits>
+</weapon>

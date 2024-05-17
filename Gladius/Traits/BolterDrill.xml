@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff" icon="Actions/BolterDrill">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="BoltWeapon"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<rangedAccuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

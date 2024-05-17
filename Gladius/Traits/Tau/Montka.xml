@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" rankMax="2" icon="Actions/Tau/Montka">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<hitpointsFraction less="0.5"/>
+						<noAttacking/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage mulMin="0.25" mulMax="0.75"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

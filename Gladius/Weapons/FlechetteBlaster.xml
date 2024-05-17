@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/FlechetteBlaster"
+		 		fireSoundCount="3"
+		 		fireInterval="0.1"
+		 		muzzleFlashesBlueprint="Effects/ShurikenMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/ShurikenMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/ShurikenProjectiles"
+				projectilesEmitterBlueprint="Effects/ShurikenProjectilesEmitter"
+				explosionsBlueprint="Effects/DustExplosions"
+				smokeBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="5"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="0.75"/> <!-- %rangedDamage add strength=2 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Shred"/>
+		<trait name="AdeptusMechanicus/AssaultWeaponBonus" requiredUpgrade="AdeptusMechanicus/AssaultWeaponBonus"/>
+	</traits>
+</weapon>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="12" max="12"/>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="1"/> <!-- %rangedDamage add strength=3 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="ApocalypticBlast"/>
+		<trait name="Assault"/>
+		<trait name="Eldar/AssaultWeaponBonus" requiredUpgrade="Eldar/AssaultWeaponBonus"/>
+		<trait name="Fleshbane"/>
+		<trait name="Haywire"/>
+		<trait name="Pinning"/>
+		<trait name="PsychicPower"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

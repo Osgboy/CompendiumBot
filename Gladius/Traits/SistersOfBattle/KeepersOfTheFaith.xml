@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/SistersOfBattle/KeepersOfTheFaith">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<actionPoints greater="0"/>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<effects>
+				<preventOverwatch add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<actionPoints greater="0"/>
+					<noTrait name="Broken"/>
+				</unit>
+				<unit match="Any">
+					<noTrait name="Shaken"/>
+					<trait name="SistersOfBattle/LaudHailer"/>
+				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction min="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

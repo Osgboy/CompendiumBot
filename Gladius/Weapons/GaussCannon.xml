@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/GaussCannon"
+				fireSoundCount="3"
+				beamsBlueprint="Effects/GaussBeams"
+				muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="2"/> <!-- %rangedDamage add strength=5 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Gauss"/>
+		<trait name="GaussDamage" requiredUpgrade="Necrons/GaussDamage"/>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2" productionWeight="0.5">
+	<model>
+		<unit mesh="Units/Tyranids/Malanthrope"
+				material="Units/Tyranids/Malanthrope"
+				scale="1.2 1.2 1.2"
+				idleAnimation="Units/Tyranids/MalanthropeIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="0.466666666667"
+						fireSoundCount="0"/>
+			</model>
+		</weapon>
+		<weapon name="ToxicMiasma" slotName="ToxicMiasma" enabled="0">
+			<model>
+				<flamerWeapon muzzleBone="Bone004"
+						effectFaceWeight="1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<biomassUpkeep base="2.0"/> <!-- %biomassUpkeep base tier=6 factor=1 -->
+				<biomassCost base="40.0"/> <!-- %biomassCost base tier=6 factor=1 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base toughness=5 wounds=4 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersScore base="1.0"/>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Tyranids/MalanthropeCharge"
+						meleeAnimation="Units/Tyranids/MalanthropeMelee"
+						meleeBeginSwing="0.166666666667"
+						meleeEndSwing="0.833333333333"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/MalanthropeDie"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.1"
+						voiceSound="Units/Tyranids/MediumDie"
+						voiceSoundCount="4"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/MalanthropeMove"
+						sound="Units/Tyranids/MalanthropeMove"
+						soundCount="2"/>
+			</model>		
+		</move>
+		<foundCity>
+			<model>
+				<action sound="Actions/TyranidsFoundCity"
+						animation=""/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<biomassCost base="40"/>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Tyranids/CityCost">
+					<effects>
+						<biomassCost mul="-0.5"/>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</foundCity>
+		<clearTileUnitAbility cooldown="1"
+				icon="Actions/ClearTile"
+				name="Tyranids/ClearTile">
+			<model>
+				<action animation=""/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<areas/>
+				</target>
+			</beginTargets>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<biomassCost base="5"/>
+						<influenceCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</clearTileUnitAbility>
+		<consumeTile icon="Features/Bedrock"
+				name="Tyranids/ConsumeTile" 
+				costScalesWithPace="0">
+			<model>
+				<action animation=""/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="30"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Tyranids/ConsumeTile2">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<land/>
+							<noEnemyCity/>
+							<noEnemyPlayer/>
+							<noEnemyUnit/>
+							<noFeature name="Bedrock"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<consumeResources/>
+										<removeFeature name="Brush"/>
+										<removeFeature name="Forest"/>
+										<removeFeature name="LightBrush"/>
+										<removeFeature name="OrkoidFungus"/>
+										<addFeature name="Bedrock"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</consumeTile>
+		<useWeapon cooldown="5" weaponSlotName="ToxicMiasma">
+			<model>
+				<action animation="Units/Tyranids/MalanthropeToxicMiasma"
+						beginFire="0.5" endFire="3"/>
+			</model>
+		</useWeapon>
+		<graspingTail cooldown="3" name="Tyranids/GraspingTail">
+			<model>
+				<action animation="Units/Tyranids/MalanthropeGraspingTail"
+						sound="Actions/HiveMindDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/GraspingTail" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</graspingTail>
+		<genericUnitAbility name="Tyranids/SynapseCreature" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/SynapseLink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="Tyranids/SporeCloud" passive="1" enabled="0" visible="0">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/SporeCloud"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="Tyranids/ShadowInTheWarp" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/ShadowInTheWarp"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Poisoned" rank="4"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Regeneration"/>
+		<trait name="Tyranids/PreyAdaptation"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

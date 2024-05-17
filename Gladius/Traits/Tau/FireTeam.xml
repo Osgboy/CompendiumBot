@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit match="Any">
+					<unitsInRange count="1" range="1">
+						<allied/>
+						<trait name="MonstrousCreature"/>
+					</unitsInRange>
+					<unitsInRange count="1" range="1">
+						<allied/>
+						<trait name="Vehicle"/>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedAccuracy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibilityCategory="Building" icon="Actions/ChaosSpaceMarines/RiteOfUnholyPleasure">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="ChaosSpaceMarines/Influence"/>
+				</building>
+			</conditions>
+			<effects>
+				<influence mul="0.33"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="ChaosSpaceMarines/Loyalty"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

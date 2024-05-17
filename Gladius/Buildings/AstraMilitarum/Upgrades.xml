@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<oreUpkeep add="1"/>
+				<energyUpkeep add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<research add="4"/>
+				<production add="6"/>		
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="AstraMilitarum/TechpriestEnginseer"/>
+	</actions>
+</building>

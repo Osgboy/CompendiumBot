@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/StingerPistol"
+				fireSoundCount="1"
+				fireInterval="0.1"
+				muzzleFlashesBlueprint="Effects/ShurikenMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/ShurikenMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/ShurikenProjectiles"
+				projectilesEmitterBlueprint="Effects/ShurikenProjectilesEmitter"
+				explosionsBlueprint="Effects/DustExplosions"
+				smokeBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="0.5"/> <!-- %rangedDamage add strength=1 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Drukhari/AssaultWeaponBonus" requiredUpgrade="Drukhari/AssaultWeaponBonus"/>
+		<trait name="Assault"/>
+		<trait name="Poisoned" rank="4"/>
+	</traits>
+</weapon>

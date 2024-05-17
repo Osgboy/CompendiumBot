@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item>
+	<actions>
+		<stunGrenade charges="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				icon="Items/StunGrenade"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Stunned"/>
+							<noTrait name="Vehicle"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Stunned"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</stunGrenade>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Uncommon"/>
+	</traits>
+</item>

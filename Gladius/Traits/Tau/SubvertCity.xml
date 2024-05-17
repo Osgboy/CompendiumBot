@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Tau/SubvertCity" visibilityCategory="Building">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<trait name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="-3"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="Tau/SubversionBonus">
+			<conditions>
+				<building>
+					<trait name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

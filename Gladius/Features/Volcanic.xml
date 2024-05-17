@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Grassland"
+		ambientSoundLayer="0"
+		ambientSoundPriority="0"
+		audioEffectSystem="Plains"
+		category="Ground">
+	<ground channel="5"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<biomassOnConsume add="10"/>
+				<buildingSlots add="3"/>
+				<food mul="-0.2"/>
+				<ore mul="0.2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="AdeptusMechanicus"/>
+				</player>
+			</conditions>
+			<effects>
+				<buildingSlots add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/VolcanicRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rocks0"/>
+			<mesh name="Terrain/Rocks/Rocks1"/>
+			<mesh name="Terrain/Rocks/Rocks2"/>
+			<mesh name="Terrain/Rocks/Rocks3"/>
+			<mesh name="Terrain/Rocks/Rocks4"/>
+			<mesh name="Terrain/Rocks/Rocks5"/>
+			<mesh name="Terrain/Rocks/Rocks6"/>
+			<mesh name="Terrain/Rocks/Rocks7"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/VolcanicBush0"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush1"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush2"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush3"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush4"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush5"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush6"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush7"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush8"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush9"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush10"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush11"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush12"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush13"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush14"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush15"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush16"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush17"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush18"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush19"/>
+				<mesh name="Terrain/Vegetation/VolcanicBush20"/>
+			</meshes>
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/VolcanicTree0"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree1"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree2"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree3"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree4"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree5"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree6"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree7"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree8"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree9"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree10"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree11"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree12"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree13"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree14"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree15"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree16"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree17"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree18"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree19"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree20"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree21"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree22"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree23"/>
+				<mesh name="Terrain/Vegetation/VolcanicTree24"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/VolcanicDecal0"/>
+			<mesh name="Terrain/Decals/VolcanicDecal1"/>	
+			<mesh name="Terrain/Decals/VolcanicDecal2"/>
+		</meshes>
+	</decals>
+</feature>

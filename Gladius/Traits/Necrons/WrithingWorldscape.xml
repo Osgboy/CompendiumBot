@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Necrons/WrithingWorldscape">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax mul="-0.67"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

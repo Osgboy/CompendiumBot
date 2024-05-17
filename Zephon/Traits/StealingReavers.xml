@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Traits/TheyAreInTheWalls" visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>			
+			<effects>
+				<food add="-2"/>
+				<loyalty add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

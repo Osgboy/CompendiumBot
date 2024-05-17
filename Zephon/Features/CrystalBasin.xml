@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/CrystalBasin"
+		category="SpecialResource">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="CrystalBasinResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel blueprint="Features/CrystalBasin" 
+				effectsBlueprint="Effects/CrystalAura"
+				groundMaterial="Features/CrystalBasinGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/CrystalBasin"
+				mesh="Features/CrystalBasin/"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>	
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="CrystalBasinResource"/>
+		<trait type="CrystalBasinUnit"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

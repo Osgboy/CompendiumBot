@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<weaponDamage weapon="OnFire"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

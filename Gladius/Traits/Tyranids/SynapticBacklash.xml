@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Debuff">
+	<onUnitDisappeared>
+		<area affects="Unit" radius="3">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<allied/>
+							<type name="Tyranids/Termagant"/>
+						</unit>
+					</conditions>
+					<effects>
+						<hitpointsFactorFromMax add="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+		<!-- <area affects="Player">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<unitsInRange count="0" range="999">
+								<allied/>
+								<type name="Tyranids/Termagant"/>
+							</unitsInRange>
+						</unit>
+					</conditions>
+					<effects>
+						<lose/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area> -->
+	</onUnitDisappeared>
+	<!-- <onUnitDisappearedModifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<type name="Tyranids/Termagant"/>
+				</unit>
+			</conditions>
+			<effects>
+				<hitpointsFactorFromMax add="-0.5"/>
+			</effects>
+		</modifier>
+	</onUnitDisappearedModifiers> -->
+</trait>

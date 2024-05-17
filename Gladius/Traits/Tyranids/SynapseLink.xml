@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="Tyranids"/>
+				</unit>
+			</conditions>
+			<effects>
+				<moraleMax max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	
+	<!-- No longer necessary. -->
+<!-- 	<onTraitRemovedModifiers>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="Tyranids"/>
+				</unit>
+			</conditions>
+			<effects>
+				<morale min="999"/>
+			</effects>
+		</modifier>
+	</onTraitRemovedModifiers> -->
+	
+</trait>

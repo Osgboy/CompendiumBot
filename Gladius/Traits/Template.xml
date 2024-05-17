@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait>
+	<modifiers>
+		<modifier>
+			<effects>
+				<additionalMembersHit add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<weapon>
+					<noTrait name="TwinLinked"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<rangedAccuracy min="12" max="12"/> <!-- Don't roll to hit. -->
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="TwinLinked"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<rangedAccuracy min="14" max="14"/> <!-- Don't roll to hit. -->
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

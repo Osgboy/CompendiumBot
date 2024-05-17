@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnCountMax="1">
+	<model>
+		<structureUnit mesh="Units/Neutral/CatachanDevilLair"
+				material="Units/Neutral/CatachanDevilLair"
+				groundMaterial="Units/Neutral/CatachanDevilLairGround"
+				idleAnimationCount="0"
+				kineticImpactSoundCount="5"
+				scale="0.75 0.75 0.75"
+				explosionsBone="LairBone"
+				position="0 0 -4"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<!-- <actionPointsMax base="0"/> -->
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=3 -->
+				<moraleMax base="0"/>
+				<movementMax max="0"/>
+				<productionCost base="36"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<die>
+			<model>
+				<action sound="Units/LightBuildingDie"
+						soundCount="3"
+						soundDelay="0.2"/>
+			</model>
+		</die>
+		<spawnUnits	unit="Neutral/CatachanDevil"
+				icon="Units/Neutral/CatachanDevilLair"
+				cooldown="20"
+				cooldownRemaining="20"
+				cooldownScalesWithPace="1"
+				countMax="6"
+				visible="0"/>
+	</actions>
+	<traits>
+		<trait name="Fortification"/>
+	</traits>
+</unit>

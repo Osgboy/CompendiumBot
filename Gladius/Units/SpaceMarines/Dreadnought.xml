@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/Dreadnought"
+				material="Units/SpaceMarines/Dreadnought"
+				idleAnimation="Units/SpaceMarines/DreadnoughtIdle"
+				idleAnimationCount="3"
+				normalWeight="0.1"
+				scale="1.5 1.5 1.5"
+				syncMovementSounds="1"
+				explosionsBone="Hull"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="MultiMelta">
+			<model>
+				<beamWeapon muzzleBone=".MuzzleBone"/>		
+			</model>
+		</weapon>
+		<weapon name="PowerFist">
+			<model>
+			</model>
+		</weapon>
+		<weapon name="StormBolter">
+			<model>
+				<projectileWeapon muzzleBone=".StormBolterMuzzleBone"
+						effectScale="1.0"
+						muzzleCount="1"/>
+				<!-- Storm Bolters need two muzzles. -->			
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/DreadnoughtAttack"
+						beginFire="0.5"
+						endFire="2.667"
+						chargeAnimation="Units/SpaceMarines/DreadnoughtCharge"
+						chargeBeginFire="0.0"
+						chargeEndFire="0.67"						
+						chargeDefenseAnimation="Units/SpaceMarines/DreadnoughtChargeDefense"
+						chargeDefenseBeginFire="0.33"
+						chargeDefenseEndFire="1.3"						
+						meleeAnimation="Units/SpaceMarines/DreadnoughtMelee"
+						meleeBeginSwing="0.05"
+						meleeEndSwing="0.5"
+						meleeDefenseAnimation="Units/SpaceMarines/DreadnoughtMeleeDefense"
+						meleeDefenseBeginSwing="0.05"
+						meleeDefenseEndSwing="0.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/DreadnoughtDie"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="0.9"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/DreadnoughtMove"
+						sound="Units/SpaceMarines/DreadnoughtMove"
+						soundCount="2"/>
+			</model>				
+		</move>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="SpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<createSmokeScreen
+				icon="Traits/SmokeScreen"
+				cooldown="10"
+				requiredUpgrade="SpaceMarines/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

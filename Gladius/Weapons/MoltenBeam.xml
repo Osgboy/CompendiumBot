@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/MoltenBeam"
+				beamsEmitterBlueprint="Effects/MoltenBeamEmitter" 
+				fireInterval="10"
+				fireSound="Weapons/MoltenBeam"
+		 		fireSoundCount="3"
+		 		effectFaceWeight="1"
+		 		muzzleFlashesBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Beam"/>
+		<trait name="Melta"/>
+		<trait name="PsychicPower"/>
+		<trait name="Witchfire"/>
+	</traits>
+</weapon>

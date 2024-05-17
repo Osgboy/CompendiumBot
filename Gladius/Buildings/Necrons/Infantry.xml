@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<energyCost base="50"/>
+				<oreUpkeep add="2"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<loyalty add="1"/>
+				<production add="6"/>
+				<research add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseColonizersProductionScore base="1.0"/>
+				<increaseInfantryProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<rapidRise name="Necrons/RapidRise"
+				interfaceSound="Interface/RapidRise">
+			<modifiers>
+				<modifier requiredUpgrade="Necrons/RapidRiseBonus">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</rapidRise>
+		<produceUnit unit="Necrons/Warrior"/>
+		<produceUnit unit="Necrons/FlayedOne" requiredUpgrade="Necrons/FlayedOne"/>
+		<produceUnit unit="Necrons/Deathmark" requiredUpgrade="Necrons/Deathmark"/>
+		<produceUnit unit="Necrons/Immortal" requiredUpgrade="Necrons/Immortal"/>
+		<produceUnit unit="Necrons/CanoptekSpyder" requiredUpgrade="Necrons/CanoptekSpyder"/>
+		<produceUnit unit="Necrons/CanoptekWraith" requiredUpgrade="Necrons/CanoptekWraith"/>
+		<produceUnit unit="Necrons/HeavyDestroyer" requiredUpgrade="Necrons/HeavyDestroyer"/>
+		<produceUnit unit="Necrons/TriarchPraetorian" requiredUpgrade="Necrons/TriarchPraetorian"/>
+		<produceUnit unit="Necrons/TranscendentCtan" requiredUpgrade="Necrons/TranscendentCtan"/>
+	</actions>
+	<traits>
+		<trait name="Necrons/InfantryBuildingBonus" requiredUpgrade="Necrons/InfantryBuildingBonus"/>
+	</traits>
+</building>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<onTraitAddedModifiers>
+		<modifier>
+			<effects>
+				<hitpointsFactorFromMax add="0.5"/>
+				<removeTrait name="ChaosSpaceMarines/Bloated"/>
+			</effects>
+		</modifier>
+	</onTraitAddedModifiers>
+</trait>

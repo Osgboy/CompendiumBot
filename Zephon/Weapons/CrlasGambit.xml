@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/CrlasGambit"
+				chargeBlueprint="Effects/BanefulOmenCharge"
+				explosionOffsetRadius="0"
+				explosionsBlueprint="Effects/CrlasGambitExplosions"
+				fireSound="Weapons/CrlasGambit"
+				fireSoundBeginCount="4"
+				muzzleFlashesBlueprint="Effects/CrlasGambitMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
+				<attacks base="2"/>
+				<damage base="2"/> <!-- %damage base tier=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="CrlasGambit"/>
+		<trait type="IgnoresCover"/>
+		<trait type="IndirectFire"/>
+		<trait type="Weakening"/>
+	</traits>
+</weapon>

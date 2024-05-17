@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement9">
+	<model>
+		<unit mesh="Units/AdeptusMechanicus/SicarianInfiltrator"
+				material="Units/AdeptusMechanicus/SicarianInfiltrator"
+				idleAnimation="Units/AdeptusMechanicus/SicarianInfiltratorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="FlechetteBlaster">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="TaserGoad">
+			<model>
+				<powerWeapon effectBone="ShockProdMuzzle"
+						fireInterval="10.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=3 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SicarianInfiltratorAttack"
+						beginFire="0.67"
+						endFire="1.9"
+						chargeAnimation="Units/AdeptusMechanicus/SicarianInfiltratorCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.33"
+						meleeAnimation="Units/AdeptusMechanicus/SicarianInfiltratorMelee"
+						meleeBeginSwing="0.35"
+						meleeEndSwing="2.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SicarianInfiltratorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/AdeptusMechanicus/InfantryVoiceDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AdeptusMechanicus/SicarianInfiltratorMove"
+						sound="Units/AdeptusMechanicus/InfantryMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<genericUnitAbility name="AdeptusMechanicus/VoicesInTheCode"
+				passive="1"
+				requiredUpgrade="AdeptusMechanicus/VoicesInTheCode">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="AdeptusMechanicus/VoicesInTheCode"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="AdeptusMechanicus/DoctrinaImperatives"/>
+		<trait name="AdeptusMechanicus/Dunestrider"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AdeptusMechanicus/ExtraInfantryArmour"/>
+		<trait name="AdeptusMechanicus/NeurostaticInterface"/>
+		<trait name="FeelNoPain"/>
+		<trait name="Infiltrate"/>
+		<trait name="Stealth"/>
+	</traits>
+</unit>

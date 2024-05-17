@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature blockingSight="1"
+		category="Forest">
+	<model>
+		<vegetation material="Terrain/Vegetation"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<minerals mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<buildingSlots max="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Forest"/>
+	</traits>
+	<vegetation>
+		<bushes clusterOriginRadius="0" clusterRadius="64"
+				clusterSizeMax="20" clusterSizeMin="10"
+				scaleMax="1.5" scaleMin="0.5"/>
+		<trees clusterOriginRadius="0" clusterRadius="64"
+				clusterSizeMax="50" clusterSizeMin="25"
+				scaleMax="1.5" scaleMin="0.5"/>
+	</vegetation>
+</feature>

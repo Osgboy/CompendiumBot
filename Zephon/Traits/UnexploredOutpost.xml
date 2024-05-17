@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" setSourcePlayerOnCreation="0" visibleInCompendium="0" visibleOnTile="1">
+	<onTileEntered>
+		<unit>
+			<area affect="UnitPlayer" sendNotification="1">
+				<modifiers>
+					<modifier requiredUpgrade="Exploration" effectDescription="WhenFirstCaptureFeature">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<notNative/>
+								<canCaptureOutposts/>
+							</unit>
+						</conditions>
+						<effects>
+							<influence add="10"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Feature">
+				<modifiers>
+					<modifier visible="0">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<notNative/>
+								<canCaptureOutposts/>
+							</unit>
+						</conditions>
+						<effects>
+							<removeTrait type="UnexploredOutpost"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTileEntered>
+</trait>

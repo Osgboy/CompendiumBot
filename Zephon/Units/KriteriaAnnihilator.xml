@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber">
+	<model>
+		<unit explosionsBone="Guide"
+				groupMemberDeltaX="100"
+				groupMemberDeltaY="80"
+				material="Units/KriteriaAnnihilator"
+				mesh="Units/KriteriaAnnihilator"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="0.75 0.75 0.75"/>
+	</model>
+	<weapons>
+		<weapon type="TachyonRay">
+			<models>
+				<beamWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon mesh="Units/KriteriaAnnihilatorTimeShift"
+						material="Units/KriteriaAnnihilatorTimeShift"
+						bone="Guide"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="9"/>
+				<armor base="8"/>
+				<groupSizeMax base="5"/>
+				<hitpointsMax base="6"/> <!-- %hitpointsMax base tier=4 -->
+				<singularityCoresCost base="6"/> <!-- %singularityCoresCost base tier=9 factor=0.05 -->
+				<singularityCoresUpkeep base="0.3"/> <!-- %singularityCoresUpkeep base tier=9 factor=0.05 -->
+				<transuraniumCost base="60"/> <!-- %transuraniumCost base tier=9 factor=0.5 -->
+				<transuraniumUpkeep base="3.0"/> <!-- %transuraniumUpkeep base tier=9 factor=0.5 -->
+				<moraleMax base="10"/>
+				<movementMax base="3"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/KriteriaAnnihilatorAttack"
+						beginFire="0.2"
+						endFire="1.8"
+						responseSound="Units/Responses/KriteriaAnnihilatorAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/KriteriaAnnihilatorDie"
+						animationCount="2"
+						sound="Units/MediumMechanicalGroundHit"
+						soundCount="3"
+						soundDelay="0.5"
+						voiceSound="Units/KriteriaAnnihilatorDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/KriteriaAnnihilatorImpact"
+						responseSound="Units/Responses/KriteriaAnnihilatorEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/KriteriaAnnihilatorIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/KriteriaAnnihilatorMove"
+						responseSound="Units/Responses/KriteriaAnnihilatorMove"
+						responseSoundCount="3"
+						sound="Units/KriteriaAnnihilatorMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="TimeShift">
+			<model>
+				<cast animation="Units/KriteriaAnnihilatorAbility0"
+						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"
+						sound="Units/KriteriaAnnihilatorTimeShift"
+						soundCount="3"/>
+			</model>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="AnnihilationProtocols"/>
+		<trait type="Agile"/>
+		<trait type="Hovering"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

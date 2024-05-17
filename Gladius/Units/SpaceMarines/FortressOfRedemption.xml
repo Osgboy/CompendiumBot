@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<structureUnit mesh="Units/SpaceMarines/FortressOfRedemption"
+				material="Units/SpaceMarines/FortressOfRedemption"
+				groundMaterial="Units/SpaceMarines/FortressOfRedemptionGround"
+				idleAnimation=""
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1.4 1.4 1.4"
+				explosionsBone="Fortress"
+				uvAnimated="0"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedLascannon">
+			<model>
+				<beamWeapon mesh="Weapons/SpaceMarines/FortressOfRedemptionTurret"
+						material="Weapons/SpaceMarines/FortressOfRedemptionTurret"
+						bone="TurretAttachment"
+						muzzleBone=".Muzzle"/>
+			</model>
+		</weapon>
+		<weapon name="KrakstormMissileSilo" requiredUpgrade="SpaceMarines/FortressOfRedemptionMissileSilo">
+			<model>
+				<missileWeapon mesh="Weapons/SpaceMarines/FortressOfRedemptionSilo"
+						material="Weapons/SpaceMarines/FortressOfRedemptionTurret"
+						bone="SiloAttachment"
+						muzzleBone=".Muzzle"
+						fireInterval="0.75"
+						missileScale="0.6"/>
+			</model>
+		</weapon>
+		<weapon name="HeavyBolter" count="2" requiredUpgrade="SpaceMarines/PredatorLascannon">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/FortressOfRedemptionHeavyBolters"
+						material="Weapons/SpaceMarines/FortressOfRedemptionTurret"
+						bone="BolterAttachment"
+						muzzleBone=".Muzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=14/14/14 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<hitpointsMax base="32.0"/> <!-- %hitpointsMax base armor=14/14/14 wounds=2 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax max="0"/>
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<influenceCost base="40.0"/> <!-- %influenceCost base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 --> 
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Fortification"/>
+		<trait name="HarvestResourceFeatures"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Transport"/>
+		<trait name="SpaceMarines/FortressOfRedemptionDamageReduction" requiredUpgrade="SpaceMarines/FortressOfRedemptionDamageReduction"/>
+	</traits>
+</unit>

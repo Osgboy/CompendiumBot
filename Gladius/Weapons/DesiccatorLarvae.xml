@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon fireSound="Weapons/DesiccatorLarvae"
+				fireSoundCount="3"
+				flamesBlueprint="Effects/Larvae"
+				fireInterval="0.35"
+				effectFaceWeight="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedDamage add="0.5"/> <!-- %rangedDamage add strength=1 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="IgnoresCover"/>
+		<trait name="NoEscape"/>
+		<trait name="Tyranids/Biomorph"/>
+		<trait name="Tyranids/BiomorphDamage" requiredUpgrade="Tyranids/BiomorphDamage"/>
+		<trait name="Fleshbane"/>
+		<trait name="Template"/>
+	</traits>
+</weapon>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit icon="Buildings/SpaceMarines/Headquarters">
+	<model>
+		<structureUnit mesh="Units/SpaceMarines/Headquarters"
+				material="Buildings/SpaceMarines/Buildings"
+				idleAnimationCount="0"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="4"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="5"
+				scale="1.0 1.0 1.0"
+				explosionsBone="HQBone"/>
+	</model>
+	<weapons>
+		<weapon name="Boltgun" count="5">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/HeadquartersBoltguns"
+						material="Buildings/SpaceMarines/Buildings"
+						bone="HQBone"
+						fireInterval="0.1"
+						muzzleBone=".Muzzle"
+						muzzleCount="5"/>
+			</model>
+		</weapon>
+ 		<weapon name="TwinLinkedLascannon" count="1">
+			<model>
+				<beamWeapon mesh="Weapons/SpaceMarines/HeadquartersLascannon"
+						material="Buildings/SpaceMarines/Buildings"
+						bone="HQBone"
+						fireInterval="1.0"
+						muzzleBone=".Muzzle0"
+						muzzleCount="1"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<cargoSlots base="6"/> <!-- %cargoSlots base capacity=20 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax max="0"/>
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action beginFire="0.15" endFire="2.6"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action sound="Units/HeavyBuildingDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Fortification"/>
+		<trait name="Headquarters"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Transport"/>
+	</traits>
+</unit>

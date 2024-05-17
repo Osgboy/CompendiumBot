@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Minelayer" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForEnemyGroundUnits">
+			<conditions>
+				<unit>
+					<enemy/>
+					<noTrait type="Flying"/>
+					<noTrait type="Hovering"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTileEntered>
+		<tile>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="WhenEnemyGroundUnitStopsOnTile">
+						<conditions>
+							<unit>
+								<enemy/>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Mines"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Tile">
+				<modifiers>
+					<modifier effectDescription="WhenEnemyGroundUnitStopsOnTile">
+						<conditions>
+							<unit>
+								<enemy/>
+								<noTrait type="Flying"/>
+								<noTrait type="Hovering"/>
+							</unit>
+						</conditions>
+						<effects>
+							<removeFeature type="Mines"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTileEntered>
+</trait>

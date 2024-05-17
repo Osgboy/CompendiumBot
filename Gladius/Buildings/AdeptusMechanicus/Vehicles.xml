@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="36"/>
+				<oreCost base="50"/>
+				<populationRequired base="1"/>
+				<slotsRequired base="1"/>
+				<energyUpkeep add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<food add="1"/>
+				<influence add="2"/>
+				<ore add="1"/>
+				<production add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<productionModifiers>
+		<modifier>
+			<effects>
+				
+			</effects>
+		</modifier>
+	</productionModifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesProductionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<produceUnit unit="AdeptusMechanicus/IronstriderBallistarius"/>
+		<produceUnit unit="AdeptusMechanicus/SkorpiusDunerider" requiredUpgrade="AdeptusMechanicus/SkorpiusDunerider"/>
+		<produceUnit unit="Neutral/KastelanRobot" requiredUpgrade="AdeptusMechanicus/KastelanRobot"/>
+		<produceUnit unit="AdeptusMechanicus/OnagerDunecrawler" requiredUpgrade="AdeptusMechanicus/OnagerDunecrawler"/>
+		<produceUnit unit="AdeptusMechanicus/SkorpiusDisintegrator" requiredUpgrade="AdeptusMechanicus/SkorpiusDisintegrator"/>
+		<produceUnit unit="AdeptusMechanicus/KnightCrusader" requiredUpgrade="AdeptusMechanicus/KnightCrusader"/>
+	</actions>
+</building>

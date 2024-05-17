@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/HorrorsOfSpaceBeams"
+				chargeBlueprint="Effects/HorrorsOfSpaceCharge"
+				fireInterval="0.05"
+				muzzleFlashesBlueprint="Effects/HorrorsOfSpaceMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="2"/> <!-- %armorPenetration base tier=3 -->
+				<attacks base="3"/>
+				<damage base="1.5"/> <!-- %damage base tier=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="Horrifying"/>
+	</traits>
+</weapon>

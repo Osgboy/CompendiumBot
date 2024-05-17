@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit spawnCountMax="1" strengthModifier="2">
+	<model>
+		<unit mesh="Units/Neutral/Enslaver"
+				material="Units/Neutral/Enslaver"
+				scale="1.0 1.0 1.0"
+				idleAnimation="Units/Neutral/EnslaverIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				bloodBone="Spine"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="0.3"
+						fireSoundCount="0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="2"/> <!-- %armor base armor=6+ -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=5 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action chargeAnimation="Units/Neutral/EnslaverCharge"
+						meleeAnimation="Units/Neutral/EnslaverMelee"
+						meleeBeginSwing="0.25"
+						meleeEndSwing="1.0"
+						meleeDefenseAnimation="Units/Neutral/EnslaverMelee"
+						meleeDefenseBeginSwing="0.25"
+						meleeDefenseEndSwing="1.0"
+						meleeSound="Units/Neutral/EnslaverAttack"
+						meleeSoundCount="2"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/EnslaverDie"
+						animationCount="3"
+						sound="Units/Neutral/EnslaverDie"
+						soundCount="3"
+						soundDelay="0.5"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Neutral/EnslaverMove"
+						sound="Units/Neutral/EnslaverMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<mindControl passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="MindControl"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</mindControl>
+		<enslavement cooldown="3">
+			<model>
+				<action animation="Units/Neutral/EnslaverAttack"
+						sound="Actions/PsychicDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<morale less="6.5"/>
+							<moraleMax greater="0.0"/>
+							<noTrait name="Headquarters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Enslaved" removeOnSourceDeath="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</enslavement>
+	</actions>
+	<traits>
+		<trait name="PsychicLash"/>
+		<trait name="Skimmer"/>
+	</traits>
+</unit>

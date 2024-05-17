@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" alwaysVisible="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<cargoSlotsTaken greater="0"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax add="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTransportEmbarked>
+		<area affects="Unit">
+			<modifiers>
+				<modifier visible="0">
+					<conditions>
+						<unit>
+							<notMovedThisTurn/>
+						</unit>
+					</conditions>
+					<effects>
+						<movement add="999"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onTransportEmbarked>
+	<onTransportDisembarked>
+		<area affects="Unit">
+			<modifiers>
+				<modifier visible="0">
+					<conditions>
+						<unit>
+							<cargoSlotsTaken equal="0"/>
+						</unit>
+					</conditions>
+					<effects>
+						<movement add="-999"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onTransportDisembarked>
+</trait>

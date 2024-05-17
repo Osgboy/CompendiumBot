@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement11">
+	<model>
+		<unit mesh="Units/SistersOfBattle/CerastusKnightLancer"
+				material="Units/SistersOfBattle/CerastusKnightLancer"
+				idleAnimation="Units/SistersOfBattle/CerastusKnightLancerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.8 1.8 1.8"
+				syncMovementSounds="1"
+				explosionsBone="Chest"
+				walker="1">
+			<effects>
+				<effect blueprint="Effects/IonGauntletShield"
+						position="-2.753303 37.434647 81.338051"
+						bone="Shield"/>
+			</effects>
+		</unit>
+	</model>
+	<weapons>
+		<weapon name="CerastusShockLanceRanged">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" fireInterval="0.33"/>		
+			</model>
+		</weapon>
+		<weapon name="CerastusShockLanceMelee">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="Stomp" slotName="Stomp" enabled="0"/>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=13/12/12 -->
+				<hitpointsMax base="72.0"/> <!-- %hitpointsMax base armor=13/12/12 wounds=6 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="12"/> <!-- %strengthDamage base strength=10 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="12.0"/> <!-- %requisitionsUpkeep base tier=11 factor=1 -->
+				<requisitionsCost base="240.0"/> <!-- %requisitionsCost base tier=11 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SistersOfBattle/CerastusKnightLancerAttack"
+						beginFire="1.43"
+						endFire="2.17"
+						chargeAnimation="Units/SistersOfBattle/CerastusKnightLancerCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.2"						
+						meleeAnimation="Units/SistersOfBattle/CerastusKnightLancerMelee"
+						meleeBeginSwing="0.6"
+						meleeEndSwing="0.7"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SistersOfBattle/CerastusKnightLancerDie0"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.2"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SistersOfBattle/CerastusKnightLancerMove"
+						sound="Units/Tau/MonstrousWalkerMove"
+						soundCount="1"/>
+			</model>				
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<flankSpeed consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="1"
+				name="SistersOfBattle/FlankSpeed"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/FlankSpeed"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<conditions>
+						<unit>
+							<notAttackedThisTurn/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="SistersOfBattle/FlankSpeed"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</flankSpeed>
+		<!-- <genericUnitAbility passive="1"
+				name="SistersOfBattle/IonGauntletShield">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SistersOfBattle/KnightParry"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility> -->
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="SistersOfBattle/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<stomp consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0"
+				weaponSlotName="Stomp"/>
+	</actions>
+	<traits>
+		<trait name="SistersOfBattle/IonGauntletShield"/>
+		<trait name="SistersOfBattle/ShieldOfFaith" requiredUpgrade="SistersOfBattle/UniversalCatechism"/>
+		<trait name="SistersOfBattle/MartyrSpirit" requiredUpgrade="SistersOfBattle/MinistorumIndoctrination"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SistersOfBattle/ExtraVehicleArmour"/>	
+		<trait name="MoveThroughCover"/>
+		<trait name="Smash"/>
+		<trait name="Strikedown"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

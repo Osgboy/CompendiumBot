@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon fireSound="Weapons/DesiccatorLarvae"
+				fireSoundCount="3"
+				flamesBlueprint="Effects/BioAcidSpray"
+				flamesEmitterBlueprint="Effects/BioAcidSprayEmitter"
+				effectFaceWeight="0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Tyranids/ShortRangedDamage" requiredUpgrade="Tyranids/ShortRangedDamage"/>
+		<trait name="HellstormTemplate"/>
+		<trait name="NoEscape"/>
+		<trait name="IgnoresCover"/>
+	</traits>
+</weapon>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/Drukhari/AncientEvil">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="Drukhari"/>
+				</unit>
+			</conditions>
+		</modifier>
+	</modifiers>
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<self>
+						<allied/>
+						<attacking/>
+						<faction name="Drukhari"/>
+					</self>
+					<opponent>
+						<noAttacking/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<morale add="-1"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>
+</trait>

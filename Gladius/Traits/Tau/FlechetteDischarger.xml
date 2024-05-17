@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" icon="Weapons/FlechetteDischarger">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damageReturnFactor add="0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

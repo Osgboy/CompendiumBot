@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysColored="1" category="Debuff" icon="Traits/Tyranids/InstinctiveBehaviourLurk">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<effects>
+				<moraleRegeneration max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Tyranids/InstinctiveBehaviourOverride"/>
+					<noTrait name="Tyranids/SynapseLink"/>
+				</unit>
+			</conditions>
+			<effects>
+				<morale add="-1"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

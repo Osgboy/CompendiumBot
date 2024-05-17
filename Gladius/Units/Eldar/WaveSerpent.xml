@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/WaveSerpent"
+				material="Units/Eldar/WaveSerpent"
+				idleAnimation="Units/Eldar/WaveSerpentIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 16"
+				scale="1 1 1"
+				explosionsBone="BloodBone"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedShurikenCannon">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedShurikenCatapult">
+			<model>
+				<projectileWeapon muzzleBone="CatapultMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="SerpentShield" slotName="SerpentShield"
+				enabled="0">
+			<model>
+				<beamWeapon muzzleBone="BloodBone"/>
+			</model>	
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<cargoSlots base="4"/> <!-- %cargoSlots base capacity=12 -->
+				<oreCost base="80.0"/> <!-- %oreCost base tier=8 factor=1 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<oreUpkeep base="4.0"/> <!-- %oreUpkeep base tier=8 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/WaveSerpentAttack"
+						beginFire="1.25"
+						endFire="2.45"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/WaveSerpentDie0"
+						sound="Units/Eldar/VehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/WaveSerpentMove"
+						sound="Units/Eldar/SkimmerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<serpentShield weaponSlotName="SerpentShield"
+				consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				requiredActionPoints="0" >
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</serpentShield>
+		<crystalTargetingMatrix consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/CrystalTargetingMatrix"
+				requiredUpgrade="Eldar/CrystalTargetingMatrix">
+			<model>
+				<action sound="Actions/CrystalTargetingMatrix"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/CrystalTargetingMatrix"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</crystalTargetingMatrix>
+		<vectoredEngines consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/VectoredEngines"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/VectoredEngines">
+			<model>
+				<action sound="Actions/VectoredEngines"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectoredEngines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectoredEngines>
+	</actions>
+	<traits>
+		<trait name="Eldar/HoloFields" requiredUpgrade="Eldar/HoloFields"/>
+		<trait name="MoveThroughCover" requiredUpgrade="Eldar/GhostwalkMatrix"/>
+		<trait name="Eldar/SerpentShield"/>
+		<trait name="Eldar/SpiritStones" requiredUpgrade="Eldar/SpiritStones"/>
+		<trait name="Eldar/StarEngines" requiredUpgrade="Eldar/StarEngines"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="Skimmer"/>
+		<trait name="Tank"/>
+		<trait name="Transport"/>
+		<trait name="Vehicle"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

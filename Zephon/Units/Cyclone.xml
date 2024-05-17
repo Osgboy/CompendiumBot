@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				groupMemberDeltaX="90"
+				groupMemberDeltaY="50"
+				material="Units/Cyclone"
+				mesh="Units/Cyclone"
+				scale="1.05 1.05 1.05">
+		</unit>
+	</model>
+	<weapons>
+		<weapon type="CycloneAutocannon" count="2">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						windupDuration="0.5"/>
+			</models>
+		</weapon>
+		<weapon type="HeavyMachineGun" requiredUpgrade="HeavyMachineGun">
+			<models>
+				<projectileWeapon mesh="Units/CycloneHeavyMachineGun" 
+						material="Units/CycloneHeavyMachineGun"
+						bone="Turret"
+						muzzleBone="HeavyMachinegunMuzzle"/>
+			</models>
+		</weapon>
+		<weapon type="ShirakiCruiseMissile" enabled="0"
+				slotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<models>
+				<missileWeapon mesh="Units/CycloneCruiseMissile"
+						material="Units/CycloneCruiseMissile"
+						bone="Turret"
+						muzzleBone="MissileMuzzle"
+						muzzleCount="2"
+						fireInterval="10"
+						missileScale="0.4"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="DozerBlade">
+			<models>
+				<weapon mesh="Units/CycloneDozerBlade"
+						material="Units/CycloneDozerBlade"
+						bone="Dozer"/>
+			</models>
+		</weapon>		
+		<weapon type="None" requiredUpgrade="ExtraPlating">
+			<models>
+				<weapon mesh="Units/CycloneExtraPlating"
+						material="Units/CycloneExtraPlating"
+						bone="Hull"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="SmokeLauncher">
+			<models>
+				<weapon mesh="Units/CycloneSmokeLauncher"
+						material="Units/CycloneSmokeLauncher"
+						bone="Hull"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="8"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1 -->
+				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=6 factor=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/CycloneAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/CycloneAttack"
+						beginFire="0.33"
+						endFire="2.3"
+						responseSound="Units/Responses/CycloneAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CycloneDie0"
+						sound="Units/CycloneDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CycloneImpact"
+						responseSound="Units/Responses/CycloneEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/CycloneIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/CycloneKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/CycloneMove"
+						responseSound="Units/Responses/CycloneMove"
+						responseSoundCount="3"
+						sound="Units/CycloneMove"
+						soundCount="1"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/CyclonePoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/CycloneSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="SmokeLauncher"
+				cooldown="10"
+				requiredUpgrade="SmokeLauncher">
+			<model>
+				<cast responseSound="Units/Responses/CycloneSmokeLauncher"
+						sound="Actions/SmokeLauncher"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="SmokeScreen" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<useWeapon cooldown="10"
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				weaponSlotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.1"
+						responseSound="Units/Responses/CycloneShirakiCruiseMissile"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>
+		<trait type="ExtraPlating" requiredUpgrade="ExtraPlating"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

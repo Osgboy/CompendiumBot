@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<noTrait name="Fortification"/>
+						<noTrait name="Vehicle"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<damage mul="1.0"/>
+				<armorPenetration min="4"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

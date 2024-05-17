@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Bleed"
+		blockingSight="1"
+		branch="Voice"
+		category="Bleed">
+	<model>
+		<vegetation effectsBlueprint="Effects/Bleed"
+				material="Terrain/Vegetation"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<productionCost base="12"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<noUpgrade name="BleedCultivation"/>
+				</player>
+			</conditions>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Bleed"/>
+	</traits>
+	<vegetation>
+		<trees clusterOriginRadius="0" clusterRadius="64"
+				clusterSizeMax="20" clusterSizeMin="10"
+				scaleMax="1.5" scaleMin="0.5">
+			<meshes>
+				<mesh name="Terrain/Vegetation/Bleed0"/>
+				<mesh name="Terrain/Vegetation/Bleed1"/>
+				<mesh name="Terrain/Vegetation/Bleed2"/>
+				<mesh name="Terrain/Vegetation/Bleed3"/>
+				<mesh name="Terrain/Vegetation/Bleed4"/>
+				<mesh name="Terrain/Vegetation/Bleed5"/>
+				<mesh name="Terrain/Vegetation/Bleed6"/>
+				<mesh name="Terrain/Vegetation/Bleed7"/>
+				<mesh name="Terrain/Vegetation/Bleed8"/>
+			</meshes>
+		</trees>
+	</vegetation>
+</feature>

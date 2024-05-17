@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement5">
+	<model>
+		<unit mesh="Units/Tau/ShieldedMissileDrone"
+				material="Units/Tau/ShieldedMissileDrone"
+				idleAnimation="Units/Tau/ShieldedMissileDroneIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 16"
+				scale="1.0 1.0 1.0"
+				explosionsBone="BloodBone"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="80" memberDeltaY="60"/>
+	<weapons>
+		<weapon name="MissilePod">
+			<model>
+				<missileWeapon muzzleBone="ShieldedMissileDroneMuzzle"
+						missileScale="0.5"
+						fireInterval="0.25"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<energyCost base="10.0"/> <!-- %energyCost base tier=4 factor=0.5 -->
+				<oreUpkeep base="1.0"/> <!-- %oreUpkeep base tier=4 factor=1 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<oreCost base="10.0"/> <!-- %oreCost base tier=4 factor=0.5 -->
+				<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation=""
+						beginFire="0.5"
+						endFire="2"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/ShieldedMissileDroneDie"
+						animationCount="2"
+						soundDelay="0"
+						sound="Units/Tau/DroneDie"
+						soundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation=""
+						sound="Units/Tau/DroneMove"
+						soundCount="1"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="Tau/DroneControllerInRange"/>
+		<trait name="JetPack"/>
+		<trait name="Relentless"/>
+		<trait name="Shielded"/>
+		<trait name="Tau/SupportingFire"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+	</traits>
+</unit>

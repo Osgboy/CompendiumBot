@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit faction="AdeptusMechanicus">
+	<model>
+		<unit mesh="Units/Neutral/KastelanRobot"
+				material="Units/Neutral/KastelanRobot"
+				idleAnimation="Units/Neutral/KastelanRobotIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.75 0.75 0.75"
+				explosionsBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedHeavyPhosphorBlaster">
+			<model>
+				<projectileWeapon muzzleBone=".HeavyPhosphorBlasterMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="IncendineCombustor">
+			<model>
+				<flamerWeapon muzzleBone=".IncendineCombustorMuzzle"
+						fireInterval="0.35"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyUpkeep base="3.0"/> <!-- %energyUpkeep base tier=7 factor=1.0 -->
+				<energyCost base="30.0"/> <!-- %energyCost base tier=7 factor=0.5 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base toughness=7 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Neutral/KastelanRobotAttack"
+						beginFire="0.67"
+						endFire="2.33"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Neutral/KastelanRobotDie"
+						animationCount="2"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="0.2"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Neutral/KastelanRobotMove"
+						sound="Units/Tau/MonstrousWalkerMove"
+						soundCount="1"/>
+			</model>		
+		</move>
+		<auraOfFear passive="1" enabled="0" visible="0">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="AdeptusMechanicus/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+	</actions>
+	<traits>
+		<trait name="AdeptusMechanicus/CanticlesOfTheOmnissiah"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="AdeptusMechanicus/ExtraVehicleArmour"/>
+		<trait name="Fearless"/>
+		<trait name="FeelNoPain"/>
+		<trait name="RepulsorGrid"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/MultiMelta"
+		 		fireSoundCount="4"
+		 		beamsBlueprint="Effects/MeltaBeams"
+		 		beamsEmitterBlueprint="Effects/MeltaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/MeltaMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"
+		 		muzzleCount="2"
+				fireInterval="0.5"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="Melta"/>
+		<trait name="SistersOfBattle/HeavyWeaponBonus" requiredUpgrade="SistersOfBattle/HeavyWeaponBonus"/>
+		<trait name="TwinLinked"/>
+	</traits>
+</weapon>

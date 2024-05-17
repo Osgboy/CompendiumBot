@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Resource">
+	<model>
+		<simpleModel mesh="Features/OreField"
+				material="Features/OreField"
+				groundMaterial="Features/OreFieldGround"/>
+	</model>
+	<areas>
+		<area affects="Tile" radius="1">
+			<modifiers>
+				<modifier>
+					<effects>
+						<ore mul="0.2"/>
+						<requisitions mul="0.2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<conditions>
+						<player>
+							<faction name="Tyranids"/>
+						</player>
+					</conditions>
+					<effects>
+						<influence mul="0.2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+				<requisitions mul="0.2"/>
+				<requisitions add="2"/>
+				<ore mul="0.2"/>
+				<ore add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<faction name="Tyranids"/>
+				</player>
+			</conditions>
+			<effects>
+				<influence mul="0.2"/>
+				<influence add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

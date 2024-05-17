@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Items/ExousiaParser" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="IfNotDamagedThisTurn">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<notDamagedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

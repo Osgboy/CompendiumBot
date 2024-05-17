@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<missileWeapon fireSound="Weapons/Tentaclids"
+		 		fireSoundCount="3"
+		 		missileBlueprint="Weapons/Tentaclid"
+		 		exhaustBlueprint="Effects/MissileSlimeExhaust"
+		 		smokeBlueprint="Effects/MissileSlime"
+		 		smokeEmitterBlueprint="Effects/MissileSlimeEmitter"
+		 		effectFaceWeight="1"
+		 		explosionsBlueprint="Effects/BioPlasmaExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="2"/> <!-- %rangedDamage add strength=5 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Haywire"/>
+		<trait name="Seeking"/>
+		<trait name="Tyranids/LongRangedDamage" requiredUpgrade="Tyranids/LongRangedDamage"/>
+	</traits>
+</weapon>

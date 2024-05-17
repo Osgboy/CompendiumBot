@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<unit mesh="Units/SpaceMarines/Terminator"
+				material="Units/SpaceMarines/Terminator"
+				idleAnimation="Units/SpaceMarines/TerminatorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="StormBolter">
+			<model>
+				<projectileWeapon mesh="Weapons/SpaceMarines/StormBolter"
+						material="Units/SpaceMarines/Terminator"
+						bone="RightHand"
+						muzzleBone="Muzzle0"
+						fireInterval="0.2"/>
+				<!-- Storm Bolters need two muzzles. -->
+			</model>
+		</weapon>
+		<weapon name="PowerFist">
+			<model>
+				<weapon fireInterval="3.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="4.0"/> <!-- %requisitionsUpkeep base tier=8 factor=1 -->
+				<requisitionsCost base="80.0"/> <!-- %requisitionsCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SpaceMarines/TerminatorAttack"
+						beginFire="0.767"
+						endFire="2.5"
+						chargeAnimation="Units/SpaceMarines/TerminatorCharge"
+						chargeBeginFire="0.333"
+						chargeEndFire="1.433"						
+						chargeDefenseAnimation="Units/SpaceMarines/TerminatorChargeDefense"
+						chargeDefenseBeginFire="0.333"
+						chargeDefenseEndFire="1.233"						
+						meleeAnimation="Units/SpaceMarines/TerminatorMelee"
+						meleeBeginSwing="0.4"
+						meleeEndSwing="0.7"
+						meleeDefenseAnimation="Units/SpaceMarines/TerminatorMeleeDefense"
+						meleeDefenseBeginSwing="0.4"
+						meleeDefenseEndSwing="0.7"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/TerminatorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/TerminatorMove"
+						sound="Units/SpaceMarines/TerminatorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="TerminatorArmour"/>
+		<trait name="Relentless"/>
+	</traits>
+</unit>

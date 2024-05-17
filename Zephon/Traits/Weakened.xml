@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForMeleeWeapons">
+			<conditions>
+				<weapon ignoreForTraitVisibility="1">
+					<trait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damage mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/FusionPistol"
+		 		fireSoundCount="1"
+		 		fireInterval="0.5"
+		 		beamsBlueprint="Effects/FusionBeams"
+		 		beamsEmitterBlueprint="Effects/MeltaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/FusionMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/MeltaMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Assault"/>
+		<trait name="Eldar/AssaultWeaponBonus" requiredUpgrade="Eldar/AssaultWeaponBonus"/>
+		<trait name="Melta"/>
+	</traits>
+</weapon>

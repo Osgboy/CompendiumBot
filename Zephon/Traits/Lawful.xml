@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnCity="1" visibleOnPlayer="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building ignoreForTraitVisibility="1">
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

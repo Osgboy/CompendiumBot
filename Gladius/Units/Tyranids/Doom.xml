@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement2" visible="0">
+	<model>
+		<unit mesh="Units/Tyranids/Zoanthrope"
+				material="Units/Tyranids/Zoanthrope"
+				idleAnimation="Units/Tyranids/ZoanthropeIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.5 1.5 1.5"
+				bloodBone="BloodBone"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="1.0"/>
+			</model>
+		</weapon>
+		<weapon name="WarpBlastBurst" slotName="WarpBlastBurst" enabled="0">>
+			<model>
+				<beamWeapon muzzleBone="BloodBone"/>
+			</model>		
+		</weapon>
+		<weapon name="WarpBlastLance" slotName="WarpBlastLance" enabled="0">
+			<model>
+				<beamWeapon muzzleBone="BloodBone"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<biomassUpkeep base="3.0"/> <!-- %biomassUpkeep base tier=7 factor=1 -->
+				<biomassCost base="60.0"/> <!-- %biomassCost base tier=7 factor=1 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeAttack"
+						beginFire="0.35"
+						endFire="2.5"
+						chargeAnimation="Units/Tyranids/ZoanthropeCharge"
+						chargeBeginFire="0.333"
+						chargeEndFire="1.167"
+						meleeAnimation="Units/Tyranids/ZoanthropeMelee"
+						meleeBeginSwing="0.333"
+						meleeEndSwing="0.666"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeDie"
+						animationCount="2"
+						sound="Units/LargeUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Tyranids/LargeDie"
+						voiceSoundCount="4"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<genericUnitAbility name="Tyranids/SynapseCreature" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/SynapseLink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="Tyranids/ShadowInTheWarp" passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tyranids/ShadowInTheWarp"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
+		<useWeapon cooldown="2"
+				psychicPower="1"
+				weaponSlotName="WarpBlastBurst">
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeCast"
+						beginFire="0.4"
+						endFire="2.5"/>
+			</model>
+			<sharedCooldowns>
+				<action name="UseWeapon/WarpBlastLance"/>
+			</sharedCooldowns>
+		</useWeapon>
+		<useWeapon cooldown="2"
+				psychicPower="1"
+				weaponSlotName="WarpBlastLance">
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeCast"
+						beginFire="0.4"
+						endFire="2.5"/>
+			</model>
+			<sharedCooldowns>
+				<action name="UseWeapon/WarpBlastBurst"/>
+			</sharedCooldowns>
+		</useWeapon>
+		<theHorror cooldown="1"
+				name="Tyranids/TheHorror"
+				psychicPower="1">
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeCast"
+						sound="Actions/HiveMindDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Fearless"/>
+							<noTrait name="Fortification"/>
+							<noTrait name="MonstrousCreature"/>
+							<noTrait name="Tyranids/SynapseLink"/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="Zealot"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="2" name="Pinned"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</theHorror>
+		<paroxysm cooldown="1"
+				name="Tyranids/Paroxysm"
+				psychicPower="1"
+				requiredUpgrade="Tyranids/Paroxysm">
+			<model>
+				<action animation="Units/Tyranids/ZoanthropeCast"
+						sound="Actions/HiveMindDebuff"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="2" name="Tyranids/Paroxysm"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</paroxysm>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tyranids/ExtraInfantryArmour"/>
+		<trait name="Tyranids/InfantryUpkeep" requiredUpgrade="Tyranids/InfantryUpkeep"/>
+		<trait name="Psyker"/>
+		<trait name="Tyranids/WarpField"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

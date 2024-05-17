@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Items/IncandescentIcon" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit" radiusMin="1" radiusMax="1">
+				<modifiers endure="1">
+					<modifier effectDescription="ToAdjacentEnemyUnitsEachTurn">
+						<conditions>
+							<unit>
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="IncandescentIcon"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

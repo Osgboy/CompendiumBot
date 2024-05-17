@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement7">
+	<model>
+		<unit mesh="Units/Eldar/Scorpion"
+				material="Units/Eldar/Scorpion"
+				idleAnimation="Units/Eldar/ScorpionIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 30"
+				scale="1.2 1.2 1.2"
+				explosionsBone="BloodBone"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedPulsar">
+			<model>
+				<beamWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="ShurikenCannon">
+			<model>
+				<projectileWeapon muzzleBone="ShurikenMuzzle"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/11 -->
+				<oreCost base="320.0"/> <!-- %oreCost base tier=12 factor=1 -->
+				<hitpointsMax base="108.0"/> <!-- %hitpointsMax base armor=12/12/11 wounds=9 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="16.0"/> <!-- %oreUpkeep base tier=12 factor=1 -->
+				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/ScorpionAttack"
+						beginFire="1.0"
+						endFire="2.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/ScorpionDie0"
+						sound="Units/Eldar/SuperHeavyVehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/ScorpionMove"
+						sound="Units/Eldar/SkimmerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<vectoredEngines consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/VectoredEngines"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/VectoredEngines">
+			<model>
+				<action sound="Actions/VectoredEngines"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectoredEngines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectoredEngines>
+	</actions>
+	<traits>
+		<trait name="Eldar/StarEngines" requiredUpgrade="Eldar/StarEngines"/>
+		<trait name="Eldar/TitanHoloFields"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Skimmer"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+		<trait name="Eldar/SpiritPreservation"/>
+	</traits>
+</unit>

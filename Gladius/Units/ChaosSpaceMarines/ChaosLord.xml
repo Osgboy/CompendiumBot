@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement3">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/ChaosLord"
+				material="Units/ChaosSpaceMarines/ChaosLord"
+				idleAnimation="Units/ChaosSpaceMarines/ChaosLordIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Bone001"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="ThunderHammer" slotName="ThunderHammer">
+			<model>
+				<powerWeapon mesh="Weapons/ChaosSpaceMarines/ChaosLordHammer"
+						material="Units/ChaosSpaceMarines/ChaosLord"
+						bone="Bone007"
+						fireInterval="1"
+						effectBlueprint="Effects/ChaosPowerWeapon"
+						effectBoundingVolume="Blade" 
+						effectBone="Bone018"/>
+			</model>
+		</weapon>
+		<weapon name="PlasmaPistol">
+			<model>
+				<projectileWeapon mesh="Weapons/ChaosSpaceMarines/ChaosLordGun"
+						material="Units/ChaosSpaceMarines/ChaosLord"
+						bone="Bone007(mirrored)"
+						muzzleBone=".Muzzle"
+						fireInterval="0.35"/>
+			</model>
+		</weapon>
+		<weapon name="FragGrenade" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone007(mirrored)"/>
+			</model>
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone007(mirrored)"/>
+			</model>	
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Bone007(mirrored)"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<influenceUpkeep base="6.0"/> <!-- %influenceUpkeep base tier=7 factor=2 -->
+				<influenceCost base="120.0"/> <!-- %influenceCost base tier=7 factor=2 -->
+				<itemSlots base="6"/>
+				<levelMax base="9"/>
+				<meleeAccuracy base="12"/> <!-- %meleeAccuracy base weaponSkill=6 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="10"/> <!-- %rangedAccuracy base ballisticSkill=5 -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/ChaosSpaceMarines/ChaosLordAttack"
+						beginFire="1.3"
+						endFire="2.2"
+						chargeAnimation="Units/ChaosSpaceMarines/ChaosLordCharge"
+						chargeBeginFire="0.33"
+						chargeEndFire="1.33"
+						meleeAnimation="Units/ChaosSpaceMarines/ChaosLordMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.67"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordDie"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.2"
+						voiceSound="Units/ChaosSpaceMarines/ChaosLordDie"
+						voiceSoundCount="1"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordMove"
+						sound="Units/SpaceMarines/InfantryMove"
+						soundCount="4"/>
+			</model>				
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/FragGrenade">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordGrenade"
+						beginFire="0.63"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordGrenade"
+						beginFire="0.63"/>
+			</model>				
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/MeltaBomb">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordGrenade"
+						beginFire="0.63"/>
+			</model>				
+		</throwGrenade>
+		<ichorBlood cooldown="2"
+				name="ChaosSpaceMarines/IchorBlood"
+				rank="-1"
+				rankMax="2"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				consumedMovement="0">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosLordAbility"
+						sound="Actions/ChaosBuff"/>
+			</model>			
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/IchorBlood" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ichorBlood>		
+		<genericUnitAbility name="ChaosSpaceMarines/WorthyOffering"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/WorthyOffering"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<genericUnitAbility name="ChaosSpaceMarines/DarkGlory"
+				passive="1"
+				rank="-1"
+				rankMax="2">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/DarkGlory"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<exaltedStrike cooldown="3"
+				elite="1"
+				levelUpPriority="1"
+				name="ChaosSpaceMarines/ExaltedStrike"
+				rank="-1"
+				rankMax="0"
+				weaponSlotName="ThunderHammer">
+			<model>
+				<action chargeAnimation="Units/ChaosSpaceMarines/ChaosLordAbilityCharge"
+						meleeAnimation="Units/ChaosSpaceMarines/ChaosLordAbilityMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.67"
+						bone="Bone001"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<accuracy mul="1.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<conditions>
+						<unit>
+							<enemy/>
+							<hitpointsFraction less="0.5"/>
+						</unit>
+					</conditions>
+				</target>
+			</beginTargets>
+		</exaltedStrike>
+		<levelUp/>
+		<shop/>
+	</actions>
+	<traits>
+		<trait name="ChaosSpaceMarines/ChampionOfChaos"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+		<trait name="Fearless"/>
+		<trait name="Hero"/>
+		<trait name="ChaosSpaceMarines/VeteransOfTheLongWar" requiredUpgrade="ChaosSpaceMarines/VeteransOfTheLongWar"/>
+	</traits>
+</unit>

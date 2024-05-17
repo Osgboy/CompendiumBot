@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit bloodBone="Chest"
+				explosionsBone="Chest"
+				explosionSound="Explosions/Units/SmallHuman"
+				explosionSoundCount="16"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="70"
+				material="Units/MissileTeam"
+				mesh="Units/MissileTeam"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="MissileLauncher" slotName="MissileLauncher">
+			<models>
+				<missileWeapon fireInterval="0.86"
+						missileScale="0.4" 
+						muzzleBone="Muzzle"
+						muzzleCount="2"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="4"/>
+				<armor base="4"/>
+				<foodCost base="15"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<foodUpkeep base="0.75"/> <!-- %foodUpkeep base tier=5 factor=0.5 -->
+				<groupSizeMax base="3"/>
+				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
+				<moraleMax base="4"/>
+				<movementMax base="1"/>
+				<mineralsCost base="15"/> <!-- %mineralsCost base tier=5 factor=0.5 -->
+				<mineralsUpkeep base="0.75"/> <!-- %mineralsUpkeep base tier=5 factor=0.5 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/MissileTeamAttack"
+						beginFire="1.36"
+						endFire="1.9"
+						responseSound="Units/Responses/MissileTeamAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/MissileTeamDie"
+						animationCount="2"
+						voiceSound="Units/MissileTeamDie"
+						voiceSoundCount="3"
+						sound="Units/MediumMechanicalGroundHit"
+						soundCount="3"
+						soundDelay="0.5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/MissileTeamImpact"
+						responseSound="Units/Responses/MissileTeamEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/MissileTeamIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/MissileTeamMove"
+						responseSound="Units/Responses/MissileTeamMove"
+						responseSoundCount="3"
+						sound="Units/MissileTeamMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon name="GroundedFire"
+				cooldown="5"
+				requiredUpgrade="GroundedFire"
+				weaponSlotName="MissileLauncher">
+			<model>
+				<attack animation="Units/MissileTeamAbility0"
+						beginFire="1.21"
+						endFire="1.75"
+						responseSound="Units/Responses/MissileTeamGroundedFire"
+						sound="Units/MissileTeamGroundedFire"
+						soundCount="3"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<accuracy add="2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

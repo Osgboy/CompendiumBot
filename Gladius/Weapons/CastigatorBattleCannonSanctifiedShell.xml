@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireInterval="1.0"
+				fireSound="Weapons/CastigatorBattleCannonSanctifiedShell"
+				fireSoundCount="1"
+				muzzleFlashesBlueprint="Effects/CannonMuzzleFlashes"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=-3 -->
+				<rangedDamage add="6"/> <!-- %rangedDamage add strength=8 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="SistersOfBattle/HeavyWeaponBonus" requiredUpgrade="SistersOfBattle/HeavyWeaponBonus"/>
+		<trait name="Blast"/>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

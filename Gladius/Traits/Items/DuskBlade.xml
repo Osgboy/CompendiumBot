@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Weapon" category="Buff" icon="Items/DuskBlade">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon>
+					<trait name="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<lifeStealFactor add="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Traits/AreMachinesAlive" visibleOnCity="1">
+	<modifiers>
+		<modifier effectDescription="ForConstructionYard">
+			<conditions>
+				<building>
+					<type name="Construction"/>
+				</building>
+			</conditions>
+			<effects>
+				<production add="-1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

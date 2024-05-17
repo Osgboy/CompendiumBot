@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Features/WireWeed">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Flyer"/>
+					<noTrait name="Necrons/ImmuneToNaturalLaw"/>
+					<noTrait name="JetPack"/>
+					<noTrait name="Jetbike"/>
+					<noTrait name="Skimmer"/>
+				</unit>
+			</conditions>
+			<effects>
+				<weaponDamage weapon="WireWeed"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/Autocannon"
+				fireSoundCount="5"
+				fireInterval="0.2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="4"/> <!-- %rangedDamage add strength=7 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="AstraMilitarum/BoltDamage" requiredUpgrade="AstraMilitarum/BoltDamage"/>
+		<trait name="ChaosSpaceMarines/BoltDamage" requiredUpgrade="ChaosSpaceMarines/BoltDamage"/>
+		<trait name="SpaceMarines/BoltDamage" requiredUpgrade="SpaceMarines/BoltDamage"/>
+		<trait name="SistersOfBattle/HeavyWeaponBonus" requiredUpgrade="SistersOfBattle/HeavyWeaponBonus"/>
+		<trait name="BoltWeapon"/>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

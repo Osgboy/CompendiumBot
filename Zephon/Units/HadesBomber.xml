@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull_Shake"
+				material="Units/HadesBomber"
+				mesh="Units/HadesBomber"
+				normalWeight="0.1"
+				position="0 0 36"
+				scale="1.1 1.1 1.1"/>
+	</model>
+	<weapons>
+		<weapon type="HadesCannon">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Hull_Shake"
+						material="Units/HadesBomber"
+						mesh="Units/HadesBomberDecoyFlares"/>			
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Hull_Shake"
+						material="Units/HadesBomberStealthDevice"
+						mesh="Units/HadesBomberStealthDevice"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<antimatterCost base="60"/> <!-- %antimatterCost base tier=9 factor=0.5 -->
+				<antimatterUpkeep base="3.0"/> <!-- %antimatterUpkeep base tier=9 factor=0.5 -->
+				<armor base="8"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="7"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<transuraniumCost base="60"/> <!-- %transuraniumCost base tier=9 factor=0.5 -->
+				<transuraniumUpkeep base="3.0"/> <!-- %transuraniumUpkeep base tier=9 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="0.5"/>
+				<increaseHumanScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/HadesBomberAttack"
+						beginFire="1.0"
+						endFire="1.73"
+						responseSound="Units/Responses/HadesBomberAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/HadesBomberDie0"
+						groundImpact="1.0"
+						sound="Units/HadesBomberDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/HadesBomberImpact"
+						responseSound="Units/Responses/HadesBomberEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/HadesBomberIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/HadesBomberMove"
+						responseSound="Units/Responses/HadesBomberMove"
+						responseSoundCount="3"
+						sound="Units/HadesBomberMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<!-- <trait type="Stealth" requiredUpgrade=""/> -->
+		<trait type="Titan"/>
+	</traits>
+</unit>

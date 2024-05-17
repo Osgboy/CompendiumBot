@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/CrushingClaws"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<strengthDamage mul="0.5"/> <!-- %strengthDamage mul strength=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Armourbane"/>
+		<trait name="Melee"/>
+		<trait name="Tyranids/MeleeDamage" requiredUpgrade="Tyranids/MeleeDamage"/>
+	</traits>
+</weapon>

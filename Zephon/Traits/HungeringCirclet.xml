@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Items/HungeringCirclet" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="IfDamagedThisTurn">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<damagedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<attacks mul="0.167"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

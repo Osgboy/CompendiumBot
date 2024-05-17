@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon fireSound="Weapons/Baleflamer"
+				fireSoundCount="3"
+				flamesBlueprint="Effects/Baleflamer"
+		 		flamesEmitterBlueprint="Effects/BaleflamerEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=3 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="AstraMilitarum/BlastDamage" requiredUpgrade="AstraMilitarum/BlastDamage"/>
+		<trait name="ChaosSpaceMarines/BlastDamage" requiredUpgrade="ChaosSpaceMarines/BlastDamage"/>
+		<trait name="Necrons/BlastDamage" requiredUpgrade="Necrons/BlastDamage"/>
+		<trait name="SpaceMarines/BlastDamage" requiredUpgrade="SpaceMarines/BlastDamage"/>
+		<trait name="Flame"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="IgnoresCover"/>
+		<trait name="NoEscape"/>
+		<trait name="SoulBlaze"/>
+		<trait name="Template"/>
+	</traits>
+</weapon>

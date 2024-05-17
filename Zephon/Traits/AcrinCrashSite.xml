@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Features/AcrinCrashSite" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<research add="2"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<research mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<feature>
+			<area affect="TilePlayer" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every10Turns">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="10"/>
+						</conditions>
+						<effects>
+							<research add="10"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</feature>
+	</onTurnStarted>
+</trait>

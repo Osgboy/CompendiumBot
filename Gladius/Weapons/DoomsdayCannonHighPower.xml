@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Weapons/DoomsdayCannon">
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/NecronExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"
+				fireInterval="1.0"
+				fireSound="Weapons/DoomsdayCannonHighPower"
+				fireSoundCount="3"
+				muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/LasMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/DoomsdayCannonProjectiles"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="Necrons/BlastDamage" requiredUpgrade="Necrons/BlastDamage"/>
+		<trait name="HighPower"/>
+		<trait name="LargeBlast"/>
+		<trait name="PrimaryWeapon"/>
+	</traits>
+</weapon>

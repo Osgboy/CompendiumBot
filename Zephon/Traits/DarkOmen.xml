@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/DarkOmen" visibleOnUnit="1">
+	<modifiers>
+		<modifier requiredUpgrade="DarkOmenUpgrade">
+			<conditions>
+				<unit>
+					<enemy/>
+				</unit>
+			</conditions>
+			<effects>
+				<damageTaken mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

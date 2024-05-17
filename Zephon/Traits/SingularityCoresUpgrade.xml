@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnBuilding="1">
+	<modifiers>
+		<perBuildingInCityModifier effectDescription="SingularityCoresUpgrade">
+			<conditions>
+				<building>
+					<type name="SingularityCores"/>
+				</building>
+			</conditions>
+			<effects>
+				<mineralsCost mul="-0.1"/>
+				<productionCost mul="-0.1"/>
+			</effects>
+		</perBuildingInCityModifier>
+	</modifiers>
+</trait>

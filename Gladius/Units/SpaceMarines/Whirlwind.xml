@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement12">
+	<model>		
+		<unit mesh="Units/SpaceMarines/Whirlwind"
+				material="Units/SpaceMarines/Whirlwind"
+				idleAnimation="Units/SpaceMarines/WhirlwindIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				explosionsBone="Hull_Shake"
+				uvAnimated="1"/>
+	</model>
+	<weapons>
+		<weapon name="WhirlwindMultipleMissileLauncherVengeance" slotName="WhirlwindMultipleMissileLauncherVengeance">
+			<model>
+				<missileWeapon muzzleBone="Missile" muzzleCount="4"
+						fireInterval="1.14"/>
+			</model>
+		</weapon>
+		<weapon name="WhirlwindMultipleMissileLauncherIncendiaryCastellan" slotName="WhirlwindMultipleMissileLauncherIncendiaryCastellan" enabled="0">
+			<model>
+				<missileWeapon muzzleBone="Missile" muzzleCount="4"
+						fireInterval="1.14"/>
+			</model>
+		</weapon>
+		<weapon name="HunterKillerMissile" slotName="HunterKillerMissile"
+				enabled="0">
+			<model>
+				<missileWeapon muzzleBone="Hull_Shake"
+						fireInterval="5.0"/>
+			</model>	
+		</weapon>
+		<weapon name="None" enabled="0" requiredUpgrade="SpaceMarines/SmokeLauncher">
+			<model>
+				<weapon mesh="Weapons/SpaceMarines/WhirlwindSmokeLauncher"
+						material="Units/SpaceMarines/Whirlwind"
+						bone="Hull_Shake"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=11/11/10 wounds=3 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="4"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="2.0"/> <!-- %requisitionsUpkeep base tier=6 factor=1 -->
+				<requisitionsCost base="40.0"/> <!-- %requisitionsCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/WhirlwindAttack"
+						beginFire="0.9"
+						endFire="2.04"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/WhirlwindDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/WhirlwindMove"
+						sound="Units/SpaceMarines/TankMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="WhirlwindMultipleMissileLauncherVengeance WhirlwindMultipleMissileLauncherIncendiaryCastellan"/>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="SpaceMarines/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<useWeapon weaponSlotName="HunterKillerMissile"
+				cooldown="10"
+				requiredUpgrade="SpaceMarines/HunterKillerMissile">
+			<model>
+				<action beginFire="0.1" endFire="1.0"/>
+			</model>
+		</useWeapon>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="DozerBlade" requiredUpgrade="SpaceMarines/DozerBlade"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="SpaceMarines/SuppressiveBombardment"/>
+		<trait name="Tank"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

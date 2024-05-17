@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Acrin">
+	<model>
+		<unit bloodBlueprint="Effects/BlackBlood"
+				bloodBone="Pelvis"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="60"
+				material="Units/AcrinMilitia"
+				mesh="Units/AcrinMilitia"
+				normalWeight="0.1"
+				scale="8 8 8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="Subjugator">
+			<models>
+				<projectileWeapon bone="Gun"
+						material="Units/AcrinMilitiaRifle"
+						mesh="Units/AcrinMilitiaRifle"
+						muzzleBone="Gun"
+						windupDuration="0.8"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="2"/>
+				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
+				<foodCost base="10"/> <!-- %foodCost base tier=6 factor=0.25 -->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=6 factor=0.25 -->
+				<groupSizeMax base="6"/>
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<mineralsCost base="10"/> <!-- %mineralsCost base tier=6 factor=0.25 -->
+				<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=6 factor=0.25 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVoiceScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/AcrinMilitiaAttack"
+						beginFire="0.73"
+						endFire="1.63"
+						responseSound="Units/Responses/AcrinRemnantAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AcrinMilitiaDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.5"
+						voiceSound="Units/AcrinRemnantDie"
+						voiceSoundCount="5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AcrinMilitiaImpact"
+						responseSound="Units/Responses/AcrinRemnantEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AcrinMilitiaIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AcrinMilitiaMove"
+						responseSound="Units/Responses/AcrinRemnantMove"
+						responseSoundCount="3"
+						sound="Units/AcrinMilitiaMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="WhispersOfHarmony"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/AcrinMilitiaAbility"
+						blueprint="Effects/WhispersOfHarmony"
+						responseSound="Units/Responses/AcrinRemnantWhispersOfHarmony"
+						sound="Actions/WhispersOfHarmony"
+						soundDelay="1.5"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<ally/>
+							<damaged/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<hitpoints add="4"/>
+										<morale add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetUnit>
+							<type name="AcrinMilitia"/> <!-- TODO Remove when we have branched neutral players -->
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitCast name="ConjureBleed"
+				cooldown="10">
+			<model>
+				<cast animation="Units/AcrinMilitiaAbility"
+						blueprint="Effects/ConjureBleed"
+						responseSound="Units/Responses/AcrinRemnantWhispersOfHarmony"
+						sound="Actions/WhispersOfHarmony"
+						soundDelay="1.5"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea equal="0"/>
+							<noFeatureCategory name="Bleed"/>
+							<noFeatureCategory name="Building"/>
+							<noFeatureCategory name="Fire"/>
+							<noFeatureCategory name="Forest"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<land/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="Bleed"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Bleedwalker"/>
+	</traits>
+</unit>

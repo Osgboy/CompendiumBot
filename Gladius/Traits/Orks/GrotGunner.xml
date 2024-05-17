@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<weapon match="Any">>
+					<type name="BigShoota"/>
+					<type name="TwinLinkedBigShoota"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<accuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

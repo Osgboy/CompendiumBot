@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+				</unit>
+			</conditions>
+			<effects>
+				<cityDamageReduction add="0.33"/>
+				<healingRate mul="1.0"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<tile>
+					<noFeatureCategory name="WireWeed"/>
+				</tile>
+			</conditions>
+			<effects>
+				<movementCost max="1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="Necrons/CityDefenseBonus">
+			<conditions>
+				<unit>
+					<allied/>
+				</unit>
+			</conditions>
+			<effects>
+				<cityDamageReduction add="0.08"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Flyer"/>
+					<noTrait name="Fortification"/>
+					<noTrait name="MonstrousCreature"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<rangedDamageReduction add="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

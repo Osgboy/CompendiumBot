@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff" rankMax="2" icon="Actions/Tau/BreakComposure">
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<self>
+						<attacking/>
+					</self>
+					<opponent>
+						<noAttacking/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<morale addMin="-2" addMax="-6"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>
+</trait>

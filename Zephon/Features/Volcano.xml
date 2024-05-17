@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="Volcano" blockingSight="1">
+	<model>
+		<simpleModel effectsBlueprint="Effects/Volcano"
+				flow="1"
+				groundFlow="1"
+				groundMaterial="Features/VolcanoGround"
+				groundMesh="Features/VolcanoGround"
+				material="Features/Volcano"
+				mesh="Features/Volcano"
+				scale="1 1 1"
+				transparent="0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

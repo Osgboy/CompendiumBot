@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<onTraitRemovedModifiers>
+		<modifier visible="0">
+			<effects>
+				<movement min="999"/>
+			</effects>
+		</modifier>
+	</onTraitRemovedModifiers>
+	<modifiers>
+		<modifier>
+			<effects>
+				<movementMax max="1"/>
+				<rangedAttacks mul="1.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

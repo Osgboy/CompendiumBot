@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<building position="0">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<energyUpkeep base="2.0"/> <!-- %energyUpkeep base tier=6 factor=1 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1 -->
+				<populationRequired base="1"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<slotsRequired base="1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<production add="6"/>
+				<minerals add="2"/>
+				<influence add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseConstructionScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<acquireTile/>
+		<clearTile/>
+		<constructFeature feature="Bleed" requiredUpgrade="BleedCultivation">
+			<beginTargets>
+				<target>
+					<conditions>
+						<tile>
+							<noFeature type="Forest"/>
+						</tile>		
+					</conditions>
+				</target>
+			</beginTargets>
+		</constructFeature>
+		<produceUnit unit="Engineer" requiredUpgrade="Engineer"/>
+		<constructBuilding building="Construction" requiredUpgrade="Construction"/>
+		<constructBuilding building="HumanInfantry"  requiredUpgrade="HumanInfantry"/>
+		<constructBuilding building="HumanVehicles" requiredUpgrade="HumanVehicles"/>
+		<constructBuilding building="HumanAircraft" requiredUpgrade="HumanAircraft"/>
+		<constructBuilding building="HumanOperations" requiredUpgrade="HumanOperations"/>
+		<constructBuilding building="VoiceInfantry"  requiredUpgrade="VoiceInfantry"/>
+		<constructBuilding building="VoiceVehicles"  requiredUpgrade="VoiceVehicles"/>
+		<constructBuilding building="VoiceAircraft" requiredUpgrade="VoiceAircraft"/>
+		<constructBuilding building="VoiceOperations" requiredUpgrade="VoiceOperations"/>
+		<constructBuilding building="CyberInfantry"  requiredUpgrade="CyberInfantry"/>
+		<constructBuilding building="CyberVehicles" requiredUpgrade="CyberVehicles"/>
+		<constructBuilding building="CyberAircraft" requiredUpgrade="CyberAircraft"/>
+		<constructBuilding building="CyberOperations" requiredUpgrade="CyberOperations"/>	
+		<constructBuilding building="Food"/>
+		<constructBuilding building="Minerals"/>
+		<constructBuilding building="Transuranium" requiredUpgrade="Transuranium"/>
+		<constructBuilding building="Energy"/>
+		<constructBuilding building="Antimatter" requiredUpgrade="Antimatter"/>
+		<constructBuilding building="Algae"  requiredUpgrade="Algae"/>
+		<constructBuilding building="DimensionalEchoes" requiredUpgrade="DimensionalEchoes"/>
+		<constructBuilding building="Chips"  requiredUpgrade="Chips"/>
+		<constructBuilding building="SingularityCores" requiredUpgrade="SingularityCores"/>	
+		<constructBuilding building="Influence" requiredUpgrade="Influence"/>
+		<constructBuilding building="Research" requiredUpgrade="Research"/>
+		<constructBuilding building="PopulationLimit" requiredUpgrade="PopulationLimit"/>
+		<constructBuilding building="Loyalty" requiredUpgrade="Loyalty"/>
+	</actions>
+	<traits>
+		<trait type="ConstructionUpgrade" requiredUpgrade="ConstructionUpgrade"/>
+		<trait type="HumanVehiclesUpgrade" requiredUpgrade="HumanVehiclesUpgrade"/>
+	</traits>	
+</building>

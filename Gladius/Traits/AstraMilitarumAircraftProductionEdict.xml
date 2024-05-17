@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibilityCategory="Building" icon="Actions/AstraMilitarumAircraftProductionEdict">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="AstraMilitarum/Aircraft"/>
+				</building>
+			</conditions>
+			<effects>
+				<production mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

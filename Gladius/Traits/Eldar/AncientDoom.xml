@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<faction name="ChaosSpaceMarines"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<accuracy mul="0.17"/>
+				<damageTaken mul="0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

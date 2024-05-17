@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit>
+	<model>
+		<structureUnit effectsBlueprint="Effects/%1%Headquarters"
+				explosionsBone="HQ"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Units/%1%Headquarters"
+				mesh="Units/%1%Headquarters"
+				normalWeight="0.1"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="3"/>
+				<groupSizeMax base="1"/>
+				<moraleMax base="8"/>
+				<movementMax base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<attack beginFire="1.0"
+						endFire="2.3"
+						responseSound="Units/Responses/HeadquartersAttack"
+						responseSoundCount="3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+			</model>
+		</skip>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait type="Fortification"/>
+		<trait type="Headquarters"/>
+		<trait type="HeadquartersAccuracyUpgrade" requiredUpgrade="HeadquartersAccuracyUpgrade"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

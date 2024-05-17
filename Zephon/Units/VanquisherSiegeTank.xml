@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human">
+	<model>
+		<unit explosionsBone="Hull"
+				explosionSound="Explosions/Units/MediumHuman"
+				explosionSoundCount="12"
+				groupMemberDeltaX="90"
+				groupMemberDeltaY="50"
+				material="Units/VanquisherSiegeTank"
+				mesh="Units/VanquisherSiegeTank"
+				scale="0.9 0.9 0.9">
+		</unit>
+	</model>
+	<weapons>
+		<weapon type="SiegeCannon">
+			<models>
+				<projectileWeapon fireInterval="1.14"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						windupDuration="1.0"/>
+			</models>
+		</weapon>
+		<weapon type="HeavyMachineGun" requiredUpgrade="HeavyMachineGun">
+			<models>
+				<projectileWeapon mesh="Units/VanquisherSiegeTankHeavyMachineGun" 
+						material="Units/CycloneHeavyMachineGun"
+						bone="Machinegun"
+						muzzleBone="Machinegun_Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="DozerBlade">
+			<models>
+				<weapon mesh="Units/VanquisherSiegeTankDozerBlade"
+						material="Units/CycloneDozerBlade"
+						bone="Dozer"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="ExtraPlating">
+			<models>
+				<weapon mesh="Units/VanquisherSiegeTankExtraPlating"
+						material="Units/CycloneExtraPlating"
+						bone="Hull"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="SmokeLauncher">
+			<models>
+				<weapon mesh="Units/VanquisherSiegeTankSmokeLauncher"
+						material="Units/CycloneSmokeLauncher"
+						bone="Hull"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="8"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="80"/> <!-- %mineralsCost base tier=8 factor=1 -->
+				<mineralsUpkeep base="4.0"/> <!-- %mineralsUpkeep base tier=8 factor=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/VanquisherSiegeTankAttack"
+						beginFire="0.1"
+						endFire="1.77"
+						sound="Units/VanquisherSiegeTankAttack"
+						responseSound="Units/Responses/VanquisherSiegeTankAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/VanquisherSiegeTankDie0"
+						sound="Units/CycloneDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/VanquisherSiegeTankImpact"
+						responseSound="Units/Responses/VanquisherSiegeTankEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/VanquisherSiegeTankIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/VanquisherSiegeTankMove"
+						responseSound="Units/Responses/VanquisherSiegeTankMove"
+						responseSoundCount="3"
+						sound="Units/CycloneMove"
+						soundCount="1"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="SmokeLauncher"
+				cooldown="10"
+				requiredUpgrade="SmokeLauncher">
+			<model>
+				<cast responseSound="Units/Responses/VanquisherSiegeTankSmokeLauncher"
+						sound="Actions/SmokeLauncher"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="0.5"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+<!-- 		<useWeapon cooldown="10"
+				consumedActionPoints="0"
+				requiredActionPoints="0"
+				weaponSlotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.1"
+						responseSound="Units/Responses/VanquisherSiegeTankShirakiCruiseMissile"/>
+			</model>
+		</useWeapon> -->
+	</actions>
+	<traits>
+		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>
+		<trait type="ExtraPlating" requiredUpgrade="ExtraPlating"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

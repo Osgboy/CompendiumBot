@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait name="Broken"/>
+				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction min="0.17"/>
+				<witchfireDamageReduction min="0.17"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="SistersOfBattle/VowOfTheMilitantOrder">
+			<conditions>
+				<unit>
+					<trait name="Broken"/>
+				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction min="0.17"/>
+				<witchfireDamageReduction min="0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

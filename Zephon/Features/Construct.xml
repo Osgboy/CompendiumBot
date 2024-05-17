@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Construct"
+		category="Ground">
+	<ground channel="5"/>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots add="3"/>
+				<chips mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<rocks material="Terrain/ConstructRocks">
+		<meshes>
+			<mesh name="Terrain/Rocks/Rock0"/>
+			<mesh name="Terrain/Rocks/Rock1"/>
+			<mesh name="Terrain/Rocks/Rock2"/>
+			<mesh name="Terrain/Rocks/Rock3"/>
+			<mesh name="Terrain/Rocks/Rock4"/>
+			<mesh name="Terrain/Rocks/Rock5"/>
+			<mesh name="Terrain/Rocks/Rock6"/>
+			<mesh name="Terrain/Rocks/Rock7"/>
+			<mesh name="Terrain/Rocks/Rock8"/>
+			<mesh name="Terrain/Rocks/Rock9"/>
+			<mesh name="Terrain/Rocks/Rock10"/>
+			<mesh name="Terrain/Rocks/Rock11"/>
+		</meshes>
+	</rocks>
+	<vegetation>
+		<bushes>
+			<meshes>
+				<mesh name="Terrain/Vegetation/PalmBush6"/>
+				<mesh name="Terrain/Vegetation/Grass0"/>
+				<mesh name="Terrain/Vegetation/Grass1"/>
+				<mesh name="Terrain/Vegetation/Grass2"/>
+				<mesh name="Terrain/Vegetation/Grass3"/>
+				<mesh name="Terrain/Vegetation/Grass4"/>
+				<mesh name="Terrain/Vegetation/DeadBush0"/>
+				<mesh name="Terrain/Vegetation/DeadBush1"/>
+				<mesh name="Terrain/Vegetation/DeadBush2"/>
+				<mesh name="Terrain/Vegetation/DeadTree0"/>
+				<mesh name="Terrain/Vegetation/DeadTree1"/>
+				<mesh name="Terrain/Vegetation/DeadTree2"/>
+				<mesh name="Terrain/Vegetation/DeadTree3"/>
+				<mesh name="Terrain/Vegetation/TechPlant0"/>
+				<mesh name="Terrain/Vegetation/TechPlant1"/>
+				<mesh name="Terrain/Vegetation/TechPlant2"/>
+				<mesh name="Terrain/Vegetation/TechPlant3"/>
+				<mesh name="Terrain/Vegetation/TechPlantL0"/>
+				<mesh name="Terrain/Vegetation/TechPlantL1"/>
+				<mesh name="Terrain/Vegetation/TechPlantL2"/>
+				<mesh name="Terrain/Vegetation/TechPlantL3"/>
+				<mesh name="Terrain/Vegetation/TechPlantS0"/>
+				<mesh name="Terrain/Vegetation/TechPlantS1"/>
+				<mesh name="Terrain/Vegetation/TechPlantS2"/>
+				<mesh name="Terrain/Vegetation/TechPlantS3"/>
+				<mesh name="Terrain/Vegetation/TechPlantS4"/>
+			</meshes>	
+		</bushes>
+		<trees>
+			<meshes>
+				<mesh name="Terrain/Vegetation/Tree11"/>
+				<mesh name="Terrain/Vegetation/Tree12"/>
+				<mesh name="Terrain/Vegetation/Tree13"/>
+				<mesh name="Terrain/Vegetation/Tree14"/>
+				<mesh name="Terrain/Vegetation/Tree9"/>
+				<mesh name="Terrain/Vegetation/Tree10"/>
+				<mesh name="Terrain/Vegetation/Tree7"/>
+				<mesh name="Terrain/Vegetation/Tree8"/>
+				<mesh name="Terrain/Vegetation/Tree6"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL1"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL2"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL3"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL4"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL5"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL6"/>
+				<mesh name="Terrain/Vegetation/TechPlantXL7"/>
+			</meshes>
+		</trees>
+	</vegetation>
+	<decals>
+		<meshes>
+			<mesh name="Terrain/Decals/GroundTechDecal0"/>	
+			<mesh name="Terrain/Decals/GroundTechDecal1"/>	
+			<mesh name="Terrain/Decals/GroundTechDecal2"/>
+			<mesh name="Terrain/Decals/CrackedTechDecal0"/>
+			<mesh name="Terrain/Decals/CrackedTechDecal1"/>
+			<mesh name="Terrain/Decals/CrackedTechDecal2"/>
+			<mesh name="Terrain/Decals/CraterDecal0"/>	
+			<mesh name="Terrain/Decals/CraterDecal1"/>	
+			<mesh name="Terrain/Decals/CraterDecal2"/>
+		</meshes>
+	</decals>
+</feature>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement10">
+	<model>
+		<unit mesh="Units/Orks/MegatrakkScrapjet"
+				material="Units/Orks/MegatrakkScrapjet"
+				idleAnimation="Units/Orks/MegatrakkScrapjetIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				explosionsBone="Hull_Rot"/>
+	</model>
+	<weapons>
+		<weapon name="RokkitKannon">
+			<model>
+				<missileWeapon muzzleBone="Launcher" missileScale="0.7" fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedBigShoota" count="2">
+			<model>
+				<projectileWeapon muzzleBone="BigShoota" muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="WingMissiles">
+			<model>
+				<missileWeapon muzzleBone="Missile" muzzleCount="3" missileScale="0.7" fireInterval="1.2"/>
+			</model>
+		</weapon>
+		<weapon name="NoseDrill">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<hitpointsMax base="18.0"/> <!-- %hitpointsMax base toughness=6 wounds=3 -->
+				<influenceUpkeep base="2.0"/> <!-- %influenceUpkeep base tier=6 factor=1 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<oreCost base="40.0"/> <!-- %oreCost base tier=6 factor=1 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="4"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/MegatrakkScrapjetAttack"
+						beginFire="1.17"
+						endFire="2.33"
+						chargeAnimation="Units/Orks/MegatrakkScrapjetCharge"
+						chargeBeginFire="0.16"
+						chargeEndFire="1.17"
+						meleeAnimation="Units/Orks/MegatrakkScrapjetMelee"
+						meleeBeginSwing="0.03"
+						meleeEndSwing="1.17"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/MegatrakkScrapjetDie"
+						animationCount="2"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0"
+						voiceSound="Units/Orks/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Orks/MegatrakkScrapjetMove"
+						sound="Units/Orks/MegatrakkScrapjetMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<ereWeGo consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="1"
+				usableInTransport="1">
+			<model>
+				<action sound="Actions/OrksBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="EreWeGo"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</ereWeGo>
+	</actions>
+	<traits>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="Orks/GrotGunner"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="Vehicle"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="OrkoidFungusBonusHealingRate" requiredUpgrade="Orks/OrkoidFungusBonusHealingRate"/>
+		<trait name="RedPaintJob" requiredUpgrade="Orks/RedPaintJob"/>
+	</traits>
+</unit>

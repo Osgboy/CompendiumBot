@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement8">
+	<model>
+		<unit mesh="Units/AstraMilitarum/Ratling"
+				material="Units/AstraMilitarum/Ratling"
+				idleAnimation="Units/AstraMilitarum/RatlingIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="6" rowSize="3" memberDeltaX="70" memberDeltaY="50"/>
+	<weapons>
+		<weapon name="SniperRifle">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="10"
+						effectScale="0.75"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=5 factor=1 -->
+				<foodCost base="15.0"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<hitpointsMax base="1.5"/> <!-- %hitpointsMax base toughness=2 wounds=1 -->
+				<meleeAccuracy base="4"/> <!-- %meleeAccuracy base weaponSkill=2 -->
+				<meleeAttacks base="1"/>
+				<oreCost base="15.0"/> <!-- %oreCost base tier=5 factor=0.5 -->
+				<strengthDamage base="0.75"/> <!-- %strengthDamage base strength=2 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/AstraMilitarum/RatlingAttack"
+						beginFire="1.3" endFire="1.4"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/AstraMilitarum/RatlingDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="0.4"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/AstraMilitarum/RatlingMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+		<trait name="Infiltrate"/>
+		<trait name="AstraMilitarum/ShootSharpAndScarper"/>
+		<trait name="Stealth"/>
+	</traits>
+</unit>

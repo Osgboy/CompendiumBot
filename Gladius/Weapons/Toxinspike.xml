@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/ToxinSpike"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="0"/> <!-- %meleeArmorPenetration add armorPiercing=6 -->
+				<meleeAttacks base="1"/>
+				<meleeDamage add="0.5"/> <!-- %meleeDamage add strength=1 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Tyranids/Biomorph"/>
+		<trait name="Tyranids/BiomorphDamage" requiredUpgrade="Tyranids/BiomorphDamage"/>
+		<trait name="Melee"/>
+		<trait name="Poisoned" rank="4"/>
+	</traits>
+</weapon>

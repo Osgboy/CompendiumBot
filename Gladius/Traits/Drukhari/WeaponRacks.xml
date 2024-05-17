@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visible="1" >
+	<onUnitDisembarked>
+		<area affects="Unit">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait name="TwinLinked" duration="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onUnitDisembarked>
+</trait>
