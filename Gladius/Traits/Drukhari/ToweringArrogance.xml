@@ -2,6 +2,12 @@
 <trait category="Buff" icon="Actions/Drukhari/ToweringArrogance" rankMax="0">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<unit>
+					<allied/>
+					<faction name="Drukhari"/>
+				</unit>
+			</conditions>
 			<effects>
 				<moraleLossFactor mul="-0.5"/>
 			</effects>

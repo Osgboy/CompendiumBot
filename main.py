@@ -11,10 +11,10 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = commands.Bot(command_prefix='$', intents=intents)
-englishPath = './Gladius/English/'
-englishUnitsXMLPath = './Gladius/English/Units.xml'
-englishWeaponsXMLPath = './Gladius/English/Weapons.xml'
-englishTraitsXMLPath = './Gladius/English/Traits.xml'
+ENGLISH_PATH = './Gladius/English/'
+ENGLISH_UNITS_XML_PATH = './Gladius/English/Units.xml'
+ENGLISH_WEAPONS_XML_PATH = './Gladius/English/Weapons.xml'
+ENGLISH_TRAITS_XML_PATH = './Gladius/English/Traits.xml'
 
 class Obj():
     def __init__(self, name: str):
@@ -23,9 +23,10 @@ class Obj():
         self.bestMatch = ''
         self.internalID = ''
         self.XMLPath = ''
+        self.iconPath = ''
 
-    def get_info_English(self, xmlPath: str, typeFunc):
-        tree = ET.parse(xmlPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+    def get_info_English(self, classXMLPath: str, typeFunc):
+        tree = ET.parse(classXMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         bestRatio = 0
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
@@ -39,6 +40,10 @@ class Obj():
                 if fuzzRatio > bestRatio:
                     bestRatio = fuzzRatio
                     self.bestMatch = targetStr
+
+    def get_icon(self):
+        tree = ET.parse(self.XMLPath)
+        self.iconPath = tree.getroot().get('icon')
 
     @classmethod
     def from_internalID(cls, internalID: str, xmlPath: str):
@@ -76,7 +81,7 @@ class Unit(Obj):
         self.influenceUpkeep: str = '0'
         self.influenceCost: str = '0'
         self.moraleMax: str = '0'
-        self.movementMax: str = '3'
+        self.movementMax: str = '0'
         self.oreUpkeep: str = '0'
         self.oreCost: str = '0'
         self.productionCost: str = '0'
@@ -88,7 +93,11 @@ class Unit(Obj):
 
     def get_unit_info(self, xmlTree, entry):
         self.factionAndID = entry.get('name')
-        self.faction, self.internalID = self.factionAndID.split('/')
+        try:
+            self.faction, self.internalID = self.factionAndID.split('/')
+        # only for Neutral/Artefacts/unit.xml
+        except ValueError:
+            self.faction, self.internalID = self.factionAndID.split('/')[0], self.factionAndID.split('/')[-1] 
         self.XMLPath = './Gladius/Units/' + self.factionAndID + '.xml'
         for e in xmlTree:
             targetStr = e.get('name')
@@ -118,18 +127,26 @@ class Unit(Obj):
 
     def get_unit_weapons(self):
         tree = ET.parse(self.XMLPath)
-        for weapon in tree.find('weapons').iterfind('weapon'):
-            if weapon.get('name') == 'None':
-                continue
-            weaponObj = Weapon.from_internalID(weapon.get('name'), englishWeaponsXMLPath)
-            # {weaponObj:(weaponCount, requiredUpgrade, enabled), ...}
-            self.weapons[weaponObj] = (weapon.get('count', default='1'), weapon.get('requiredUpgrade'), weapon.get('enabled', default="1"))
+        try:    
+            for weapon in tree.find('weapons').iterfind('weapon'):
+                if weapon.get('name') == 'None':
+                    continue
+                weaponObj = Weapon.from_internalID(weapon.get('name'), ENGLISH_WEAPONS_XML_PATH)
+                # {weaponObj:(weaponCount, requiredUpgrade, enabled), ...}
+                self.weapons[weaponObj] = (weapon.get('count', default='1'), weapon.get('requiredUpgrade'), weapon.get('enabled', default="1"))
+        # no weapons
+        except AttributeError:
+            pass
 
     def get_unit_traits(self):
         tree = ET.parse(self.XMLPath)
-        for trait in tree.find('traits').iterfind('trait'):
-            traitObj = Trait.from_internalID(trait.get('name'), englishTraitsXMLPath)
-            self.traits[traitObj] = trait.get('requiredUpgrade')
+        try:
+            for trait in tree.find('traits').iterfind('trait'):
+                traitObj = Trait.from_internalID(trait.get('name'), ENGLISH_TRAITS_XML_PATH)
+                self.traits[traitObj] = trait.get('requiredUpgrade')
+        # no traits
+        except AttributeError:
+            pass
 
 class Weapon(Obj):
     def __init__(self, name: str):
@@ -159,15 +176,11 @@ class Trait(Obj):
             elif targetStr == self.factionAndID + 'Flavor':
                 self.flavor = val2val(e.get('value'))
 
-    def get_trait_icon(self):
-        tree = ET.parse(self.XMLPath)
-        self.iconPath = tree.getroot().get('icon')
-
 def val2val(value: str) -> str:
     if '<string name=' in value:
         path = ET.fromstring(value).get('name')
         file, name = path.split('/', 1)
-        tree = ET.parse(englishPath + file + '.xml', parser=ET.XMLParser(recover=True, remove_comments=True))
+        tree = ET.parse(ENGLISH_PATH + file + '.xml', parser=ET.XMLParser(recover=True, remove_comments=True))
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
             if entry.get('name') == name:
@@ -215,11 +228,12 @@ async def on_ready():
 @client.tree.command(name='gunit', description='Return info on a Gladius unit')
 async def gunit(interaction: discord.Interaction, unitname:str):
     unit = Unit(unitname)
-    unit.get_info_English(englishUnitsXMLPath, unit.get_unit_info)
+    unit.get_info_English(ENGLISH_UNITS_XML_PATH, unit.get_unit_info)
     if not unit.found:
         markdown = '**'
         await interaction.response.send_message(markdown + unitname + markdown + ' not found. Did you mean ' + markdown + unit.bestMatch + markdown + '?')
     else:
+        unit.get_icon()
         unit.get_unit_stats()
         unit.get_unit_count()
         unit.get_unit_weapons()
@@ -227,10 +241,6 @@ async def gunit(interaction: discord.Interaction, unitname:str):
 
         #Name and Description
         embed = discord.Embed(title=unit.name, description=unit.description)
-
-        #Thumbnail
-        image = discord.File('./Gladius/Icons/Units/' + unit.factionAndID + '.png', filename='icon.png')
-        embed.set_thumbnail(url="attachment://icon.png")
 
         #Color
         embed.colour = factionColors[unit.faction]
@@ -255,9 +265,12 @@ async def gunit(interaction: discord.Interaction, unitname:str):
             if upkeepValue != '0':
                 upkeepText.extend((' | ', icons[upkeep], ' ', upkeepValue))
         try:
+            # delete initial ' | '
             del upkeepText[0]
         except IndexError:
             pass
+        if upkeepText == []:
+            upkeepText = ['None']
         embed.add_field(name="Upkeep", value=''.join(upkeepText))
 
         #Stats
@@ -281,6 +294,8 @@ async def gunit(interaction: discord.Interaction, unitname:str):
             else:
                 secondary = ''
             weaponsText.extend((unit.weapons[weapon][0], 'x ', weapon.name, upgrade, secondary, '\n'))
+        if weaponsText == []:
+            weaponsText = ['None']
         embed.add_field(name="Weapons", value=''.join(weaponsText))
 
         #Traits
@@ -292,6 +307,8 @@ async def gunit(interaction: discord.Interaction, unitname:str):
             else:
                 upgrade = ''
             traitsText.extend((trait.name, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
         embed.add_field(name="Traits", value=''.join(traitsText), inline=False)
         
         #Flavor
@@ -299,17 +316,26 @@ async def gunit(interaction: discord.Interaction, unitname:str):
         #embed.set_footer(text=unit.flavor)
         embed.set_footer(text='Traits/weapons marked with (U) require a researchable upgrade.\nWeapons marked with (S) are secondary weapons.')
 
-        await interaction.response.send_message(file=image, embed=embed)
+        #Thumbnail
+        try:
+            if unit.iconPath:
+                image = discord.File('./Gladius/Icons/' + unit.iconPath + '.png', filename='icon.png')
+            else:
+                image = discord.File('./Gladius/Icons/Units/' + unit.factionAndID + '.png', filename='icon.png')
+            embed.set_thumbnail(url="attachment://icon.png")
+            await interaction.response.send_message(file=image, embed=embed)
+        except FileNotFoundError:
+            await interaction.response.send_message(embed=embed)
 
 @client.tree.command(name='gtrait', description='Return info on a Gladius trait')
 async def gtrait(interaction: discord.Interaction, traitname:str):
     trait = Trait(traitname)
-    trait.get_info_English(englishTraitsXMLPath, trait.get_trait_info)
+    trait.get_info_English(ENGLISH_TRAITS_XML_PATH, trait.get_trait_info)
     if not trait.found:
         markdown = '**'
         await interaction.response.send_message(markdown + traitname + markdown + ' not found. Did you mean ' + markdown + trait.bestMatch + markdown + '?')
     else:
-        trait.get_trait_icon()
+        trait.get_icon()
 
         #Name and Description
         embed = discord.Embed(title=trait.name, description=trait.description)        

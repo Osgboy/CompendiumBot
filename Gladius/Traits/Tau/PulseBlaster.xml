@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<overwatching/>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mul="0.5"/>
+				<armorPenetration add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

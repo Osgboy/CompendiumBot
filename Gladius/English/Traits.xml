@@ -170,6 +170,9 @@
 	<entry name="AdeptusMechanicus/IconsOfTheOmnissiah" value="Icons of the Omnissiah"/>
 	<entry name="AdeptusMechanicus/IconsOfTheOmnissiahDescription" value="Increases the loyalty output for each building in an adjacent tile."/>
 	<entry name="AdeptusMechanicus/IconsOfTheOmnissiahFlavor" value="Protect us, master. Free us, Machine God. The Omnissiah comes. The Omnissiah comes. THE OMNISSIAH COMES. Punish the flesh."/>
+	<entry name="AdeptusMechanicus/IncenseCloud" value="Incense Cloud"/>
+	<entry name="AdeptusMechanicus/IncenseCloudDescription" value="Increases the ranged damage reduction."/>
+	<entry name="AdeptusMechanicus/IncenseCloudFlavor" value="The secrets behind Aldebrac Vingh’s creation of the perpetual motion engines that power the ancient Ironstriders has been lost, so they are venerated indeed by the Cultists of Mars. The sacred incense that enshrouds them is both a symbol of their veneration and an effective cover against enemy fire."/>
 	<entry name="AdeptusMechanicus/IncantationOfTheIronSoul" value="<string name='Actions/AdeptusMechanicus/IncantationOfTheIronSoul'/>"/>
 	<entry name="AdeptusMechanicus/IncantationOfTheIronSoulDescription" value="Reduces the morale loss."/>
 	<entry name="AdeptusMechanicus/IncantationOfTheIronSoulFlavor" value="<string name='Actions/AdeptusMechanicus/IncantationOfTheIronSoulFlavor'/>"/>
@@ -632,7 +635,7 @@
 	<entry name="Drukhari/AncientEvil" value="<string name='Actions/Drukhari/AncientEvil'/>"/>
 	<entry name="Drukhari/AncientEvilDescription" value="Attacked units lose morale."/>
 	<entry name="Drukhari/AncientEvilFlavor" value="<string name='Actions/Drukhari/AncientEvilFlavor'/>"/>
-	<entry name="Drukhari/AssaultWeaponBonus" value="Assault Weapon Bonus"/>
+	<entry name="Drukhari/AssaultWeaponBonus" value="Deviant Designs"/>
 	<entry name="Drukhari/AssaultWeaponBonusDescription" value="Increases the armour penetration."/>
 	<entry name="Drukhari/AssaultWeaponBonusFlavor" value="The weaponmasters of the Kabalite foundries possess access to weapon variants normally considered impossible or totally unethical. Which, of course, is simply a question about how much a particular Archon is willing to pay to get them."/>
 	<entry name="Drukhari/BetrayalCulture" value="Betrayal Culture"/>
@@ -685,19 +688,19 @@
 	<entry name="Drukhari/FlickerfieldFlavor" value="Flickerfields are highly advanced optical force shields that make the vehicle they are fitted to appear to flicker in and out of reality."/>
 	<entry name="Drukhari/GhostplateArmour" value="Ghostplate Armour"/>
 	<entry name="Drukhari/GhostplateArmourDescription" value="Increases the invulnerable damage reduction."/>
-	<entry name="Drukhari/GhostplateArmourFlavor" value="Those Dark Eldar who desire a substantial amount of protection whilst retaining a high degree of mobility wear armour made from hardened resins and shot through with pockets of lighter-than-air gas. Ghostplate armour also incorporates minor forcefield technology the better to protect its wearer."/>
+	<entry name="Drukhari/GhostplateArmourFlavor" value="Those Drukhari who desire a substantial amount of protection whilst retaining a high degree of mobility wear armour made from hardened resins and shot through with pockets of lighter-than-air gas. Ghostplate armour also incorporates minor forcefield technology the better to protect its wearer."/>
 	<entry name="Drukhari/GrislyTrophies" value="<string name='Actions/Drukhari/GrislyTrophies'/>"/>
 	<entry name="Drukhari/GrislyTrophiesDescription" value="Reduces the morale loss."/>
 	<entry name="Drukhari/GrislyTrophiesFlavor" value="<string name='Actions/Drukhari/GrislyTrophiesFlavor'/>"/>
-	<entry name="Drukhari/HeavyWeaponBonus" value="Heavy Weapon Bonus"/>
+	<entry name="Drukhari/HeavyWeaponBonus" value="Equipoise Ordnance"/>
 	<entry name="Drukhari/HeavyWeaponBonusDescription" value="Increases the armour penetration."/>
-	<entry name="Drukhari/HeavyWeaponBonusFlavor" value="“Pain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.” – Urien Rakarth, Master of the Haemonculi"/>
+	<entry name="Drukhari/HeavyWeaponBonusFlavor" value="“Do not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night—and eternal torment.” – Gyrthineus Roche, Archon of The Last Blade"/>
 	<entry name="Drukhari/MasterOfPain" value="<string name='Actions/Drukhari/MasterOfPain'/>"/>
 	<entry name="Drukhari/MasterOfPainDescription" value="Grants additional feel no pain damage reduction."/>
 	<entry name="Drukhari/MasterOfPainFlavor" value="<string name='Actions/Drukhari/MasterOfPainFlavor'/>"/>
-	<entry name="Drukhari/MeleeWeaponBonus" value="Melee Weapon Bonus"/>
+	<entry name="Drukhari/MeleeWeaponBonus" value="Blade Aesthetics, Perfected"/>
 	<entry name="Drukhari/MeleeWeaponBonusDescription" value="Increases the armour penetration."/>
-	<entry name="Drukhari/MeleeWeaponBonusFlavor" value="“Do not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night—and eternal torment.” – Gyrthineus Roche, Archon of The Last Blade"/>
+	<entry name="Drukhari/MeleeWeaponBonusFlavor" value="“Pain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.” – Urien Rakarth, Master of the Haemonculi"/>
 	<entry name="Drukhari/NightShields" value="Night Shields"/>
 	<entry name="Drukhari/NightShieldsDescription" value="Increases the ranged damage reduction."/>
 	<entry name="Drukhari/NightShieldsFlavor" value="The vehicle is covered by a broad-spectrum displacement field, enveloping it in cold and inky darkness. Foes find the vehicle hard to target, hidden as it is within a cloak of roiling shadow."/>
@@ -708,8 +711,8 @@
 	<entry name="Drukhari/OverlordDescription" value="Increases the accuracy."/>
 	<entry name="Drukhari/OverlordFlavor" value="<string name='Actions/Drukhari/OverlordFlavor'/>"/>
 	<entry name="Drukhari/PowerFromPain" value="Power from Pain"/>
-	<entry name="Drukhari/PowerFromPainDescription" value="Grants combat bonuses as the unit levels up. Increases damage reduction above level 2, increases melee damage above level 5 and reduces the morale loss above level 9."/>
-	<entry name="Drukhari/PowerFromPainFlavor" value="As Dark Eldar feed on the souls of their foes, they become imbued with supernatural might, eventually turning into killing machines."/>
+	<entry name="Drukhari/PowerFromPainDescription" value="Grants combat bonuses as the unit levels up. Increases damage reduction at and above level 3, increases melee damage at and above level 6 and reduces the morale loss at level 10."/>
+	<entry name="Drukhari/PowerFromPainFlavor" value="As Drukhari feed on the souls of their foes, they become imbued with supernatural might, eventually turning into killing machines."/>
 	<entry name="Drukhari/RaidersTactics" value="Raiders Tactics"/>
 	<entry name="Drukhari/RaidersTacticsDescription" value="Grants bonus traits when this unit disembarks from a transport."/>
 	<entry name="Drukhari/RaidersTacticsFlavor" value="“Why do we ride atop these elegant craft? The better to hear the screams of our prey as we ride them down, to savour the fear etched on their faces, to taste the tantalising tang of their blood in the air as an appetiser before the feast. But most of all we ride them so that the slaughter may begin as soon as possible.” – Dariaq Bladetongue of the Pierced Eye"/>
@@ -757,7 +760,7 @@
 	<entry name="Drukhari/WealthPlunderFlavor" value="“Near to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations… everything spilled. To stop the pain. Why should it stop, though. When it is so… productive.” – Arkanic, Haemonculus to Kabal of The Last Blade"/>
 	<entry name="Drukhari/WeaponRacks" value="Weapon Racks"/>
 	<entry name="Drukhari/WeaponRacksDescription" value="Grants twin-linked for one turn to units that disembark from this vehicle."/>
-	<entry name="Drukhari/WeaponRacksFlavor" value="Some Dark Eldar vehicles carry additional racks of anti-personnel weaponry on their decks. This allows passengers to literally empty their weapons’ magazines in great raking fusillades, before discarding their spent guns in favour of fully-loaded replacements as they disembark."/>
+	<entry name="Drukhari/WeaponRacksFlavor" value="Some Drukhari vehicles carry additional racks of anti-personnel weaponry on their decks. This allows passengers to literally empty their weapons’ magazines in great raking fusillades, before discarding their spent guns in favour of fully-loaded replacements as they disembark."/>
 	<entry name="Drukhari/WhirlingDeath" value="<string name='Actions/Drukhari/WhirlingDeath'/>"/>
 	<entry name="Drukhari/WhirlingDeathDescription" value="Hits all group members of the target unit."/>
 	<entry name="Drukhari/WhirlingDeathFlavor" value="<string name='Actions/Drukhari/WhirlingDeathFlavor'/>"/>
@@ -1172,6 +1175,9 @@
 	<entry name="Necrons/GrowthBonus" value="Reanimation Rituals"/>
 	<entry name="Necrons/GrowthBonusDescription" value="Increases the growth rate."/>
 	<entry name="Necrons/GrowthBonusFlavor" value="Establishing more efficient protocols for recovering the long-buried Necrons from their tombs reduces the loss from clumsy slave excavators."/>
+	<entry name="Necrons/HardwiredForDestruction" value="Hardwired For Destruction"/>
+	<entry name="Necrons/HardwiredForDestructionDescription" value="Increases the accuracy."/>
+	<entry name="Necrons/HardwiredForDestructionFlavor" value="The Necrons of the Destroyer Cult are hate-fuelled harvesters of the living, obsessed with the eradication of all sentient beings. They task the Crypteks with modifying their bodies to turn themselves into optimised killing machines. On Gladius Prime, the recently risen Skorpekh Destroyers demonstrate that perfectly, landing brutally accurate blows with their great blades."/>
 	<entry name="Necrons/HousingBuildingBonus" value="Shelter Compression"/>
 	<entry name="Necrons/HousingBuildingBonusDescription" value="Increases the population limit."/>
 	<entry name="Necrons/HousingBuildingBonusFlavor" value="By altering the dimensional constraints of each shelter, many more Necrons can be accommodated for repair or maintenance."/>
@@ -1697,6 +1703,9 @@
 	<entry name="SpaceMarines/SuppressiveBombardment" value="Suppressive Bombardment"/>
 	<entry name="SpaceMarines/SuppressiveBombardmentDescription" value="Increases the damage and attacks pin down enemy infantry when adjacent to another Whirlwind."/>
 	<entry name="SpaceMarines/SuppressiveBombardmentFlavor" value="The Codex Astartes dictates that Whirlwinds operate best in larger groups, laying down a rolling barrage that cannot be avoided but must instead be endured. Even when sheltered, lighter-armoured troops and vehicles are utterly devastated by the relentless rain of warheads."/>
+	<entry name="SpaceMarines/StormShield" value="Storm Shield"/>
+	<entry name="SpaceMarines/StormShieldDescription" value="Increases the invulnerable damage reduction."/>
+	<entry name="SpaceMarines/StormShieldFlavor" value="A storm shield is a large, solid shield that has an energy field generator built into it. Though the bulk of the shield offers physical protection, it is the energy field which is more impressive, as it is capable of deflecting almost any attack. Even blows that would normally cut through Terminator armour are turned aside with ease by the protective energies of the storm shield."/>
 	<entry name="SpaceSlip" value="<string name='Actions/SpaceSlip'/>"/>
 	<entry name="SpaceSlipDescription" value="Increases the damage reduction."/>
 	<entry name="Stealth" value="Stealth"/>
@@ -1776,6 +1785,9 @@
 	<entry name="Tau/DroneControllerInRange" value="Drone Controller In Range"/>
 	<entry name="Tau/DroneControllerInRangeDescription" value="Increases the accuracy."/>
 	<entry name="Tau/DroneControllerInRangeFlavor" value="<string name='Actions/Tau/DroneControllerFlavor'/>"/>
+	<entry name="Tau/FieldAmplifierRelay" value="Field Amplifier Relay"/>
+	<entry name="Tau/FieldAmplifierRelayDescription" value="Increases the invulnerable damage reduction when the unit is shielded."/>
+	<entry name="Tau/FieldAmplifierRelayFlavor" value="Taking the form of a lightweight backpack unit, the field amplifier relay picks up the protective force field of the Shield Drone, spreading it in an energised umbrella over its bearer and beaming the signal on to other relays within range."/>
 	<entry name="Tau/FireTeam" value="Fire Team"/>
 	<entry name="Tau/FireTeamDescription" value="Increases the ranged accuracy when adjacent to an allied vehicle or monstrous creature."/>
 	<entry name="Tau/FireTeamFlavor" value="Some battlesuits and battle tank sensor-systems can be networked to provide enhanced efficiency when they fight in dedicated fire teams."/>
@@ -1823,6 +1835,9 @@
 	<entry name="Tau/PulseAccelerator" value="Pulse Accelerator"/>
 	<entry name="Tau/PulseAcceleratorDescription" value="Increases the range of pulse weapons."/>
 	<entry name="Tau/PulseAcceleratorFlavor" value="<string name='Actions/Tau/PulseAcceleratorFlavor'/>"/>
+	<entry name="Tau/PulseBlaster" value="Pulse Blaster"/>
+	<entry name="Tau/PulseBlasterDescription" value="Increases the damage and armor penetration of overwatch attacks."/>
+	<entry name="Tau/PulseBlasterFlavor" value="Though the T’au rightly fear close-range warfare, the necessity of warfare on space hulks or labyrinthine Imperial hive worlds led to the development of the Pulse Blaster—colloquially called a Pulse Shotgun. Uniquely, the Blaster paints its target with negatively charged particules a moment before shooting, to increase the effect when the full plasma payload hits."/>
 	<entry name="Tau/Rinyon" value="<string name='Actions/Tau/Rinyon'/>"/>
 	<entry name="Tau/RinyonDescription" value="Increases the accuracy against units adjacent to other allied units."/>
 	<entry name="Tau/RinyonFlavor" value="<string name='Actions/Tau/RinyonFlavor'/>"/>
@@ -1960,6 +1975,9 @@
 	<entry name="Tyranids/CityTier2" value="Ripper Dispersion"/>
 	<entry name="Tyranids/CityTier2Description" value="Increases the tile acquisition radius."/>
 	<entry name="Tyranids/CityTier2Flavor" value="As the hive matures, the Rippers no longer need to swarm together in such huge numbers for safety. Dispersing them, allows the hive mind to co-ordinate their reclamation behaviour over a wider range."/>
+	<entry name="Tyranids/DiffusionField" value="<string name='Actions/Tyranids/DiffusionField'/>"/>
+	<entry name="Tyranids/DiffusionFieldDescription" value="Increases the ranged damage reduction."/>
+	<entry name="Tyranids/DiffusionFieldFlavor" value="<string name='Actions/Tyranids/DiffusionFieldFlavor'/>"/>
 	<entry name="Tyranids/Dominion" value="<string name='Actions/Tyranids/Dominion'/>"/>
 	<entry name="Tyranids/DominionDescription" value="<string name='Actions/Tyranids/DominionDescription'/>"/>
 	<entry name="Tyranids/DominionFlavor" value="<string name='Actions/Tyranids/DominionFlavor'/>"/>
@@ -2022,6 +2040,12 @@
 	<entry name="Tyranids/ProductionBuildingUpkeep" value="Birthing Canals"/>
 	<entry name="Tyranids/ProductionBuildingUpkeepDescription" value="Reduces the influence upkeep."/>
 	<entry name="Tyranids/ProductionBuildingUpkeepFlavor" value="A simple shift in the structure of the great organisms that make up the Tyranid hive, birthing canals are something like biological production lines, enabling many creatures to be produced in parallel without the direct oversight of the Hive Mind."/>
+	<entry name="Tyranids/PsychicBarrier" value="Psychic Barrier"/>
+	<entry name="Tyranids/PsychicBarrierDescription" value="Increases the invulnerable damage reduction."/>
+	<entry name="Tyranids/PsychicBarrierFlavor" value="Tyranid horrors the size of the Maleceptor are not without inherent defenses. But beyond its sheer bulk and resilient armour, the Malceptor’s encephalic tissue also projects a formidable psychic barrier, capable of vaporizing or deflecting bullets and energy bolts fired at it before they strike it."/>
+	<entry name="Tyranids/PsychicOverload" value="<string name='Actions/Tyranids/PsychicOverload'/>"/>
+	<entry name="Tyranids/PsychicOverloadDescription" value="Hits with increased accuracy."/>
+	<entry name="Tyranids/PsychicOverloadFlavor" value="The ethereal pseudopods projected by a Maleceptor’s encephalic tissue are manifestations of the Shadow in the Warp itself, the Hive Mind’s nullifying psychic presence. If these should even brush a weakened opponent’s consciousness, they will directly experience the horrifying immensity of that immanence—and die rapidly, horribly and explosively."/>
 	<entry name="Tyranids/RakingStrike" value="Raking Strike"/>
 	<entry name="Tyranids/RakingStrikeDescription" value="Increases the Hive Crone's melee attacks. Additionally increases the melee attacks against flyers."/>
 	<entry name="Tyranids/RakingStrikeFlavor" value="Lengthening and hardening the bladed spurs on a Hive Crone's underside allows it to perform lethal fly-by strikes against enemies. In addition, sharpened wingtips enable the Crone to accurately target enemy pilots."/>

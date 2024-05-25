@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Tyranids/PsychicOverload">
+	<model>
+		<beamWeapon fireInterval="10.0"
+		 		beamsBlueprint="Effects/WarpBlastBurst"
+				beamsEmitterBlueprint="Effects/WarpBlastBurstEmitter"
+				muzzleFlashesBlueprint="Effects/WarpBlastMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/WarpBlastMuzzleFlashesEmitter"
+				effectFaceWeight="1.0"
+				effectScale="1.0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="8"/> <!-- %rangedArmorPenetration add armorPiercing=1 -->
+				<rangedDamage add="8"/> <!-- %rangedDamage add strength=9 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="MoraleSoak"/>
+		<trait name="Assault"/>
+		<trait name="Tyranids/LongRangedDamage" requiredUpgrade="Tyranids/LongRangedDamage"/>
+		<trait name="PsychicPower"/>
+		<trait name="Tyranids/PsychicOverload"/>
+	</traits>
+</weapon>

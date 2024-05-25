@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement14">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/ChaosTerminator"
+				material="Units/ChaosSpaceMarines/ChaosTerminator"
+				idleAnimation="Units/ChaosSpaceMarines/ChaosTerminatorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="5" rowSize="3" memberDeltaX="80" memberDeltaY="80"/>
+	<weapons>
+		<weapon name="Boltgun">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle0"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+		<weapon name="CombiPlasma" slotName="CombiPlasma" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle1"
+						fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="PowerSword">
+			<model>
+				<powerWeapon effectBone="Effect" 
+						effectBoundingVolume="Effect"
+						fireInterval="3.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="10"/> <!-- %armor base armor=2+ -->
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base toughness=4 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<foodUpkeep base="4.0"/> <!-- %foodUpkeep base tier=8 factor=1 -->
+				<foodCost base="40.0"/> <!-- %foodCost base tier=8 factor=0.5 -->
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosTerminatorAttack"
+						beginFire="1.0"
+						endFire="1.67"
+						chargeAnimation="Units/ChaosSpaceMarines/ChaosTerminatorCharge"
+						chargeBeginFire="0.5"
+						chargeEndFire="1.0"						
+						meleeAnimation="Units/ChaosSpaceMarines/ChaosTerminatorMelee"
+						meleeBeginSwing="0.1"
+						meleeEndSwing="0.7"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosTerminatorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/ChaosSpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosTerminatorMove"
+						sound="Units/SpaceMarines/TerminatorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<useWeapon cooldown="3"
+				requiredActionPoints="1"
+				consumedActionPoints="1"
+				requiredMovement="0"
+				weaponSlotName="CombiPlasma">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/ChaosTerminatorAbility"
+						beginFire="1.67"
+						endFire="1.77"/>
+			</model>	
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="ChaosSpaceMarines/ChampionOfChaos"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+		<trait name="ChaosSpaceMarines/GiftOfMutation" requiredUpgrade="ChaosSpaceMarines/GiftOfMutation"/>
+		<trait name="Relentless"/>
+		<trait name="TerminatorArmour"/>
+		<trait name="ChaosSpaceMarines/VeteransOfTheLongWar" requiredUpgrade="ChaosSpaceMarines/VeteransOfTheLongWar"/>
+	</traits>
+</unit>

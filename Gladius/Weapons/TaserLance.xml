@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<powerWeapon effectBlueprint="Effects/ForceWeapon"
+				effectEmitterBlueprint="Effects/ForceWeaponEmitter" 
+				fireSound="Weapons/TaserLance"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks mul="0.33"/>
+				<meleeArmorPenetration add="4"/> <!-- %meleeArmorPenetration add armorPiercing=-2 -->
+				<strengthDamage mul="1"/> <!-- %strengthDamage mul strength=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="AdeptusMechanicus/MeleeWeaponBonus" requiredUpgrade="AdeptusMechanicus/MeleeWeaponBonus"/>
+	</traits>
+</weapon>

@@ -2,13 +2,11 @@ import discord
 import os
 from dotenv import load_dotenv
 from discord.ext import commands
-import xml.etree.ElementTree as ET
-#from lxml import etree as ET
+from lxml import etree as ET
 from thefuzz import fuzz
-from dataclasses import dataclass
 
 load_dotenv()
-TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.getenv("TEST_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -27,7 +25,7 @@ class Obj():
         self.XMLPath = ''
 
     def get_info_English(self, xmlPath: str, typeFunc):
-        tree = ET.parse(xmlPath, parser=ET.XMLParser())
+        tree = ET.parse(xmlPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         bestRatio = 0
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
@@ -47,7 +45,7 @@ class Obj():
         obj = cls('placeholder')
         obj.internalID = internalID
         #IDlen = len(internalID)
-        tree = ET.parse(xmlPath, parser=ET.XMLParser())
+        tree = ET.parse(xmlPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
             targetStr = entry.get('name')
@@ -145,6 +143,7 @@ class Trait(Obj):
         self.faction: str = 'Neutral'
         self.description: str
         self.flavor: str
+        self.iconPath: str
 
     def get_trait_info(self, xmlTree, entry):
         self.factionAndID = entry.get('name')
@@ -152,13 +151,17 @@ class Trait(Obj):
             self.faction, self.internalID = self.factionAndID.split('/')
         else:
             self.internalID = self.factionAndID
-        self.XMLPath = './Gladius/Units/' + self.factionAndID + '.xml'
+        self.XMLPath = './Gladius/Traits/' + self.factionAndID + '.xml'
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':
                 self.description = val2val(e.get('value'))
             elif targetStr == self.factionAndID + 'Flavor':
                 self.flavor = val2val(e.get('value'))
+
+    def get_trait_icon(self):
+        tree = ET.parse(self.XMLPath)
+        self.iconPath = tree.getroot().get('icon')
 
 def val2val(value: str) -> str:
     if '<string name=' in value:
@@ -306,6 +309,8 @@ async def gtrait(interaction: discord.Interaction, traitname:str):
         markdown = '**'
         await interaction.response.send_message(markdown + traitname + markdown + ' not found. Did you mean ' + markdown + trait.bestMatch + markdown + '?')
     else:
+        trait.get_trait_icon()
+
         #Name and Description
         embed = discord.Embed(title=trait.name, description=trait.description)        
 
@@ -323,7 +328,10 @@ async def gtrait(interaction: discord.Interaction, traitname:str):
 
         #Thumbnail
         try:
-            image = discord.File('./Gladius/Icons/Traits/' + trait.factionAndID + '.png', filename='icon.png')
+            if trait.iconPath:
+                image = discord.File('./Gladius/Icons/' + trait.iconPath + '.png', filename='icon.png')
+            else:
+                image = discord.File('./Gladius/Icons/Traits/' + trait.factionAndID + '.png', filename='icon.png')
             embed.set_thumbnail(url="attachment://icon.png")
             await interaction.response.send_message(file=image, embed=embed)
         except FileNotFoundError:

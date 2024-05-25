@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement14">
+	<model>
+		<unit mesh="Units/AstraMilitarum/FieldOrdnanceBattery"
+				material="Units/AstraMilitarum/FieldOrdnanceBattery"
+				idleAnimation="Units/AstraMilitarum/FieldOrdnanceBatteryIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Gun"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="90" memberDeltaY="120"/>
+	<weapons>
+		<weapon name="BombastFieldGun">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="0.83"/>
+			</model>	
+		</weapon>
+		<weapon name="FragGrenade" count="2" slotName="FragGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Spotter_Hand_L"/>
+			</model>	
+		</weapon>
+		<weapon name="KrakGrenade" count="2" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Spotter_Hand_L"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=4+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="9.0"/> <!-- %hitpointsMax base toughness=4 wounds=3 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1"/> <!-- %strengthDamage base strength=3 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/AstraMilitarum/FieldOrdnanceBatteryAttack"
+						beginFire="1.0"
+						endFire="1.1"/>
+			</model>			
+		</attack>
+		<die>
+			<model>
+				<action	animation="Units/AstraMilitarum/FieldOrdnanceBatteryDie0"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.55"
+						voiceSound="Units/AstraMilitarum/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action	animation="Units/AstraMilitarum/FieldOrdnanceBatteryMove"
+						sound="Units/AstraMilitarum/FieldOrdnanceBatteryMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<throwGrenade weaponSlotName="FragGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/FragGrenade">
+			<model>
+				<action	animation="Units/AstraMilitarum/FieldOrdnanceBatteryGrenade"
+						beginFire="0.93"/>
+			</model>		
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="AstraMilitarum/KrakGrenade">
+			<model>
+				<action	animation="Units/AstraMilitarum/FieldOrdnanceBatteryGrenade"
+						beginFire="0.93"/>
+			</model>				
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="VeryBulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="AstraMilitarum/ExtraInfantryArmour"/>
+	</traits>
+</unit>
