@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Hull_Shake"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
-				groupMemberDeltaX="90"
-				groupMemberDeltaY="50"
-				material="Units/TH3Corsair"
-				mesh="Units/TH3Corsair"
-				normalWeight="0.1"
-				position="0 0 48"
-				scale="0.7 0.7 0.7">
+		<unit effectsBlueprint="Effects/TH3Corsair"
+			explosionsBone="Hull_Shake"
+			explosionSound="Explosions/Units/MediumHuman"
+			explosionSoundCount="12"
+			groupMemberDeltaX="90"
+			groupMemberDeltaY="50"
+			material="Units/TH3Corsair"
+			mesh="Units/TH3Corsair"
+			normalWeight="0.1"
+			position="0 0 32"
+			scale="0.9 0.9 0.9">
 		</unit>
 	</model>
 	<weapons>
 		<weapon type="MissileLauncher" count="2">
 			<models>
-				<missileWeapon muzzleBone="Missile_L"/>
-				<missileWeapon muzzleBone="Missile_R"/>
+				<missileWeapon fireInterval="1.0" missileScale="0.25" muzzleBone="Missile_L"/>
+				<missileWeapon fireDelay="0.5" fireInterval="1.0" missileScale="0.25" muzzleBone="Missile_R"/>
 			</models>
 		</weapon>
 		<weapon type="HeavyMachineGun">
@@ -37,17 +38,17 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
+				<antimatterCost base="8"/> <!-- %antimatterCost base tier=8 factor=0.1 -->
+				<antimatterUpkeep base="0.4"/> <!-- %antimatterUpkeep base tier=8 factor=0.1 -->
 				<armor base="6"/>
 				<cargoSlots base="3"/>
-				<energyCost base="60"/> <!-- %energyCost base tier=7 factor=1 -->
-				<energyUpkeep base="3.0"/> <!-- %energyUpkeep base tier=7 factor=1 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
-				<mineralsCost base="60"/> <!-- %mineralsCost base tier=7 factor=1 -->
-				<mineralsUpkeep base="3.0"/> <!-- %mineralsUpkeep base tier=7 factor=1 -->
+				<mineralsCost base="40"/> <!-- %mineralsCost base tier=8 factor=0.5 -->
+				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=8 factor=0.5 -->
 				<moraleMax base="8"/>
 				<movementMax base="6"/>
-				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -69,7 +70,7 @@
 			<model>
 				<attack animation="Units/TH3CorsairAttack"
 						beginFire="0.33"
-						endFire="2.3"
+						endFire="2.23"
 						responseSound="Units/Responses/TH3CorsairAttack"
 						responseSoundCount="3"/>
 			</model>
@@ -77,6 +78,8 @@
 		<die>
 			<model>
 				<die animation="Units/TH3CorsairDie0"
+						effectDisable="0.001"
+						groundImpact="1.5"
 						sound="Units/TH3CorsairDie"/>
 			</model>
 		</die>
@@ -133,6 +136,75 @@
 				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
 			</model>
 		</skip>
+		<unitCast name="EvasiveManeuvers"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<cast animation="Units/TH3CorsairAbility1"
+						responseSound="Units/Responses/TH3CorsairEvasiveManeuvers"
+						sound="Units/TH3CorsairEvasiveManeuvers"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="EvasiveManeuvers" duration="1"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+		<unitCast name="DecoyFlares"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredUpgrade="DecoyFlares">
+			<model>
+				<cast animation="Units/TH3CorsairAbility0"
+						blueprint="Effects/DecoyFlares"
+						responseSound="Units/Responses/TH3CorsairDecoyFlares"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<!-- <addTrait type="DecoyFlares"/> -->
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>	
 	</actions>
 	<traits>
 		<trait type="Flying"/>

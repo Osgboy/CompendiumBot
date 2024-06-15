@@ -13,9 +13,9 @@
 				scale="1 1 1"/>
 	</model>
 	<weapons>
-		<weapon type="EMP">
+		<weapon type="None">
 			<models>
-				<weapon bone="HullShake"
+				<weapon animationSuffix="RepairArms"
 						material="Units/DroneRepairArms"
 						mesh="Units/DroneRepairArms"/>
 			</models>
@@ -141,17 +141,17 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 	</actions>
 	<traits>

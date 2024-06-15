@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit icon="Units/Headquarters" portrait="Units/FallenSoldierHeadquarters">
+<unit icon="Units/Headquarters" portrait="Units/ZephonHeadquarters">
 	<model>
-		<structureUnit effectsBlueprint="Effects/FallenSoldierHeadquarters"
+		<unit effectsBlueprint="Effects/ZephonHeadquarters"
 				explosionsBone="HQ"
 				explosionSound="Explosions/Units/MediumHuman"
 				explosionSoundCount="12"
@@ -9,9 +9,10 @@
 				heatImpactSoundCount="5"
 				kineticImpactSound="Impacts/KineticConcrete"
 				kineticImpactSoundCount="17"
-				material="Units/FallenSoldierHeadquarters"
-				mesh="Units/FallenSoldierHeadquarters"
+				material="Units/ZephonHeadquarters"
+				mesh="Units/ZephonHeadquarters"
 				normalWeight="0.1"
+				onlyRotateWeapons="1"
 				scale="1 1 1"/>
 	</model>
 	<modifiers>

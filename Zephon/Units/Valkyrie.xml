@@ -38,14 +38,14 @@
 						fireInterval="10"
 						material="Units/ValkyrieJavelin"
 						mesh="Units/ValkyrieJavelin0"
-						missileScale="1.2"
+						missileScale="1.0"
 						muzzleBone="JavelinL"/>
 				<missileWeapon bone="Shoulder_R"
 						fireDelay="0.63"
 						fireInterval="10"
 						material="Units/ValkyrieJavelin"
 						mesh="Units/ValkyrieJavelin1"
-						missileScale="1.2"
+						missileScale="1.0"
 						muzzleBone="JavelinR"/>
 			</models>
 		</weapon>
@@ -112,6 +112,7 @@
 		<die>
 			<model>
 				<die animation="Units/ValkyrieDie0"
+						effectDisable="0.001"
 						groundImpact="1.0"
 						sound="Units/MediumMechanicalGroundHit"
 						soundCount="3"
@@ -208,7 +209,7 @@
 						</unit> -->
 					</conditions>
 					<effects>
-						<score add="1.0"/>
+						<score addMin="1.0" addMax="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>			

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" visibleOnUnit="1">
+<trait visibleOnUnit="1">
 	<modifiers>
 		<modifier>
 			<conditions>
@@ -13,6 +13,17 @@
 			</effects>
 		</modifier>
 		<modifier requiredUpgrade="LeaveNoManBehindUpgrade">
+			<conditions>
+				<unit>
+					<noType name="Deformity"/>
+					<noType name="LandanGraham"/>
+				</unit>
+			</conditions>
+			<effects>
+				<unitUpkeep mul="-0.1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="LeaveNoManBehindUpgrade2">
 			<conditions>
 				<unit>
 					<noType name="Deformity"/>

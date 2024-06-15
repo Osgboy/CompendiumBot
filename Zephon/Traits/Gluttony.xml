@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" visibleOnCity="1">
+<trait visibleOnCity="1">
 	<modifiers>
 		<modifier>
 			<effects>
@@ -7,12 +7,22 @@
 			</effects>
 		</modifier>
 		<modifier effectDescription="GluttonyUpgrade" requiredUpgrade="GluttonyUpgrade">
-			<conditions>
-				<building ignoreForTraitVisibility="1">
+			<conditions ignoreForTraitVisibility="1">
+				<building>
 					<type name="Headquarters"/>
 				</building>
-				<city ignoreForTraitVisibility="1">
-					<population equal="1"/>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="1"/>
 				</city>
 			</conditions>
 			<effects>
@@ -25,11 +35,11 @@
 					<type name="Headquarters"/>
 				</building>
 				<city>
-					<population equal="2"/>
+					<population greater="2"/>
 				</city>
 			</conditions>
 			<effects>
-				<influence add="1.0"/>
+				<influence add="0.5"/>
 			</effects>
 		</modifier>
 		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
@@ -38,11 +48,11 @@
 					<type name="Headquarters"/>
 				</building>
 				<city>
-					<population equal="3"/>
+					<population greater="3"/>
 				</city>
 			</conditions>
 			<effects>
-				<influence add="1.5"/>
+				<influence add="0.5"/>
 			</effects>
 		</modifier>
 		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
@@ -51,24 +61,11 @@
 					<type name="Headquarters"/>
 				</building>
 				<city>
-					<population equal="4"/>
+					<population greater="4"/>
 				</city>
 			</conditions>
 			<effects>
-				<influence add="2.0"/>
-			</effects>
-		</modifier>
-		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
-			<conditions>
-				<building>
-					<type name="Headquarters"/>
-				</building>
-				<city>
-					<population equal="5"/>
-				</city>
-			</conditions>
-			<effects>
-				<influence add="2.5"/>
+				<influence add="0.5"/>
 			</effects>
 		</modifier>
 		<modifier visible="0" requiredUpgrade="GluttonyUpgrade">
@@ -81,7 +78,85 @@
 				</city>
 			</conditions>
 			<effects>
-				<influence add="3.0"/>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="GluttonyUpgrade2" requiredUpgrade="GluttonyUpgrade2">
+			<conditions ignoreForTraitVisibility="1">
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="6"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="7"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="8"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="9"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="10"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="GluttonyUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="11"/>
+				</city>
+			</conditions>
+			<effects>
+				<influence add="0.5"/>
 			</effects>
 		</modifier>
 	</modifiers>

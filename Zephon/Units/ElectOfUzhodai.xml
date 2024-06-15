@@ -160,12 +160,12 @@
 			<scoreModifiers>
 				<modifier>
 					<conditions>
-						<targetTile>
+						<tile>
 							<enemyStrengthInTheArea greater="0"/>	
-						</targetTile>
+						</tile>
 					</conditions>
 					<effects>
-						<score add="1.0"/>
+						<score addMin="1.0" addMax="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>

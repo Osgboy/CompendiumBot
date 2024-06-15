@@ -33,7 +33,10 @@
 				<target>
 					<conditions>
 						<tile>
+							<noFeature type="Bleed"/>
 							<noFeature type="Forest"/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlotsRemaining greater="0"/>
 						</tile>		
 					</conditions>
 				</target>

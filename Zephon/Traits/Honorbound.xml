@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Buff" visibleOnPlayer="1">
+<trait visibleOnPlayer="1">
 	<modifiers>
 		<modifier>
 			<effects>
@@ -8,6 +8,12 @@
 			</effects>
 		</modifier>
 		<modifier requiredUpgrade="HonorboundUpgrade">
+			<effects>
+				<influencePerTradeAgreement add="2"/>
+				<influencePerAlliance add="4"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="HonorboundUpgrade2">
 			<effects>
 				<influencePerTradeAgreement add="2"/>
 				<influencePerAlliance add="4"/>

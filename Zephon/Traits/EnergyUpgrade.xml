@@ -2,7 +2,7 @@
 <trait visibleOnBuilding="1">
 	<modifiers>
 		<modifier effectDescription="EnergyUpgrade">
- 			<conditions>
+ 			<conditions ignoreForTraitVisibility="1">
 				<tile match="Any">
 					<feature type="Arctic"/>
 					<feature type="Swamp"/>

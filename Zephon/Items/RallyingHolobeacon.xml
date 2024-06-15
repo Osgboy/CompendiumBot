@@ -25,23 +25,23 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<ally/>
+											<moraleFraction less="0.667"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<ally/>
-							<morale less="4"/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0" max="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<buyConditions>

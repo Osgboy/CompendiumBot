@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Nightmare" visibleOnUnit="1" visibleToNonAllies="0">
+	<onUnitDefended>
+		<defender>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="WhenTakingDirectDamage">
+						<effects>
+							<hitpointsFromMax add="-1.0"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onUnitDefended>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait stacking="1" visible="0">
+	<onUnitDisappeared>
+		<traitSourceUnit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<hitpoints add="4"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</traitSourceUnit>
+	</onUnitDisappeared>
+</trait>

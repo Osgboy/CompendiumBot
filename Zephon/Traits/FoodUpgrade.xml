@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnBuilding="1">
 	<modifiers>
-		<modifier effectDescription="FoodUpgrade">
-			<conditions>
+		<modifier effectDescription="OnCoast">
+			<conditions ignoreForTraitVisibility="1">
 				<tile>
 					<trait type="Coast"/>
 				</tile>

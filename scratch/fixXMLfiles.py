@@ -4,7 +4,7 @@ import os
 # dname = os.path.dirname(abspath)
 # os.chdir(dname)
 
-for dirpath, dirnames, filenames in os.walk(".\Gladius\English"): # .\Gladius\English
+for dirpath, dirnames, filenames in os.walk(".\Zephon\English"): # .\Gladius\English
    for filename in filenames:
       if filename.endswith(".xml"):
         filepath = os.path.join(dirpath, filename)
@@ -13,8 +13,8 @@ for dirpath, dirnames, filenames in os.walk(".\Gladius\English"): # .\Gladius\En
             filedata = file.read()
 
         # Replace the target string
-        filedata = filedata.replace('"<string name=', '"&lt;string name=')
-        filedata = filedata.replace('/>"', '/&gt;"')
+        filedata = filedata.replace('"<', '"&lt;')
+        filedata = filedata.replace("'/>", "'/&gt;")
 
         # Write the file out again
         with open(filepath, 'w', encoding='utf8') as file:

@@ -178,17 +178,22 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="0.5"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<useWeapon cooldown="10"
 				consumedActionPoints="0"

@@ -13,7 +13,12 @@
 				<productionCost base="12"/>
 			</effects>
 		</modifier>
-		<modifier>
+		<modifier requiredUpgrade="BleedCultivation">
+			<effects>
+				<buildingSlots add="-1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WithoutBleedCultivation">
 			<conditions>
 				<player>
 					<noUpgrade name="BleedCultivation"/>

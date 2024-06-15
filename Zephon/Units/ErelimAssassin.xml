@@ -21,7 +21,7 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="10"/>
-				<armor base="6"/>
+				<armor base="4"/>
 				<chipsCost base="10"/> <!-- %chipsCost base tier=6 factor=0.25 -->
 				<chipsUpkeep base="0.5"/> <!-- %chipsUpkeep base tier=6 factor=0.25 -->
 				<groupSizeMax base="1"/>
@@ -55,7 +55,7 @@
 				<attack chargeAnimation="Units/ErelimAssassinCharge"
 						meleeAnimation="Units/ErelimAssassinMelee"
 						meleeBeginSwing="0.001"
-						meleeEndSwing="0.002"
+						meleeEndSwing="0.101"
 						meleeSound="Units/ErelimAssassinMelee"
 						responseSound="Units/Responses/ErelimAssassinAttack"
 						responseSoundCount="3"/>
@@ -133,6 +133,8 @@
 			<model>
 				<attack chargeAnimation="Units/ErelimAssassinCharge"
 						meleeAnimation="Units/ErelimAssassinAbility0"
+						meleeBeginSwing="0.001"
+						meleeEndSwing="0.101"
 						meleeSound="Units/ErelimAssassinAssassinate"
 						responseSound="Units/Responses/ErelimAssassinAssassinate"/>
 			</model>
@@ -144,7 +146,12 @@
 						</unit>
 					</conditions>
 					<effects>
-						<hitpoints addMin="-2" addMax="-6"/>
+						<hitpoints addMin="-1" addMax="-3"/>
+					</effects>
+				</modifier>
+				<modifier visible="0">
+					<effects>
+						<attackScore mulMin="0.5" mulMax="0.5"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -191,8 +198,8 @@
 			<modifiers>
 				<modifier>
 					<effects>
-						<movement add="1"/>
-						<ignoreZoneOfControl add="1"/>
+						<movement addMin="1" addMax="1"/>
+						<ignoreZoneOfControl addMin="1" addMax="1"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -204,10 +211,10 @@
 						</tile>
 					</conditions>
 					<effects>
-						<score add="1.0"/>
+						<score addMin="1.0" addMax="1.0"/>
 					</effects>
 				</modifier>
-			</scoreModifiers>			
+			</scoreModifiers>
 		</ghostWalk>
 		<unitCast name="EvasionProcessor"
 				consumedActionPoints="0"
@@ -240,7 +247,7 @@
 						</tile>
 					</conditions>
 					<effects>
-						<score add="1.0"/>
+						<score addMin="1.0" addMax="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>			
@@ -257,6 +264,15 @@
 			</model>
 			<beginTargets>
 				<selfTarget>
+					<conditions>
+						<unit>
+							<unitsInRange greater="0" range="1">
+								<unit>
+									<enemy/>
+								</unit>
+							</unitsInRange>
+						</unit>
+					</conditions>
 					<areas>
 						<area affect="Unit" radius="1" excludeRadius="0">
 							<modifiers>
@@ -278,9 +294,13 @@
 			<scoreModifiers>
 				<modifier>
 					<conditions>
-						<tile>
-							<enemyStrengthInTheArea greater="0"/>
-						</tile>
+						<unit>
+							<unitsInRange greater="1" range="1">
+								<unit>
+									<enemy/>
+								</unit>
+							</unitsInRange>
+						</unit>
 					</conditions>
 					<effects>
 						<score add="1.0"/>

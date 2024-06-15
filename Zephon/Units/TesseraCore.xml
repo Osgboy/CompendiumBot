@@ -28,16 +28,19 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="8"/>
+				<actionPointsMax base="2"/>
+				<antimatterCost base="2"/> <!-- %antimatterCost base tier=8 factor=0.025 -->
+				<antimatterUpkeep base="0.1"/> <!-- %antimatterUpkeep base tier=8 factor=0.025 -->
 				<armor base="6"/>
-				<chipsCost base="15"/> <!-- %chipsCost base tier=7 factor=0.25 -->
-				<chipsUpkeep base="0.75"/> <!-- %chipsUpkeep base tier=7 factor=0.25 -->
+				<chipsCost base="20"/> <!-- %chipsCost base tier=8 factor=0.25 -->
+				<chipsUpkeep base="1.0"/> <!-- %chipsUpkeep base tier=8 factor=0.25 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
 				<moraleMax base="10"/>
 				<movementMax base="0"/>
-				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
-				<transuraniumCost base="30"/> <!-- %transuraniumCost base tier=7 factor=0.5 -->
-				<transuraniumUpkeep base="1.5"/> <!-- %transuraniumUpkeep base tier=7 factor=0.5 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=8 factor=0.25 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=8 factor=0.25 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -52,7 +55,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreAppear"/>
+				<action voiceSound="Units/Responses/TesseraCoreAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -61,7 +64,8 @@
 						beginFire="1.0"
 						endFire="1.73"
 						responseSound="Units/Responses/TesseraCoreAttack"
-						responseSoundCount="3"/>
+						responseSoundCount="3"
+						sound="Units/HashmallimHostAttack"/>
 			</model>
 		</attack>
 		<die>
@@ -114,7 +118,8 @@
 			</model>
 		</skip>
 		<unitCast name="DeployGravityField"
-				cooldown="1">
+				cooldown="1"
+				requiredUpgrade="GravityField">
 			<model>
 				<cast animation="Units/TesseraCoreAbility0"
 						blueprint="Effects/MarkTarget"
@@ -152,6 +157,7 @@
 	</actions>
 	<traits>
 		<trait type="DefenseMatrix"/>
+		<trait type="Fortification"/>
 		<trait type="Hovering"/>
 		<trait type="Large"/>
 		<trait type="Mechanical"/>

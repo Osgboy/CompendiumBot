@@ -26,6 +26,18 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 						<area affect="Unit">
 							<modifiers>
@@ -39,18 +51,6 @@
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<enemyStrengthInTheArea greater="0"/>
-						</targetTile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<buyConditions>

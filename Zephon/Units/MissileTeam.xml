@@ -14,10 +14,10 @@
 				walker="1"/>
 	</model>
 	<weapons>
-		<weapon type="MissileLauncher" slotName="MissileLauncher">
+		<weapon type="MissileBot" slotName="MissileBot">
 			<models>
 				<missileWeapon fireInterval="0.86"
-						missileScale="0.4" 
+						missileScale="0.3"
 						muzzleBone="Muzzle"
 						muzzleCount="2"/>
 			</models>
@@ -131,7 +131,7 @@
 		<useWeapon name="GroundedFire"
 				cooldown="5"
 				requiredUpgrade="GroundedFire"
-				weaponSlotName="MissileLauncher">
+				weaponSlotName="MissileBot">
 			<model>
 				<attack animation="Units/MissileTeamAbility0"
 						beginFire="1.21"

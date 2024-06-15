@@ -174,22 +174,26 @@
 								<modifier effectDescription="OfTargetEnemyAbkluth">
 									<effects>
 										<changePlayer/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<effects>
 										<removeTrait type="Unleashed"/>
 										<removeTrait type="Leashed"/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>				
 		</unitCast>
 	</actions>
 	<traits>

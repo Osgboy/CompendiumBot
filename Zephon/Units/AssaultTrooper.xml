@@ -11,7 +11,18 @@
 				walker="1"/>
 	</model>
 	<weapons>
-		<weapon type="GaussRifle">
+		<weapon type="GaussRifle"
+				slotName="GaussRifle">
+			<models>
+				<projectileWeapon bone="Rifle"
+						material="Units/AssaultTrooperGaussRifle"
+						mesh="Units/AssaultTrooperGaussRifle"
+						muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="GaussRifleOvercharged"
+				slotName="GaussRifleOvercharged"
+				enabled="0">
 			<models>
 				<projectileWeapon bone="Rifle"
 						material="Units/AssaultTrooperGaussRifle"
@@ -25,18 +36,26 @@
 			<effects>
 				<accuracy base="8"/>
 				<armor base="8"/>
-				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
-				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
 				<groupSizeMax base="6"/>
 				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
 				<moraleMax base="8"/>
 				<movementMax base="3"/>
-				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
-				<transuraniumCost base="2"/> <!-- %transuraniumCost base tier=6 factor=0.05 -->
-				<transuraniumUpkeep base="0.1"/> <!-- %transuraniumUpkeep base tier=6 factor=0.05 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<transuraniumCost base="6"/> <!-- %transuraniumCost base tier=7 factor=0.1 -->
+				<transuraniumUpkeep base="0.3"/> <!-- %transuraniumUpkeep base tier=7 factor=0.1 -->
 			</effects>
 		</modifier>
 	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
 	<actions>
 		<appear>
 			<model>
@@ -46,7 +65,7 @@
 		<attack>
 			<model>
 				<attack animation="Units/AssaultTrooperAttack"
-						beginFire="0.67"
+						beginFire="0.37"
 						endFire="2.0"
 						responseSound="Units/Responses/AssaultTrooperAttack"
 						responseSoundCount="3"/>
@@ -58,7 +77,7 @@
 						animationCount="2"
 						sound="Units/MediumBiologicalGroundHit"
 						soundCount="3"
-						soundDelay="0.5"
+						soundDelay="1.2"
 						voiceSound="Units/AssaultTrooperDie"
 						voiceSoundCount="5"/>
 			</model>
@@ -117,6 +136,47 @@
 				<action responseSound="Units/Responses/AssaultTrooperHoldPosition"/>
 			</model>
 		</skip>
+		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
+				weaponSlotNames="GaussRifle GaussRifleOvercharged"/>	
+		<unitCast name="IronWill"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0">
+			<model>
+				<cast animation="Units/AssaultTrooperAbility0"
+						blueprint="Effects/IronWill"
+						responseSound="Units/Responses/AssaultTrooperIronWill"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<conditions>
+						<unit>
+							<moraleFraction less="1.0"/>
+						</unit>
+					</conditions>
+					<modifiers>
+						<modifier>
+							<effects>
+								<morale mul="0.5"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<moraleFraction less="0.667"/>
+						</unit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>	
 	</actions>
 	<traits>
 		<trait type="Biological"/>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/FallenSoldier" tier="6">
+	<conditions>
+		<player>
+			<faction name="FallenSoldier"/>
+		</player>
+	</conditions>
+	<requiredUpgrades>
+		<upgrade name="Minelayer"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

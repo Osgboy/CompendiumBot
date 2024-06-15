@@ -122,44 +122,6 @@
 				<action responseSound="Units/Responses/KryptArchaiHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="ParticleBarrier"
-				cooldown="1"
-				icon="Features/ParticleBarrier"
-				rank="-1"
-				rankMax="2">
-			<model>
-				<cast animation="Units/KryptArchaiAbility0"
-						responseSound="Units/Responses/KryptArchaiParticleBarrier"
-						sound="Units/KryptArchaiAbility"/>
-			</model>
-			<beginTargets>
-				<target rangeMax="2">
-					<areas>
-						<area affect="Tile">
-							<modifiers>
-								<modifier>
-									<effects>
-										<addFeature type="ParticleBarrier" duration="1"/>
-									</effects>
-								</modifier>
-							</modifiers>
-						</area>
-					</areas>
-				</target>
-			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<movement equal="0"/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
-		</unitCast>
 		<unitCast name="ParticleRepair"
 				cooldown="2"
 				rank="-1"
@@ -204,17 +166,57 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
+		</unitCast>
+		<unitCast name="ParticleBarrier"
+				cooldown="1"
+				icon="Features/ParticleBarrier"
+				rank="-1"
+				rankMax="2">
+			<model>
+				<cast animation="Units/KryptArchaiAbility0"
+						responseSound="Units/Responses/KryptArchaiParticleBarrier"
+						sound="Units/KryptArchaiAbility"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="ParticleBarrier" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemyStrengthInTheArea greater="0"/>
+											<ally/>
+											<movement equal="0"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
 		</unitCast>
 		<unitCast name="SystemOverload"
 				cooldown="2"
@@ -242,22 +244,23 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<noTrait type="SystemOverload"/>
+											<rangedWeapons/>
+										</unit>
+									</conditions>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<rangedWeapons/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 		<unitCast name="Entomb"
 				cooldown="5"
@@ -286,17 +289,22 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<noTrait type="Entomb"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 		<levelUp/>
 	</actions>

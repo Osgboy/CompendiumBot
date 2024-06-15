@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait icon="Actions/DataHack" visibleOnCity="1">
+<trait icon="Actions/DataHack" visibleOnCity="1" visibleSourcePlayer="1">
 	<modifiers>
-		<modifier showSourcePlayer="1">
+		<modifier>
 			<effects>
 				<researchFromCity mul="1.0"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="DataHackUpgrade">
+			<effects>
+				<resourcesFromCity mul="0.2"/>
 			</effects>
 		</modifier>
 	</modifiers>

@@ -24,7 +24,7 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="8"/>
-				<armor base="4"/>
+				<armor base="6"/>
 				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
 				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
 				<groupSizeMax base="1"/>
@@ -63,7 +63,7 @@
 						chargeEndFire="1.2"
 						meleeAnimation="Units/CommanderMelee"
 						meleeBeginSwing="0.001"
-						meleeEndSwing="0.002"
+						meleeEndSwing="0.101"
 						meleeSound="Units/CommanderMelee"
 						responseSound="Units/Responses/CommanderAttack"
 						responseSoundCount="3"/>
@@ -165,24 +165,24 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<unit>
+											<enemyStrengthInTheArea greater="0"/>
+											<ally/>
+											<noTrait type="Large"/>
+										</unit>
+									</conditions>
+ 									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
- 				<modifier>
-					<conditions>
-						<targetUnit>
-							<enemyStrengthInTheArea greater="0"/>
-							<ally/>
-							<noTrait type="Large"/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0" max="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<unitCast name="NeverSurrender"
 				consumedActionPoints="0"
@@ -215,26 +215,26 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemyStrengthInTheArea greater="0"/>
+										</unit>
+										<unit match="Any">
+											<trait type="Broken"/>
+											<trait type="Shaken"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<enemyStrengthInTheArea greater="0"/>
-						</targetUnit>
-						<targetUnit match="Any">
-							<trait type="Broken"/>
-							<trait type="Shaken"/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0" max="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 		<unitAction name="AuraOfDiscipline"
 				passive="1"
@@ -284,6 +284,18 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+	 								<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>

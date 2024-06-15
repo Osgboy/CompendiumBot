@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit>
 	<model>
-		<structureUnit effectsBlueprint="Effects/%1%Headquarters"
+		<unit effectsBlueprint="Effects/%1%Headquarters"
 				explosionsBone="HQ"
 				explosionSound="Explosions/Units/MediumHuman"
 				explosionSoundCount="12"
@@ -12,6 +12,7 @@
 				material="Units/%1%Headquarters"
 				mesh="Units/%1%Headquarters"
 				normalWeight="0.1"
+				onlyRotateWeapons="1"
 				scale="1 1 1"/>
 	</model>
 	<modifiers>
@@ -21,7 +22,7 @@
 				<armor base="6"/>
 				<cargoSlots base="3"/>
 				<groupSizeMax base="1"/>
-				<moraleMax base="8"/>
+				<moraleMax base="10"/>
 				<movementMax base="0"/>
 			</effects>
 		</modifier>

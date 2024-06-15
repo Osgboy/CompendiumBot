@@ -21,5 +21,15 @@
 				<production mul="0.167"/>
 			</effects>
 		</modifier>
+		<modifier requiredUpgrade="FoundationOfBloodUpgrade2">
+			<conditions>
+				<building>
+					<production greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<production mul="0.167"/>
+			</effects>
+		</modifier>
 	</modifiers>
 </trait>

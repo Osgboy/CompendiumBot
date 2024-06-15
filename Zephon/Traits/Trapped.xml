@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait visibleOnPlayer="1"/>
+<trait visibleOnCity="1" visibleOnPlayer="1">
+	<modifiers>
+		<modifier/>
+		<modifier requiredUpgrade="TrappedUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="6"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="TrappedUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

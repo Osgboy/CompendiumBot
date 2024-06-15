@@ -21,5 +21,19 @@
 				<flatResourcesFromOutposts mul="0.25"/>
 			</effects>
 		</modifier>
+		<modifier effectDescription="WhileAlliedNonFlyingUnitOnTile" requiredUpgrade="ResourceNetworkUpgrade2">
+			<conditions>
+				<tile>
+					<trait type="Outpost"/>
+				</tile>
+				<unit>
+					<ally/>
+					<noTrait type="Flying"/>
+				</unit>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="2.0"/>
+			</effects>
+		</modifier>
 	</modifiers>
 </trait>

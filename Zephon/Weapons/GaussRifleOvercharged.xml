@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/GaussRifleOvercharged"
+			explosionsBlueprint="Effects/GaussOverchargedExplosions"
+			muzzleFlashesBlueprint="Effects/GaussOverchargedMuzzleFlashes"
+			projectilesBlueprint="Effects/GaussOverchargedProjectiles"
+			fireSoundBeginCount="4"
+			fireSoundCount="4"
+			fireSoundEndCount="4"
+			fireSoundContinuously="1"
+			windupDuration="0.3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="3"/> <!-- %armorPenetration base tier=4 -->
+				<attacks base="1"/>
+				<damage base="2"/> <!-- %damage base tier=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="CloseQuartersFire"/>
+		<trait type="Overcharged"/>
+	</traits>
+</weapon>

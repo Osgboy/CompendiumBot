@@ -3,6 +3,7 @@
 	<model>
 		<projectileWeapon explosionsBlueprint="Effects/CannonExplosions"
 				muzzleFlashesBlueprint="Effects/BattleCannonMuzzleFlashes"
+				projectilesBlueprint="Effects/HiddenProjectiles"
 				fireSound="Weapons/SiegeCannon"
 				fireSoundCount="1"/>
 	</model>
@@ -18,6 +19,7 @@
 	<target rangeMax="6"/>
 	<traits>
 		<trait type="Artillery"/>
+		<trait type="Heavy"/>
 		<trait type="IndirectFire"/>
 		<trait type="LargeSplash"/>
 	</traits>

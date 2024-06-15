@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnBuilding="1">
 	<modifiers>
-		<modifier effectDescription="TransuraniumUpgrade">
-			<conditions>
-				<!-- TODO -->
+		<modifier effectDescription="OnTilesWithOnlyThisTypeOfBuilding">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<onlyBuilding type="Transuranium"/>
+				</tile>
 			</conditions>
 			<effects>
-				<transuranium add="1.5"/>
+				<transuranium add="0.6"/>
 			</effects>
 		</modifier>
 	</modifiers>

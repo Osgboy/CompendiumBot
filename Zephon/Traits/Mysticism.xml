@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" visibleOnBuilding="1" visibleOnCity="1" visibleOnPlayer="1">
+<trait visibleOnBuilding="1" visibleOnCity="1" visibleOnPlayer="1">
 	<modifiers>
 		<modifier effectDescription="ForResearchLaboratory">
 			<conditions>
@@ -13,6 +13,17 @@
 		</modifier>
 		<modifier effectDescription="ForAdministrationComplex"
 				requiredUpgrade="MysticismUpgrade">
+			<conditions>
+				<building>
+					<type name="Influence"/>
+				</building>
+			</conditions>
+			<effects>
+				<research add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForAdministrationComplex"
+				requiredUpgrade="MysticismUpgrade2">
 			<conditions>
 				<building>
 					<type name="Influence"/>

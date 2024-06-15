@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <language>
-	<entry name="ForAdministrationComplex" value="for <string name='Buildings/Influence'/>"/>
+	<entry name="ForAdministrationComplex" value="for <string name='Buildings/Influence'/&gt;"/>
 	<entry name="AgainstBiologicalUnits" value="against biological units"/>
 	<entry name="AgainstFlyingUnits" value="against flying units"/>
 	<entry name="AgainstLargeUnits" value="against large units"/>
@@ -12,23 +12,21 @@
 	<entry name="AgainstUnitsAtRange1Or2" value="against units at range 1 or 2"/>
 	<entry name="AlgaeUpgrade" value="for each Greenhouse Farm in the city"/>
 	<entry name="AntimatterUpgrade" value="in construct and desert terrain"/>
-	<entry name="ArchaiConstruct" value="unless healed by <string name='Actions/ParticleRepair'/>"/>
+	<entry name="ArchaiConstruct" value="unless healed by <string name='Actions/ParticleRepair'/&gt;"/>
 	<entry name="Assassinate" value="to enemy units in the area if target dies"/>
 	<entry name="CannibalizeMachines" value="for melee attacks against mechanical units"/>
-	<entry name="ChipsUpgrade" value=""/>
 	<entry name="CyberInfantryUpgrade" value="for infantry for each Synthetic Printer in the city"/>
 	<entry name="CyberVehiclesUpgrade" value=""/>
 	<entry name="DreamPrison" value="to target enemy with less than 6.5 morale"/>
 	<entry name="DreamPrisonRestore" value="when Dreameater dies"/>
 	<entry name="EachTurn" value="each turn"/>
 	<entry name="EachTurnInBleed" value="each turn in Bleed"/>
-	<entry name="EachTurnLogisticsExperts" value="each turn (<icon texture='Icons/Traits/LogisticsExperts' height='20'/><nbsp/><string name='Traits/LogisticsExperts'/>)"/>
-	<entry name="EachTurnResourceNetwork" value="each turn (<icon texture='Icons/Traits/ResourceNetwork' height='20'/><nbsp/><string name='Traits/ResourceNetwork'/>)"/>
+	<entry name="EachTurnLogisticsExperts" value="each turn (<icon texture='Icons/Traits/LogisticsExperts' height='20'/&gt;<nbsp/><string name='Traits/LogisticsExperts'/&gt;)"/>
+	<entry name="EachTurnResourceNetwork" value="each turn (<icon texture='Icons/Traits/ResourceNetwork' height='20'/&gt;<nbsp/><string name='Traits/ResourceNetwork'/&gt;)"/>
 	<entry name="EnergyUpgrade" value="in arctic and swamp terrain"/>
 	<entry name="Every10Turns" value="every 10 turns"/>
-	<entry name="FoodUpgrade" value="on the coast"/>
 	<entry name="ForAlliedUnits" value="for allied units"/>
-	<entry name="ForConstructionYard" value="for <string name='Buildings/Construction'/>"/>
+	<entry name="ForConstructionYard" value="for <string name='Buildings/Construction'/&gt;"/>
 	<entry name="ForControllingCity" value="inside city"/>
 	<entry name="ForEnemyGroundUnits" value="for enemy ground units"/>
 	<entry name="ForGroundUnits" value="for ground units"/>
@@ -39,9 +37,10 @@
 	<entry name="ForNonAgileGroundUnits" value="for non-agile ground units"/>
 	<entry name="ForNonLargeGroundUnits" value="for non-large ground units"/>
 	<entry name="ForNonLargeGroundUnitsAgainstRangedWeapons" value="for non-large non-flying units against ranged weapons"/>
+	<entry name="ForOverwatchAttacks" value="for overwatch attacks"/>
 	<entry name="ForRangedWeapons" value="for ranged weapons"/>
-	<entry name="ForResearchLaboratory" value="for <string name='Buildings/Research'/>"/>
-	<entry name="ForSatelliteScan" value="for <string name='Actions/SatelliteScan'/>"/>
+	<entry name="ForResearchLaboratory" value="for <string name='Buildings/Research'/&gt;"/>
+	<entry name="ForSatelliteScan" value="for <string name='Actions/SatelliteScan'/&gt;"/>
 	<entry name="ForStationedBiologicalUnitEachTurn" value="for stationed biological unit each turn"/>
 	<entry name="ForStationedMechanicalUnitEachTurn" value="for stationed mechanical unit each turn"/>
 	<entry name="ForStationedUnit" value="for stationed unit"/>
@@ -50,6 +49,7 @@
 	<entry name="FromHammerheads" value="from Hammerheads"/>
 	<entry name="FromTargetTile" value="from target tile"/>
 	<entry name="GluttonyUpgrade" value="per population (only affects population 1 to 6)"/>
+	<entry name="GluttonyUpgrade2" value="per population (only affects population 7 to 12)"/>
 	<entry name="HumanOperationsUpgrade" value="for each Research Laboratory in the city"/>
 	<entry name="HumanVehiclesUpgrade" value="for each Automated Factory in the city"/>
 	<entry name="IfDamagedThisTurn" value="if unit was damaged this turn"/>
@@ -57,18 +57,20 @@
 	<entry name="IfNotDamagedThisTurn" value="if unit was not damaged this turn"/>
 	<entry name="InXTurns" value="in %1%"/>
 	<entry name="InternalRepairStation" value="to transported units"/>
-	<entry name="LoyaltyUpgrade" value="for each <string name='Buildings/Loyalty'/> in the city"/>
-	<entry name="OfTargetEnemyUnit" value="of target enemy unit"/>
+	<entry name="LoyaltyUpgrade" value="for each <string name='Buildings/Loyalty'/&gt; in the city"/>
+	<entry name="OfTargetEnemyNonCityNonHeadquartersUnit" value="of target enemy non-city, non-headquarters unit"/>
 	<entry name="OfTargetEnemyAbkluth" value="of target enemy Abkluth"/>
 	<entry name="OnBleed" value="on Bleed"/>
 	<entry name="OnCliffs" value="on cliffs"/>
+	<entry name="OnCoast" value="on the coast"/>
 	<entry name="OnDeath" value="on death"/>
 	<entry name="OnRemoval" value="on removal"/>
 	<entry name="OnRivers" value="on rivers"/>
 	<entry name="OnTargetTile" value="on target tile"/>
+	<entry name="OnTilesWithOnlyThisTypeOfBuilding" value="on tiles with only this type of building"/>
 	<entry name="PerExperienceWhenKillingNeutralUnit" value="per experience gained when killing a neutral unit"/>
 	<entry name="PerTileInCity" value="per tile in city"/>
-	<entry name="PopulationLimitUpgrade" value="for each <string name='Buildings/Loyalty'/> in the city"/>
+	<entry name="PopulationLimitUpgrade" value="for each <string name='Buildings/Loyalty'/&gt; in the city"/>
 	<entry name="ResearchUpgrade" value="in forests"/>
 	<entry name="ShoulderPlate" value=""/>
 	<entry name="SingularityCoresUpgrade" value="for each Quantum Manipulator in the city"/>
@@ -84,6 +86,7 @@
 	<entry name="ToAttackedEnemy" value="to attacked enemy"/>
 	<entry name="ToBiologicalEnemy" value="to biological enemy"/>
 	<entry name="ToBiologicalUnits" value="to biological units"/>
+	<entry name="ToBreedDeformitiesOnDeath" value="to Breed Deformities on death"/>
 	<entry name="ToCity" value="to city"/>
 	<entry name="ToEnemy" value="to enemy"/>
 	<entry name="ToEnemyCity" value="to enemy city"/>
@@ -91,7 +94,9 @@
 	<entry name="ToEnemyUnitsEachTurn" value="to enemy units each turn"/>
 	<entry name="ToMeleeAttackers" value="to melee attackers"/>
 	<entry name="ToNonLargeEnemy" value="to non-large enemy"/>
-	<entry name="ToBreedDeformitiesOnDeath" value="to Breed Deformities on death"/>
+	<entry name="ToNonLargeAlliedUnits" value="to non-large allied units"/>
+	<entry name="ToNonLowPowerWeapon" value="to non-Low Power weapon"/>
+	<entry name="ToNonTitanEnemy" value="to non-titan enemy"/>
 	<entry name="ToTargetAlliedBiologicalUnit" value="to target allied biological unit"/>
 	<entry name="ToTargetAlliedCity" value="to target allied city"/>
 	<entry name="ToTargetAlliedDamagedBiologicalUnit" value="to target allied damaged biological unit"/>
@@ -102,16 +107,19 @@
 	<entry name="ToTargetBiologicalUnit" value="to target biological unit"/>
 	<entry name="ToTargetEnemyUnit" value="to target enemy unit"/>
 	<entry name="ToTargetEnemyZephonUnit" value="to target enemy ZEPHON unit"/>
-	<entry name="ToNonLowPowerWeapon" value="to non-Low Power weapon"/>
-	<entry name="ToNonLargeAlliedUnits" value="to non-large allied units"/>
 	<entry name="ToWeapons" value="to weapons"/>
-	<entry name="TransuraniumUpgrade" value="on tiles with no buildings of different type"/>
 	<entry name="UzhodaisZeal" value="for each adjacent enemy unit"/>
 	<entry name="VoiceVehiclesUpgrade" value="is gained on death as production on each Canticle of Dusk in the city"/>
 	<entry name="VoiceInfantryUpgrade" value="for each Midnight Chorus in the city"/>
 	<entry name="WhenDurationRunsOut" value="when duration runs out"/>
 	<entry name="WhenFirstCaptureFeature" value="when first to capture special terrain feature"/>
 	<entry name="WhenKillingBiologicalUnit" value="when killing a biological unit"/>
+	<entry name="WhenKillingUnit" value="when killing a unit"/>
 	<entry name="WhenEnemyGroundUnitStopsOnTile" value="when enemy ground unit stops on tile"/>
+	<entry name="WhenTakingDirectDamage" value="when taking direct damage"/>
+	<entry name="WhileAbove2Loyalty" value="while above 2 loyalty"/>
+	<entry name="WhileAbove8Loyalty" value="while above 8 loyalty"/>
 	<entry name="WhileBelow50%Hitpoints" value="while below 50% hitpoints"/>
+	<entry name="WhileAlliedNonFlyingUnitOnTile" value="while allied non-flying unit is on tile"/>
+	<entry name="WithoutBleedCultivation" value="without <string name='Upgrades/BleedCultivation'/&gt;"/>
 </language>

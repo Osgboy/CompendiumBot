@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" visibleOnUnit="1">
+	<onTraitAdded>
+		<unit>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitAdded>
+	<onTurnStarted>
+		<unit>
+			<area affect="Tile">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

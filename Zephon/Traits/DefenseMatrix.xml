@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForOverwatchAttacks">
+			<conditions>
+ 				<unit ignoreForTraitVisibility="1">
+					<overwatching/>
+				</unit>
+			</conditions>
+			<effects>
+				<attacks mul="0.333"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

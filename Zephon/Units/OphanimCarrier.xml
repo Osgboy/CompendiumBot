@@ -7,17 +7,16 @@
 				material="Units/OphanimCarrier"
 				mesh="Units/OphanimCarrier"
 				normalWeight="0.1"
-				position="0 0 48"
-				scale="0.7 0.7 0.7"/>
+				position="0 0 32"/>
 	</model>
 	<weapons>
 		<weapon type="GalgalimMissileBattery">
 			<models>
-				<missileWeapon muzzleBone="MissileL" muzzleCount="6"/>
-				<missileWeapon muzzleBone="MissileR" muzzleCount="6"/>
+				<missileWeapon fireInterval="0.5" muzzleBone="MissileL" missileScale="0.2" muzzleCount="6"/>
+				<missileWeapon fireInterval="0.5" muzzleBone="MissileR" missileScale="0.2" muzzleCount="6"/>
 			</models>
 		</weapon>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="EMPDrones">
 			<models>
 				<weapon bone="Hull_Shake"
 						material="Units/OphanimCarrierDroneDispenser"
@@ -28,19 +27,19 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="8"/>
-				<antimatterCost base="120"/> <!-- %antimatterCost base tier=11 factor=0.5 -->
-				<antimatterUpkeep base="6.0"/> <!-- %antimatterUpkeep base tier=11 factor=0.5 -->
-				<armor base="9"/>
+				<accuracy base="6"/>
+				<antimatterCost base="6"/> <!-- %antimatterCost base tier=9 factor=0.05 -->
+				<antimatterUpkeep base="0.3"/> <!-- %antimatterUpkeep base tier=9 factor=0.05 -->
+				<armor base="6"/>
+				<chipsCost base="30"/> <!-- %chipsCost base tier=9 factor=0.25 -->
+				<chipsUpkeep base="1.5"/> <!-- %chipsUpkeep base tier=9 factor=0.25 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
-				<moraleMax base="12"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=9 factor=0.25 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=9 factor=0.25 -->
+				<moraleMax base="10"/>
 				<movementMax base="6"/>
-				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
-				<singularityCoresCost base="12"/> <!-- %singularityCoresCost base tier=11 factor=0.05 -->
-				<singularityCoresUpkeep base="0.6"/> <!-- %singularityCoresUpkeep base tier=11 factor=0.05 -->
-				<transuraniumCost base="120"/> <!-- %transuraniumCost base tier=11 factor=0.5 -->
-				<transuraniumUpkeep base="6.0"/> <!-- %transuraniumUpkeep base tier=11 factor=0.5 -->
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -61,8 +60,8 @@
 		<attack>
 			<model>
 				<attack animation="Units/OphanimCarrierAttack"
-						beginFire="1.0"
-						endFire="1.73"
+						beginFire="0.5"
+						endFire="1.0"
 						responseSound="Units/Responses/OphanimCarrierAttack"
 						responseSoundCount="3"/>
 			</model>
@@ -70,7 +69,8 @@
 		<die>
 			<model>
 				<die animation="Units/OphanimCarrierDie0"
-						groundImpact="1.0"
+						effectDisable="0.001"
+						groundImpact="2.0"
 						sound="Units/OphanimCarrierDie"/> 
 			</model>
 		</die>
@@ -128,13 +128,73 @@
 				<action responseSound="Units/Responses/OphanimCarrierHoldPosition"/>
 			</model>
 		</skip>
+		<unitCast blueprint="DeployCombatDrone" name="DeployCombatDrone0"/>
+		<unitCast blueprint="DeployCombatDrone" name="DeployCombatDrone1"/>
+		<unitCast blueprint="DeployCombatDrone" name="DeployCombatDrone2"/>
+		<unitCast name="DeployRepairDrone"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				icon="Units/RepairDrone"
+				requiredActionPoints="0">
+			<model>
+				<cast animation="Units/OphanimCarrierAbility0"
+						 responseSound="Units/Responses/OphanimCarrierDeployRepairDrones"
+						 sound="Units/OphanimCarrierDeployRepairDrones"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="RepairDrone"
+												appearFromSourceUnit="1"
+												avoidBleed="0"
+												avoidCity="0"
+												avoidWater="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>	
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Summon" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
 		<unitCast name="DeployEMPDrone"
 				cooldown="5"
 				requiredUpgrade="EMPDrone">
 			<model>
-			<!-- missing animation -->
-				<cast sound="Units/OphanimCarrierDeployEMPDrones"
-						responseSound="Units/Responses/OphanimCarrierDeployEMPDrones"/>
+				<cast animation="Units/OphanimCarrierAbility0"
+						responseSound="Units/Responses/OphanimCarrierDeployEMPDrones"
+						sound="Units/OphanimCarrierDeployEMPDrones"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">
@@ -159,22 +219,22 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>	
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<enemyStrengthInTheArea greater="0"/>	
-						</targetTile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>

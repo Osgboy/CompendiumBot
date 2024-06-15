@@ -167,28 +167,28 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction less="0.5"/>	
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<hitpointsFraction less="0.5"/>	
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 	</actions>
 	<traits>
 		<trait type="Biological"/>
 		<trait type="Mechanical"/>
-		<trait type="ShoulderPlate" requiredUpgrade="ShoulderPlate"/>
-		<trait type="TacticalVisor" requiredUpgrade="TacticalVisor"/>
+		<trait type="ShoulderPlate"/>
+		<trait type="TacticalVisor"/>
 	</traits>
 </unit>

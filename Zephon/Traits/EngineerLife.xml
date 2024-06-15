@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Buff" visibleOnCity="1">
+<trait visibleOnCity="1">
 	<modifiers>
 		<modifier>
 			<conditions>
@@ -12,6 +12,16 @@
 			</effects>
 		</modifier>
 		<modifier requiredUpgrade="EngineerLifeUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<growth add="1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="EngineerLifeUpgrade2">
 			<conditions>
 				<building>
 					<type name="Headquarters"/>

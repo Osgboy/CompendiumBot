@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Buff" visibleOnUnit="1">
+<trait visibleOnUnit="1">
 	<onUnitDefended>
 		<attacker>
 			<area affect="Unit">
@@ -11,7 +11,7 @@
 							</unit>
 						</conditions>
 						<effects>
-							<addTrait type="Blighted" duration="3"/>
+							<addTrait type="Blighted" duration="1"/>
 						</effects>
 					</modifier>
 				</modifiers>

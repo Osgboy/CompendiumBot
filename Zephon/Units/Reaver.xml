@@ -70,7 +70,7 @@
 						chargeEndFire="0.8"
 						meleeAnimation="Units/ReaverMelee"
 						meleeBeginSwing="0.001"
-						meleeEndSwing="0.002"
+						meleeEndSwing="0.101"
 						meleeSound="Units/ReaverMelee"
 						meleeSoundCount="3"
 						responseSound="Units/Responses/ReaverAttack"
@@ -159,7 +159,7 @@
 				<selfTarget>
 					<conditions>
 						<unit>
-							<unitsInRange equal="2" range="1">
+							<unitsInRange greater="1" range="1">
 								<unit>
 									<enemy/>
 								</unit>
@@ -188,6 +188,7 @@
 			</scoreModifiers>
 		</unitCast>
 		<foundCity name="NomadicLife"
+				costScalesWithCities="1"
 				icon="Actions/FoundCity">
 			<model>
 				<action animation="Units/ReaverAbility0"
@@ -195,18 +196,22 @@
 						soundFirstActingMemberOnly="1"/>
 			</model>
 			<conditions>
-				<player>
-					<faction name="Chieftess"/>
+				<player match="Any">
+					<noTrait type="Trapped"/>
+					<cityCount equal="0"/>
 				</player>
 			</conditions>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
 		</foundCity>
 		<unitAction name="Hijack"
 				passive="1">
-			<conditions>
-				<player>
-					<faction name="Chieftess"/>
-				</player>
-			</conditions>
 			<beginTargets>
 				<selfTarget>
 					<areas>

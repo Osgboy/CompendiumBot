@@ -32,7 +32,7 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="6"/>
+				<accuracy base="8"/>
 				<armor base="2"/>
 				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
 				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
@@ -162,23 +162,23 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+											<noSighted/>
+										</tile>
+									</conditions>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<enemyStrengthInTheArea greater="0"/>
-							<noSighted/>
-						</targetTile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<unitCast name="CallTheAfflicted"
 				cooldown="3"
@@ -191,7 +191,7 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<algaeCost base="10"/>
+						<algaeCost base="10"/> <!-- %algaeCost base tier=5 factor=0.333 -->
 					</effects>
 				</modifier>
 			</modifiers>
@@ -212,22 +212,22 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score addMin="0.5" addMax="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<tile>
-							<enemyStrengthInTheArea greater="0"/>
-						</tile>
-					</conditions>
-					<effects>
-						<score add="0.4"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
 		<unitCast name="CryOfContrition"
 				cooldown="1"
@@ -245,17 +245,30 @@
 						<unit>
 							<ally/>
 							<damaged/>
+							<trait type="Biological"/>
 						</unit>
 					</conditions>
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="ToTargetAlliedDamagedUnit">
+								<modifier effectDescription="ToTargetAlliedDamagedBiologicalUnit">
 									<effects>
 										<hitpoints addMin="6" addMax="18"/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction less="0.5"/>	
+										</unit>
+									</conditions>
+									<effects>
+										<score addMin="1.0" addMax="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
@@ -265,26 +278,26 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<hitpoints addMin="-3" addMax="-9"/>
+										<hitpoints addMin="-2" addMax="-6"/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction less="0.5"/>	
+										</unit>
+									</conditions>
+									<effects>
+										<score addMin="-1.0" addMax="-1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetUnit>
-							<hitpointsFraction less="0.5"/>	
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<useWeapon cooldown="5"
 				elite="1"

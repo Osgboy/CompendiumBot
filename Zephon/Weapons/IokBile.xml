@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/BileExplosions"
+				fireInterval="0.3"
+				fireSound="Weapons/BioAcidSpray"
+				fireSoundBeginCount="1"
+				fireSoundEndCount="1"
+				muzzleFlashesBlueprint="Effects/BileMuzzleFlashes"
+				projectilesBlueprint="Effects/BileProjectiles"
+				windupDuration="0.2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="5"/> <!-- %armorPenetration base tier=6 -->
+				<attacks base="1"/>
+				<damage base="4"/> <!-- %damage base tier=5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Corrosive"/>
+		<trait type="Melee"/>
+	</traits>
+</weapon>

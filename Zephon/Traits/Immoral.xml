@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" rankMax="19" rankPerTurn="1" visibleOnCity="1">
+<trait rankMax="19" rankPerTurn="1" visibleOnCity="1">
 	<modifiers>
 		<modifier>
 			<conditions>
@@ -9,6 +9,16 @@
 			</conditions>
 			<effects>
 				<loyalty addMin="-0.5" addMax="-10"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ImmoralUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty addMin="0.25" addMax="5"/>
 			</effects>
 		</modifier>
 	</modifiers>

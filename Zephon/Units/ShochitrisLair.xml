@@ -7,17 +7,18 @@
 				material="Units/ShochitrisLair"
 				mesh="Units/ShochitrisLair"
 				normalWeight="0.0"
+				onlyRotateWeapons="1"
 				position="0 0 0"
 				scale="1.2 1.2 1.2"/>
 	</model>
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<algaeCost base="15"/> <!-- %algaeCost base tier=7 factor=0.25 -->
-				<algaeUpkeep base="0.75"/> <!-- %algaeUpkeep base tier=7 factor=0.25 -->
+				<algaeCost base="20"/> <!-- %algaeCost base tier=7 factor=0.333 -->
+				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=7 factor=0.333 -->
 				<armor base="0"/>
-				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
-				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=7 factor=0.333 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=7 factor=0.333 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
 				<moraleMax base="0"/>
@@ -40,10 +41,10 @@
 				<action animation="Units/ShochitrisLairAppear"
 						effectBlueprint="Effects/LairSpawn"
 						beginEffect="0.2"
-						responseSound="Units/Responses/ShochitrisLairAppear"
 						sound="Units/ShochitrisLairAppear"
-						soundCount="1"
-						soundDelay="0.5"/>
+						soundDelay="0.5"
+						voiceSound="Units/Responses/ShochitrisLairAppear"
+						voiceSoundDelay="0.5"/>
 			</model>
 		</appear>
 		<attack>

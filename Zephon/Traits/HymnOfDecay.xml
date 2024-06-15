@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Debuff" icon="Actions/HymnOfDecay" visibleOnUnit="1">
 	<onTurnStarted>
-		<tile>
+		<unit>
 			<area affect="Unit">
 				<modifiers endure="0">
 					<modifier effectDescription="EachTurn">
@@ -12,11 +12,11 @@
 					<modifier effectDescription="EachTurn"
 							requiredUpgrade="AfflictionsAntiphon">
 						<effects>
-							<morale add="-1"/>
+							<morale add="-2"/>
 						</effects>
 					</modifier>					
 				</modifiers>
 			</area>
-		</tile>
+		</unit>
 	</onTurnStarted>
 </trait>

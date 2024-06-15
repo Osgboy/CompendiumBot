@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Upgrade" icon="Factions/Chieftess" rankMax="9" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait type="Headquarters"/>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mulMin="0.05" mulMax="0.5"/>
+				<hitpointsMax mulMin="0.05" mulMax="0.5"/>
+				<unitCost mulMin="0.1" mulMax="1.0"/>
+				<unitUpkeep mulMin="0.1" mulMax="1.0"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions match="Any">
+				<action>
+					<type name="ProduceUnit"/>
+				</action>
+			</conditions>
+			<effects>
+				<productionCost addMin="1.2" addMax="12.0"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<noTrait type="Headquarters"/>
+				</unit>
+			</conditions>
+			<effects>
+				<strength mulMin="0.1" mulMax="1.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

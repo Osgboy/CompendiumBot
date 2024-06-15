@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<beamWeapon/>
+		<beamWeapon beamsBlueprint="Effects/TachyonBeams"
+				chargeBlueprint="Effects/TachyonBeamCharge"
+				fireInterval="0.05"
+				muzzleFlashesBlueprint="Effects/TachyonBeamMuzzleFlashes"/>
 	</model>
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="3"/> <!-- %armorPenetration base tier=4 -->
-				<attacks base="2"/>
-				<damage base="2"/> <!-- %damage base tier=3 -->
+				<armorPenetration base="5"/> <!-- %armorPenetration base tier=6 -->
+				<attacks base="1"/>
+				<damage base="4"/> <!-- %damage base tier=5 -->
 			</effects>
 		</modifier>
 	</modifiers>

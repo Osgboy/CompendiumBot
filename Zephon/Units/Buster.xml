@@ -50,7 +50,7 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="5"/>
+				<accuracy base="6"/>
 				<armor base="4"/>
 				<foodCost base="15"/> <!-- %foodCost base tier=5 factor=0.5 -->
 				<foodUpkeep base="0.75"/> <!-- %foodUpkeep base tier=5 factor=0.5 -->
@@ -170,7 +170,7 @@
 			</modifiers>
 		</useWeapon>		
 		<foundCity name="NomadicLife"
-				costScalesWithCities="0"
+				costScalesWithCities="1"
 				icon="Actions/FoundCity">
 			<model>
 				<action animation="Units/ReaverAbility0"
@@ -178,18 +178,22 @@
 						soundFirstActingMemberOnly="1"/>
 			</model>
 			<conditions>
-				<player>
-					<faction name="Chieftess"/>
+				<player match="Any">
+					<noTrait type="Trapped"/>
+					<cityCount equal="0"/>
 				</player>
-			</conditions>			
+			</conditions>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
 		</foundCity>
 		<unitAction name="Hijack"
 				passive="1">
-			<conditions>
-				<player>
-					<faction name="Chieftess"/>
-				</player>
-			</conditions>
 			<beginTargets>
 				<selfTarget>
 					<areas>

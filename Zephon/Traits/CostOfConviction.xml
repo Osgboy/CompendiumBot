@@ -3,7 +3,29 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<populationInfluenceUpkeep set="0.5"/>
+				<populationInfluenceUpkeep add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WhileAbove2Loyalty"
+				requiredUpgrade="CostOfConvictionUpgrade">
+			<conditions>
+				<city>
+					<loyalty greater="2"/>
+				</city>
+			</conditions>
+			<effects>
+				<populationInfluenceUpkeep add="-0.5"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WhileAbove8Loyalty"
+				requiredUpgrade="CostOfConvictionUpgrade2">
+			<conditions>
+				<city>
+					<loyalty greater="8"/>
+				</city>
+			</conditions>
+			<effects>
+				<populationInfluenceUpkeep add="-0.5"/>
 			</effects>
 		</modifier>
 	</modifiers>

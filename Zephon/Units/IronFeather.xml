@@ -22,7 +22,6 @@
 		</weapon>
  		<weapon type="StickyFoam"
  				enabled="0"
- 				requiredUpgrade="StickyFoam"
  				slotName="StickyFoam">
 			<models>
 				<flamerWeapon bone="Chest"
@@ -143,8 +142,7 @@
 			</model>
 		</skip>
  		<useWeapon weaponSlotName="StickyFoam"
-				cooldown="5"
-				requiredUpgrade="StickyFoam">
+				cooldown="5">
 			<model>
 				<attack animation="Units/MalakimDestroyerAbility0"
 						beginFire="0.2"

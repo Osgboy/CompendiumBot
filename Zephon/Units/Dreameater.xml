@@ -56,7 +56,7 @@
 						chargeEndFire="1.2"
 						meleeAnimation="Units/DreameaterMelee"
 						meleeBeginSwing="0.001"
-						meleeEndSwing="0.002"
+						meleeEndSwing="0.101"
 						meleeSound="Units/DreameaterMelee"
 						meleeSoundCount="1"
 						responseSound="Units/Responses/DreameaterAttack"
@@ -159,17 +159,17 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>				
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>				
 		</unitCast>
 	</actions>
 	<traits>

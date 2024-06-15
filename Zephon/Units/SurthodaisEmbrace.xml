@@ -21,7 +21,7 @@
 				<accuracy base="6"/>
 				<algaeCost base="15"/> <!-- %algaeCost base tier=7 factor=0.25 -->
 				<algaeUpkeep base="0.75"/> <!-- %algaeUpkeep base tier=7 factor=0.25 -->
-				<armor base="2"/>
+				<armor base="4"/>
 				<cargoSlots base="3"/>
 				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
 				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
@@ -124,9 +124,9 @@
 			<beginTargets>
 				<selfTarget>
 					<areas>
-						<area affect="Tile" radius="1" excludeRadius="0">
+						<area affect="Tile" radius="1">
 							<modifiers>
-								<modifier effectDescription="ToAdjacentAlliedUnits">
+								<modifier effectDescription="ToAdjacentAlliedBiologicalUnits">
 									<effects>
 										<addTrait type="DarkCaress"/>
 									</effects>
