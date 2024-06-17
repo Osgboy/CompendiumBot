@@ -56,7 +56,7 @@
 	<entry name="Bleed" value="&lt;string name='Features/Bleed'/&gt;"/>
 	<entry name="BleedFlavor" value="&lt;string name='Features/BleedFlavor'/&gt;"/>
 	<entry name="Bleedwalker" value="Bleedwalker"/>
-	<entry name="BleedwalkerProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Suffers no movement penalty in Bleed"/>
+	<entry name="BleedwalkerProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Suffers no damage or movement penalty in Bleed"/>
 	<entry name="Blighted" value="Blighted"/>
 	<entry name="Blinded" value="Blinded"/>
 	<entry name="BreachCollector" value="Breach Collector"/>
@@ -83,6 +83,8 @@
 	<entry name="CombatShield" value="Combat Shield"/>
 	<entry name="Common" value="Common"/>
 	<entry name="CommonProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Classification"/>
+	<entry name="ConcordatAdvancedResources" value="&lt;string name='Upgrades/ConcordatAdvancedResources'/&gt;"/>
+	<entry name="ConcordatAdvancedResourcesFlavor" value="&lt;string name='Upgrades/ConcordatAdvancedResourcesFlavor'/&gt;"/>
 	<entry name="Concussed" value="Concussed"/>
 	<entry name="Concussive" value="Concussive"/>
 	<entry name="Cone" value="Cone"/>
@@ -110,6 +112,7 @@
 	<entry name="CyberInfantryUpgrade" value="Interpolated Production"/>
 	<entry name="CyberOperationsUpgrade" value="Insight Integration"/>
 	<entry name="CyberVehiclesUpgrade" value="Subatomic Displacement"/>
+	<entry name="Damaged" value="Damaged"/>
 	<entry name="DarkCaress" value="&lt;string name='Actions/DarkCaress'/&gt;"/>
 	<entry name="DarkCaressFlavor" value="&lt;string name='Actions/DarkCaressFlavor'/&gt;"/>
 	<entry name="DarkOmen" value="&lt;string name='Actions/DarkOmen'/&gt;"/>
@@ -119,7 +122,6 @@
 	<entry name="DeflectorShield" value="Deflector Shield"/>
 	<entry name="Deforming" value="Deforming"/>
 	<entry name="Decaying" value="Decaying"/>
-	<entry name="DefenseMatrix" value="Defense Matrix"/>
 	<entry name="DeportedReavers" value="Deported Reavers"/>
 	<entry name="DeportedReaversFlavor" value="&lt;string name='Quests/TheyAreInTheWalls/Deport'/&gt;"/>
 	<entry name="DimensionalEchoesUpgrade" value="Ichor of Uzhodai"/>
@@ -253,6 +255,7 @@
 	<entry name="IoklaFlavor" value="&lt;string name='Items/IoklaFlavor'/&gt;"/>
 	<entry name="Kind" value="Kind"/>
 	<entry name="Large" value="Large"/>
+	<entry name="LargeProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Classification"/>
 	<entry name="LargeSplash" value="Large Splash"/>
 	<entry name="Laser" value="Laser"/>
 	<entry name="Lawful" value="Lawful"/>
@@ -296,7 +299,7 @@
 	<entry name="NightmareFlavor" value="&lt;string name='Actions/NightmareFlavor'/&gt;"/>
 	<entry name="NightmareProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Only visible to you and allies<br/><string name='Traits/SummonProperties'/&gt;"/>
 	<entry name="OblivionUpgrade" value="The Mind's Eye"/>
-	<entry name="OblivionUpgrade" value="Extinction"/>
+	<entry name="OblivionUpgrade2" value="Extinction"/>
 	<entry name="OnFire" value="On Fire"/>
 	<entry name="Oppressive" value="Oppressive"/>
 	<entry name="Outpost" value="Outpost"/>
@@ -528,7 +531,6 @@
 	<entry name="ExtraPlatingFlavor" value="We didn't put high-caliber plating on mobile armor to get our people home safe. We did it because if we kept them alive for even a few seconds longer, they'd have the time to fire off a shot that could turn the tide of battle."/>
 	<entry name="FerventStrengthFlavor" value="The bodies of Uzhodai's most fervent worshippers were molded for long journeys in the black of space. What did that mean? Pour a thousand bullets into one, get the bone to start sticking out from the skin, and you could see up close how the tendrils of nerves and blood vessels rebound themselves to keep the body alive and fighting. There was no wounding these monsters. Just killing them."/>
 	<entry name="FiringPointsFlavor" value="When you're trapped in a tight box taking heavy fire, it feels good to hit back—just as long as you're doing it behind proper cover. Our techs worked hard to make sure firing points in our bunkers wouldn't compromise their integrity. It wouldn't do much good to let our soldiers fight like hell if it would bring the roof down on them..."/>
-	<entry name="FirstAidDroneFlavor" value="Can't give a drone a doctorate but you can give it a few hundred CCs of morphine, a pack of bandages and just enough programming to know which one to use. Most of the time, of course…"/>
 	<entry name="FlyingFlavor" value="Getting skybound put you in the polluted air, but it let you traverse the bleak seas and jagged cliffs that defined the cracked Earth. The view was probably better before our planet became a poisoned nightmare."/>
 	<entry name="FoodUpgradeFlavor" value="Some Techs who deserved a hell of a pay bump developed a chemical solution that would clean up fertilizer from the water. That made the area around our greenhouses some of the most unpolluted places on the surface. Schools of fish would gather in these spots, eager for fresh conditions—and giving us some desperately-needed food supplies to keep our people fed."/>
 	<entry name="FortificationFlavor" value="Walls didn't make you feel safe. They just felt like a ticking clock. Every “thud” of cannonfire hitting a fortification was a countdown to when the enemy would inevitably break through. You could shore them up, patch them as best you could—but any way you sliced it, all walls were meant to fall."/>

@@ -2,7 +2,7 @@
 <trait visibleOnBuilding="1">
 	<modifiers>
 		<modifier effectDescription="AntimatterUpgrade">
-			<conditions>
+			<conditions ignoreForTraitVisibility="1">
 				<tile match="Any">
 					<feature type="Construct"/>
 					<feature type="Desert"/>

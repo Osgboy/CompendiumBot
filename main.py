@@ -1,3 +1,4 @@
+#!~/bot-env/Scripts/python.exe
 import discord
 import os
 from dotenv import load_dotenv
@@ -91,7 +92,7 @@ class Item(Obj):
     def get_item_influence_cost(self):
         self.influenceCost = self.tree.find('modifiers').find('modifier').find('effects').find('influenceCost').get('base')
 
-@dataclass
+@dataclass#(slots=True)
 class CombatStats:
     __slots__ = ['groupSizeMax', 'armor', 'hitpointsMax', 'moraleMax',
                  'movementMax', 'cargoSlots', 'itemSlots']
@@ -103,7 +104,7 @@ class CombatStats:
     cargoSlots: str
     itemSlots: str
 
-@dataclass
+@dataclass#(slots=True)
 class GResourceStats:
     __slots__ = ['biomassUpkeep', 'biomassCost', 'requisitionsUpkeep', 'requisitionsCost',
                  'foodUpkeep', 'foodCost', 'oreUpkeep', 'oreCost',
@@ -122,7 +123,7 @@ class GResourceStats:
     influenceCost: str
     productionCost: str
 
-@dataclass
+@dataclass#(slots=True)
 class ZResourceStats:
     __slots__ = ['foodUpkeep', 'foodCost', 'mineralsUpkeep', 'mineralsCost',
                  'energyUpkeep', 'energyCost', 'transuraniumUpkeep', 'transuraniumCost',
@@ -245,7 +246,7 @@ class Weapon(Obj):
         super().__init__(name, game, objClass)
         self.attacks = '1'
         self.armorPen = '0'
-        self.damage = '1'
+        self.damage = '?'
         self.range = '?'
         self.accuracy = '6'
         self.traits: dict = {}
@@ -253,7 +254,11 @@ class Weapon(Obj):
     def get_weapon_traits(self):
         try:
             for trait in self.tree.find('traits').iterfind('trait'):
-                traitObj = Trait.from_internalID(trait.get('name'), self.game, 'Traits')
+                if self.game == 'Gladius':
+                    traitName = trait.get('name')
+                elif self.game == 'Zephon':
+                    traitName = trait.get('type')
+                traitObj = Trait.from_internalID(traitName, self.game, 'Traits')
                 self.traits[traitObj.name] = trait.get('requiredUpgrade')
         # no traits
         except AttributeError:
@@ -269,6 +274,10 @@ class Weapon(Obj):
                 self.range = str(rangeMin) + ' - ' + str(rangeMax)
             else:
                 self.range = rangeMax
+
+class GWeapon(Weapon):
+    def __init__(self, name: str, game: str, objClass: str):
+        super().__init__(name, game, objClass)
 
     def get_weapon_stats(self):
         try:
@@ -303,7 +312,41 @@ class Weapon(Obj):
         except AttributeError:
             pass
 
+class ZWeapon(Weapon):
+    def __init__(self, name: str, game: str, objClass: str):
+        super().__init__(name, game, objClass)
+
+    def get_weapon_stats(self):
+        try:
+            effects = self.tree.find('modifiers').find('modifier').find('effects')
+        except AttributeError:
+            return
+        try:
+            self.attacks = effects.find('attacks').items()[0][1]
+        except AttributeError:
+            pass
+        try:
+            self.armorPen = effects.find('armorPenetration').items()[0][1]
+        except AttributeError:
+            pass
+        try:
+            self.damage = effects.find('damage').items()[0][1]
+        except AttributeError:
+            pass
+        try:
+            self.accuracy = effects.find('accuracy').items()[0][1]
+        except AttributeError:
+            pass
+
 class Trait(Obj):
+    def __init__(self, name: str, game: str, objClass: str):
+        super().__init__(name, game, objClass)
+        self.modifiers: str
+
+    def get_trait_modifiers(self):
+        self.modifiers = ET.tostring(self.tree.getroot().find('modifiers'), encoding='unicode')
+
+class GTrait(Trait):
     def __init__(self, name: str, game: str, objClass: str):
         super().__init__(name, game, objClass)
         self.factionAndID: str
@@ -324,7 +367,7 @@ class Trait(Obj):
             elif targetStr == self.factionAndID + 'Flavor':
                 self.flavor = val2val(e.get('value'), self.englishDir)
 
-class ZTrait(Obj):
+class ZTrait(Trait):
     def __init__(self, name: str, game: str, objClass: str):
         super().__init__(name, game, objClass)
 
@@ -386,8 +429,9 @@ gIcons = {'biomass':'<:Biomass:1240218802831233118>', 'requisitions':'<:Requisit
 zIcons = {'food':'<:Food:1250986007537647687>', 'minerals':'<:Minerals:1250986099023806464>',
                 'energy':'<:Energy:1250985795242954764>', 'influence':'<:Influence:1250986095739404339>',
                 'algae':'<:Algae:1250981089540046929>', 'chips':'<:Chips:1250985791455494174>',
-                'antimatter':'<:Antimatter:1250981090278117416>', 'singularityCores':'<:SingularityCores:1250986245085986909>',
-                'transuranium':'<:Transuranium:1250986247086669937>', 'production':'<:Production:1250986164626657383>',
+                'antimatter':'<:Antimatter:1250981090278117416>', 'dimensionalEchoes':'<:DimensionalEchoes:1250985794450227240>',
+                'singularityCores':'<:SingularityCores:1250986245085986909>', 'transuranium':'<:Transuranium:1250986247086669937>',
+                'production':'<:Production:1250986164626657383>',
                 
                 'armor':'<:Armor:1250981091125362788>', 'hitpoints':'<:Hitpoints:1250986009429282866>',
                 'morale':'<:Morale:1250986099816530033>', 'movement':'<:Movement:1250986100621836400>',
@@ -656,7 +700,7 @@ async def gunit(interaction: discord.Interaction, unitname:str):
 
 @client.tree.command(name='gweapon', description='Return info on a Gladius weapon')
 async def gweapon(interaction: discord.Interaction, weaponname:str):
-    weapon = Weapon(weaponname, 'Gladius', 'Weapons')
+    weapon = GWeapon(weaponname, 'Gladius', 'Weapons')
     weapon.fuzzy_match_name(weapon.get_obj_info)
     if not weapon.found:
         markdown = '**'
@@ -710,15 +754,72 @@ async def gweapon(interaction: discord.Interaction, weaponname:str):
         except FileNotFoundError:
             await interaction.response.send_message(embed=embed)
 
+@client.tree.command(name='zweapon', description='Return info on a Zephon weapon')
+async def zweapon(interaction: discord.Interaction, weaponname:str):
+    weapon = ZWeapon(weaponname, 'Zephon', 'Weapons')
+    weapon.fuzzy_match_name(weapon.get_obj_info)
+    if not weapon.found:
+        markdown = '**'
+        await interaction.response.send_message(markdown + weaponname + markdown + ' not found. Did you mean ' + markdown + weapon.bestMatch + markdown + '?')
+    else:
+        weapon.get_icon()
+        weapon.get_weapon_traits()
+        weapon.get_weapon_range()
+        weapon.get_weapon_stats()
+
+        # Name and Description
+        if weapon.description:
+            embed = discord.Embed(title=weapon.name, description=weapon.description)
+        else:
+            embed = discord.Embed(title=weapon.name)
+
+        # Stats
+        statText = (zIcons['damage'], ' ', weapon.damage, ' | ', zIcons['attacks'], ' ', weapon.attacks, ' | ',
+                    zIcons['armorPenetration'], ' ', weapon.armorPen, ' | ', zIcons['accuracy'], ' ', weapon.accuracy, ' | ',
+                    zIcons['range'], ' ', weapon.range)
+        embed.add_field(name="Stats", value=''.join(statText))
+
+        # Traits
+        traitsText = []
+        for trait in weapon.traits:
+            # if upgrade required
+            if weapon.traits[trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name="Traits", value=''.join(traitsText), inline=False)
+
+        # Flavor
+        if weapon.flavor != '':
+            embed.add_field(name='Flavor', value='*' + weapon.flavor + '*')
+        embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.\n'
+                               'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
+                               'Values shown may not be accurate.'))
+
+        # Thumbnail
+        try:
+            if weapon.iconPath:
+                image = discord.File('./Zephon/Weapons/' + weapon.iconPath + '.png', filename='icon.png')
+            else:
+                image = discord.File('./Zephon/Icons/Weapons/' + weapon.internalID + '.png', filename='icon.png')
+            embed.set_thumbnail(url="attachment://icon.png")
+            await interaction.response.send_message(file=image, embed=embed)
+        except FileNotFoundError:
+            await interaction.response.send_message(embed=embed)
+
 @client.tree.command(name='gtrait', description='Return info on a Gladius trait')
 async def gtrait(interaction: discord.Interaction, traitname:str):
-    trait = Trait(traitname, 'Gladius', 'Traits')
+    trait = GTrait(traitname, 'Gladius', 'Traits')
     trait.fuzzy_match_name(trait.get_obj_info)
     if not trait.found:
         markdown = '**'
         await interaction.response.send_message(markdown + traitname + markdown + ' not found. Did you mean ' + markdown + trait.bestMatch + markdown + '?')
     else:
         trait.get_icon()
+        trait.get_trait_modifiers()
 
         # Name and Description
         embed = discord.Embed(title=trait.name, description=trait.description)        
@@ -732,6 +833,10 @@ async def gtrait(interaction: discord.Interaction, traitname:str):
         # Flavor
         if trait.flavor != '':
             embed.add_field(name='Flavor', value='*' + trait.flavor + '*')
+
+        # Modifiers
+        if trait.modifiers:
+            embed.add_field(name='Modifiers', value=trait.modifiers)
 
         # Thumbnail
         try:
@@ -753,6 +858,7 @@ async def ztrait(interaction: discord.Interaction, traitname:str):
         await interaction.response.send_message(markdown + traitname + markdown + ' not found. Did you mean ' + markdown + trait.bestMatch + markdown + '?')
     else:
         trait.get_icon()
+        trait.get_trait_modifiers()
 
         # Name and Description
         embed = discord.Embed(title=trait.name, description=trait.description)   
@@ -760,6 +866,10 @@ async def ztrait(interaction: discord.Interaction, traitname:str):
         # Flavor
         if trait.flavor != '':
             embed.add_field(name='Flavor', value='*' + trait.flavor + '*')
+
+        # Modifiers
+        if trait.modifiers:
+            embed.add_field(name='Modifiers', value=trait.modifiers)
 
         # Thumbnail
         try:

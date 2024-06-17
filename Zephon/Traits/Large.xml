@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnUnit="1">
 	<modifiers>
-		<modifier effectDescription="WhileBelow50%Hitpoints">
-			<conditions>
-				<unit ignoreForTraitVisibility="1">
-					<hitpointsFraction less="0.5"/>
-					<noTrait type="FerventStrength"/>
-				</unit>
-			</conditions>
-			<effects>
-				<accuracy mul="-0.333"/>
-			</effects>
-		</modifier>
 		<modifier visible="0">
 			<effects>
 				<cargoSlotsRequired min="-1" max="-1"/>

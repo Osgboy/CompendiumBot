@@ -6,7 +6,7 @@
 				effectsBlueprint="Effects/FallenOrolos"
 				mesh="Units/FallenOrolos"
 				normalWeight="0.1"
-				scale="1.2 1.2 1.2"
+				scale="1.3 1.3 1.3"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -19,16 +19,16 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="4"/>
+				<accuracy base="6"/>
 				<algaeCost base="20"/> <!-- %algaeCost base tier=8 factor=0.25 -->
 				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=8 factor=0.25 -->
-				<armor base="4"/>
+				<armor base="2"/>
 				<energyCost base="20"/> <!-- %energyCost base tier=8 factor=0.25 -->
 				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=8 factor=0.25 -->
 				<foodCost base="20"/> <!-- %foodCost base tier=8 factor=0.25 -->
 				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=8 factor=0.25 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
 				<moraleMax base="8"/>
 				<movementMax base="3"/>
 				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->

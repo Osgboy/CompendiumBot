@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnBuilding="1">
 	<modifiers>
-		<perBuildingInCityModifier effectDescription="PopulationLimitUpgrade">
-			<perBuildingConditions>
-				<building>
-					<type name="Loyalty"/>
-				</building>
-			</perBuildingConditions>
+		<modifier effectDescription="PopulationLimitUpgrade">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<building type="Loyalty"/>
+				</tile>
+			</conditions>
 			<effects>
-				<energy add="1"/>
+				<energy add="2"/>
 			</effects>
-		</perBuildingInCityModifier>
+		</modifier>
 	</modifiers>
 </trait>
