@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manager>
+	<actions>
+		<playerCast name="AntiparticlePurge">
+			<model>
+				<cast blueprint="Effects/AntiparticlePurge" targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile match="Any">
+							<feature type="Bleed"/>
+							<feature type="Forest"/>
+							<feature type="Ruins"/>
+						</tile>
+					</conditions>					
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<removeFeature type="Bleed"/>
+										<removeFeature type="Forest"/>
+										<removeFeature type="Ruins"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetBiologicalUnit" requiredUpgrade="UnrestrainedDisassembly">
+ 									<conditions>
+										<unit>
+											<trait type="Biological"/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints add="-4"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<energy add="10"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+						<targetUnit>
+							<enemy/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="Apotheosis">
+			<model>
+				<cast blueprint="Effects/Apotheosis"
+						onlyVisualizedOnTarget="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<own/>
+							<trait type="Biological"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetOwnBiologicalUnit">
+									<effects>
+										<hitpoints mul="-1.0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentEnemyUnits">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="Apotheosis"/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="ToAdjacentEnemyUnits"
+										requiredUpgrade="NuminousReveries">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="Blinded" duration="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetUnit>
+ 							<unitsInRange greater="1" range="1">
+ 								<unit>
+ 									<enemy/>
+ 								</unit>
+ 							</unitsInRange>
+							<hitpointsFraction less="0.1"/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>		
+		</playerCast>
+		<playerCast name="ExperimentalDrugs">
+			<model>
+				<cast blueprint="Effects/Pill"
+						sound="Actions/ExperimentalDrugs"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<trait type="Biological"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit" weight="2">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addTrait type="ExperimentalDrugsSuccess" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit" weight="1">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<changePlayer name="Neutral"/>
+										<addTrait type="ExperimentalDrugsFailure" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="FleshTree" icon="Features/FleshTree">
+			<model>
+				<cast blueprint="Effects/MeatHarvest"
+						sound="Actions/MeatHarvest"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<city>
+							<populationLimitFree greater="0"/>
+						</city>
+						<unit>
+							<ally/>
+							<type name="Headquarters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="City">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedCity">
+									<effects>
+										<accumulatedGrowth add="10"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<city>
+							<populationIdle less="0"/>
+						</city>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="HymnOfDecay">
+			<model>
+				<cast sound="Actions/HymnOfDecay"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noFeature type="HymnOfDecay"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<weaponDamage weapon="HymnOfDecay"/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="OnTargetTile"
+										requiredUpgrade="AfflictionsAntiphon">
+									<effects>
+										<morale add="-1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addFeature type="HymnOfDecay" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+						</targetTile>
+						<targetUnit>
+							<enemy/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="InterferenceProtocols">
+			<model>
+				<cast blueprint="Effects/InterferenceProtocols"
+						sound="Actions/InterferenceProtocols"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>					
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnit">
+									<effects>
+										<addTrait type="InterferenceProtocols" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</playerCast>
+		<playerCast name="LogisticsExperts">
+			<model>
+				<cast blueprint="Effects/LogisticsExperts"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noTrait type="LogisticsExperts"/>
+							<featureCategory name="SpecialResource"/>
+							<control/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="LogisticsExperts" duration="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<enemyStrengthInTheArea equal="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</playerCast>
+		<playerAction name="PayResources/ContactAugur"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="10"/>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/FormFunction"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<energyCost base="40"/>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/MeetYourMaker"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<energyCost base="40"/>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/ThePulledThread"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="160"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/TheSpaceEngine"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterCost base="10"/>
+						<dimensionalEchoesCost base="5"/>
+						<singularityCoresCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerCast name="SatelliteScan">
+			<model>
+				<cast blueprint="Effects/SatteliteScan"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1" sighted="0">
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<enemyStrengthInTheArea greater="0"/>
+							<noSighted/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="TormentOfTheVoice" cooldown="10">
+			<model>
+				<cast blueprint="Effects/TormentOfTheVoice"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="-6"/>
+										<morale add="-3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+	</actions>
+</manager>

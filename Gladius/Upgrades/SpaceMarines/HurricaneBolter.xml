@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="10" icon="Weapons/TwinLinkedBoltgun">
+	<requiredUpgrades>
+		<upgrade name="SpaceMarines/StormravenGunship"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

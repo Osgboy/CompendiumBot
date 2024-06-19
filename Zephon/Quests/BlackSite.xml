@@ -1,0 +1,278 @@
+<quest>
+	<conditions>
+ 		<player>
+			<turn greater="40"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Assault" nextStage="Assault"/>
+				<option name="Infiltrate" nextStage="Infiltrate"/>
+				<option name="Assist" nextStage="Assist">
+					<modifiers>
+						<modifier>
+							<effects>
+								<researchCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>				
+				</option>
+				<option name="Inform" nextStage="Inform">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<standingTier greater="-1"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="IgnoreSuccess" weight="1"/>
+						<nextStage name="IgnoreFailure" weight="3"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Assault" nextStageOnSuccess="AssaultSuccess"
+				nextStageOnFailure="AssaultFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>			
+			<objectives>
+				<killCamp name="KillBlackSite" turns="10">
+					<boss type="ZephonBlackSite" name="Units/ZephonBlackSite"/>
+					<defenders>
+						<unit type="Warden" count="3"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="AssaultSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="30"/>
+							<chips add="15"/>	
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AssaultFailure">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="5" type="Blackout"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Infiltrate" nextStageOnSuccess="InfiltrateSuccess"
+				nextStageOnFailure="InfiltrateFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitBlackSite" turns="10" visitRadius="1">
+					<defenders>
+						<unit type="ZephonBlackSite" name="Units/ZephonBlackSite"/>
+						<unit type="Warden" count="3"/>
+					</defenders>
+					<unitConditions>
+ 						<noTrait type="Large"/>
+						<trait type="Hero"/>
+					</unitConditions>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="InfiltrateSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="60"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="InfiltrateFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="24" waves="6">
+					<attackers>
+						<unit type="Warden"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="Assist">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Neutral"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<addUnit type="ZephonBlackSite" name="Units/ZephonBlackSite"/>
+							<addUnit type="Warden" token="BlackSite"/>
+							<addUnit type="Warden" token="BlackSite"/>
+							<addUnit type="Warden" token="BlackSite"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<closestPlayerSelector>
+					<conditions>
+						<player>
+							<noFaction name="Neutral"/>
+							<noFaction name="Zephon"/>
+							<enemy/>
+						</player>
+					</conditions>
+				</closestPlayerSelector>		
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="BlackSite"/>
+						</unit>
+					</conditions>
+				</unitSelector>			
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<setPrimaryEnemy/>
+						</effects>
+					</modifier>
+				</unitModifiers>				
+			</modifications>
+		</stage>
+		<stage name="Inform">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="IgnoreSuccess"/>
+		<stage name="IgnoreFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="24" waves="6">
+					<attackers>
+						<unit type="Warden"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+	</stages>
+</quest>

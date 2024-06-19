@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="DeployCombatDrone"
+		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="5"
+		icon="Units/CombatDrone"
+		requiredActionPoints="0">
+	<model>
+		<cast animation="Units/OphanimCarrierAbility0"
+				responseSound="Units/Responses/OphanimCarrierDeployCombatDrones"
+				sound="Units/OphanimCarrierDeployCombatDrones"/>
+	</model>
+	<beginTargets>
+		<target rangeMax="1">
+			<conditions>
+				<tile>
+					<noUnit/>
+				</tile>
+			</conditions>
+			<areas>
+				<area affect="Tile">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addUnit type="CombatDrone"
+										appearFromSourceUnit="1"
+										avoidBleed="0"
+										avoidCity="0"
+										avoidWater="0"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+				<area affect="Unit">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="Summon" duration="3"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</target>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<targetTile>
+					<enemyStrengthInTheArea greater="0"/>	
+				</targetTile>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>
+</unitCast>

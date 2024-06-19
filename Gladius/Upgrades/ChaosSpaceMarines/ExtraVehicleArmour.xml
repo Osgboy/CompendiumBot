@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="7" icon="Traits/ExtraVehicleArmour">
+	<requiredUpgrades>
+		<upgrade name="ChaosSpaceMarines/Aircraft"/>
+		<upgrade name="ChaosSpaceMarines/Vehicles"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.75"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

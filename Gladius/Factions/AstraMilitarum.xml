@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction constructSound="Actions/Construct"
+		energy="1"
+		energyPooling="0.25"
+		food="1"
+		foodPooling="0.25"
+		influence="1"
+		loyalty="1"
+		ore="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingEnergy="25"
+		startingFood="25"
+		startingInfluence="25"
+		startingOre="50"
+		startingRequisitions="0">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<mainTrack name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="AstraMilitarum/Story0" icon="Quests/AstraMilitarum/Chapter0"
+				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="AstraMilitarum/Vehicles"/>
+						<constructBuilding buildingType="AstraMilitarum/Vehicles"/>
+					</objectives>
+					<rewards>
+						<ore amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<produceUnit unitType="AstraMilitarum/ScoutSentinel"/>
+					</objectives>
+					<rewards>
+						<ore amount="50"/>
+					</rewards>					
+				</stage>
+				<stage>
+					<objectives>
+						<killUnit count="3" native="1"/>
+					</objectives>
+					<rewards>
+						<upgrade name="AstraMilitarum/TrainedSentinelPilots"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="AstraMilitarum/Story1" icon="Quests/AstraMilitarum/Chapter1"
+				firstTurn="20" lastTurn="30">
+ 			<conditions>
+				<quests>
+					<completed name="AstraMilitarum/Story0"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<recoverUnit unitType="AstraMilitarum/Guardsman"
+								count="3"/>
+					</objectives>
+					<rewards>
+						<item type="ArmaplasBracers"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="AstraMilitarum/Story2" icon="Quests/AstraMilitarum/Chapter2"
+				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="AstraMilitarum/Story1"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<foundCity/>
+						<constructBuilding buildingType="AstraMilitarum/Influence"
+								count="2"/>
+						<startEdict/>
+					</objectives>
+					<rewards>
+						<upgrade name="AstraMilitarum/ImperialSplendour"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="AstraMilitarum/Story3" icon="Quests/AstraMilitarum/Chapter3"
+				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="AstraMilitarum/Story2"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<recoverArcheotech/>
+					</objectives>
+					<rewards>
+						<research amount="200"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="AstraMilitarum/Story4" icon="Quests/AstraMilitarum/Chapter4"
+				firstTurn="80" lastTurn="90">
+ 			<conditions>
+				<quests>
+					<completed name="AstraMilitarum/Story3"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="5"
+								waveInterval="2"
+								strength="16"
+								relativeStrength="1.0">
+							<attackers>
+								<unit type="Neutral/Enslaver" rankMin="4" rankMax="6"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<item type="AegisHarness"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="AstraMilitarum/Story5" icon="Quests/AstraMilitarum/Chapter5"
+				firstTurn="100" lastTurn="110">
+  			<conditions>
+				<quests>
+					<completed name="AstraMilitarum/Story4"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<killCampWithTechpriest relativeStrength="1" strength="16" turns="20" bossKillCompletes="0">
+							<boss type="Neutral/TechpriestBetrayer" rankMin="9" rankMax="9" name="Units/Neutral/TechpriestBetrayer"/>
+							<defenders>
+								<unit type="Neutral/KastelanRobot" count="3" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/Hydra" count="1" rankMin="5" rankMax="7"/>
+							</defenders>
+						</killCampWithTechpriest>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<startingUnits>
+		<unit type="AstraMilitarum/TechpriestEnginseer"/>
+		<unit type="AstraMilitarum/Guardsman" count="3"/>
+	</startingUnits>
+</faction>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction actionsTitle="GUI/MarksOfChaos"
+		buildingVariations="3"
+		constructSound="Actions/Construct"
+		dlc="Supplement3"
+		energy="1"
+		energyPooling="0.25"
+		food="1"
+		foodPooling="0.25"
+		influence="1"
+		loyalty="1"
+		ore="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingEnergy="25"
+		startingFood="25"
+		startingInfluence="25"
+		startingOre="50">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<mainTrack name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="ChaosSpaceMarines/Story0" icon="Quests/ChaosSpaceMarines/Chapter0"
+				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<constructBuilding buildingType="ChaosSpaceMarines/Cult"/>
+						<produceUnit unitType="ChaosSpaceMarines/ChaosCultist"
+								ignoreExisting="1"/>
+						<researchUpgrade upgrade="ChaosSpaceMarines/Bloated"/>
+					</objectives>
+					<rewards>
+						<unit type="ChaosSpaceMarines/ChaosSpawn"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="3" waveInterval="2" strength="1" relativeStrength="0.125">
+							<attackers>
+								<unit type="AstraMilitarum/Guardsman" rankMin="0" rankMax="2"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>					
+				</stage>
+			</stages>
+		</quest>
+		<quest name="ChaosSpaceMarines/Story1" icon="Quests/ChaosSpaceMarines/Chapter1"
+				firstTurn="20" lastTurn="30">
+			<conditions>
+				<quests>
+					<completed name="ChaosSpaceMarines/Story0"/>
+				</quests>
+			</conditions>	
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="ChaosSpaceMarines/RiteOfChange"/>
+						<executeCityOrder name="ChaosSpaceMarines/RiteOfChange" description="InvokeRiteDescription"/>
+					</objectives>
+					<rewards>
+						<item type="ScrollsOfMagnus"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<executeUnitOrder name="ChaosSpaceMarines/CultistSacrifice" description="InvokeCultistSacrificeDescription"/>
+					</objectives>
+					<rewards>
+						<research amount="50"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="ChaosSpaceMarines/Story2" icon="Quests/ChaosSpaceMarines/Chapter2"
+				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="ChaosSpaceMarines/Story1"/>
+				</quests>
+			</conditions>	
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="ChaosSpaceMarines/MarkOfNurgle"/>
+						<executePlayerOrder name="ChaosSpaceMarines/MarkOfNurgle" description="UseMarkDescription"/>
+						<accumulatePopulation count="16" checkTotal="1"/>
+					</objectives>
+					<rewards>
+						<item type="BlightGrenade" amount="2"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="Tyranids">
+							<boss type="Tyranids/Headquarters" name="Units/Tyranids/ChaosQuestCamp"/>
+							<defenders>
+								<unit type="Tyranids/Termagant" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Tyranids/Hormagaunt" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Tyranids/Ravener" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Tyranids/Warrior" count="1" rankMin="2" rankMax="4"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<food amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>		
+		<quest name="ChaosSpaceMarines/Story3" icon="Quests/ChaosSpaceMarines/Chapter3"
+				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="ChaosSpaceMarines/Story2"/>
+				</quests>
+			</conditions>				
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="ChaosSpaceMarines/RiteOfBlood"/>
+						<executeCityOrder name="ChaosSpaceMarines/RiteOfBlood" description="InvokeRiteDescription"/>
+					</objectives>
+					<rewards>
+						<item type="AxeOfBlindFury"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<produceUnit traitType="Daemon" count="4"/>
+					</objectives>
+					<rewards>
+						<energy amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="Orks">
+							<boss type="Orks/Headquarters" name="Units/Orks/ChaosQuestCamp"/>
+							<defenders>
+								<unit type="Orks/Boy" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Orks/FlashGitz" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Orks/Tankbusta" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Orks/Warbuggy" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Orks/KillaKan" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Orks/Battlewagon" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<ore amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>		
+		<quest name="ChaosSpaceMarines/Story4" icon="Quests/ChaosSpaceMarines/Chapter4"
+				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="ChaosSpaceMarines/Story3"/>
+				</quests>
+			</conditions>				
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="ChaosSpaceMarines/MarkOfSlaanesh"/>
+						<constructBuilding buildingType="ChaosSpaceMarines/Loyalty"/>
+					</objectives>
+					<rewards>
+						<item type="TantalisingIcon"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp strength="8"
+								relativeStrength="1"
+								faction="Necrons">
+							<boss type="Necrons/Headquarters" name="Units/Necrons/ChaosQuestCamp"/>
+							<defenders>
+								<unit type="Necrons/Warrior" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/TriarchPraetorian" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/TombBlade" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/DoomsdayArk" count="1" rankMin="4" rankMax="6"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<energy amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>		
+		<quest name="ChaosSpaceMarines/Story5" icon="Quests/ChaosSpaceMarines/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="ChaosSpaceMarines/Story4"/>
+				</quests>
+			</conditions>	
+			<stages>
+				<stage>
+					<objectives>
+						<visitTileDaemonPrince unitType="ChaosSpaceMarines/DaemonPrince"/>
+					</objectives>
+					<rewards>
+						<influence amount="200"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<visitTileChaosCultist unitType="ChaosSpaceMarines/ChaosCultist" count="3" turns="20"/>
+						<surviveInvasion relativeStrength="1.0"
+								strength="16"
+								waves="9"
+								waveInterval="2">
+							<attackers>
+								<unit type="SpaceMarines/Apothecary" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/AssaultSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Dreadnought" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Hunter" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/LandRaider" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/LandSpeeder" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Predator" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/ScoutBiker" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/StormravenGunship" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/StormtalonGunship" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Terminator" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/ThunderfireCannon" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Vindicator" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>						
+						<keepUnitAlive token="DaemonPrince"/>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>		
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<actions>
+		<markOfNurgle cooldown="1"
+				name="ChaosSpaceMarines/MarkOfNurgle"
+				requiredUpgrade="ChaosSpaceMarines/MarkOfNurgle">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="ChaosSpaceMarines"/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/MarkOfNurgle"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</markOfNurgle>
+		<markOfKhorne cooldown="1"
+				name="ChaosSpaceMarines/MarkOfKhorne"
+				requiredUpgrade="ChaosSpaceMarines/MarkOfKhorne">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="ChaosSpaceMarines"/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Psyker"/>
+							<noTrait name="Vehicle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/MarkOfKhorne"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</markOfKhorne>
+		<markOfSlaanesh cooldown="1"
+				name="ChaosSpaceMarines/MarkOfSlaanesh"
+				requiredUpgrade="ChaosSpaceMarines/MarkOfSlaanesh">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+							<faction name="ChaosSpaceMarines"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</markOfSlaanesh>
+		<markOfTzeentch cooldown="1"
+				name="ChaosSpaceMarines/MarkOfTzeentch"
+				requiredUpgrade="ChaosSpaceMarines/MarkOfTzeentch">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Fortification"/>
+							<noTrait name="Vehicle"/>
+							<faction name="ChaosSpaceMarines"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<noTrait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</markOfTzeentch>
+		<iconOfVengeance cooldown="1"
+				name="ChaosSpaceMarines/IconOfVengeance"
+				requiredUpgrade="ChaosSpaceMarines/IconOfVengeance">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<noTrait name="Fearless"/>
+						</unit>
+						<unit match="Any">
+							<trait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<trait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<trait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<trait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fearless"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</iconOfVengeance>
+		<iconOfWrath cooldown="1"
+				name="ChaosSpaceMarines/IconOfWrath"
+				requiredUpgrade="ChaosSpaceMarines/IconOfWrath">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<trait name="ChaosSpaceMarines/MarkOfKhorne"/>
+							<noTrait name="ChaosSpaceMarines/IconOfWrath"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/IconOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</iconOfWrath>
+		<iconOfDespair cooldown="1"
+				name="ChaosSpaceMarines/IconOfDespair"
+				requiredUpgrade="ChaosSpaceMarines/IconOfDespair">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<trait name="ChaosSpaceMarines/MarkOfNurgle"/>
+							<noTrait name="ChaosSpaceMarines/IconOfDespair"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/IconOfDespair"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</iconOfDespair>
+		<iconOfExcess cooldown="1"
+				name="ChaosSpaceMarines/IconOfExcess"
+				requiredUpgrade="ChaosSpaceMarines/IconOfExcess">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<trait name="ChaosSpaceMarines/MarkOfSlaanesh"/>
+							<noTrait name="ChaosSpaceMarines/IconOfExcess"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/IconOfExcess"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</iconOfExcess>
+		<iconOfFlame cooldown="1"
+				name="ChaosSpaceMarines/IconOfFlame"
+				requiredUpgrade="ChaosSpaceMarines/IconOfFlame">
+			<model>
+				<action sound="Interface/MarkOfChaos"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<trait name="ChaosSpaceMarines/MarkOfTzeentch"/>
+							<noTrait name="SoulBlaze"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SoulBlaze"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</iconOfFlame>
+	</actions>
+	<startingUnits>
+		<unit type="ChaosSpaceMarines/ChaosSpaceMarine" count="1"/>
+		<unit type="ChaosSpaceMarines/ChaosCultist" count="2"/>
+	</startingUnits>
+</faction>

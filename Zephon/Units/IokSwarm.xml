@@ -47,39 +47,88 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
 				<attack chargeAnimation="Units/IokSwarmCharge"
 						meleeAnimation="Units/IokSwarmMelee"
 						meleeBeginSwing="0.3"
-						meleeEndSwing="1.2"/>
+						meleeEndSwing="1.0"
+						meleeSound="Units/IokSwarmMelee"
+						meleeSoundCount="3"
+						responseSound="Units/Responses/IokSwarmAttack"
+						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/IokSwarmDie"
-						animationCount="2"/> 
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.8"
+						voiceSound="Units/IokSwarmDie"
+						voiceSoundCount="5"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/IokSwarmImpact"/> 
+				<action animation="Units/IokSwarmImpact"
+						responseSound="Units/Responses/IokSwarmEndureHighDamage"/> 
 			</model>
 		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>	
 		<idle>
 			<model>
 				<idle animation="Units/IokSwarmIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmKill"/>
+			</model>
+		</kill>
 		<move>
 			<model>
 				<action animation="Units/IokSwarmMove"
-						sound="Units/CherubimTitanMove"
+						responseSound="Units/Responses/IokSwarmMove"
+						responseSoundCount="3"
+						sound="Units/IokSwarmMove"
+						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+			</model>
+		</skip>
 		<unitAction name="CarrionGlut"
 				icon="Traits/CarrionGlut"
 				passive="1">

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction architecture="Acrin"
+		branch="Voice" 
+		genericBuildingVariations="5"
+		native="1"
+		playable="0">
+	<actions>
+		<playerCast name="DarkPact"
+				cooldown="10"
+				label="1">
+			<model>
+				<cast blueprint="Effects/DarkPact"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="Dreameater" avoidBleed="0" avoidCity="0" avoidWater="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="TheFog"
+				cooldown="1"
+				icon="Features/TheFog"
+				label="1">
+			<model>
+				<cast sound="Actions/TheFog"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addFeature type="TheFog" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+						<targetUnit match="Any">
+							<ally/>
+							<enemy/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+	</actions>	
+	<dislikedLabels>
+		<label name="Gluttony"/>
+		<label name="Immoral"/>
+		<label name="Untrustworthy"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="Subjugator" count="9">
+			<models>
+				<projectileWeapon fireInterval="1.2"
+						mesh="Units/AnchoriteHeadquartersRifles"
+						material="Units/HeadquartersMissileLauncher"
+						bone="Weapons"
+						muzzleBone="Muzzle"
+						muzzleCount="5"
+						windupDuration="0.0"/>
+ 				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						windupDuration="0.3"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.5"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.7"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.9"/>
+ 			</models>
+		</weapon>
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="AnchoriteStanding"/>
+		<label name="Mysticism"/>
+		<label name="Undying"/>
+		<label name="WordsOfTheProphet"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<food add="20"/>
+				<energy add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<traits>
+		<trait type="Wayfaring"/>
+	</traits>
+</faction>

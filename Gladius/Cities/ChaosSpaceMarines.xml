@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city actionsTitle="GUI/UnholyRites">
+	<actions>
+		<riteOfChange cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/UnholyRite"
+				name="ChaosSpaceMarines/RiteOfChange"
+				requiredUpgrade="ChaosSpaceMarines/RiteOfChange">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<populationCost base="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="ChaosSpaceMarines/RiteOfChange"/>
+					</effects>
+				</modifier>
+			</actorModifiers>		
+		</riteOfChange>
+		<riteOfPestilence cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/UnholyRite"
+				name="ChaosSpaceMarines/RiteOfPestilence"
+				requiredUpgrade="ChaosSpaceMarines/RiteOfPestilence">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<populationCost base="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="ChaosSpaceMarines/RiteOfPestilence"/>
+					</effects>
+				</modifier>
+			</actorModifiers>		
+		</riteOfPestilence>
+		<riteOfBlood cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/UnholyRite"
+				name="ChaosSpaceMarines/RiteOfBlood"
+				requiredUpgrade="ChaosSpaceMarines/RiteOfBlood">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<populationCost base="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="ChaosSpaceMarines/RiteOfBlood"/>
+					</effects>
+				</modifier>
+			</actorModifiers>
+		</riteOfBlood>
+		<riteOfUnholyPleasure cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/UnholyRite"
+				name="ChaosSpaceMarines/RiteOfUnholyPleasure"
+				requiredUpgrade="ChaosSpaceMarines/RiteOfUnholyPleasure">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<populationCost base="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="ChaosSpaceMarines/RiteOfUnholyPleasure"/>
+					</effects>
+				</modifier>
+			</actorModifiers>
+		</riteOfUnholyPleasure>
+	</actions>
+</city>

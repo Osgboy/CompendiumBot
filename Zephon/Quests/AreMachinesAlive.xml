@@ -1,0 +1,99 @@
+<quest>
+ 	<conditions>
+<!-- 		<player>
+			<turn greater="40"/>
+		</player> -->
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="City"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>			
+			<options>
+				<option name="MachineEvolution" nextStage="MachineEvolution"/>
+				<option name="MachineRights" nextStage="MachineRights"/>
+				<option name="MachineServants" nextStage="MachineServants"/>
+				<option name="MachineTools" nextStage="MachineTools"/>
+			</options>
+		</stage>
+		<stage name="MachineEvolution">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MachineEvolution"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="12" waves="3">
+					<attackers>
+						<unit type="Militant" count="2"/>
+						<unit type="CrusaderBattleTank" count="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="MachineRights">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MachineRights"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="MachineServants"/>
+		<stage name="MachineTools">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MachineTools"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="12" waves="3">
+					<attackers>
+						<unit type="AraneanStalker" count="2"/>
+						<unit type="ChayotExterminator" count="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+	</stages>
+</quest>

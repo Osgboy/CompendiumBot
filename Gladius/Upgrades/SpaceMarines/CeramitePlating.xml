@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="9" icon="Traits/CeramitePlating">
+	<requiredUpgrades>
+		<upgrade name="SpaceMarines/Aircraft"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="0.75"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

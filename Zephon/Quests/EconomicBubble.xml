@@ -1,0 +1,98 @@
+<quest>
+	<conditions>
+		<player>
+			<turn greater="40"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<options>
+				<option name="FreeMarket">
+					<nextStages>
+						<nextStage name="FreeMarketFailure" weight="1"/>
+						<nextStage name="FreeMarketSuccess" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="MixedSystem">
+					<nextStages>
+						<nextStage name="MixedSystemFailure" weight="1"/>
+						<nextStage name="MixedSystemSuccess" weight="3"/>
+					</nextStages>
+				</option>
+				<option name="StateControl">
+					<nextStages>
+						<nextStage name="StateControlFailure" weight="1"/>
+						<nextStage name="StateControlSuccess" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="StateControlFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="PlannedEconomy"/>
+							<addTrait type="Recession" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="StateControlSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="PlannedEconomy"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>			
+		</stage>
+		<stage name="FreeMarketFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MarketEconomy"/>
+							<addTrait type="Recession" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>		
+		</stage>
+		<stage name="FreeMarketSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MarketEconomy"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>			
+		</stage>
+		<stage name="MixedSystemFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Recession" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="MixedSystemSuccess"/>
+	</stages>
+ </quest>

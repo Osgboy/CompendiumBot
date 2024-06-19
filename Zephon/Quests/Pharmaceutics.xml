@@ -1,0 +1,169 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Sell">
+					<nextStages>
+						<nextStage name="SellSuccess" weight="1"/>
+						<nextStage name="SellFailure0" weight="1"/>
+						<nextStage name="SellFailure1" weight="1"/>
+					</nextStages>		
+				</option>
+				<option name="Burn" nextStage="Burn"/>
+				<option name="Utilize" nextStage="Utilize"/>
+				<option name="Reproduce">
+					<conditions>
+						<player>
+							<upgrade name="HumanOperations"/>
+						</player>
+					</conditions>
+					<nextStages>
+						<nextStage name="ReproduceSuccess" weight="1"/>
+						<nextStage name="ReproduceFailure" weight="1"/>
+					</nextStages>			
+				</option>
+			</options>
+		</stage>
+		<stage name="SellSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="60"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>		
+		<stage name="SellFailure0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="60"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+							<population greater="1"/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>			
+			</modifications>
+		</stage>		
+		<stage name="SellFailure1">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="60"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/>
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="7.5" waves="1">
+					<attackers>
+						<unit type="Reaver" rankMin="5" rankMax="5"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="Burn">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Lawful"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Utilize">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="ExperimentalDrugs" charges="3"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ReproduceSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="ExperimentalDrugs"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ReproduceFailure"/>
+	</stages>
+ </quest>

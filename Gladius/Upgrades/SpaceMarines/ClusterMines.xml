@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="2" icon="Weapons/ClusterMines">
+	<requiredUpgrades>
+		<upgrade name="SpaceMarines/Vehicles"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.75"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

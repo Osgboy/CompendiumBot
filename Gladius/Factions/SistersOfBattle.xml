@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction actionsTitle="GUI/SacredRites"
+		buildingVariations="3"
+		constructSound="Actions/Construct"
+		dlc="Supplement11" 
+		energy="1"
+		energyPooling="0.25"
+		influence="1"
+		loyalty="1"
+		playable="1"
+		production="1"
+		requisitions="1"
+		research="1"
+		secondaryHeadquarters="Enclave"
+		startingEnergy="25"
+		startingFood="0"
+		startingInfluence="25"
+		startingOre="0"
+		startingRequisitions="75">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<mainTrack name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="SistersOfBattle/Story0" icon="Quests/SistersOfBattle/Chapter0"
+ 				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<produceUnit count="2"
+								ignoreExisting="1"/>
+						<controlOutpost count="3"/>
+					</objectives>
+					<rewards>
+						<influence amount="25"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="2" waveInterval="2" strength="1" relativeStrength="0.125" targetDistance="4">
+							<attackers>
+								<unit type="Orks/Boy" count="2" rankMin="0" rankMax="2"/>
+							</attackers>
+						</surviveInvasion>
+						<researchUpgrade upgrade="SistersOfBattle/Heroes"/>
+						<constructBuilding buildingType="SistersOfBattle/Heroes"
+								count="1"/>
+						<produceUnit unitType="SistersOfBattle/Canoness" count="1"/>
+					</objectives>
+					<rewards>
+						<item type="ArmaplasBracers"/>
+					</rewards>
+				</stage>				
+			</stages>
+		</quest>
+		<quest name="SistersOfBattle/Story1" icon="Quests/SistersOfBattle/Chapter1"
+ 				firstTurn="20" lastTurn="30">
+			<conditions>
+				<quests>
+					<completed name="SistersOfBattle/Story0"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<killCamp strength="2"
+								relativeStrength="0.25"
+								faction="AstraMilitarum">
+							<defenders>
+								<unit type="AstraMilitarum/Guardsman" count="1" rankMin="1" rankMax="3"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" count="1" rankMin="1" rankMax="3"/>
+								<unit type="AstraMilitarum/ScoutSentinel" count="1" rankMin="1" rankMax="3"/>
+								<unit type="AstraMilitarum/Hydra" count="1" rankMin="1" rankMax="3"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<unit type="AstraMilitarum/Ratling"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="2" waveInterval="2" strength="1.25" relativeStrength="0.15625" bossWave="1">
+							<boss type="Neutral/KastelanRobot" rankMin="1" rankMax="3"/>
+							<attackers>
+								<unit type="AdeptusMechanicus/SkitariiVanguard" count="1" rankMin="1" rankMax="3"/>
+								<unit type="AdeptusMechanicus/SkitariiRanger" count="1" rankMin="1" rankMax="3"/>
+								<unit type="AdeptusMechanicus/SerberysSulphurhound" count="1" rankMin="1" rankMax="3"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<research amount="100"/>
+					</rewards>
+				</stage>
+				 <stage>
+					<objectives>
+						<activateSacredRite count="3"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SistersOfBattle/RagingFervour" duration="10"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp strength="2"
+								relativeStrength="0.25"
+								faction="SpaceMarines">
+							<defenders>
+								<unit type="SpaceMarines/AssaultSpaceMarine" count="1" rankMin="1" rankMax="3"/>
+								<unit type="SpaceMarines/LandSpeeder" count="1" rankMin="1" rankMax="3"/>
+								<unit type="SpaceMarines/Scout" count="1" rankMin="1" rankMax="3"/>
+								<unit type="SpaceMarines/ScoutBiker" count="1" rankMin="1" rankMax="3"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine" count="1" rankMin="1" rankMax="3"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" count="1" rankMin="1" rankMax="3"/>
+							</defenders>
+						</killCamp>		
+					</objectives>
+					<rewards>
+						<requisitions amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SistersOfBattle/Story2" icon="Quests/SistersOfBattle/Chapter2"
+ 				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="SistersOfBattle/Story1"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="2" waveInterval="1" strength="4" relativeStrength="0.5">
+							<attackers>
+								<unit type="ChaosSpaceMarines/ChaosSpaceMarine" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/Havoc" count="1" rankMin="1" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/KhorneBerzerker" count="1" rankMin="2" rankMax="4"/>
+							</attackers>
+						</surviveInvasion>
+						<researchUpgrade upgrade="SistersOfBattle/SaintCelestine"/>
+						<produceUnit unitType="SistersOfBattle/SaintCelestine" count="1"/>
+					</objectives>
+					<rewards>
+						<unit type="SistersOfBattle/Zephyrim"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp relativeStrength="0.5" 
+								strength="4"
+								bossKillCompletes="0">
+							<boss type="ChaosSpaceMarines/ChaosLord" rankMin="4" rankMax="6"/>
+							<defenders>
+								<unit type="ChaosSpaceMarines/ChaosSpaceMarine" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/ChaosCultist" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/DarkDisciple" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/Havoc" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/Helbrute" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/KhorneBerzerker" count="1" rankMin="2" rankMax="4"/>
+								<unit type="ChaosSpaceMarines/Maulerfiend" count="1" rankMin="2" rankMax="4"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<requisitions amount="150"/>
+					</rewards>
+				</stage>
+ 				<stage>
+					<objectives>
+						<controlCity count="3"/>
+					</objectives>
+					<rewards>
+						<unit type="SistersOfBattle/Retributor"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<raiseLoyalty min="6"/>
+					</objectives>
+					<rewards>
+						<influence amount="150"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SistersOfBattle/Story3" icon="Quests/SistersOfBattle/Chapter3"
+ 				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="SistersOfBattle/Story2"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="SistersOfBattle/Vehicles"/>
+						<researchUpgrade upgrade="SistersOfBattle/Exorcist"/>
+						<constructBuilding buildingType="SistersOfBattle/Vehicles"
+								count="1"/>
+						<produceUnit unitType="SistersOfBattle/Exorcist" count="1"/>
+						<reachLevel level="6" unitType="SistersOfBattle/SaintCelestine"/>
+					</objectives>
+				</stage>
+				<stage>
+					<objectives>
+						<visitTile unitType="SistersOfBattle/SaintCelestine"
+								clearEnemies="1"
+								featureType="Ruin"
+								count="1">
+							<defenders>
+								<unit type="Tyranids/Biovore" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/Exocrine" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/HiveGuard" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/Venomthrope" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</visitTile>
+						<visitTile unitType="SistersOfBattle/SaintCelestine"
+								clearEnemies="1"
+								featureType="Ruin"
+								count="1">
+							<defenders>
+								<unit type="Neutral/Umbra" count="3" rankMin="3" rankMax="5"/>
+							</defenders>
+						</visitTile>
+					</objectives>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SistersOfBattle/Story4" icon="Quests/SistersOfBattle/Chapter4"
+ 				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="SistersOfBattle/Story3"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="3" waveInterval="2" strength="8" relativeStrength="1" targetDistance="4">
+							<boss type="Necrons/Monolith" rankMin="4" rankMax="6"/>
+							<attackers>
+								<unit type="Necrons/CanoptekScarab" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/FlayedOne" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/TriarchPraetorian" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="4" rankMax="6"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<influence amount="125"/>
+						<research amount="125"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp strength="8"
+								relativeStrength="1"
+								bossKillCompletes="0">
+							<boss type="Necrons/Cryptek" rankMin="4" rankMax="6"/>
+							<defenders>
+								<unit type="Necrons/CanoptekSpyder" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/DoomsdayArk" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/DoomScythe" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/Obelisk" count="1" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/TriarchPraetorian" count="4" rankMin="4" rankMax="6"/>
+								<unit type="Necrons/TriarchStalker" count="1" rankMin="4" rankMax="6"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<item type="ScrollsOfMagnus"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SistersOfBattle/Story5" icon="Quests/SistersOfBattle/Chapter5"
+ 				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="SistersOfBattle/Story4"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<killCampWithWebwayGate strength="8"
+								relativeStrength="1.0"
+								bossKillCompletes="0">
+							<boss type="Eldar/WebwayGate" rankMin="9" rankMax="9" token="Gate"/>
+							<defenders>
+								<unit type="Eldar/AvatarOfKhaine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/CrimsonHunter" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/HemlockWraithfighter" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/Wraithblade" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/Wraithknight" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/WarWalker" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/Scorpion" count="1" rankMin="5" rankMax="7"/>
+							</defenders>
+						</killCampWithWebwayGate>
+						<claimWebwayGateWithCelestine/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SistersOfBattle/VengefulSpirit" duration="10"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion bossWave="4"
+								strength="64"
+								relativeStrength="2"
+								requiringCompletion="0"
+								visible="0"
+								waves="10"
+								waveInterval="1">
+							<boss type="Neutral/LordOfSkulls" rankMin="10" rankMax="10"/>
+							<attackers>
+								<unit type="ChaosSpaceMarines/ChaosLandRaider" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/WarpTalon" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Heldrake" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Forgefiend" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Maulerfiend" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Obliterator" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Defiler" count="1" rankMin="5" rankMax="7"/>
+								<unit type="ChaosSpaceMarines/Venomcrawler" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+						<accumulateKillExperience experience="200"/>
+						<keepWebwayGateAlive token="Gate"/>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<actions>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/ConvictionOfFaith"
+				icon="Actions/SistersOfBattle/ConvictionOfFaith"
+				name="SistersOfBattle/ConvictionOfFaith"
+				requiredUpgrade="SistersOfBattle/ConvictionOfFaith">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<unitModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<trait name="SistersOfBattle/ShieldOfFaith"/>
+						</unit>
+					</conditions>
+					<effects>
+						<morale add="2"/>
+					</effects>
+				</modifier>
+			</unitModifiers>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+			durationInSeconds="0.1"
+			interfaceSound="Interface/EternalCrusade"
+			name="SistersOfBattle/EternalCrusade"
+			requiredUpgrade="SistersOfBattle/EternalCrusade">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/EternalCrusade"/>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+			durationInSeconds="0.1"
+			interfaceSound="Interface/WarmachinesWrath"
+			name="SistersOfBattle/WarmachinesWrath"
+			requiredUpgrade="SistersOfBattle/WarmachinesWrath">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/WarmachinesWrath"/>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/RagingFervour"
+				name="SistersOfBattle/RagingFervour"
+				requiredUpgrade="SistersOfBattle/RagingFervour">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/RagingFervour"/>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/SacralVigor"
+				icon="Actions/SistersOfBattle/SacralVigor"
+				name="SistersOfBattle/SacralVigor"
+				requiredUpgrade="SistersOfBattle/SacralVigor">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<unitModifiers endure="0">
+				<modifier>
+					<conditions>
+						<unit match="Any">
+							<trait name="SistersOfBattle/ShieldOfFaith"/>
+							<trait name="SistersOfBattle/AngelicVisage"/>
+						</unit>
+					</conditions>
+					<effects>
+						<hitpoints add="2"/>
+					</effects>
+				</modifier>
+			</unitModifiers>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/ChaseTheProfane"
+				name="SistersOfBattle/ChaseTheProfane"
+				requiredUpgrade="SistersOfBattle/ChaseTheProfane">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<unitModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<noTrait name="Vehicle"/>
+							<noTrait name="Fortification"/>
+						</unit>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="MoveThroughCover"/>
+					</effects>
+				</modifier>
+			</unitModifiers>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/PurifyingRecitations"
+				name="SistersOfBattle/PurifyingRecitations"
+				requiredUpgrade="SistersOfBattle/PurifyingRecitations">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/PurifyingRecitations"/>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="1"
+			durationInSeconds="0.1"
+			interfaceSound="Interface/NonMilitantMobilisation"
+			name="SistersOfBattle/NonMilitantMobilisation"
+			requiredUpgrade="SistersOfBattle/NonMilitantMobilisation">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/NonMilitantMobilisation"/>
+					</effects>
+				</modifier>
+			</actorModifiers>
+		</tactic>
+		<tactic cooldown="1"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/VengefulSpirit"
+				name="SistersOfBattle/VengefulSpirit"
+				requiredUpgrade="SistersOfBattle/VengefulSpirit">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SistersOfBattle/RitualizedCeremonies">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<player match="Any">
+					<upgrade name="SistersOfBattle/AdditionalSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+				</player>
+				<player match="Any">
+					<noTrait name="SistersOfBattle/UsedSacredRite"/>
+					<noTrait name="SistersOfBattle/UsedSacredRite2"/>
+				</player>
+			</conditions>
+			<playerModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<trait name="SistersOfBattle/UsedSacredRite"/>
+						</player>
+					</conditions>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite2"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<addTrait duration="1" name="SistersOfBattle/VengefulSpirit"/>
+						<addTrait duration="1" name="SistersOfBattle/UsedSacredRite"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+	</actions>
+	<startingUnits>
+		<unit type="SistersOfBattle/Hospitaller" count="1"/>
+		<unit type="SistersOfBattle/BattleSister" count="2"/>
+	</startingUnits>
+</faction>

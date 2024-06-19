@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Human"
+		initialTrack="Music/Human0"
+		peacefulness="0.625">
+	<actions>
+	</actions>
+	<buildingActions>
+		<buildingGroupAction name="Recycle"
+				durationInSeconds="0.1"
+				executeImmediately="1"
+				label="1"
+				requiredUpgrade="Recycle">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<resourcesPerRecycleFromCost add="0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<building>
+					<production greater="0"/>
+				</building>
+			</conditions>
+			<beginTargets>
+				<target rangeMin="1" rangeMax="3">
+					<conditions>
+						<unit>
+							<control/>
+							<selfCity/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<recycleUnit/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</buildingGroupAction>
+	</buildingActions>
+	<dislikedLabels>
+		<label name="FoundationOfBlood"/>
+		<label name="Gluttony"/>
+		<label name="Immoral"/>
+		<label name="Untrustworthy"/>
+	</dislikedLabels>
+	<likedLabels>
+		<label name="HonorBound"/>
+		<label name="LeaveNoManBehind"/>
+		<label name="WordsOfTheProphet"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="Militant" count="3"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="HeartfeltLoss"/>
+		<trait type="Scavenger"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+	<unitActions>
+		<unitCast name="ThereIsHope"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				label="1"
+				requiredActionPoints="0">
+			<model>
+				<cast/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<morale add="6"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>	
+	</unitActions>
+</faction>

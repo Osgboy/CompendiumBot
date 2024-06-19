@@ -48,8 +48,11 @@
 		<appear>
 			<model>
 				<action animation="Units/PhenarisHunterAbility1"
-						responseSound="Units/Responses/AegyllanWormAppear"
-						responseSoundCount="1"/>
+						effectBlueprint="Effects/Nightmare"
+						beginEffect="0.2"
+						responseSound="Units/Responses/PhenarisHunterAppear"
+						sound="Units/PhenarisHunterAppear"
+						soundCount="3"/>
 			</model>
 		</appear>
 		<attack>
@@ -58,7 +61,9 @@
 						meleeAnimation="Units/PhenarisHunterMelee"
 						meleeBeginSwing="0.3"
 						meleeEndSwing="0.4"
-						responseSound="Units/Responses/AegyllanWormAttack"
+						meleeSound="Units/PhenarisHunterMelee"
+						meleeSoundCount="3"
+						responseSound="Units/Responses/PhenarisHunterAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -68,28 +73,25 @@
 						animationCount="2"
 						sound="Units/MediumBiologicalGroundHit"
 						soundCount="3"
-						soundDelay="0.4"
-						voiceSound="Units/AegyllanWormDie"
-						voiceSoundCount="12"/> 
+						soundDelay="0.6"
+						voiceSound="Units/PhenarisHunterDie"
+						voiceSoundCount="4"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
 				<action animation="Units/PhenarisHunterImpact"
-						responseSound="Units/Responses/AegyllanWormEndureHighDamage"
-						responseSoundCount="1"/> 
+						responseSound="Units/Responses/PhenarisHunterEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -100,46 +102,43 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormKill"
-						responseSoundCount="1"/>
+				<action responseSound="Units/Responses/PhenarisHunterKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/PhenarisHunterMove"
-						sound="Units/AegyllanWormMove"
+						sound="Units/PhenarisHunterMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/AegyllanWormMove"
+						responseSound="Units/Responses/PhenarisHunterMove"
 						responseSoundCount="3"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormPoke"
-						responseSoundCount="1"/>
+				<action responseSound="Units/Responses/PhenarisHunterPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormSelect"
+				<action responseSound="Units/Responses/PhenarisHunterSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Nightmare"
 				cooldown="5">
 			<model>
 				<cast animation="Units/PhenarisHunterAbility0"
-						blueprint="Effects/Nightmare"
-						responseSound="Units/Responses/ChayotExterminatorDeployCombatDrones"
-						sound="Units/ChayotExterminatorDeployCombatDrones"/>
+						responseSound="Units/Responses/PhenarisHunterNightmare"
+						sound="Units/PhenarisHunterNightmare"
+						soundCount="3"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="1">

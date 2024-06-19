@@ -1,0 +1,169 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<options>
+				<option name="HelpThem" nextStage="HelpThem">
+					<modifiers>
+						<modifier>
+							<effects>
+								<foodCost add="20"/>
+								<mineralsCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</option>
+				<option name="BringThemBack">
+					<nextStages>
+						<nextStage name="BringThemBackSuccess" weight="2"/>
+						<nextStage name="BringThemBackFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="OpenFire" nextStage="OpenFire"/>
+			</options>
+		</stage>
+		<stage name="HelpThem">
+			<modifications>
+				<nearUnitTileSelector targetDistance="2">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noCity/>
+							<noFeatureCategory name="Cache"/>
+							<buildingSlotsRemaining greater="1"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<noTrait type="Headquarters"/>
+					</unitConditions>
+				</nearUnitTileSelector>				
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<tileModifiers sourcePlayerFromSelection="1">
+					<modifier>
+						<effects>
+							<foundCity skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+							<offerPeace/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Kind"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="BringThemBackSuccess">
+			<modifications>
+				<nearUnitTileSelector targetDistance="1">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noCity/>
+							<noFeatureCategory name="Cache"/>
+							<buildingSlotsRemaining greater="1"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<noTrait type="Headquarters"/>
+					</unitConditions>
+				</nearUnitTileSelector>				
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="AcrinMilitia" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>
+		<stage name="BringThemBackFailure">
+			<modifications>
+				<nearUnitTileSelector targetDistance="2">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noCity/>
+							<noFeatureCategory name="Cache"/>
+							<buildingSlotsRemaining greater="1"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<noTrait type="Headquarters"/>
+					</unitConditions>
+				</nearUnitTileSelector>				
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="KillRebelliousAcrin" strength="4" waves="1">
+					<attackers>
+						<unit type="AcrinMilitia" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="OpenFire">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="20"/>
+							<influence add="20"/>
+							<addTrait type="Cruel"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

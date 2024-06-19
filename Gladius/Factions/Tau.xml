@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction actionsTitle="GUI/TauPowers"
+		buildingVariations="4"
+		constructSound="Actions/Construct"
+		dlc="Supplement5"
+		energy="1"
+		energyPooling="0.25"
+		food="1"
+		foodPooling="0.25"
+		influence="1"
+		loyalty="1"
+		ore="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingEnergy="25"
+		startingFood="25"
+		startingInfluence="25"
+		startingOre="50"
+		utopia="1">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<mainTrack name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="Tau/Story0" icon="Quests/Tau/Chapter0"
+				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<convertWildlife name="Tau/ConvertWildlife"
+								description="UseConvertWildlifeDescription"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tau/GunDrone"/>
+						<executeUnitOrder name="Tau/DeployDrone/Tau/GunDrone"
+								description="DeployGunDroneDescription"/>
+						<executeUnitOrder name="Tau/Markerlight"
+								description="UseMarkerlightDescription"/>
+					</objectives>
+					<rewards>
+						<unit type="Neutral/VespidStingwing"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tau/Story1" icon="Quests/Tau/Chapter1"
+				firstTurn="20" lastTurn="30">
+ 			<conditions>
+				<quests>
+					<completed name="Tau/Story0"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tau/Heroes"/>
+						<constructBuilding buildingType="Tau/Heroes"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tau/Ethereal"/>
+						<produceUnit unitType="Tau/Ethereal"/>
+						<visitTile unitType="Tau/Ethereal"
+								featureType="Ruin"
+								count="2"/>
+					</objectives>
+					<rewards>
+						<research amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tau/PurchaseFood"/>
+						<executePlayerOrder name="Tau/PurchaseFood"
+								description="UsePurchaseFoodDescription"/>
+						<researchUpgrade upgrade="Tau/PurchasePopulation"/>
+						<executePlayerOrder name="Tau/PurchasePopulation"
+								description="UsePurchasePopulationDescription"/>
+						<produceLoyaltyFromUtopiaPerTurn count="3"/>
+					</objectives>
+					<rewards>
+						<influence amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tau/Story2" icon="Quests/Tau/Chapter2"
+				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="Tau/Story1"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tau/Commander"/>
+						<produceUnit unitType="Tau/Commander"/>
+						<reachLevel level="4" unitType="Tau/Commander"/>
+					</objectives>
+					<rewards>
+						<unit type="Tau/CrisisBattlesuit"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="Tau/Story3" icon="Quests/Tau/Chapter3"
+				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="Tau/Story2"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="ChaosSpaceMarines">
+							<boss type="ChaosSpaceMarines/Headquarters" name="Units/Tyranids/ChaosQuestCamp"/>
+							<defenders>
+								<unit type="ChaosSpaceMarines/ChaosCultist" count="2" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/ChaosSpaceMarine" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/Havoc" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/Helbrute" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/Maulerfiend" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<item type="DuskBlade"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="4" waveInterval="2" strength="8" relativeStrength="0.5">
+							<attackers>
+								<unit type="SpaceMarines/TacticalSpaceMarine" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/AssaultSpaceMarine" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/ScoutBiker" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/LandSpeeder" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/Hunter" rankMin="3" rankMax="5"/>
+								<unit type="SpaceMarines/Predator" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/Guardsman" count="2" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/TempestusScion" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/ScoutSentinel" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/Hydra" rankMin="3" rankMax="5"/>
+								<unit type="AstraMilitarum/Basilisk" rankMin="3" rankMax="5"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<upgrade name="Tau/RipykaVa"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="Tau/Story4" icon="Quests/Tau/Chapter4"
+				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="Tau/Story3"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<constructBuilding buildingType="Tau/Research"
+								count="3"/>
+						<accumulateResearch count="1000"/>
+					</objectives>
+					<rewards>
+						<unit type="Tau/RazorsharkStrikeFighter"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="Tau/Story5" icon="Quests/Tau/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="Tau/Story4"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<killCamp strength="8"
+								relativeStrength="0.5"
+								faction="Tau">
+							<boss type="Tau/Headquarters" name="Units/Tau/RebelCamp"/>
+							<defenders>
+								<unit type="Tau/FireWarrior" rankMin="5" rankMax="7"/>
+								<unit type="Tau/Pathfinder" rankMin="5" rankMax="7"/>
+								<unit type="Tau/CrisisBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/Piranha" rankMin="5" rankMax="7"/>
+								<unit type="Tau/HammerheadGunship" rankMin="5" rankMax="7"/>
+								<unit type="Tau/GhostkeelBattlesuit" rankMin="5" rankMax="7"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<unit type="Tau/RiptideBattlesuit"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion bossWave="6"
+								relativeStrength="2.5"
+								strength="40"
+								waves="10"
+								waveInterval="2">
+							<boss type="Tau/Commander" rankMin="9" rankMax="9" name="Units/Tau/EliteCommander"/>
+							<attackers>
+								<unit type="Tau/FireWarrior" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Tau/Pathfinder" rankMin="5" rankMax="7"/>
+								<unit type="Tau/BroadsideBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/CrisisBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/StealthBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/GhostkeelBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/RiptideBattlesuit" rankMin="5" rankMax="7"/>
+								<unit type="Tau/Stormsurge" rankMin="5" rankMax="7"/>
+								<unit type="Tau/RazorsharkStrikeFighter" rankMin="5" rankMax="7"/>
+								<unit type="Tau/SunSharkBomber" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/TempestusScion" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<actions>
+		<convertWildlife cooldown="5"
+				name="Tau/ConvertWildlife">
+			<model>
+				<action sound="Actions/ConvertWildlife"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait name="Enslaved"/>
+						</unit>
+						<unit match="Any">
+							<type name="Neutral/KrootHound"/>
+							<type name="Neutral/VespidStingwing"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<changePlayer/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</convertWildlife>
+		<forTheGreaterGood cooldown="1"
+				name="Tau/ForTheGreaterGood">
+			<model>
+				<action sound="Actions/ForTheGreaterGood"/>
+			</model>
+			<modifiers>
+				<modifier requiredUpgrade="Tau/ForTheGreaterGoodBonus">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<moraleMax greater="0"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<morale max="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</forTheGreaterGood>
+		<subvertCity cooldown="10"
+				name="Tau/SubvertCity">
+			<model>
+				<action sound="Actions/SubvertCity"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<trait name="Headquarters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="City">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/SubvertCity" duration="10"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</subvertCity>
+		<purchaseResearch cooldown="1"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/TradeGoods"
+				name="Tau/PurchaseResearch"
+				requiredUpgrade="Tau/PurchaseResearch">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<research add="40"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</purchaseResearch>
+		<purchaseOre cooldown="1"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/TradeGoods"
+				name="Tau/PurchaseOre"
+				requiredUpgrade="Tau/PurchaseOre">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<ore add="40"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</purchaseOre>
+		<purchaseFood cooldown="1"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/TradeGoods"
+				name="Tau/PurchaseFood"
+				requiredUpgrade="Tau/PurchaseFood">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<food add="40"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</purchaseFood>
+		<purchasePopulation cooldown="1"
+				costScalesWithPace="1"
+				name="Tau/PurchasePopulation"
+				requiredUpgrade="Tau/PurchasePopulation">
+			<model>
+				<action sound="Actions/Proselytise"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<faction name="Tau"/>
+							<trait name="Headquarters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="City">
+							<modifiers>
+								<modifier>
+									<effects>
+										<population add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</purchasePopulation>
+		<purchaseEnergy cooldown="1"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/TradeGoods"
+				name="Tau/PurchaseEnergy"
+				requiredUpgrade="Tau/PurchaseEnergy">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<energy add="40"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</purchaseEnergy>
+		<installSupportSystem cooldown="1"
+				name="Tau/DroneController"
+				requiredUpgrade="Tau/DroneController">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/DroneController"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/DroneController"/>
+										<!-- <addTrait name="Tau/DroneControllerInRange"/> -->
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/CounterfireDefenceSystem"
+				requiredUpgrade="Tau/CounterfireDefenceSystem">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/CounterfireDefenceSystem"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/CounterfireDefenceSystem"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/VectoredRetroThrusters"
+				requiredUpgrade="Tau/VectoredRetroThrusters">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/VectoredRetroThrusters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/VectoredRetroThrusters"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/StimulantInjector"
+				requiredUpgrade="Tau/StimulantInjector">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/StimulantInjector"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/StimulantInjector"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/VelocityTracker"
+				requiredUpgrade="Tau/VelocityTracker">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/VelocityTracker"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/VelocityTracker"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/AdvancedTargetingSystem"
+				requiredUpgrade="Tau/AdvancedTargetingSystem">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/AdvancedTargetingSystem"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/AdvancedTargetingSystem"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+		<installSupportSystem cooldown="1"
+				name="Tau/ShieldGenerator"
+				requiredUpgrade="Tau/ShieldGenerator">
+			<model>
+				<action sound="Actions/InstallSupportSystem"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<allied/>
+							<supportSystemSlots greater="0"/>
+							<noTrait name="Tau/IntegratedShieldGenerator"/>
+							<noTrait name="Tau/ShieldGenerator"/>
+							<noTrait name="Tau/RiptideShieldGenerator"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Tau/ShieldGenerator"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</installSupportSystem>
+	</actions>
+	<startingUnits>
+		<unit type="Tau/BuilderDrone" count="1"/>
+		<unit type="Tau/FireWarrior" count="2"/>
+	</startingUnits>
+</faction>

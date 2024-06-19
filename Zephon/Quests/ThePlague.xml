@@ -1,0 +1,117 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+			</modifications>
+			<options>
+				<option name="FullLockdown">
+					<nextStages>
+						<nextStage name="FullLockdownSuccess" weight="2"/>
+						<nextStage name="FullLockdownFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="MiddleMeasures">
+					<nextStages>
+						<nextStage name="MiddleMeasuresSuccess" weight="2"/>
+						<nextStage name="MiddleMeasuresFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="OpenBusiness">
+					<nextStages>
+						<nextStage name="OpenBusinessSuccess" weight="2"/>
+						<nextStage name="OpenBusinessFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="AskAnchorite" nextStage="AskAnchorite">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<noEnemy/>
+							<standingTier greater="1"/>
+						</playerWithFaction>
+					</conditions>
+					<modifiers>
+						<modifier>
+							<effects>
+								<algaeCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>						
+				</option>
+			</options>
+		</stage>
+		<stage name="FullLockdownSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueFullLockdownSuccess"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="FullLockdownFailure">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueFullLockdownFailure"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="MiddleMeasuresSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueMiddleMeasuresSuccess"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="MiddleMeasuresFailure">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueMiddleMeasuresFailure"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="OpenBusinessSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueOpenBusinessSuccess"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="OpenBusinessFailure">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="10" type="PlagueOpenBusinessFailure"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="AskAnchorite"/>
+	</stages>
+ </quest>

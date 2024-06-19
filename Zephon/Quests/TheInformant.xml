@@ -1,0 +1,225 @@
+<quest>
+	<conditions>
+		<player>
+			<turn greater="40"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<aiControlled/>
+							<noEnemy/>
+							<noControl/>
+							<notLost/>
+							<notNative/>
+							<contact/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<options>
+				<option name="Pay">
+					<modifiers>
+						<modifier>
+							<effects>
+								<mineralsCost add="30"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="Pay0" weight="1"/>
+						<nextStage name="Pay1" weight="1"/>
+						<nextStage name="Pay2" weight="1"/>
+						<nextStage name="Pay3" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="CaptureAndTorture">
+					<nextStages>
+						<nextStage name="CaptureAndTorture0" weight="1"/>
+						<nextStage name="CaptureAndTorture1" weight="1"/>
+						<nextStage name="CaptureAndTorture2" weight="1"/>
+						<nextStage name="CaptureAndTorture3" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="Ignore0" weight="1"/>
+						<nextStage name="Ignore1" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Pay0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="Pathcutter"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Pay1">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Pay2">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Pay3"/>
+		<stage name="CaptureAndTorture0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="Pathcutter"/>
+							<addTrait type="Torturer"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="CaptureAndTorture1">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Torturer"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="CaptureAndTorture2">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Torturer"/>
+							<addTrait type="WrongfulExecution" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="CaptureAndTorture3">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Torturer"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="Ignore0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="-20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Ignore1"/>
+	</stages>
+ </quest>

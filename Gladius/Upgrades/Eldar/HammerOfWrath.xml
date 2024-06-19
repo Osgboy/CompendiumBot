@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="6" icon="Actions/HammerOfWrath">
+	<requiredUpgrades>
+		<upgrade name="Eldar/Vehicles"/>
+		<upgrade name="Eldar/Wraithknight"/>
+		<upgrade name="Eldar/AvatarOfKhaine"/>
+		<upgrade name="Eldar/FarseerSkyrunner"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHeroesScore base="1.0"/>
+				<increaseInfantryScore base="1.0"/>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

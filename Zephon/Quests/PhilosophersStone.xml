@@ -1,0 +1,128 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+			</modifications>
+			<options>
+				<option name="KillHim" nextStage="KillHim"/>
+				<option name="AskMystics" nextStage="AskMystics">
+					<modifiers>
+						<modifier>
+							<effects>
+								<algaeCost add="10"/>
+								<researchCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</option>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="IgnoreSuccess" weight="1"/>
+						<nextStage name="IgnoreFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="KillHim" nextStageOnSuccess="Meeting">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>				
+			</modifications>
+			<objectives>
+				<visitTile name="VisitBanditKing"/>
+			</objectives>
+		</stage>
+		<stage name="Meeting">
+			<options>
+				<option name="MeetingRetrieve" nextStage="MeetingRetrieve"/>
+				<option name="MeetingLeave" nextStage="MeetingLeave"/>
+			</options>	
+		</stage>
+		<stage name="MeetingRetrieve" nextStageOnSuccess="StoneRetrieved">
+			<objectives>
+				<killCamp name="KillBanditKing" bossKillCompletes="0">
+					<boss type="Reaver"/>
+					<defenders>
+						<unit type="Reaver" count="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>		
+		</stage>
+		<stage name="StoneRetrieved">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<!-- <addItem name="PhilosophersStone"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="MeetingLeave" nextStageOnSuccess="TreasureFound">
+			<objectives>
+				<visitTile name="VisitLootStash">
+					<defenders>
+						<unit type="Abkluth" count="3"/>
+					</defenders>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="TreasureFound">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="32"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AskMystics">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<!-- <addItem name="PhilosophersStone"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="IgnoreSuccess"/>
+		<stage name="IgnoreFailure">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

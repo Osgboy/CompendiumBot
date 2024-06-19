@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast cooldown="10"
+		cooldownRemaining="1"
+		consumedActionPoints="0"
+		icon="Units/Deformity"
+		requiredActionPoints="0">
+	<model>
+		<cast animation="Units/ShochitrisLairIdle2"
+				responseSound="Units/Responses/ShochitrisLairBreedDeformities"
+				sound="Units/ShochitrisLairBreedDeformities"/>
+	</model>
+	<beginTargets>
+		<target melee="1" rangeMax="1">
+			<conditions>
+				<tile>
+					<land/>
+					<noUnit/>
+				</tile>
+			</conditions>
+			<areas>
+				<area affect="Tile">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addUnit type="Deformity" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0" homeTile="1"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+				<area affect="Unit">
+					<modifiers>
+						<modifier requiredUpgrade="ShochitrisLairUpgrade">
+							<effects>
+								<level add="3"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</target>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<enemyStrengthInTheArea greater="0"/>
+				</tile>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>			
+</unitCast>

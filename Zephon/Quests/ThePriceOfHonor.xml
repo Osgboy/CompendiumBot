@@ -1,0 +1,229 @@
+<quest image="Factions/HonorableAristocrat">
+ 	<conditions>
+		<player>
+			<!-- <turn greater="40"/> -->
+			<faction name="HonorableAristocrat"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="BuildFarm" nextStage="BuildFarm"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="BuildFarm" nextStageOnSuccess="BuildFarmSuccess"
+				nextStageOnFailure="BuildFarmFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="HonorableAristocratEngineer"
+									name="Factions/HonorableAristocrat"
+									skipOverwatchOnNextTileEnter="1"
+									token="HonorableAristocratEngineer"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executeUnitOrder name="ExecuteOrderWithHonorableAristocrat" orderName="ConstructFarm"/>
+				<keepUnitAlive token="HonorableAristocratEngineer"/>
+			</objectives>
+		</stage>
+		<stage name="BuildFarmSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="HonorableAristocratEngineer"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<options>
+				<option name="DeliverSupplies" nextStage="DeliverSupplies"/>
+				<option name="DeliverSuppliesByBodyguard">
+					<nextStages>
+						<nextStage name="DeliverSuppliesByBodyguardSuccess" weight="1"/>
+						<nextStage name="DeliverSuppliesByBodyguardFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="BuildFarmFailure"/>
+		<stage name="DeliverSupplies" nextStageOnSuccess="DeliverSuppliesSuccess"
+				nextStageOnFailure="DeliverSuppliesFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="HonorableAristocratOutrider"
+									name="Factions/HonorableAristocrat"
+									skipOverwatchOnNextTileEnter="1"
+									token="HonorableAristocratOutrider"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="City"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithHonorableAristocrat">
+					<unitConditions>
+						<token name="HonorableAristocratOutrider"/>
+					</unitConditions>
+				</visitTile>
+				<keepUnitAlive token="HonorableAristocratOutrider"/>
+			</objectives>
+		</stage>
+		<stage name="DeliverSuppliesSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="HonorableAristocratOutrider"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<options>
+				<option name="CommandMercenaries" nextStage="CommandMercenaries"/>
+				<option name="DismissMercenaries">
+					<nextStages>
+						<nextStage name="DismissMercenariesSuccess" weight="1"/>
+						<nextStage name="DismissMercenariesFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="DeliverSuppliesFailure"/>
+		<stage name="DeliverSuppliesByBodyguardSuccess">
+			<options>
+				<option name="CommandMercenaries" nextStage="CommandMercenaries"/>
+				<option name="DismissMercenaries">
+					<nextStages>
+						<nextStage name="DismissMercenariesSuccess" weight="1"/>
+						<nextStage name="DismissMercenariesFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="DeliverSuppliesByBodyguardFailure"/>
+		<stage name="CommandMercenaries" nextStageOnSuccess="CommandMercenariesSuccess"
+				nextStageOnFailure="CommandMercenariesFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="HonorableAristocratMissileTeam"
+									name="Units/HonorableAristocratMissileTeam"
+									skipOverwatchOnNextTileEnter="1"
+									token="HonorableAristocratMissileTeam"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="City"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="Warden" token="PriceOfHonorWarden"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="PriceOfHonorWarden"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<changePlayer name="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killMarkedUnit name="KillWardenWithMercenaries" token="PriceOfHonorWarden">
+					<killerUnitConditions>
+						<token name="HonorableAristocratMissileTeam"/>
+					</killerUnitConditions>
+				</killMarkedUnit>
+				<keepUnitAlive token="HonorableAristocratMissileTeam"/>
+			</objectives>
+		</stage>
+		<stage name="CommandMercenariesSuccess">
+			<options>
+				<option name="RetrieveCornucopia" nextStage="RetrieveCornucopia"/>
+			</options>
+		</stage>	
+		<stage name="CommandMercenariesFailure"/>
+		<stage name="DismissMercenariesSuccess">
+			<options>
+				<option name="RetrieveCornucopia" nextStage="RetrieveCornucopia"/>
+			</options>
+		</stage>	
+		<stage name="DismissMercenariesFailure"/>
+		<stage name="RetrieveCornucopia">
+		
+		</stage>
+	</stages>
+</quest>

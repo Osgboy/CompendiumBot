@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<city actionsTitle="GUI/EldarCityPowers">
+	<actions>
+		<asuryaniArrivals cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/AsuryaniArrivals"
+				name="Eldar/AsuryaniArrivals">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/AsuryaniArrivalsBonus">
+					<effects>
+						<influenceCost mul="-0.5"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/AsuryaniArrivalsBonus2">
+					<effects>
+						<cooldown mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="5" name="Eldar/AsuryaniArrivals"/>
+					</effects>
+				</modifier>
+			</actorModifiers>
+		</asuryaniArrivals>
+		<transcendentBliss cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/TranscendentBliss"
+				name="Eldar/TranscendentBliss"
+				requiredUpgrade="Eldar/TranscendentBliss">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<actorModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="Eldar/TranscendentBliss"/>
+					</effects>
+				</modifier>
+			</actorModifiers>
+		</transcendentBliss>
+	</actions>
+	<traits>
+		<trait name="Eldar/RemnantsOfTheFall"/>
+	</traits>
+</city>

@@ -1,0 +1,252 @@
+<quest image="Factions/HeartlessArtificer">
+ 	<conditions>
+		<player>
+			<!-- <turn greater="40"/> -->
+			<faction name="HeartlessArtificer"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="ConstructDefensesWithoutCreche" nextStage="ConstructDefensesWithoutCreche"/>
+				<option name="ConstructDefensesWithCreche" nextStage="ConstructDefensesWithCreche">
+					<modifiers>
+						<modifier>
+							<effects>
+								<mineralsCost add="40"/>
+							</effects>
+						</modifier>
+					</modifiers>	
+				</option>
+				<option name="Abandon" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="ConstructDefensesWithoutCreche"
+				nextStageOnSuccess="DefendLab"
+				nextStageOnFailure="ConstructLabFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUpgrade name="ArtificersLaboratory"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executeUnitOrder name="ExecuteOrderWithEngineersWithinTurns"
+						orderName="ConstructArtificersLaboratory" turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="ConstructDefensesWithCreche"
+				nextStageOnSuccess="DefendLab"
+				nextStageOnFailure="ConstructLabFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUpgrade name="ArtificersLaboratory"/>
+							<addUpgrade name="HexeskeltalCreche"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executeUnitOrder name="ExecuteOrderWithEngineersWithinTurns"
+						orderName="ConstructArtificersLaboratory" turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="DefendLab"
+				nextStageOnSuccess="DefendLabSuccess"
+				nextStageOnFailure="DefendLabFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeUpgrade name="ArtificersLaboratory"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearUnitTileSelector count="2" targetDistance="6">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<type name="ArtificersLaboratory"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="12" waves="3">
+					<attackers>
+						<unit type="MissileTeam"/>
+						<unit type="CrusaderBattleTank"/>
+						<unit type="AegyllanWorm"/>
+						<unit type="SurthodaisEmbrace"/>
+						<unit type="MalakimDestroyer"/>
+						<unit type="ChayotExterminator"/>
+					</attackers>
+				</surviveInvasion>
+				<keepUnitAlive name="PreventUnitDestruction"
+						token="ArtificersLaboratory"/>
+			</objectives>
+		</stage>
+		<stage name="DefendLabSuccess">
+			<options>
+				<option name="HwedoFight" nextStage="HwedoFight"/>
+				<option name="HwedoFeed" nextStage="HwedoFeed"/>
+			</options>
+		</stage>
+		<stage name="HwedoFight"
+				nextStageOnSuccess="HwedoFightSuccess"
+				nextStageOnFailure="HwedoDeath">
+			<modifications>
+				<nearUnitTileSelector targetDistance="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<type name="ArtificersLaboratory"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Hwedo" name="Units/Hwedo" token="Hwedo" avoidCity="0" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killWithUnit token="Hwedo" count="3"/>
+				<keepUnitAlive token="Hwedo"/>
+			</objectives>
+		</stage>
+		<stage name="HwedoFightSuccess">
+			<options>
+				<option name="KillHwedo" nextStage="KillHwedo"/>
+			</options>
+		</stage>
+		<stage name="HwedoFeed"
+				nextStageOnSuccess="HwedoFeedSuccess"
+				nextStageOnFailure="HwedoDeath">
+			<modifications>
+				<nearUnitTileSelector targetDistance="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<type name="ArtificersLaboratory"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Hwedo" name="Units/Hwedo" token="Hwedo" avoidCity="0" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="HungerOfHwedo"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<wait name="WaitForHwedoToFeed" turns="10"/>
+				<keepUnitAlive token="Hwedo"/>
+			</objectives>
+		</stage>
+		<stage name="HwedoFeedSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="HungerOfHwedo"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="KillHwedo" nextStage="KillHwedo"/>
+			</options>
+		</stage>
+		<stage name="KillHwedo" nextStageOnSuccess="KillHwedoSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Hwedo"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<changePlayer name="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killMarkedUnit token="Hwedo"/>
+			</objectives>
+		</stage>
+		<stage name="KillHwedoSuccess"
+				itemAchievement="HwedosBrain">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="HwedosBrain"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HwedoDeath"/>
+		<stage name="DefendLabFailure"/>
+		<stage name="ConstructLabFailure"/>
+	</stages>
+ </quest>

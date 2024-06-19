@@ -1,0 +1,109 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</randomCitySelector>
+			</modifications>
+			<options>
+				<option name="Pay">
+					<modifiers>
+						<modifier>
+							<effects>
+								<mineralsCost add="36"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="PaySuccess" weight="2"/>
+						<nextStage name="PayFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="Fight" nextStage="Fight"/>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="PaySuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="TerrorVanquished" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="PayFailure" >
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Fight" nextStageOnSuccess="FightSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Prey"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+				<nearCityTileSelector targetDistance="6">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillTheTerror">
+					<boss type="Dreameater" name="Units/TheTerror"/>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="FightSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<removeTrait type="Prey"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Ignore">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Prey" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>			
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Cyber"
+		initialTrack="Music/Cyber0"
+		trustworthiness="0.375">
+	<actions>
+		<unitCast name="IcarusSatellite"
+				cooldown="1"
+				label="1"
+				requiredUpgrade="IcarusSatellite">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="IcarusSatellite"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<dislikedLabels>
+		<label name="Untrustworthy"/>
+		<label name="WordsOfTheProphet"/>
+	</dislikedLabels>
+	<likedLabels>
+		<label name="Gluttony"/>
+		<label name="SurvivalTraining"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="IshimEnforcer" count="2"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="Augmentations"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="HitAndRun"/>
+		<trait type="Independent"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+</faction>

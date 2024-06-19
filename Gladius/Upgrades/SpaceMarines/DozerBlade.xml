@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="6" icon="Traits/DozerBlade">
+	<requiredUpgrades>
+		<upgrade name="SpaceMarines/Hunter"/>
+		<upgrade name="SpaceMarines/Predator"/>
+		<upgrade name="SpaceMarines/Razorback"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

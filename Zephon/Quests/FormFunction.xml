@@ -1,0 +1,202 @@
+<quest image="Factions/EmulatedMind">
+ 	<conditions>
+		<player>
+			<!-- <turn greater="40"/> -->
+			<faction name="EmulatedMind"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="MeetIronFeather" nextStage="MeetIronFeather"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="MeetIronFeather" nextStageOnSuccess="MeetIronFeatherSuccess">
+			<modifications>
+				<nearCityTileSelector count="3" targetDistance="6">
+					<conditions>
+						<tile>
+							<featureCategory name="SpecialResource"/> 
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitIronFeather"/>
+			</objectives>
+		</stage>
+		<stage name="MeetIronFeatherSuccess">
+			<options>
+				<option name="TrustIronFeather" nextStage="TrustIronFeather"/>
+				<option name="CaptureIronFeather" nextStage="CaptureIronFeather"/>
+			</options>
+		</stage>
+		<stage name="TrustIronFeather">
+			<options>
+				<option name="AssertControl" nextStage="AssertControl"/>
+				<option name="FlushCortex" nextStage="FlushCortex"/>
+			</options>
+		</stage>		
+		<stage name="AssertControl" nextStageOnSuccess="AssertControlSuccess">
+			<modifications>
+				<nearCityTileSelector targetDistance="3">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillIronFeather">
+					<defenders>
+						<unit type="CombatMedic" name="Units/IronFeather" count="7"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="AssertControlSuccess">
+			<options>
+				<option name="FinishWithZephon" nextStage="FinishWithZephon"/>
+			</options>		
+		</stage>	
+		<stage name="FinishWithZephon" nextStageOnSuccess="FinishWithZephonSuccess">
+			<objectives>
+			
+			</objectives>
+		</stage>
+		<stage name="FinishWithZephonSuccess">
+		</stage>			
+		<stage name="FlushCortex" nextStageOnSuccess="FlushCortexSuccess">
+			<modifications>
+				<nearCityTileSelector count="5" targetDistance="3">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+							<addFeature type="CortexNode"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitCortexNodes"/>
+			</objectives>
+		</stage>
+		<stage name="FlushCortexSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="CortexNode"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="QuantumReflector"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="UseReflector" nextStage="UseReflector"/>
+			</options>		
+		</stage>
+		<stage name="UseReflector" nextStageOnSuccess="UseReflectorSuccess">
+			<objectives>
+				<executeUnitOrder name="ExecuteQuantumReflector"
+						orderName="QuantumReflector"/>
+			</objectives>
+		</stage>
+		<stage name="UseReflectorSuccess">
+		</stage>		
+		<stage name="CaptureIronFeather">
+			<options>
+				<option name="DefendPeople" nextStage="DefendPeople"/>
+			</options>
+		</stage>
+		<stage name="DefendPeople" nextStageOnSuccess="DefendPeopleSuccess">
+			<modifications>
+				<nearCityTileSelector>
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveIronFeatherGuardian" strength="12" waves="1">
+					<attackers>
+						<unit type="CherubimTitan" name="Units/IronFeatherGuardian"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="DefendPeopleSuccess">
+			<options>
+				<option name="ImprisonIronFeather" nextStage="ImprisonIronFeather"/>
+			</options>
+		</stage>
+		<stage name="ImprisonIronFeather" nextStageOnSuccess="ImprisonIronFeatherSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/FormFunction" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder" orderName="PayResources/FormFunction"/>
+			</objectives>
+		</stage>
+		<stage name="ImprisonIronFeatherSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="IronFeather" name="Units/IronFeather" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>							
+	</stages>
+</quest>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Voice"
+		initialTrack="Music/Voice0"
+		peacefulness="0.375">
+	<actions>
+		<playerAction name="WhispersOfTheVoice"
+				cooldown="5"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				label="1"
+				interfaceSound="Interface/WhispersOfTheVoice">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<research add="40"/>
+							</effects>
+						</modifier>
+						<modifier requiredUpgrade="WhispersOfTheVoiceUpgrade">
+							<effects>
+								<research add="20"/>
+							</effects>
+						</modifier>	
+						<modifier requiredUpgrade="WhispersOfTheVoiceUpgrade2">
+							<effects>
+								<research add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerAction>
+		<playerCast name="TheOutsider"
+				cooldown="10"
+				icon="Units/Dreameater"
+				label="1"
+				requiredUpgrade="TheOutsider">
+			<model>
+				<cast blueprint="Effects/TheOutsider"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="TheOutsiderUpgrade">
+					<effects>
+						<cooldown add="-5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="Dreameater" avoidBleed="0" avoidCity="0" avoidWater="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Summon" duration="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+	</actions>
+	<dislikedLabels>
+		<label name="ArtificersPrecision"/>
+		<label name="Untrustworthy"/>
+		<label name="WordsOfTheProphet"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR4"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR5"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR6"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>																																	
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR7"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>																																	
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR8"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>																																	
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="ArmorOfFaith"/>
+		<label name="Undying"/>
+		<label name="Trapped"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="AbkluthDragoon" count="2"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="Mysticism"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+	<unitActions>
+		<unitAction name="DarkOmen"
+				label="1"
+				passive="1">
+			<conditions>
+				<unit>
+					<type name="Headquarters"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="6">
+							<modifiers>
+								<modifier effectDescription="ToEnemyUnits">
+									<effects>
+										<addTrait type="DarkOmen"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="DarkOmenUpgrade2">
+									<effects>
+										<radius add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</unitActions>
+</faction>

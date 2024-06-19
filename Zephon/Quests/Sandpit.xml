@@ -1,0 +1,151 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<nearUnitTileSelector targetDistance="2">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<noCity/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="Forest"/>
+							<noFeatureCategory name="Rocks"/>
+							<noFeatureCategory name="Ruins"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<buildingSlotsRemaining greater="1"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<noTrait type="Headquarters"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addFeature type="Sandpit"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<options>
+				<option name="Feed">
+					<modifiers>
+						<modifier>
+							<effects>
+								<mineralsCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="FeedFailure" weight="1"/>
+						<nextStage name="FeedSuccess" weight="2"/>
+					</nextStages>		
+				</option>
+				<option name="Study">
+					<nextStages>
+						<nextStage name="StudyFailure" weight="1"/>
+						<nextStage name="StudySuccess" weight="2"/>
+					</nextStages>
+				</option>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="IgnoreFailure" weight="1"/>
+						<nextStage name="IgnoreSuccess" weight="2"/>
+					</nextStages>
+				</option>
+				<option name="Kill" nextStage="Kill"/>
+			</options>
+		</stage>
+		<stage name="FeedSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>		
+		<stage name="FeedFailure">
+			<objectives>
+				<killCamp name="KillAegyllanWorms">
+					<defenders>
+						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="StudySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="AegyllanWorm"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="StudyFailure">
+			<objectives>
+				<killCamp name="KillAegyllanWorms">
+					<defenders>
+						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="IgnoreSuccess"/>
+		<stage name="IgnoreFailure">
+			<modifications>
+				<withinRangeOfTilesUnitSelector rangeMax="3">
+					<conditions>
+						<unit/>
+					</conditions>
+				</withinRangeOfTilesUnitSelector>		
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<weaponDamage weapon="Bleed"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="Kill" nextStageOnSuccess="KillSuccess">
+			<objectives>
+				<killCamp name="KillAegyllanWorms">
+					<defenders>
+						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="KillSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<food add="20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

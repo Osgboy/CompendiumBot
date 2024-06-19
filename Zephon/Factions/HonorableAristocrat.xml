@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Human"
+		initialTrack="Music/Human0"
+		trustworthiness="0.625">
+	<actions>
+		<playerAction name="QuidProQuoFood"
+				cooldown="5"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				requiredUpgrade="QuidProQuo"
+				interfaceSound="Interface/QuidProQuo">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="QuidProQuoUpgrade">
+					<effects>
+						<cooldown add="-2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<food add="40"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseFoodStrategy greater="0.5"/>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="QuidProQuoMinerals"/>
+				<action name="QuidProQuoEnergy"/>
+			</sharedCooldowns>
+		</playerAction>
+		<playerAction name="QuidProQuoMinerals"
+				cooldown="5"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				requiredUpgrade="QuidProQuo"
+				interfaceSound="Interface/QuidProQuo">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="QuidProQuoUpgrade">
+					<effects>
+						<cooldown add="-2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<minerals add="40"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseMineralsStrategy greater="0.5"/>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="QuidProQuoFood"/>
+				<action name="QuidProQuoEnergy"/>
+			</sharedCooldowns>
+		</playerAction>
+		<playerAction name="QuidProQuoEnergy"
+				cooldown="5"
+				costScalesWithPace="0"
+				durationInSeconds="0.1"
+				requiredUpgrade="QuidProQuo"
+				interfaceSound="Interface/QuidProQuo">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="QuidProQuoUpgrade">
+					<effects>
+						<cooldown add="-2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<energy add="40"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseEnergyStrategy greater="0.5"/>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="QuidProQuoFood"/>
+				<action name="QuidProQuoMinerals"/>
+			</sharedCooldowns>
+		</playerAction>
+	</actions>
+	<buildingActions>
+		<rushProduction name="HiredHands"
+				label="1">
+			<model>
+				<cast blueprint="Effects/HiredHands"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost add="4"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="HiredHandsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="HiredHandsUpgrade2">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy less="0.25"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</rushProduction>
+	</buildingActions>
+	<dislikedLabels>
+		<label name="DataHack"/>
+		<label name="Independent"/>
+		<label name="Untrustworthy"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/HonorableAristocratHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						muzzleCount="3"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR4"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR5"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR6"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>																																	
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="ArtificersPrecision"/>
+		<label name="ResourceNetwork"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="Militant" count="3"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="Gluttony"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="HonorableAristocratAffinityUpgrade" requiredUpgrade="HonorableAristocratAffinityUpgrade"/>
+		<trait type="Honorbound"/>
+		<trait type="QuidProQuo" requiredUpgrade="QuidProQuo"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+</faction>

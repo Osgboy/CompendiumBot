@@ -3,9 +3,15 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<accuracy mul="-0.167"/>
-				<damageTaken mul="0.167"/>
+				<attacks mul="-0.167"/>
 			</effects>
 		</modifier>
 	</modifiers>
+	<opponentModifiers>
+ 		<modifier effectDescription="AgainstThisUnit">
+			<effects>
+				<attacks mul="0.167"/>
+			</effects>
+		</modifier>
+	</opponentModifiers>
 </trait>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" visibleOnUnit="1">
+<trait category="Debuff" rankFromAction="0" visibleOnUnit="1" visibleSourcePlayer="1">
 	<onTraitAdded>
-		<unit>
+		<tile>
 			<area affect="Tile">
 				<modifiers>
 					<modifier>
@@ -11,10 +11,10 @@
 					</modifier>
 				</modifiers>
 			</area>
-		</unit>
+		</tile>
 	</onTraitAdded>
 	<onTurnStarted>
-		<unit>
+		<tile>
 			<area affect="Tile">
 				<modifiers>
 					<modifier visible="0">
@@ -24,6 +24,6 @@
 					</modifier>
 				</modifiers>
 			</area>
-		</unit>
+		</tile>
 	</onTurnStarted>
 </trait>

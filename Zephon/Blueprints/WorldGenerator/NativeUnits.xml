@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nativeUnits>
+	<pass faction="Chieftess">
+		<packs>
+			<pack>
+				<unit type="Reaver"/>
+			</pack>
+		</packs>
+	</pass>
+ 	<pass faction="Anchorite">
+		<packs>
+			<pack>
+				<unit type="AcrinMilitia"/>
+			</pack>
+		</packs>
+	</pass>
+ 	<pass faction="Zephon">
+		<packs>
+			<pack>
+				<unit type="Warden"/>
+			</pack>
+		</packs>
+	</pass>
+	<pass faction="Neutral">
+		<packs>
+			<pack>
+				<unit type="Reaver" spawnDistanceMin="4"/>
+			</pack>
+			<pack>
+				<unit type="Abkluth" spawnDistanceMin="4"/>
+			</pack>
+			<pack>
+				<unit type="Buster" spawnDistanceMin="5"/>
+			</pack>
+			<pack>
+				<unit type="Sentry" spawnDistanceMin="5"/>
+			</pack>
+			<pack>
+				<unit type="AcrinMilitia" spawnDistanceMin="6"/>
+			</pack>
+			<pack>
+				<unit type="Hammerhead" spawnDistanceMin="6"/>
+			</pack>	
+			<pack fixed="1">
+				<unit type="ShochitrisLair" spawnDistanceMin="7"/>
+			</pack>
+			<pack>
+				<unit type="Dreameater" spawnDistanceMin="8"/>
+			</pack>
+			<pack>
+				<unit type="Warden" spawnDistanceMin="8"/>
+			</pack>
+		</packs>
+	</pass>
+</nativeUnits>

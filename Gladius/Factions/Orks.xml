@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction constructSound="Actions/Construct"
+		energy="1"
+		energyPooling="0.25"
+		food="1"
+		foodPooling="0.25"
+		influence="1"
+		loyalty="1"
+		ore="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingEnergy="25"
+		startingFood="25"
+		startingInfluence="25"
+		startingOre="50"
+		startingRequisitions="0">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<mainTrack name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="Orks/Story0" icon="Quests/Orks/Chapter0"
+				firstTurn="2" lastTurn="2">
+			<stages>
+ 				<stage>
+					<objectives>
+						<accumulateInfluence count="100"/>
+					</objectives>
+					<rewards>
+						<food amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<constructFeature type="OrkoidFungus"/>
+					</objectives>
+					<rewards>
+						<unit type="Orks/Boy"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Orks/Story1" icon="Quests/Orks/Chapter1"
+				firstTurn="20" lastTurn="30">
+  			<conditions>
+				<quests>
+					<completed name="Orks/Story0"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Orks/Heroes"/>
+						<constructBuilding buildingType="Orks/Heroes"
+								count="1"/>
+						<researchUpgrade upgrade="Orks/Weirdboy"/>
+						<produceUnit unitType="Orks/Weirdboy"/>
+						<visitTile unitType="Orks/Weirdboy"
+								clearEnemies="1"
+								featureType="Ruin"
+								count="3">
+							<defenders>
+								<unit type="Neutral/Psychneuein" count="1" rankMin="1" rankMax="3"/>
+							</defenders>
+						</visitTile>
+					</objectives>
+					<rewards>
+						<research amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Orks/Story2" icon="Quests/Orks/Chapter2"
+				firstTurn="40" lastTurn="50">
+ 			<conditions>
+				<quests>
+					<completed name="Orks/Story1"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<foundCityNearEntrance/>
+					</objectives>
+					<rewards>
+						<food amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<defendTileWithEntrance turns="10"/>
+						<surviveInvasion turns="10" waves="4" waveInterval="2" strength="8" relativeStrength="0.5">
+							<attackers>
+								<unit type="SpaceMarines/TacticalSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/AssaultSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/Hunter" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/Predator" rankMin="2" rankMax="4"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<energy amount="100"/>
+						<influence amount="100"/>
+						<ore amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Orks/Story3" icon="Quests/Orks/Chapter3"
+				firstTurn="60" lastTurn="70">
+ 			<conditions>
+				<quests>
+					<completed name="Orks/Story2"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<recoverArcheotech/>
+					</objectives>
+					<rewards>
+						<item type="VolcanisShroud"/>
+						<research amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Orks/Story4" icon="Quests/Orks/Chapter4"
+				firstTurn="80" lastTurn="90">
+ 			<conditions>
+				<quests>
+					<completed name="Orks/Story3"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<destroySpawnedCity strength="16"
+								relativeStrength="1.0">
+							<defenders>
+								<unit type="AstraMilitarum/Basilisk" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/Guardsman" count="2" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/Hydra" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/ScoutSentinel" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/LemanRussBattleTank" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/LordCommissar" count="1" rankMin="4" rankMax="6"/>
+							</defenders>
+						</destroySpawnedCity>
+					</objectives>
+					<rewards>
+						<item type="JokaeroDigitalWeapon"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Orks/Story5" icon="Quests/Orks/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="Orks/Story4"/>
+				</quests>
+			</conditions>		
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Orks/Beasts"/>
+						<produceUnit unitType="Orks/GargantuanSquiggoth"
+								count="1"/>
+					</objectives>
+					<rewards>
+						<influence amount="200"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion relativeStrength="2.0"
+								strength="32"
+								turns="20"
+								waves="9"
+								waveInterval="2">
+							<attackers>
+								<unit type="AstraMilitarum/Baneblade" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/Basilisk" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/Guardsman" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/Hydra" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/LemanRussBattleTank" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/MarauderBomber" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/TempestusScion" count="1" rankMin="5" rankMax="7"/>
+								<unit type="AstraMilitarum/Thunderbolt" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/DoomScythe" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/DoomsdayArk" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Immortal" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Monolith" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TranscendentCtan" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TriarchPraetorian" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Warrior" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/AssaultSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/LandRaider" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Predator" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/StormravenGunship" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/StormtalonGunship" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Terminator" count="1" rankMin="5" rankMax="7"/>
+								<unit type="SpaceMarines/Vindicator" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<startingUnits>
+		<unit type="Orks/Mek"/>
+		<unit type="Orks/Boy" count="3"/>
+	</startingUnits>
+</faction>

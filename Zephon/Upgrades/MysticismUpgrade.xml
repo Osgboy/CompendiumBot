@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <upgrade image="Images/Factions/FurtiveTribunal" tier="4">
+	<requiredUpgrades>
+		<upgrade name="Influence"/>
+	</requiredUpgrades>
 	<conditions>
 		<player>
 			<faction name="FurtiveTribunal"/>

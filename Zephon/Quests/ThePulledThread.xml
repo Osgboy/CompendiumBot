@@ -1,0 +1,154 @@
+<quest image="Factions/FurtiveTribunal">
+ 	<conditions>
+		<player>
+			<!-- <turn greater="40"/> -->
+			<faction name="FurtiveTribunal"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="CaptureScientist" nextStage="CaptureScientist"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="CaptureScientist"
+				nextStageOnSuccess="CaptureScientistSuccess"
+				nextStageOnFailure="CaptureScientistFailure">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="City"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<recoverUnits name="CaptureScientist">
+					<units>
+						<unit count="1" type="Engineer" name="Units/Orin"/>
+					</units>
+				</recoverUnits>
+			</objectives>
+		</stage>
+		<stage name="CaptureScientistSuccess">
+			<options>
+				<option name="EnemyGlands" nextStage="EnemyGlands"/>
+				<option name="PeopleGlands" nextStage="PeopleGlands"/>
+			</options>
+		</stage>
+		<stage name="CaptureScientistFailure"/>
+		<stage name="EnemyGlands" nextStageOnSuccess="EnemyGlandsSuccess">
+			<objectives>
+				<killUnit count="10"/>
+			</objectives>
+		</stage>
+		<stage name="EnemyGlandsSuccess">
+			<options>
+				<option name="RecoverTether" nextStage="RecoverTether"/>
+			</options>
+		</stage>
+		<stage name="PeopleGlands" nextStageOnSuccess="PeopleGlandsSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="GlandHarvest"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<wait name="WaitForGlandHarvest" turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="PeopleGlandsSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="GlandHarvest"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="KillOrin" nextStage="KillOrin"/>
+			</options>
+		</stage>
+		<stage name="RecoverTether" nextStageOnSuccess="RecoverTetherSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/ThePulledThread" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/ThePulledThread"/>
+			</objectives>
+		</stage>				
+		<stage name="RecoverTetherSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="TribunalsTether"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="KillOrin" nextStageOnSuccess="KillOrinSuccess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="City"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillOrin" bossKillCompletes="1">
+					<boss type="LandanGraham"/>
+					<defenders>
+						<unit type="Militant" count="3"/>
+						<unit type="Outrider" count="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="KillOrinSuccess"/>
+		<stage name="Ignore"/>
+	</stages>
+</quest>

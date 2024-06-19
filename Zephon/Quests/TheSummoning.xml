@@ -1,0 +1,279 @@
+<quest>
+ 	<conditions>
+		<player>
+			<turn greater="40"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<options>
+				<option name="Attack" nextStage="Attack"/>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="RitualSuccess" weight="2"/>
+						<nextStage name="RitualFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Attack" nextStageOnSuccess="Negotiate">
+			<objectives>
+				<visitTile name="VisitRitualSite"/>
+			</objectives>
+		</stage>		
+		<stage name="Negotiate">
+			<options>
+				<option name="Combat" nextStage="Combat"/>
+				<option name="CombatBetrayal" nextStage="CombatBetrayal"/>
+				<option name="Accept">
+					<nextStages>
+						<nextStage name="RitualSuccessPayment" weight="2"/>
+						<nextStage name="RitualFailurePayment" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Combat" nextStageOnSuccess="CombatEarlySuccess"
+				nextStageOnFailure="CombatSummon">
+			<objectives>
+				<killCamp name="KillCultists" turns="5">
+					<defenders>
+						<unit type="CrlaDisciple" count="5" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="CombatBetrayal" nextStageOnSuccess="CombatEarlySuccess"
+				nextStageOnFailure="CombatSummon">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Untrustworthy" duration="20"/>
+							<minerals add="40"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillCultists" turns="5">
+					<defenders>
+						<unit type="CrlaDisciple" count="5" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="CombatEarlySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="CursecharmOfCrla"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="CombatSummon" nextStageOnSuccess="CombatLateSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillMonster">
+					<defenders>
+						<unit type="ElectOfUzhodai" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="CombatLateSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="CursecharmOfCrla"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="RitualSuccessPayment">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="40"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Neutral"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<addUnit type="ElectOfUzhodai" rankMin="5" rankMax="5" homeTile="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="RitualFailurePayment">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="40"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="RitualSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Neutral"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<addUnit type="ElectOfUzhodai" rankMin="5" rankMax="5" homeTile="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="RitualFailure"/>
+	</stages>
+</quest>

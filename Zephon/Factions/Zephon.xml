@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction architecture="Zephon"
+		branch="Cyber"
+		coerciveness="0.625"
+		genericBuildingVariations="8"
+		native="1"
+		peacefulness="0.375"
+		playable="0">
+	<actions>
+		<playerCast name="EyeOfZephon"
+				cooldown="3"
+				label="1">
+			<model>
+				<cast blueprint="Effects/EyeOfZephon"
+						sound="Actions/EyeOfZephon"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1" sighted="0">
+					<areas>
+						<area affect="Tile" radius="2">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<enemyStrengthInTheArea greater="0"/>
+							<noSighted/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="DirectControl"
+				cooldown="3"
+				label="1">
+			<model>
+				<cast blueprint="Effects/DirectControl"
+						sound="Actions/DirectControl"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<faction name="Zephon"/>
+							<noTrait type="DirectControl"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="DirectControl" duration="3" />
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<enemyStrengthInTheArea greater="0"/>
+							<hitpointsFraction greater="0.5"/>
+						</unit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</playerCast>
+	</actions>
+	<dislikedLabels>
+		<label name="CultExpansion"/>
+		<label name="Independent"/>
+		<label name="Mysticism"/>
+		<label name="Untrustworthy"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="DefenseGrid" count="4">
+			<models>
+				<missileWeapon mesh="Units/ZephonHeadquartersMissileLauncher"
+						material="Units/ZephonHeadquarters"
+						bone="WeaponBone"
+						muzzleBone="Muzzle"
+						muzzleCount="7"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+			</models>
+		</weapon>
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="EngineerLife"/>
+		<label name="HiredHands"/>
+		<label name="ResourceNetwork"/>
+		<label name="ZephonStanding"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<chips add="10"/>
+				<energy add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+</faction>

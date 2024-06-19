@@ -1,0 +1,167 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Escort" nextStage="Escort"/>
+				<option name="EscortHaggle" nextStage="EscortHaggle"/>
+				<option name="Refuse">
+					<nextStages>
+						<nextStage name="RefuseFailure" weight="1"/>
+						<nextStage name="RefuseSuccess" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Escort"
+				nextStageOnFailure="EscortFailure"
+				nextStageOnSuccess="EscortSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="LandanGraham" name="Units/LandanGraham" token="LandanGraham" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
+						clearEnemies="1"
+						unitType="LandanGraham">
+					<defenders>
+						<unit type="AcrinMilitia" count="3" rankMin="0" rankMax="2"/>
+					</defenders>
+				</visitTile>
+				<keepUnitAlive token="LandanGraham"/>
+			</objectives>
+		</stage>
+		<stage name="EscortHaggle"
+				nextStageOnFailure="EscortFailure"
+				nextStageOnSuccess="EscortHaggleSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="30"/>
+							<addUnitToPlayer type="LandanGraham" name="Units/LandanGraham" token="LandanGraham" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>				
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
+						clearEnemies="1"
+						unitType="LandanGraham">
+					<defenders>
+						<unit type="AcrinMilitia" count="3" rankMin="0" rankMax="2"/>
+					</defenders>
+				</visitTile>
+				<keepUnitAlive token="LandanGraham"/>
+			</objectives>
+		</stage>
+		<stage name="EscortSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="60"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="LandanGraham"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="EscortHaggleSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="30"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="LandanGraham"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>		
+		</stage>
+		<stage name="EscortFailure"/>
+		<stage name="RefuseSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>	
+		</stage>
+		<stage name="RefuseFailure"/>
+	</stages>
+ </quest>

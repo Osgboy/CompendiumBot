@@ -1,0 +1,183 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+							<minerals greater="30"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="-30"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>			
+			<options>
+				<option name="ArrangeTheMeet">
+					<modifiers>
+						<modifier>
+							<effects>
+								<influenceCost add="30"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="ArrangeTheMeetSuccess" weight="3"/>
+						<nextStage name="ArrangeTheMeetFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="Investigate">
+					<modifiers>
+						<modifier>
+							<effects>
+								<influenceCost add="15"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="InvestigateSuccess" weight="3"/>
+						<nextStage name="InvestigateFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="HuntThemDown" nextStage="HuntThemDown"/>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="ArrangeTheMeetSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<faction name="Chieftess"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<hitpoints mul="-0.1"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="ArrangeTheMeetFailure"/>
+		<stage name="InvestigateSuccess">
+			<options>
+				<option name="ArrangeTheMeet">
+					<nextStages>
+						<nextStage name="ArrangeTheMeetSuccess" weight="3"/>
+						<nextStage name="ArrangeTheMeetFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="RevealAssassination" nextStage="RevealAssasination"/>
+				<option name="HuntThemDown" nextStage="HuntThemDown"/>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="InvestigateFailure">
+			<options>
+				<option name="ArrangeTheMeet">
+					<nextStages>
+						<nextStage name="ArrangeTheMeetSuccess" weight="3"/>
+						<nextStage name="ArrangeTheMeetFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="HuntThemDown" nextStage="HuntThemDown"/>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="RevealAssassination">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="30"/>
+							<!-- <addItem name="?"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>				
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>		
+		</stage>
+		<stage name="HuntThemDown"
+				nextStageOnFailure="HuntThemDownFailure"
+				nextStageOnSuccess="HuntThemDownSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/>
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillCalem"
+						bossKillCompletes="0"
+						turns="10">
+					<boss type="Reaver"/>
+					<defenders>
+						<unit type="Reaver" count="4"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="HuntThemDownSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="30"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>			
+		</stage>
+		<stage name="HuntThemDownFailure"/>
+		<stage name="Ignore"/>
+	</stages>
+</quest>

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction biomass="1"
+		constructSound="Actions/PrimitiveConstruct"
+		dlc="Supplement2"
+		influence="1"
+		loyalty="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingBiomass="100"
+		startingInfluence="25"
+		walls="0">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<mainTrack name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="Tyranids/Story0" icon="Quests/Tyranids/Chapter0"
+				firstTurn="2" lastTurn="2">		
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tyranids/Heroes"/>
+						<constructBuilding buildingType="Tyranids/Heroes"/>
+						<produceUnit unitType="Tyranids/TyranidPrime"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<recoverUnit unitType="Tyranids/Hormagaunt"
+								count="3"/>
+					</objectives>
+					<rewards>
+						<item type="RecoveryPackage"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tyranids/Story1" icon="Quests/Tyranids/Chapter1"
+				firstTurn="20" lastTurn="30">
+			<conditions>
+				<quests>
+					<completed name="Tyranids/Story0"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tyranids/Thropes"/>
+						<constructBuilding buildingType="Tyranids/Thropes"/>
+						<produceUnit unitType="Tyranids/Malanthrope"/>
+					</objectives>
+					<rewards>
+						<influence amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<executeUnitOrder name="Tyranids/ConsumeTile"
+								count="3"
+								description="ConsumeTileDescription"/>
+						<generateResearchFromExperience count="3"/>
+					</objectives>
+					<rewards>
+						<unit type="Tyranids/Haruspex"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tyranids/Story2" icon="Quests/Tyranids/Chapter2"
+				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="Tyranids/Story1"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="5"
+								waveInterval="2"
+								strength="4"
+								relativeStrength="0.25">
+							<attackers>
+								<unit type="Neutral/Artefacts/VaulSentry" name="Units/Neutral/Artefacts/VaulSentry" rankMin="2" rankMax="4"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<item type="ForbiddenKnowledge"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="5"
+								waveInterval="2"
+								bossWave="3"
+								strength="4"
+								relativeStrength="0.25">
+							<boss type="Neutral/KastelanRobot" rankMin="4" rankMax="4" name="Units/Neutral/EliteKastelan"/>
+							<attackers>
+								<unit type="AstraMilitarum/TechpriestEnginseer" rankMin="2" rankMax="4"/>
+								<unit type="AstraMilitarum/Guardsman" rankMin="2" rankMax="4"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" rankMin="2" rankMax="4"/>
+								<unit type="AstraMilitarum/TempestusScion" rankMin="2" rankMax="4"/>
+								<unit type="AstraMilitarum/ScoutSentinel" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/AssaultSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/DevastatorSpaceMarine" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/LandSpeeder" rankMin="2" rankMax="4"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<biomass amount="200"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tyranids/Story3" icon="Quests/Tyranids/Chapter3"
+				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="Tyranids/Story2"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<executeBuildingGroupOrder name="Tyranids/ReclaimUnit"
+								count="3"
+								description="ReclaimUnitDescription"/>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="Tyranids">
+							<boss type="Tyranids/Headquarters" name="Units/Tyranids/MeleeCamp"/>
+							<defenders>
+								<unit type="Tyranids/Hormagaunt" count="2" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/Ravener" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</killCamp>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="Tyranids">
+							<boss type="Tyranids/Headquarters" name="Units/Tyranids/RangedCamp"/>
+							<defenders>
+								<unit type="Tyranids/Termagant" count="2" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/Warrior" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</killCamp>
+						<killCamp strength="4"
+								relativeStrength="0.5"
+								faction="Tyranids">
+							<boss type="Tyranids/Headquarters" name="Units/Tyranids/FlyingCamp"/>
+							<defenders>
+								<unit type="Tyranids/Gargoyle" count="2" rankMin="3" rankMax="5"/>
+								<unit type="Tyranids/HiveCrone" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<research amount="500"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tyranids/Story4" icon="Quests/Tyranids/Chapter4"
+				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="Tyranids/Story3"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<foundCityOnNecronTomb/>
+					</objectives>
+					<rewards>
+						<research amount="100"/>	
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<accumulateBiomass count="500"/>
+					</objectives>
+					<rewards>
+						<influence amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Tyranids/Aircraft"/>
+						<constructBuilding buildingType="Tyranids/Aircraft"/>
+					</objectives>
+					<rewards>
+						<upgrade name="Tyranids/CityProduction"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Tyranids/Story5" icon="Quests/Tyranids/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="Tyranids/Story4"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<startRewards>
+						<unit type="Tyranids/Doom" token="Doom" name="Units/Tyranids/Doom"/>
+					</startRewards>
+					<objectives>
+						<surviveInvasion bossWave="3"
+								relativeStrength="1.0"
+								strength="16"
+								turns="10"
+								waves="4"
+								waveInterval="2">
+							<boss type="Orks/Warboss" rankMin="9" rankMax="9" name="Units/Orks/EliteWarboss"/>
+							<attackers>
+								<unit type="Orks/Boy" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/FlashGitz" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Tankbusta" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Meganob" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Warbuggy" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/KillaKan" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Battlewagon" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Dakkajet" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/BurnaBommer" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Gorkanaut" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/GargantuanSquiggoth" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Neutral/Psychneuein" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Neutral/KrootHound" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Neutral/CatachanDevil" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+						<keepUnitAlive token="Doom"/>
+					</objectives>
+					<rewards>
+						<unit type="Tyranids/Lictor" level="4" name="Units/Tyranids/DoomLictor1"/>
+						<unit type="Tyranids/Lictor" level="4" name="Units/Tyranids/DoomLictor2"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<visitTile unitType="Tyranids/Doom"
+								clearEnemies="0"
+								featureType="Ruin"
+								count="1"
+								turns="10">
+							<defenders>
+								<unit type="Orks/Boy" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/FlashGitz" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Tankbusta" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Meganob" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Warbuggy" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/KillaKan" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Battlewagon" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Dakkajet" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/BurnaBommer" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/Gorkanaut" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Orks/GargantuanSquiggoth" count="1" rankMin="5" rankMax="7"/>
+							</defenders>
+						</visitTile>
+						<keepUnitAlive token="Doom"/>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<startingUnits>
+		<unit type="Tyranids/Malanthrope"/>
+		<unit type="Tyranids/Termagant" count="3"/>		
+	</startingUnits>
+</faction>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait icon="Actions/VoiceVehiclesUpgrade" visibleOnUnit="1">
+<trait icon="Actions/VoiceVehiclesUpgrade" stacking="1" visibleOnUnit="1" visibleSourcePlayer="1">
 	<onUnitDisappeared>
 		<traitSourceBuildingGroup>
 			<modifier effectDescription="VoiceVehiclesUpgrade">

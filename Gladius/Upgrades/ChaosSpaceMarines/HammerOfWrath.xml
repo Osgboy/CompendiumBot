@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="8" icon="Actions/HammerOfWrath">
+	<requiredUpgrades>
+		<upgrade name="ChaosSpaceMarines/Heroes"/>
+		<upgrade name="ChaosSpaceMarines/Infantry"/>
+		<upgrade name="ChaosSpaceMarines/Vehicles"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.75"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

@@ -1,0 +1,345 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="GatherResources" nextStage="GatherResources"/>
+				<option name="LockHerUp">
+					<nextStages>
+						<nextStage name="LockHerUpSuccess" weight="3"/>
+						<nextStage name="LockHerUpFailure" weight="1"/>
+					</nextStages>				
+				</option>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="GatherResources" nextStageOnSuccess="GatherResourcesSuccess"
+				nextStageOnFailure="GatherResourcesFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/TheSpaceEngine" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/TheSpaceEngine"
+						turns="20"/>
+			</objectives>
+		</stage>
+		<stage name="GatherResourcesSuccess">
+			<options>
+				<option name="FindInsights">
+					<nextStages>
+						<nextStage name="FindAcrinInsightSuccess" weight="1"/>
+						<nextStage name="FindZephonInsightSuccess" weight="1"/>
+						<nextStage name="FindInsightsFailure" weight="1"/>
+					</nextStages>				
+				</option>
+				<option name="ChangeThePast">
+					<nextStages>
+						<nextStage name="ChangeThePastSuccess" weight="100"/>
+						<nextStage name="ChangeThePastFailure" weight="1"/>
+					</nextStages>				
+				</option>
+				<option name="SellTechToZephon">
+					<nextStages>
+						<nextStage name="SellTechToZephonSuccess" weight="3"/>
+						<nextStage name="SellTechToZephonFailure" weight="1"/>
+					</nextStages>			
+				</option>
+				<option name="SellTechToAnchorite">
+					<nextStages>
+						<nextStage name="SellTechToAnchoriteSuccess" weight="3"/>
+						<nextStage name="SellTechToAnchoriteFailure" weight="1"/>
+					</nextStages>
+				</option>	
+				<option name="SellTechToChieftess">
+					<nextStages>
+						<nextStage name="SellTechToChieftessSuccess" weight="3"/>
+						<nextStage name="SellTechToChieftessFailure" weight="1"/>
+					</nextStages>
+				</option>	
+				<option name="SellTechToConcordat">
+					<nextStages>
+						<nextStage name="SellTechToConcordatSuccess" weight="3"/>
+						<nextStage name="SellTechToConcordatFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="IgnoreAfterGatherResources" nextStage="IgnoreAfterGatherResources"/>
+			</options>	
+		</stage>
+		<stage name="FindAcrinInsightSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="200"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="FindZephonInsightSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="200"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="FindInsightsFailure"/>
+		<stage name="ChangeThePastSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player match="Any">
+							<faction name="Anchorite"/>
+							<faction name="Chieftess"/>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ThePastMitigated"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="ChangeThePastFailure"/>
+		<stage name="SellTechToZephonSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ThePastImproved"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Warden"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="SellTechToZephonFailure"/>
+		<stage name="SellTechToAnchoriteSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ThePastImproved"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<!-- <addUnit type="ReamingCrodeus"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="SellTechToAnchoriteFailure"/>
+		<stage name="SellTechToChieftessSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ThePastImproved"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<!-- <addUnit type="AtlasTank"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="SellTechToChieftessFailure"/>
+		<stage name="SellTechToConcordatSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<!-- <addItem name="?"/> -->
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="SellTechToConcordatFailure"/>
+		<stage name="GatherResourcesFailure"/>
+		<stage name="LockHerUpSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Oppressive"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="LockHerUpFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Oppressive"/>
+							<addTrait type="ScientistStrike" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Ignore"/>
+		<stage name="IgnoreAfterGatherResources">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<antimatter add="20"/>
+							<dimensionalEchoes add="10"/>
+							<singularityCores add="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

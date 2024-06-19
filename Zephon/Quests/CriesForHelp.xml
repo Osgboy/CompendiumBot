@@ -1,0 +1,62 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Help" nextStage="Help"/>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="IgnoreFailure" weight="1"/>
+						<nextStage name="IgnoreSuccess" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="Help"
+				nextStageOnFailure="HelpFailure"
+				nextStageOnSuccess="HelpSuccess">
+			<modifications>
+				<nearCityTileSelector count="3">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<recoverUnits name="RecoverSplenetics" hostileOnFailure="1" turns="10">
+					<units>
+						<unit count="3" type="Militant" name="Units/Splenetics" rankMin="4" rankMax="4"/>
+					</units>
+				</recoverUnits>
+			</objectives>
+		</stage>
+		<stage name="HelpFailure"/>
+		<stage name="HelpSuccess"/>
+		<stage name="IgnoreFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="4.2" waves="1">
+					<attackers>
+						<unit type="Militant" name="Units/Splenetics" rankMin="4" rankMax="4"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="IgnoreSuccess"/>
+	</stages>
+ </quest>

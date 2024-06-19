@@ -1,0 +1,92 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+			</modifications>
+			<options>
+				<option name="Enslave" nextStage="Enslave"/>
+				<option name="Deport" nextStage="Deport"/>
+				<option name="Ignore">
+					<nextStages>
+						<nextStage name="IgnoreFailure" weight="1"/>
+						<nextStage name="IgnoreSuccess" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="Integrate" nextStage="Integrate">
+					<modifiers>
+						<modifier>
+							<effects>
+								<influenceCost add="20"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</option>
+			</options>
+		</stage>
+		<stage name="Enslave">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="EnslavedReavers" duration="10"/>
+							<minerals add="30"/>
+							<population add="1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Deport">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="DeportedReavers" duration="10"/>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="IgnoreFailure">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="StealingReavers" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="IgnoreSuccess">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+		<stage name="Integrate">
+			<modifications>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>		
+		</stage>
+	</stages>
+ </quest>

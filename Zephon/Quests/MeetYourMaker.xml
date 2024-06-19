@@ -1,0 +1,84 @@
+<quest image="Factions/FallenSoldier">
+ 	<conditions>
+		<player>
+			<!-- <turn greater="40"/> -->
+			<faction name="FallenSoldier"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="ZephonFacility" nextStage="ZephonFacility"/>
+				<option name="VoiceAcolytes" nextStage="VoiceAcolytes"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="ZephonFacility" nextStageOnSuccess="ZephonFacilitySuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="12">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitOracleShardAndClearEnemies"
+						clearEnemies="1">
+					<defenders>
+						<unit type="CombatDrone" count="3" rankMin="4" rankMax="6"/>
+					</defenders>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="ZephonFacilitySuccess">
+			<options>
+				<option name="Investigate" nextStage="GatherResources"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="VoiceAcolytes" nextStageOnSuccess="VoiceAcolytesSuccess">
+			<objectives>
+				<produceUnit unitType="CrlaDisciple" count="3" ignoreExisting="1"/>
+			</objectives>
+		</stage>
+		<stage name="VoiceAcolytesSuccess">
+			<options>
+				<option name="Investigate" nextStage="GatherResources"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>		
+		<stage name="GatherResources" nextStageOnSuccess="GatherResourcesSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/MeetYourMaker" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/MeetYourMaker" turns="30"/>
+			</objectives>
+		</stage>
+		<stage name="GatherResourcesSuccess">
+			<options>
+				<option name="Confront" nextStage="GatherResourcesSuccess2"/>
+			</options>
+		</stage>
+		<stage name="GatherResourcesSuccess2"/>
+	</stages>
+ </quest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="8" icon="Actions/HammerOfWrath">
+	<requiredUpgrades>
+		<upgrade name="Necrons/CanoptekSpyder"/>
+		<upgrade name="Necrons/Vehicles"/>
+		<upgrade name="Necrons/TranscendentCtan"/>
+		<upgrade name="Necrons/TriarchPraetorian"/>
+		<upgrade name="Necrons/TriarchStalker"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

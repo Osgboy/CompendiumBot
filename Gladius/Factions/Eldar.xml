@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction actionsTitle="GUI/EldarPlayerPowers"
+		constructSound="Actions/WebwayRedoubt"
+		dlc="Supplement7"
+		energy="1"
+		energyPooling="0.25"
+		food="1"
+		foodPooling="0.25"
+		influence="1"
+		loyalty="1"
+		ore="1"
+		playable="1"
+		production="1"
+		research="1"
+		startingCity="1"
+		startingEnergy="25"
+		startingFood="25"
+		startingInfluence="25"
+		startingOre="50"
+		startingRequisitions="0"
+		webwayGate="Eldar/WebwayGate">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<mainTrack name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<track name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+		<quest name="Eldar/Story0" icon="Quests/Eldar/Chapter0"
+				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Eldar/Heroes"/>
+						<constructBuilding buildingType="Eldar/Heroes"/>
+						<produceUnit unitType="Eldar/Autarch"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp descriptionName="KillUmbraDescription">
+							<boss type="Neutral/Umbra"/>
+						</killCamp>
+					</objectives>
+					<rewards>
+						<energy amount="50"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>		
+		<quest name="Eldar/Story1" icon="Quests/Eldar/Chapter1"
+				firstTurn="20" lastTurn="30">		
+			<conditions>
+				<quests>
+					<completed name="Eldar/Story0"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<constructBuilding buildingType="Eldar/Infantry"
+								count="1"/>
+						<researchUpgrade upgrade="Eldar/Ranger"/>
+						<produceUnit unitType="Eldar/Ranger" count="1"/>
+						<visitTile unitType="Eldar/Ranger"
+								clearEnemies="1"
+								featureType="NecronTomb"
+								count="1">
+							<defenders>
+								<unit type="Tyranids/Warrior" count="1" rankMin="1" rankMax="3"/>
+								<unit type="Tyranids/Hormagaunt" count="1" rankMin="1" rankMax="3"/>
+								<unit type="Tyranids/Termagant" count="1" rankMin="1" rankMax="3"/>
+								<unit type="Tyranids/Gargoyle" count="1" rankMin="1" rankMax="3"/>
+								<unit type="Tyranids/Zoanthrope" count="1" rankMin="1" rankMax="3"/>
+							</defenders>
+						</visitTile>
+					</objectives>
+					<rewards>
+						<item type="ForbiddenKnowledge"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Eldar/Story2" icon="Quests/Eldar/Chapter2"
+				firstTurn="40" lastTurn="50">
+			<conditions>
+				<quests>
+					<completed name="Eldar/Story1"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<recoverUnit unitType="Neutral/Artefacts/VaulSentry"
+									count="3"/>
+					</objectives>
+					<rewards>
+						<research amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<surviveInvasion waves="4" waveInterval="2" strength="8" relativeStrength="0.5">
+							<attackers>
+								<unit type="Necrons/Warrior" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/FlayedOne" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/Immortal" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/TombBlade" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="2" rankMax="4"/>
+								<unit type="Necrons/TriarchStalker" count="1" rankMin="2" rankMax="4"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<ore amount="100"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>	
+		<quest name="Eldar/Story3" icon="Quests/Eldar/Chapter3"
+				firstTurn="60" lastTurn="70">
+			<conditions>
+				<quests>
+					<completed name="Eldar/Story2"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Eldar/FarseerSkyrunner"/>
+						<produceUnit unitType="Eldar/FarseerSkyrunner"/>
+						<visitTile unitType="Eldar/FarseerSkyrunner"
+								clearEnemies="1"
+								featureType="Ruin"
+								count="1">
+							<defenders>
+								<unit type="Tau/FireWarrior" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/Pathfinder" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/CrisisBattlesuit" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/StealthBattlesuit" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/Piranha" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/Devilfish" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/HammerheadGunship" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/SkyRayGunship" count="1" rankMin="3" rankMax="5"/>
+								<unit type="Tau/GhostkeelBattlesuit" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						</visitTile>
+					</objectives>
+					<rewards>
+						<research amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCampWithDaemonPrince relativeStrength="0.5" strength="4" turns="20" addFeature="SkullAltar">
+							<boss type="ChaosSpaceMarines/DaemonPrince" rankMin="9" rankMax="9"/>
+							<defenders>
+								<unit type="ChaosSpaceMarines/ChaosCultist" count="2" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/ChaosSpaceMarine" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/Havoc" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/KhorneBerzerker" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/ChaosRhino" count="1" rankMin="3" rankMax="5"/>
+								<unit type="ChaosSpaceMarines/Helbrute" count="1" rankMin="3" rankMax="5"/>
+							</defenders>						
+						</killCampWithDaemonPrince>
+					</objectives>
+					<rewards>
+						<item type="AxeOfBlindFury"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Eldar/Story4" icon="Quests/Eldar/Chapter4"
+				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="Eldar/Story3"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="Eldar/AvatarOfKhaine"/>
+						<produceUnit unitType="Eldar/AvatarOfKhaine"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp relativeStrength="1.0"
+								strength="8">
+							<boss type="Necrons/TranscendentCtan" rankMin="9" rankMax="9"/>
+							<defenders>
+								<unit type="ChaosSpaceMarines/WarpTalon" count="1" rankMin="4" rankMax="6"/>
+								<unit type="ChaosSpaceMarines/Obliterator" count="1" rankMin="4" rankMax="6"/>
+								<unit type="ChaosSpaceMarines/Maulerfiend" count="1" rankMin="4" rankMax="6"/>
+								<unit type="ChaosSpaceMarines/Venomcrawler" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/TempestusScion" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/WyrdvanePsyker" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/Bullgryn" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/LemanRussBattleTank" count="1" rankMin="4" rankMax="6"/>
+								<unit type="AstraMilitarum/Hydra" count="1" rankMin="4" rankMax="6"/>
+							</defenders>						
+						</killCamp>
+						<keepAvatarOfKhaineAlive
+								descriptionName="KeepUnitAliveDescription"/>
+					</objectives>
+					<rewards>
+						<research amount="150"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="Eldar/Story5" icon="Quests/Eldar/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="Eldar/Story4"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<surviveInvasion bossWave="6"
+								relativeStrength="2.0"
+								strength="32"
+								waves="10"
+								waveInterval="2">
+							<boss type="Eldar/AvatarOfKhaine" rankMin="9" rankMax="9"/>
+							<attackers>
+								<unit type="Neutral/Umbra" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/Wraithblade" count="2" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/Wraithknight" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Eldar/HemlockWraithfighter" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<actions>
+		<activateWebwayGate cooldown="1"
+				name="Eldar/ActivateWebwayGate">
+			<model>
+				<action sound="Actions/ActivateWebwayGate"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus">
+					<effects>
+						<influenceCost mul="-1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>	
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<player>
+							<faction name="Neutral"/>
+						</player>
+						<unit>
+							<type name="Eldar/WebwayGate"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<changePlayer/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</activateWebwayGate>
+		<webwayRedoubt cooldown="1"
+				costScalesWithCities="1"
+				name="Eldar/WebwayRedoubt"
+				requiredUpgrade="Eldar/WebwayRedoubt">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+						<oreCost base="60"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<affiliate/>
+							<type name="Eldar/WebwayGate"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<removeUnit/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<foundCity/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</webwayRedoubt>
+	</actions>
+	<startingUnits>
+		<unit type="Eldar/Guardian" count="2"/>
+	</startingUnits>
+</faction>

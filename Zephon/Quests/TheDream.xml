@@ -1,0 +1,158 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="AskAnchorite" nextStage="AskAnchorite">
+  					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<noEnemy/>
+							<standingTier greater="2"/>
+						</playerWithFaction>
+					</conditions>		
+				</option>
+				<option name="AskZephon" nextStage="AskZephon">
+ 					<conditions>
+  						<playerWithFaction faction="Zephon">
+							<noEnemy/>
+							<standingTier greater="2"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="AskReaver" nextStage="AskReaver">
+ 					<conditions>
+ 						<playerWithFaction faction="Chieftess">
+							<noEnemy/>
+							<standingTier greater="2"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="AskTribunal" nextStage="AskTribunal">
+ 					<conditions>
+						<player>
+							<faction name="FurtiveTribunal"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="AskAnchorite">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="TormentOfTheVoice"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+		<stage name="AskZephon" nextStageOnSuccess="AskZephonComplete">
+			<modifications>
+				<nearCityTileSelector targetDistance="8">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Volcanic"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillOminousLair">
+					<boss type="ShochitrisLair" name="Units/OminousLair"/>
+				</killCamp>
+			</objectives>
+		</stage>		
+		<stage name="AskZephonComplete">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="FragilityOfFlesh"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AskReaver">
+			<modifications>
+				<tileSelector>
+					<conditions>
+						<unit>
+							<noAlly/>
+							<type name="Headquarters"/>
+						</unit>
+					</conditions>
+				</tileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>
+		<stage name="AskTribunal">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="20"/>
+							<influence add="20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Ignore">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Haunted" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

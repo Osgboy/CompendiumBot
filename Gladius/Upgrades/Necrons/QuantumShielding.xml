@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade position="6" icon="Actions/Necrons/QuantumShielding">
+	<requiredUpgrades>
+		<upgrade name="Necrons/AnnihilationBarge"/>
+		<upgrade name="Necrons/DoomsdayArk"/>
+		<upgrade name="Necrons/GhostArk"/>
+		<upgrade name="Necrons/TriarchStalker"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

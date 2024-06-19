@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Debuff" icon="Actions/DarkOmen" visibleOnUnit="1">
-	<modifiers>
-		<modifier requiredUpgrade="DarkOmenUpgrade">
+	<opponentModifiers>
+ 		<modifier requiredUpgrade="DarkOmenUpgrade" effectDescription="AgainstThisUnit">
 			<conditions>
 				<unit>
 					<enemy/>
 				</unit>
 			</conditions>
 			<effects>
-				<damageTaken mul="0.1"/>
+				<attacks mul="0.1"/>
 			</effects>
 		</modifier>
-	</modifiers>
-	<onTurnStarted>
+	</opponentModifiers>
+	<onTraitAdded>
 		<tile>
 			<area affect="Tile">
 				<modifiers>
 					<modifier>
+						<conditions>
+							<unit>
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTraitAdded>
+	<onTurnStarted>
+		<tile>
+			<area affect="Tile">
+				<modifiers>
+					<modifier visible="0">
 						<conditions>
 							<unit>
 								<enemy/>

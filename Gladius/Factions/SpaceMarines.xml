@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction actionsTitle="GUI/Operations"
+		buildingVariations="3"
+		constructSound="Actions/Construct" 
+		energy="1"
+		energyPooling="0.25"
+		influence="1"
+		loyalty="1"
+		playable="1"
+		production="1"
+		requisitions="1"
+		research="1"
+		startingEnergy="25"
+		startingFood="0"
+		startingInfluence="25"
+		startingOre="0"
+		startingRequisitions="75">
+	<music>
+		<track name="Music/AdeptusMechanicusBGM" dlc="Supplement9"/>
+		<track name="Music/AdeptusMechanicusTheme" dlc="Supplement9"/>
+		<track name="Music/AstraMilitarumBGM"/>
+		<track name="Music/AstraMilitarumTheme"/>
+		<track name="Music/BGM0"/>
+		<track name="Music/BGM1"/>
+		<track name="Music/ChaosSpaceMarinesBGM" dlc="Supplement3"/>
+		<track name="Music/ChaosSpaceMarinesTheme" dlc="Supplement3"/>
+		<track name="Music/DrukhariBGM" dlc="Supplement13"/>
+		<track name="Music/DrukhariTheme" dlc="Supplement13"/>
+		<track name="Music/EldarBGM" dlc="Supplement7"/>
+		<track name="Music/EldarTheme" dlc="Supplement7"/>
+		<track name="Music/MainBGM"/>
+		<track name="Music/MainTheme"/>
+		<track name="Music/NecronsBGM"/>
+		<track name="Music/NecronsTheme"/>
+		<track name="Music/OrksBGM"/>
+		<track name="Music/OrksTheme"/>
+		<track name="Music/SistersOfBattleBGM" dlc="Supplement11"/>
+		<track name="Music/SistersOfBattleTheme" dlc="Supplement11"/>
+		<mainTrack name="Music/SpaceMarinesBGM"/>
+		<track name="Music/SpaceMarinesTheme"/>
+		<track name="Music/TauBGM" dlc="Supplement5"/>
+		<track name="Music/TauTheme" dlc="Supplement5"/>
+		<track name="Music/TyranidsBGM" dlc="Supplement2"/>
+		<track name="Music/TyranidsTheme" dlc="Supplement2"/>
+	</music>
+	<quests>
+ 		<quest name="SpaceMarines/Story0" icon="Quests/SpaceMarines/Chapter0"
+ 				firstTurn="2" lastTurn="2">
+			<stages>
+				<stage>
+					<objectives>
+						<deployFortress unitType="SpaceMarines/FortressOfRedemption"/>
+					</objectives>
+					<rewards>
+						<requisitions amount="50"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<produceRequisitionsPerTurn count="20"/>
+					</objectives>
+					<rewards>
+						<influence amount="50"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+ 		<quest name="SpaceMarines/Story1" icon="Quests/SpaceMarines/Chapter1"
+ 				firstTurn="20" lastTurn="30">
+ 			<conditions>
+				<quests>
+					<completed name="SpaceMarines/Story0"/>
+				</quests>
+			</conditions>
+ 			<stages>
+ 				<stage>
+					<objectives>
+						<researchUpgrade upgrade="SpaceMarines/Heroes"/>
+						<constructBuilding buildingType="SpaceMarines/Heroes"
+								count="1"/>
+						<researchUpgrade upgrade="SpaceMarines/Librarian"/>
+						<produceUnit unitType="SpaceMarines/Librarian"
+								count="1"/>
+					</objectives>
+					<rewards>
+						<item type="ArmaplasBracers"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<killCamp>
+							<defenders>
+								<unit type="AstraMilitarum/Guardsman" count="4" rankMin="1" rankMax="3"/>
+								<unit type="AstraMilitarum/HeavyWeaponsSquad" count="2" rankMin="1" rankMax="3"/>
+								<unit type="AstraMilitarum/ScoutSentinel" count="2" rankMin="1" rankMax="3"/>
+							</defenders>	
+						</killCamp>
+					</objectives>
+					<rewards>
+						<upgrade name="SpaceMarines/ChapterUnity"/>
+					</rewards>
+				</stage>
+ 				<stage>
+					<objectives>
+						<visitTileExodite unitType="SpaceMarines/Librarian"
+								featureType="Ruin"
+								count="3"/>
+					</objectives>
+					<rewards>
+						<item type="ForbiddenKnowledge"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SpaceMarines/Story2" icon="Quests/SpaceMarines/Chapter2"
+				firstTurn="40" lastTurn="50">
+  			<conditions>
+				<quests>
+					<completed name="SpaceMarines/Story1"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<objectives>
+						<activateTactic/>
+-  						<exploreDepths waveInterval="2">
+							<attackers>
+								<unit type="Necrons/Warrior"/>
+							</attackers>
+							<explorers>
+								<unit type="SpaceMarines/AssaultSpaceMarine"
+										count="1" rankMin="2" rankMax="4"/>
+								<unit type="SpaceMarines/TacticalSpaceMarine"
+										count="1" rankMin="2" rankMax="4"/>
+							</explorers>
+						</exploreDepths>
+					</objectives>
+					<rewards>
+						<item type="MourningBladeOfLazaerek"/>
+						<requisitions amount="100"/>			
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="SpaceMarines/Story3" icon="Quests/SpaceMarines/Chapter3"
+				firstTurn="60" lastTurn="70">
+ 			<conditions>
+				<quests>
+					<completed name="SpaceMarines/Story2"/>
+				</quests>
+			</conditions>
+			<stages>
+ 				<stage>
+					<objectives>
+						<accumulateResearch count="200"/>
+					</objectives>
+					<rewards>
+						<unit type="Neutral/Ambull"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<researchUpgrade upgrade="SpaceMarines/OrbitalScan"/>
+						<scanTiles count="3"/>
+					</objectives>
+					<rewards>
+						<requisitions amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						 <killCampWithFortressOfRedemption reveal="1">
+						 	<boss type="SpaceMarines/FortressOfRedemption" rankMin="7" rankMax="7" name="Units/SpaceMarines/RebelFortressOfRedemption"/>
+						 	<defenders>
+						 		<unit type="Neutral/Artefacts/AncientExterminatusDevice" token="AncientExterminatusDevice" count="1" capturable="1" name="Units/Neutral/Artefacts/AncientExterminatusDevice"/>
+						 		<unit type="AstraMilitarum/Guardsman" count="2" rankMin="3" rankMax="5"/>
+						 		<unit type="AstraMilitarum/HeavyWeaponsSquad" count="2" rankMin="3" rankMax="5"/>
+						 		<unit type="AstraMilitarum/Bullgryn" count="1" rankMin="3" rankMax="5"/>
+						 		<unit type="AstraMilitarum/LemanRussBattleTank" count="1" rankMin="3" rankMax="5"/>
+							</defenders>
+						 </killCampWithFortressOfRedemption>
+					</objectives>
+					<rewards>
+						<influence amount="100"/>
+					</rewards>
+				</stage>
+				<stage>
+					<objectives>
+						<captureUnit token="AncientExterminatusDevice"/>
+					</objectives>
+					<rewards>
+						<influence amount="100"/>
+					</rewards>
+				</stage>										
+			</stages>
+		</quest>
+		<quest name="SpaceMarines/Story4" icon="Quests/SpaceMarines/Chapter4"
+				firstTurn="80" lastTurn="90">
+			<conditions>
+				<quests>
+					<completed name="SpaceMarines/Story3"/>
+				</quests>
+			</conditions>
+			<stages>
+				<stage>
+					<startRewards>
+						<upgrade name="SpaceMarines/GeneseedBunker"/>
+					</startRewards>
+					<objectives>
+						<constructBuilding buildingType="SpaceMarines/GeneseedBunker"
+								count="3"/>
+					</objectives>
+					<rewards>
+						<energy amount="200"/>
+					</rewards>
+				</stage>							
+			</stages>
+		</quest>
+		<quest name="SpaceMarines/Story5" icon="Quests/SpaceMarines/Chapter5"
+				firstTurn="100" lastTurn="110">
+			<conditions>
+				<quests>
+					<completed name="SpaceMarines/Story4"/>
+				</quests>
+			</conditions>			
+			<stages>
+				<stage>
+					<startRewards>
+						<upgrade name="SpaceMarines/LastStandReady"/>
+					</startRewards>
+					<objectives>
+						<activateUnit token="AncientExterminatusDevice"/>
+					</objectives>
+					<rewards>
+						<upgrade name="SpaceMarines/LastStand"/>
+					</rewards>
+				</stage>												
+				<stage>
+					<objectives>
+						<surviveInvasion relativeStrength="1.0"
+								strength="16"
+								turnCounterModifier="10"
+								turns="10"
+								waves="4"
+								waveInterval="2">
+							<attackers>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/CanoptekScarab" count="3" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/CanoptekSpyder" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Monolith" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TombBlade" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TriarchStalker" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Warrior" count="3" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+						<controlUnit token="AncientExterminatusDevice"/>
+					</objectives>
+					<rewards>
+						<influence amount="200"/>
+					</rewards>
+				</stage>												
+				<stage>
+					<objectives>
+						<surviveInvasion relativeStrength="1.0"
+								strength="16"
+								turns="10"
+								waves="4"
+								waveInterval="2">
+							<attackers>
+								<unit type="Necrons/AnnihilationBarge" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/CanoptekScarab" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/CanoptekSpyder" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/DoomScythe" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/DoomsdayArk" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/HeavyDestroyer" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Immortal" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Monolith" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Obelisk" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TranscendentCtan" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TriarchPraetorian" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/TriarchStalker" count="1" rankMin="5" rankMax="7"/>
+								<unit type="Necrons/Warrior" count="1" rankMin="5" rankMax="7"/>
+							</attackers>
+						</surviveInvasion>
+						<controlUnit token="AncientExterminatusDevice"/>
+					</objectives>
+					<rewards>
+						<victory/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+		<quest name="LordOfSkulls" icon="Units/Neutral/LordOfSkulls">
+			<stages>
+				<stage>
+					<objectives>
+						<killLordOfSkulls unitType="Neutral/LordOfSkulls"/>
+					</objectives>
+					<rewards>
+						<playerTrait name="SkullsForTheSkullThrone"/>
+					</rewards>
+				</stage>
+			</stages>
+		</quest>
+	</quests>
+	<actions>
+		<deployCity charges="1">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+		</deployCity>
+		<deployFortress cooldown="10"
+				cooldownScalesWithPace="1"
+				icon="Actions/DeployFortressOfRedemption"
+				scaleInfluenceCost="1"
+				unit="SpaceMarines/FortressOfRedemption">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="Resource"/>
+							<noFeatureCategory name="WireWeed"/>
+							<land/>
+							<noEnemyCity/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+				</target>
+			</beginTargets>
+		</deployFortress>
+		<deployAquilaMacroCannon cooldown="3"
+				icon="Actions/DeployAquilaMacroCannon"
+				name="DeployUnit"
+				unit="SpaceMarines/AquilaMacroCannon"
+				requiredUpgrade="SpaceMarines/AquilaMacroCannon">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="240"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="Resource"/>
+							<noFeatureCategory name="WireWeed"/>
+							<land/>
+							<noEnemyCity/>
+							<noUnit/>
+							<noFeature name="GravityWaves"/>
+						</tile>
+					</conditions>
+				</target>
+			</beginTargets>
+		</deployAquilaMacroCannon>
+		<orbitalScan cooldown="1"
+				requiredUpgrade="SpaceMarines/OrbitalScan">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1" sighted="0">
+					<areas>
+						<area affects="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</orbitalScan>
+		<orbitalBombardment cooldown="3"
+				requiredUpgrade="SpaceMarines/OrbitalBombardment">
+			<model>
+				<action sound="Actions/BombDrop"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<weaponDamage weapon="OrbitalBombardment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</orbitalBombardment>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="TacticalDoctrine"
+				requiredUpgrade="SpaceMarines/TacticalDoctrine">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="TacticalDoctrine"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="AssaultDoctrine"
+				requiredUpgrade="SpaceMarines/AssaultDoctrine">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="AssaultDoctrine"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="DevastatorDoctrine"
+				requiredUpgrade="SpaceMarines/DevastatorDoctrine">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="DevastatorDoctrine"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>		
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="BolterDrill"
+				requiredUpgrade="SpaceMarines/BolterDrill">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="BolterDrill"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="TheFleshIsWeak"
+				requiredUpgrade="SpaceMarines/TheFleshIsWeak">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="TheFleshIsWeak"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="MachineEmpathy"
+				requiredUpgrade="SpaceMarines/MachineEmpathy">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="MachineEmpathy"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+		<tactic cooldown="10"
+				durationInSeconds="0.1"
+				interfaceSound="Interface/Tactic"
+				name="SiegeMasters"
+				requiredUpgrade="SpaceMarines/SiegeMasters">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<playerModifiers>
+				<modifier>
+					<effects>
+						<addTrait duration="10" name="SiegeMasters"/>
+					</effects>
+				</modifier>
+			</playerModifiers>
+		</tactic>
+	</actions>
+	<startingUnits>
+		<unit type="SpaceMarines/TacticalSpaceMarine" count="2"/>
+	</startingUnits>
+</faction>

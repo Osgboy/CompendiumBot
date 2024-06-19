@@ -1,0 +1,77 @@
+<quest>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Connect">
+					<nextStages>
+						<nextStage name="ConnectSuccess" weight="3"/>
+						<nextStage name="ConnectFailure" weight="1"/>
+					</nextStages>			
+				</option>
+				<option name="Study">
+					<nextStages>
+						<nextStage name="StudySuccess" weight="3"/>
+						<nextStage name="StudyFailure" weight="1"/>
+					</nextStages>				
+				</option>
+				<option name="Dismantle" nextStage="Dismantle"/>
+			</options>
+		</stage>
+		<stage name="ConnectSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ShamhurishCorruption"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="ConnectFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ShamhurishAugmentation"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+		<stage name="StudySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ShamhurishAssistance"/>
+						</effects>
+					</modifier>
+				</playerModifiers>				
+			</modifications>
+		</stage>
+		<stage name="StudyFailure"/>
+		<stage name="Dismantle"/>
+	</stages>
+ </quest>
