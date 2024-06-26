@@ -3,7 +3,7 @@
 	<onWeaponAttacked>
 		<weapon>
 			<modifier effectDescription="ToNonLowPowerWeapon">
-				<conditions>
+				<conditions ignoreForTraitVisibility="1">
 					<weapon>
 						<noTrait type="LowPower"/>
 					</weapon>

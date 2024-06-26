@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="80"
+				material="Units/PhenarisHunter"
+				mesh="Units/PhenarisHunter"
+				normalWeight="0.1"
+				scale="1 1 1"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AxiomaticPendulum">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="ParadoxTheriac" requiredUpgrade="ParadoxTheriac">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<dimensionalEchoesCost base="6"/> <!-- %dimensionalEchoesCost base tier=9 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.3"/> <!-- %dimensionalEchoesUpkeep base tier=9 factor=0.05 -->
+				<antimatterCost base="6"/> <!-- %antimatterCost base tier=9 factor=0.05 -->
+				<antimatterUpkeep base="0.3"/> <!-- %antimatterUpkeep base tier=9 factor=0.05 -->
+				<foodCost base="30"/> <!-- %foodCost base tier=9 factor=0.25 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=9 factor=0.25 -->
+				<groupSizeMax base="5"/>
+				<hitpointsMax base="6"/> <!-- %hitpointsMax base tier=4 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/PhenarisHunterAbility1"
+						effectBlueprint="Effects/Nightmare"
+						beginEffect="0.2"
+						responseSound="Units/Responses/PhenarisHunterAppear"
+						sound="Units/PhenarisHunterAppear"
+						soundCount="3"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/PhenarisHunterCharge"
+						meleeAnimation="Units/PhenarisHunterMelee"
+						meleeBeginSwing="0.3"
+						meleeEndSwing="0.4"
+						meleeSound="Units/PhenarisHunterMelee"
+						meleeSoundCount="3"
+						responseSound="Units/Responses/PhenarisHunterAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/PhenarisHunterDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/PhenarisHunterDie"
+						voiceSoundCount="4"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/PhenarisHunterImpact"
+						responseSound="Units/Responses/PhenarisHunterEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/PhenarisHunterIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/PhenarisHunterMove"
+						sound="Units/PhenarisHunterMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"
+						responseSound="Units/Responses/PhenarisHunterMove"
+						responseSoundCount="3"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="Masochism"
+				cooldown="5">
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<!-- <trait type="Deathshriek"/> -->
+		<trait type="VoidDrifter"/>
+	</traits>
+</unit>

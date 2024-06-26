@@ -6,7 +6,7 @@ import html
 def replaceChrs(matchobj: re.Match):
    name = matchobj.group(1)
    value = matchobj.group(2)
-   value = html.escape(value, quote=False)
+   value = html.escape(value, quote=False) # replace all prohibited characters with character entity references
    return f'<entry name="{name}" value="{value}"/>'
 
 for dirpath, dirnames, filenames in os.walk(sys.argv[1]): # .\Zephon\English, .\scratch

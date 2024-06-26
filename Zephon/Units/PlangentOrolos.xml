@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice">
+	<model>
+		<unit bloodBone="Chest"
+				material="Units/FallenOrolos"
+				effectsBlueprint="Effects/FallenOrolos"
+				mesh="Units/FallenOrolos"
+				normalWeight="0.1"
+				scale="1.3 1.3 1.3"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="Shrieker" count="2">
+			<models>
+				<projectileWeapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<dimensionalEchoesCost base="6"/> <!-- %dimensionalEchoesCost base tier=9 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.3"/> <!-- %dimensionalEchoesUpkeep base tier=9 factor=0.05 -->
+				<armor base="6"/>
+				<energyCost base="30"/> <!-- %energyCost base tier=9 factor=0.25 -->
+				<energyUpkeep base="1.5"/> <!-- %energyUpkeep base tier=9 factor=0.25 -->
+				<foodCost base="30"/> <!-- %foodCost base tier=9 factor=0.25 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=9 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/FallenOrolosAttack"
+						beginFire="1.26"
+						endFire="1.79"
+						sound="Units/FallenOrolosAttack"
+						responseSound="Units/Responses/FallenOrolosAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/FallenOrolosDie0"
+						groundImpact="1.1"
+						sound="Units/FallenOrolosDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/FallenOrolosImpact"
+						responseSound="Units/Responses/FallenOrolosEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/FallenOrolosIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/FallenOrolosMove"
+						responseSound="Units/Responses/FallenOrolosMove"
+						responseSoundCount="3"
+						sound="Units/FallenOrolosMove"
+						soundCount="1"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="Soundquake"
+				cooldown="3">
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="DimensionalReverberations" requiredUpgrade="DimensionalReverberations"/>
+		<trait type="Large"/>
+	</traits>
+</unit>
