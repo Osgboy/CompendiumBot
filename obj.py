@@ -1,15 +1,17 @@
 from lxml import etree as ET
 from thefuzz import fuzz
 from re import sub as sub
+from typing import Callable
 
 class Obj():
-    def __init__(self, name: str, game: str):
+    GAME: str
+    OBJ_CLASS: str
+
+    def __init__(self, name: str):
         self.name: str = name.casefold()
-        self.game: str = game
-        self.objClass: str# = ''
-        self.englishDir: str = './' + game + '/English/'
-        self.classDir: str = './' + game + '/' + self.objClass + '/'
-        self.classXMLpath: str = self.englishDir + self.objClass + '.xml'
+        self.ENGLISH_DIR: str = './' + self.GAME + '/English/'
+        self.CLASS_DIR: str = './' + self.GAME + '/' + self.OBJ_CLASS + '/'
+        self.CLASS_XML_PATH: str = self.ENGLISH_DIR + self.OBJ_CLASS + '.xml'
         self.found = False
         self.bestMatch: str
         self.internalID: str
@@ -19,13 +21,13 @@ class Obj():
         self.description: str
         self.flavor: str
 
-    def fuzzy_match_name(self, typeFunc):
-        tree = ET.parse(self.classXMLpath, parser=ET.XMLParser(recover=True, remove_comments=True))
+    def fuzzy_match_name(self, typeFunc: Callable[[ET.ElementBase, ET.ElementBase], None]):
+        tree = ET.parse(self.CLASS_XML_PATH, parser=ET.XMLParser(recover=True, remove_comments=True))
         bestRatio = 0
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
             if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
-                targetStr = val2val(entry.get('value'), self.englishDir)
+                targetStr = val2val(entry.get('value'), self.ENGLISH_DIR)
                 try:
                     if targetStr.casefold() == self.name:
                         self.found = True
@@ -43,7 +45,7 @@ class Obj():
     def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         '''Gets internal ID, XML path, XML tree, flavor, and description.'''
         self.internalID = entry.get('name')
-        self.XMLPath = self.classDir + self.internalID + '.xml'
+        self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
         try:
             self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         except OSError:
@@ -51,39 +53,38 @@ class Obj():
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.internalID + 'Flavor':
-                self.flavor = val2val(e.get('value'), self.englishDir)
-            elif self.game == 'Gladius':
+                self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
+            elif self.GAME == 'Gladius':
                 if targetStr == self.internalID + 'Description':
-                    self.description = val2val(e.get('value'), self.englishDir)
-            elif self.game == 'Zephon':
+                    self.description = val2val(e.get('value'), self.ENGLISH_DIR)
+            elif self.GAME == 'Zephon':
                 if targetStr == self.internalID + 'Properties':
-                    self.description = val2val(e.get('value'), self.englishDir).replace("<icon texture='GUI/Bullet'/>", '')
+                    self.description = val2val(e.get('value'), self.ENGLISH_DIR).replace("<icon texture='GUI/Bullet'/>", '')
 
     def get_obj_min_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         '''Gets internal ID, XML path, and XML tree.'''
         self.internalID = entry.get('name')
-        self.XMLPath = self.classDir + self.internalID + '.xml'
+        self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
         try:
             self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         except OSError:
             pass
 
     def get_icon_path(self):
-        self.iconPath = self.tree.getroot().get('icon')
+        try:
+            self.iconPath = self.tree.getroot().get('icon')
+        except AttributeError:
+            self.iconPath = self.tree.get('icon')
 
-    @classmethod
-    def from_internalID(cls, internalID: str, game: str):
-        obj = cls('placeholder', game)
-        obj.internalID = internalID
-        #IDlen = len(internalID)
-        tree = ET.parse(obj.classXMLpath, parser=ET.XMLParser(recover=True, remove_comments=True))
-        xmlTree = tree.getroot()
-        for entry in xmlTree.iterdescendants('entry'):
-            targetStr = entry.get('name')
-            if targetStr == internalID:
-                obj.found = True
-                obj.name = val2val(entry.get('value'), obj.englishDir)
-                return obj
+def ID2name(internalID: str, game: str, objClass: str) -> str:
+    englishDir = './' + game + '/English/'
+    classXMLPath = englishDir + objClass + '.xml'
+    tree = ET.parse(classXMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+    xmlTree = tree.getroot()
+    for entry in xmlTree.iterdescendants('entry'):
+        targetStr = entry.get('name')
+        if targetStr == internalID:
+            return val2val(entry.get('value'), englishDir)
 
 def val2val(value: str, englishDir: str) -> str:
     def valFromFile(matchobj):

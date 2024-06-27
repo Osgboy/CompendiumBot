@@ -2,37 +2,42 @@ from obj import Obj
 from lxml import etree as ET
 
 class Item(Obj):
-    def __init__(self, name: str, game: str):
-        self.objClass = 'Items'
-        super().__init__(name, game)
+    OBJ_CLASS = 'Items'
+
+    def __init__(self, name: str):
+        super().__init__(name)
         self.rarity = 'Common'
         self.influenceCost = '0'
         self.ability: str
 
-    def get_item_ability(self):
+    def get_ability(self):
         try:
             self.ability = ET.tostring(self.tree.find('actions'), encoding='unicode')[:1024]
         except AttributeError:
             pass
 
-    def get_item_rarity(self):
+    def get_rarity(self):
         trait = self.tree.find('traits')
         if trait != None:
-            if self.game == 'Gladius':
+            if self.GAME == 'Gladius':
                 self.rarity = trait.find('trait').get('name')
-            elif self.game == 'Zephon':
+            elif self.GAME == 'Zephon':
                 self.rarity = trait.find('trait').get('type')
 
-    def get_item_influence_cost(self):
+    def get_influence_cost(self):
         self.influenceCost = self.tree.find('modifiers').find('modifier').find('effects').find('influenceCost').get('base')
 
 class GItem(Item):
-    def __init__(self, name: str, game: str):
-        super().__init__(name, game)
+    GAME = 'Gladius'
+
+    def __init__(self, name: str):
+        super().__init__(name)
 
 class ZItem(Item):
-    def __init__(self, name: str, game: str):
-        super().__init__(name, game)
+    GAME = 'Zephon'
+
+    def __init__(self, name: str):
+        super().__init__(name)
         self.branch: str
         self.buyCondition: str
 

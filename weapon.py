@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from obj import Obj
+from obj import Obj, ID2name
 from trait import Trait
 
 @dataclass#(slots=True)
@@ -11,9 +11,10 @@ class GWeaponStats:
     strengthDamage: str
 
 class Weapon(Obj):
-    def __init__(self, name: str, game: str):
-        self.objClass = 'Weapons'
-        super().__init__(name, game)
+    OBJ_CLASS = 'Weapons'
+
+    def __init__(self, name: str):
+        super().__init__(name)
         self.attacks = '?'
         self.armorPen = '0'
         self.damage = '?'
@@ -21,36 +22,39 @@ class Weapon(Obj):
         self.accuracy = '6'
         self.traits = {}
     
-    def get_weapon_traits(self):
+    def get_traits(self):
+        if self.GAME == 'Gladius':
+            attrName = 'name'
+        elif self.GAME == 'Zephon':
+            attrName = 'type'
         try:
             for trait in self.tree.find('traits').iterfind('trait'):
-                if self.game == 'Gladius':
-                    traitName = trait.get('name')
-                elif self.game == 'Zephon':
-                    traitName = trait.get('type')
-                traitObj = Trait.from_internalID(traitName, self.game)
-                self.traits[traitObj.name] = trait.get('requiredUpgrade')
+                traitID = trait.get(attrName)
+                traitName = ID2name(traitID, self.GAME, 'Traits')
+                self.traits[traitName] = trait.get('requiredUpgrade')
         # no traits
         except AttributeError:
             pass
 
-    def get_weapon_range(self):
+    def get_range(self):
         if 'Melee' in self.traits.keys():
             self.range = 'Melee'
         else:
             rangeMin = self.tree.find('target').get('rangeMin')
             rangeMax = self.tree.find('target').get('rangeMax')
-            if rangeMin != None:
-                self.range = str(rangeMin) + ' - ' + str(rangeMax)
+            if rangeMin:
+                self.range = rangeMin + ' - ' + rangeMax
             else:
                 self.range = rangeMax
 
 class GWeapon(Weapon):
-    def __init__(self, name: str, game: str):
-        super().__init__(name, game)
+    GAME = 'Gladius'
+
+    def __init__(self, name: str):
+        super().__init__(name)
         self.unitStats: dataclass = GWeaponStats('6', '6', '1', '1')
 
-    def get_weapon_stats(self):
+    def get_stats(self):
         try:
             effects = self.tree.find('modifiers').find('modifier').find('effects')
         except AttributeError:
@@ -109,10 +113,12 @@ class GWeapon(Weapon):
             self.accuracy = getattr(self.unitStats, prefix + 'Accuracy')
 
 class ZWeapon(Weapon):
-    def __init__(self, name: str, game: str):
-        super().__init__(name, game)
+    GAME = 'Zephon'
 
-    def get_weapon_stats(self):
+    def __init__(self, name: str):
+        super().__init__(name)
+
+    def get_stats(self):
         try:
             effects = self.tree.find('modifiers').find('modifier').find('effects')
         except AttributeError:
