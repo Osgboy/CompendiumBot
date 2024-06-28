@@ -7,7 +7,8 @@ if TYPE_CHECKING:
     from unit import Unit
 
 class ActionNotInUnitError(Exception):
-    def __init__(self, unitName: str):
+    def __init__(self, actionName: str, unitName: str):
+        self.actionName = actionName
         self.unitName = unitName
 
 @dataclass
@@ -38,10 +39,10 @@ class Action(Obj):
                     self.tree = action
                     break
             else:
-                raise ActionNotInUnitError(unit.name)
+                raise ActionNotInUnitError(self.name, unit.name)
         # no actions
         except AttributeError:
-            raise ActionNotInUnitError(unit.name)
+            raise ActionNotInUnitError(self.name, unit.name)
     
     def get_cooldown(self):
         if self.tree.get('passive'):

@@ -42,7 +42,7 @@ class Obj():
                                 fuzzRatio += 100
                         if fuzzRatio > bestRatio:
                             bestRatio = fuzzRatio
-                            self.bestMatch = compareStr
+                            self.bestMatch = targetStr
                 except AttributeError:
                     pass
 

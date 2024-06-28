@@ -102,33 +102,47 @@ class NotFoundError(Exception):
     def __init__(self, bestMatch: str):
         self.bestMatch = bestMatch
 
-# class ConfirmFuzzyMatch(discord.ui.View):
+class UnitNotFoundError(Exception):
+    def __init__(self, bestMatch: str):
+        self.bestMatch = bestMatch
 
-#     @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
-#     async def confirm(self, interaction: discord.Interaction, button: discord.ui.Button, message: discord.Message):
-#         await interaction.response.defer()
+class ConfirmFuzzyMatch(discord.ui.View):
+    def __init__(self, name, verbose, objCls, embedFunc, unitName):
+        super().__init__(timeout=60)
+        self.name = name
+        self.verbose = verbose
+        self.objCls = objCls
+        self.embedFunc = embedFunc
+        self.unitName = unitName
 
-async def return_info(interaction: discord.Interaction, name: str, verbose:bool, invisible:bool, cls: Type[Obj], embedFunc: Callable[[Obj, bool, ], discord.Embed], unitName:str=None):
-    obj = cls(name)
+    @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
+    async def confirm(self, interaction: discord.Interaction, button: discord.ui.Button):
+        try:
+            embed, fullIconPath = match_and_create_embed(self.name, self.verbose, self.objCls, self.embedFunc, self.unitName)
+        except UnitNotFoundError as unf:
+            await interaction.response.edit_message(content=f'**{self.unitName}** not found. Did you mean **{unf.bestMatch}**?')
+            self.unitName = unf.bestMatch
+        except ActionNotInUnitError as na:
+            await interaction.response.edit_message(content=f'No **{na.actionName}** action found in list of actions for **{na.unitName}**.', view=None)
+        else:
+            try:
+                image = discord.File(fullIconPath, filename='icon.png')
+                embed.set_thumbnail(url="attachment://icon.png")
+                await interaction.response.edit_message(content=None, embed=embed, attachments=[image], view=None)
+            except FileNotFoundError:
+                await interaction.response.edit_message(content=None, embed=embed, view=None)
+
+def match_and_create_embed(name: str, verbose: bool, objCls: Type[Obj],
+                           embedFunc: Callable[[Obj, bool, str], discord.Embed], unitName: str) -> tuple[discord.Embed, str]:
+    obj = objCls(name)
     obj.fuzzy_match_name(obj.get_obj_info)
     if not obj.found:
-        await interaction.response.send_message(f'**{name}** not found. Did you mean **{obj.bestMatch}**?', ephemeral=invisible)
-        return
+        raise NotFoundError(obj.bestMatch)
     
     # Get embed
-    if unitName:
-        try:
-            embed = embedFunc(obj, verbose, unitName)
-        except NotFoundError as notFound:
-            await interaction.response.send_message(f'**{unitName}** not found. Did you mean **{notFound.bestMatch}**?', ephemeral=invisible)
-            return
-        except ActionNotInUnitError as noAction:
-            await interaction.response.send_message(f'No **{obj.name}** action found in list of actions for **{noAction.unitName}**.', ephemeral=invisible)
-            return
-    else:
-        embed = embedFunc(obj, verbose)    
+    embed = embedFunc(obj, verbose, unitName)
 
-    # Get thumbnail
+    # Get full icon path
     obj.get_icon_path()
     try:
         if not (internalPath := obj.iconPath):
@@ -139,14 +153,30 @@ async def return_info(interaction: discord.Interaction, name: str, verbose:bool,
         except AttributeError:
             internalPath = obj.OBJ_CLASS + '/' + obj.internalID
     fullIconPath = './' + obj.GAME + '/Icons/' + internalPath + '.png'
+
+    return embed, fullIconPath
+
+async def return_info(interaction: discord.Interaction, name: str, verbose: bool, invisible:bool, objCls: Type[Obj],
+                      embedFunc: Callable[[Obj, bool, str], discord.Embed], unitName:str=None):
     try:
-        image = discord.File(fullIconPath, filename='icon.png')
-        embed.set_thumbnail(url="attachment://icon.png")
-        await interaction.response.send_message(embed=embed, file=image, ephemeral=invisible)
-    except FileNotFoundError:
-        await interaction.response.send_message(embed=embed, ephemeral=invisible)
+        embed, fullIconPath = match_and_create_embed(name, verbose, objCls, embedFunc, unitName)
+    except NotFoundError as nf:
+        await interaction.response.send_message(f'**{name}** not found. Did you mean **{nf.bestMatch}**?', ephemeral=invisible,
+                                                view=ConfirmFuzzyMatch(nf.bestMatch, verbose, objCls, embedFunc, unitName))
+    except UnitNotFoundError as unf:
+        await interaction.response.send_message(f'**{unitName}** not found. Did you mean **{unf.bestMatch}**?', ephemeral=invisible,
+                                                view=ConfirmFuzzyMatch(name, verbose, objCls, embedFunc, unf.bestMatch))
+    except ActionNotInUnitError as na:
+        await interaction.response.send_message(f'No **{na.actionName}** action found in list of actions for **{na.unitName}**.', ephemeral=invisible)
+    else:
+        try:
+            image = discord.File(fullIconPath, filename='icon.png')
+            embed.set_thumbnail(url="attachment://icon.png")
+            await interaction.response.send_message(embed=embed, file=image, ephemeral=invisible)
+        except FileNotFoundError:
+            await interaction.response.send_message(embed=embed, ephemeral=invisible)
     
-def create_gitem_embed(item: GItem, verbose: bool) -> discord.Embed:
+def create_gitem_embed(item: GItem, verbose: bool, _) -> discord.Embed:
     item.get_ability()
     item.get_rarity()
     item.get_influence_cost()
@@ -178,7 +208,7 @@ def create_gitem_embed(item: GItem, verbose: bool) -> discord.Embed:
 
     return embed
 
-def create_zitem_embed(item: ZItem, verbose: bool) -> discord.Embed:
+def create_zitem_embed(item: ZItem, verbose: bool, _) -> discord.Embed:
     item.get_branch()
     item.get_ability()
     item.get_rarity()
@@ -224,7 +254,7 @@ def create_zitem_embed(item: ZItem, verbose: bool) -> discord.Embed:
 
     return embed
 
-def create_gunit_embed(unit: GUnit, verbose: bool) -> discord.Embed:
+def create_gunit_embed(unit: GUnit, verbose: bool, _) -> discord.Embed:
     unit.get_stats()
     unit.get_group_size()
     unit.get_weapons()
@@ -331,7 +361,7 @@ def create_gunit_embed(unit: GUnit, verbose: bool) -> discord.Embed:
     
     return embed
 
-def create_zunit_embed(unit: ZUnit, verbose: bool) -> discord.Embed:
+def create_zunit_embed(unit: ZUnit, verbose: bool, _) -> discord.Embed:
     unit.get_branch()
     unit.get_stats()
     unit.get_weapons()
@@ -443,7 +473,7 @@ def create_gweapon_embed(weapon: GWeapon, verbose: bool, unitName: str = None) -
         unit = GUnit(unitName)
         unit.fuzzy_match_name(unit.get_obj_min_info)
         if not unit.found:
-            raise NotFoundError(unit.bestMatch)
+            raise UnitNotFoundError(unit.bestMatch)
         unit.get_weapon_stats()
         weapon.unitStats = unit.weaponStats
 
@@ -497,7 +527,7 @@ def create_zweapon_embed(weapon: ZWeapon, verbose: bool, unitName: str = None) -
         unit = ZUnit(unitName)
         unit.fuzzy_match_name(unit.get_obj_min_info)
         if not unit.found:
-            raise NotFoundError(unit.bestMatch)
+            raise UnitNotFoundError(unit.bestMatch)
         unit.get_accuracy()
         weapon.accuracy = unit.combatStats.accuracy
 
@@ -546,7 +576,7 @@ def create_zweapon_embed(weapon: ZWeapon, verbose: bool, unitName: str = None) -
     
     return embed
 
-def create_gtrait_embed(trait: GTrait, verbose: bool) -> discord.Embed:
+def create_gtrait_embed(trait: GTrait, verbose: bool, _) -> discord.Embed:
     trait.get_modifiers()
 
     # Name and Description
@@ -579,7 +609,7 @@ def create_gtrait_embed(trait: GTrait, verbose: bool) -> discord.Embed:
     
     return embed
 
-def create_ztrait_embed(trait: ZTrait, verbose: bool) -> discord.Embed:
+def create_ztrait_embed(trait: ZTrait, verbose: bool, _) -> discord.Embed:
     trait.get_modifiers()
 
     # Name and Description
@@ -607,7 +637,7 @@ def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> disco
     unit = GUnit(unitName)
     unit.fuzzy_match_name(unit.get_obj_info)
     if not unit.found:
-        raise NotFoundError(unit.bestMatch)
+        raise UnitNotFoundError(unit.bestMatch)
 
     action.get_tree(unit)
     action.get_cooldown()
@@ -655,7 +685,7 @@ def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> disco
     unit = ZUnit(unitName)
     unit.fuzzy_match_name(unit.get_obj_min_info)
     if not unit.found:
-        raise NotFoundError(unit.bestMatch)
+        raise UnitNotFoundError(unit.bestMatch)
 
     unit.get_branch()
     action.get_tree(unit)
