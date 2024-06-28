@@ -26,7 +26,7 @@ class Action(Obj):
         super().__init__(name)
         self.passive = False
         self.cooldown = '0'
-        self.conditions: dataclass = ActionConditions(True, True, True, False, False)
+        self.conditions: dataclass = ActionConditions(True, False, True, True, False)
         self.modifiers: str
 
     def get_tree(self, unit: Unit):

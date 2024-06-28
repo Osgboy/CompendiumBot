@@ -28,17 +28,21 @@ class Obj():
         for entry in xmlTree.iterdescendants('entry'):
             if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
                 targetStr = val2val(entry.get('value'), self.ENGLISH_DIR)
+                compareStr = targetStr.casefold()
                 try:
-                    if targetStr.casefold() == self.name:
+                    if compareStr == self.name:
                         self.found = True
                         self.name = targetStr
                         typeFunc(xmlTree, entry)
                         return
                     else:
-                        fuzzRatio = fuzz.token_sort_ratio(targetStr.casefold(), self.name)
+                        fuzzRatio = fuzz.token_sort_ratio(compareStr, self.name)
+                        for word in self.name.split():
+                            if word in compareStr:
+                                fuzzRatio += 100
                         if fuzzRatio > bestRatio:
                             bestRatio = fuzzRatio
-                            self.bestMatch = targetStr
+                            self.bestMatch = compareStr
                 except AttributeError:
                     pass
 
