@@ -1,7 +1,7 @@
 from __future__ import annotations
 from lxml import etree as ET
 from dataclasses import dataclass
-from obj import Obj
+from obj import Obj, ID2name
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from unit import Unit
@@ -13,12 +13,14 @@ class ActionNotInUnitError(Exception):
 
 @dataclass
 class ActionConditions:
-    __slots__ = ['requiredActionPoints', 'requiredMovement', 'consumedActionPoints', 'consumedMovement', 'usableInTransport']
+    __slots__ = ['requiredUpgrade', 'requiredActionPoints', 'requiredMovement',
+                 'usableInTransport', 'consumedActionPoints', 'consumedMovement']
+    requiredUpgrade: str
     requiredActionPoints: bool
     requiredMovement: bool
+    usableInTransport: bool
     consumedActionPoints: bool
     consumedMovement: bool
-    usableInTransport: bool
 
 class Action(Obj):
     OBJ_CLASS = 'Actions'
@@ -27,7 +29,7 @@ class Action(Obj):
         super().__init__(name)
         self.passive = False
         self.cooldown = '0'
-        self.conditions: dataclass = ActionConditions(True, False, True, True, False)
+        self.conditions: dataclass = ActionConditions(False, True, False, False, True, True)
         self.modifiers: str
 
     def get_tree(self, unit: Unit):
@@ -55,13 +57,16 @@ class Action(Obj):
 
     def get_conditions(self):
         if self.passive:
-            self.conditions = ActionConditions(*[False]*5)
+            self.conditions = ActionConditions(*[False]*6)
         else:
             for conditionName in self.conditions.__slots__:
-                if self.tree.get(conditionName) == '1':
+                conditionValue = self.tree.get(conditionName)
+                if conditionValue == '1':
                     setattr(self.conditions, conditionName, True)
-                elif self.tree.get(conditionName) == '0':
+                elif conditionValue == '0':
                     setattr(self.conditions, conditionName, False)
+                elif conditionName == 'requiredUpgrade':
+                    setattr(self.conditions, conditionName, ID2name(conditionValue, self.GAME, 'Actions'))
 
     def get_modifiers(self):
         self.modifiers = ET.tostring(self.tree, encoding='unicode')[:1024]

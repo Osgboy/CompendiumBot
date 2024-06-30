@@ -655,11 +655,12 @@ def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> disco
 
     # Cooldown
     if action.passive:
-        embed.add_field(name='Cooldown', value='Passive')
+        embed.add_field(name='Cooldown', value='Passive', inline=False)
     else:
-        embed.add_field(name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {action.cooldown}")
+        embed.add_field(name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {action.cooldown}", inline=False)
 
     # Conditions
+    embed.add_field(name=f"Required upgrade", value=str(action.conditions.requiredUpgrade))
     embed.add_field(name=f"Requires {GLADIUS_ICONS['actions']} AP?", value=str(action.conditions.requiredActionPoints))
     embed.add_field(name=f"Requires {GLADIUS_ICONS['movement']} movement?", value=str(action.conditions.requiredMovement))
     embed.add_field(name=f"Usable in {GLADIUS_ICONS['transport']} transport?", value=str(action.conditions.usableInTransport))
@@ -704,11 +705,12 @@ def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> disco
 
     # Cooldown
     if action.passive:
-        embed.add_field(name='Cooldown', value='Passive')
+        embed.add_field(name='Cooldown', value='Passive', inline=False)
     else:
-        embed.add_field(name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {action.cooldown}")
+        embed.add_field(name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {action.cooldown}", inline=False)
 
     # Conditions
+    embed.add_field(name=f"Required upgrade", value=str(action.conditions.requiredUpgrade))
     embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(action.conditions.requiredActionPoints))
     embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(action.conditions.requiredMovement))
     embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(action.conditions.usableInTransport))

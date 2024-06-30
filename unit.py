@@ -169,7 +169,7 @@ class GUnit(Unit):
         except ValueError:
             self.faction, self.internalID = self.factionAndID.split('/')[0], self.factionAndID.split('/')[-1] 
         self.XMLPath = self.CLASS_DIR + self.factionAndID + '.xml'
-        self.tree = ET.parse(self.XMLPath)
+        self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':

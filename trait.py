@@ -26,7 +26,7 @@ class GTrait(Trait):
         else:
             self.internalID = self.factionAndID
         self.XMLPath = self.CLASS_DIR + self.factionAndID + '.xml'
-        self.tree = ET.parse(self.XMLPath)
+        self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':

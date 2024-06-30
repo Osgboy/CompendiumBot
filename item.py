@@ -1,4 +1,4 @@
-from obj import Obj
+from obj import Obj, ID2name
 from lxml import etree as ET
 
 class Item(Obj):
@@ -13,7 +13,7 @@ class Item(Obj):
     def get_ability(self):
         try:
             self.ability = ET.tostring(self.tree.find('actions'), encoding='unicode')[:1024]
-        except AttributeError:
+        except TypeError:
             pass
 
     def get_rarity(self):
@@ -46,6 +46,7 @@ class ZItem(Item):
 
     def get_buy_conditions(self):
         try:
-            self.buyCondition = self.tree.find('buyConditions').find('player').find('unlockedTrait').get('type')
+            buyConditionID = self.tree.find('buyConditions').find('player').find('unlockedTrait').get('type')
+            self.buyCondition = ID2name(buyConditionID, self.GAME, 'Traits')
         except AttributeError:
             pass
