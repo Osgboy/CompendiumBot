@@ -77,29 +77,29 @@ class GWeapon(Weapon):
             pass
         # Damage
         try:
-            if prefix == 'melee':
-                strengthDamage = float(self.unitStats.strengthDamage)
-                try:
-                    operator, strengthDamageModifier = effects.find('strengthDamage').items()[0]
-                    if operator == 'add':
-                        strengthDamage += float(strengthDamageModifier)
-                    elif operator == 'mul':
-                        strengthDamage += float(strengthDamageModifier) * strengthDamage
-                    elif operator == 'base':
-                        strengthDamage = float(strengthDamageModifier)
-                except AttributeError:
-                    pass
-                try:
-                    operator, meleeDamageModifier = effects.find('meleeDamage').items()[0]
-                    if operator == 'add':
-                        meleeDamage = float(meleeDamageModifier) + strengthDamage
-                    elif operator == 'base':
-                        meleeDamage = float(meleeDamageModifier)
-                except AttributeError:
-                    meleeDamage = strengthDamage
-                self.damage = '{0:.2f}'.format(meleeDamage)
-            else:
-                self.damage = effects.find('rangedDamage').items()[0][1]
+            strengthDamage = float(self.unitStats.strengthDamage)
+            try:
+                operator, strengthDamageModifier = effects.find('strengthDamage').items()[0]
+                if operator == 'add':
+                    strengthDamage += float(strengthDamageModifier)
+                elif operator == 'mul':
+                    strengthDamage += float(strengthDamageModifier) * strengthDamage
+                elif operator == 'base':
+                    strengthDamage = float(strengthDamageModifier)
+            except AttributeError:
+                pass
+            damage = strengthDamage
+            try:
+                operator, damageTypeModifier = effects.find(prefix + 'Damage').items()[0]
+                if operator == 'add':
+                    damage += float(damageTypeModifier)
+                elif operator == 'mul':
+                    damage += float(damageTypeModifier) * strengthDamage
+                elif operator == 'base':
+                    damage = float(damageTypeModifier)
+            except AttributeError:
+                pass
+            self.damage = '{0:.2f}'.format(damage)
         except AttributeError:
             pass
         # Accuracy
