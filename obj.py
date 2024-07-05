@@ -3,6 +3,7 @@ from thefuzz import fuzz
 from re import sub as sub
 from typing import Callable
 
+
 class Obj():
     GAME: str
     OBJ_CLASS: str
@@ -22,7 +23,8 @@ class Obj():
         self.flavor: str
 
     def fuzzy_match_name(self, typeFunc: Callable[[ET.ElementBase, ET.ElementBase], None]):
-        tree = ET.parse(self.CLASS_XML_PATH, parser=ET.XMLParser(recover=True, remove_comments=True))
+        tree = ET.parse(self.CLASS_XML_PATH, parser=ET.XMLParser(
+            recover=True, remove_comments=True))
         bestRatio = 0
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
@@ -36,7 +38,8 @@ class Obj():
                         typeFunc(xmlTree, entry)
                         return
                     else:
-                        fuzzRatio = fuzz.token_sort_ratio(compareStr, self.name)
+                        fuzzRatio = fuzz.token_sort_ratio(
+                            compareStr, self.name)
                         for word in self.name.split():
                             if word in compareStr:
                                 fuzzRatio += 100
@@ -51,7 +54,8 @@ class Obj():
         self.internalID = entry.get('name')
         self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
         try:
-            self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+            self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
+                recover=True, remove_comments=True))
         except OSError:
             pass
         for e in xmlTree:
@@ -60,17 +64,20 @@ class Obj():
                 self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
             elif self.GAME == 'Gladius':
                 if targetStr == self.internalID + 'Description':
-                    self.description = val2val(e.get('value'), self.ENGLISH_DIR)
+                    self.description = val2val(
+                        e.get('value'), self.ENGLISH_DIR)
             elif self.GAME == 'Zephon':
                 if targetStr == self.internalID + 'Properties':
-                    self.description = val2val(e.get('value'), self.ENGLISH_DIR).replace("<icon texture='GUI/Bullet'/>", '')
+                    self.description = val2val(e.get('value'), self.ENGLISH_DIR).replace(
+                        "<icon texture='GUI/Bullet'/>", '')
 
     def get_obj_min_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         '''Gets internal ID, XML path, and XML tree.'''
         self.internalID = entry.get('name')
         self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
         try:
-            self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+            self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
+                recover=True, remove_comments=True))
         except OSError:
             pass
 
@@ -80,20 +87,24 @@ class Obj():
         except AttributeError:
             self.iconPath = self.tree.get('icon')
 
+
 def ID2name(internalID: str, game: str, objClass: str) -> str:
     englishDir = './' + game + '/English/'
     classXMLPath = englishDir + objClass + '.xml'
-    tree = ET.parse(classXMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+    tree = ET.parse(classXMLPath, parser=ET.XMLParser(
+        recover=True, remove_comments=True))
     xmlTree = tree.getroot()
     for entry in xmlTree.iterdescendants('entry'):
         targetStr = entry.get('name')
         if targetStr == internalID:
             return val2val(entry.get('value'), englishDir)
 
+
 def val2val(value: str, englishDir: str) -> str:
     def valFromFile(matchobj):
         file, name = matchobj.group(1), matchobj.group(2)
-        tree = ET.parse(englishDir + file + '.xml', parser=ET.XMLParser(recover=True, remove_comments=True))
+        tree = ET.parse(englishDir + file + '.xml',
+                        parser=ET.XMLParser(recover=True, remove_comments=True))
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):
             if entry.get('name') == name:

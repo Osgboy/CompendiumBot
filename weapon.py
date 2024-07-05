@@ -2,13 +2,16 @@ from dataclasses import dataclass
 from obj import Obj, ID2name
 from trait import Trait
 
-@dataclass#(slots=True)
+
+@dataclass  # (slots=True)
 class GWeaponStats:
-    __slots__ = ['meleeAccuracy', 'rangedAccuracy', 'meleeAttacks', 'strengthDamage']
+    __slots__ = ['meleeAccuracy', 'rangedAccuracy',
+                 'meleeAttacks', 'strengthDamage']
     meleeAccuracy: str
     rangedAccuracy: str
     meleeAttacks: str
     strengthDamage: str
+
 
 class Weapon(Obj):
     OBJ_CLASS = 'Weapons'
@@ -21,7 +24,7 @@ class Weapon(Obj):
         self.range = '?'
         self.accuracy = '6'
         self.traits = {}
-    
+
     def get_traits(self):
         if self.GAME == 'Gladius':
             attrName = 'name'
@@ -47,6 +50,7 @@ class Weapon(Obj):
             else:
                 self.range = rangeMax
 
+
 class GWeapon(Weapon):
     GAME = 'Gladius'
 
@@ -56,7 +60,8 @@ class GWeapon(Weapon):
 
     def get_stats(self):
         try:
-            effects = self.tree.find('modifiers').find('modifier').find('effects')
+            effects = self.tree.find('modifiers').find(
+                'modifier').find('effects')
         except AttributeError:
             effects = None
         # Melee or ranged
@@ -72,25 +77,29 @@ class GWeapon(Weapon):
                 self.attacks = self.unitStats.meleeAttacks
         # Armor penetration
         try:
-            self.armorPen = effects.find(prefix + 'ArmorPenetration').items()[0][1]
+            self.armorPen = effects.find(
+                prefix + 'ArmorPenetration').items()[0][1]
         except AttributeError:
             pass
         # Damage
         try:
             strengthDamage = float(self.unitStats.strengthDamage)
             try:
-                operator, strengthDamageModifier = effects.find('strengthDamage').items()[0]
+                operator, strengthDamageModifier = effects.find(
+                    'strengthDamage').items()[0]
                 if operator == 'add':
                     strengthDamage += float(strengthDamageModifier)
                 elif operator == 'mul':
-                    strengthDamage += float(strengthDamageModifier) * strengthDamage
+                    strengthDamage += float(strengthDamageModifier) * \
+                        strengthDamage
                 elif operator == 'base':
                     strengthDamage = float(strengthDamageModifier)
             except AttributeError:
                 pass
             damage = strengthDamage
             try:
-                operator, damageTypeModifier = effects.find(prefix + 'Damage').items()[0]
+                operator, damageTypeModifier = effects.find(
+                    prefix + 'Damage').items()[0]
                 if operator == 'add':
                     damage += float(damageTypeModifier)
                 elif operator == 'mul':
@@ -104,13 +113,16 @@ class GWeapon(Weapon):
             pass
         # Accuracy
         try:
-            operator, accuracyModifier = effects.find(prefix + 'Accuracy').items()[0]
+            operator, accuracyModifier = effects.find(
+                prefix + 'Accuracy').items()[0]
             if operator == 'add':
-                self.accuracy = str(int(getattr(self.unitStats, prefix + 'Accuracy')) + int(accuracyModifier))
+                self.accuracy = str(
+                    int(getattr(self.unitStats, prefix + 'Accuracy')) + int(accuracyModifier))
             else:
                 self.accuracy = accuracyModifier
         except AttributeError:
             self.accuracy = getattr(self.unitStats, prefix + 'Accuracy')
+
 
 class ZWeapon(Weapon):
     GAME = 'Zephon'
@@ -120,7 +132,8 @@ class ZWeapon(Weapon):
 
     def get_stats(self):
         try:
-            effects = self.tree.find('modifiers').find('modifier').find('effects')
+            effects = self.tree.find('modifiers').find(
+                'modifier').find('effects')
         except AttributeError:
             return
         try:

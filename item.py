@@ -1,6 +1,7 @@
 from obj import Obj, ID2name
 from lxml import etree as ET
 
+
 class Item(Obj):
     OBJ_CLASS = 'Items'
 
@@ -12,7 +13,8 @@ class Item(Obj):
 
     def get_ability(self):
         try:
-            self.ability = ET.tostring(self.tree.find('actions'), encoding='unicode')[:1024]
+            self.ability = ET.tostring(self.tree.find(
+                'actions'), encoding='unicode')[:1024]
         except TypeError:
             pass
 
@@ -25,13 +27,16 @@ class Item(Obj):
                 self.rarity = trait.find('trait').get('type')
 
     def get_influence_cost(self):
-        self.influenceCost = self.tree.find('modifiers').find('modifier').find('effects').find('influenceCost').get('base')
+        self.influenceCost = self.tree.find('modifiers').find(
+            'modifier').find('effects').find('influenceCost').get('base')
+
 
 class GItem(Item):
     GAME = 'Gladius'
 
     def __init__(self, name: str):
         super().__init__(name)
+
 
 class ZItem(Item):
     GAME = 'Zephon'
@@ -46,7 +51,8 @@ class ZItem(Item):
 
     def get_buy_conditions(self):
         try:
-            buyConditionID = self.tree.find('buyConditions').find('player').find('unlockedTrait').get('type')
+            buyConditionID = self.tree.find('buyConditions').find(
+                'player').find('unlockedTrait').get('type')
             self.buyCondition = ID2name(buyConditionID, self.GAME, 'Traits')
         except AttributeError:
             pass

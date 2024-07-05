@@ -1,6 +1,7 @@
 from lxml import etree as ET
 from obj import Obj, val2val
 
+
 class Trait(Obj):
     OBJ_CLASS = 'Traits'
 
@@ -9,7 +10,9 @@ class Trait(Obj):
         self.modifiers: str
 
     def get_modifiers(self):
-        self.modifiers = ET.tostring(self.tree.getroot(), encoding='unicode')[:1024]
+        self.modifiers = ET.tostring(
+            self.tree.getroot(), encoding='unicode')[:1024]
+
 
 class GTrait(Trait):
     GAME = 'Gladius'
@@ -26,13 +29,15 @@ class GTrait(Trait):
         else:
             self.internalID = self.factionAndID
         self.XMLPath = self.CLASS_DIR + self.factionAndID + '.xml'
-        self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(recover=True, remove_comments=True))
+        self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
+            recover=True, remove_comments=True))
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':
                 self.description = val2val(e.get('value'), self.ENGLISH_DIR)
             elif targetStr == self.factionAndID + 'Flavor':
                 self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
+
 
 class ZTrait(Trait):
     GAME = 'Zephon'

@@ -6,10 +6,12 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from unit import Unit
 
+
 class ActionNotInUnitError(Exception):
     def __init__(self, actionName: str, unitName: str):
         self.actionName = actionName
         self.unitName = unitName
+
 
 @dataclass
 class ActionConditions:
@@ -22,6 +24,7 @@ class ActionConditions:
     consumedActionPoints: bool
     consumedMovement: bool
 
+
 class Action(Obj):
     OBJ_CLASS = 'Actions'
 
@@ -29,7 +32,8 @@ class Action(Obj):
         super().__init__(name)
         self.passive = False
         self.cooldown = '0'
-        self.conditions: dataclass = ActionConditions(False, True, False, False, True, True)
+        self.conditions: dataclass = ActionConditions(
+            False, True, False, False, True, True)
         self.modifiers: str
 
     def get_tree(self, unit: Unit):
@@ -45,7 +49,7 @@ class Action(Obj):
         # no actions
         except AttributeError:
             raise ActionNotInUnitError(self.name, unit.name)
-    
+
     def get_cooldown(self):
         if self.tree.get('passive'):
             self.passive = True
@@ -66,16 +70,19 @@ class Action(Obj):
                 elif conditionValue == '0':
                     setattr(self.conditions, conditionName, False)
                 elif conditionName == 'requiredUpgrade':
-                    setattr(self.conditions, conditionName, ID2name(conditionValue, self.GAME, 'Actions'))
+                    setattr(self.conditions, conditionName, ID2name(
+                        conditionValue, self.GAME, 'Upgrades'))
 
     def get_modifiers(self):
         self.modifiers = ET.tostring(self.tree, encoding='unicode')[:1024]
+
 
 class GAction(Action):
     GAME = 'Gladius'
 
     def __init__(self, name: str):
         super().__init__(name)
+
 
 class ZAction(Action):
     GAME = 'Zephon'

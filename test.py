@@ -28,64 +28,66 @@ intents.message_content = True
 client = commands.Bot(command_prefix='$', intents=intents)
 
 
-RARITY_COLORS = {'Common':discord.colour.Color.from_rgb(255, 255, 255),
-                'Uncommon':discord.colour.Color.from_rgb(0, 191, 191),
-                'Artefact':discord.colour.Color.from_rgb(191, 0, 191),
-                'Rare':discord.colour.Color.from_rgb(191, 0, 191)}
-GLADIUS_FACTION_COLORS = {'AdeptusMechanicus':discord.colour.Color.from_rgb(159, 38, 40),
-                  'AstraMilitarum':discord.colour.Color.from_rgb(50, 73, 53),
-                  'ChaosSpaceMarines':discord.colour.Color.from_rgb(57, 75, 87),
-                  'Drukhari':discord.colour.Color.from_rgb(15, 69, 78),
-                  'Eldar':discord.colour.Color.from_rgb(52, 115, 121),
-                  'Necrons':discord.colour.Color.from_rgb(4, 83, 42),
-                  'Neutral':discord.colour.Color.from_rgb(255, 255, 255),
-                  'Orks':discord.colour.Color.from_rgb(70, 91, 24),
-                  'SistersOfBattle':discord.colour.Color.from_rgb(87, 12, 12),
-                  'SpaceMarines':discord.colour.Color.from_rgb(75, 98, 98),
-                  'Tau':discord.colour.Color.from_rgb(46, 90, 106),
-                  'Tyranids':discord.colour.Color.from_rgb(99, 37, 103)}
-ZEPHON_BRANCH_COLORS = {'Cyber':discord.colour.Color.from_rgb(16, 121, 130),
-                 'Human':discord.colour.Color.from_rgb(154, 129, 35),
-                 'Voice':discord.colour.Color.from_rgb(123, 65, 150),
-                 'Zephon':discord.colour.Color.from_rgb(205, 59, 66),
-                 'Reaver':discord.colour.Color.from_rgb(138, 97, 70),
-                 'Acrin':discord.colour.Color.from_rgb(62, 192, 158),
-                 'Neutral':discord.colour.Color.from_rgb(255, 255, 255)}
-GLADIUS_ICONS = {'biomass':'<:Biomass:1240218802831233118>', 'requisitions':'<:Requisitions:1240222555588268032>',
-                'food':'<:Food:1240218818660532317>', 'ore':'<:Ore:1240218839644377181>',
-                'energy':'<:Energy:1240221846343782501>', 'influence':'<:Influence:1240218825836728341>',
-                'production':'<:Production:1240330971514011668>',
-                
-                'armor':'<:Armor:1240218799832174703>', 'hitpoints':'<:Hitpoints:1240330759781482528>',
-                'morale':'<:Morale:1240218836171493386>', 'movement':'<:Movement:1240222322770579487>',
-                'cargoSlots':'<:CargoSlots:1240218804982775848>', 'itemSlots':'<:ItemSlots:1240218829280378912>',
-                
-                'damage':'<:Damage:1240218813123919893>', 'attacks':'<:Attacks:1240218801799434241>',
-                'armorPenetration':'<:ArmorPenetration:1240218800855715840>', 'accuracy':'<:Accuracy:1240218797458063361>',
-                'range':'<:Range:1240218850763477013>',
-                
-                'actions':'<:Actions:1240218798532071515>', 'cooldown':'<:Cooldown:1240218808224972800>',
-                'transport':'<:Transport:1256002013037203587>'}
-ZEPHON_ICONS = {'food':'<:Food:1250986007537647687>', 'minerals':'<:Minerals:1250986099023806464>',
-                'energy':'<:Energy:1250985795242954764>', 'influence':'<:Influence:1250986095739404339>',
-                'algae':'<:Algae:1250981089540046929>', 'chips':'<:Chips:1250985791455494174>',
-                'antimatter':'<:Antimatter:1250981090278117416>', 'dimensionalEchoes':'<:DimensionalEchoes:1250985794450227240>',
-                'singularityCores':'<:SingularityCores:1250986245085986909>', 'transuranium':'<:Transuranium:1250986247086669937>',
-                'production':'<:Production:1250986164626657383>',
-                
-                'groupSize':'<:GroupSize:1250986008606933012>',
-                'armor':'<:Armor:1250981091125362788>', 'hitpoints':'<:Hitpoints:1250986009429282866>',
-                'morale':'<:Morale:1250986099816530033>', 'movement':'<:Movement:1250986100621836400>',
-                'cargoSlots':'<:CargoSlots:1250981096070582273>', 'itemSlots':'<:ItemSlots:1250986096616017961>',
-                
-                'damage':'<:Damage:1250985792197628004>', 'attacks':'<:Attacks:1250981093314662411>',
-                'armorPenetration':'<:ArmorPenetration:1250981091917955193>', 'accuracy':'<:Accuracy:1250981087954468914>',
-                'range':'<:Range:1250986241604849664>',
-                
-                'actions':'<:Actions:1250981088701186128>', 'turns':'<:Turns:1250986247896305776>',
-                'transport':'<:Transport:1256002285536804936>'}
-GLADIUS_RESOURCES = ('biomass', 'requisitions', 'food', 'ore', 'energy', 'influence')
-ZEPHON_RESOURCES = ('food', 'minerals', 'energy', 'transuranium', 'antimatter', 'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence')
+RARITY_COLORS = {'Common': discord.colour.Color.from_rgb(255, 255, 255),
+                 'Uncommon': discord.colour.Color.from_rgb(0, 191, 191),
+                 'Artefact': discord.colour.Color.from_rgb(191, 0, 191),
+                 'Rare': discord.colour.Color.from_rgb(191, 0, 191)}
+GLADIUS_FACTION_COLORS = {'AdeptusMechanicus': discord.colour.Color.from_rgb(159, 38, 40),
+                          'AstraMilitarum': discord.colour.Color.from_rgb(50, 73, 53),
+                          'ChaosSpaceMarines': discord.colour.Color.from_rgb(57, 75, 87),
+                          'Drukhari': discord.colour.Color.from_rgb(15, 69, 78),
+                          'Eldar': discord.colour.Color.from_rgb(52, 115, 121),
+                          'Necrons': discord.colour.Color.from_rgb(4, 83, 42),
+                          'Neutral': discord.colour.Color.from_rgb(255, 255, 255),
+                          'Orks': discord.colour.Color.from_rgb(70, 91, 24),
+                          'SistersOfBattle': discord.colour.Color.from_rgb(87, 12, 12),
+                          'SpaceMarines': discord.colour.Color.from_rgb(75, 98, 98),
+                          'Tau': discord.colour.Color.from_rgb(46, 90, 106),
+                          'Tyranids': discord.colour.Color.from_rgb(99, 37, 103)}
+ZEPHON_BRANCH_COLORS = {'Cyber': discord.colour.Color.from_rgb(16, 121, 130),
+                        'Human': discord.colour.Color.from_rgb(154, 129, 35),
+                        'Voice': discord.colour.Color.from_rgb(123, 65, 150),
+                        'Zephon': discord.colour.Color.from_rgb(205, 59, 66),
+                        'Reaver': discord.colour.Color.from_rgb(138, 97, 70),
+                        'Acrin': discord.colour.Color.from_rgb(62, 192, 158),
+                        'Neutral': discord.colour.Color.from_rgb(255, 255, 255)}
+GLADIUS_ICONS = {'biomass': '<:Biomass:1240218802831233118>', 'requisitions': '<:Requisitions:1240222555588268032>',
+                 'food': '<:Food:1240218818660532317>', 'ore': '<:Ore:1240218839644377181>',
+                 'energy': '<:Energy:1240221846343782501>', 'influence': '<:Influence:1240218825836728341>',
+                 'production': '<:Production:1240330971514011668>',
+
+                 'armor': '<:Armor:1240218799832174703>', 'hitpoints': '<:Hitpoints:1240330759781482528>',
+                 'morale': '<:Morale:1240218836171493386>', 'movement': '<:Movement:1240222322770579487>',
+                 'cargoSlots': '<:CargoSlots:1240218804982775848>', 'itemSlots': '<:ItemSlots:1240218829280378912>',
+
+                 'damage': '<:Damage:1240218813123919893>', 'attacks': '<:Attacks:1240218801799434241>',
+                 'armorPenetration': '<:ArmorPenetration:1240218800855715840>', 'accuracy': '<:Accuracy:1240218797458063361>',
+                 'range': '<:Range:1240218850763477013>',
+
+                 'actions': '<:Actions:1240218798532071515>', 'cooldown': '<:Cooldown:1240218808224972800>',
+                 'transport': '<:Transport:1256002013037203587>'}
+ZEPHON_ICONS = {'food': '<:Food:1250986007537647687>', 'minerals': '<:Minerals:1250986099023806464>',
+                'energy': '<:Energy:1250985795242954764>', 'influence': '<:Influence:1250986095739404339>',
+                'algae': '<:Algae:1250981089540046929>', 'chips': '<:Chips:1250985791455494174>',
+                'antimatter': '<:Antimatter:1250981090278117416>', 'dimensionalEchoes': '<:DimensionalEchoes:1250985794450227240>',
+                'singularityCores': '<:SingularityCores:1250986245085986909>', 'transuranium': '<:Transuranium:1250986247086669937>',
+                'production': '<:Production:1250986164626657383>',
+
+                'groupSize': '<:GroupSize:1250986008606933012>',
+                'armor': '<:Armor:1250981091125362788>', 'hitpoints': '<:Hitpoints:1250986009429282866>',
+                'morale': '<:Morale:1250986099816530033>', 'movement': '<:Movement:1250986100621836400>',
+                'cargoSlots': '<:CargoSlots:1250981096070582273>', 'itemSlots': '<:ItemSlots:1250986096616017961>',
+
+                'damage': '<:Damage:1250985792197628004>', 'attacks': '<:Attacks:1250981093314662411>',
+                'armorPenetration': '<:ArmorPenetration:1250981091917955193>', 'accuracy': '<:Accuracy:1250981087954468914>',
+                'range': '<:Range:1250986241604849664>',
+
+                'actions': '<:Actions:1250981088701186128>', 'turns': '<:Turns:1250986247896305776>',
+                'transport': '<:Transport:1256002285536804936>'}
+GLADIUS_RESOURCES = ('biomass', 'requisitions', 'food',
+                     'ore', 'energy', 'influence')
+ZEPHON_RESOURCES = ('food', 'minerals', 'energy', 'transuranium', 'antimatter',
+                    'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence')
 
 
 def camel_case_split(s: str) -> str:
@@ -98,13 +100,16 @@ def camel_case_split(s: str) -> str:
     split_string = ' '.join(split_string)
     return split_string
 
+
 class NotFoundError(Exception):
     def __init__(self, bestMatch: str):
         self.bestMatch = bestMatch
 
+
 class UnitNotFoundError(Exception):
     def __init__(self, bestMatch: str):
         self.bestMatch = bestMatch
+
 
 class ConfirmFuzzyMatch(discord.ui.View):
     def __init__(self, name, verbose, objCls, embedFunc, unitName):
@@ -118,19 +123,25 @@ class ConfirmFuzzyMatch(discord.ui.View):
     @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
     async def confirm(self, interaction: discord.Interaction, button: discord.ui.Button):
         try:
-            embed, fullIconPath = match_and_create_embed(self.name, self.verbose, self.objCls, self.embedFunc, self.unitName)
+            embed, fullIconPath = match_and_create_embed(
+                self.name, self.verbose, self.objCls, self.embedFunc, self.unitName)
         except UnitNotFoundError as unf:
             await interaction.response.edit_message(content=f'**{self.unitName}** not found. Did you mean **{unf.bestMatch}**?')
             self.unitName = unf.bestMatch
+            print(repr(unf))
         except ActionNotInUnitError as na:
             await interaction.response.edit_message(content=f'No **{na.actionName}** action found in list of actions for **{na.unitName}**.', view=None)
+            print(repr(na))
         else:
             try:
                 image = discord.File(fullIconPath, filename='icon.png')
                 embed.set_thumbnail(url="attachment://icon.png")
                 await interaction.response.edit_message(content=None, embed=embed, attachments=[image], view=None)
+                print('Successfully returned request after editing.')
             except FileNotFoundError:
                 await interaction.response.edit_message(content=None, embed=embed, view=None)
+                print('Successfully returned request without icon after editing.')
+
 
 def match_and_create_embed(name: str, verbose: bool, objCls: Type[Obj],
                            embedFunc: Callable[[Obj, bool, str], discord.Embed], unitName: str) -> tuple[discord.Embed, str]:
@@ -138,7 +149,7 @@ def match_and_create_embed(name: str, verbose: bool, objCls: Type[Obj],
     obj.fuzzy_match_name(obj.get_obj_info)
     if not obj.found:
         raise NotFoundError(obj.bestMatch)
-    
+
     # Get embed
     embed = embedFunc(obj, verbose, unitName)
 
@@ -156,26 +167,38 @@ def match_and_create_embed(name: str, verbose: bool, objCls: Type[Obj],
 
     return embed, fullIconPath
 
-async def return_info(interaction: discord.Interaction, name: str, verbose: bool, invisible:bool, objCls: Type[Obj],
-                      embedFunc: Callable[[Obj, bool, str], discord.Embed], unitName:str=None):
+
+async def return_info(interaction: discord.Interaction, name: str, verbose: bool, invisible: bool, objCls: Type[Obj],
+                      embedFunc: Callable[[Obj, bool, str], discord.Embed], unitName: str = None):
+    print(f'\nReceived request for:\n'
+          f'- Obj Class: {objCls.__name__}\n'
+          f'- Name: {name}\n'
+          f'- Unit Name: {unitName}\n')
     try:
-        embed, fullIconPath = match_and_create_embed(name, verbose, objCls, embedFunc, unitName)
+        embed, fullIconPath = match_and_create_embed(
+            name, verbose, objCls, embedFunc, unitName)
     except NotFoundError as nf:
         await interaction.response.send_message(f'**{name}** not found. Did you mean **{nf.bestMatch}**?', ephemeral=invisible,
                                                 view=ConfirmFuzzyMatch(nf.bestMatch, verbose, objCls, embedFunc, unitName))
+        print(repr(nf))
     except UnitNotFoundError as unf:
         await interaction.response.send_message(f'**{unitName}** not found. Did you mean **{unf.bestMatch}**?', ephemeral=invisible,
                                                 view=ConfirmFuzzyMatch(name, verbose, objCls, embedFunc, unf.bestMatch))
+        print(repr(unf))
     except ActionNotInUnitError as na:
         await interaction.response.send_message(f'No **{na.actionName}** action found in list of actions for **{na.unitName}**.', ephemeral=invisible)
+        print(repr(na))
     else:
         try:
             image = discord.File(fullIconPath, filename='icon.png')
             embed.set_thumbnail(url="attachment://icon.png")
             await interaction.response.send_message(embed=embed, file=image, ephemeral=invisible)
+            print('Successfully returned request.')
         except FileNotFoundError:
             await interaction.response.send_message(embed=embed, ephemeral=invisible)
-    
+            print('Successfully returned request without icon.')
+
+
 def create_gitem_embed(item: GItem, verbose: bool, _) -> discord.Embed:
     item.get_ability()
     item.get_rarity()
@@ -191,7 +214,8 @@ def create_gitem_embed(item: GItem, verbose: bool, _) -> discord.Embed:
     embed.add_field(name='Rarity', value=item.rarity)
 
     # Influence cost
-    embed.add_field(name='Cost', value=GLADIUS_ICONS['influence'] + ' ' + item.influenceCost)
+    embed.add_field(
+        name='Cost', value=GLADIUS_ICONS['influence'] + ' ' + item.influenceCost)
 
     # Ability
     try:
@@ -202,11 +226,13 @@ def create_gitem_embed(item: GItem, verbose: bool, _) -> discord.Embed:
     # Flavor
     if verbose:
         try:
-            embed.add_field(name='Flavor', value=f'*{item.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{item.flavor}*', inline=False)
         except AttributeError:
             pass
 
     return embed
+
 
 def create_zitem_embed(item: ZItem, verbose: bool, _) -> discord.Embed:
     item.get_branch()
@@ -231,7 +257,8 @@ def create_zitem_embed(item: ZItem, verbose: bool, _) -> discord.Embed:
     embed.add_field(name='Branch', value=item.branch)
 
     # Influence cost
-    embed.add_field(name='Cost', value=ZEPHON_ICONS['influence'] + ' ' + item.influenceCost)
+    embed.add_field(
+        name='Cost', value=ZEPHON_ICONS['influence'] + ' ' + item.influenceCost)
 
     # Buy condition
     try:
@@ -248,11 +275,13 @@ def create_zitem_embed(item: ZItem, verbose: bool, _) -> discord.Embed:
     # Flavor
     if verbose:
         try:
-            embed.add_field(name='Flavor', value=f'*{item.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{item.flavor}*', inline=False)
         except AttributeError:
             pass
 
     return embed
+
 
 def create_gunit_embed(unit: GUnit, verbose: bool, _) -> discord.Embed:
     unit.get_stats()
@@ -271,24 +300,27 @@ def create_gunit_embed(unit: GUnit, verbose: bool, _) -> discord.Embed:
     embed.colour = GLADIUS_FACTION_COLORS[unit.faction]
 
     # Faction
-    embed.add_field(name='Faction', value=camel_case_split(unit.faction), inline=False)
+    embed.add_field(name='Faction', value=camel_case_split(
+        unit.faction), inline=False)
 
     # Cost
-    costText = [GLADIUS_ICONS['production'], ' ', unit.resourceStats.productionCost]
+    costText = [GLADIUS_ICONS['production'],
+                ' ', unit.resourceStats.productionCost]
     for resource in GLADIUS_RESOURCES:
         cost = resource + 'Cost'
         costValue = getattr(unit.resourceStats, cost)
         if costValue != '0':
             costText.extend((' | ', GLADIUS_ICONS[resource], ' ', costValue))
     embed.add_field(name="Cost", value=''.join(costText))
-    
+
     # Upkeep
     upkeepText = []
     for resource in GLADIUS_RESOURCES:
         upkeep = resource + 'Upkeep'
         upkeepValue = getattr(unit.resourceStats, upkeep)
         if upkeepValue != '0':
-            upkeepText.extend((' | ', GLADIUS_ICONS[resource], ' ', upkeepValue))
+            upkeepText.extend(
+                (' | ', GLADIUS_ICONS[resource], ' ', upkeepValue))
     try:
         # delete initial ' | '
         del upkeepText[0]
@@ -318,7 +350,8 @@ def create_gunit_embed(unit: GUnit, verbose: bool, _) -> discord.Embed:
             secondary = ' (S)'
         else:
             secondary = ''
-        weaponsText.append(f'{unit.weapons[weapon][0]}x {weapon}{upgrade}{secondary}\n')
+        weaponsText.append(
+            f'{unit.weapons[weapon][0]}x {weapon}{upgrade}{secondary}\n')
     if weaponsText == []:
         weaponsText = ['None']
     embed.add_field(name='Weapons', value=''.join(weaponsText))
@@ -348,18 +381,20 @@ def create_gunit_embed(unit: GUnit, verbose: bool, _) -> discord.Embed:
     if actionsText == []:
         actionsText = ['None']
     embed.add_field(name='Actions', value=''.join(actionsText))
-    
+
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{unit.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{unit.flavor}*', inline=False)
         except AttributeError:
             pass
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
-                                'Weapons marked with (S) are secondary weapons.\n'
-                                'Stat-changing traits like Fleet not taken into account.'))
-    
+                               'Weapons marked with (S) are secondary weapons.\n'
+                               'Stat-changing traits like Fleet not taken into account.'))
+
     return embed
+
 
 def create_zunit_embed(unit: ZUnit, verbose: bool, _) -> discord.Embed:
     unit.get_branch()
@@ -381,21 +416,23 @@ def create_zunit_embed(unit: ZUnit, verbose: bool, _) -> discord.Embed:
     embed.add_field(name='Branch', value=unit.branch, inline=False)
 
     # Cost
-    costText = [ZEPHON_ICONS['production'], ' ', unit.resourceStats.productionCost]
+    costText = [ZEPHON_ICONS['production'],
+                ' ', unit.resourceStats.productionCost]
     for resource in ZEPHON_RESOURCES:
         cost = resource + 'Cost'
         costValue = getattr(unit.resourceStats, cost)
         if costValue != '0':
             costText.extend((' | ', ZEPHON_ICONS[resource], ' ', costValue))
     embed.add_field(name="Cost", value=''.join(costText))
-    
+
     # Upkeep
     upkeepText = []
     for resource in ZEPHON_RESOURCES:
         upkeep = resource + 'Upkeep'
         upkeepValue = getattr(unit.resourceStats, upkeep)
         if upkeepValue != '0':
-            upkeepText.extend((' | ', ZEPHON_ICONS[resource], ' ', upkeepValue))
+            upkeepText.extend(
+                (' | ', ZEPHON_ICONS[resource], ' ', upkeepValue))
     try:
         # delete initial ' | '
         del upkeepText[0]
@@ -425,7 +462,8 @@ def create_zunit_embed(unit: ZUnit, verbose: bool, _) -> discord.Embed:
             secondary = ' (S)'
         else:
             secondary = ''
-        weaponsText.extend(f'{unit.weapons[weapon][0]}x {weapon}{upgrade}{secondary}\n')
+        weaponsText.extend(
+            f'{unit.weapons[weapon][0]}x {weapon}{upgrade}{secondary}\n')
     if weaponsText == []:
         weaponsText = ['None']
     embed.add_field(name='Weapons', value=''.join(weaponsText))
@@ -455,18 +493,20 @@ def create_zunit_embed(unit: ZUnit, verbose: bool, _) -> discord.Embed:
     if actionsText == []:
         actionsText = ['None']
     embed.add_field(name='Actions', value=''.join(actionsText))
-    
+
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{unit.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{unit.flavor}*', inline=False)
         except AttributeError:
             pass
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
-                                'Weapons marked with (S) are secondary weapons.\n'
-                                'Stat-changing traits like Fleet not taken into account.'))
-    
+                               'Weapons marked with (S) are secondary weapons.\n'
+                               'Stat-changing traits like Fleet not taken into account.'))
+
     return embed
+
 
 def create_gweapon_embed(weapon: GWeapon, verbose: bool, unitName: str = None) -> discord.Embed:
     if unitName:
@@ -483,7 +523,8 @@ def create_gweapon_embed(weapon: GWeapon, verbose: bool, unitName: str = None) -
 
     # Name and Description
     try:
-        embed = discord.Embed(title=weapon.name, description=weapon.description)
+        embed = discord.Embed(
+            title=weapon.name, description=weapon.description)
     except AttributeError:
         embed = discord.Embed(title=weapon.name)
 
@@ -513,14 +554,16 @@ def create_gweapon_embed(weapon: GWeapon, verbose: bool, unitName: str = None) -
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{weapon.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{weapon.flavor}*', inline=False)
         except AttributeError:
             pass
         embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.\n'
-                                'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
-                                'Values shown may not be accurate.'))
+                               'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
+                               'Values shown may not be accurate.'))
 
     return embed
+
 
 def create_zweapon_embed(weapon: ZWeapon, verbose: bool, unitName: str = None) -> discord.Embed:
     if unitName:
@@ -537,7 +580,8 @@ def create_zweapon_embed(weapon: ZWeapon, verbose: bool, unitName: str = None) -
 
     # Name and Description
     try:
-        embed = discord.Embed(title=weapon.name, description=weapon.description)
+        embed = discord.Embed(
+            title=weapon.name, description=weapon.description)
     except AttributeError:
         embed = discord.Embed(title=weapon.name)
 
@@ -567,14 +611,16 @@ def create_zweapon_embed(weapon: ZWeapon, verbose: bool, unitName: str = None) -
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{weapon.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{weapon.flavor}*', inline=False)
         except AttributeError:
             pass
         embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.\n'
-                                'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
-                                'Values shown may not be accurate.'))
-    
+                               'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
+                               'Values shown may not be accurate.'))
+
     return embed
+
 
 def create_gtrait_embed(trait: GTrait, verbose: bool, _) -> discord.Embed:
     trait.get_modifiers()
@@ -603,11 +649,13 @@ def create_gtrait_embed(trait: GTrait, verbose: bool, _) -> discord.Embed:
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{trait.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{trait.flavor}*', inline=False)
         except AttributeError:
             pass
-    
+
     return embed
+
 
 def create_ztrait_embed(trait: ZTrait, verbose: bool, _) -> discord.Embed:
     trait.get_modifiers()
@@ -627,11 +675,13 @@ def create_ztrait_embed(trait: ZTrait, verbose: bool, _) -> discord.Embed:
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{trait.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{trait.flavor}*', inline=False)
         except AttributeError:
             pass
 
     return embed
+
 
 def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> discord.Embed:
     unit = GUnit(unitName)
@@ -646,7 +696,8 @@ def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> disco
 
     # Name and Description
     try:
-        embed = discord.Embed(title=action.name, description=action.description)
+        embed = discord.Embed(
+            title=action.name, description=action.description)
     except AttributeError:
         embed = discord.Embed(title=action.name)
 
@@ -657,15 +708,22 @@ def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> disco
     if action.passive:
         embed.add_field(name='Cooldown', value='Passive', inline=False)
     else:
-        embed.add_field(name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {action.cooldown}", inline=False)
+        embed.add_field(
+            name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {action.cooldown}", inline=False)
 
     # Conditions
-    embed.add_field(name=f"Required upgrade", value=str(action.conditions.requiredUpgrade))
-    embed.add_field(name=f"Requires {GLADIUS_ICONS['actions']} AP?", value=str(action.conditions.requiredActionPoints))
-    embed.add_field(name=f"Requires {GLADIUS_ICONS['movement']} movement?", value=str(action.conditions.requiredMovement))
-    embed.add_field(name=f"Usable in {GLADIUS_ICONS['transport']} transport?", value=str(action.conditions.usableInTransport))
-    embed.add_field(name=f"Consumes {GLADIUS_ICONS['actions']} AP?", value=str(action.conditions.consumedActionPoints))
-    embed.add_field(name=f"Consumes {GLADIUS_ICONS['movement']} movement?", value=str(action.conditions.consumedMovement))
+    embed.add_field(name=f"Required upgrade", value=str(
+        action.conditions.requiredUpgrade))
+    embed.add_field(name=f"Requires {GLADIUS_ICONS['actions']} AP?", value=str(
+        action.conditions.requiredActionPoints))
+    embed.add_field(name=f"Requires {GLADIUS_ICONS['movement']} movement?", value=str(
+        action.conditions.requiredMovement))
+    embed.add_field(name=f"Usable in {GLADIUS_ICONS['transport']} transport?", value=str(
+        action.conditions.usableInTransport))
+    embed.add_field(name=f"Consumes {GLADIUS_ICONS['actions']} AP?", value=str(
+        action.conditions.consumedActionPoints))
+    embed.add_field(name=f"Consumes {GLADIUS_ICONS['movement']} movement?", value=str(
+        action.conditions.consumedMovement))
 
     # Modifiers
     try:
@@ -676,11 +734,13 @@ def create_gaction_embed(action: GAction, verbose: bool, unitName: str) -> disco
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{action.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{action.flavor}*', inline=False)
         except AttributeError:
             pass
 
     return embed
+
 
 def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> discord.Embed:
     unit = ZUnit(unitName)
@@ -696,7 +756,8 @@ def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> disco
 
     # Name and Description
     try:
-        embed = discord.Embed(title=action.name, description=action.description)
+        embed = discord.Embed(
+            title=action.name, description=action.description)
     except AttributeError:
         embed = discord.Embed(title=action.name)
 
@@ -707,15 +768,22 @@ def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> disco
     if action.passive:
         embed.add_field(name='Cooldown', value='Passive', inline=False)
     else:
-        embed.add_field(name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {action.cooldown}", inline=False)
+        embed.add_field(
+            name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {action.cooldown}", inline=False)
 
     # Conditions
-    embed.add_field(name=f"Required upgrade", value=str(action.conditions.requiredUpgrade))
-    embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(action.conditions.requiredActionPoints))
-    embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(action.conditions.requiredMovement))
-    embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(action.conditions.usableInTransport))
-    embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(action.conditions.consumedActionPoints))
-    embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(action.conditions.consumedMovement))
+    embed.add_field(name=f"Required upgrade", value=str(
+        action.conditions.requiredUpgrade))
+    embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(
+        action.conditions.requiredActionPoints))
+    embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(
+        action.conditions.requiredMovement))
+    embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(
+        action.conditions.usableInTransport))
+    embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(
+        action.conditions.consumedActionPoints))
+    embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(
+        action.conditions.consumedMovement))
 
     # Modifiers
     try:
@@ -726,11 +794,13 @@ def create_zaction_embed(action: ZAction, verbose: bool, unitName: str) -> disco
     if verbose:
         # Flavor
         try:
-            embed.add_field(name='Flavor', value=f'*{action.flavor}*', inline=False)
+            embed.add_field(
+                name='Flavor', value=f'*{action.flavor}*', inline=False)
         except AttributeError:
             pass
 
     return embed
+
 
 @client.event
 async def on_ready():
@@ -738,44 +808,54 @@ async def on_ready():
     # synced = await client.tree.sync()
     # print("# CMDs synced: " + str(len(synced)))
 
+
 @client.tree.command(name='gitem', description='Return info on a Gladius item')
-async def gitem(interaction: discord.Interaction, itemname:str, verbose:bool=False, invisible:bool=False):
+async def gitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, itemname, verbose, invisible, GItem, create_gitem_embed)
 
+
 @client.tree.command(name='zitem', description='Return info on a Zephon item')
-async def gitem(interaction: discord.Interaction, itemname:str, verbose:bool=False, invisible:bool=False):
+async def gitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, itemname, verbose, invisible, ZItem, create_zitem_embed)
 
+
 @client.tree.command(name='gunit', description='Return info on a Gladius unit')
-async def gunit(interaction: discord.Interaction, unitname:str, verbose:bool=False, invisible:bool=False):
+async def gunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, unitname, verbose, invisible, GUnit, create_gunit_embed)
 
+
 @client.tree.command(name='zunit', description='Return info on a Zephon unit')
-async def gunit(interaction: discord.Interaction, unitname:str, verbose:bool=False, invisible:bool=False):
+async def gunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, unitname, verbose, invisible, ZUnit, create_zunit_embed)
 
+
 @client.tree.command(name='gweapon', description='Return info on a Gladius weapon. Optionally include unit name for more accurate info.')
-async def gweapon(interaction: discord.Interaction, weaponname:str, unitname:str='', verbose:bool=False, invisible:bool=False):
+async def gweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, invisible: bool = False):
     await return_info(interaction, weaponname, verbose, invisible, GWeapon, create_gweapon_embed, unitname)
 
+
 @client.tree.command(name='zweapon', description='Return info on a Zephon weapon. Optionally include unit name for more accurate info.')
-async def zweapon(interaction: discord.Interaction, weaponname:str, unitname:str='', verbose:bool=False, invisible:bool=False):
+async def zweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, invisible: bool = False):
     await return_info(interaction, weaponname, verbose, invisible, ZWeapon, create_zweapon_embed, unitname)
 
+
 @client.tree.command(name='gtrait', description='Return info on a Gladius trait')
-async def gtrait(interaction: discord.Interaction, traitname:str, verbose:bool=False, invisible:bool=False):
+async def gtrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, traitname, verbose, invisible, GTrait, create_gtrait_embed)
 
+
 @client.tree.command(name='ztrait', description='Return info on a Zephon trait')
-async def ztrait(interaction: discord.Interaction, traitname:str, verbose:bool=False, invisible:bool=False):
+async def ztrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, traitname, verbose, invisible, ZTrait, create_ztrait_embed)
 
+
 @client.tree.command(name='gaction', description='Return info on a Gladius action. Requires name of unit with the action.')
-async def gaction(interaction: discord.Interaction, actionname:str, unitname:str, verbose:bool=False, invisible:bool=False):
+async def gaction(interaction: discord.Interaction, actionname: str, unitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, actionname, verbose, invisible, GAction, create_gaction_embed, unitname)
 
+
 @client.tree.command(name='zaction', description='Return info on a Zephon action. Requires name of unit with the action.')
-async def zaction(interaction: discord.Interaction, actionname:str, unitname:str, verbose:bool=False, invisible:bool=False):
+async def zaction(interaction: discord.Interaction, actionname: str, unitname: str, verbose: bool = False, invisible: bool = False):
     await return_info(interaction, actionname, verbose, invisible, ZAction, create_zaction_embed, unitname)
 
 client.run(TOKEN)
