@@ -1,4 +1,6 @@
 from lxml import etree as ET
+from os.path import join as pathJoin
+from os.path import normpath
 from obj import Obj, val2val
 
 
@@ -11,7 +13,7 @@ class Trait(Obj):
 
     def get_modifiers(self):
         self.modifiers = ET.tostring(
-            self.tree.getroot(), encoding='unicode')[:1024]
+            self.tree.getroot(), encoding='unicode')
 
 
 class GTrait(Trait):
@@ -28,7 +30,8 @@ class GTrait(Trait):
             self.faction, self.internalID = self.factionAndID.split('/')
         else:
             self.internalID = self.factionAndID
-        self.XMLPath = self.CLASS_DIR + self.factionAndID + '.xml'
+        self.XMLPath = pathJoin(
+            self.CLASS_DIR, normpath(self.factionAndID) + '.xml')
         self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
             recover=True, remove_comments=True))
         for e in xmlTree:

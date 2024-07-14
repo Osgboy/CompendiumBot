@@ -19,7 +19,7 @@ for dirpath, dirnames, filenames in os.walk(sys.argv[1]): # .\Zephon\English, .\
 
         with open(filepath, 'w', encoding='utf8') as file:
             for line in range(len(filedata)):
-                filedata[line] = re.sub(r'^\s*<entry\sname=\"(.*?)\"\svalue=\"(.*)\"\/>$', replaceChrs, filedata[line])
+                filedata[line] = re.sub(r'^\s*?<entry\sname=\"(.*?)\"\svalue=\"(.*?)\"\/>', replaceChrs, filedata[line])
 
         # Write the file out again
         with open(filepath, 'w', encoding='utf8') as file:

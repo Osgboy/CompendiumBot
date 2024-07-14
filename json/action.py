@@ -33,7 +33,7 @@ class Action(Obj):
         self.passive = False
         self.cooldown = '0'
         self.conditions: dataclass = ActionConditions(
-            False, True, False, False, True, True)
+            None, True, False, False, True, True)
         self.modifiers: str
 
     def get_tree(self, unit: Unit):
@@ -42,6 +42,8 @@ class Action(Obj):
                 tag = action.tag
                 tagName = tag[0].upper() + tag[1:]
                 if tagName == self.internalID or action.get('name') == self.internalID:
+                    if (model := action.find('model')):
+                        action.remove(model)
                     self.tree = action
                     break
             else:
@@ -61,7 +63,7 @@ class Action(Obj):
 
     def get_conditions(self):
         if self.passive:
-            self.conditions = ActionConditions(*[False]*6)
+            self.conditions = ActionConditions(None, False, False, False, False, False)
         else:
             for conditionName in self.conditions.__slots__:
                 conditionValue = self.tree.get(conditionName)
@@ -74,7 +76,7 @@ class Action(Obj):
                         conditionValue, self.GAME, 'Upgrades'))
 
     def get_modifiers(self):
-        self.modifiers = ET.tostring(self.tree, encoding='unicode')[:1024]
+        self.modifiers = ET.tostring(self.tree, encoding='unicode')
 
 
 class GAction(Action):

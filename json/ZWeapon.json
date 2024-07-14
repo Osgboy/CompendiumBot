@@ -1,0 +1,2119 @@
+{
+    "Abkhan Bite": {
+        "internalID": "AbkhanBite",
+        "description": null,
+        "flavor": "Your brain reacts in a funny way when you watch an Abkhan bite clear through the tank you're riding in. Instead of trying to run, you might start wondering what kind of prey this monster hunted on its homeworld. And then you start wondering if the Acrin brought any of those along too. If they're hanging above your head in the ruined fleet\u2014waiting for someone to wake them up.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AbkhanBite.png"
+    },
+    "Abkluth Bite": {
+        "internalID": "AbkluthBite",
+        "description": null,
+        "flavor": "You can still see the first scar an Abkluth gave me. Its jaws clamped hard on my arm and left me with four straight lines with a perfect indent of its jagged teeth. I didn\u2019t let the medics repair the cosmetic damage. I didn\u2019t want to forget what an alien could do to me.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AbkluthBite.png"
+    },
+    "Anti-Armor Grenade": {
+        "internalID": "AntiArmorGrenade",
+        "description": null,
+        "flavor": "In the early days, these were our only tools for penetrating heavy armor. They weighed\u2026 heavier than other munitions. They made good troops too cocky. Carrying around one explosive and you\u2019d think you could go toe-to-toe with heavy armor. It was a last resort, not a first one.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AntiArmorGrenade.png"
+    },
+    "Antimatter Sword": {
+        "internalID": "AntimatterSword",
+        "description": null,
+        "flavor": "There was power in drawing your blade and striking a single motion\u2014but what good was such power if body and blades were too weak? The answer lay in Antimatter. These blades were the unstoppable force we needed to pierce immovable objects. Antimatter tech made for good shielding\u2026but it made for even better killing.",
+        "traits": {
+            "Melee": null,
+            "Crippling": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AntimatterSword.png"
+    },
+    "Apotheosis": {
+        "internalID": "Apotheosis",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "N/A",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\Apotheosis.png"
+    },
+    "Aranean Eye": {
+        "internalID": "AraneanEye",
+        "description": null,
+        "flavor": "I heard a cadet ask our lead scientist why Aranean Stalkers were dangerous. She asked if we could imagine being able to kill something with a single glance. Maybe that\u2019s all they\u2019re doing\u2014watching us. Just glaring daggers that cut through our bones.",
+        "traits": {
+            "Sniper": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AraneanEye.png"
+    },
+    "Armor-Piercing Minigun": {
+        "internalID": "ArmorPiercingMinigun",
+        "description": null,
+        "flavor": "Spraying a hailstorm of armor-piercing bullets was bad enough, but this piece of hardware crippled infantry and recon. Once your prey slowed down, you could just chew them up until there was nothing left.",
+        "traits": {
+            "Crippling": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ArmorPiercingMinigun.png"
+    },
+    "Assault Rifle": {
+        "internalID": "AssaultRifle",
+        "description": null,
+        "flavor": "The standard firearm for armies of the old world still served a purpose at the dawn of a new one. We needed weapons that could reload fast and fire even faster.",
+        "traits": {
+            "Close-Quarters Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AssaultRifle.png"
+    },
+    "Axiomatic Pendulum": {
+        "internalID": "AxiomaticPendulum",
+        "description": null,
+        "flavor": "Shit. Phenaris freak's blade swung right by my face. We were on the same fucking side. Screamed at it to watch out. \u201cPain. Pleasure.\u201d it said, \u201cWe swing from one to another in a steady rhythm. You should too\u2026 I think you'd like it.\u201d",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AxiomaticPendulum.png"
+    },
+    "Baneful Omen": {
+        "internalID": "BanefulOmen",
+        "description": null,
+        "flavor": "The Voice had a curse up its sleeve for every kind of weapon you threw at it. There was a short time where we could cut down Voice cultists in close-quarters combat\u2014our might was greater than their faith. Then along came the Cr'la, and with a simple sigh, it could drain our bodies of all their strength.",
+        "traits": {
+            "Ignores Cover": null,
+            "Indirect Fire": null,
+            "Weakening": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BanefulOmen.png"
+    },
+    "Battle Cannon": {
+        "internalID": "BattleCannon",
+        "description": null,
+        "flavor": "One tech refused to design these cannons. She warned us that \u201carmored warfare would only give way to a century of death.\u201d She wasn\u2019t wrong. We still transferred her to the agtech division. She deserved space to imagine a better world. Our job was to make sure there would be people to live in it.",
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BattleCannon.png"
+    },
+    "Bio-Acid Spray": {
+        "internalID": "BioAcidSpray",
+        "description": null,
+        "flavor": "Aegyllan Worms needed to dissolve their food before they ate it. Or maybe they didn\u2019t need to. Maybe they just liked the flavor. It made my stomach turn over just thinking about it. After watching them chow down? I couldn\u2019t eat for days.",
+        "traits": {
+            "Splash": null,
+            "Corrosive": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BioAcidSpray.png"
+    },
+    "Bleed": {
+        "internalID": "Bleed",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Features\\Bleed.png"
+    },
+    "Blest Cannon": {
+        "internalID": "BlestCannon",
+        "description": null,
+        "flavor": "\u201dBlest?\u201d Blessed by who? The Provosts scream about \u201cThe One Above\u201d but won't share any details about them. No other machines in our ranks worshiped some cyber deity. I didn't feel great listening to machines demand you bow to a god they won't say anything about\u2026",
+        "traits": {
+            "Overheating": null,
+            "Large Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BlestCannon.png"
+    },
+    "Bombardment": {
+        "internalID": "Bombardment",
+        "description": null,
+        "flavor": "Some things never changed with war. One was that if you wanted a reliable artillery strike, you needed a good spotter. We trusted our commanders to call the shots\u2026 not just because they could land the kill. They could also make sure our troops got out of the blast zone.",
+        "traits": {
+            "Indirect Fire": null,
+            "Large Splash": null
+        },
+        "range": "-1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Bombardment.png"
+    },
+    "Castigate": {
+        "internalID": "Castigate",
+        "description": null,
+        "flavor": "Did the Voice's power work like the old fairy tales grandma bored me with. Did the cultists know \u201cthe true names\u201d of things? When a giant monster screamed at you in a dead language\u2014had it learned your true name? Who you really were? Or was it just some biological nonsense that made the intense pain shoot through your body?",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Castigate.png"
+    },
+    "Censure of the Elect": {
+        "internalID": "CensureOfTheElect",
+        "description": null,
+        "flavor": "Civilians drafted to bury dead didn't know whether to classify wounds from these monsters as blunt force trauma or lacerations. Depends if you got hit by the sharp flesh at the end of their limbs or the meaty chunk in the middle. I never knew I'd have to think about \u201csharp flesh\u201d when I enlisted\u2026",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CensureOfTheElect.png"
+    },
+    "Circular Saw": {
+        "internalID": "CircularSaw",
+        "description": null,
+        "flavor": "These were hungry blades\u2014teeth arranged at the end of a wheel and made ready to consume metal or flesh. It wasn\u2019t an efficient way to hurt a creature, but it was very, very good at inflicting pain. If you heard this out on a dark night, you knew that something was out there\u2026 and hungry.",
+        "traits": {
+            "Melee": null,
+            "Crippling": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CircularSaw.png"
+    },
+    "Cr'la's Gambit": {
+        "internalID": "CrlasGambit",
+        "description": null,
+        "flavor": "The Disciples of Cr'la never seemed to respect the same reality as the rest of us. Every time they invoked Cr'la's will, one of their number would fall. No creature with a sense of self-preservation would fight like that. They fought for a higher cause\u2014and that cause demanded a life for a life.",
+        "traits": {
+            "Cr'la's Gambit": null,
+            "Ignores Cover": null,
+            "Indirect Fire": null,
+            "Weakening": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CrlasGambit.png"
+    },
+    "Cyclone Autocannon": {
+        "internalID": "CycloneAutocannon",
+        "description": null,
+        "flavor": "The Cyclones were built with old-world schematics, but with less\u2026 concern for safety. The techs threw out heating regulators, upped the ammo count, and loosened the targeting protocols. Who cared if the bullets hit our own craft? Wouldn\u2019t do us any good if the enemy bombed us into oblivion.",
+        "traits": {
+            "Anti-Air": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CycloneAutocannon.png"
+    },
+    "Defense Grid": {
+        "internalID": "DefenseGrid",
+        "description": null,
+        "flavor": "Whenever we assaulted ZEPHON's cities the whole battlefield would light from these crackling spheres that exploded when they hit the ground. In those few seconds while they hung in the sky, everything would glow strange\u2014blue? Or was it red? That energy they put out played hell with myoptic nerves. Maybe my memory too.",
+        "traits": {
+            "Perimeter Range": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\DefenseGrid.png"
+    },
+    "Rake": {
+        "internalID": "DeformingRake",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\DeformingRake.png"
+    },
+    "Disintegrate": {
+        "internalID": "Disintegrate",
+        "description": null,
+        "flavor": "When the Voice wished, it could choose violence. If you survived such an assault, you had to reckon with the fact that something deep out there in the universe, something you\u2019d never met\u2026 wanted you to feel pain. That could outshine the physical damage its power inflicted.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Disintegrate.png"
+    },
+    "Sandstorm": {
+        "internalID": "DustStorm",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Features\\DustStorm.png"
+    },
+    "Dragoon Spear": {
+        "internalID": "DragoonSpear",
+        "description": null,
+        "flavor": "Akbluth riders needed close-quarters weapons that they could use while mounted. If the spear was good enough for our ancestors, it was good enough for us. Of course, no ancestor of ours ever thought we\u2019d wield spears while riding great lizard beasts\u2026",
+        "traits": {
+            "Melee": null,
+            "Toxic Spearhead": "ToxicSpearhead"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\DragoonSpear.png"
+    },
+    "Elysian Battery": {
+        "internalID": "ElysianBattery",
+        "description": null,
+        "flavor": "One day I stood too close to an Elohim Malestrom firing off their battery\u2026 cost me a few inches of hair after I beat the fire out. Fucking unnerving thing. Up close, their guns didn't sound like plasma or energy\u2026 it sounded like a choir.",
+        "traits": {
+            "Heavy": null,
+            "Indirect Fire": null,
+            "Splash": null
+        },
+        "range": "4",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ElysianBattery.png"
+    },
+    "Erelim Blades": {
+        "internalID": "ErelimBlades",
+        "description": null,
+        "flavor": "The Erelim's razor-sharp blades needed to be lightweight, durable, and foldable inside the human body. They weren't like any other blade ever put to a forge. The techs figured out how to layer sheets of metal that came together when deployed. They were perfectly concealable\u2014and made their creators exceptionally paranoid.",
+        "traits": {
+            "Crippling": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ErelimBlades.png"
+    },
+    "Exoskeleton Sword": {
+        "internalID": "ExoskeletonFist",
+        "description": null,
+        "flavor": "You couldn\u2019t put these swords in the hands of any soldier. If their Exoskeleton crapped out, all you were holding was a useless hunk of spiked scrap. I watched some Commanders drill without the suits, learning how to wield these blades even on their last legs. True survival meant never giving up\u2014never letting the weight of a weapon be what got you killed.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ExoskeletonFist.png"
+    },
+    "Exoskeleton Minigun": {
+        "internalID": "ExoskeletonGatlingGun",
+        "description": null,
+        "flavor": "I caught a Commander\u2026 talking to his suit once. He sounded like he was in full conversation with his guns. Maybe with those things firing over each of his shoulders, his hearing got shot to shit? Damn fine soldier though. Couldn\u2019t argue with the results.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ExoskeletonGatlingGun.png"
+    },
+    "Fire": {
+        "internalID": "Fire",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Traits\\OnFire.png"
+    },
+    "Flamethrower": {
+        "internalID": "Flamethrower",
+        "description": null,
+        "flavor": "Ironically, flamethrowers were precision weapons. Smart foes knew not to gather close or linger behind cover when they saw one. Careful operators would lure them into the oven before they lit the flame.",
+        "traits": {
+            "Burning": null,
+            "Ignores Cover": null,
+            "Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Flamethrower.png"
+    },
+    "Fragmentation Grenade": {
+        "internalID": "FragmentationGrenade",
+        "description": null,
+        "flavor": "We found the first of these in old garrisons marked with forgotten flags. Some civilians in our group commented that these once changed the face of warfare. Now they were just\u2026 the starting point. The base level of power we\u2019d need to win the wars ahead.",
+        "traits": {
+            "Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\FragmentationGrenade.png"
+    },
+    "Frost Breath": {
+        "internalID": "FrostBreath",
+        "description": null,
+        "flavor": "Inside the belly of an Abkhan there's a pouch of flesh chilled to temperatures below freezing that stays cold even after death. I once rushed a boneheaded biologist to the medical bay after he got frostbite touching one during a dissection. He lost a pair of fingers. Soldiers caught by the Abkhath's breath lost whole chunks of flesh.",
+        "traits": {
+            "Cone": null,
+            "Large Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\FrostBreath.png"
+    },
+    "Galgalim Missile Battery": {
+        "internalID": "GalgalimMissileBattery",
+        "description": null,
+        "flavor": "The range and precision of this missile battery was incredible. We once longed for weapons that could hit their target without any vision on them. Now that we had them, we felt connected to a higher power.",
+        "traits": {
+            "Indirect Fire": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GalgalimMissileBattery.png"
+    },
+    "Gauss Autocannon": {
+        "internalID": "GaussAutocannon",
+        "description": null,
+        "flavor": "Loading Gauss weaponry onto our planes turned the night sky into a light show. The glow of the rounds could light up the night. We had to be careful\u2014air operations in the sky above could sometimes put a spotlight on our ground troops. Stealth missions got all the more riskier.",
+        "traits": {},
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussAutocannon.png"
+    },
+    "Gauss Cannon": {
+        "internalID": "GaussCannon",
+        "description": null,
+        "flavor": "Cracking the science behind gauss weaponry was no easy feat, but the payoff was a weapon that could be dialed up or down in intensity depending on your objective. After a while, I think our best soldiers grew addicted to the smell of ozone that lingered after firing a round.",
+        "traits": {},
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussCannon.png"
+    },
+    "Gauss Carbine": {
+        "internalID": "GaussCarbine",
+        "description": null,
+        "flavor": "I raised hell with command about the power problem with the Gauss Rifles. And I take credit for them figuring out how to get Gauss Carbines embedded in our troops\u2019 armor. All that power packed into a weapon that could rest on your shoulder. The techs did beautiful work with this one.",
+        "traits": {
+            "Close-Quarters Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussCarbine.png"
+    },
+    "Gauss Rifle": {
+        "internalID": "GaussRifle",
+        "description": null,
+        "flavor": "Portable Gauss rifles were heavy as hell. Damn near threw out my back when I tried to yank one out of a downed soldier\u2019s hands once. Couldn\u2019t go far with it anyway\u2014the power needed to keep these things running had to be drawn from the armor of an exosuit. Luckily I just needed it for one life-or-death shot\u2026",
+        "traits": {
+            "Close-Quarters Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussRifle.png"
+    },
+    "Gauss Rifle (Overcharged)": {
+        "internalID": "GaussRifleOvercharged",
+        "description": null,
+        "flavor": "Portable Gauss rifles were heavy as hell. Damn near threw out my back when I tried to yank one out of a downed soldier\u2019s hands once. Couldn\u2019t go far with it anyway\u2014the power needed to keep these things running had to be drawn from the armor of an exosuit. Luckily I just needed it for one life-or-death shot\u2026",
+        "traits": {
+            "Close-Quarters Fire": null,
+            "Overcharged": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussRifleOvercharged.png"
+    },
+    "Goliath Cannon": {
+        "internalID": "GoliathCannon",
+        "description": null,
+        "flavor": "These cannons were so big I caught tired troops napping in them. No amount of discipline would get them to stop. They\u2019d ask \u201cwhat are you going to do, blow me up?\u201d If the warm barrel of this titanic weapon could put you to sleep, I guess you really didn\u2019t fear what your C.O. might do.",
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GoliathCannon.png"
+    },
+    "Graviton Accelerator": {
+        "internalID": "GravitonAccelerator",
+        "description": null,
+        "flavor": "Advanced Graviton weaponry could do unspeakable things to a human body\u2014and would utterly devastate an alien one. The R&D spooks warned us that turning the Accelerator up for too long could start to warp time itself. \u201cGood,\u201d I remember one rookie firing back. \u201cThen they\u2019ll die faster.",
+        "traits": {
+            "Gravitational Compression": null,
+            "Ignores Cover": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GravitonAccelerator.png"
+    },
+    "Graviton Projector": {
+        "internalID": "GravitonProjector",
+        "description": null,
+        "flavor": "Why did we turn gravity into a weapon? When you\u2019re staring down moving targets the size of buildings, you need to get creative if you want any chance of survival. These new weapons put additional strain on larger objects, and helped us level an uneven playing field.",
+        "traits": {
+            "Gravitational Compression": null,
+            "Ignores Cover": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GravitonProjector.png"
+    },
+    "Grenade Launcher": {
+        "internalID": "GrenadeLauncher",
+        "description": null,
+        "flavor": "We thought as the war went on, the Reavers would be less of a threat. With no researchers, no factories, they could never match our firepower. But every advancement we made was just another weapon they could steal and use to blow us to kingdom come.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GrenadeLauncher.png"
+    },
+    "Hades Cannon": {
+        "internalID": "HadesCannon",
+        "description": null,
+        "flavor": "Our pilots reported back that the Hades Cannon could make the sky around them vibrate and spark\u2014like St. Elmo\u2019s Fire., the lights on the masts of sailing ships. It never got anyone killed, so the techs couldn\u2019t prioritize fixing it. What was happening up there in the sky?",
+        "traits": {},
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\HadesCannon.png"
+    },
+    "Heavy Machine Gun": {
+        "internalID": "HeavyMachineGun",
+        "description": null,
+        "flavor": "Making reliable air-cooled machine guns was going to take time. We raided old weapons depots and did what we could to get older automatic weaponry up and running. At least we had improvements to ammo management\u2014we saved a lot of lives just by making sure these guns didn\u2019t jam up.",
+        "traits": {
+            "Old Painless": "FallenSoldierAffinityUpgrade"
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\HeavyMachineGun.png"
+    },
+    "Horrors of Space": {
+        "internalID": "HorrorsOfSpace",
+        "description": null,
+        "flavor": "When The Whisperer took the field, she went after the mind and the body. Smart of her. A million wars have been won just by scaring the enemy into running away. But the Whisperer didn\u2019t think like that. She just wanted to share the Voice with the world.",
+        "traits": {
+            "Horrifying": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\HorrorsOfSpace.png"
+    },
+    "Hymn of Decay": {
+        "internalID": "HymnOfDecay",
+        "description": null,
+        "flavor": "When I first felt the toxic touch of this tortured hymnal I assumed there was a strategic reason for poisoning the earth like this. But after so many battles\u2026 there had to be more to it. Was it spiritual? Or was it an act of childish spite? I imagined doomed aliens lashing back at our world for daring to resist their apocalyptic mission. The thought chilled me to the bone.",
+        "traits": {
+            "Ignores Cover": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\HymnOfDecay.png"
+    },
+    "Icarus Satellite": {
+        "internalID": "IcarusSatellite",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "-1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\IcarusSatellite.png"
+    },
+    "Incandescent Icon": {
+        "internalID": "IncandescentIcon",
+        "description": null,
+        "flavor": "One of the most powerful weapons created in our AI research looked like a humble lantern\u2014but the light it gave off did far more than illuminate. It hosted intelligent photons that could be programmed to recognize friend from foe. Just passing through a field of them could irritate the skin, and extended exposure was hell on flesh and armor alike.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\IncandescentIcon.png"
+    },
+    "Incendiary Grenade": {
+        "internalID": "IncendiaryGrenade",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Burning": null,
+            "Ignores Cover": null,
+            "Splash": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\IncendiaryGrenade.png"
+    },
+    "Incinerator": {
+        "internalID": "Incinerator",
+        "description": null,
+        "flavor": "Putting flamethrowers in the loadout of larger units meant we could expand the fuel line capabilities\u2014get a little range out of them, let the fire spread faster. You just had to be more careful than ever with Incinerators: fire doesn\u2019t care who it burns.",
+        "traits": {
+            "Burning": null,
+            "Ignores Cover": null,
+            "Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Incinerator.png"
+    },
+    "Iok Bile": {
+        "internalID": "IokBile",
+        "description": null,
+        "flavor": "Iok's freakshow winged worshippers always made a beeline for machines. A swarm of them piled on a Vanquisher Tank I was riding in and sprayed us all with the sludge in their stomachs as we bailed. Felt like a weird dream\u2026to feel the gross liquid hit my skin and just burn a little, then turn and see the tank melting like an ice cube in the desert.",
+        "traits": {
+            "Corrosive": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\IokBile.png"
+    },
+    "Jagged Cradle": {
+        "internalID": "JaggedCradle",
+        "description": null,
+        "flavor": "Dreameaters wanted to draw you close and leave you on the verge of a nightmare. Nightmares tasted the best to them. They drew up the subconscious\u2014the very thing that made you, you\u2014right to the surface. This was one of the cleanest ways to rip your soul from your body.",
+        "traits": {
+            "Melee": null,
+            "Horrifying": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\JaggedCradle.png"
+    },
+    "Larvae Cannon": {
+        "internalID": "LarvaeCannon",
+        "description": null,
+        "flavor": "There was something *wrong* with a creature that used its young as a weapon. Bad enough to be covered in Voice-tainted shit, the fact that it was alive? That it was\u2026 crawling on you? That drove some of us to a brink. Not everyone made it back.",
+        "traits": {
+            "Horrifying": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\LarvaeCannon.png"
+    },
+    "Laser Cannon": {
+        "internalID": "LaserCannon",
+        "description": null,
+        "flavor": "Mastering the Laser Gun only made our fighters more eager to wield the Laser Cannon. This was a weapon meant for pure punishment\u2014anything they hit folded like a novice poker player.",
+        "traits": {
+            "Laser": null
+        },
+        "range": "3",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\LaserCannon.png"
+    },
+    "Laser Gun": {
+        "internalID": "LaserRifle",
+        "description": null,
+        "flavor": "A laser gun fires in a straight line from A to B. There\u2019s no bullet drop, no wind resistance, nothing. Soldiers used to complain that they took the art out of aiming. Luckily we were still students in the art of killing. In time these became some of our favorite tools of the trade.",
+        "traits": {
+            "Laser": null
+        },
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\LaserRifle.png"
+    },
+    "Machete": {
+        "internalID": "Machete",
+        "description": null,
+        "flavor": "Machetes were a survivor\u2019s first tool for staying alive. Machetes can chop wood, cut food, and be heated up to cauterize surface wounds. In the old world, they had some use in combat. They did next to nothing against the massive machines and ungodly aliens that now crawled the Earth.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Machete.png"
+    },
+    "Mind Break": {
+        "internalID": "MindBreak",
+        "description": null,
+        "flavor": "The human mind can be surprisingly resilient. It took a creature as powerful as the Dreameater to do any damage to it at a distance. If you aren't ready, an assault like this will reduce you to a screaming wreck, a pile of meat and pain ready to be ingested by a monster from another world.",
+        "traits": {
+            "Horrifying": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\MindBreak.png"
+    },
+    "Mines": {
+        "internalID": "Mines",
+        "description": null,
+        "flavor": "Outrider operators knew when the bullets started flying, they weren\u2019t combatants: they were bait. Their job was to lay mines in key positions and lure the enemy in. Then once the trap was sprung, they could burn rubber and get away\u2014and whatever was hunting them became easy pickings for the rest of us.",
+        "traits": {
+            "Stacked Mines": "MilitaryBackgroundUpgrade2"
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\Minelayer.png"
+    },
+    "Missile Bot": {
+        "internalID": "MissileBot",
+        "description": null,
+        "flavor": "Miniature walking missile platforms made it easy for eggheads who couldn't carry anti-tank weapons to help out on the battlefield. My friend treated their bot like a sacred weapon. They waxed poetic about how standing still while it aimed drew power from the earth itself. They died out in an open field, exposed to a sniper\u2019s bullet.",
+        "traits": {
+            "Heavy": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\MissileBot.png"
+    },
+    "Missile Launcher": {
+        "internalID": "MissileLauncher",
+        "description": null,
+        "flavor": "In schools, they taught us about the \u201cparable of the broken window\u201d. Something about glassmakers paying kids to break windows so they could charge to fix them, I think? Made me think of two-ton missile launchers on the ramparts above. Missiles broke things. Merchants charged to fix them. Merchants sold more missiles. Maybe a sign that we were back to a world run by war profiteers\u2026",
+        "traits": {},
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\MissileLauncher.png"
+    },
+    "Missile Pod": {
+        "internalID": "MissilePod",
+        "description": null,
+        "flavor": "When one missile wouldn\u2019t cut it, you needed a whole bank of them. By this point, you cared a little bit less about accuracy and a lot more about pounding your target with explosions. I worried sometimes about what would happen if a missile didn\u2019t arm properly\u2014if it blew up inside the Pod. A quartermaster shrugged it off, saying \u201cAt least you\u2019ll take them out with you.\u201d",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\MissilePod.png"
+    },
+    "None": {
+        "internalID": "None",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "N/A",
+        "innateStats": {},
+        "iconPath": "Zephon\\Icons\\Weapons\\None.png"
+    },
+    "Oblivion": {
+        "internalID": "Oblivion",
+        "description": null,
+        "flavor": "\u201dOblivion\u2014a thought that could snuff out an enemy half a world away\u201d\u2014that was the legend we all remembered. When I first met the Emulated Mind I didn't think she had anything resembling a coherent thought left. But firing Oblivion focused her fragmented mind. Every time she fired it she would know a few blissful seconds of peace.",
+        "traits": {
+            "Indirect Fire": null,
+            "Large Splash": null,
+            "The Mind's Eye": "OblivionUpgrade",
+            "Extinction": "OblivionUpgrade2"
+        },
+        "range": "2 - 6",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Oblivion.png"
+    },
+    "Orolos Cannon": {
+        "internalID": "OrolosCannon",
+        "description": null,
+        "flavor": "An Orolos spawned from thick, tumorous rooms that sprouted in the Canticle of Dusk. Dropped out, bloody and wet, like a blister in the second before bursting. Cultists stabbed hooks into the Orolos\u2019 limbs and attached cannons bristling with obsidian spikes to it. That one eye on the Orolos\u2019 ugly face lit up like a kid seeing their favorite toy.",
+        "traits": {
+            "Heavy": null,
+            "Large Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\OrolosCannon.png"
+    },
+    "Paradox Theriac": {
+        "internalID": "ParadoxTheriac",
+        "description": null,
+        "flavor": "The slow pain\u2026 it lacks a certain kick, but it goes down so nicely. You nurse it like a stiff drink, to better let the blood seep over senses\u2026\u201d God these Phenaris just loved to TALK. Put me in a unit full of Aegyllan Worms any day. Gross fuckers hate being alive so they'll shut up that much faster.",
+        "traits": {
+            "Ignores Cover": null,
+            "Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ParadoxTheriac.png"
+    },
+    "Particle Projector": {
+        "internalID": "ParticleProjector",
+        "description": null,
+        "flavor": "Some of the weapons produced for AI just\u2026sprayed matter out like a firehose. I don\u2019t know if it was an intended side effect, but that matter would stick on the target, and took days to come off if they retreated. It could really jam up infantry and armor alike, make it hard to get them back on the battlefield.",
+        "traits": {
+            "Particle Interfering": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ParticleProjector.png"
+    },
+    "Pistol": {
+        "internalID": "Pistol",
+        "description": null,
+        "flavor": "Using a pistol was like palling up with a schoolyard bully. When your target is weak and helpless, they made you feel powerful. But the second you fought something with teeth, you realized what a shitty friend you\u2019d made.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Pistol.png"
+    },
+    "Plasma Gun": {
+        "internalID": "PlasmaGun",
+        "description": null,
+        "flavor": "The radiation burn of a Plasma Gun made them impractical for most soldiers\u2014but on Malakim Destroyers, they made perfect sense. They were already barely-alive bodies strapped into metal, no one\u2014not even them\u2014cared much for the long-term condition of their flesh.",
+        "traits": {
+            "Overheating": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\PlasmaGun.png"
+    },
+    "Power Fist": {
+        "internalID": "PowerFist",
+        "description": null,
+        "flavor": "There was nothing more satisfying than staring down a horrifying abomination from beyond the stars and punching it right in the face. The techs cooked up a \u201cmag-lev accelerant\u201d that let our mechs swing harder than a boxing champ. The old-fashioned right hook was still the best way to finish a fight.",
+        "traits": {
+            "Melee": null,
+            "Crippling": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\PowerFist.png"
+    },
+    "Resonating Scythes": {
+        "internalID": "ResonatingScythes",
+        "description": null,
+        "flavor": "A rattlesnake shakes its tail to scare off predators. It keeps quiet when it's stalking prey. Phenaris Hunters don't do that. Their limbs hum at this frequency that makes the air around you shake as it stalks your trail. They want you to know you're being hunted.",
+        "traits": {
+            "Melee": null,
+            "Revealing": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ResonatingScythes.png"
+    },
+    "Sanctified Trephine": {
+        "internalID": "SanctifiedTrephine",
+        "description": null,
+        "flavor": "Provosts took medical programming of some kind and warped it to fit their fucked-up philosophy. They screamed about sawing through armor to implant \u201ctrue divinity\u201d in the bellies of their foes. I'll be honest, I never met a machine that made me so badly want to be an atheist.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SanctifiedTrephine.png"
+    },
+    "Shiraki Cruise Missile": {
+        "internalID": "ShirakiCruiseMissile",
+        "description": null,
+        "flavor": "There wasn\u2019t anyone named \u201cShiraki\u201d on the team that brought these missiles online. The name came from the shape the smoke would make after obliterating an object. It would stretch up to the sky, the different warhead detonations making the shape of a great tree.",
+        "traits": {
+            "Indirect Fire": null
+        },
+        "range": "12",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ShirakiCruiseMissile.png"
+    },
+    "Shrieker": {
+        "internalID": "Shrieker",
+        "description": null,
+        "flavor": "Plangent Orolos lost all hearing during their transfiguration. Anyway, the bass rumble of their guns was so powerful that it would have blown their heads off. Didn't figure Voice Cultists would take such an interest in mechanisms\u2026 but who am I kidding? The Voice loves a megaphone.",
+        "traits": {
+            "Splash": null
+        },
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Shrieker.png"
+    },
+    "Siege Cannon": {
+        "internalID": "SiegeCannon",
+        "description": null,
+        "flavor": "An old friend operating a Vanquisher Siege Tank called these the \u201cwall crackers.\u201d They loved the smell of ozone and sulfur it left behind. It\u2019s possible that the smell was\u2026 some chemical that would blow operators' brains out. There was no time to care. We had a war to win.",
+        "traits": {
+            "Artillery": null,
+            "Heavy": null,
+            "Indirect Fire": null,
+            "Large Splash": null
+        },
+        "range": "6",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SiegeCannon.png"
+    },
+    "Singularity Blade": {
+        "internalID": "SingularityBlade",
+        "description": null,
+        "flavor": "Was this thing even a weapon? Or was it just energy? A piece of existence casually pointed by machines that understood some higher purpose? You couldn\u2019t hide from it. It gnawed through your fellow soldiers. And worst of all, it took something back and gave the angel new life.",
+        "traits": {
+            "Ignores Cover": null,
+            "Large Splash": null,
+            "Life Steal": null,
+            "Slow Priming": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 24.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SingularityBlade.png"
+    },
+    "Gungnir": {
+        "internalID": "Spjut",
+        "description": null,
+        "flavor": "\u201dA spear that could pierce the heavens.\u201d\u2014I caught a Valkyria operator scratching this phrase on her chassis once. She seemed hypnotized by her armor, like it was whispering a command to her. Unsettling stuff. Was it wise to trust operators like her? Maybe that's why the higher-ups were debating a kill switch installation\u2026",
+        "traits": {
+            "Anti-Ground": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Spjut.png"
+    },
+    "Sticky Foam": {
+        "internalID": "StickyFoam",
+        "description": null,
+        "flavor": "This stuff was vile. It smelled worse than the Malakim Destroyers who sprayed it on the battlefield. I guess when you\u2019re as bad a shot as they were, you needed every technological advantage to hold down your enemy.",
+        "traits": {
+            "Immobilizing": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\StickyFoam.png"
+    },
+    "Subjugator": {
+        "internalID": "Subjugator",
+        "description": null,
+        "flavor": "Whoever designed the Acrins\u2019 weapons didn\u2019t just optimize them for their monstrous bodies\u2014they designed them to damage biological life without killing them. Any humans who survived the initial Acrin attack\u2014the soldiers were ready to capture and enslave all of them.",
+        "traits": {
+            "Concussive": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Subjugator.png"
+    },
+    "Surthodai's Hand": {
+        "internalID": "SurthodaisHand",
+        "description": null,
+        "flavor": "The Surthodai's twitching fingers could give anyone\u2026 what did they call it? \u201cChirophobia?\u201d What scared me was how if you found yourself in the monster's grip, for a split second, you'd feel its fingers draw back. Like some part of it didn't want to hurt you. But then they closed tight and cracked your bones apart.",
+        "traits": {
+            "Crippling": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SurthodaisHand.png"
+    },
+    "Tachyon Cannon": {
+        "internalID": "TachyonCannon",
+        "description": null,
+        "flavor": "I felt something really bad in my gut the day I realized what powered Tachyon tech: Time. Or something *wrong* with time. Whenever we fired the cannon, we were cashing in on power we had no way of controlling. Was the time damage in the future? In the past? Or\u2026 both at once? When would we find out? We thought we were so damn smart. We knew nothing of what we were playing with.",
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 9.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\TachyonCannon.png"
+    },
+    "Tachyon Ray": {
+        "internalID": "TachyonRay",
+        "description": null,
+        "flavor": "Humans were never meant to wield so much power, but human history was already a long line of bad decisions. Why not take the most powerful forces in the universe and put them inside a gun? We had nothing left to lose and everything to gain.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\TachyonRay.png"
+    },
+    "The Fog": {
+        "internalID": "TheFog",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 12.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Features\\TheFog.png"
+    },
+    "Valkyria Autocannon": {
+        "internalID": "ValkyrieAutocannon",
+        "description": null,
+        "flavor": "The Valkyria suits fused the pilots\u2019 nerves with the weaponry, and they could fire the Autocannon with the twitch of a finger. If you looked in the cockpit, you\u2019d see how still they kept their hands, waiting until the moment it was time to unleash hell.",
+        "traits": {},
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ValkyrieAutocannon.png"
+    },
+    "Volcano": {
+        "internalID": "Volcano",
+        "description": null,
+        "flavor": null,
+        "traits": {},
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Volcano.png"
+    },
+    "Vorodai Proselyte": {
+        "internalID": "VorodaiProselyte",
+        "description": null,
+        "flavor": "One person could never hope to summon a Vorodai on their own. But a piece of their power? A silver claw that reached out from the Bleed to slice at your enemy? That was good enough.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\VorodaiProselyte.png"
+    }
+}

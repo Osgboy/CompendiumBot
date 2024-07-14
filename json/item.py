@@ -14,7 +14,7 @@ class Item(Obj):
     def get_ability(self):
         try:
             self.ability = ET.tostring(self.tree.find(
-                'actions'), encoding='unicode')[:1024]
+                'actions'), encoding='unicode')
         except TypeError:
             pass
 
@@ -49,7 +49,7 @@ class ZItem(Item):
     def get_branch(self):
         self.branch = self.tree.getroot().get('branch')
 
-    def get_buy_conditions(self):
+    def get_buy_condition(self):
         try:
             buyConditionID = self.tree.find('buyConditions').find(
                 'player').find('unlockedTrait').get('type')

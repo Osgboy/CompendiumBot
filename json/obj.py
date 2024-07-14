@@ -2,7 +2,7 @@ from lxml import etree as ET
 from thefuzz import fuzz
 from re import sub as sub
 from typing import Callable
-
+from os.path import join as pathJoin
 
 class Obj():
     GAME: str
@@ -10,9 +10,9 @@ class Obj():
 
     def __init__(self, name: str):
         self.name: str = name.casefold()
-        self.ENGLISH_DIR: str = './' + self.GAME + '/English/'
-        self.CLASS_DIR: str = './' + self.GAME + '/' + self.OBJ_CLASS + '/'
-        self.CLASS_XML_PATH: str = self.ENGLISH_DIR + self.OBJ_CLASS + '.xml'
+        self.ENGLISH_DIR: str = pathJoin(self.GAME, 'English')
+        self.CLASS_DIR: str = pathJoin(self.GAME, self.OBJ_CLASS)
+        self.CLASS_XML_PATH: str = pathJoin(self.ENGLISH_DIR, self.OBJ_CLASS + '.xml')
         self.found = False
         self.bestMatch: str
         self.internalID: str
@@ -52,7 +52,7 @@ class Obj():
     def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         '''Gets internal ID, XML path, XML tree, flavor, and description.'''
         self.internalID = entry.get('name')
-        self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
+        self.XMLPath = pathJoin(self.CLASS_DIR, self.internalID + '.xml')
         try:
             self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
                 recover=True, remove_comments=True))
@@ -74,7 +74,7 @@ class Obj():
     def get_obj_min_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         '''Gets internal ID, XML path, and XML tree.'''
         self.internalID = entry.get('name')
-        self.XMLPath = self.CLASS_DIR + self.internalID + '.xml'
+        self.XMLPath = pathJoin(self.CLASS_DIR, self.internalID + '.xml')
         try:
             self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
                 recover=True, remove_comments=True))
@@ -89,8 +89,8 @@ class Obj():
 
 
 def ID2name(internalID: str, game: str, objClass: str) -> str:
-    englishDir = './' + game + '/English/'
-    classXMLPath = englishDir + objClass + '.xml'
+    englishDir = pathJoin(game, 'English')
+    classXMLPath = pathJoin(englishDir, objClass + '.xml')
     tree = ET.parse(classXMLPath, parser=ET.XMLParser(
         recover=True, remove_comments=True))
     xmlTree = tree.getroot()
@@ -103,7 +103,7 @@ def ID2name(internalID: str, game: str, objClass: str) -> str:
 def val2val(value: str, englishDir: str) -> str:
     def valFromFile(matchobj):
         file, name = matchobj.group(1), matchobj.group(2)
-        tree = ET.parse(englishDir + file + '.xml',
+        tree = ET.parse(pathJoin(englishDir, file + '.xml'),
                         parser=ET.XMLParser(recover=True, remove_comments=True))
         xmlTree = tree.getroot()
         for entry in xmlTree.iterdescendants('entry'):

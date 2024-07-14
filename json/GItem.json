@@ -1,0 +1,290 @@
+{
+    "Aegis Harness": {
+        "internalID": "AegisHarness",
+        "description": "Item that blocks the damage and effects of the next enemy psychic power.",
+        "flavor": "Imbued with psycho-conductive filaments and hexagrammic wards, Aegis armour represents perhaps the Imperium's most effective defence against psychic attack. Most commonly employed by the Inquisition's Ordo Malleus in their crusade to purge the taint of Chaos from the galaxy.",
+        "ability": "<actions>\n\t\t<genericUnitAbility cooldown=\"3\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"PsychicBlock\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\AegisHarness.png"
+    },
+    "Adamantium Weave Vest": {
+        "internalID": "AdamantiumWeaveVest",
+        "description": "Item that increases the armour.",
+        "flavor": "When you want to make something invulnerable, you make it from adamantium. Used in the construction of both Terminator Armour or the construction of Titans, this is the strongest material known to man. This vest only has a tiny amount in it, woven in with plasteel and ceramite, but it's enough to make it exceedingly protective.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/AdamantiumWeaveVest\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\AdamantiumWeaveVest.png"
+    },
+    "Armaplas Bracers": {
+        "internalID": "ArmaplasBracers",
+        "description": "Item that increases the armour.",
+        "flavor": "Made of the same material as the Imperial Carapace Armour, these matched sets of arm shields mildly increase the wearer's survivability. It's the built-in tactical cogitators, however, that give the wearer a much better hope of living through the next fight.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ArmaplasBracers\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\ArmaplasBracers.png"
+    },
+    "Axe of Blind Fury": {
+        "internalID": "AxeOfBlindFury",
+        "description": "Item that grants a cleave effect to all melee weapons.",
+        "flavor": "Bound within this fabled axe is the essence of a Greater Daemon. It rages against its eternity of servitude, resulting in grievous violence against the enemy and, sometimes, its owner!",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/AxeOfBlindFury\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\AxeOfBlindFury.png"
+    },
+    "Blight Grenade": {
+        "internalID": "BlightGrenade",
+        "description": "Item that deals damage to the target enemy infantry or monstrous creature unit.",
+        "flavor": "The use of the diseases contained in Blight Grenades was a war crime in ancient history. Modern examples are rare, but the Chaos Marines of Nurgle often create their own, with the shrapnel forcing lethal pathogens into the tiniest cracks in armour.",
+        "ability": "<actions>\n\t\t<blightGrenade charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Blighted\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</blightGrenade>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\BlightGrenade.png"
+    },
+    "Blind Grenade": {
+        "internalID": "BlindGrenade",
+        "description": "Item that reduces the accuracy of the target enemy infantry or monstrous creature unit.",
+        "flavor": "Blind grenades are a more complex version of a smoke grenade, releasing a dense dark grey smoke cloud, as well as infrared bafflers, broad spectrum electromagnetic radiation and chaff to disrupt enemy scanners. The broad range of interference makes most forms of direct attack through it impossible for a short time.",
+        "ability": "<actions>\n\t\t<blindGrenade charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Blind\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</blindGrenade>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\BlindGrenade.png"
+    },
+    "Combat Stimulant": {
+        "internalID": "CombatStimulant",
+        "description": "Item that increases the damage.",
+        "flavor": "Combat Stimulants like Frenzon or Onslaught are regarded with distaste by most species, given that their manufacture and testing sometimes require the liquidation of innocent victims (especially if Slaaneshi cults are involved). Despite this, the Imperial forces dispense these regularly to both Penal Legions and the much-feared Eversor Assassins.",
+        "ability": "<actions>\n\t\t<combatStimulant charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Items/CombatStimulant\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</combatStimulant>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\CombatStimulant.png"
+    },
+    "Concealed Weapon System": {
+        "internalID": "ConcealedWeaponSystem",
+        "description": "Item that increases the attacks.",
+        "flavor": "Hiding a weapon isn't a new idea, but a true Concealed Weapon System secretes the killing tool in such a way that it's undetectable until use\u2014as clothing, jewellery or even as biological elements. The element of surprise heavily increases its efficacy.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ConcealedWeaponSystem\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\ConcealedWeaponSystem.png"
+    },
+    "Dimensional Key": {
+        "internalID": "DimensionalKey",
+        "description": "Item that allows the hero to teleport to an explored tile.",
+        "flavor": "This ancient key is carved from the thighbone of a Daemon Prince. When thrust into the heart of a dying warrior, it unlocks the barriers between worlds: a howling gale of Chaos blows, disorienting any nearby mortals not pledged to the Dark Gods. Worse still, the key guides those nearing the battlefield through the Warp.",
+        "ability": "<actions>\n\t\t<dimensionalKey cooldown=\"5\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/GateOfInfinity\"/>\n\t\t\t</model>\n\t\t</dimensionalKey>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\DimensionalKey.png"
+    },
+    "Dusk Blade": {
+        "internalID": "DuskBlade",
+        "description": "Item that grants life steal to all melee weapons.",
+        "flavor": "The Dawn Blade that the traitor Commander Farsight discovered was unique\u2014but to erase his memory Earth Caste artisans and Water Caste diplomats created this weapon for Coldflame. It may look the same as the iconic Dawn Blade, but it possesses none of its unearthly power\u2014instead, the advanced medical technology embedded in it can draw on the battlesuit\u2019s power to heal the wielder.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/DuskBlade\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\DuskBlade.png"
+    },
+    "Endurance Implant": {
+        "internalID": "EnduranceImplant",
+        "description": "Item that increases the movement.",
+        "flavor": "An atypical Jokaero device, this implant weaves its way into the host organism, to optimise its biological systems. Its user will find itself tireless, able to run faster, fight for longer, and generally keep going\u2014until its overwrought body gives way, that is.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/EnduranceImplant\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\EnduranceImplant.png"
+    },
+    "Entropic Locum": {
+        "internalID": "EntropicLocum",
+        "description": "Item that increases the armour penetration.",
+        "flavor": "Apparently using similar design principles to a Graviton Gun, this Jokaero device can be used alongside a gunsight or parallel to a weapon\u2019s blade. When activated, it causes the molecules in a very small volume of the target to become disordered and collapse inwards, leading to a single weak spot on the target that your weapon just happens to already be pointing at.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/EntropicLocum\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\EntropicLocum.png"
+    },
+    "Faolch\u00fa's Wing": {
+        "internalID": "FaolchusWing",
+        "description": "Item that consumes action to increase movement.",
+        "flavor": "When Eldanesh fell battling Khaine, the great falcon Faolch\u00fa was disconsolate. Faolch\u00fa gifted a single golden pinfeather to Eldanesh\u2019s heirs, that perhaps its swiftness might aid them where her own had failed. Legend tells that this artefact is that selfsame token of grief, handed down through generations of Aeldari, and surviving even the tumult of the Fall.",
+        "ability": "<actions>\n\t\t<faolchusWing cooldown=\"1\" consumedMovement=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/MysticBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/FaolchusWing\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</faolchusWing>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\FaolchusWing.png"
+    },
+    "Forbidden Knowledge": {
+        "internalID": "ForbiddenKnowledge",
+        "description": "Item that increases the level.",
+        "flavor": "This box of black stone is heavily inscribed in ancient runes, possibly Exodite, possibly Old One. Who knows what it holds? Whispered secrets an aeon-old? Deadly traps? Miracles of knowledge long thought lost? Unholy power from unholy gods? Only a soul brave enough to open it and discover for themselves will ever know\u2026",
+        "ability": "<actions>\n\t\t<forbiddenKnowledge charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/MysticBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<level add=\"1\"/>\n\t\t\t\t\t\t\t\t\t\t<influencePerExperience max=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t<researchPerExperience max=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</forbiddenKnowledge>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\ForbiddenKnowledge.png"
+    },
+    "Jokaero Digital Weapon": {
+        "internalID": "JokaeroDigitalWeapon",
+        "description": "Item that deals damage to the target enemy unit.",
+        "flavor": "Miniaturized killing tools of remarkable power, commonly concealed within jewellery, and created by a race of primate-like xenos with an apparently instinctive understanding of technology. The Imperium has, as yet, been unable to replicate the construction of these digi-weapons.",
+        "ability": "<actions>\n\t\t<jokaeroDigitalWeapon consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" icon=\"Items/JokaeroDigitalWeapon\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Weapons/StaffOfLight\" soundCount=\"3\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\" lineOfSight=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"JokaeroDigitalWeapon\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</jokaeroDigitalWeapon>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\JokaeroDigitalWeapon.png"
+    },
+    "Laurels of Command": {
+        "internalID": "LaurelsOfCommand",
+        "description": "Item that restores the morale of this unit and nearby allied units in range.",
+        "flavor": "The Laurels of Command are a callous and controversial means to ensure obedience. Concealed within their peerless artistry is a band of empathic-impulsion circuitry which allows the wearer limited control over the minds of indoctrinated individuals via subliminal suggestion. Under their effects even cowards fight to the last, while orders are executed in perfect synchronisation.",
+        "ability": "<actions>\n\t\t<laurelsOfCommand cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" icon=\"Items/LaurelsOfCommand\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/MysticBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</laurelsOfCommand>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\LaurelsOfCommand.png"
+    },
+    "Lightning Gauntlet": {
+        "internalID": "LightningGauntlet",
+        "description": "Item that increases the damage of the next melee attack.",
+        "flavor": "With talons created from adamantium and the telltale blue glow of a power weapon, Lightning Claws are normally only mounted on Terminator armour. However rare single gauntlets can be found small enough to be carried by a normal warrior.",
+        "ability": "<actions>\n\t\t<genericUnitAbility cooldown=\"3\" passive=\"1\">\n\t\t\t<combatEndedProcessUseConditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<firingMeleeWeapons/>\n\t\t\t\t</unit>\n\t\t\t</combatEndedProcessUseConditions>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/LightningGauntlet\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\LightningGauntlet.png"
+    },
+    "Man-Catcher": {
+        "internalID": "ManCatcher",
+        "description": "Item that reduces the movement of the target enemy unit.",
+        "flavor": "An ancient capture device whose spiked collar violently dissuades its prisoner from attempting escape, and may loosen their tongue to boot. Though most consider it too primitive a weapon, a handful of Inquisitors are resolute that its simple barbarism achieves results that more contemporary methods simply cannot.",
+        "ability": "<actions>\n\t\t<poweredBolas cooldown=\"2\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Slowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</poweredBolas>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\ManCatcher.png"
+    },
+    "Mourning Blade Of Lazaerek": {
+        "internalID": "MourningBladeOfLazaerek",
+        "description": "Item that increases the melee damage and melee armour penetration.",
+        "flavor": "Little survived when an apparently disastrous jump saw the last remnants of the Fire Hawks Chapter lost to the warp in 963.M41, but a few alleged relics yet remain. This axe was thought to belong to their rancorous grand master, Stibor Lazaerek, under whose command the Chapter's ranks were decimated during the lethal rebellions of the Badab War.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/MourningBladeOfLazaerek\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\MourningBladeOfLazaerek.png"
+    },
+    "Omni-Scope": {
+        "internalID": "OmniScope",
+        "description": "Item that increases the ranged accuracy.",
+        "flavor": "A rare Imperial weapon sight, the Omni-Scope consists of a precision lens aligned to a cluster of sensors, including telescopic and multi-spectrum vision modes. The user can either use the sight manually or through a direct input that plugs into bionics, biologics or other interfaces. The latter interface enables remote sight and control with any weapon\u2014making it favoured by assassins Imperium-wide.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/OmniScope\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\OmniScope.png"
+    },
+    "Powered Bolas": {
+        "internalID": "PoweredBolas",
+        "description": "Item that reduces the movement of the target enemy unit.",
+        "flavor": "On the Imperium's savannah worlds, the local forces often adopt these traditional devices, taken from the local Grox herders. The three-powered weights at the end of the wire do little harm to the target\u2014but so thoroughly entangle it that it can be dealt with at leisure.",
+        "ability": "<actions>\n\t\t<poweredBolas charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Slowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</poweredBolas>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\PoweredBolas.png"
+    },
+    "Powered Gauntlet": {
+        "internalID": "PoweredGauntlet",
+        "description": "Item that increases the melee damage.",
+        "flavor": "This may look like a simple steel glove, with randomly-placed technology all over it. Yet, as the Administratum say, 'caveat emptor'\u2014for the Jokaero technology in it makes it the match of the larger power fists and power claws employed by the Imperial and Ork forces.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/PoweredGauntlet\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\PoweredGauntlet.png"
+    },
+    "Recovery Package": {
+        "internalID": "RecoveryPackage",
+        "description": "Item that restores the hitpoints.",
+        "flavor": "This medkit has been thrown together with little sense or reason, perhaps by a Jokaero or an Ork Mad Dok with an instinctive sense of medicine, but there's no doubting the efficacy of its contents. Whatever the injury, there's a neatly-mislabelled package in here that will fix it.",
+        "ability": "<actions>\n\t\t<mediPack charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/MysticBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"0.25\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</mediPack>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\RecoveryPackage.png"
+    },
+    "Scrolls of Magnus": {
+        "internalID": "ScrollsOfMagnus",
+        "description": "Item that increases the research output.",
+        "flavor": "These illuminated pages of skin are fragments of the repository of sorcery compiled by the Primarch of the Thousand Sons, and contain arcane lore from across the galaxy. None possess them for long and remain sane, for they have their own ghastly sentience.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ScrollsOfMagnus\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\ScrollsOfMagnus.png"
+    },
+    "Sightless Helm": {
+        "internalID": "SightlessHelm",
+        "description": "Item that grants the ability to ignore ranged damage reduction and increases the ranged accuracy.",
+        "flavor": "The lenses of this helm remain forever dark, the wearer unable to perceive the galaxy with their own eyes. Instead, strange warp senses are granted by the helms machine spirit, illuminating the foe\u2019s weaknesses.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/SightlessHelm\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\SightlessHelm.png"
+    },
+    "Stun Grenade": {
+        "internalID": "StunGrenade",
+        "description": "Item that prevents the target enemy infantry or monstrous creature from acting.",
+        "flavor": "An ancient design, Stun grenades use a combination of a loud explosion and a bright flash to temporarily disable any combatants in the blast area.",
+        "ability": "<actions>\n\t\t<stunGrenade charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" icon=\"Items/StunGrenade\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Stunned\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Stunned\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</stunGrenade>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\StunGrenade.png"
+    },
+    "Tantalising Icon": {
+        "internalID": "TantalisingIcon",
+        "description": "Item that increases the influence output.",
+        "flavor": "Carved from wraithbone stolen from the hearts of fallen Craftworlds, this elongated form represents Slaanesh in all their glory. Few mortal eyes could rest upon this icon and not lust for it\u2014for Slaanesh\u2014and begin their fall from grace.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/TantalisingIcon\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\TantalisingIcon.png"
+    },
+    "Temporary Shield": {
+        "internalID": "TemporaryShield",
+        "description": "Item that increases the armour.",
+        "flavor": "Portable shield generators are fairly rare amongst most species, given the technical capability and rare resources needed to make them. They also burn out quickly, but their ability to stop even the most powerful attacks dead in their tracks make them invaluable.",
+        "ability": "<actions>\n\t\t<temporaryShield charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Items/TemporaryShield\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</temporaryShield>\n\t</actions>\n\t",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "iconPath": "Gladius\\Icons\\Items\\TemporaryShield.png"
+    },
+    "Ultra Wideband Auspex": {
+        "internalID": "UltraWidebandAuspex",
+        "description": "Item that prevents the unit from being targeted by overwatch attacks.",
+        "flavor": "To hide yourself, you don\u2019t always need diffraction fields or chameleonic skin\u2014sometimes just knowing more than the enemy is enough. An advanced Auspex uses passive and active sensors to discern the location of every enemy unit so the bearer can decide how best to engage them\u2014or avoid them\u2014at will.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/UltraWidebandAuspex\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\UltraWidebandAuspex.png"
+    },
+    "Uncreator Gauntlet": {
+        "internalID": "UncreatorGauntlet",
+        "description": "Item that repairs an adjacent allied vehicle or fortification.",
+        "flavor": "The Uncreator Gauntlet was originally devised to reverse-engineer lost technologies. When laid upon a machine, xenotech fields are released that cause the construct\u2019s chronology to be wound back. If the timing is accurate to the picosecond, the temporal anomaly can rejuvenate the machine to the prime of its operative lifespan \u2013 or go on to reduce it to a neatly-arrayed pile of component parts, each ready for the Tech-Priest\u2019s inspection.",
+        "ability": "<actions>\n\t\t<uncreatorGauntlet consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" icon=\"Items/UncreatorGauntlet\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/Heal\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\" lineOfSight=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</uncreatorGauntlet>\n\t</actions>\n\t",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "iconPath": "Gladius\\Icons\\Items\\UncreatorGauntlet.png"
+    },
+    "Volcanis Shroud": {
+        "internalID": "VolcanisShroud",
+        "description": "Item that increases the witchfire damage reduction.",
+        "flavor": "Though this battered, heat-resistant armour was originally designed for industrial work at the deepest and most hazardous layers of Hive Worlds, by some happy accident it also muffles psychic attack. As yet, whatever gives the Shroud this quality has not been identified, for fear that reverse-engineering it may break its uncanny spell.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/VolcanisShroud\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\VolcanisShroud.png"
+    },
+    "Zoat Hide Jerkin": {
+        "internalID": "ZoatHideJerkin",
+        "description": "Item that increases the hitpoints and healing rate.",
+        "flavor": "The Zoat, a genetically-engineered slave race in the thrall of the Tyranids, have been all but absent from the galaxy for generations. Though renowned for their unusual intelligence and charisma, their dense, scaled skin also made them a frighteningly resilient foe. Zoat-hide armour is vanishingly rare now, but a true boon upon the battlefield.",
+        "ability": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ZoatHideJerkin\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "iconPath": "Gladius\\Icons\\Items\\ZoatHideJerkin.png"
+    }
+}

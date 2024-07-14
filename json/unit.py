@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from lxml import etree as ET
-from obj import Obj, ID2name
-from weapon import Weapon, GWeaponStats
-from trait import Trait
-from action import Action
+from os.path import join as pathJoin
+from os.path import normpath
+from obj import Obj, ID2name, val2val
+from weapon import GUnitWeaponStats
 
 
 @dataclass  # (slots=True)
@@ -60,27 +60,27 @@ class ZResourceStats:
 class GCombatStats:
     __slots__ = ['groupSizeMax', 'armor', 'hitpointsMax', 'moraleMax',
                  'movementMax', 'cargoSlots', 'itemSlots']
-    groupSizeMax: str
-    armor: str
-    hitpointsMax: str
-    moraleMax: str
-    movementMax: str
-    cargoSlots: str
-    itemSlots: str
+    groupSizeMax: int
+    armor: int
+    hitpointsMax: float
+    moraleMax: int
+    movementMax: int
+    cargoSlots: int
+    itemSlots: int
 
 
 @dataclass  # (slots=True)
 class ZCombatStats:
     __slots__ = ['groupSizeMax', 'accuracy', 'armor', 'hitpointsMax',
                  'moraleMax', 'movementMax', 'cargoSlots', 'itemSlots']
-    groupSizeMax: str
-    accuracy: str
-    armor: str
-    hitpointsMax: str
-    moraleMax: str
-    movementMax: str
-    cargoSlots: str
-    itemSlots: str
+    groupSizeMax: int
+    accuracy: int
+    armor: int
+    hitpointsMax: int
+    moraleMax: int
+    movementMax: int
+    cargoSlots: int
+    itemSlots: int
 
 
 class Unit(Obj):
@@ -94,9 +94,9 @@ class Unit(Obj):
         self.combatStats: dataclass
         self.weaponStats: dataclass
         # Weapons and traits
-        self.weapons = {}
-        self.traits = {}
-        self.actions = {}
+        self.weapons: dict[str, dict] = {}
+        self.traits: dict[str, str] = {}
+        self.actions: dict[str, str] = {}
 
     def get_stats(self):
         xmlStats = self.tree.find('modifiers').find('modifier').find('effects')
@@ -108,12 +108,12 @@ class Unit(Obj):
         for stat in self.combatStats.__slots__:
             statEntry = xmlStats.find(stat)
             if statEntry is not None:
-                if self.GAME == 'Gladius' and stat == 'hitpointsMax':
-                    setattr(self.combatStats, stat, str(
-                        round(float(statEntry.get('base')))))
-                else:
-                    setattr(self.combatStats, stat,
-                            statEntry.get('base', default='0'))
+                value = statEntry.get('base', default=0)
+                try:
+                    value = int(value)
+                except ValueError:
+                    value = float(value)
+                setattr(self.combatStats, stat, value)
 
     def get_weapons(self):
         if self.GAME == 'Gladius':
@@ -125,8 +125,10 @@ class Unit(Obj):
                 if (weaponID := weapon.get(attrName)) == 'None':
                     continue
                 weaponName = ID2name(weaponID, self.GAME, 'Weapons')
-                self.weapons[weaponName] = (weapon.get('count', default='1'), weapon.get(
-                    'requiredUpgrade'), weapon.get('enabled', default="1"))
+                self.weapons[weaponName] = {
+                    'count': weapon.get('count', default='1'),
+                    'requiredUpgrade': weapon.get('requiredUpgrade'),
+                    'secondary': (lambda x: x == '0')(weapon.get('enabled', default='1'))}
         # no weapons
         except AttributeError:
             pass
@@ -170,27 +172,28 @@ class GUnit(Unit):
         self.resourceStats: dataclass = GResourceStats(
             *['0']*len(GResourceStats.__slots__))
         self.combatStats: dataclass = GCombatStats(
-            *['0']*len(GCombatStats.__slots__))
+            *[0]*len(GCombatStats.__slots__))
         self.factionAndID: str
         self.faction = 'Neutral'
 
     def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         self.factionAndID = entry.get('name')
+        factionAndIDList = self.factionAndID.split('/')
         try:
-            self.faction, self.internalID = self.factionAndID.split('/')
+            self.faction, self.internalID = factionAndIDList
         # only for Neutral/Artefacts/unit.xml
         except ValueError:
-            self.faction, self.internalID = self.factionAndID.split(
-                '/')[0], self.factionAndID.split('/')[-1]
-        self.XMLPath = self.CLASS_DIR + self.factionAndID + '.xml'
+            self.faction, self.internalID = factionAndIDList[0], factionAndIDList[-1]
+        self.XMLPath = pathJoin(
+            self.CLASS_DIR, normpath(self.factionAndID) + '.xml')
         self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
             recover=True, remove_comments=True))
         for e in xmlTree:
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':
-                self.description = e.get('value')
+                self.description = val2val(e.get('value'), self.ENGLISH_DIR)
             elif targetStr == self.factionAndID + 'Flavor':
-                self.flavor = e.get('value')
+                self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
 
     def get_group_size(self):
         groupEntry = self.tree.find('group')
@@ -200,12 +203,12 @@ class GUnit(Unit):
             self.combatStats.groupSizeMax = groupEntry.get('size')
 
     def get_weapon_stats(self):
-        self.weaponStats = GWeaponStats('6', '6', '1', '1')
+        self.weaponStats = GUnitWeaponStats(6, 6, 1, 1)
         xmlStats = self.tree.find('modifiers').find('modifier').find('effects')
         for statName in self.weaponStats.__slots__:
             statEntry = xmlStats.find(statName)
             if statEntry is not None and (statValue := statEntry.get('base')) is not None:
-                setattr(self.weaponStats, statName, statValue)
+                setattr(self.weaponStats, statName, float(statValue))
 
 
 class ZUnit(Unit):
@@ -227,5 +230,8 @@ class ZUnit(Unit):
             self.branch = 'Neutral'
 
     def get_accuracy(self):
-        self.combatStats.accuracy = self.tree.find('modifiers').find(
-            'modifier').find('effects').find('accuracy').get('base', default='6')
+        try:
+            self.combatStats.accuracy = self.tree.find('modifiers').find(
+                'modifier').find('effects').find('accuracy').get('base', default='6')
+        except AttributeError:
+            self.combatStats.accuracy = '6'
