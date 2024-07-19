@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<perBuildingInOtherOwnCitiesModifier effectDescription="HumanAircraftUpgrade">
+			<perBuildingConditions>
+				<building>
+					<type name="HumanAircraft"/>
+				</building>
+			</perBuildingConditions>
+			<effects>
+				<influence add="2"/>
+			</effects>
+		</perBuildingInOtherOwnCitiesModifier>
+	</modifiers>
+</trait>

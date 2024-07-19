@@ -3,7 +3,8 @@
 	<actions>
 		<playerCast name="AntiparticlePurge">
 			<model>
-				<cast blueprint="Effects/AntiparticlePurge" targetsTile="1"/>
+				<cast blueprint="Effects/AntiparticlePurge"
+						targetsTile="1"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="-1">
@@ -137,6 +138,117 @@
 					</effects>
 				</modifier>
 			</scoreModifiers>		
+		</playerCast>
+		<playerCast name="AtramentousAura">
+			<model>
+				<cast blueprint=""
+						sound=""/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToTargetAndAdjacentAlliedUnits">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="AtramentousAura" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="BlackHole">
+			<model>
+				<cast blueprint=""
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<removeFeature type="Bleed"/>
+										<removeFeature type="Forest"/>
+										<removeFeature type="Ruins"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<weaponDamage weapon="BlackHole"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<addTrait type="BlackHole" duration="3"/> 
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<!-- TODO: HorizonExpansion trait radius 2, onTurnStarted pull -->
+						<area affect="Tile">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addFeature type="BlackHole" duration="3"/>
+									</effects>
+								</modifier>
+								<!-- If you want pull vfx:
+								<modifier requiredUpgrade="HorizonExpansion" visible="0>
+									<effects>
+										<addFeature type="HorizonExpansion" duration="3"/>
+									</effects>
+								</modifier> -->
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+						</targetTile>
+						<targetUnit>
+							<enemy/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 		<playerCast name="ExperimentalDrugs">
 			<model>
@@ -385,6 +497,16 @@
 				</modifier>
 			</modifiers>
 		</playerAction>
+		<playerAction name="PayResources/MassConfession"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerAction name="PayResources/MeetYourMaker"
 				durationInSeconds="0.1">
 			<modifiers>
@@ -418,6 +540,58 @@
 				</modifier>
 			</modifiers>
 		</playerAction>
+		<playerAction name="PayResources/ThickerThanWater"
+				durationInSeconds="0.1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<foodCost base="20"/>
+						<mineralsCost base="20"/>
+						<energyCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		
+		<playerCast name="Rejuvenation" cooldown="10">
+			<model>
+				<cast blueprint="Effects/Rejuvenation"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+										<morale add="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+							<enemyStrengthInTheArea greater="0"/>
+						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
 		<playerCast name="SatelliteScan">
 			<model>
 				<cast blueprint="Effects/SatteliteScan"
@@ -445,6 +619,70 @@
 							<enemyStrengthInTheArea greater="0"/>
 							<noSighted/>
 						</targetTile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="TacticalNuclearMissile">
+			<model>
+				<cast blueprint="Effects/TacticalNuclearMissile"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<removeFeature type="Bleed"/>
+										<removeFeature type="Forest"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<weaponDamage weapon="TacticalNuclearMissile"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Unit" radius="1" excludeTarget="1">
+							<modifiers>
+								<modifier effectDescription="OnAdjacentTilesToTarget">
+									<effects>
+										<weaponDamage weapon="TacticalNuclearMissileAdjacent"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<addFeature type="NuclearFallout" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<targetTile>
+							<alliedStrengthInTheArea greater="0"/>
+						</targetTile>
+						<targetUnit>
+							<enemy/>
+						</targetUnit>
 					</conditions>
 					<effects>
 						<score add="1.0"/>

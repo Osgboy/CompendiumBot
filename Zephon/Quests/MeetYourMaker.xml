@@ -1,7 +1,6 @@
-<quest image="Factions/FallenSoldier">
+<quest firstTurn="40" image="Factions/FallenSoldier">
  	<conditions>
 		<player>
-			<!-- <turn greater="40"/> -->
 			<faction name="FallenSoldier"/>
 		</player>
 	</conditions>
@@ -18,10 +17,12 @@
 				<nearCityTileSelector count="1" targetDistance="12">
 					<conditions>
 						<tile>
+							<land/>
 							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -37,7 +38,7 @@
 		</stage>
 		<stage name="ZephonFacilitySuccess">
 			<options>
-				<option name="Investigate" nextStage="GatherResources"/>
+				<option name="Investigate" nextStage="WaitForYetunde"/>
 				<option name="Ignore" nextStage=""/>
 			</options>
 		</stage>
@@ -48,8 +49,52 @@
 		</stage>
 		<stage name="VoiceAcolytesSuccess">
 			<options>
-				<option name="Investigate" nextStage="GatherResources"/>
+				<option name="Investigate" nextStage="WaitForYetunde"/>
 				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>		
+		<stage name="WaitForYetunde" nextStageOnSuccess="WaitForYetundeSuccess">
+			<objectives>
+				<wait name="WaitForYetunde" turns="5"/>
+			</objectives>
+		</stage>
+		<stage name="WaitForYetundeSuccess">
+			<options>
+				<option name="Defend" nextStage="Defend"/>
+			</options>
+		</stage>
+		<stage name="Defend" nextStageOnSuccess="DefendSuccess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion strength="12" waves="3">
+					<attackers>
+						<unit type="Militant" count="1"/>
+						<unit type="MissileTeam" count="1"/>
+						<unit type="AbkluthDragoon" count="1"/>
+						<unit type="AegyllanWorm" count="1"/>
+						<unit type="IshimEnforcer" count="1"/>
+						<unit type="MalakimDestroyer" count="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>		
+		<stage name="DefendSuccess">
+			<options>
+				<option name="GatherResources" nextStage="GatherResources"/>
 			</options>
 		</stage>		
 		<stage name="GatherResources" nextStageOnSuccess="GatherResourcesSuccess">
@@ -71,14 +116,44 @@
 			</modifications>
 			<objectives>
 				<executePlayerOrder name="ExecuteOrder"
-						orderName="PayResources/MeetYourMaker" turns="30"/>
+						orderName="PayResources/MeetYourMaker"/>
 			</objectives>
 		</stage>
 		<stage name="GatherResourcesSuccess">
 			<options>
-				<option name="Confront" nextStage="GatherResourcesSuccess2"/>
+				<option name="HoldFire" nextStage="HoldFire"/>
+				<option name="Shoot" nextStage="Shoot"/>
 			</options>
 		</stage>
-		<stage name="GatherResourcesSuccess2"/>
+		<stage name="HoldFire">
+			<modifications>
+				<nearStartCitySelector count="1"/>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="YetundesCausalNexus"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Shoot">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="UncannyEyes"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 	</stages>
- </quest>
+</quest>

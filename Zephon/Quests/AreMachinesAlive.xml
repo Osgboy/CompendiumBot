@@ -1,17 +1,16 @@
-<quest>
- 	<conditions>
-<!-- 		<player>
-			<turn greater="40"/>
-		</player> -->
-	</conditions>
+<quest firstTurn="40">
 	<stages>
 		<stage name="Intro">
 			<modifications>
 				<nearCityTileSelector count="1">
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
 					</conditions>

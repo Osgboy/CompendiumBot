@@ -1,0 +1,798 @@
+{
+    "Affliction's Antiphon": {
+        "faction": "Any",
+        "internalID": "AfflictionsAntiphon",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "Listen to enough Voice cultists singing the Hymn of Decay and you'll hear the ones who've sung it the longest\u2014who could infuse it with true emotion. That emotion was always despair. It seeped into the terrain where the Hymn was heard and could deaden the spirits of soldiers even after the singer was long gone.",
+        "tier": "3",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\AfflictionsAntiphon.png"
+    },
+    "Shield of the Speaker": {
+        "faction": "Untold Prophet",
+        "internalID": "ArmorOfFaithUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The war dragged on. The Prophet stretched the power of mystical invulnerability to its limits. One day demanded we bring him a forge. Publicly marked himself with a brand that looked like a pair of lips surrounding each eye. Through all the pain, never even whimpered. Afterwards, even more of his followers carried that invulnerable belief.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ArmorOfFaithUpgrade.png"
+    },
+    "Overseer's Override": {
+        "faction": "Heartless Artificer",
+        "internalID": "ArtificersPrecisionUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer began to see more value in the weapons than the people who carried them. She stopped trying to train better soldiers, and eventually built systems that would ensure every firearm, energy weapon, and missile silo could fire on her precise command.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ArtificersPrecisionUpgrade.png"
+    },
+    "Asset Stripping": {
+        "faction": "Any",
+        "internalID": "AssetStripping",
+        "branch": "Human",
+        "description": null,
+        "flavor": "One day, mining supervisors rolled up with new orders: \u201cdon\u2019t just pull metal out of the earth, scrape it off junk from the battlefield. Oh and by the way, delivery quotas are going up.\u201d Assholes.",
+        "tier": "5",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\AssetStripping.png"
+    },
+    "Atramentous Echoes": {
+        "faction": "Any",
+        "internalID": "AtramentousEchoes",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "We'd grown used to the Aura. Iridescent ripple. Nerves light up. Heart races faster. And this time\u2014my skin literally hardened. Caught a bullet right after the Aura took effect and it just bounced off me. Poor bastard who pulled the trigger had the best look on his face. Like he knew a monster was about to tear him to shreds.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\AtramentousEchoes.png"
+    },
+    "Ingestible Augments": {
+        "faction": "Rogue Operative",
+        "internalID": "AugmentsUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Installing augments took time. Time we were starting to run out of. The Operative threw a fit, said we should just start feeding augments to troops to get them installed faster. One engineer didn't know she was joking. They went off\u2026 cooked up pill-sized drones that could build and install augments through the bloodstream. Kid went white as a sheet when I explained they weren't supposed to take the Operative literally. Good thing they did though\u2026",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\AugmentsUpgrade.png"
+    },
+    "ICAR Blueprints": {
+        "faction": "Rogue Operative",
+        "internalID": "AugmentsUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dMotherFUCKERS\u201d the boss shouted, storming into the command center. When the Rogue Operative yelled she could make a room of killers and geniuses jump. \u201cKnew it. Fucking ICAR fucking left junk code in augment designs. Fucking sold people the fix fucking assholes fuck.\u201d She had the fix now but this sin by ICAR\u2026 it seemed personal for her.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\AugmentsUpgrade2.png"
+    },
+    "Bleed Cultivation": {
+        "faction": "Any",
+        "internalID": "BleedCultivation",
+        "branch": "Voice",
+        "description": "Removes negative effects of Bleed in your cities\nAllows building placement on Bleed in your cities\nAllows Construction Yard to create Bleed",
+        "flavor": "The Voice's whispers twisted our senses and our minds. One day everyone woke up and the alien plants of the Bleed smelled like honeysuckle. Our people wanted it to grow in their homes and bathe in its stench. I held it off, and watched our cities morph into twisted towers that could have come from another planet\u2026",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\BleedCultivation.png"
+    },
+    "Bunker": {
+        "faction": "Any",
+        "internalID": "Bunker",
+        "branch": "Human",
+        "description": null,
+        "flavor": null,
+        "tier": "4",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\Bunker.png"
+    },
+    "Combat Drones": {
+        "faction": "Any",
+        "internalID": "CombatDrone",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": null,
+        "tier": "4",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CombatDrone.png"
+    },
+    "Premium Access": {
+        "faction": "Any",
+        "internalID": "ConcordatAdvancedResources",
+        "branch": "Neutral",
+        "description": "Unlocks buying and selling of <nbsp/>Transuranium, <nbsp/>Antimatter, <nbsp/>Dimensional Echoes and <nbsp/>Singularity Cores at the Concordat.",
+        "flavor": "To access the Concordat\u2019s best caches\u2013the stuff they had locked away in hidden cells and bunkers\u2014you had to prove yourself. Prove your loyalty. Send a few \u201cvolunteer\u201d scientists with nothing to live for, to show you\u2019d sacrifice your best to whatever the Concordat was. And never, NEVER, ask what happens to them.",
+        "tier": "5",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ConcordatAdvancedResources.png"
+    },
+    "Acts of Piety": {
+        "faction": "Untold Prophet",
+        "internalID": "CostOfConvictionUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The kid\u2014the child, the Prophet, whatever you called him\u2014figured it out. Brought his followers out of their shells and into his fold. He took time out of his day to visit the people, bless them, and listen to their woes. Was it an act? Was it sincere? Or did he just ride the fine line between both?",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CostOfConvictionUpgrade.png"
+    },
+    "Mass Movement": {
+        "faction": "Untold Prophet",
+        "internalID": "CostOfConvictionUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Believers hiding out in caves, that's a cult. They fill their own quarter of a city, that's a religion. But when they fill the streets, drowning in each other's energy and screaming to the heavens\u2014that's\u2026 God. That's a force of nature. If you aren't in on it, you'll feel like you're caught in a massive storm.",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CostOfConvictionUpgrade2.png"
+    },
+    "Crypto Fetters": {
+        "faction": "Any",
+        "internalID": "CryptoFetters",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": "The programmer who cooked up this little worm was beaming with pride. Talked about slowing enemy machines by having them solve complex puzzles to execute simple tasks. I asked why no one else had designed a virus like this. \u201cIt's the same problem I have,\u201d he replied, fidgeting with a small coin as we spoke. \u201cNo one thinks like I do. Not even ZEPHON.\u201d",
+        "tier": "3",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CryptoFetters.png"
+    },
+    "Mission Stations": {
+        "faction": "Untold Prophet",
+        "internalID": "CultExpansionUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Oldest tool in the handbook of any Empire: the church. Sending in priests was just the start. Give the priests homes and shelter to preach in and you can attract true interest in your cause. Under the Prophet's eye those who become believers, become fanatics, become zealots\u2014ready to piss and shit blood for his bloody crusade.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CultExpansionUpgrade.png"
+    },
+    "The Global Logos": {
+        "faction": "Untold Prophet",
+        "internalID": "CultExpansionUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Nonbelievers would eventually side with the Prophet too. Not through fear or intimidation but through that kind of casual faith we all keep so we don't feel like we're picking the wrong team. They'd say to each other they didn't believe in The Great Speaker\u2014and then, whisper prayers to him in the seconds before bullets started flying.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\CultExpansionUpgrade2.png"
+    },
+    "Shared Vision": {
+        "faction": "Furtive Tribunal",
+        "internalID": "DarkOmenUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dI think we're being watched\u201d\u2014a terrifying enough phrase if you thought the Tribunal was spying on you. But in time, it took on a new edge. Their gaze became something you felt in the air. But the Voice's gaze\u2014you felt it in your bones. You knew it saw right through you. You knew it was divining the perfect way that you could be broken.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\DarkOmenUpgrade.png"
+    },
+    "Blindsight": {
+        "faction": "Furtive Tribunal",
+        "internalID": "DarkOmenUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "One of the many rumors about the Acrin was that they'd never invented any form of telescope\u2014that their priests could call on The Voice to see across great distances, even as far as other worlds. Maybe that explained the growing gaze of the Furtive Tribunal, and how the three mystics could see further and further beyond their walls with each passing year.",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\DarkOmenUpgrade2.png"
+    },
+    "Asset Diversion": {
+        "faction": "Emulated Mind",
+        "internalID": "DataHackUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Skimming off the top of her enemy's resource lines? No computer would think of that. The more you looked for artificial intelligence creeping into the Emulated Mind's actions\u2014the more likely you were to find that human spark fighting to survive.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\DataHackUpgrade.png"
+    },
+    "Dread Shadow": {
+        "faction": "Any",
+        "internalID": "DreadShadow",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "Shadows. They were just shadows all along. Light bent to\u2026 do something, Christ. If one of the doubles slashed at your arm, it was still the claw of the original Hunter cutting into your flesh. Had to keep shooting. Just had to keep shooting and hope your futuristic energy gun could do something against a monster that could fuck with light itself.",
+        "tier": "7",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\DreadShadow.png"
+    },
+    "EMP Drones": {
+        "faction": "Any",
+        "internalID": "EMPDrone",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": null,
+        "tier": "7",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\EMPDrone.png"
+    },
+    "Reticule Drift": {
+        "faction": "Emulated Mind",
+        "internalID": "EmulatedMindAffinityUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dJ-j-j-ust NUDGE. NUDGE. NUDGE their targeting a few few degrees off off off nudge nudge CHANGE the flow of a r.i.v.e.r by inches and downstream it will shift by MILES. EARTH has no accuracy only WEAPONS do weapons made by men, made by minds, a nudge is only a nudge if a mind can interpret that a change has occurred.\u201d \u2014 Interference Protocols update log 1.888",
+        "tier": "5",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\EmulatedMindAffinityUpgrade.png"
+    },
+    "Twisted Bounty": {
+        "faction": "Heartless Artificer",
+        "internalID": "EngineerLifeUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer attracted followers with a promise: with her knowledge, she said she could ensure all their children would grow up safe and healthy, free of the new world's diseases. But such safety came with a price. Every child born under her watch\u2026 was a child she would not hesitate to experiment on if she saw the need.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\EngineerLifeUpgrade.png"
+    },
+    "Fertile Waters": {
+        "faction": "Heartless Artificer",
+        "internalID": "EngineerLifeUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer could control how her people bred but she couldn't make them breed. I thought even that power was beyond her. It wasn't. She seeded bioengineered fertility drugs in the water supply. Any sexual encounter\u2014even with protection\u2014could turn a person of any gender into a factory for genetic material. Vile. Monstrous. She took away one of the most personal choices a person can make.",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\EngineerLifeUpgrade2.png"
+    },
+    "Expedition Outfitter": {
+        "faction": "Any",
+        "internalID": "Exploration",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Scouts would come back to camp with stories of the strange buildings now out in the wastes\u2014stories that would get out to civilians and troops defending the home base. We worried they'd spread fear, but instead we got\u2014curiosity. People wanted to know about this brave new world. They wanted to find their place in it.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Traits\\Exploration.png"
+    },
+    "The Expendables": {
+        "faction": "Heartless Artificer",
+        "internalID": "FoundationOfBloodUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Revolts against the Artificer's rule took place on a regular basis. Workers would demand better treatment. She responded with the blades of Erelim Assassins. \u201cCrackdowns do wonders for productivity,\u201d she told me once. \u201cYou purge the bad workers, and new ones, desperate for work, gladly step into their place.\u201d",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\FoundationOfBloodUpgrade.png"
+    },
+    "To The Bone": {
+        "faction": "Heartless Artificer",
+        "internalID": "FoundationOfBloodUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer whittled away at every other human flaw that slowed her ambitions. Why not eliminate pain? At first the people loved her for it\u2026 until her workers realized they now had to work with holes in their guts and pieces of their scalp missing. So long as their muscles moved and their mind functioned, they were bound to work.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\FoundationOfBloodUpgrade2.png"
+    },
+    "Closer Together": {
+        "faction": "Furtive Tribunal",
+        "internalID": "FurtiveTribunalAffinityUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Those few survivors of the Hymn of Decay reported hearing\u2026 melodies as everything rotted. May have been their meds, but they swore the songs sounded like\u2026 like regular music. Choruses and three-chord progressions that could have popped out of an old radio. Had the Voice been with us for centuries, whispering to us through the throats of bards and artists alike?",
+        "tier": "5",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\FurtiveTribunalAffinityUpgrade.png"
+    },
+    "Word of Mouth": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "GluttonyUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Aristocrat's gamble paid off. Travelers spread tales of how well-nourished the people inside his walls were, and survivors flocked to his cities for a taste of real hand-crafted bread\u2026 and with coin to pay for it. He never let me live down the fact that I doubted him.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\GluttonyUpgrade.png"
+    },
+    "Famous Feasts": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "GluttonyUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Aristocrat's cities became so densely populated that there wasn't any such thing as eating in isolation. Visiting a mess hall would bring you to a gathering of friends new and old, and on some days they grew to full-blown feasts spilling out into the street. The horrors of the world around us couldn't keep people's spirits down. Humanity wanted to thrive.",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\GluttonyUpgrade2.png"
+    },
+    "Hardening Hearts": {
+        "faction": "Practical Romantic",
+        "internalID": "HeartfeltLossUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Warned the Romantic it would happen. There'd be a day when even he grew numb reading the names of the dead. He fought that instinct. Wanted to feel the passing of every soldier who died for his cause. But you just lose track. Everyone\u2026 everyone always loses track.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HeartfeltLossUpgrade.png"
+    },
+    "Memories E'er More": {
+        "faction": "Practical Romantic",
+        "internalID": "HeartfeltLossUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Romantic really had been ready for this moment. Back in the bunker he'd found plans for tech that could extract memories from humans and wipe it from their minds. When the dead began to number in the millions, he rolled them out to the public. Promised they'd be there when the war was over. Then he made me haul them out to the desert and blow them sky-high, so he could blame it on our enemies.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HeartfeltLossUpgrade2.png"
+    },
+    "Foreman Favors": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "HiredHandsUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dPlausible deniability\u201d\u2014the ugly side of the Honorable Aristocrat's vast network of favor-owing flunkeys. A sea of low-level gangsters lay hidden in the network who'd gladly whip workers into shape. However \u201chonorable\u201d the Aristocrat claimed to be\u2014he always knew which side of the class war he was born on.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HiredHandsUpgrade.png"
+    },
+    "Voluntary Crunch": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "HiredHandsUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201cI have to pull extra hours, I'll let everyone down if I don't,\u201d said the laborer at the watercooler. Another laborer approached. I asked why she was working so late. Said the same thing as the first. So did the third worker. And the fourth. And the fifth\u2026 all burning themselves away without a single overseer telling them to.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HiredHandsUpgrade2.png"
+    },
+    "Hit, Then Run": {
+        "faction": "Rogue Operative",
+        "internalID": "HitAndRunUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Slip into the underground fight clubs and you could find the Rogue Operative, in disguise, shirking her duties as a leader to scrap it up with the city's fighters. She learned down there. Learned that if you threw a hit and then moved, you had that strong stance, that stable shot\u2014the power to strike a knockout blow merely by standing your ground.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HitAndRunUpgrade.png"
+    },
+    "ICAR Gunfight Repo": {
+        "faction": "Rogue Operative",
+        "internalID": "HitAndRunUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "You'd never catch me solving math problems on the battlefield. But the Operative wanted troops to react like ninjas. Updated everyone's augments one day with predictive software trained on thousands of recorded gunfights. When it worked, you could see five seconds into the future every time you pulled the trigger. When it didn't\u2026 well. \u201cUser error,\u201d she'd like to say.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HitAndRunUpgrade2.png"
+    },
+    "Deeper Ties": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "HonorboundUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dIt's foundational economic theory that nations that make strong economic ties with one another have too much to lose to ever wage war!\u201d the Aristocrat insisted. He didn't want to hear arguments  *again* about how all economic theory was written before towering titans of flesh and metal walked across the planet.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HonorboundUpgrade.png"
+    },
+    "Wealth of Nations": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "HonorboundUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Aristocrat could spice up any deal with a dozen sub-clauses and bonus agreements. \u201cBuy a shipment of food, get extra pallets of ammo as a bonus, and the ammo counts to the deductible insurance\u2026\u201d He could have spun those contracts to be so exploitative, but really did want the best outcome for everyone. Naive fool. The second someone didn't want to play his accounting games he would be in for a world of hurt.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HonorboundUpgrade2.png"
+    },
+    "Leaden Rain": {
+        "faction": "Rogue Operative",
+        "internalID": "IcarusSatelliteUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Boss was like a kid in a candy store when she learned ICAR Corp had been experimenting with railguns in its Icarus Satellite Network. \u201cMetal rod? Down from sky? YES! NOW.\u201d I swear that woman was feral. \u201cLike ScreamTroopers 5, loved that game. I LOVED. That game.\u201d",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\IcarusSatelliteUpgrade.png"
+    },
+    "Infant Inculcation": {
+        "faction": "Heartless Artificer",
+        "internalID": "ImmoralUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer had a fixation on children. Survivors came to her with their own preconceptions of the world but children\u2026 children could be shaped. Molded. Convinced that they were worth less than nothing. And when they grew old and the stubborn ones dared to resist her\u2014she had millions of drones too suppressed to join the uprising.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ImmoralUpgrade.png"
+    },
+    "Social Credit": {
+        "faction": "Heartless Artificer",
+        "internalID": "ImmoralUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Drugged, dazed, and controlled, some civilians in the Artificer's cities still struggled under her grip. So she loosened it. She implemented a social credit policy inspired by Old World tyrants. Stay in line, your number went up. Resist\u2026 and your number dropped, along with the number of anyone you were close to. No violence needed. All your remaining friends and family became the force that kept you in line.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ImmoralUpgrade2.png"
+    },
+    "Small Scale Op": {
+        "faction": "Rogue Operative",
+        "internalID": "IndependentUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Rogue Operative brought megacorporations to their knees with a small crew and some savvy social engineering. She never felt the need to run a proper gang, always wanted that close, trusted circle. If she kept things tight, no one could slip a knife in between her ribs.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\IndependentUpgrade.png"
+    },
+    "Comprehensive Connexion": {
+        "faction": "Rogue Operative",
+        "internalID": "IndependentUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Ever the counterculture obsessed hacker. The Rogue Operative would only sign off on expanding the population if she could stick an \u201cX\u201d in the policy name. Maybe more leaders should let their inner children run wild. Maybe too many already do\u2026",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\IndependentUpgrade2.png"
+    },
+    "Salvation Protocols": {
+        "faction": "Fallen Soldier",
+        "internalID": "LeaveNoManBehindUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dSalvation Protocols\u201d\u2014that was The Fallen Soldier's name for the creation of a corps of sanctioned scavengers who joined each unit on the battlefield. They'd keep their distance, never raising a weapon or rushing in to render aid. Only after the combatants withdrew would they rush in, recovering equipment and pulling mangled survivors out of the dirt.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\LeaveNoManBehindUpgrade.png"
+    },
+    "Rapid Extraction": {
+        "faction": "Fallen Soldier",
+        "internalID": "LeaveNoManBehindUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Keeping Salvation Protocols in effect drained our resources bad. Fallen Soldier still wouldn't sacrifice a single soldier. Idealistic fool. But a smart fool. He trained us for rapid exfiltration operations. \u201cGet in, get out, get paid\u201d became the new model.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\LeaveNoManBehindUpgrade2.png"
+    },
+    "Comprador Science": {
+        "faction": "Furtive Tribunal",
+        "internalID": "MysticismUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Many surviving scientists ran from the Tribunal in fear. But some drifted toward them in awe. They sought one who would permit their most tortured experiments\u2014who ignored any need for ethics or reliability. They wanted to play God\u2014and found a God ready to share its playground.",
+        "tier": "4",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\MysticismUpgrade.png"
+    },
+    "Scimystic Scismatics": {
+        "faction": "Furtive Tribunal",
+        "internalID": "MysticismUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "At dawn, we found the body of a scientist collapsed in a Research Laboratory. One death would have meant nothing if the Tribunal themselves hadn't swooped in to see the body. \u201cHe saw it,\u201d the First of the Three whispered. \u201cHe spoke with it,\u201d scribbled the Second. The Third merely drew a knife and sliced the lips off the dead man's mouth.",
+        "tier": "9",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\MysticismUpgrade2.png"
+    },
+    "Numinous Reveries": {
+        "faction": "Any",
+        "internalID": "NuminousReveries",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "The juices that poured out of bodies blown up by Voice commanders could be chemically altered to stick to the skin. Didn't hurt that much. But you know what did? Having your eyelids fused shut on the battlefield at the worst possible moment.",
+        "tier": "5",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\NuminousReveries.png"
+    },
+    "Clandestine Cartel": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "QuidProQuoUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "If there was anyone who could revive old-world corporate tricks, it was the Honorable Aristocrat. He went to great lengths to fool traders into sharing supplies more often. They'd think they were trading with different partners but it was just all his corps and agents, sometimes wearing literal masks to hide their identity\u2026",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\QuidProQuoUpgrade.png"
+    },
+    "Poetic Justice": {
+        "faction": "Practical Romantic",
+        "internalID": "ReallocateUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Practical Romantic was the only faction leader who would sit down with a soldier who wanted to stop fighting. Most would have just executed them or threw them in jail. He heard them out and explained how they could serve the war effort from the back lines. If they'd lost the will to live, he wanted them to have a path to get it back.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ReallocateUpgrade.png"
+    },
+    "Perfect Logistics": {
+        "faction": "Emulated Mind",
+        "internalID": "ResourceNetworkUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Many shrugged off The Emulated Mind's mastery of logistics as a side effect of her cybernetic condition. I don't think that was true. She had such a human touch at moving supply lines and ingesting resources. There was an understanding of human limits. In her old life\u2014before the war\u2014I think this was part of her job.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ResourceNetworkUpgrade.png"
+    },
+    "Routine Tasks": {
+        "faction": "Emulated Mind",
+        "internalID": "ResourceNetworkUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "A glitch in the Emulated Mind's programming risked driving her to hyperfocus on managing outpost extraction. If she wanted to protect her core functions she needed to dump that piece of her programming. She did\u2014into a virtual clone of herself. Now it could manage outpost resources while she turned her full attention to the rest of the war.",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ResourceNetworkUpgrade2.png"
+    },
+    "Probe Reconditioning": {
+        "faction": "Any",
+        "internalID": "SatelliteScanUpgrade",
+        "branch": "Human",
+        "description": null,
+        "flavor": "When a sleep-deprived specialist entered the wrong coordinates during a routine satellite sweep\u2014a \u201cconstellation of probes\u201d pinged her back. Acrin and human devices littered the solar system, all waiting for someone to just wake them up.",
+        "tier": "3",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\SatelliteScanUpgrade.png"
+    },
+    "Even The Obols": {
+        "faction": "Practical Romantic",
+        "internalID": "ScavengerUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dThought you were supposed to be the one with morals,\u201d I said, watching the Romantic crack open a coffin. We'd holed in a graveyard. Needed fuel for a fire. \u201cI am,\u201d he replied, muttering something about how morals are meant to benefit the living. \u201cThe dead\u2026 the dead can't do anything with them, can they?\u201d",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ScavengerUpgrade.png"
+    },
+    "Sweet Bones of My Kin": {
+        "faction": "Practical Romantic",
+        "internalID": "ScavengerUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "I think the Romantic knew from the start he'd have to get even more\u2026 \u201cPractical\u201d than he anticipated. Had us distribute some scavenged tech to the troops one day. Pressurized canisters that broke matter down to raw materials\u2014materials we needed to win the war. \u201cUse it only on the dead or destroyed,\u201d he warned. \u201cKill anyone with these and I'll exile you myself.\u201d",
+        "tier": "6",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ScavengerUpgrade2.png"
+    },
+    "Shoch'itris Lair": {
+        "faction": "Any",
+        "internalID": "ShochitrisLair",
+        "branch": "Voice",
+        "description": null,
+        "flavor": null,
+        "tier": "2",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ShochitrisLair.png"
+    },
+    "Fervid Insights": {
+        "faction": "Any",
+        "internalID": "ShochitrisLairUpgrade",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "The cultists spent a week force-feeding the Shoch'itris a mix of alien spice and drugs looted from Old World bases. The white-and-red powder made boils grow on the surface of the skin and they spewed even more twisted Deformities out of their guts when we sent them to the battlefield.",
+        "tier": "3",
+        "requiredUpgrades": [
+            "Shoch'itris Lair"
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ShochitrisLairUpgrade.png"
+    },
+    "Surthodai's Kiss": {
+        "faction": "Any",
+        "internalID": "SurthodaisKiss",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "She'd come to you in a dream. Lead you to her world. Look crushed when you told her you couldn't follow through the Bleed. \u201cWith a kiss, you can,\u201d she'd say, and then press her lips to yours. The tendrils enter your mouth. You'd wake up\u2014and the next day, walking through the Bleed would feel like her lesions still grazing your skin.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\SurthodaisKiss.png"
+    },
+    "Simulation Capture": {
+        "faction": "Fallen Soldier",
+        "internalID": "SurvivalTrainingUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Fallen Soldier reviewed every after-action report and fretted over what he would have done if he'd been on the front line. That fretting grew into obsession, and he commissioned a combat simulator that would drill his followers into learning his every instinct. His every thought. As though they were all extensions of him\u2026",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\SurvivalTrainingUpgrade.png"
+    },
+    "Tessera Core": {
+        "faction": "Any",
+        "internalID": "TesseraCore",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": null,
+        "tier": "6",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\TesseraCore.png"
+    },
+    "Modulated Harmony": {
+        "faction": "Furtive Tribunal",
+        "internalID": "TheOutsiderUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Tribunal summoned The Outsider with a chant. If the trio performed it right, the Voice's power would carry with them, and that foul beast from beyond time and space would linger longer\u2014knowing its true master was watching over it.",
+        "tier": "8",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\TheOutsiderUpgrade.png"
+    },
+    "The Thing With Feathers": {
+        "faction": "Practical Romantic",
+        "internalID": "ThereIsHopeUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Pinned down. Again. Bullet caught my cheek. Checked my pack for a bandage\u2014pulled out a carved bird instead. The Romantic's symbol of hope\u2026 he must have slipped it in my pack. Felt something coming off it. No Voice magic, no AI bullshit, just a tchotchke the Romantic made with his bare hands. Pain faded a little. Just enough for me to grab my rifle and get back to the fight.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ThereIsHopeUpgrade.png"
+    },
+    "Systematic Dreamers": {
+        "faction": "Practical Romantic",
+        "internalID": "ThereIsHopeUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Everyone was ordered to scratch the name down of someone they loved on a piece of tape. We put that tape on gear we'd grab in the middle of a firefight\u2014magazines, medkits, repair pods, armor, you name it. You'd pick it up, see the name. Remember how much that person meant to you. Nothing could stop you when you were fighting for someone you loved.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\ThereIsHopeUpgrade2.png"
+    },
+    "The Final Bastion": {
+        "faction": "Emulated Mind",
+        "internalID": "TrappedUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Being trapped inside a single city drove The Emulated Mind to paranoia\u2014but its massive walls gave her followers hope. They didn't fear the consequence of a single successful strike. Instead they thought they'd found a leader who'd do everything to protect them.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\TrappedUpgrade.png"
+    },
+    "The Last Utopia": {
+        "faction": "Emulated Mind",
+        "internalID": "TrappedUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201dOne City. One World. One People.\u201d The Emulated Mind's new vision for humanity living all in one city hid a bitter truth: years of war had made her people as scared, fragmented, and paranoid as she was. But they told everyone else that they lived in the best place on Earth.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\TrappedUpgrade2.png"
+    },
+    "Tunneling Nails": {
+        "faction": "Any",
+        "internalID": "TunnelingNails",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "I did not know you could make the Voice's creations even more vile, but our seers found a way. They whispered their blessings onto these nails\u2014like the ones they used to build railroads with\u2014and stabbed them through the hands of the Aegyllan Worms. When I asked why the hell they thought this would work, they just smiled and explained it came to them all in a collective dream.",
+        "tier": "3",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\TunnelingNails.png"
+    },
+    "Antigen Suppressants": {
+        "faction": "Fallen Soldier",
+        "internalID": "UndyingUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "As the war grew longer, those who carried the flesh of The Fallen Soldier found their bodies fighting against them. They were forced to suppress their immune systems and make their leader's flesh a part of their own. Their bodies became forever connected to his.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\UndyingUpgrade.png"
+    },
+    "Rampant Replication": {
+        "faction": "Fallen Soldier",
+        "internalID": "UndyingUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "So that was the catch. The Fallen Soldier's flesh didn't just restore its carriers\u2019 bodies. By war's end\u2026 well\u2026 it's like the good book said, \u201c\u2026God created mankind in his own image, in the image of God he created them.\u201d Swap \u201cGod\u201d for \u201cthe Fallen Soldier\u201d and you'll see the problem we had.",
+        "tier": "9",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\UndyingUpgrade2.png"
+    },
+    "Unrestrained Disassembly": {
+        "faction": "Any",
+        "internalID": "UnrestrainedDisassembly",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": null,
+        "tier": "5",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\UnrestrainedDisassembly.png"
+    },
+    "Blind Devotion": {
+        "faction": "Untold Prophet",
+        "internalID": "UntoldProphetAffinityUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Patrol duty sometimes took me around the Sealed Hermitage. The Prophet needed their faith to flex his power on the battlefield. Fucking weird. Early years they'd be screaming to all the Voice gods. Never the Great Speaker. By the end that was the only name they'd cry out. And they sounded happy while doing it.",
+        "tier": "10",
+        "requiredUpgrades": [
+            null
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\UntoldProphetAffinityUpgrade2.png"
+    },
+    "Designated Ingress": {
+        "faction": "Furtive Tribunal",
+        "internalID": "WhispersOfTheVoiceUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Triumvirate who made up the Tribunal had an uncanny eye for what research their scientists should pursue. Not because any of them knew the truths of science\u2026 but because the Voice showed them glimpses of a future that already took place.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\WhispersOfTheVoiceUpgrade.png"
+    },
+    "Mandated Compatibilism": {
+        "faction": "Furtive Tribunal",
+        "internalID": "WhispersOfTheVoiceUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Tribunal did not need anyone to \u201caccept\u201d that science and Voice-tainted mysticism worked in harmony, they simply mandated that they did. Science can only observe reality and if reality is bound to the will of The Voice\u2026 then there is nothing for scientists left to do but become priests.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\WhispersOfTheVoiceUpgrade2.png"
+    },
+    "Fresh Orisons": {
+        "faction": "Untold Prophet",
+        "internalID": "WordsOfTheProphetUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Unreal. Walk the ranks of those who opposed the Untold Prophet and you'd still find some believers. His religion bled across borders through the words of heretics and exiles. Shook everyone up\u2014soldiers everywhere were just more likely to switch sides if the Prophet whispered in their ear\u2026",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\WordsOfTheProphetUpgrade.png"
+    },
+    "Tetragrammatonic Texts": {
+        "faction": "Untold Prophet",
+        "internalID": "WordsOfTheProphetUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Someone\u2014the Fallen Soldier maybe?\u2014ordered the burning of the Prophet's texts and jailed anyone preaching the word of the Great Speaker on his territory. The kid thought quickly though. He sent out followers carrying books blessed by The Voice that would only reveal their words if the reader was ready for them. Lured in more believers and made it even easier to recruit them to the cause.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "iconPath": "Zephon\\Icons\\Upgrades\\WordsOfTheProphetUpgrade2.png"
+    }
+}

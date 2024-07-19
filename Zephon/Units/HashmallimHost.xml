@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Body"
-				explosionSound="Explosions/Units/MediumCyber"
-				explosionSoundCount="8"
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+				explosionsBone="Body"
 				material="Units/HashmallimHost"
 				mesh="Units/HashmallimHost"
 				normalWeight="0.1"
 				position="0 0 16"
-				scale="1 1 1"/>
+				scale="1.1 1.1 1.1"/>
 	</model>
 	<weapons>
 		<weapon type="GravitonProjector">
@@ -152,6 +151,7 @@
 				<cast animation="Units/HashmallimHostAbility0"
 						blueprint="Effects/GravitonJammer"
 						casterBlueprint="Effects/GravitonJammerCaster"
+						responseSound="Units/Responses/HashmallimHostGravitonJammer"
 						sound="Units/HashmallimHostGravitonJammer"/>
 			</model>
 			<beginTargets>
@@ -188,6 +188,7 @@
 				requiredUpgrade="TesseraCore">
 			<model>
 				<cast animation="Units/HashmallimHostAbility0"
+						responseSound="Units/Responses/HashmallimHostConstructTesseraCore"
 						sound="Units/HashmallimHostConstructTesseraCore"/>
 			</model>
 			<modifiers>

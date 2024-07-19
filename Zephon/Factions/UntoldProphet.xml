@@ -36,7 +36,7 @@
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="OfTargetEnemyNonCityNonHeadquartersUnit">
+								<modifier effectDescription="OfTargetEnemyNonHeroNonHeadquartersUnit">
 									<effects>
 										<changePlayer/>
 									</effects>
@@ -93,6 +93,82 @@
 		<label name="Independent"/>
 		<label name="Untrustworthy"/>
 	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR4"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR5"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR6"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>																																	
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR7"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR8"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>																																	
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+	</headquarterWeapons>
 	<likedLabels>
 		<label name="FortressArmament"/>
 		<label name="ThereIsHope"/>
@@ -118,6 +194,7 @@
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -126,6 +203,8 @@
 		<trait type="CostOfConviction"/>
 		<trait type="CultExpansion"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>

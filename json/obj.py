@@ -13,7 +13,7 @@ class Obj():
         self.ENGLISH_DIR: str = pathJoin(self.GAME, 'English')
         self.CLASS_DIR: str = pathJoin(self.GAME, self.OBJ_CLASS)
         self.CLASS_XML_PATH: str = pathJoin(self.ENGLISH_DIR, self.OBJ_CLASS + '.xml')
-        self.found = False
+        self.found: bool = False
         self.bestMatch: str
         self.internalID: str
         self.XMLPath: str

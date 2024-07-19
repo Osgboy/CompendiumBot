@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="DecoyFlares"
+		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="3"
+		requiredActionPoints="0"
+		requiredUpgrade="DecoyFlares">
+	<beginTargets>
+		<selfTarget>
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="DecoyFlares"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<enemyStrengthInTheArea greater="0"/>
+				</tile>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>			
+</unitCast>	

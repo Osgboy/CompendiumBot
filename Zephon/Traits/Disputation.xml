@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnUnit="1">
-	<modifiers>
-		<modifier>
-			<effects>
-				<damageReturn add="0.167"/>
-			</effects>
-		</modifier>
-	</modifiers>
+	<onWeaponDefended>
+		<defender>
+			<area affect="Unit" radius="1">
+				<modifiers>
+					<modifier effectDescription="ToAdjacentEnemyUnits">
+						<conditions>
+							<unit ignoreForTraitVisibility="1">
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage triggerEffects="0" useSourceWeapon="1" factor="0.167"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onWeaponDefended>
 </trait>

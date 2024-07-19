@@ -2,6 +2,11 @@
 <trait category="Debuff" icon="Features/DustStorm" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<unit>
+					<notCargo/>
+				</unit>
+			</conditions>
 			<effects>
 				<movementCost add="1"/>
 				<sight max="1"/>
@@ -9,8 +14,12 @@
 		</modifier>
 		<modifier effectDescription="AgainstRangedWeapons">
 			<conditions>
+				<unit>
+					<notCargo/>
+				</unit>
 				<weapon ignoreForTraitVisibility="1">
 					<noTrait type="Melee"/>
+					<noTrait type="TitanMelee"/>
 				</weapon>
 			</conditions>
 			<effects>
@@ -23,6 +32,11 @@
 			<area affect="Unit">
 				<modifiers endure="0">
 					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
 						<effects>
 							<weaponDamage weapon="DustStorm"/>
 						</effects>

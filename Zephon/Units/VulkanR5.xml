@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Body_Upper"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Body_Upper"
 				material="Units/VulkanR5"
 				mesh="Units/VulkanR5"
 				normalWeight="0.1"
@@ -120,10 +119,62 @@
 				<action responseSound="Units/Responses/VulkanR5HoldPosition"/>
 			</model>
 		</skip>
-		<!-- Missing OrbitalDeployment, PowerSpike, ShirakiCruiseMissile, SmokeLauncher. -->
+		<unitCast name="PowerSpike"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation=""
+						blueprint=""
+						responseSound="Units/Responses/VulkanR5PowerSpike"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFromMax add="-0.1"/>
+										<addTrait type="PowerSpike" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitCast blueprint="SmokeLauncher">
+			<model>
+				<cast responseSound="Units/Responses/VulkanR5SmokeLauncher"
+						sound="Actions/SmokeLauncher"/>
+			</model>
+		</unitCast>
+		<teleport blueprint="OrbitalDeployment"/>
+		<!-- <useWeapon blueprint="ShirakiCruiseMissile">
+			<model>
+				<attack beginFire="1.0"
+						endFire="1.1"
+						responseSound="Units/Responses/VulkanR5ShirakiCruiseMissile"/>
+			</model>
+		</useWeapon> -->
 	</actions>
 	<traits>
-		<trait type="CannibalizeMachines"/>
 		<trait type="Mechanical"/>
 		<trait type="Large"/>
 	</traits>

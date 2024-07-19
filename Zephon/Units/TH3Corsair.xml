@@ -2,16 +2,15 @@
 <unit branch="Human">
 	<model>
 		<unit effectsBlueprint="Effects/TH3Corsair"
-			explosionsBone="Hull_Shake"
-			explosionSound="Explosions/Units/MediumHuman"
-			explosionSoundCount="12"
-			groupMemberDeltaX="90"
-			groupMemberDeltaY="50"
-			material="Units/TH3Corsair"
-			mesh="Units/TH3Corsair"
-			normalWeight="0.1"
-			position="0 0 32"
-			scale="0.9 0.9 0.9">
+				explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Hull_Shake"
+				groupMemberDeltaX="90"
+				groupMemberDeltaY="50"
+				material="Units/TH3Corsair"
+				mesh="Units/TH3Corsair"
+				normalWeight="0.1"
+				position="0 0 32"
+				scale="0.9 0.9 0.9">
 		</unit>
 	</model>
 	<weapons>
@@ -136,75 +135,20 @@
 				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="EvasiveManeuvers"
-				consumedActionPoints="0"
-				consumedMovement="0"
-				cooldown="3"
-				requiredActionPoints="0">
+		<unitCast blueprint="EvasiveManeuvers">
 			<model>
 				<cast animation="Units/TH3CorsairAbility1"
 						responseSound="Units/Responses/TH3CorsairEvasiveManeuvers"
 						sound="Units/TH3CorsairEvasiveManeuvers"/>
 			</model>
-			<beginTargets>
-				<selfTarget>
-					<modifiers>
-						<modifier>
-							<effects>
-								<addTrait type="EvasiveManeuvers" duration="1"/>
-							</effects>
-						</modifier>
-					</modifiers>
-				</selfTarget>
-			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<tile>
-							<enemyStrengthInTheArea greater="0"/>
-						</tile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</unitCast>
-		<unitCast name="DecoyFlares"
-				consumedActionPoints="0"
-				consumedMovement="0"
-				cooldown="3"
-				requiredActionPoints="0"
-				requiredUpgrade="DecoyFlares">
+		<unitCast blueprint="DecoyFlares">
 			<model>
 				<cast animation="Units/TH3CorsairAbility0"
 						blueprint="Effects/DecoyFlares"
 						responseSound="Units/Responses/TH3CorsairDecoyFlares"/>
 			</model>
-			<beginTargets>
-				<selfTarget>
-					<modifiers>
-						<modifier>
-							<effects>
-								<!-- <addTrait type="DecoyFlares"/> -->
-							</effects>
-						</modifier>
-					</modifiers>
-				</selfTarget>
-			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<tile>
-							<enemyStrengthInTheArea greater="0"/>
-						</tile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
-		</unitCast>	
+		</unitCast>
 	</actions>
 	<traits>
 		<trait type="Flying"/>

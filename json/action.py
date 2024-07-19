@@ -58,8 +58,8 @@ class Action(Obj):
         elif (cooldownMin := self.tree.get('cooldownMin')):
             cooldownMax = self.tree.get('cooldownMax')
             self.cooldown = cooldownMin + ' ... ' + cooldownMax
-        else:
-            self.cooldown = self.tree.get('cooldown')
+        elif (cooldown := self.tree.get('cooldown')):
+            self.cooldown = cooldown
 
     def get_conditions(self):
         if self.passive:

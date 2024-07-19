@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/Swallow" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<actionPointsMax max="0.0"/>
+				<movementMax max="0.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<hitpointsFromMax add="-0.1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

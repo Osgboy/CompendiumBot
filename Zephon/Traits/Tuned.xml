@@ -2,11 +2,6 @@
 <trait category="Buff" icon="Actions/Tune" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
-			<conditions>
-				<weapon ignoreForTraitVisibility="1">
-					<noTrait type="Melee"/>
-				</weapon>
-			</conditions>
 			<effects>
 				<accuracy add="2"/>
 			</effects>

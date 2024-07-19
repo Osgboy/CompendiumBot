@@ -140,10 +140,18 @@
 						sound="Units/PhenarisHunterNightmare"
 						soundCount="3"/>
 			</model>
+			<modifiers>
+				<modifier requiredUpgrade="DreadShadow">
+					<effects>
+						<cooldown add="-2"/>
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
 				<target rangeMax="1">
 					<conditions>
 						<tile>
+							<land/>
 							<noUnit/>
 						</tile>
 					</conditions>
@@ -195,6 +203,11 @@
 										<cooldown add="5"/>
 									</effects>
 								</modifier>
+								<modifier requiredUpgrade="DreadShadow" visible="0">
+									<effects>
+										<cooldown add="-2"/>
+									</effects>
+								</modifier>
 							</modifiers>
 						</area>
 					</areas>
@@ -204,7 +217,7 @@
 	</actions>
 	<traits>
 		<trait type="Biological"/>
-		<!-- <trait type="Deathshriek"/> -->
+		<trait type="Deathshriek" requiredUpgrade="Deathshriek"/>
 		<trait type="Stealth"/>
 		<trait type="VoidDrifter"/>
 	</traits>

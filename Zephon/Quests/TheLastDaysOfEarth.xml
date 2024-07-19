@@ -1,0 +1,88 @@
+<quest>
+	<!-- TODO Logic -->
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Prepare" nextStage="Prepare"/>
+			</options>
+		</stage>
+		<stage name="Prepare" nextStageOnSuccess="ChooseSide">
+			<objectives>
+				<wait name="WaitForFinalBattle" turns="5"/>
+			</objectives>
+		</stage>
+		<stage name="ChooseSide">
+			<options>
+				<option name="Zephon" nextStage="Zephon"/>
+				<option name="Anchorite" nextStage="Anchorite"/>
+				<option name="Independent" nextStage="Independent"/>
+			</options>
+		</stage>
+		<stage name="Zephon">
+
+		</stage>
+		<stage name="Anchorite">
+
+		</stage>
+		<stage name="Independent">
+
+		</stage>
+		
+<!-- 		<stage name="AlienIntelligence" nextStage="ChildOfTheNewWorld">
+
+		</stage>
+		<stage name="ChildOfTheNewWorld" nextStage="CriesForHelp">
+
+		</stage>
+		<stage name="CriesForHelp" nextStage="StolenGoods">
+
+		</stage>
+		<stage name="StolenGoods" nextStage="TheGreatHunt">
+
+		</stage>
+		<stage name="TheGreatHunt" nextStage="ThePhilosophersStone">
+
+		</stage>
+		<stage name="ThePhilosophersStone" nextStage="ThePlague">
+
+		</stage>
+		<stage name="ThePlague" nextStage="TheSpaceEngine">
+
+		</stage>
+		<stage name="TheSpaceEngine" nextStage="TheTiesThatBind">
+
+		</stage>
+		<stage name="TheTiesThatBind" nextStage="TheyreInTheWalls">
+
+		</stage>
+		<stage name="TheyreInTheWalls" nextStage="UnderObservation">
+
+		</stage>
+		<stage name="UnderObservation" nextStage="WhoWasThursday">
+
+		</stage>
+		<stage name="WhoWasThursday" nextStage="WhoWasThursday">
+
+		</stage> -->
+
+
+		<stage name="ZephonObjectives">
+
+		</stage>
+		<stage name="AnchoriteObjectives">
+
+		</stage>
+		<stage name="IndependentObjectives">
+
+		</stage>
+		<stage name="ZephonVictory">
+
+		</stage>
+		<stage name="AnchoriteVictory">
+			
+		</stage>
+		<stage name="IndependentVictory">
+
+		</stage>
+	</stages>
+</quest>

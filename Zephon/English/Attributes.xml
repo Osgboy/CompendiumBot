@@ -54,11 +54,9 @@
 <entry name="CanEnemyOverwatch-" value="Prevents"/>
 <entry name="CanEnemyOverwatchIcon" value="&lt;icon height='20' texture='Icons/Actions/Overwatch'/&gt;"/>
 <entry name="CanOverwatch" value="overwatch"/>
+<entry name="CanOverwatch+" value="Can"/>
 <entry name="CanOverwatch-" value="Cannot"/>
 <entry name="CanOverwatchIcon" value="&lt;icon height='20' texture='Icons/Actions/Overwatch'/&gt;"/>
-<entry name="CanOverwatchWithMelee" value="overwatch attacks with melee weapons"/>
-<entry name="CanOverwatchWithMelee+" value="Allows"/>
-<entry name="CanOverwatchWithMeleeIcon" value="&lt;icon height='20' texture='Icons/Actions/Overwatch'/&gt;"/>
 <entry name="CargoSlots" value="Cargo Slots"/>
 <entry name="CargoSlotsDescription" value="The number of non-large units this unit can transport in its cargo hold."/>
 <entry name="CargoSlotsIcon" value="&lt;icon height='20' texture='Icons/Attributes/CargoSlots'/&gt;"/>
@@ -90,8 +88,6 @@
 <entry name="DamageDescription" value="The damage dealt against an enemy unit with each attack of the weapon. &lt;string name='Attributes/DamageDescription/Reductions'/&gt;"/>
 <entry name="DamageDescription/Reductions" value="Damage dealt is capped by the maximum hitpoints of a single group member of the enemy unit and further reduced by accuracy, the enemy's armor as well as their damage reductions."/>
 <entry name="DamageIcon" value="&lt;icon height='20' texture='Icons/Attributes/Damage'/&gt;"/>
-<entry name="DamageReturn" value="Damage Returned"/>
-<entry name="DamageReturnIcon" value="&lt;icon height='20' texture='Icons/Attributes/Damage'/&gt;"/>
 <entry name="DamageTaken" value="Damage Taken"/>
 <entry name="DamageTakenIcon" value="&lt;icon height='20' texture='Icons/Attributes/Damage'/&gt;"/>
 <entry name="DimensionalEchoes" value="Dimensional Echoes"/>
@@ -117,6 +113,7 @@
 <entry name="EvasionDamageReductionIcon" value="&lt;icon height='20' texture='Icons/Attributes/DamageReduction'/&gt;"/>
 <entry name="Experience" value="Experience"/>
 <entry name="ExperienceIcon" value="&lt;icon height='20' texture='Icons/Attributes/Level'/&gt;"/>
+<entry name="ExperienceGainRate" value="Experience Gain Rate"/>
 <entry name="FlatResourcesFromOutposts" value="Flat Resources From Outposts"/>
 <entry name="Food" value="Food"/>
 <entry name="FoodDescription" value="Used to sustain the population in cities as well as produce and maintain primarily Human and Voice units."/>
@@ -181,9 +178,9 @@
 <entry name="LevelMax" value="Max Level"/>
 <entry name="LevelMaxIcon" value="&lt;icon height='20' texture='Icons/Attributes/Level'/&gt;"/>
 <entry name="LifeSteal" value="Life Steal"/>
-	<!-- <entry name="LifeStealIcon" value="<icon height='20' texture='Icons/Attributes/LifeSteal'/>"/> -->
+<entry name="LifeStealIcon" value="&lt;icon height='20' texture='Icons/Attributes/LifeSteal'/&gt;"/>
 <entry name="LifeStealFromDamage" value="Life Steal"/>
-	<!-- <entry name="LifeStealFromDamageIcon" value="<icon height='20' texture='Icons/Attributes/LifeSteal'/>"/> -->
+<entry name="LifeStealFromDamageIcon" value="&lt;icon height='20' texture='Icons/Attributes/LifeSteal'/&gt;"/>
 <entry name="Loyalty" value="Loyalty"/>
 <entry name="LoyaltyDescription" value="The population's dedication to your cause. &lt;string name='Attributes/LoyaltyDescription/Effect'/&gt; &lt;string name='Attributes/LoyaltyDescription/CityPenalty'/&gt;"/>
 <entry name="LoyaltyDescription/Effect" value="Each positive point of loyalty increases the city's total resource output by 1% while each negative point decreases it by 2% (down to -50%)."/>
@@ -277,7 +274,7 @@
 <entry name="ResearchUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Research'/&gt;"/>
 <entry name="ResourcesFromCity" value="Resources Copied"/>
 <entry name="ResourcesPerKillFromCost" value="Resources From Kills"/>
-<entry name="ResourcesPerRecycleFromCost" value="Resources Recycled"/>
+<entry name="ResourcesPerReallocateFromCost" value="Resources Recycled"/>
 <entry name="DamageSelf" value="Self Damage"/>
 <entry name="DamageSelfIcon" value="&lt;icon height='20' texture='Icons/Attributes/Damage'/&gt;"/>
 <entry name="Sight" value="Sight"/>

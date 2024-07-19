@@ -5,12 +5,22 @@
 			<area affect="Unit">
 				<modifiers endure="0">
 					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
 						<effects>
 							<weaponDamage weapon="HymnOfDecay"/>
 						</effects>
 					</modifier>
 					<modifier effectDescription="EachTurn"
 							requiredUpgrade="AfflictionsAntiphon">
+						<conditions>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
 						<effects>
 							<morale add="-2"/>
 						</effects>

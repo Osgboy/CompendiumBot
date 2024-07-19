@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
+				<attacks base="1"/>
+				<damage base="32"/> <!-- %damage base tier=11 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="TitanMelee"/>
+	</traits>
+</weapon>

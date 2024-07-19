@@ -9,11 +9,17 @@
 				walker="1"/>
 	</model>
 	<weapons>
-		<weapon type="SurthodaisHand" count="2">
+		<weapon type="DevouringMaw">
 			<models>
 				<weapon fireInterval="10"/>
 			</models>
 		</weapon>
+		<weapon type="AbyssalMiasma"
+				enabled="0"
+				slotName="AbyssalMiasma">
+			<models>
+			</models>
+		</weapon>	
 	</weapons>
 	<modifiers>
 		<modifier visible="0">
@@ -119,12 +125,70 @@
 						responseSoundCount="1"/>
 			</model>
 		</skip>
+		<unitAction name="CausalWell"
+		 		icon="Actions/CausalWell"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentUnits">
+									<effects>
+										<addTrait type="CausalWell"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<useWeapon weaponSlotName="AbyssalMiasma"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+			</model>
+		</useWeapon>
+		<unitCast name="Extirpate"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/AcrinTitanAbility0"
+						blueprint=""
+						casterBlueprint=""
+						responseSound=""/>
+			</model>
+			<beginTargets>
+				<target rangeMin="2" rangeMax="3">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="TargetEnemyUnit">
+									<effects>
+										<!-- TODO -->
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
 	</actions>
 	<traits>
-		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="Large"/>
-		<trait type="Transport"/>
 		<trait type="Titan"/>
 	</traits>
 </unit>

@@ -38,6 +38,26 @@
 				</modifier>
 			</strategyModifiers>
 		</constructPlayerAction>
+		<constructPlayerAction action="BlackHole"
+				requiredUpgrade="BlackHole">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterCost base="10"/> <!-- %antimatterCost base tier=10 factor=0.1 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=10 factor=1 -->
+						<singularityCoresCost base="10"/> <!-- %singularityCoresCost base tier=10 factor=0.05 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseCyberScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
 	</actions>
 	<modifiers>
 		<modifier visible="0">

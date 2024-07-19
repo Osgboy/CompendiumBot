@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Body"
-				explosionSound="Explosions/Units/MediumCyber"
-				explosionSoundCount="8"
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+				explosionsBone="Body"
 				material="Units/TesseraCore"
 				mesh="Units/TesseraCore"
 				normalWeight="0.1"
@@ -117,28 +116,25 @@
 				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="DeployGravityField"
+		<unitCast name="GravityField"
 				cooldown="1"
+				icon="Features/GravityField"
 				requiredUpgrade="GravityField">
 			<model>
 				<cast animation="Units/TesseraCoreAbility0"
-						blueprint="Effects/MarkTarget"
+						blueprint=""
+						casterBlueprint=""
 						responseSound="Units/Responses/TesseraCoreDeployGravityField"
 						sound="Units/TesseraCoreDeployGravityField"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="2">
-					<conditions>
-						<unit>
-							<enemy/>
-						</unit>
-					</conditions>
+				<target rangeMax="3">
 					<areas>
-						<area affect="Unit">
+						<area affect="Tile">
 							<modifiers>
 								<modifier>
 									<effects>
-										<addTrait type="MarkedTarget"/>
+										<addFeature type="GravityField" duration="2"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -146,13 +142,6 @@
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="0.5"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>

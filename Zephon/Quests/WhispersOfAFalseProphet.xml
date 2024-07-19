@@ -1,0 +1,60 @@
+<quest firstTurn="40" image="Factions/UntoldProphet">
+	<!-- TODO Logic -->
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="TakeConfession" nextStage="TakeConfession"/>
+				<option name="Ignore"/>
+			</options>
+		</stage>
+		<stage name="TakeConfession" nextStageOnSuccess="TakeConfessionSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/MassConfession" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/MassConfession"/>
+			</objectives>
+		</stage>
+		<stage name="TakeConfessionSuccess">
+
+		</stage>
+		<stage name="CaptureErelim">
+
+		</stage>
+		<stage name="CaptureErelimSuccess">
+
+		</stage>
+		<stage name="ProtectErelim">
+
+		</stage>
+		<stage name="ProtectErelimSuccess">
+
+		</stage>
+		<stage name="DestroyKryptArchai">
+
+		</stage>
+		<stage name="DestroyKryptArchaiSuccess">
+
+		</stage>
+		<stage name="EmbraceKryptArchai">
+
+		</stage>
+		<stage name="EmbraceKryptArchaiSuccess">
+
+		</stage>
+	</stages>
+ </quest>

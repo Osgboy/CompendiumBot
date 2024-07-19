@@ -1,0 +1,69 @@
+<quest>
+	<!-- TODO Logic -->
+	<stages>
+		<stage name="Ignorance">
+			<options>
+				<option name="OpenQuestion1" nextStage="OpenQuestion1"/>
+				<option name="OpenQuestion2" nextStage="OpenQuestion2"/>
+				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion"/>
+				<option name="AcrinVictoryQuestion" nextStage="AcrinVictoryQuestion"/>
+				<option name="HumanVictoryQuestion" nextStage="HumanVictoryQuestion"/>
+				<option name="FallenSoldierVictoryQuestion" nextStage="FallenSoldierVictoryQuestion"/>
+				<option name="UntoldProphetVictoryQuestion" nextStage="UntoldProphetVictoryQuestion"/>
+				<option name="RogueOperativeVictoryQuestion" nextStage="RogueOperativeVictoryQuestion"/>
+				<option name="FurtiveTribunalVictoryQuestion" nextStage="FurtiveTribunalVictoryQuestion"/>
+				<option name="HeartlessArtificerVictoryQuestion" nextStage="HeartlessArtificerVictoryQuestion"/>
+				<option name="EmulatedMindVictoryQuestion" nextStage="EmulatedMindVictoryQuestion"/>
+				<option name="HonorableAristocratVictoryQuestion" nextStage="HonorableAristocratVictoryQuestion"/>
+				<option name="PracticalRomanticVictoryQuestion" nextStage="PracticalRomanticVictoryQuestion"/>
+				<option name="Acceptance" nextStage="Acceptance"/>
+			</options>
+		</stage>
+		<stage name="OpenQuestion1"/>
+		<stage name="OpenQuestion2"/>
+		<stage name="ZephonVictoryQuestion"/>
+		<stage name="AcrinVictoryQuestion"/>
+		<stage name="HumanVictoryQuestion"/>
+		<stage name="FallenSoldierVictoryQuestion"/>
+		<stage name="UntoldProphetVictoryQuestion"/>
+		<stage name="RogueOperativeVictoryQuestion"/>
+		<stage name="FurtiveTribunalVictoryQuestion"/>
+		<stage name="HeartlessArtificerVictoryQuestion"/>
+		<stage name="EmulatedMindVictoryQuestion"/>
+		<stage name="HonorableAristocratVictoryQuestion"/>
+		<stage name="PracticalRomanticVictoryQuestion"/>
+		<stage name="Acceptance">
+			<options>
+				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory"/>
+				<option name="AcrinMutatorVictory" nextStage="AcrinMutatorVictory"/>
+				<option name="HumanMutatorVictory" nextStage="HumanMutatorVictory"/>
+				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory"/>
+				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory"/>
+				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory"/>
+				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory"/>
+				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory"/>
+				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory"/>
+				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory"/>
+				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory"/>
+				<option name="CompleteNativeMutatorVictory" nextStage="CompleteNativeMutatorVictory"/>
+			</options>
+		</stage>
+		<stage name="ZephonMutatorVictory"/>
+		<stage name="AcrinMutatorVictory"/>
+		<stage name="HumanMutatorVictory"/>
+		<stage name="FallenSoldierMutatorVictory"/>
+		<stage name="UntoldProphetMutatorVictory"/>
+		<stage name="RogueOperativeMutatorVictory"/>
+		<stage name="FurtiveTribunalMutatorVictory"/>
+		<stage name="HeartlessArtificerMutatorVictory"/>
+		<stage name="EmulatedMindMutatorVictory"/>
+		<stage name="HonorableAristocratMutatorVictory"/>
+		<stage name="PracticalRomanticMutatorVictory"/>
+		<stage name="CompleteNativeMutatorVictory">
+			<options>
+				<option name="FinalMentorMessage" nextStage="FinalMentorMessage"/>
+			</options>
+		</stage>
+		<stage name="FinalMentorMessage"/>
+	</stages>
+</quest>

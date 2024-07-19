@@ -1,0 +1,58 @@
+<quest firstTurn="40" image="Factions/RogueOperative">
+	<!-- TODO Logic -->
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="KillMech" nextStage="KillMech"/>
+				<option name="Ignore"/>
+			</options>
+		</stage>
+		<stage name="KillMech" nextStageOnSuccess="KillMechSuccess">
+
+		</stage>		
+		<stage name="KillMechSuccess" nextStageOnSuccess="KillMechSuccess">
+			<options>
+				<option name="SolveRiddle" nextStage="SolveRiddle"/>
+				<option name="BruteForce">
+					<nextStages>
+						<nextStage name="BruteForceSuccess" weight="1"/>
+						<nextStage name="BruteForceFailure" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>		
+		<stage name="SolveRiddle" nextStageOnSuccess="SolveRiddleSuccess">
+
+		</stage>
+		<stage name="SolveRiddleSuccess">
+			<options>
+				<option name="HearHimOut" nextStage="HearHimOut"/>
+				<option name="HostileTakeover" nextStage="HostileTakeover"/>
+			</options>
+		</stage>
+		<stage name="BruteForceSuccess">
+			<options>
+				<option name="HearHimOut" nextStage="HearHimOut"/>
+				<option name="HostileTakeover" nextStage="HostileTakeover"/>
+			</options>
+		</stage>
+		<stage name="BruteForceFailure">
+
+		</stage>
+		<stage name="HearHimOut">
+			<options>
+				<option name="TakeTheDeal" nextStage="TakeTheDeal"/>
+				<option name="TakeHisEyes" nextStage="TakeHisEyes"/>
+			</options>
+		</stage>
+		<stage name="HostileTakeover">
+
+		</stage>
+		<stage name="TakeTheDeal">
+
+		</stage>
+		<stage name="TakeHisEyes">
+
+		</stage>
+	</stages>
+</quest>

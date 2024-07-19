@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForNonLargeNonFlyingUnitsWhenAttackingFromForestsOrRuins">
+			<conditions>
+				<unit>
+					<noTrait type="Flying"/>
+					<noTrait type="Large"/>
+				</unit>
+				<unit ignoreForTraitVisibility="1">
+					<trait type="Forest"/>
+					<trait type="Ruin"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="0.167"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

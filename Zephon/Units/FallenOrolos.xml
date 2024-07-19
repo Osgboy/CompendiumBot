@@ -44,6 +44,11 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Units/Responses/FallenOrolosAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/FallenOrolosAttack"

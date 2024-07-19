@@ -9,9 +9,22 @@
 				scale="1.1 1.1 1.1"/>
 	</model>
 	<weapons>
-		<weapon type="GaussAutocannon">
+		<weapon type="GaussAutocannon"
+				slotName="GaussAutocannon">
 			<models>
-				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="GaussAutocannonOvercharged"
+				slotName="GaussAutocannonOvercharged"
+				enabled="0">
+			<models>
+			</models>
+		</weapon>
+ 		<weapon type="InterceptorMissile"
+ 				count="2"
+ 				enabled="0"
+ 				slotName="InterceptorMissile">
+			<models>
 			</models>
 		</weapon>
  	</weapons>
@@ -115,13 +128,32 @@
 				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="EvasiveManeuvers">
+		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
+				weaponSlotNames="GaussAutocannon GaussAutocannonOvercharged"/>	
+		<unitCast blueprint="EvasiveManeuvers">
 			<model>
 				<cast animation="Units/PhoenixInterceptorAbility0"
+						blueprint=""
 						responseSound="Units/Responses/PhoenixInterceptorEvasiveManeuvers"
 						sound="Units/PhoenixInterceptorEvasiveManeuvers"/>
 			</model>
 		</unitCast>
+		<unitCast blueprint="DecoyFlares">
+			<model>
+				<cast animation="Units/PhoenixInterceptorAbility1"
+						blueprint="Effects/DecoyFlares"
+						responseSound="Units/Responses/PhoenixInterceptorDecoyFlares"/>
+			</model>
+		</unitCast>
+		<useWeapon weaponSlotName="InterceptorMissile"
+				cooldown="3"
+				requiredUpgrade="InterceptorMissile">
+			<model>
+				<attack animation=""
+						endFire="1.9"
+						responseSound="Units/Responses/PhoenixInterceptorInterceptorMissile"/>
+			</model>
+		</useWeapon>
 	</actions>
 	<traits>
 		<trait type="Flying"/>

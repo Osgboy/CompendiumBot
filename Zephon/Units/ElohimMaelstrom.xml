@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Guide"
-				explosionSound="Explosions/Units/SmallCyber"
-				explosionSoundCount="17"
+		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
+				explosionsBone="Guide"
 				groupMemberDeltaX="100"
 				groupMemberDeltaY="80"
 				material="Units/KriteriaAnnihilator"
@@ -13,7 +12,8 @@
 				scale="0.75 0.75 0.75"/>
 	</model>
 	<weapons>
-		<weapon type="ElysianBattery">
+		<weapon type="ElysianBattery"
+				slotName="ElysianBattery">
 			<models>
 				<missileWeapon windupDuration="1.0" muzzleBone="Muzzle"/>
 			</models>
@@ -124,22 +124,32 @@
 				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="TimeShift" requiredUpgrade="TimeShift">
+		<unitCast blueprint="TimeShift">
 			<model>
 				<cast animation="Units/KriteriaAnnihilatorAbility0"
 						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"
 						sound="Units/KriteriaAnnihilatorTimeShift"
 						soundCount="3"/>
 			</model>
-		</unitCast>
-		<unitCast name="Pandemonium" requiredUpgrade="Pandemonium">
+		</unitCast>	
+		<useWeapon name="Pandemonium"
+				weaponSlotName="ElysianBattery"
+				requiredUpgrade="Pandemonium">
 			<model>
-				<cast animation="Units/KriteriaAnnihilatorAbility0"
-						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"
-						sound="Units/KriteriaAnnihilatorTimeShift"
-						soundCount="3"/>
 			</model>
-		</unitCast>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<singularityCoresCost add="1"/>
+					</effects>
+				</modifier>
+				<modifier>
+					<effects>
+						<rangeMax mul="1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</useWeapon>
 	</actions>
 	<traits>
 		<trait type="Agile"/>

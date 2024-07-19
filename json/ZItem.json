@@ -54,6 +54,28 @@
         "buyCondition": "Amoetias Caress",
         "iconPath": "Zephon\\Icons\\Items\\ArkOfGoldrauch.png"
     },
+    "Arsham's Satchel (Gifted)": {
+        "internalID": "ArshamsSatchelGifted",
+        "branch": "Human",
+        "description": null,
+        "flavor": "Your brother pauses as he exits the city. He hands you something\u2014his satchel, the one he clutched in his hands in the days before the war. \u201cWe're together again,\u201d he whispers softly. \u201cAnd we have such great work ahead of us.\u201d\n\nYou look down at the bloody satchel, and wonder just what \u201cwork\u201d Arshem has in mind.",
+        "ability": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"ArshamsSatchelGifted\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png"
+    },
+    "Arsham's Satchel (Looted)": {
+        "internalID": "ArshamsSatchelLooted",
+        "branch": "Human",
+        "description": null,
+        "flavor": "He hands you a box of Arshem's possessions.\n\nYou paw through them, and find a tattered satchel\u2014the one he clutched in his hands on the last day you saw each other.\n\nNow the tears come. You kneel before Arshem's grave and clutch the satchel to your chest. Saving these Reavers seemed such an obvious choice. You just wish you could have saved Arshem too.",
+        "ability": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"ArshamsSatchelLooted\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png"
+    },
     "Attar of Phenaris": {
         "internalID": "AttarOfPhenaris",
         "branch": "Voice",
@@ -81,7 +103,7 @@
         "branch": "Voice",
         "description": null,
         "flavor": "\u201dA candle lit from the fat of a hanged man will paralyze all who behold it.\u201d It's an old myth\u2014but The Voice knew how to bring it to life. How? Has it been whispering in our ears for centuries?",
-        "ability": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/Paralyze\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"3\" type=\"Crippled\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Crippled\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "ability": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/Paralyze\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" type=\"Crippled\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Crippled\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "rarity": "Common",
         "influenceCost": "40",
         "buyCondition": null,
@@ -92,7 +114,7 @@
         "branch": "Cyber",
         "description": null,
         "flavor": "The spectral analysis tech in the Chayot Exterminator's scanning array had\u2026 many use cases. The machines used it to scan unknown terrain. The soldiers used it to shine a bunch of lasers in an enemy\u2019s face and make them see all kinds of pretty colors. Both worked.",
-        "ability": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/ChayotCrospect\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" type=\"Blinded\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Blinded\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "ability": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/ChayotCrospect\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" type=\"Blinded\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Blinded\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "rarity": "Common",
         "influenceCost": "40",
         "buyCondition": null,
@@ -208,6 +230,17 @@
         "buyCondition": "Amoetias Caress",
         "iconPath": "Zephon\\Icons\\Items\\Iokla.png"
     },
+    "Knife of the Chieftess": {
+        "internalID": "KnifeOfTheChieftess",
+        "branch": "Human",
+        "description": null,
+        "flavor": "When you arrive at the rendezvous point the Chieftess stands alone, arms crossed and with a grim look in her eyes. Why does she have no guards?\n\nYou say nothing as your troops haul Jezina forward. The Chieftess draws a curved knife, then gently drags it across Jezina's cheek. \u201cI could press harder,\u201d she whispers. \u201cDraw the smallest bit of blood, just like you used to.\u201d\n\nJezina is shaking. The Chieftess raises the blade\u2014and then throws it at your feet. \u201cYour payment,\u201d she says. \u201cNow go. This is a family matter.\u201d\n\nYou quickly return to your vehicle. You wonder if that sound you hear is the wind blowing over the wasteland\u2014or Jezina whimpering in terror.",
+        "ability": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"KnifeOfTheChieftess\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "iconPath": "Zephon\\Icons\\Items\\KnifeOfTheChieftess.png"
+    },
     "Pathcutter": {
         "internalID": "Pathcutter",
         "branch": "Cyber",
@@ -240,6 +273,17 @@
         "influenceCost": "80",
         "buyCondition": "Corpse Cities",
         "iconPath": "Zephon\\Icons\\Items\\PhaseFontead.png"
+    },
+    "Philosopher's Stone": {
+        "internalID": "PhilosophersStone",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "The stone is jagged, with wide facets, and feels pleasantly cold in your hand. Underneath its dark surface, something that resembles the alien algae blooms in slow, hypnotic patterns.\n\nAs you study it, you hear a whispering voice that turns into a thousand screams. Power, they promise, power for blood. You need power. But, thinking of the bandit leader, you decide it\u2019s too risky to use yourself\u2014but that\u2019s why you have lieutenants.",
+        "ability": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"PhilosophersStone\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "buyCondition": null,
+        "iconPath": "Zephon\\Icons\\Items\\PhilosophersStone.png"
     },
     "Quantum Reflector": {
         "internalID": "QuantumReflector",
@@ -279,7 +323,7 @@
         "branch": "Cyber",
         "description": null,
         "flavor": "Once, long ago, ZEPHON lent one of its creations to a band of humans close to death. Those survivors repaid its kindness by stealing the unit's access codes and trying to kill their savior. It retaliated\u2014viciously. Now the only memory of those idiots is a hard drive carrying the codes, bought and sold on black markets with utmost secrecy. If ZEPHON learned where that drive was\u2014it would stop at nothing to destroy it.",
-        "ability": "<actions>\n\t\t<unitCast cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/SchismOfRegimina\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<faction name=\"Zephon\"/>\n\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyZephonUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SchismOfRegimina\" duration=\"5\" removeOnSourceDeath=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "ability": "<actions>\n\t\t<unitCast cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/SchismOfRegimina\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<faction name=\"Zephon\"/>\n\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyZephonUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SchismOfRegimina\" duration=\"5\" removeOnSourceDeath=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "rarity": "Rare",
         "influenceCost": "160",
         "buyCondition": "Ha'sharet Exchange",
@@ -295,6 +339,17 @@
         "influenceCost": "40",
         "buyCondition": null,
         "iconPath": "Zephon\\Icons\\Items\\SpotterDrone.png"
+    },
+    "The False Speaker's Core": {
+        "internalID": "TheFalseSpeakersCore",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "The Archai is destroyed. As it dies, it makes an unsettling noise that sounds like a whimpering dog.\n\nYour soldiers pull a strange relic from the wreckage\u2014a cybernetic core corrupted by tendrils of Bleed, still pulsing with mystic power. You sense that your most powerful servants may make use of it on the battlefield.",
+        "ability": "<actions>\n\t\t<unitCast name=\"Entomb\" cooldown=\"5\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/Entomb\" sound=\"Units/KryptArchaiElite\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Entomb\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Entomb\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "iconPath": "Zephon\\Icons\\Items\\TheFalseSpeakersCore.png"
     },
     "Trauma Kit": {
         "internalID": "TraumaKit",

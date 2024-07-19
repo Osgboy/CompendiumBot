@@ -1,7 +1,6 @@
-<quest image="Factions/EmulatedMind">
+<quest firstTurn="40" image="Factions/EmulatedMind">
  	<conditions>
 		<player>
-			<!-- <turn greater="40"/> -->
 			<faction name="EmulatedMind"/>
 		</player>
 	</conditions>
@@ -71,10 +70,11 @@
 		</stage>	
 		<stage name="FinishWithZephon" nextStageOnSuccess="FinishWithZephonSuccess">
 			<objectives>
-			
+				<!-- TODO -->
 			</objectives>
 		</stage>
 		<stage name="FinishWithZephonSuccess">
+			<!-- TODO -->
 		</stage>			
 		<stage name="FlushCortex" nextStageOnSuccess="FlushCortexSuccess">
 			<modifications>
@@ -133,8 +133,7 @@
 						orderName="QuantumReflector"/>
 			</objectives>
 		</stage>
-		<stage name="UseReflectorSuccess">
-		</stage>		
+		<stage name="UseReflectorSuccess"/>
 		<stage name="CaptureIronFeather">
 			<options>
 				<option name="DefendPeople" nextStage="DefendPeople"/>
@@ -145,10 +144,12 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
+							<land/>
 							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>

@@ -1,0 +1,244 @@
+<quest firstTurn="40" image="Factions/PracticalRomantic">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="GatherResources" nextStage="GatherResources"/>
+				<option name="Ignore"/>
+			</options>
+		</stage>
+		<stage name="GatherResources" nextStageOnSuccess="DeliverResources"
+				nextStageOnFailure="DeliverResourcesFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/ThickerThanWater" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/ThickerThanWater"
+						turns="5"/>
+			</objectives>
+		</stage>
+		<stage name="DeliverResources" nextStageOnSuccess="Blockade"
+				nextStageOnFailure="DeliverResourcesFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="Outrider" name="Units/ResourceTransport" token="ResourceTransport" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="12">
+					<conditions>
+						<tile>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithResourceTransport" turns="5">
+					<unitConditions>
+						<token name="ResourceTransport"/>
+					</unitConditions>
+				</visitTile>
+				<keepUnitAlive token="ResourceTransport"/>
+			</objectives>
+		</stage>
+		<stage name="DeliverResourcesFailure"/>
+		<stage name="Blockade">
+			<options>
+				<option name="PayToll" nextStage="PayToll">
+					<modifiers>
+						<modifier>
+							<effects>
+								<foodCost add="10"/>
+								<mineralsCost add="10"/>
+								<energyCost add="10"/>
+							</effects>
+						</modifier>
+					</modifiers>				
+				</option>
+				<option name="ScareOff" nextStage="ScareOff">
+					<conditions>
+						<playerWithFaction faction="Chieftess">
+							<standingTier greater="-1"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="Fight" nextStage="Fight"/>
+			</options>
+		</stage>
+		<stage name="PayToll">
+			<options>
+				<option name="FindAnswers" nextStage="BrothersKeeper"/>
+				<option name="Abort"/>
+			</options>
+		</stage>
+		<stage name="ScareOff">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<conditions>
+							<player>
+								<noAlly/>
+							</player>
+						</conditions>
+						<effects>
+	 						<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="PressOnward" nextStage="BrothersKeeper"/>
+				<option name="Abort"/>
+			</options>
+		</stage>
+		<stage name="Fight" nextStageOnSuccess="BrothersKeeper"
+				nextStageOnFailure="DeliverResourcesFailure">
+			<objectives>
+				<killCamp name="KillCamp">
+					<defenders>
+						<unit type="Reaver" count="2"/>
+						<unit type="Buster" count="2"/>
+					</defenders>
+				</killCamp>
+				<keepUnitAlive token="ResourceTransport"/>
+			</objectives>
+		</stage>
+		<stage name="BrothersKeeper">
+			<options>
+				<option name="JoinArshem" nextStage="JoinArshem"/>
+				<option name="StopArshem" nextStage="StopArshem"/>
+			</options>
+		</stage>
+		<stage name="JoinArshem" nextStageOnSuccess="JoinArshemSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Reaver" count="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Buster" count="2" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<nearUnitTileSelector targetDistance="6">
+					<conditions>
+						<tile>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<token name="ResourceTransport"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillCamp">
+					<boss type="ReaverCamp" name="Units/ReaverCamp"/>
+					<defenders>
+						<unit type="Reaver" count="4"/>
+						<unit type="Buster" count="4"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="JoinArshemSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="ArshamsSatchelGifted"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="StopArshem" nextStageOnSuccess="StopArshemSuccess">
+			<objectives>
+				<killCamp name="KillCamp">
+					<defenders>
+						<unit type="Reaver" count="2"/>
+						<unit type="Buster" count="2"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="StopArshemSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="ArshamsSatchelLooted"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

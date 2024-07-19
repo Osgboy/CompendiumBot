@@ -174,7 +174,8 @@ class GUnit(Unit):
         self.combatStats: dataclass = GCombatStats(
             *[0]*len(GCombatStats.__slots__))
         self.factionAndID: str
-        self.faction = 'Neutral'
+        self.faction: str = 'Neutral'
+        self.dlc: str = 'None'
 
     def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         self.factionAndID = entry.get('name')
@@ -209,6 +210,10 @@ class GUnit(Unit):
             statEntry = xmlStats.find(statName)
             if statEntry is not None and (statValue := statEntry.get('base')) is not None:
                 setattr(self.weaponStats, statName, float(statValue))
+
+    def get_dlc(self):
+        if (dlc := self.tree.getroot().get('dlc')):
+            self.dlc = dlc
 
 
 class ZUnit(Unit):

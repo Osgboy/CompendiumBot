@@ -1,19 +1,14 @@
-from lxml import etree as ET
+def one():
+    return 1
 
-def docstring_defaults(func):
-    doc = func.__doc__ or ''
-    doc += "\tverbose (bool): A flag to include flavor and footer text (default is False)" + "\n\tinvisible (bool): A flag to make the bot's reply invisible to everyone except you (default is False)"
-    func.__doc__ = doc
-    return func
+def two():
+    return 1,2
 
-@docstring_defaults
-def foo():
-    """Return info on a Gladius unit.
+a = (one())
+b = (two())
 
-    Args:
-        unitname (str): Name of unit to look up
-    """
-    print('asdf')
-    print(foo.__doc__)
-
-foo()
+print(a)
+print(type(a))
+print(b)
+print(type(b))
+print(c)

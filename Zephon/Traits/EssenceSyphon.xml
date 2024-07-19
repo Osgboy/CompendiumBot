@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onOpponentKilled>
+		<attacker>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="WhenKillingUnit">
+						<effects>
+							<addTrait type="EssenceSyphoned" duration="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onOpponentKilled>
+</trait>

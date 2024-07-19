@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Hull_Shake"
-				explosionSound="Explosions/Units/MediumCyber"
-				explosionSoundCount="8"
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+				explosionsBone="Hull_Shake"
 				material="Units/OphanimCarrier"
 				mesh="Units/OphanimCarrier"
 				normalWeight="0.1"
@@ -16,7 +15,7 @@
 				<missileWeapon fireInterval="0.5" muzzleBone="MissileR" missileScale="0.2" muzzleCount="6"/>
 			</models>
 		</weapon>
- 		<weapon type="None" requiredUpgrade="EMPDrones">
+ 		<weapon type="None" requiredUpgrade="EMPDrone">
 			<models>
 				<weapon bone="Hull_Shake"
 						material="Units/OphanimCarrierDroneDispenser"
@@ -146,6 +145,7 @@
 				<target rangeMax="1">
 					<conditions>
 						<tile>
+							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
 					</conditions>
@@ -207,6 +207,7 @@
 				<target rangeMax="1">
 					<conditions>
 						<tile>
+							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
 					</conditions>

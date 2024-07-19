@@ -9,29 +9,14 @@
 				scale="1.2 1.2 1.2"/>
 	</model>
 	<weapons>
-		<weapon type="TachyonCannon">
+		<weapon type="CrodeusBite">
 			<models>
-				<beamWeapon muzzleBone="MainMuzzle"/>
 			</models>
 		</weapon>
-		<weapon type="TachyonRay" count="6">
+		<weapon type="DimensionalNeedles"
+				enabled="0"
+				slotName="DimensionalNeedles">
 			<models>
-				<beamWeapon muzzleBone="Muzzle"
-						muzzleCount="6"/>
-			</models>
-		</weapon>
- 		<weapon type="None">
-			<models>
-				<weapon bone="Hull"
-						material="Units/CherubimTitanDeflectorShield"
-						mesh="Units/CherubimTitanDeflectorShield"/>			
-			</models>
-		</weapon>
- 		<weapon type="None">
-			<models>
-				<weapon bone="Generator"
-						material="Units/CherubimTitanPowerGenerator"
-						mesh="Units/CherubimTitanPowerGenerator"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -42,6 +27,7 @@
 				<antimatterCost base="120"/> <!-- %antimatterCost base tier=11 factor=0.5 -->
 				<antimatterUpkeep base="6.0"/> <!-- %antimatterUpkeep base tier=11 factor=0.5 -->
 				<armor base="9"/>
+				<cargoSlots base="1"/>
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
 				<moraleMax base="12"/>
@@ -58,7 +44,7 @@
 		<modifier>
 			<effects>
 				<increaseAircraftScore base="0.5"/>
-				<increaseCyberScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
 			</effects>
 		</modifier>
 	</strategyModifiers>	
@@ -95,12 +81,89 @@
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<useWeapon cooldown="1"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0"
+				requiredMovement="0"
+				weaponSlotName="DimensionalNeedles"/>
+		<unitCast name="Swallow"
+				cooldown="1">
+			<model>
+				<cast animation=""
+						casterBlueprint=""
+						responseSound=""
+						sound=""/>
+			</model>
+			<conditions>
+				<unit>
+					<cargoSlotsFree greater="0"/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<noTrait type="Hero"/>
+							<noTrait type="Titan"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="TargetEnemyNonTitanNonHeroUnit">
+									<effects>
+										<embark/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="ToTargetEnemyNonTitanNonHeroUnit">
+									<effects>
+										<addTrait type="Swallowed"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+		<unitCast name="SeedOfExtinction"
+				cooldown="5"
+				requiredUpgrade="SeedOfExtinction">
+			<model>
+				<cast animation=""
+						casterBlueprint=""
+						responseSound=""
+						sound=""/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<tile>
+							<noFeature type="SeedOfExtinction"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="SeedOfExtinction" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
 	</actions>
 	<traits>
-		<trait type="DeflectorShield"/>
+		<trait type="Biological"/>
 		<trait type="Flying"/>
 		<trait type="Large"/>
-		<trait type="Mechanical"/>
+		<trait type="Swallower"/>
 		<trait type="Titan"/>
 	</traits>
 </unit>

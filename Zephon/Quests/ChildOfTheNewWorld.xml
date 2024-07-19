@@ -1,9 +1,4 @@
-<quest>
- 	<conditions>
-		<player>
-			<!-- <turn greater="40"/> -->
-		</player>
-	</conditions>
+<quest firstTurn="40">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -46,9 +41,13 @@
 				<nearCityTileSelector targetDistance="6">
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
 							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -88,9 +87,13 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
 							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -110,9 +113,13 @@
 				<nearUnitTileSelector count="2" targetDistance="3">
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
 							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -159,13 +166,30 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addItem type="???"/> -->
+							<addPlayerAction type="Rejuvenation"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+		<stage name="LureAugurFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="-2"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
 			</modifications>
 		</stage>
-		<stage name="LureAugurFailure"/>
 		<stage name="ContactAugur" nextStageOnSuccess="ContactAugurSuccess">
 			<modifications>
 				<playerSelector>
@@ -198,9 +222,13 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
 							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -226,9 +254,13 @@
 				<nearCityTileSelector count="3">
 					<conditions>
 						<tile>
-							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
 							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -253,7 +285,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addTrait type="???"/> -->
+							<dimensionalEchoes add="8"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

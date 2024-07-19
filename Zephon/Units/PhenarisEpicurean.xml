@@ -4,8 +4,8 @@
 		<unit bloodBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
-				material="Units/PhenarisHunter"
-				mesh="Units/PhenarisHunter"
+				material="Units/PhenarisEpicurean"
+				mesh="Units/PhenarisEpicurean"
 				normalWeight="0.1"
 				scale="1 1 1"
 				walker="1"/>
@@ -52,98 +52,134 @@
 	<actions>
 		<appear>
 			<model>
-				<action animation="Units/PhenarisHunterAbility1"
-						effectBlueprint="Effects/Nightmare"
-						beginEffect="0.2"
-						responseSound="Units/Responses/PhenarisHunterAppear"
+				<action responseSound="Units/Responses/PhenarisEpicureanAppear"
 						sound="Units/PhenarisHunterAppear"
 						soundCount="3"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
-				<attack chargeAnimation="Units/PhenarisHunterCharge"
-						meleeAnimation="Units/PhenarisHunterMelee"
+				<attack animation="Units/PhenarisEpicureanAttack"
+						beginFire="0.3"
+						endFire="0.4"
+						chargeAnimation="Units/PhenarisEpicureanCharge"
+						meleeAnimation="Units/PhenarisEpicureanMelee"
 						meleeBeginSwing="0.3"
 						meleeEndSwing="0.4"
 						meleeSound="Units/PhenarisHunterMelee"
 						meleeSoundCount="3"
-						responseSound="Units/Responses/PhenarisHunterAttack"
+						responseSound="Units/Responses/PhenarisEpicureanAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
-				<die animation="Units/PhenarisHunterDie"
+				<die animation="Units/PhenarisEpicureanDie"
 						animationCount="2"
 						sound="Units/MediumBiologicalGroundHit"
 						soundCount="3"
 						soundDelay="0.6"
-						voiceSound="Units/PhenarisHunterDie"
-						voiceSoundCount="4"/> 
+						voiceSound="Units/PhenarisEpicureanDie"
+						voiceSoundCount="5"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/PhenarisHunterImpact"
-						responseSound="Units/Responses/PhenarisHunterEndureHighDamage"/> 
+				<action animation="Units/PhenarisEpicureanImpact"
+						responseSound="Units/Responses/PhenarisEpicureanEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
 			<model>
-				<idle animation="Units/PhenarisHunterIdle"
+				<idle animation="Units/PhenarisEpicureanIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterKill"/>
+				<action responseSound="Units/Responses/PhenarisEpicureanKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/PhenarisHunterMove"
+				<action animation="Units/PhenarisEpicureanMove"
 						sound="Units/PhenarisHunterMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/PhenarisHunterMove"
+						responseSound="Units/Responses/PhenarisEpicureanMove"
 						responseSoundCount="3"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterPoke"/>
+				<action responseSound="Units/Responses/PhenarisEpicureanPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterSelect"
+				<action responseSound="Units/Responses/PhenarisEpicureanSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Masochism"
-				cooldown="5">
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="10"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/PhenarisEpicureanAbility0"
+						blueprint="Effects/Masochism"
+						responseSound="Units/Responses/PhenarisEpicureanMasochism"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Masochism" duration="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>
 		<trait type="Biological"/>
-		<!-- <trait type="Deathshriek"/> -->
+		<trait type="Deathshriek" requiredUpgrade="Deathshriek"/>
 		<trait type="VoidDrifter"/>
 	</traits>
 </unit>

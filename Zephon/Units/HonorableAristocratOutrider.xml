@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Human">
+<unit branch="Human" icon="Units/Outrider" portrait="Units/Outrider">
 	<model>
 		<unit effectsBlueprint="Effects/Outrider"
+				explosionsBlueprint="Effects/MediumHumanExplosions"
 				explosionsBone="Chassis"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
 				material="Units/Outrider"
 				mesh="Units/Outrider"
 				scale="25 25 25"/>

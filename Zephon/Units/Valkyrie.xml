@@ -2,9 +2,8 @@
 <unit branch="Human">
 	<model>
 		<unit effectsBlueprint="Effects/Valkyrie"
+				explosionsBlueprint="Effects/MediumHumanExplosions"
 				explosionsBone="Chest"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
 				material="Units/Valkyrie"
 				mesh="Units/Valkyrie"
 				normalWeight="0.1"
@@ -327,5 +326,6 @@
 		<trait type="Hero"/>
 		<trait type="Large"/>
 		<trait type="Mechanical"/>
+		<trait type="PracticalRomanticAffinityUpgrade2" requiredUpgrade="PracticalRomanticAffinityUpgrade2"/>
 	</traits>
 </unit>

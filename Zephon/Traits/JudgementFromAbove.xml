@@ -2,8 +2,10 @@
 <trait visibleOnUnit="1">
 	<modifiers>
 		<modifier effectDescription="WhenAttackingFromHighGround">
-			<conditions>
-				<!-- TODO -->
+			<conditions ignoreForTraitVisibility="1">
+				<unit>
+					<heightToTarget less="0"/>
+				</unit>
 			</conditions>
 			<effects>
 				<damage mul="0.1"/>

@@ -1,0 +1,222 @@
+<quest firstTurn="40">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="RepairShard" nextStage="RepairShard"/>
+				<option name="RejectRepair"/>
+			</options>
+		</stage>
+		<stage name="RepairShard" nextStageOnSuccess="RepairShardSuccess">
+			<objectives>
+				<accumulateResearch count="80"/>
+			</objectives>
+		</stage>
+		<stage name="RepairShardSuccess">
+			<options>
+				<option name="RecoverShards" nextStage="RecoverShards"/>
+				<option name="RejectRecovery" nextStage="RejectRecovery"/>
+			</options>
+		</stage>
+		<stage name="RecoverShards" nextStageOnSuccess="RecoverShardsSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="Hammerhead" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<nearCityTileSelector count="3" targetDistance="8">
+					<conditions>
+						<tile>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
+						clearEnemies="1"
+						unitType="Hammerhead">
+					<defenders>
+						<unit type="AcrinMilitia" count="2" rankMin="3" rankMax="5"/>
+					</defenders>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="RecoverShardsSuccess">
+			<options>
+				<option name="BugZephon" nextStage="BugZephon">
+					<nextStages>
+						<nextStage name="BugZephonSuccess" weight="3"/>
+						<nextStage name="BugZephonFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="DestroyShards" nextStage="DestroyShards"/>
+				<option name="AcquireShards" nextStage="AcquireShards">
+					<nextStages>
+						<nextStage name="AcquireShardsSuccess" weight="3"/>
+						<nextStage name="AcquireShardsFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="ServeZephon" nextStage="ServeZephon"/>
+			</options>
+		</stage>
+		<stage name="BugZephonSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="SchismOfRegimina"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="BugZephonFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait duration="5" type="Blackout"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="DestroyShards">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="-2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<addTrait type="AmnioticSubstance"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AcquireShardsSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<addTrait type="Kenaz"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AcquireShardsFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<addTrait type="ZephonInterference" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ServeZephon">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="RejectRecovery"/>
+	</stages>
+ </quest>

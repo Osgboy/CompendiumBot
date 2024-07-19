@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="ForCyberProductionBuildings">
+			<conditions>
+				<building>
+					<branch name="Cyber"/>
+					<production greater="0"/>
+				</building>
+			</conditions>
+			<effects>
+				<production add="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

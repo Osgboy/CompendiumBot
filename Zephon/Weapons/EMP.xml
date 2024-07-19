@@ -6,15 +6,15 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="0"/> <!-- %armorPenetration base tier=1 -->
+				<armorPenetration base="0"/> <!-- %armorPenetration base tier=0 -->
 				<attacks base="1"/>
-				<damage base="1"/> <!-- %damage base tier=1 -->
+				<damage base="0"/> <!-- %damage base tier=0 -->
 			</effects>
 		</modifier>
 	</modifiers>
-	<target rangeMax="1"/>
 	<traits>
-<!-- 		<trait type="EMP"/> -->
-<!-- 		<trait type="SelfDestruct"/> -->
+		<trait type="EMP"/>
+		<trait type="Melee"/>
+		<trait type="SelfDestruct"/>
 	</traits>
 </weapon>

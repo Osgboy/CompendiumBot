@@ -154,7 +154,7 @@
 					<areas>
 						<area affect="Unit" radius="1" excludeRadius="0">
 							<modifiers>
-								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
+								<modifier effectDescription="ToAlliedNonLargeUnitsInTheArea">
 									<conditions>
 										<unit>
 											<ally/>
@@ -307,5 +307,6 @@
 	<traits>
 		<trait type="Biological"/>
 		<trait type="Hero"/>
+		<trait type="PracticalRomanticAffinityUpgrade2" requiredUpgrade="PracticalRomanticAffinityUpgrade2"/>
 	</traits>
 </unit>

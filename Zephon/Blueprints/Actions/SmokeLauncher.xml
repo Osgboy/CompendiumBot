@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="SmokeLauncher"
+		cooldown="10"
+		requiredUpgrade="SmokeLauncher">
+	<beginTargets>
+		<selfTarget>
+			<areas>
+				<area affect="Tile">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addFeature type="SmokeScreen" duration="3"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<effects>
+				<score add="0.5"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>
+</unitCast>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onUnitDisappeared>
+		<unit>
+			<area affect="Cargo">
+				<modifiers>
+					<modifier effectDescription="FromCargoOnDeath">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<removeTrait type="Swallowed"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="UnitsOnDeath">
+						<effects>
+							<disembark/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onUnitDisappeared>
+</trait>

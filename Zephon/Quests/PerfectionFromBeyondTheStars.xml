@@ -1,7 +1,6 @@
-<quest image="Factions/HeartlessArtificer">
+<quest firstTurn="40" image="Factions/HeartlessArtificer">
  	<conditions>
 		<player>
-			<!-- <turn greater="40"/> -->
 			<faction name="HeartlessArtificer"/>
 		</player>
 	</conditions>
@@ -84,10 +83,12 @@
 				<nearUnitTileSelector count="2" targetDistance="6">
 					<conditions>
 						<tile>
+							<land/>
 							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 					<unitConditions>

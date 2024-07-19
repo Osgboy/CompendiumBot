@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="EvasiveManeuvers"
+		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="3"
+		requiredActionPoints="0">
+	<beginTargets>
+		<selfTarget>
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="EvasiveManeuvers" duration="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<enemyStrengthInTheArea greater="0"/>
+				</tile>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>			
+</unitCast>

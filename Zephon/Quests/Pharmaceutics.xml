@@ -94,10 +94,12 @@
 				<nearCityTileSelector count="1" targetDistance="6">
 					<conditions>
 						<tile>
-							<noFeatureCategory name="SpecialResource"/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>

@@ -10,10 +10,11 @@
 				sound="Units/ShochitrisLairBreedDeformities"/>
 	</model>
 	<beginTargets>
-		<target melee="1" rangeMax="1">
+		<target melee="1">
 			<conditions>
 				<tile>
 					<land/>
+					<noFeature type="Volcano"/>
 					<noUnit/>
 				</tile>
 			</conditions>

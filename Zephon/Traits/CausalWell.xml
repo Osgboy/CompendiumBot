@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="ToAlliedBiologicalUnitsEachTurn">
+						<conditions>
+							<unit>
+								<ally/>
+								<trait type="Biological"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="3"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="ToEnemyUnitsEachTurn">
+						<conditions>
+							<unit>
+								<enemy/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="-3"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

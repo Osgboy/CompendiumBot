@@ -14,6 +14,12 @@
 				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
 			</models>
 		</weapon>
+		<weapon type="AntimatterBomb"
+				enabled="0"
+				slotName="AntimatterBomb">
+			<models>
+			</models>
+		</weapon>
  		<weapon type="None">
 			<models>
 				<weapon bone="Hull_Shake"
@@ -129,12 +135,24 @@
 				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
 			</model>
 		</skip>
+		<useWeapon weaponSlotName="AntimatterBomb"
+				cooldown="3">
+			<model>
+			</model>
+		</useWeapon>
+		<unitCast blueprint="DecoyFlares">
+			<model>
+				<cast animation="Units/HadesBomberAbility0"
+						blueprint="Effects/DecoyFlares"
+						responseSound="Units/Responses/HadesBomberDecoyFlares"/>
+			</model>
+		</unitCast>	
 	</actions>
 	<traits>
 		<trait type="Flying"/>
 		<trait type="Large"/>
 		<trait type="Mechanical"/>
-		<!-- <trait type="Stealth" requiredUpgrade=""/> -->
+		<trait type="Stealth" requiredUpgrade="MultiSpectralScattering"/>
 		<trait type="Titan"/>
 	</traits>
 </unit>

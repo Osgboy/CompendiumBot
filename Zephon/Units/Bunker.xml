@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Bunker"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Bunker"
 				heatImpactSound="Impacts/HeatConcrete"
 				heatImpactSoundCount="5"
 				kineticImpactSound="Impacts/KineticConcrete"

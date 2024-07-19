@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Bunker"
-				explosionSound="Explosions/Units/MediumCyber"
-				explosionSoundCount="8"
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+				explosionsBone="Bunker"
 				material="Units/Bunker"
 				mesh="Units/Bunker"
 				normalWeight="0.1"

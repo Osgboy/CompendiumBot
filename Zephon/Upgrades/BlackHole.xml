@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade branch="Cyber" tier="7">
+	<requiredUpgrades>
+		<upgrade name="CyberOperations"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseOperationsScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

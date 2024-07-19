@@ -21,6 +21,7 @@
 					<modifier effectDescription="WhenEnemyGroundUnitStopsOnTile">
 						<conditions>
 							<unit>
+								<notCargo/>
 								<enemy/>
 								<noTrait type="Flying"/>
 								<noTrait type="Hovering"/>

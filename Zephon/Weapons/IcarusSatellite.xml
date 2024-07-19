@@ -12,9 +12,11 @@
 				<damage base="12"/> <!-- %damage base tier=8 -->
 			</effects>
 		</modifier>
+		<modifier requiredUpgrade="IcarusSatelliteUpgrade">
+			<effects>
+				<attacks mul="1"/>
+			</effects>
+		</modifier>
 	</modifiers>
 	<target rangeMax="-1"/>
-	<traits>
-
-	</traits>
 </weapon>

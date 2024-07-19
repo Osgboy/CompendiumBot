@@ -112,8 +112,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<minerals add="30"/>
-							<!-- <addItem name="?"/> -->
+							<minerals add="60"/>
 						</effects>
 					</modifier>
 				</playerModifiers>				
@@ -140,10 +139,12 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<noFeatureCategory name="SpecialResource"/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -159,7 +160,7 @@
 				<killCamp name="KillCalem"
 						bossKillCompletes="0"
 						turns="10">
-					<boss type="Reaver"/>
+					<boss type="Reaver"/> <!-- TODO Calem -->
 					<defenders>
 						<unit type="Reaver" count="4"/>
 					</defenders>

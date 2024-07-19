@@ -3,7 +3,154 @@
 		initialTrack="Music/Cyber0"
 		trustworthiness="0.375">
 	<actions>
-		<unitCast name="IcarusSatellite"
+		<playerCast name="EnhancedProbabilityAugment"
+				cooldown="1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Large"/>
+							<noTrait type="EnhancedProbabilityAugment"/>
+							<noTrait type="LiquidDeflectionAugment"/>
+							<noTrait type="NanomachineAcceleratorAugment"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedNonLargeUnaugmentedUnit">
+									<effects>
+										<addTrait type="EnhancedProbabilityAugment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="EnhancedProbabilityAugment"/>
+				<action name="LiquidDeflectionAugment"/>
+				<action name="NanomachineAcceleratorAugment"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="LiquidDeflectionAugment"
+				cooldown="1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Large"/>
+							<noTrait type="EnhancedProbabilityAugment"/>
+							<noTrait type="LiquidDeflectionAugment"/>
+							<noTrait type="NanomachineAcceleratorAugment"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedNonLargeUnaugmentedUnit">
+									<effects>
+										<addTrait type="LiquidDeflectionAugment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="EnhancedProbabilityAugment"/>
+				<action name="LiquidDeflectionAugment"/>
+				<action name="NanomachineAcceleratorAugment"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="NanomachineAcceleratorAugment"
+				cooldown="1">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Large"/>
+							<noTrait type="EnhancedProbabilityAugment"/>
+							<noTrait type="LiquidDeflectionAugment"/>
+							<noTrait type="NanomachineAcceleratorAugment"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedNonLargeUnaugmentedUnit">
+									<effects>
+										<addTrait type="NanomachineAcceleratorAugment"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<sharedCooldowns>
+				<action name="EnhancedProbabilityAugment"/>
+				<action name="LiquidDeflectionAugment"/>
+				<action name="NanomachineAcceleratorAugment"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="IcarusSatellite"
 				cooldown="1"
 				label="1"
 				requiredUpgrade="IcarusSatellite">
@@ -34,12 +181,88 @@
 					</areas>
 				</target>
 			</beginTargets>
-		</unitCast>
+		</playerCast>
 	</actions>
 	<dislikedLabels>
 		<label name="Untrustworthy"/>
 		<label name="WordsOfTheProphet"/>
 	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR4"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR5"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR6"
+						muzzleBone="Muzzle"
+						windupDuration="0.0"/>																																	
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR7"
+						muzzleBone="Muzzle"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR8"
+						muzzleBone="Muzzle"
+						windupDuration="0.2"/>																																	
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+	</headquarterWeapons>
 	<likedLabels>
 		<label name="Gluttony"/>
 		<label name="SurvivalTraining"/>
@@ -66,6 +289,7 @@
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
 		<trait type="Augmentations"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -73,7 +297,11 @@
 		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
 		<trait type="HitAndRun"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
 		<trait type="Independent"/>
+		<trait type="RogueOperativeAffinityUpgrade" requiredUpgrade="RogueOperativeAffinityUpgrade"/>
+		<trait type="RogueOperativeAffinityUpgrade2" requiredUpgrade="RogueOperativeAffinityUpgrade2"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>

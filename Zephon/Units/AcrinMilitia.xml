@@ -191,13 +191,12 @@
 				<selfTarget>
 					<conditions>
 						<tile>
-							<enemyStrengthInTheArea equal="0"/>
+							<land/>
 							<noFeatureCategory name="Bleed"/>
 							<noFeatureCategory name="Building"/>
 							<noFeatureCategory name="Fire"/>
 							<noFeatureCategory name="Forest"/>
 							<noFeatureCategory name="SpecialResource"/>
-							<land/>
 						</tile>
 					</conditions>
 					<areas>
@@ -209,8 +208,13 @@
 									</effects>
 								</modifier>
 							</modifiers>
-							<scoreModifiers>
+							<scoreModifiers>								
 								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea equal="0"/>
+										</tile>
+									</conditions>								
 									<effects>
 										<score add="0.5"/>
 									</effects>

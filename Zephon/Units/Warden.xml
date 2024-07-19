@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit explosionsBone="Chest"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Chest"
 				material="Units/Warden"
 				mesh="Units/Warden"
 				normalWeight="0.1"

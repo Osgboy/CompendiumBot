@@ -2,8 +2,8 @@
 <trait visibleOnWeapon="1">
 	<modifiers>
  		<modifier effectDescription="AgainstLargeUnits">
- 			<conditions>
-				<targetUnit ignoreForTraitVisibility="1">
+ 			<conditions ignoreForTraitVisibility="1">
+				<targetUnit>
 					<trait type="Large"/>
 				</targetUnit>
 			</conditions>

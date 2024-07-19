@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Features/NuclearFallout" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<hitpoints add="-4"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+	<modifiers>
+		<modifier>
+			<effects>
+				<algae mul="-0.5"/>
+				<chips mul="-0.5"/>
+				<energy mul="-0.5"/>
+				<food mul="-0.5"/>
+				<influence mul="-0.5"/>
+				<minerals mul="-0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

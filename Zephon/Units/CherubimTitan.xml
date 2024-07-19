@@ -20,7 +20,7 @@
 						muzzleCount="6"/>
 			</models>
 		</weapon>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="DeflectorShield">
 			<models>
 				<weapon bone="Hull"
 						material="Units/CherubimTitanDeflectorShield"
@@ -95,9 +95,69 @@
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<unitCast name="CherubicHallowing"
+				cooldown="3">
+			<model>
+				<cast animation=""
+						blueprint=""
+						casterBlueprint=""
+						responseSound=""
+						sound=""/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnits">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="CherubicHallowing" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
+		<unitCast name="AntimatterDilation"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0"
+				requiredUpgrade="AntimatterDilation">
+			<model>
+				<cast animation=""
+						blueprint=""
+						casterBlueprint=""
+						responseSound=""
+						sound=""/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="AntimatterDilation" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
 	</actions>
 	<traits>
-		<trait type="DeflectorShield"/>
+		<trait type="DeflectorShield" requiredUpgrade="DeflectorShield"/>
 		<trait type="Flying"/>
 		<trait type="Large"/>
 		<trait type="Mechanical"/>

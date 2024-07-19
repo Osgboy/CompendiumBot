@@ -4,6 +4,7 @@
 		<modifier>
 			<conditions>
 				<unit>
+					<notCargo/>
 					<noTrait type="Flying"/>
 					<noTrait type="Hovering"/>
 				</unit>
@@ -20,6 +21,7 @@
 					<modifier effectDescription="EachTurn">
 						<conditions>
 							<unit>
+								<notCargo/>
 								<noTrait type="Flying"/>
 								<noTrait type="Hovering"/>
 							</unit>

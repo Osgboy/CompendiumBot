@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<city/>
+			</conditions>
+			<effects>
+				<research mul="0.04"/>
+				<influence mul="-0.02"/>
+				<minerals mul="-0.02"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

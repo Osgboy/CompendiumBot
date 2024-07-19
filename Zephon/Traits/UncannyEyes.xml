@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<noType name="Deformity"/>
+								<noType name="LandanGraham"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

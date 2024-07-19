@@ -47,6 +47,31 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\AbkluthBite.png"
     },
+    "Abyssal Miasma": {
+        "internalID": "AbyssalMiasma",
+        "description": null,
+        "flavor": "We had the Titan pinned down. I KNEW we could finish it off but we were too goddamn slow! That gave it time to steady itself and spew a swarm of insects. The sky blacked out. They tore out our gunners' eyes. Crawled down our throats. Drowned as they dripped slime into our lungs\u2026",
+        "traits": {
+            "Horrifying": null,
+            "Splash": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AbyssalMiasma.png"
+    },
     "Anti-Armor Grenade": {
         "internalID": "AntiArmorGrenade",
         "description": null,
@@ -69,13 +94,64 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\AntiArmorGrenade.png"
     },
+    "Antimatter Bomb": {
+        "internalID": "AntimatterBomb",
+        "description": null,
+        "flavor": "The gods of old punished one of their own sharing the secret of fire with us. They knew it would lead to this: a bomb that could undo what gods put on this planet. Its flames would spread and turn the land into glass. Then the gods would have to look down and see themselves in the ruined Earth.",
+        "traits": {
+            "Antimatter Diffraction": null,
+            "Ignores Cover": null,
+            "Large Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 32.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AntimatterBomb.png"
+    },
+    "Antimatter Explosive": {
+        "internalID": "AntimatterExplosive",
+        "description": null,
+        "flavor": "Using one of these took advanced training\u2026 you had to find the soldiers who could actually follow instructions. Then you weeded out the ones who treated these like toys. Your best troops were the ones who respected the power they held. Your worst were the ones who fantasized about using these to kill.",
+        "traits": {
+            "Antimatter Diffraction": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\AntimatterExplosive.png"
+    },
     "Antimatter Sword": {
         "internalID": "AntimatterSword",
         "description": null,
         "flavor": "There was power in drawing your blade and striking a single motion\u2014but what good was such power if body and blades were too weak? The answer lay in Antimatter. These blades were the unstoppable force we needed to pierce immovable objects. Antimatter tech made for good shielding\u2026but it made for even better killing.",
         "traits": {
-            "Melee": null,
-            "Crippling": null
+            "Antimatter Diffraction": null,
+            "Melee": null
         },
         "range": "Melee",
         "innateStats": {
@@ -199,6 +275,7 @@
         "description": null,
         "flavor": "Shit. Phenaris freak's blade swung right by my face. We were on the same fucking side. Screamed at it to watch out. \u201cPain. Pleasure.\u201d it said, \u201cWe swing from one to another in a steady rhythm. You should too\u2026 I think you'd like it.\u201d",
         "traits": {
+            "Axiomatic Pendulum": null,
             "Melee": null
         },
         "range": "Melee",
@@ -293,6 +370,35 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\BioAcidSpray.png"
     },
+    "Black Hole": {
+        "internalID": "BlackHole",
+        "description": null,
+        "flavor": "Something in humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
+        "traits": {
+            "Eventful Horizons": "EmulatedMindAffinityUpgrade2",
+            "Massive Splash": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png"
+    },
     "Bleed": {
         "internalID": "Bleed",
         "description": null,
@@ -324,7 +430,6 @@
         "description": null,
         "flavor": "\u201dBlest?\u201d Blessed by who? The Provosts scream about \u201cThe One Above\u201d but won't share any details about them. No other machines in our ranks worshiped some cyber deity. I didn't feel great listening to machines demand you bow to a god they won't say anything about\u2026",
         "traits": {
-            "Overheating": null,
             "Large Splash": null
         },
         "range": "3",
@@ -473,6 +578,30 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\CrlasGambit.png"
     },
+    "Crodeus Bite": {
+        "internalID": "CrodeusBite",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Titan Melee": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CrodeusBite.png"
+    },
     "Cyclone Autocannon": {
         "internalID": "CycloneAutocannon",
         "description": null,
@@ -496,6 +625,34 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\CycloneAutocannon.png"
+    },
+    "Deathshriek": {
+        "internalID": "Deathshriek",
+        "description": null,
+        "flavor": "Priests of Phenaris whispered about their master's most prime edict: that before they die they scream his true name in the tongue it was meant to be spoken in. Made me think of a grandmother I met in the slums, who warned against speaking the true name of the god she worshiped. A warning shared by her ancestors from thousands of years in the past.",
+        "traits": {
+            "Ignores Cover": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Traits\\Deathshriek.png"
     },
     "Defense Grid": {
         "internalID": "DefenseGrid",
@@ -524,7 +681,7 @@
     "Rake": {
         "internalID": "DeformingRake",
         "description": null,
-        "flavor": null,
+        "flavor": "Don't let the Deformities kill you. Your death won't be quick. Your body will fall and rise again, dragging your consciousness along for one final, hellish ride.",
         "traits": {
             "Melee": null
         },
@@ -544,6 +701,54 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\DeformingRake.png"
+    },
+    "Devouring Maw": {
+        "internalID": "DevouringMaw",
+        "description": null,
+        "flavor": "The Acrin titans ate everything. People, machines, factories: they could bend and shape their mouths to pull anything into their guts. I watched one kill a Vulkan R-5. The tendrils in its maw grew to the size of a building to spread and suck it in.",
+        "traits": {
+            "Titan Melee": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 32.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\DevouringMaw.png"
+    },
+    "Dimensional Needles": {
+        "internalID": "DimensionalNeedles",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Crippling": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\DimensionalNeedles.png"
     },
     "Disintegrate": {
         "internalID": "Disintegrate",
@@ -617,6 +822,32 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\DragoonSpear.png"
+    },
+    "EMP": {
+        "internalID": "EMP",
+        "description": null,
+        "flavor": "I hated EMPs. Against ZEPHON and Cyber enemies, sure, they were vital tools. But shutting down electronics was a two-way street, and I hated being exposed without fire support.",
+        "traits": {
+            "EMP": null,
+            "Melee": null,
+            "Self-Destruct": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\EMP.png"
     },
     "Elysian Battery": {
         "internalID": "ElysianBattery",
@@ -718,7 +949,7 @@
     "Fire": {
         "internalID": "Fire",
         "description": null,
-        "flavor": null,
+        "flavor": "Word spread quickly about the Battle of Castaic Plain. Our forces staged an assault to take control of a water reserve from the enemy. Shots were fired. The wind was high. The ground dry as kindling. Inside of an hour, a wildfire surrounded both armies. They should have stopped fighting\u2014worked together to douse the flames. But instead hundreds were killed and the fresh water poisoned, never to be drunk again.",
         "traits": {},
         "range": "0",
         "innateStats": {
@@ -798,7 +1029,7 @@
     "Frost Breath": {
         "internalID": "FrostBreath",
         "description": null,
-        "flavor": "Inside the belly of an Abkhan there's a pouch of flesh chilled to temperatures below freezing that stays cold even after death. I once rushed a boneheaded biologist to the medical bay after he got frostbite touching one during a dissection. He lost a pair of fingers. Soldiers caught by the Abkhath's breath lost whole chunks of flesh.",
+        "flavor": "Inside the belly of an Abkhan there's a pouch of flesh chilled to temperatures below freezing that stays cold even after death. I once rushed a boneheaded biologist to the medical bay after he got frostbite touching one during a dissection. He lost a pair of fingers. Soldiers caught by the Abkhan's breath lost whole chunks of flesh.",
         "traits": {
             "Cone": null,
             "Large Splash": null
@@ -853,18 +1084,42 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 7.0
+                "value": 6.0
             },
             "attacks": {
                 "operator": "base",
-                "value": 1.0
+                "value": 2.0
             },
             "damage": {
                 "operator": "base",
-                "value": 12.0
+                "value": 6.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\GaussAutocannon.png"
+    },
+    "Gauss Autocannon (Overcharged)": {
+        "internalID": "GaussAutocannonOvercharged",
+        "description": null,
+        "flavor": "Loading Gauss weaponry onto our planes turned the night sky into a light show. The glow of the rounds could light up the night. We had to be careful\u2014air operations in the sky above could sometimes put a spotlight on our ground troops. Stealth missions got all the more riskier.",
+        "traits": {
+            "Overcharged": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussAutocannonOvercharged.png"
     },
     "Gauss Cannon": {
         "internalID": "GaussCannon",
@@ -911,6 +1166,31 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\GaussCarbine.png"
+    },
+    "Gauss Carbine (Overcharged)": {
+        "internalID": "GaussCarbineOvercharged",
+        "description": null,
+        "flavor": "I raised hell with command about the power problem with the Gauss Rifles. And I take credit for them figuring out how to get Gauss Carbines embedded in our troops\u2019 armor. All that power packed into a weapon that could rest on your shoulder. The techs did beautiful work with this one.",
+        "traits": {
+            "Close-Quarters Fire": null,
+            "Overcharged": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GaussCarbineOvercharged.png"
     },
     "Gauss Rifle": {
         "internalID": "GaussRifle",
@@ -1034,6 +1314,35 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\GravitonProjector.png"
+    },
+    "Gravity Field": {
+        "internalID": "GravityField",
+        "description": null,
+        "flavor": "",
+        "traits": {
+            "Gravitational Compression": null,
+            "Ignores Cover": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Features\\GravityField.png"
     },
     "Grenade Launcher": {
         "internalID": "GrenadeLauncher",
@@ -1205,12 +1514,12 @@
                 "value": 2.0
             }
         },
-        "iconPath": "Zephon\\Icons\\Weapons\\IncandescentIcon.png"
+        "iconPath": "Zephon\\Icons\\Items\\IncandescentIcon.png"
     },
     "Incendiary Grenade": {
         "internalID": "IncendiaryGrenade",
         "description": null,
-        "flavor": null,
+        "flavor": "Alien, machine, human. All burned at a hot enough temperature. But the smells were different. The screams were different. No matter how you came into this world, being burned alive was a terrible way to leave it.",
         "traits": {
             "Burning": null,
             "Ignores Cover": null,
@@ -1246,7 +1555,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 1.0
+                "value": 3.0
             },
             "attacks": {
                 "operator": "base",
@@ -1254,10 +1563,34 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 2.0
+                "value": 4.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\Incinerator.png"
+    },
+    "Interceptor Missile": {
+        "internalID": "InterceptorMissile",
+        "description": null,
+        "flavor": "Pilots would make a game out of calling their Interceptor Missile shots. You won good money if you could call out how much damage you\u2019d do. Gambling on lives kept the pilots distracted from the danger faced in the air. We allowed it\u2014mostly.",
+        "traits": {
+            "Anti-Air": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\InterceptorMissile.png"
     },
     "Iok Bile": {
         "internalID": "IokBile",
@@ -1599,6 +1932,8 @@
         "description": null,
         "flavor": "The slow pain\u2026 it lacks a certain kick, but it goes down so nicely. You nurse it like a stiff drink, to better let the blood seep over senses\u2026\u201d God these Phenaris just loved to TALK. Put me in a unit full of Aegyllan Worms any day. Gross fuckers hate being alive so they'll shut up that much faster.",
         "traits": {
+            "Blighting": null,
+            "Burning": null,
             "Ignores Cover": null,
             "Splash": null
         },
@@ -1646,6 +1981,30 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\ParticleProjector.png"
+    },
+    "Phalx": {
+        "internalID": "Phalx",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Phalx.png"
     },
     "Pistol": {
         "internalID": "Pistol",
@@ -1698,14 +2057,14 @@
         "description": null,
         "flavor": "There was nothing more satisfying than staring down a horrifying abomination from beyond the stars and punching it right in the face. The techs cooked up a \u201cmag-lev accelerant\u201d that let our mechs swing harder than a boxing champ. The old-fashioned right hook was still the best way to finish a fight.",
         "traits": {
-            "Melee": null,
-            "Crippling": null
+            "Concussive": null,
+            "Melee": null
         },
         "range": "Melee",
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 4.0
+                "value": 6.0
             },
             "attacks": {
                 "operator": "base",
@@ -1713,7 +2072,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 12.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\PowerFist.png"
@@ -1766,6 +2125,60 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\SanctifiedTrephine.png"
+    },
+    "Saturation System": {
+        "internalID": "SaturationSystem",
+        "description": null,
+        "flavor": "First we heard it scream. Then the night grew bright as day\u2014but it was a colder, bluer light. The light of a great salvo bursting toward the sky\u2014minutes from turning your foxhole into a plasma-burnt scar in the skin of the earth.",
+        "traits": {
+            "Area": null,
+            "Indirect Fire": null,
+            "Massive Splash": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SaturationSystem.png"
+    },
+    "Seed of Extinction": {
+        "internalID": "SeedOfExtinction",
+        "description": null,
+        "flavor": "",
+        "traits": {
+            "Massive Splash": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\SeedOfExtinction.png"
     },
     "Shiraki Cruise Missile": {
         "internalID": "ShirakiCruiseMissile",
@@ -1845,6 +2258,31 @@
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\SiegeCannon.png"
+    },
+    "Sikka": {
+        "internalID": "Sikka",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Crippling": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Sikka.png"
     },
     "Singularity Blade": {
         "internalID": "SingularityBlade",
@@ -2003,7 +2441,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 5.0
+                "value": 3.0
             },
             "attacks": {
                 "operator": "base",
@@ -2011,10 +2449,68 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 2.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\TachyonRay.png"
+    },
+    "Tactical Nuclear Missile": {
+        "internalID": "TacticalNuclearMissile",
+        "description": null,
+        "flavor": "There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition.",
+        "traits": {
+            "Fusion Warhead": "FusionWarhead",
+            "Massive Splash": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png"
+    },
+    "Tactical Nuclear Missile (Adjacent)": {
+        "internalID": "TacticalNuclearMissileAdjacent",
+        "description": null,
+        "flavor": "There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition.",
+        "traits": {
+            "Fusion Warhead": "FusionWarhead",
+            "Massive Splash": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.5
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png"
     },
     "The Fog": {
         "internalID": "TheFog",
@@ -2064,32 +2560,6 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\ValkyrieAutocannon.png"
     },
-    "Volcano": {
-        "internalID": "Volcano",
-        "description": null,
-        "flavor": null,
-        "traits": {},
-        "range": "0",
-        "innateStats": {
-            "accuracy": {
-                "operator": "base",
-                "value": 6.0
-            },
-            "armorPenetration": {
-                "operator": "base",
-                "value": 0.0
-            },
-            "attacks": {
-                "operator": "base",
-                "value": 1.0
-            },
-            "damage": {
-                "operator": "base",
-                "value": 1.0
-            }
-        },
-        "iconPath": "Zephon\\Icons\\Weapons\\Volcano.png"
-    },
     "Vorodai Proselyte": {
         "internalID": "VorodaiProselyte",
         "description": null,
@@ -2114,6 +2584,57 @@
                 "value": 4.0
             }
         },
-        "iconPath": "Zephon\\Icons\\Weapons\\VorodaiProselyte.png"
+        "iconPath": "Zephon\\Icons\\Items\\VorodaiProselyte.png"
+    },
+    "Withering Breath": {
+        "internalID": "WitheringBreath",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Cone": null,
+            "Large Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\WitheringBreath.png"
+    },
+    "Wrath of the Leviathan": {
+        "internalID": "WrathOfTheLeviathan",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Cone": null,
+            "Large Splash": null,
+            "Titan Melee": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\WrathOfTheLeviathan.png"
     }
 }

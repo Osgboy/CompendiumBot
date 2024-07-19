@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<attacks base="2"/>
+				<damage base="12"/> <!-- %damage base tier=8 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="Horrifying"/>
+		<trait type="Splash"/>
+	</traits>
+</weapon>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<modifier effectDescription="OnHeight3">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<height equal="3"/>
+				</tile>
+			</conditions>
+			<effects>
+				<loyalty add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="OnHeight4">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<height equal="4"/>
+				</tile>
+			</conditions>
+			<effects>
+				<loyalty add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

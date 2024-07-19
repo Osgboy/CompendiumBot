@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/BlackHole">
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="12" max="12"/>
+				<armorPenetration base="4"/> <!-- %armorPenetration base tier=9 -->
+				<attacks base="3"/>
+				<damage base="4"/> <!-- %damage base tier=0 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="0"/>
+	<traits>
+		<trait type="EmulatedMindAffinityUpgrade2" requiredUpgrade="EmulatedMindAffinityUpgrade2"/>
+		<trait type="MassiveSplash"/>
+	</traits>
+</weapon>

@@ -6,14 +6,14 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="4"/> <!-- %armorPenetration base tier=5 -->
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
 				<attacks base="2"/>
-				<damage base="4"/> <!-- %damage base tier=5 -->
+				<damage base="12"/> <!-- %damage base tier=8 -->
 			</effects>
 		</modifier>
 	</modifiers>
 	<traits>
+		<trait type="Concussive"/>
 		<trait type="Melee"/>
-		<trait type="Crippling"/>
 	</traits>
 </weapon>

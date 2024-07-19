@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="IronWill"
+		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="5"
+		requiredActionPoints="0"
+		requiredMovement="0">
+	<beginTargets>
+		<selfTarget>
+			<conditions>
+				<unit>
+					<moraleFraction less="1.0"/>
+				</unit>
+			</conditions>
+			<modifiers>
+				<modifier>
+					<effects>
+						<morale mul="0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<moraleFraction less="0.667"/>
+				</unit>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>
+</unitCast>

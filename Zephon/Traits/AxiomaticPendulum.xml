@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Weapons/AxiomaticPendulum" visibleOnWeapon="1">
+	<onWeaponAttacked>
+		<attacker>
+			<area affect="Unit" radius="1" excludeRadius="0">
+				<modifiers>
+					<modifier effectDescription="ToAdjacentAlliedUnits">
+						<conditions>
+							<unit>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="2"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onWeaponAttacked>
+</trait>

@@ -35,10 +35,12 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
+							<land/>
 							<noFeatureCategory name="SpecialResource"/> 
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
-							<noFeature type="Volcanic"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>				
@@ -56,7 +58,7 @@
 		<stage name="MeetingRetrieve" nextStageOnSuccess="StoneRetrieved">
 			<objectives>
 				<killCamp name="KillBanditKing" bossKillCompletes="0">
-					<boss type="Reaver"/>
+					<boss type="Reaver"/> <!-- TODO Bandit King -->
 					<defenders>
 						<unit type="Reaver" count="1"/>
 					</defenders>
@@ -68,7 +70,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addItem name="PhilosophersStone"/> -->
+							<addItem type="PhilosophersStone"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -88,7 +90,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<minerals add="32"/>
+							<minerals add="40"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -99,7 +101,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>			
-							<!-- <addItem name="PhilosophersStone"/> -->
+							<addItem type="PhilosophersStone"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

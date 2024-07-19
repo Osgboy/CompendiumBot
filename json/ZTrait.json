@@ -69,6 +69,13 @@
         "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<perBuildingInCityModifier effectDescription=\"AlgaeUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Food\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<algae add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</perBuildingInCityModifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\AlgaeUpgrade.png"
     },
+    "Amniotic Substance": {
+        "internalID": "AmnioticSubstance",
+        "description": null,
+        "flavor": "Destroying the shards comes with a surprising side effect: each one leaves behind an unknown material that your scientists have never seen before. Is it some kind of\u2026 amniotic substance for ZEPHON's spawn? It seems to enhance the abilities of your cyber-augmented soldiers.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForCyberUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<hitpoints mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\AmnioticSubstance.png"
+    },
     "Amoetias Caress": {
         "internalID": "AmoetiasCaress",
         "description": "Grants access to uncommon Voice items at  The Concordat",
@@ -118,12 +125,33 @@
         "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"AgainstFlyingUnits\">\n \t\t\t<conditions>\n\t\t\t\t<targetUnit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<trait type=\"Flying\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\AntiGround.png"
     },
+    "Antimatter Diffraction": {
+        "internalID": "AntimatterDiffraction",
+        "description": null,
+        "flavor": "Do not ever go into battle thinking you are invulnerable. Antimatter tech made mincemeat out of too many good troops who\u2019d started to think they were gods. But there was something\u2026 pleasing about breaking through that armor, locking eyes with your enemy, and seeing terror seep across their face.",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<opponentModifiers>\n \t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"-0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</opponentModifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\AntimatterDiffraction.png"
+    },
+    "Antimatter Dilation": {
+        "internalID": "AntimatterDilation",
+        "description": null,
+        "flavor": "Children used to hold up magnifying glasses in the sunlight to burn their names into planks of wood. A Cherubim Titan could use Antimatter Dilation to be the sun and glass all at once, carving the very spirit of an empire into our enemies\u2019 bones. If there were any bones left.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/AntimatterDilation\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangeMax add=\"1\"/>\n\t\t\t\t<damage mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\AntimatterDilation.png"
+    },
     "Antimatter Plating": {
         "internalID": "AntimatterPlating",
         "description": null,
         "flavor": "Armor is a thin wall you\u2019d put up between yourself and the outside world. But walls can be knocked down. Antimatter plating could take hits like a willow waiting out a storm. You\u2019d hit hard, you\u2019d hit fast, and the armor would just move with the hits, absorb the energy, and leave your enemies exposed for the follow-up attack.",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\AntimatterPlating.png"
+    },
+    "Antimatter Shield": {
+        "internalID": "AntimatterShield",
+        "description": null,
+        "flavor": "If we wanted our soldiers to have more protection we\u2019d have slapped more armor on them. The Antimatter Shield didn\u2019t just protect our troops, it gave them some much-needed zone control as well. Skilled groups of soldiers would team up and push enemies into everything from artillery fire to the Bleed.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n \t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\AntimatterShield.png"
     },
     "Safety Disjunction": {
         "internalID": "AntimatterUpgrade",
@@ -139,6 +167,13 @@
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstNonAdjacentUnits\">\n\t\t\t<conditions>\n\t\t\t\t<targetUnit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<distance greater=\"1\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\AraneanCloak.png"
     },
+    "Archaegis": {
+        "internalID": "Archaegis",
+        "description": null,
+        "flavor": "How do you make a shield reflect lasers hot enough to melt your skin? Or bullets that rip organs to shreds? We needed technology that could learn what kind of attack was coming its way and alter a force field to send the attack back where it came from. Planting a tiny cybernetic brain on advanced human tech was our first step in bringing that to life.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/Archaegis\" visibleOnUnit=\"1\">\n\t<onWeaponDefended>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttacker\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.167\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponDefended>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Items\\Archaegis.png"
+    },
     "Archai Construct": {
         "internalID": "ArchaiConstruct",
         "description": null,
@@ -146,19 +181,12 @@
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ArchaiConstruct\">\n\t\t\t<effects>\n\t\t\t\t<healingReceived mul=\"-0.75\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\ArchaiConstruct.png"
     },
-    "Armor of Faith": {
-        "internalID": "ArmorOfFaith",
-        "description": null,
-        "flavor": "Most of us mustered willpower on the battlefield, but the Prophet channeled something else\u2014faith. With faith, he could do something the techs never came close to figuring out: how to project pure invulnerability. Was it supernatural? A power even beyond the Voice? I never found out.",
-        "modifiers": "<trait category=\"Buff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.833\"/>\n\t\t\t\t<evasionDamageReduction add=\"0.833\"/>\n\t\t\t\t<invulnerableDamageReduction add=\"0.833\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Zephon\\Icons\\Traits\\ArmorOfFaith.png"
-    },
-    "Archaegis": {
-        "internalID": "Archaegis",
-        "description": null,
-        "flavor": "How do you make a shield reflect lasers hot enough to melt your skin? Or bullets that rip organs to shreds? We needed technology that could learn what kind of attack was coming its way and alter a force field to send the attack back where it came from. Planting a tiny cybernetic brain on advanced human tech was our first step in bringing that to life.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Items/Archaegis\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damageReturn add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Zephon\\Icons\\Items\\Archaegis.png"
+    "Area": {
+        "internalID": "Area",
+        "description": "Also hits units adjacent to target tile",
+        "flavor": null,
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage useSourceWeapon=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Area.png"
     },
     "Argosy Targe": {
         "internalID": "ArgosyTarge",
@@ -166,6 +194,27 @@
         "flavor": "I happened to meet the Watchmaker that cooked up this shield once. He spat on my foot after I thanked him for making it. Fair enough\u2014he'd made the shield to protect refugee caravans trying to cross active war zones. We \u201ccommandeered\u201d them and made those war zones worse. He could keep his principles\u2014I was happy keeping our people alive.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ArgosyTarge\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ArgosyTarge.png"
+    },
+    "Armor of Faith": {
+        "internalID": "ArmorOfFaith",
+        "description": null,
+        "flavor": "Most of us mustered willpower on the battlefield, but the Prophet channeled something else\u2014faith. With faith, he could do something the techs never came close to figuring out: how to project pure invulnerability. Was it supernatural? A power even beyond the Voice? I never found out.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/ArmorOfFaith\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.833\"/>\n\t\t\t\t<evasionDamageReduction add=\"0.833\"/>\n\t\t\t\t<invulnerableDamageReduction add=\"0.833\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\ArmorOfFaith.png"
+    },
+    "Arsham's Satchel (Gifted)": {
+        "internalID": "ArshamsSatchelGifted",
+        "description": null,
+        "flavor": "Your brother pauses as he exits the city. He hands you something\u2014his satchel, the one he clutched in his hands in the days before the war. \u201cWe're together again,\u201d he whispers softly. \u201cAnd we have such great work ahead of us.\u201d\n\nYou look down at the bloody satchel, and wonder just what \u201cwork\u201d Arshem has in mind.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/ArshamsSatchel\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss mul=\"-0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png"
+    },
+    "Arsham's Satchel (Looted)": {
+        "internalID": "ArshamsSatchelLooted",
+        "description": null,
+        "flavor": "He hands you a box of Arshem's possessions.\n\nYou paw through them, and find a tattered satchel\u2014the one he clutched in his hands on the last day you saw each other.\n\nNow the tears come. You kneel before Arshem's grave and clutch the satchel to your chest. Saving these Reavers seemed such an obvious choice. You just wish you could have saved Arshem too.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/ArshamsSatchel\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss mul=\"-0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png"
     },
     "Artificer's Precision": {
         "internalID": "ArtificersPrecision",
@@ -188,6 +237,20 @@
         "modifiers": "<trait visibleOnUnit=\"1\"/>",
         "iconPath": "Zephon\\Icons\\Traits\\AssaultTransport.png"
     },
+    "Asymmetric Arbitrage": {
+        "internalID": "AsymmetricArbitrage",
+        "description": null,
+        "flavor": "The most profitable way to deal with black markets in foreign territories was to slip their goods across the border on the back of trade convoys. Like sucker fish riding on the belly of a shark\u2014a little free ride that benefits them, but doesn't bother the bigger beast.",
+        "modifiers": "<trait visibleOnPlayer=\"1\"/>",
+        "iconPath": "Zephon\\Icons\\Traits\\AsymmetricArbitrage.png"
+    },
+    "Atramentous Aura": {
+        "internalID": "AtramentousAura",
+        "description": null,
+        "flavor": "The enemy was hours away from storming HQ. We were as good as dead. But, out of the blue, our comms burst with static and an iridescent wave appeared out of nowhere. We breathed it in. Felt sharper, faster, stronger. We held the fucking line.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/AtramentousAura\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.333\"/>\n\t\t\t\t<invulnerableDamageReduction add=\"0.1\"/>\n\t\t\t\t<movement mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"AtramentousEchoes\">\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\AtramentousAura.png"
+    },
     "Augmentations": {
         "internalID": "Augmentations",
         "description": "Spend influence to improve units with augmentations.",
@@ -202,19 +265,19 @@
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/AuraOfDiscipline\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy addMin=\"1\" addMax=\"3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\AuraOfDiscipline.png"
     },
+    "Axiomatic Pendulum": {
+        "internalID": "AxiomaticPendulum",
+        "description": null,
+        "flavor": "Shit. Phenaris freak's blade swung right by my face. We were on the same fucking side. Screamed at it to watch out. \u201cPain. Pleasure.\u201d it said, \u201cWe swing from one to another in a steady rhythm. You should too\u2026 I think you'd like it.\u201d",
+        "modifiers": "<trait icon=\"Weapons/AxiomaticPendulum\" visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedUnits\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Weapons\\AxiomaticPendulum.png"
+    },
     "Balanced Progress": {
         "internalID": "BalancedProgress",
         "description": null,
         "flavor": "War's a gamble, right? Can't place your bets down on one strategy. Sometimes it's worth spending coin to spread out your odds, help you turn on a dime if one plan goes south.",
         "modifiers": "<trait visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonAffinityTechnologies\">\n \t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noBranch name=\"Human\"/>\n\t\t\t\t</player>\n \t\t\t\t<upgrade>\n\t\t\t\t\t<branch name=\"Human\"/>\n\t\t\t\t</upgrade>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<researchCost mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAffinityTechnologies\" visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noBranch name=\"Voice\"/>\n\t\t\t\t</player>\n\t\t\t\t<upgrade>\n\t\t\t\t\t<branch name=\"Voice\"/>\n\t\t\t\t</upgrade>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<researchCost mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAffinityTechnologies\" visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noBranch name=\"Cyber\"/>\n\t\t\t\t</player>\n\t\t\t\t<upgrade>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t</upgrade>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<researchCost mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\BalancedProgress.png"
-    },
-    "Beyond Terror": {
-        "internalID": "BeyondTerror",
-        "description": null,
-        "flavor": null,
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss add=\"-0.75\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Zephon\\Icons\\Traits\\BeyondTerror.png"
     },
     "Biological": {
         "internalID": "Biological",
@@ -230,6 +293,13 @@
         "modifiers": "<trait icon=\"Actions/BionicImplant\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\BionicImplant.png"
     },
+    "Black Hole": {
+        "internalID": "BlackHole",
+        "description": null,
+        "flavor": "Something in humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/BlackHole\" visibleOnTile=\"1\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t\t<movementMax mul=\"-0.667\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png"
+    },
     "Blackout": {
         "internalID": "Blackout",
         "description": null,
@@ -241,7 +311,7 @@
         "internalID": "Bleed",
         "description": null,
         "flavor": "The Voice's tendrils bled out from one reality and into our own, prying open a door to madness. These should not have plagued our earth. Their sickly, slimy extremities reached out in search of flesh\u2014or metal-to ensnare. I can't even escape the sight of them in my sleep. Some nights\u2014often on a full moon\u2014I wake, sweating, still feeling the phantom pull of them dragging me to the earth. I assumed this was all in my head, but I've heard the whispers in the mess hall. Others dream of being crushed too.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Features/Bleed\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<noCity/>\n\t\t\t\t</tile>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<noAlly/>\n\t\t\t\t</city>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<player>\n\t\t\t\t\t\t<noUpgrade name=\"BleedCultivation\"/>\n\t\t\t\t\t</player>\n\t\t\t\t</city>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t<noCity/>\n\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" visible=\"0\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t\t<noAlly/>\n\t\t\t\t\t\t\t</city>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" visible=\"0\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t\t\t<noUpgrade name=\"BleedCultivation\"/>\n\t\t\t\t\t\t\t\t</player>\n\t\t\t\t\t\t\t</city>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/Bleed\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<noCity/>\n\t\t\t\t</tile>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<noAlly/>\n\t\t\t\t</city>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<player>\n\t\t\t\t\t\t<noUpgrade name=\"BleedCultivation\"/>\n\t\t\t\t\t</player>\n\t\t\t\t</city>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t<noCity/>\n\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" visible=\"0\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t\t<noAlly/>\n\t\t\t\t\t\t\t</city>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" visible=\"0\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t\t\t<noUpgrade name=\"BleedCultivation\"/>\n\t\t\t\t\t\t\t\t</player>\n\t\t\t\t\t\t\t</city>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Bleedwalker\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Bleed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\Bleed.png"
     },
     "Bleedwalker": {
@@ -257,6 +327,13 @@
         "flavor": "Everything decays. Voice cultists seemed to enjoy making things rot faster. Flesh. Metal. Dirt. Didn't matter. Creatures like the Orolos spread bile over the battlefield that rotted it all. You could clean it off but\u2026 Gods the smell. Even when it burned through metal it still smelled a corpse dipped in sewage.",
         "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"-4\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Blighted.png"
+    },
+    "Blighting": {
+        "internalID": "Blighting",
+        "description": null,
+        "flavor": "Everything decays. Voice cultists seemed to enjoy making things rot faster. Flesh. Metal. Dirt. Didn't matter. Creatures like the Orolos spread bile over the battlefield that rotted it all. You could clean it off but\u2026 Gods the smell. Even when it burned through metal it still smelled a corpse dipped in sewage.",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToEnemy\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Blighted\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Blighting.png"
     },
     "Blinded": {
         "internalID": "Blinded",
@@ -314,6 +391,20 @@
         "modifiers": "<trait stacking=\"1\" visible=\"0\">\n\t<onUnitDisappeared>\n\t\t<traitSourceUnit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"4\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</traitSourceUnit>\n\t</onUnitDisappeared>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\CarrionGlut.png"
     },
+    "Causal Well": {
+        "internalID": "CausalWell",
+        "description": null,
+        "flavor": "A spiraling energy exchange whirled around the Acrin titan. The fingers on its flesh pulsed in and out, sucking the spirit out of anything\u2014machine, human, or Voice cultist\u2014that drew close. Unless it liked you of course. Then those fingers drifted over your skin, giving you a taste of the life it stole.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"ToAlliedBiologicalUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"3\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"-3\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\CausalWell.png"
+    },
+    "Cherubic Hallowin": {
+        "internalID": "CherubicHallowing",
+        "description": null,
+        "flavor": "The Cherubim had the power to expand their shielding to other units in the area. The sensation was\u2026 pleasant. Oddly pleasant. A great weapon of war wrapping you up in its embrace, offering protection, and sanctuary\u2026 while its guns pounded the enemy into mulch.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/CherubicHallowing\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\CherubicHallowing.png"
+    },
     "Reaver Immigration": {
         "internalID": "ChieftessStanding",
         "description": "Improves diplomatic standing with  Chieftess over time",
@@ -339,7 +430,7 @@
         "internalID": "City",
         "description": null,
         "flavor": "Urban warfare is brutal. Every piece of cover that protects your troops feels like it gives double the shielding to your enemy. I preferred defending cities under siege than street-to-street fighting. In a siege, you felt solidarity with civilians and other soldiers. In the streets, you could only trust your squad. Anyone else might sell you out.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/City\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<noFeatureCategory name=\"Bleed\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost max=\"0.75\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForAlliedUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.333\"/>\n\t\t\t\t<healingRate mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/City\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<noFeatureCategory name=\"Bleed\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost max=\"0.75\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForAlliedUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.333\"/>\n\t\t\t\t<healingRate mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\City.png"
     },
     "Urban Sprawl": {
@@ -414,7 +505,7 @@
     },
     "Cone": {
         "internalID": "Cone",
-        "description": "Also hits left and right of target tile",
+        "description": "Also hits units left and right of target tile",
         "flavor": "In the war's early days that idea of sky-high monsters breathing fire over miles and miles still seemed the stuff of bad movies we watched in the bunker. But then we'd encounter the Abkhan\u2014a creature that could breathe out a blizzard that swallowed whole armies. I began dreaming of other terrors. Beasts that could breathe acid, radiation or lightning. It made me miss my old nightmares.",
         "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<cone affect=\"Unit\" excludeTarget=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage useSourceWeapon=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</cone>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Cone.png"
@@ -456,7 +547,7 @@
     },
     "Cost of Conviction": {
         "internalID": "CostOfConviction",
-        "description": "Population has influence upkeep.",
+        "description": null,
         "flavor": "Con artists and cult leaders shared a common technique\u2014if you can convince your audience they need you to survive, you'll have power over them. But the Prophet knew he had to tread carefully\u2014one wrong step, one chance for his people to slip back to reality\u2014and they'd run from him like rats fleeing a sinking ship.",
         "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<populationInfluenceUpkeep add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"WhileAbove2Loyalty\" requiredUpgrade=\"CostOfConvictionUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<loyalty greater=\"2\"/>\n\t\t\t\t</city>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<populationInfluenceUpkeep add=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"WhileAbove8Loyalty\" requiredUpgrade=\"CostOfConvictionUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<loyalty greater=\"8\"/>\n\t\t\t\t</city>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<populationInfluenceUpkeep add=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\CostOfConviction.png"
@@ -481,6 +572,13 @@
         "flavor": "It was much easier to secure a kill if your target couldn\u2019t run away from you.",
         "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToNonLargeEnemy\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Crippled\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Crippling.png"
+    },
+    "Cross": {
+        "internalID": "Cross",
+        "description": "Also hits behind, left and right of target tile",
+        "flavor": null,
+        "modifiers": "<trait visibleOnWeapon=\"1\" visible=\"0\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<cross affect=\"Unit\" excludeTarget=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage useSourceWeapon=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</cross>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Cross.png"
     },
     "Cruel": {
         "internalID": "Cruel",
@@ -509,6 +607,13 @@
         "flavor": "Turn one of these over, and you'll find a curse written in ancient Acrin. \u201cOld wounds can always be reopened.\u201d The Voice couldn't always hurt you\u2026 but at the worst moments, it knew how to make you remember all the pain you'd ever felt.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Items/CursecharmOfCrla\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damageTaken mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\CursecharmOfCrla.png"
+    },
+    "Babellian Beacon": {
+        "internalID": "CyberAircraftUpgrade",
+        "description": null,
+        "flavor": "Sky fortresses erected on tall mountains could be seen for miles. By the time we were building them, the techs were cooking up ways to program machines through light itself. Pairing them together made sense. If every time a machine looked up it saw the fortress\u2014it could sync with the rest of the network and feel like a part of a greater whole.",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"OnHeight3\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<tile>\n\t\t\t\t\t<height equal=\"3\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"OnHeight4\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<tile>\n\t\t\t\t\t<height equal=\"4\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\CyberAircraftUpgrade.png"
     },
     "Interpolated Production": {
         "internalID": "CyberInfantryUpgrade",
@@ -559,12 +664,33 @@
         "modifiers": "<trait icon=\"Actions/DataHack\" visibleOnCity=\"1\" visibleSourcePlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<researchFromCity mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"DataHackUpgrade\">\n\t\t\t<effects>\n\t\t\t\t<resourcesFromCity mul=\"0.2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\DataHack.png"
     },
+    "Deathshriek": {
+        "internalID": "Deathshriek",
+        "description": null,
+        "flavor": "Priests of Phenaris whispered about their master's most prime edict: that before they die they scream his true name in the tongue it was meant to be spoken in. Made me think of a grandmother I met in the slums, who warned against speaking the true name of the god she worshiped. A warning shared by her ancestors from thousands of years in the past.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onUnitDisappeared>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnitsOnDeath\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Deathshriek\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onUnitDisappeared>\t\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Deathshriek.png"
+    },
+    "Decoy Flares": {
+        "internalID": "DecoyFlares",
+        "description": null,
+        "flavor": "Funny thing, flares. Pilots who deploy them don't see them. Missiles they're scrambling don't know what they are. The people who lay eyes on them are usually troops on the ground\u2014the ones who have a second to look up and see them move like slow lightning through the sky.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/DecoyFlares\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\DecoyFlares.png"
+    },
     "Defense Matrix": {
         "internalID": "DefenseMatrix",
         "description": null,
         "flavor": "Some machines could be programmed to be ever vigilant and always respond to enemy movement. Running those intense calculations came with a trade-off in power, but we slept slightly easier with that extra line of defense.",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForOverwatchAttacks\">\n\t\t\t<conditions>\n \t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<overwatching/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\DefenseMatrix.png"
+    },
+    "Deflector Shield": {
+        "internalID": "DeflectorShield",
+        "description": null,
+        "flavor": "The escalation was unending. Every new weapon the techs handed us would be matched by something equally powerful and frightening out on the battlefield. We realized if we wanted to win, we would need to turn our enemy\u2019s weapons back against them.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onWeaponDefended>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttacker\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.167\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponDefended>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\DeflectorShield.png"
     },
     "Deforming": {
         "internalID": "Deforming",
@@ -598,7 +724,7 @@
         "internalID": "DimensionalReverberations",
         "description": null,
         "flavor": "Plangent Orolos were so connected to the Voice they could extract Dimensional Echoes from anything they killed. Why? How? Too late in the war\u2026 too much in my head to even try and explain it. Just warned our troops if this thing killed them, their very souls could be yanked out and fed to the war machine.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onOpponentKilled>\n\t\t<attacker>\n\t\t\t<area affect=\"UnitPlayer\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenKillingUnit\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<dimensionalEchoes add=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onOpponentKilled>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\DimensionalReverberations.png"
     },
     "Direct Control": {
@@ -612,7 +738,7 @@
         "internalID": "Disputation",
         "description": null,
         "flavor": "Troops of the religious sort told tales about spiritual leaders lashing kids with the whip when they showed even a shred of insolence. Provosts worked the same way. Strike them and they'd take it PERSONALLY. Their limbs would lash out, like a cracking whip, just to hurt the thing closest to it and gain any sense of control.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damageReturn add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onWeaponDefended>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.167\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponDefended>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Disputation.png"
     },
     "Distorted Lens": {
@@ -647,7 +773,7 @@
         "internalID": "DustStorm",
         "description": null,
         "flavor": "Armor could block the sand. Scanners could penetrate the darkness. But nothing could protect your mind from the wrath of it all. Lightning, sand and wind all blurred together and the Earth ROARED in vengeance. It knew about the violence we'd brought to its surface and this, this storm, was its way of fighting back.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Features/DustStorm\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t\t<sight max=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"DustStorm\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/DustStorm\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t\t<sight max=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"DustStorm\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\DustStorm.png"
     },
     "Dynameis Plate": {
@@ -656,6 +782,20 @@
         "flavor": "When we were building machines that could think for themselves, this chunk of armor didn't seem all that impressive. But the engineers who cooked it up had made a quiet miracle for us: the metal would turn to liquid, enhance the armor it was fused with, and made it even stronger.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/DynameisPlate\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\DynameisPlate.png"
+    },
+    "EMP": {
+        "internalID": "EMP",
+        "description": null,
+        "flavor": "Electromagnetic pulse-based weaponry was an oddly old trick for a new age. In the wars of the old world, military leaders were just worried about the damage to civilian electronic infrastructure. But what did we care now? We just needed to fry machinery as fast as we could.",
+        "modifiers": "<trait icon=\"Weapons/EMP\" visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToMechanicalEnemy\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Stunned\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Weapons\\EMP.png"
+    },
+    "Eventful Horizons": {
+        "internalID": "EmulatedMindAffinityUpgrade2",
+        "description": null,
+        "flavor": "The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When Zephon woke her up it literally birthed her with knowledge of black holes no one else could access\u2026 maybe the impossible calculations that could create an event horizon were what had first driven her so mad.",
+        "modifiers": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\EmulatedMindAffinityUpgrade2.png"
     },
     "Biomass Generator": {
         "internalID": "EnergyUpgrade",
@@ -671,6 +811,13 @@
         "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<growth add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"EngineerLifeUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<growth add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"EngineerLifeUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<growth add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\EngineerLife.png"
     },
+    "Enhanced Probability Augment": {
+        "internalID": "EnhancedProbabilityAugment",
+        "description": null,
+        "flavor": "Gunslingers of old needed intuition to land a deadeye shot. The Operative looked to them for inspiration for this particular augment. Intuition could be\u2026 simulated. Redesigned with equations. She had such an eye for taking what made us human and recreating it with just numbers.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/EnhancedProbabilityAugment\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\EnhancedProbabilityAugment.png"
+    },
     "Enslaved Reavers": {
         "internalID": "EnslavedReavers",
         "description": null,
@@ -684,6 +831,20 @@
         "flavor": "The Archai had the power to exploit every one of your vulnerabilities all at once. If it locked you down\u2026 you couldn\u2019t move. You could barely breathe. If there wasn\u2019t someone who could pull you out of there, that was it, you were dead. All you could do is watch, eyes locked open, as your enemies lined up the killing blow.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Entomb\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<actionPoints max=\"0\"/>\n\t\t\t\t<movement max=\"0\"/>\n\t\t\t\t<movementMax max=\"0\"/>\n\t\t\t\t<healingReceived mul=\"-0.75\"/>\n\t\t\t\t<damageTaken mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\Entomb.png"
+    },
+    "Essence Syphon": {
+        "internalID": "EssenceSyphon",
+        "description": null,
+        "flavor": null,
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onOpponentKilled>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenKillingUnit\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"EssenceSyphoned\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onOpponentKilled>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\EssenceSyphon.png"
+    },
+    "Essence Syphoned": {
+        "internalID": "EssenceSyphoned",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Buff\" icon=\"Traits/EssenceSyphon\" stacking=\"1\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\EssenceSyphon.png"
     },
     "Evasion Processor": {
         "internalID": "EvasionProcessor",
@@ -734,24 +895,31 @@
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\ExtraPlating.png"
     },
-    "Extravagant": {
-        "internalID": "Extravagant",
-        "description": "",
-        "flavor": null,
-        "modifiers": "<trait visibleOnPlayer=\"1\"/>",
-        "iconPath": "Zephon\\Icons\\Traits\\Extravagant.png"
+    "Eye of Phinnicus": {
+        "internalID": "EyeOfPhinnicus",
+        "description": null,
+        "flavor": "It only takes an hour to extract and secure his receptors. Minutes later you're cracking open the doors to all of ICAR's lost treasure.\n\nPhinnicus knew the end was coming and thought he could escape it. He counted on any survivors he met being too desperate to do anything but serve him like a piece-of-shit god-king. But you've slain monsters and cracked machines in your path to survival. Now you've shattered his throne, and will gladly salvage it for spare parts.",
+        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<city/>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<minerals mul=\"0.02\"/>\n\t\t\t\t<research mul=\"0.02\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\EyeOfPhinnicus.png"
+    },
+    "Eye of Phinnicus (Damaged)": {
+        "internalID": "EyeOfPhinnicusDamaged",
+        "description": null,
+        "flavor": "In the gore, you can see that his eyes were replaced with augmented receptors. Your mind flashes\u2014those had to be how he accessed ICAR's top-secret vaults. You reach down and yank out the surviving eyeball, hardly flinching at the small shock you feel.\n\nIt's damaged\u2014but with some light repairs, it still may open some doors for you. You curl a fist around it. Phinnicus is dead. And anyone who tries to replace him\u2014you'll blow their brains out too.",
+        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<city/>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<minerals mul=\"0.01\"/>\n\t\t\t\t<research mul=\"0.01\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\EyeOfPhinnicusDamaged.png"
     },
     "Old Painless": {
         "internalID": "FallenSoldierAffinityUpgrade",
         "description": null,
-        "flavor": null,
+        "flavor": "The Watchmaker Yetunde delivered three code-locked boxes to the Fallen Soldier, saying they were gifts from \u201ca mutual friend.\u201d The first box carried blueprints for faster, meaner heavy machine guns. The message that came with it dripped with delight for violence: \u201cLet hot lead spew from the maw of the great dragon, and may your enemies drown in a nightmare of molten metal.\u201d",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\FallenSoldierAffinityUpgrade.png"
     },
     "Ablative Growth": {
         "internalID": "FallenSoldierAffinityUpgrade2",
         "description": null,
-        "flavor": null,
+        "flavor": "",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\FallenSoldierAffinityUpgrade2.png"
     },
@@ -766,7 +934,7 @@
         "internalID": "Fire",
         "description": null,
         "flavor": "Word spread quickly about the Battle of Castaic Plain. Our forces staged an assault to take control of a water reserve from the enemy. Shots were fired. The wind was high. The ground dry as kindling. Inside of an hour, a wildfire surrounded both armies. They should have stopped fighting\u2014worked together to douse the flames. But instead hundreds were killed and the fresh water poisoned, never to be drunk again.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Traits/OnFire\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Fire\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Traits/OnFire\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<notCargo/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Fire\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\OnFire.png"
     },
     "First Aid Drone": {
@@ -801,7 +969,7 @@
         "internalID": "Forest",
         "description": "<style color='GUI/Green'/>3%<style color='Default'/> chance for forests to spread in swamp terrain",
         "flavor": "The last day I ever thought of the forest as \u201csafe,\u201d I was camped up by a creek, scratching out battle plans in the dirt. Then there was the \u201ccrack\u201d of a branch. I was too slow to react\u2014my spotter was cut down by gunfire from the opposite bank. There was no solace in the trees after that. Only a thousand rustling branches that disguised the sound of enemy movement.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/Forest\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForLargeGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAgileGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Agile\"/>\n\t\t\t\t\t<noTrait type=\"DozerBlade\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/Forest\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForLargeGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAgileGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Agile\"/>\n\t\t\t\t\t<noTrait type=\"DozerBlade\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\Forest.png"
     },
     "Foundation of Blood": {
@@ -846,6 +1014,13 @@
         "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<dimensionalEchoes add=\"0.3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\FurtiveTribunalAffinityUpgrade2.png"
     },
+    "Fusion Warhead": {
+        "internalID": "FusionWarhead",
+        "description": null,
+        "flavor": "\u201dLet me get this straight,\u201d our chief weapons engineer said to me. \u201cThe tactical nuclear missile needs to do *more* damage? Is 50 kilotons not enough?\u201d I really didn't feel like arguing. I showed her recon photos of a prototype Titan we'd be fighting within weeks. She gawped at the size. \u201cAgainst that?\u201d I replied. \u201c50 kilotons is definitely not enough.\u201d",
+        "modifiers": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\FusionWarhead.png"
+    },
     "Gladial Emanator": {
         "internalID": "GladialEmanator",
         "description": null,
@@ -871,7 +1046,7 @@
         "internalID": "GravitationalCompression",
         "description": null,
         "flavor": "The Earth pulls against larger objects with greater force and with new technology available to us, we could make its might our own. The bigger our enemies came, the louder the noise they made when crashing to the ground.",
-        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"AgainstLargeUnits\">\n \t\t\t<conditions>\n\t\t\t\t<targetUnit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"AgainstLargeUnits\">\n \t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<targetUnit>\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\GravitationalCompression.png"
     },
     "Graviton Jammer": {
@@ -880,6 +1055,13 @@
         "flavor": "Our weapons researchers learned by accident that gravitons could be altered to create a disorienting effect. The sensation of your inner organs floating was described as \u201cintensely unpleasant.\u201d",
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/GravitonJammer\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\GravitonJammer.png"
+    },
+    "Gravity Field": {
+        "internalID": "GravityField",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/GravityField\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"GravityField\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Features\\GravityField.png"
     },
     "Hammerhead Protocols": {
         "internalID": "HammerheadProtocols",
@@ -948,7 +1130,7 @@
         "internalID": "HeartfeltLoss",
         "description": null,
         "flavor": "I wish I'd had the heart to teach the Romantic about the harsh reality of leadership. The Romantic knew how to keep spirits high in his troops, but he never seemed to grasp how far they could fall. When you cherish and love the soldiers around you, their loss\u2014or the threat of their loss\u2014will hurt even harder.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss add=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss add=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"HeartfeltLossUpgrade\">\n\t\t\t<effects>\n\t\t\t\t<moraleLoss add=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"HeartfeltLossUpgrade2\">\n\t\t\t<effects>\n\t\t\t\t<moraleLoss add=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\HeartfeltLoss.png"
     },
     "Part Distribution": {
@@ -969,7 +1151,7 @@
         "internalID": "Heavy",
         "description": null,
         "flavor": "Heavier weapons needed time to set up and calibrate a targeting solution. Firing them while on the move was a hell of a gamble. Some unlucky troops could find themselves addicted to those long odds. The smart ones knew how to play it safe for a sure shot.",
-        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"IfHasMoved\">\n\t\t\t<conditions>\n\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<movedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"IfMoved\">\n\t\t\t<conditions>\n\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<movedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Heavy.png"
     },
     "Hero": {
@@ -995,10 +1177,24 @@
     },
     "Hit and Run": {
         "internalID": "HitAndRun",
-        "description": "Actions do not consume movement.",
+        "description": null,
         "flavor": "In the Operative's old life, every moment spent standing still was one where the authorities could finally catch up with her. I thought we'd argue more about her criminal past, but I was forced to admit, her old habits were\u2026 well tuned for winning this war. Maybe soldiers and thieves have more in common than they say.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<consumedMovement max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForActions\">\n\t\t\t<effects>\n\t\t\t\t<consumedMovement max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"IfNotMoved\" requiredUpgrade=\"HitAndRunUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<notMovedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<attackedThisTurn/>\n\t\t\t\t\t<notMovedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onUnitAttacked>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"AfterAttackingIfNotMoved\" requiredUpgrade=\"HitAndRunUpgrade2\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notMovedThisTurn/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<movement add=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onUnitAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\HitAndRun.png"
+    },
+    "Holopatter": {
+        "internalID": "Holopatter",
+        "description": null,
+        "flavor": "Oldest trick in war is covering yourself in branches so it's harder to see you in the forest. The techs cooked up holographic cloaks that also worked well in dense ruins. Couldn't keep you hidden forever, but bought you a few extra seconds to line up the perfect shot. Don't need to hide if the thing you're shooting is dead.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonLargeNonFlyingUnitsWhenAttackingFromForestsOrRuins\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<trait type=\"Forest\"/>\n\t\t\t\t\t<trait type=\"Ruin\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Holopatter.png"
+    },
+    "Holy Bond": {
+        "internalID": "HolyBond",
+        "description": null,
+        "flavor": "Artillery slammed into our bunker and everything went white. Thought that was it. But for a second I saw\u2014was it a bridge? A hand reaching for me? And then the smoke cleared. We were still standing, and an Akavish Provost lumbered above our unit. \u201cYOUR TIME IS NOT UP!\u201d it shrieked. \u201cTHE ONE ABOVE CALLS FOR YOUR BLADES!\u201d The grunts around me cheered and charged. I just stood there\u2026 still feeling the brush of that outstretched hand on my palm.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/HolyBond\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onWeaponDefended>\n\t\t<traitSourceUnit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToSourceUnit\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.167\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</traitSourceUnit>\n\t</onWeaponDefended>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\HolyBond.png"
     },
     "Well-Fed": {
         "internalID": "HonorableAristocratAffinityUpgrade",
@@ -1027,6 +1223,13 @@
         "flavor": "Fear was supposed to keep you alive. But how could you fight for survival if all you could perceive was blood rushing through your ears? It could claw at you, drag you down and leave you helpless\u2014the perfect victim for a creature that hungered for your blood.",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttackedEnemy\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Horrifying.png"
+    },
+    "Air Freightnet": {
+        "internalID": "HumanAircraftUpgrade",
+        "description": null,
+        "flavor": "Wasn't really anything like an \u201cairport\u201d anymore so we had cargo jets fly in and out of military airfields. Had a nice side effect: get even a few regular flights going between bases and everyone from merchants to well-wishing families came rushing in to squeeze extra cargo into your hangar. Gave people a sense of\u2026 normalcy, I guess.",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<perBuildingInOtherOwnCitiesModifier effectDescription=\"HumanAircraftUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"HumanAircraft\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<influence add=\"2\"/>\n\t\t\t</effects>\n\t\t</perBuildingInOtherOwnCitiesModifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\HumanAircraftUpgrade.png"
     },
     "Itinerant Recruiters": {
         "internalID": "HumanInfantryUpgrade",
@@ -1074,7 +1277,7 @@
         "internalID": "HymnOfDecay",
         "description": null,
         "flavor": "When I first felt the toxic touch of this tortured hymnal I assumed there was a strategic reason for poisoning the earth like this. But after so many battles\u2026 there had to be more to it. Was it spiritual? Or was it an act of childish spite? I imagined doomed aliens lashing back at our world for daring to resist their apocalyptic mission. The thought chilled me to the bone.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/HymnOfDecay\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"HymnOfDecay\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" requiredUpgrade=\"AfflictionsAntiphon\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\t\t\t\t\t\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/HymnOfDecay\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"HymnOfDecay\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\" requiredUpgrade=\"AfflictionsAntiphon\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\t\t\t\t\t\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\HymnOfDecay.png"
     },
     "Ignores Cover": {
@@ -1088,7 +1291,7 @@
         "internalID": "Immobilized",
         "description": null,
         "flavor": "Our enemies pinned me down on the battlefield on plenty of occasions. I've been injured, trapped by the Bleed, frozen with strange technology, you name it. I watched good soldiers panic in those moments\u2014they tried to make peace with their gods, begged for mercy, or fight like hell to escape. When I was trapped like that, all I could think was \u201cthere is still work to be done.\u201d That's how I made it this far. There is still so much to do.",
-        "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForMeleeWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<trait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForMeleeWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t<trait type=\"Melee\"/>\n\t\t\t\t\t<trait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Immobilized.png"
     },
     "Immobilizing": {
@@ -1109,14 +1312,14 @@
         "internalID": "IncandescentIcon",
         "description": null,
         "flavor": "One of the most powerful weapons created in our AI research looked like a humble lantern\u2014but the light it gave off did far more than illuminate. It hosted intelligent photons that could be programmed to recognize friend from foe. Just passing through a field of them could irritate the skin, and extended exposure was hell on flesh and armor alike.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Items/IncandescentIcon\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\" radiusMin=\"1\" radiusMax=\"1\">\n\t\t\t\t<modifiers endure=\"1\">\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"IncandescentIcon\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/IncandescentIcon\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\" radiusMin=\"1\" radiusMax=\"1\">\n\t\t\t\t<modifiers endure=\"1\">\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"IncandescentIcon\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\IncandescentIcon.png"
     },
     "Independent": {
         "internalID": "Independent",
         "description": null,
         "flavor": "The Rogue Operative liked surrounding herself with free-thinkers and loudmouths\u2014people who wouldn't hesitate to speak their minds. A crew like that wasn't as loyal as true soldiers, but the Operative was fine with that. She didn't need sycophants\u2014she needed the best the wasteland had to offer. That was her path to victory.",
-        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<populationLoyaltyUpkeep mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<populationLoyaltyUpkeep mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"IndependentUpgrade\" requiredUpgrade=\"IndependentUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<population less=\"7\"/>\n\t\t\t\t</city>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<populationLoyaltyUpkeep mul=\"-0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"IndependentUpgrade2\" requiredUpgrade=\"IndependentUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<city>\n\t\t\t\t\t<population greater=\"6\"/>\n\t\t\t\t\t<population less=\"13\"/>\n\t\t\t\t</city>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<populationLoyaltyUpkeep mul=\"-0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Independent.png"
     },
     "Indirect Fire": {
@@ -1165,8 +1368,15 @@
         "internalID": "JudgementFromAbove",
         "description": null,
         "flavor": null,
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"WhenAttackingFromHighGround\">\n\t\t\t<conditions>\n\t\t\t\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"WhenAttackingFromHighGround\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<unit>\n\t\t\t\t\t<heightToTarget less=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\JudgementFromAbove.png"
+    },
+    "KENAZ": {
+        "internalID": "Kenaz",
+        "description": null,
+        "flavor": "How do you fool an all-knowing, all-seeing artificial intelligence? \u201cWe'll give it exactly what it wants,\u201d Hopper says. She duplicates every shard you uncover and sends the copies back to ZEPHON.\n\nSoon, she networks together the captured shards, and now you have it\u2014your own AI. Hopper names it \u201cKENAZ.\u201d",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForCyberProductionBuildings\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Kenaz.png"
     },
     "Kind": {
         "internalID": "Kind",
@@ -1175,11 +1385,18 @@
         "modifiers": "<trait visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<influence mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Kind.png"
     },
+    "Knife of the Chieftess": {
+        "internalID": "KnifeOfTheChieftess",
+        "description": null,
+        "flavor": "When you arrive at the rendezvous point the Chieftess stands alone, arms crossed and with a grim look in her eyes. Why does she have no guards?\n\nYou say nothing as your troops haul Jezina forward. The Chieftess draws a curved knife, then gently drags it across Jezina's cheek. \u201cI could press harder,\u201d she whispers. \u201cDraw the smallest bit of blood, just like you used to.\u201d\n\nJezina is shaking. The Chieftess raises the blade\u2014and then throws it at your feet. \u201cYour payment,\u201d she says. \u201cNow go. This is a family matter.\u201d\n\nYou quickly return to your vehicle. You wonder if that sound you hear is the wind blowing over the wasteland\u2014or Jezina whimpering in terror.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/KnifeOfTheChieftess\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Items\\KnifeOfTheChieftess.png"
+    },
     "Large": {
         "internalID": "Large",
         "description": "Classification",
         "flavor": "Bigger creatures and machines could take a pounding, but they grew weaker the more parts of them you stripped away.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<targetUnit>\n\t\t\t\t\t<noTrait type=\"Swallower\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Large.png"
     },
     "Large Splash": {
@@ -1221,8 +1438,8 @@
         "internalID": "LifeSteal",
         "description": null,
         "flavor": "You couldn\u2019t steal souls. But some creatures fed on them\u2014your life force would become a battlefield snack, an MRE for the monstrous. I thought everyone was fighting to survive. But this brave new world of ours gave birth to a new kind of predator: one with a taste for the spark of survival.\u201d",
-        "modifiers": "<trait visibleOnWeapon=\"1\">\n</trait>",
-        "iconPath": "Zephon\\Icons\\Traits\\LifeSteal.png"
+        "modifiers": "<trait icon=\"Attributes/LifeSteal\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<lifeStealFromDamage add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Attributes\\LifeSteal.png"
     },
     "Lifestyle Implants": {
         "internalID": "LifestyleImplants",
@@ -1230,6 +1447,13 @@
         "flavor": "I thought gathering around a table for a meal with friends was what made this war worth fighting for. But when the nutrient implants came in, people were so eager to abandon the mess halls, instead snacking between shifts on rocks, metal\u2026 dirt. I ate alone. I didn't even want to throw away the shitty taste of the MREs.",
         "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<populationFoodUpkeep add=\"-0.5\"/>\n\t\t\t\t<populationMineralsUpkeep add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\LifestyleImplants.png"
+    },
+    "Liquid Deflection Augment": {
+        "internalID": "LiquidDeflectionAugment",
+        "description": null,
+        "flavor": "The Operative\u2019s troops couldn\u2019t dodge every shot. She turned her attention to reducing the brunt of the blows. \u201dBe like water,\u201d a great master once said. With some experimentation, she could make that a\u2026 literal improvement.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/LiquidDeflectionAugment\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<evasionDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\LiquidDeflectionAugment.png"
     },
     "Logistics Experts": {
         "internalID": "LogisticsExperts",
@@ -1277,7 +1501,7 @@
         "internalID": "MarkedTarget",
         "description": null,
         "flavor": null,
-        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/MarkTarget\" visibleOnUnit=\"1\">\n\t<opponentModifiers>\n \t\t<modifier effectDescription=\"AgainstThisUnitWithRangedWeapons\">\n \t\t\t<conditions>\n \t\t\t\t<weapon>\n \t\t\t\t\t<noTrait type=\"Melee\"/>\n \t\t\t\t</weapon>\n \t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</opponentModifiers>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/MarkTarget\" visibleOnUnit=\"1\">\n\t<opponentModifiers>\n \t\t<modifier effectDescription=\"AgainstThisUnitWithRangedWeapons\">\n \t\t\t<conditions>\n \t\t\t\t<weapon>\n \t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n \t\t\t\t</weapon>\n \t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</opponentModifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\MarkTarget.png"
     },
     "Market Economy": {
@@ -1286,6 +1510,20 @@
         "flavor": "The profit incentive is driving the avaricious in your society to find even more innovative ways of making themselves richer. That\u2019s resulted in a boom in patents and inventions, many of which deal with the many people starving and sleeping in the streets. Obviously, amongst the poorest, your name is mud.",
         "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<city/>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\MarketEconomy.png"
+    },
+    "Masochism": {
+        "internalID": "Masochism",
+        "description": null,
+        "flavor": "\u201dThe fuck are you doing?!\u201d I remembered shouting at one of those damned Epicureans as it walked right over our trench, soaking up a spree of bullets that weren't set to hit anything. \u201cCalm yourself\u2026 mentor,\u201d it said. How did it\u2026 it didn't have a face but I swear it was smiling at me. \u201cWe both know pain is a constant. You run from it\u2026\u201d It jerked as another round of bullets ripped into its shoulder. \u201cI savor it.\u201d",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/Masochism\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\Masochism.png"
+    },
+    "Massive Splash": {
+        "internalID": "MassiveSplash",
+        "description": null,
+        "flavor": null,
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"7\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\MassiveSplash.png"
     },
     "Mechanical": {
         "internalID": "Mechanical",
@@ -1296,9 +1534,9 @@
     },
     "Melee": {
         "internalID": "Melee",
-        "description": "Cannot  attack across cliffs\nCannot  overwatch",
+        "description": "Cannot  attack across cliffs",
         "flavor": "I know in the old world, humans would craft arts and disciplines of this kind of combat. But it all boiled down to the same thing: a burst of adrenaline and swing of a weapon did more to keep you alive than\u2014forms, or sparring, or made-up ranks. Every living being knows how to hurt another\u2014you just have to get close enough to make it happen.",
-        "modifiers": "<trait visibleOnWeapon=\"1\"/>",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<canOverwatch add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Melee.png"
     },
     "Microchip Fabricator": {
@@ -1347,7 +1585,7 @@
         "internalID": "Mines",
         "description": null,
         "flavor": "Outrider operators knew when the bullets started flying, they weren\u2019t combatants: they were bait. Their job was to lay mines in key positions and lure the enemy in. Then once the trap was sprung, they could burn rubber and get away\u2014and whatever was hunting them became easy pickings for the rest of us.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Minelayer\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForEnemyGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTileEntered>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenEnemyGroundUnitStopsOnTile\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Mines\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t\t<area affect=\"Tile\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenEnemyGroundUnitStopsOnTile\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<removeFeature type=\"Mines\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTileEntered>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Minelayer\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForEnemyGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTileEntered>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenEnemyGroundUnitStopsOnTile\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"Mines\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t\t<area affect=\"Tile\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenEnemyGroundUnitStopsOnTile\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Hovering\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<removeFeature type=\"Mines\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTileEntered>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\Minelayer.png"
     },
     "Missing": {
@@ -1364,12 +1602,33 @@
         "modifiers": "<trait visibleOnBuilding=\"1\" visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForResearchLaboratory\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Research\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForAdministrationComplex\" requiredUpgrade=\"MysticismUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Influence\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForAdministrationComplex\" requiredUpgrade=\"MysticismUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Influence\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Mysticism.png"
     },
+    "Nanomachine Accelerator Augment": {
+        "internalID": "NanomachineAcceleratorAugment",
+        "description": null,
+        "flavor": "The Operative was quite comfortable with the creation of\u2026 certain performance enhancements. On machines and biologicals alike, she could boost stamina and speed with the help of nanomachines. Her troops couldn\u2019t move much faster but they could get a hell of a lot farther.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/NanomachineAcceleratorAugment\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t\t<movement add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\NanomachineAcceleratorAugment.png"
+    },
+    "Neumanatic Cornucopia": {
+        "internalID": "NeumanaticCornucopia",
+        "description": null,
+        "flavor": "\u201cWhy are you doing this?\u201d\n\nIt's no soldier or advisor who asks you that question, but yourself. You finish the long journey to retrieve the Cornucopia, arriving at a rather unremarkable spot in the Wasteland to retrieve the most remarkable object.\n\nYou're still pondering the question as you carefully pick up the precious prototype. Some sixth sense of yours tingles, and you're only mildly surprised when you turn to find the Neoduke waiting by your vehicle.\n\n\u201cA neverending supply of food,\u201d they proclaim. \u201cOne of humanity's most basic scarcities solved by a technological gimmick.\u201d\n\n\u201cBut!\u201d They raise a finger. \u201cIn the old world, infinite food did not end society's woes. Sometimes it was just another form of exploitation. It could be used to choke humanity's most vulnerable and threaten them if they ever fought for a better world.\u201d\n\nIs that why the Neoduke sent you on such errant fetch quests? To understand the struggles of the ordinary human?",
+        "modifiers": "<trait visibleOnPlayer=\"1\">\n\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\NeumanaticCornucopia.png"
+    },
     "Nightmare": {
         "internalID": "Nightmare",
         "description": "Only visible to you and allies\nKills unit when duration runs out",
         "flavor": "Intel could never keep up with how many Phenaris Hunters were out on the battlefield. They weren't breeding, they were just\u2026 I don't know. Pulling a version of themselves in from another dimension? Fooling everyone, even the machines? I don't know. Too many monsters and too many tricks to keep in my head. I just wanted to rest\u2026",
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Nightmare\" visibleOnUnit=\"1\" visibleToNonAllies=\"0\">\n\t<onUnitDefended>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenTakingDirectDamage\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpointsFromMax add=\"-1.0\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onUnitDefended>\n\t<onTraitRemoved>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<removeUnit/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers> \n\t\t\t</area>\n\t\t</unit>\n\t</onTraitRemoved>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\Nightmare.png"
+    },
+    "Nuclear Fallout": {
+        "internalID": "NuclearFallout",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/NuclearFallout\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"-4\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<algae mul=\"-0.5\"/>\n\t\t\t\t<chips mul=\"-0.5\"/>\n\t\t\t\t<energy mul=\"-0.5\"/>\n\t\t\t\t<food mul=\"-0.5\"/>\n\t\t\t\t<influence mul=\"-0.5\"/>\n\t\t\t\t<minerals mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Features\\NuclearFallout.png"
     },
     "The Mind's Eye": {
         "internalID": "OblivionUpgrade",
@@ -1395,7 +1654,7 @@
     "Oppressive": {
         "internalID": "Oppressive",
         "description": null,
-        "flavor": null,
+        "flavor": "Zandra is a dangerous inspiration. Your other scientists begin championing their pet projects over the ones you appointed. Each thinks they have the key to victory, none are concerned with the costs.\n\nYou need to make an example of her. Zandra shouts as your enforcers drag her into the streets. She begs the gathering scientists to activate her machine as she\u2019s locked into an iron hollow. No one responds, but many openly glare at you. The next day, strikes occur across your labs and key projects stall.\n\nWhile progress is merely slowed, any misstep can be fatal in the race for survival.",
         "modifiers": "<trait visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<influence mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Oppressive.png"
     },
@@ -1403,7 +1662,7 @@
         "internalID": "Outpost",
         "description": null,
         "flavor": "If you're going to hold your ground, find the right ground to hold. Years of wars and scavenging left plenty of defendable positions scattered across the battlefield. When the enemy was breathing down your neck and you needed a space to make your stand, you ran for spots like these.",
-        "modifiers": "<trait category=\"Buff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\t\n\t\t<modifier effectDescription=\"ForAlliedUnits\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.167\"/>\n\t\t\t\t<healingRate mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\t\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\t\n\t\t<modifier effectDescription=\"ForAlliedUnits\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.167\"/>\n\t\t\t\t<healingRate mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\t\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Outpost.png"
     },
     "Overcharged": {
@@ -1424,7 +1683,7 @@
         "internalID": "ParticleBarrier",
         "description": null,
         "flavor": "No other shielding behaved the way the Krypt Archai\u2019s Particle Barrier could. Shields normally needed a power source\u2014I lost too many soldiers trying to keep that power online. These barriers\u2026 they just\u2026 worked. Maybe the particles were the power source? Drawing energy from within and clustering to catch incoming fire? It was\u2026 otherworldly.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/ParticleBarrier\" rankMax=\"2\" visibleOnTile=\"1\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction addMin=\"0.2\" addMax=\"0.6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/ParticleBarrier\" rankMax=\"2\" visibleOnTile=\"1\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction addMin=\"0.2\" addMax=\"0.6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\ParticleBarrier.png"
     },
     "Particle Interference": {
@@ -1480,8 +1739,15 @@
         "internalID": "PhaseGeneratorUnit",
         "description": null,
         "flavor": "The first time I crossed paths with a Watchmaker, she was running maintenance on one of these generators. We\u2026 argued about who should be allowed to control them. \u201cYou're here to win a war. I'm here to stop the next one,\u201d she said. We cut a deal. If we funneled some energy to the Watchmakers, they'd activate the shielding to protect our people.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/PhaseGenerator\" visibleOnTile=\"1\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForStationedUnit\">\n\t\t\t<effects>\n\t\t\t\t<damageReturn add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/PhaseGenerator\" visibleOnTile=\"1\" visibleOnUnit=\"1\">\n\t<onWeaponDefended>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttacker\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.333\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponDefended>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\PhaseGenerator.png"
+    },
+    "Philosopher's Stone": {
+        "internalID": "PhilosophersStone",
+        "description": null,
+        "flavor": "The stone is jagged, with wide facets, and feels pleasantly cold in your hand. Underneath its dark surface, something that resembles the alien algae blooms in slow, hypnotic patterns.\n\nAs you study it, you hear a whispering voice that turns into a thousand screams. Power, they promise, power for blood. You need power. But, thinking of the bandit leader, you decide it\u2019s too risky to use yourself\u2014but that\u2019s why you have lieutenants.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Items/PhilosophersStone\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<experienceGainRate mul=\"0.5\"/>\n\t\t\t\t<moraleMax add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Items\\PhilosophersStone.png"
     },
     "Pilgrim of the Voice": {
         "internalID": "PilgrimOfTheVoice",
@@ -1560,12 +1826,47 @@
         "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<populationLimit add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\PopulationLimitUpgrade2.png"
     },
+    "Power Spike": {
+        "internalID": "PowerSpike",
+        "description": null,
+        "flavor": "The techs plastered the Vulkan manuals with all kinds of restrictions. Vulkan pilots knew how and why to break them. If you overcharged the power past its limits, you\u2019d blow out whole pieces of the Vulkan. But in exchange you could fuel that power into all of the Vulkan\u2019s weapons. Risking that extra damage was a gamble but it paid off frequently.",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/PowerSpike\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\PowerSpike.png"
+    },
+    "Relics of Eld": {
+        "internalID": "PracticalRomanticAffinityUpgrade",
+        "description": null,
+        "flavor": "The Concordat hated bargaining with the Practical Romantic. He'd wander into their tents and give their agents hell\u2014always knew what items were the real deal. Could pick out the junk, the fakes, and shame them into haggling on the knockoffs. \u201cAmateurs,\u201d he'd mutter. \u201cI grew up stealing from smarter shopkeepers.\u201d",
+        "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\PracticalRomanticAffinityUpgrade.png"
+    },
+    "Her Infinite Variety": {
+        "internalID": "PracticalRomanticAffinityUpgrade2",
+        "description": null,
+        "flavor": "Tech wasn't the Romantic's specialty\u2014but I caught him one day scribbling improved shielding formulas for our champions. \u201cShe whispered to me in my dream,\u201d he muttered. \u201cA queen of the old world, the old continent. She\u2026\u201d He trailed off and kept writing. I don't think long-dead royals were the ones sharing advanced technology through the power of dreams.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\PracticalRomanticAffinityUpgrade2.png"
+    },
     "Prey": {
         "internalID": "Prey",
         "description": null,
         "flavor": "You urge your people to endure the Dreameater, hopeful that another solution will present itself in time.\n\nAs the monster continues to leave its gifts throughout your city, rumors begin to surface that you\u2019re responsible for creating it, that it\u2019s your dark patron, that you are the creature\u2014for what other reason could there be for your passivity?\n\nThen the rumors boil into unrest. Buildings are vandalized, their parts used to fuel bonfires that burn throughout the night. The bonfires do little to deter the Dreameater, but the people find comfort in the destruction\u2014comfort that you failed to provide.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Traits/TheGreatHunt\" visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<growth add=\"-3\"/>\n\t\t\t\t<loyalty add=\"-3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\TheGreatHunt.png"
+    },
+    "Profuse Propagation": {
+        "internalID": "ProfusePropagation",
+        "description": null,
+        "flavor": "If Ioks weren't sent out to die they'd breed forever. Cultists whispered about how they had to keep the population in check\u2014but some pushed the limits. What was the harm in breeding one or two more monsters to win the war? Still, even with one more popping out in a swarm\u2026 it still seemed to make the skies all the more darker.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<groupSizeMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ProfusePropagation.png"
+    },
+    "Quarry Feed": {
+        "internalID": "QuarryFeed",
+        "description": null,
+        "flavor": "What ZEPHON's Titan saw, all machines saw. The ones nearby at least. And they clambered to get close to it\u2026 connecting to its network, linking to all the other machines\u2014it was the only time I saw them experience what humans feel singing together around the campfire, or in a church: euphoria.",
+        "modifiers": "<trait category=\"Buff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<ally/>\n\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\QuarryFeed.png"
     },
     "Quid Pro Quo": {
         "internalID": "QuidProQuo",
@@ -1587,6 +1888,20 @@
         "flavor": "The Chieftess was manic, but savvy. Ran circles around us, stealing our gear, distracting us from her scheming. Always stepped her game up another notch. You'd think she and her Reavers were outmatched\u2026 and then one would sneak up on you, yank your advanced helmet off, and slit your throat.",
         "modifiers": "<trait category=\"Upgrade\" icon=\"Factions/Chieftess\" rankMax=\"9\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mulMin=\"0.05\" mulMax=\"0.5\"/>\n\t\t\t\t<hitpointsMax mulMin=\"0.05\" mulMax=\"0.5\"/>\n\t\t\t\t<unitCost mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t\t<unitUpkeep mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions match=\"Any\">\n\t\t\t\t<action>\n\t\t\t\t\t<type name=\"ProduceUnit\"/>\n\t\t\t\t</action>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<productionCost addMin=\"1.2\" addMax=\"12.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<strength mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Factions\\Chieftess.png"
+    },
+    "Trash Camo": {
+        "internalID": "RogueOperativeAffinityUpgrade",
+        "description": null,
+        "flavor": "One trooper I bunked with\u2014long, grey-haired fellow who read too many books\u2014called these new camo suits \u201ca ghillie suit for the end times.\u201d Laden with what looked like junk, but was actually high-tech adaptive camo. We used it to nestle into the crevices of downed machines, looking like little more than rusted pieces of our dying civilization.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonLargeCyberUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.05\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade.png"
+    },
+    "Ghost Corps": {
+        "internalID": "RogueOperativeAffinityUpgrade2",
+        "description": null,
+        "flavor": "Old world corpos strung governments along with promises of AI that would \u201csynergize\u201d infantry units. Like all that other AI crap, it was a bunch of junk. The Rogue Operative somehow got it working for cybernetic ground troops. Just needed troops with a little less free will\u2026",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForNonLargeCyberUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.05\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade2.png"
     },
     "Close-Quarters Fire": {
         "internalID": "CloseQuartersFire",
@@ -1683,14 +1998,14 @@
         "internalID": "Ruins",
         "description": null,
         "flavor": null,
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/Ruins\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForLargeGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAgileGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Agile\"/>\n\t\t\t\t\t<noTrait type=\"DozerBlade\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\t\t\t\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/Ruins\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForLargeGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonAgileGroundUnits\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Agile\"/>\n\t\t\t\t\t<noTrait type=\"DozerBlade\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Pathcutter\"/>\n\t\t\t\t</unit>\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForNonLargeGroundUnitsAgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"City\"/>\n\t\t\t\t\t<noTrait type=\"Flying\"/>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\t\t\t\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\Ruins.png"
     },
     "Scavenger": {
         "internalID": "Scavenger",
         "description": null,
         "flavor": "The Romantic was definitely the \u201dwaste not want not,\u201d type. I think he still was haunted by those long nights in the bunker, desperately yearning for any scrap of food or supplies that could save his people. He rarely let on, but sometimes I saw him reviewing the reports of scavenged resources and I would see this look of mourning cross his face.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<resourcesPerKillFromCost add=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<resourcesPerKillFromCost add=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"ScavengerUpgrade\">\n\t\t\t<effects>\n\t\t\t\t<resourcesPerKillFromCost add=\"0.025\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"ScavengerUpgrade2\">\n\t\t\t<effects>\n\t\t\t\t<resourcesPerKillFromCost add=\"0.025\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Scavenger.png"
     },
     "Schism of Regimina": {
@@ -1703,9 +2018,23 @@
     "Scientist Strike": {
         "internalID": "ScientistStrike",
         "description": null,
-        "flavor": null,
+        "flavor": "Zandra is a dangerous inspiration. Your other scientists begin championing their pet projects over the ones you appointed. Each thinks they have the key to victory, none are concerned with the costs.\n\nYou need to make an example of her. Zandra shouts as your enforcers drag her into the streets. She begs the gathering scientists to activate her machine as she\u2019s locked into an iron hollow. No one responds, but many openly glare at you. The next day, strikes occur across your labs and key projects stall.\n\nWhile progress is merely slowed, any misstep can be fatal in the race for survival.",
         "modifiers": "<trait category=\"Debuff\" visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<research mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\ScientistStrike.png"
+    },
+    "Seed of Extinction": {
+        "internalID": "SeedOfExtinction",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/SeedOfExtinction\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<onTraitRemoved>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnitAndAdjacentEnemyUnitsOnRemoval\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"SeedOfExtinction\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTraitRemoved>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\SeedOfExtinction.png"
+    },
+    "Self-Destruct": {
+        "internalID": "SelfDestruct",
+        "description": null,
+        "flavor": "There was no escaping it. Some weapons we forged needed to kill their wielder to be effective. Troops tasked with carrying such armaments were given strict psychological screenings between missions, and drones were only dispatched on suicide runs when we could spare the resources. There's always a high price to pay with this kind of warfare\u2014you had to make sure the payoff was worth it.",
+        "modifiers": "<trait icon=\"Weapons/EMP\" visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpointsFromMax add=\"-1.0\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponAttacked>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Weapons\\EMP.png"
     },
     "Sentry Protocols": {
         "internalID": "SentryProtocols",
@@ -1753,7 +2082,7 @@
         "internalID": "SingularityCoresUpgrade",
         "description": null,
         "flavor": "Never try to explain quantum mechanics to a rank-and-file jarhead. You'll wind up saying something stupid like \u201cQuantum Manipulators make other Quantum Manipulators cheaper because the Quantum Manipulator perceives the new Quantum Manipulator.\u201d And then you'll wonder where the hell your life went this wrong.",
-        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<perBuildingInCityModifier effectDescription=\"SingularityCoresUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"SingularityCores\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost mul=\"-0.2\"/>\n\t\t\t\t<productionCost mul=\"-0.2\"/>\n\t\t\t</effects>\n\t\t</perBuildingInCityModifier>\n\t\t<perBuildingInCityModifier effectDescription=\"SingularityCoresUpgrade\" visible=\"0\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"SingularityCores\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost min=\"0\"/>\n\t\t\t\t<productionCost min=\"1\"/>\n\t\t\t</effects>\n\t\t</perBuildingInCityModifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<perBuildingInOwnCitiesModifier effectDescription=\"SingularityCoresUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"SingularityCores\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost mul=\"-0.2\"/>\n\t\t\t\t<productionCost mul=\"-0.2\"/>\n\t\t\t</effects>\n\t\t</perBuildingInOwnCitiesModifier>\n\t\t<perBuildingInOwnCitiesModifier effectDescription=\"SingularityCoresUpgrade\" visible=\"0\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"SingularityCores\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost min=\"0\"/>\n\t\t\t\t<productionCost min=\"1\"/>\n\t\t\t</effects>\n\t\t</perBuildingInOwnCitiesModifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\SingularityCoresUpgrade.png"
     },
     "Skydda": {
@@ -1767,14 +2096,14 @@
         "internalID": "SlowPriming",
         "description": null,
         "flavor": "These weren\u2019t quick weapons\u2014poor fare for sentries who needed to react at a moment\u2019s notice. But if you had time to draw on your target, you\u2019d hit them with a shot they\u2019d never forget\u2014if they lived.",
-        "modifiers": "<trait visibleOnWeapon=\"1\">\n</trait>",
+        "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<canOverwatch add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\SlowPriming.png"
     },
     "Smoke Screen": {
         "internalID": "SmokeScreen",
         "description": null,
         "flavor": "I don\u2019t know if you know this, but tanks are\u2026 big. Easy to hit. We rigged up smoke launchers on them to cover our retreats. Plenty of idiot operators thought they were invincible riding in the seat of a Crusader. The smart ones knew when to drop smoke and bug out.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Features/SmokeScreen\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Features/SmokeScreen\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\SmokeScreen.png"
     },
     "Sniper": {
@@ -1783,6 +2112,13 @@
         "flavor": "The first snipers took their name from the cruel act of shooting birds in colonized territories. Our snipers faced far more worthy prey.",
         "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"AgainstNonLargeUnits\">\n\t\t\t<conditions>\n \t\t\t\t<targetUnit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"AgainstUnitsAtRange1\">\n\t\t\t<conditions>\n \t\t\t\t<targetUnit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<distance equal=\"1\"/>\n\t\t\t\t</targetUnit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Sniper.png"
+    },
+    "Spirit of Mankind": {
+        "internalID": "SpiritOfMankind",
+        "description": null,
+        "flavor": "Couldn't tell you if people are good or evil. But good leaders can make them good. Show your people what you'd sacrifice for them and they'll daydream of what they'd sacrifice for each other. But it never lasts. Gotta make the most of it while everyone's hearts are something close to pure.",
+        "modifiers": "<trait visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier/>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"12\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\SpiritOfMankind.png"
     },
     "Splash": {
         "internalID": "Splash",
@@ -1809,7 +2145,7 @@
         "internalID": "Stealth",
         "description": null,
         "flavor": "Staying in the shadows could keep you safe. It also let you ambush anyone who got too close.",
-        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<canEnemyOverwatch add=\"-1\"/>\n\t\t\t\t<canOverwatchWithMelee add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<canEnemyOverwatch add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"WithMeleeWeapons\">\n\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t<weapon>\n\t\t\t\t\t<trait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<canOverwatch add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Stealth.png"
     },
     "Stunned": {
@@ -1826,6 +2162,13 @@
         "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<foodUpkeep max=\"0\"/>\n\t\t\t\t<mineralsUpkeep max=\"0\"/>\n\t\t\t\t<transuraniumUpkeep max=\"0\"/>\n\t\t\t\t<energyUpkeep max=\"0\"/>\n\t\t\t\t<antimatterUpkeep max=\"0\"/>\n\t\t\t\t<algaeUpkeep max=\"0\"/>\n\t\t\t\t<dimensionalEchoesUpkeep max=\"0\"/>\n\t\t\t\t<chipsUpkeep max=\"0\"/>\n\t\t\t\t<singularityCoresUpkeep max=\"0\"/>\n\t\t\t\t<influenceUpkeep max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTraitRemoved>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<removeUnit/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers> \n\t\t\t</area>\n\t\t</unit>\n\t</onTraitRemoved>\n\t<opponentModifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<attackScore mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</opponentModifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Summon.png"
     },
+    "Supplication": {
+        "internalID": "Supplication",
+        "description": null,
+        "flavor": "A drunk engineer made her way down to our barracks, babbling about her work on the Provost. Talked about code written in languages she'd never seen. Functions that could command all in its presence to listen to its screeching lectures. \u201cThat's not fucking code in there,\u201d she said between swigs of toilet ale. \u201cThat's primal. Laws of the universe shit. That machine may be closer to God than any of us ever will be.\u201d",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Supplication\" visibleOnUnit=\"1\">\n\t<modifiers>\n \t\t<modifier effectDescription=\"AgainstNonSourceUnit\">\n \t\t\t<conditions ignoreForTraitVisibility=\"1\">\n \t\t\t\t<targetUnit>\n \t\t\t\t\t<notTraitSourceUnit/>\n \t\t\t\t</targetUnit>\n \t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\Supplication.png"
+    },
     "Survivor's Bazaar": {
         "internalID": "SurvivorsBazaar",
         "description": null,
@@ -1833,11 +2176,25 @@
         "modifiers": "<trait icon=\"Features/SurvivorsBazaar\" visibleOnTile=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t<effects>\n\t\t\t\t<influence add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"ForControllingCity\">\n\t\t\t<effects>\n\t\t\t\t<influence mul=\"0.2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<tradeGain mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\SurvivorsBazaar.png"
     },
+    "Swallowed": {
+        "internalID": "Swallowed",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Swallow\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<actionPointsMax max=\"0.0\"/>\n\t\t\t\t<movementMax max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpointsFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Actions\\Swallow.png"
+    },
+    "Swallower": {
+        "internalID": "Swallower",
+        "description": "Allows transportation of non-Titan units",
+        "flavor": "",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onUnitDisappeared>\n\t\t<unit>\n\t\t\t<area affect=\"Cargo\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"FromCargoOnDeath\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<removeTrait type=\"Swallowed\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"UnitsOnDeath\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<disembark/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onUnitDisappeared>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Swallower.png"
+    },
     "System Overload": {
         "internalID": "SystemOverload",
         "description": null,
         "flavor": "The Krypt Archai had some kind of\u2026 universal sabotage protocol. It didn\u2019t make any sense, drove our techs up the wall. It seemed to work on weaponry by making ammo explode, but it could play havoc with networked systems, or choke Voice weapons on their own power. What was this thing? Where did it get this power?",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/SystemOverload\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageSelf addMin=\"0.2\" addMax=\"0.6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Actions/SystemOverload\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageSelf addMin=\"0.2\" addMax=\"0.6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\SystemOverload.png"
     },
     "Tactical Archeology": {
@@ -1882,33 +2239,68 @@
         "modifiers": "<trait category=\"Buff\" icon=\"Traits/TheGreatHunt\" visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\TheGreatHunt.png"
     },
+    "The Deal": {
+        "internalID": "TheDeal",
+        "description": null,
+        "flavor": "In the months afterward, you'll feel the pinch of Phinnicus' financial pull. A part of you wants to double cross the old man, but a scan of your payment software tells you that would be a bad idea. Sometime before he left, the former CEO hid all kinds of safeguards and deadman's switches in your hardware.\n\nBetrayal would be too high a price. You're loyal now\u2014not to yourself, or your people, but to Phinnicus the puppetmaster. At least it's in his best interest to help you survive this war.",
+        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<city/>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research mul=\"0.04\"/>\n\t\t\t\t<influence mul=\"-0.02\"/>\n\t\t\t\t<minerals mul=\"-0.02\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\TheDeal.png"
+    },
     "The Fog": {
         "internalID": "TheFog",
         "description": null,
         "flavor": "It was a death trap. They sent us in anyway. Even when pierced by our lanterns the fog crept in through our orifices and made our insides burn. The Acrin in the mist taunted us from a distance, laughing at how the mildewy air that made them glow with power was making us choke on our own bile.",
-        "modifiers": "<trait category=\"Debuff\" icon=\"Features/TheFog\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t\t<sight max=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"TheFog\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/TheFog\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementCost add=\"1\"/>\n\t\t\t\t<sight max=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier effectDescription=\"AgainstRangedWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t\t<noTrait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<coverDamageReduction add=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTurnStarted>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"TheFog\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Features\\TheFog.png"
     },
-    "The Past, Improved": {
-        "internalID": "ThePastImproved",
+    "The Past, Improved (Anchorite)": {
+        "internalID": "ThePastImprovedAnchorite",
         "description": null,
-        "flavor": null,
+        "flavor": "The Anchorite seems disappointed in your offer. Their long life comes with deep regrets, and they lament that your technology extends back mere decades, not millennia. Still, they accept.\n\nTheir representatives arrive with a massive, worm-like nightmare that streaks through the sky. It descends, coiling, and clacks its tusked maw menacingly. The Acrin dab your lips and temple with a reddish, numbing concoction, transferring the creature\u2019s full obedience to you.\n\nA week later, you\u2019re struck by an uncanny realization. How have the Anchorite\u2019s forces evolved such perfect defenses? It\u2019s as if they had extra decades to prepare\u2026",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Zephon\\Icons\\Traits\\ThePastImproved.png"
+        "iconPath": "Zephon\\Icons\\Traits\\ThePastImprovedAnchorite.png"
+    },
+    "The Past, Improved (Chieftess)": {
+        "internalID": "ThePastImprovedChieftess",
+        "description": null,
+        "flavor": "As soon as you mention time travel, the Chieftess accepts.\n\nYou expected her to bring a trade convoy, instead she arrives in a two-story tank with more guns than physics allows. She jumps down from a side-hatch and, muttering apologies, tosses you the keys and drives away in one of your transport trucks. Fortunately for all, it\u2019s the one with her purchased goods.\n\nYou\u2019re struck by an uncanny sensation. The Reaver\u2019s known for her cunning, not her brilliance. How is her material science decades ahead of everyone else? It\u2019s as if she had extra time to prepare\u2026",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ThePastImprovedChieftess.png"
+    },
+    "The Past, Improved (ZEPHON)": {
+        "internalID": "ThePastImprovedZephon",
+        "description": null,
+        "flavor": "ZEPHON processes your offer overnight before accepting. The next day, a swarm of aerial drones drop off a silver-alloyed casket outside your city. The casket slides open with a hiss, revealing ZEPHON\u2019s half of the bargain: a sleeker, upgraded Warden with carbyne-edge blades and an improved payload. The drones take the resources along with Zandra\u2019s research and depart.\n\nYour engineers determine that ZEPHON\u2019s material sciences are decades ahead of everyone else. But how? The production time alone should prevent such a wide gap.\n\nYou\u2019re struck by an uncanny sensation. It\u2019s as if ZEPHON had gained additional time to prepare\u2026",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ThePastImprovedZephon.png"
     },
     "The Past, Mitigated": {
         "internalID": "ThePastMitigated",
         "description": null,
-        "flavor": null,
+        "flavor": "Power flickers across your city as Zandra activates her time portal. The transuranium arch sparks as the space within bends and forms a gateway to the past. Eighty of your best march through\u2014right as the Acrin first attack.\n\nDedicated to the long haul, your soldiers wage guerrilla war for decades. While few in number, their advanced gear and tactics make them an unstoppable force, appearing in key battles to devastate both sides before vanishing again.\n\nYou build a monument to honor the few that return. They retire happily, knowing that their past victories have permanently crippled your rivals.",
         "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax mul=\"-0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\ThePastMitigated.png"
     },
+    "Systematic Dreamers": {
+        "internalID": "ThereIsHopeUpgrade2",
+        "description": null,
+        "flavor": "Everyone was ordered to scratch the name down of someone they loved on a piece of tape. We put that tape on gear we'd grab in the middle of a firefight\u2014magazines, medkits, repair pods, armor, you name it. You'd pick it up, see the name. Remember how much that person meant to you. Nothing could stop you when you were fighting for someone you loved.",
+        "modifiers": "<trait category=\"Buff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ThereIsHopeUpgrade2.png"
+    },
     "Titan": {
         "internalID": "Titan",
-        "description": null,
+        "description": "Classification",
         "flavor": "\u201dTitan\u201d was just a nickname for our largest machines and creatures, but there was something\u2026 awfully appropriate about it. Before the Gods, there were Titans. And now here at the end, we have rebirthed their kind and unleashed them out into the world. Giants once walked the Earth\u2014now some of them soared over it.",
         "modifiers": "<trait visibleOnUnit=\"1\"/>",
         "iconPath": "Zephon\\Icons\\Traits\\Titan.png"
+    },
+    "Titan Melee": {
+        "internalID": "TitanMelee",
+        "description": null,
+        "flavor": null,
+        "modifiers": "<trait visibleOnWeapon=\"1\"/>",
+        "iconPath": "Zephon\\Icons\\Traits\\TitanMelee.png"
     },
     "Torturer": {
         "internalID": "Torturer",
@@ -1949,8 +2341,15 @@
         "internalID": "Tuned",
         "description": null,
         "flavor": "Mass-producing weapons left them with flaws, unfortunately. In the field, an Engineer could hack together short-term fixes that could make your rifle fire like it was the living embodiment of destiny. Then physics took their toll and you were left with interchangeable junk.",
-        "modifiers": "<trait category=\"Buff\" icon=\"Actions/Tune\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<noTrait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Buff\" icon=\"Actions/Tune\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\Tune.png"
+    },
+    "Uncanny Eyes": {
+        "internalID": "UncannyEyes",
+        "description": null,
+        "flavor": "Your flesh now glows the same color as the glowing creature you slew. \u201cYou cracked a hole open in the universe, %1%,\u201d Yetunde says as she sinks to the ground. \u201cDon't send me to the other side.\u201d\n\nShe passes out. Your medics recover her body. Their eyes\u2026 they also glow the color of the transformed flesh.\n\nAll your people's eyes now glow that color.",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noType name=\"Deformity\"/>\n\t\t\t\t\t\t\t\t<noType name=\"LandanGraham\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<hitpoints add=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\UncannyEyes.png"
     },
     "Unexplored Outpost": {
         "internalID": "UnexploredOutpost",
@@ -2022,6 +2421,13 @@
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Valhalla\" rankFromAction=\"0\" rankMax=\"99\" visibleOnUnit=\"1\">\n\t<modifiers>\n \t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mulMin=\"0.1\" mulMax=\"10\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\Valhalla.png"
     },
+    "Antiphon at Daybreak": {
+        "internalID": "VoiceAircraftUpgrade",
+        "description": null,
+        "flavor": "The monsters berthing in the Voice-drenched airfields bayed at the sun every morning. One of the grunts in my unit said she knew why. \u201cIt's a song. A song that rises to the sky and carves a path for them to fly through.\u201d I blew it off. My squadmates didn't. Nothing seemed impossible that late into the war.",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<perBuildingInOwnCitiesModifier effectDescription=\"VoiceAircraftUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"VoiceAircraft\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<experience add=\"6\"/>\n\t\t\t</effects>\n\t\t</perBuildingInOwnCitiesModifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\VoiceAircraftUpgrade.png"
+    },
     "Precentor of Nihilus": {
         "internalID": "VoiceInfantryUpgrade",
         "description": null,
@@ -2033,7 +2439,7 @@
         "internalID": "VoiceVehiclesUpgrade",
         "description": null,
         "flavor": "Death didn't seem to be enough for the Voice. When something died, humans gestating in the Voice\u2019s isolation\u2026 quickened. Drew sustenance from the death, somehow. They would emerge sooner from their seclusion, failed in their ascension or not.",
-        "modifiers": "<trait icon=\"Actions/VoiceVehiclesUpgrade\" stacking=\"1\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<onUnitDisappeared>\n\t\t<traitSourceBuildingGroup>\n\t\t\t<modifier effectDescription=\"VoiceVehiclesUpgrade\">\n\t\t\t\t<conditions>\n\t\t\t\t\t<unit>\n\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t</unit>\n\t\t\t\t</conditions>\n\t\t\t\t<effects>\n\t\t\t\t\t<productionPerBuildingFromCost add=\"0.1\"/>\n\t\t\t\t</effects>\n\t\t\t</modifier>\n\t\t</traitSourceBuildingGroup>\n\t</onUnitDisappeared>\t\n</trait>",
+        "modifiers": "<trait icon=\"Actions/VoiceVehiclesUpgrade\" stacking=\"1\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<onUnitDisappeared>\n\t\t<traitSourceBuildingGroup>\n\t\t\t<modifier effectDescription=\"VoiceVehiclesUpgrade\">\n\t\t\t\t<conditions>\n\t\t\t\t\t<unit>\n\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t</unit>\n\t\t\t\t</conditions>\n\t\t\t\t<effects>\n\t\t\t\t\t<productionPerBuildingFromCost add=\"0.1\"/>\n\t\t\t\t</effects>\n\t\t\t</modifier>\n\t\t</traitSourceBuildingGroup>\n\t</onUnitDisappeared>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\VoiceVehiclesUpgrade.png"
     },
     "Void Drifter": {
@@ -2061,7 +2467,7 @@
         "internalID": "Weakened",
         "description": null,
         "flavor": "Out of ammo. Drained. Outnumbered. But my troops wouldn't get home unless I took up a blade and cleared a path to escape. I failed. I was exhausted and my blade bounced off flesh and metal with every swing. Couldn't hurt any of them. I was just an old man who should have been left cowering with the civilians\u2026",
-        "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForMeleeWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<trait type=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "modifiers": "<trait category=\"Debuff\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForMeleeWeapons\">\n\t\t\t<conditions>\n\t\t\t\t<weapon ignoreForTraitVisibility=\"1\" match=\"Any\">\n\t\t\t\t\t<trait type=\"Melee\"/>\n\t\t\t\t\t<trait type=\"TitanMelee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Weakened.png"
     },
     "Weakening": {
@@ -2070,6 +2476,13 @@
         "flavor": null,
         "modifiers": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToNonTitanEnemy\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Weakened\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Weakening.png"
+    },
+    "Whispering Wights": {
+        "internalID": "WhisperingWights",
+        "description": null,
+        "flavor": "",
+        "modifiers": "<trait category=\"Debuff\" icon=\"Features/WhisperingWights\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers endure=\"0\">\n\t\t\t\t\t<modifier effectDescription=\"EachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Features\\WhisperingWights.png"
     },
     "Specimen Containment": {
         "internalID": "Wildlife",
@@ -2085,12 +2498,33 @@
         "modifiers": "<trait category=\"Debuff\" icon=\"Traits/TheInformant\" visibleOnCity=\"1\" visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\TheInformant.png"
     },
-    "Zephon Advancement": {
+    "Xenogenesis": {
+        "internalID": "Xenogenesis",
+        "description": null,
+        "flavor": "Cultists who grew into Ioks spent a few more days in the Paean to the Dawn? After completing the conversion, their task wasn't done. They had the power to birth more Ioks just by sitting and feeding on bodies. The new ones grew in the boils on their backs, exploding to live in a spray of pus and gore. Then that one birthed another. And another. And another\u2026",
+        "modifiers": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<productionCost add=\"-12\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\Xenogenesis.png"
+    },
+    "Yetunde's Causal Nexus": {
+        "internalID": "YetundesCausalNexus",
+        "description": null,
+        "flavor": "Yetunde shuts off her device. \u201cNot what I expected\u2026\u201d she mutters. \u201cYou were not a\u2026 creation. You were a side effect. Smoke rising from an all-consuming flame.\u201d\n\nIt's the closest thing you've ever had to an answer. A part of you knew this was coming. All you've learned is that there are other horrors out there on this Earth\u2014and one of them barely cared that it made you.\n\nYou turn to leave, barely acknowledging Yetunde. She watches you go, then turns back to her machine. \u201cFound you,\u201d she whispers. \u201cYou can't get away from me this time.\u201d",
+        "modifiers": "<trait visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research add=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\YetundesCausalNexus.png"
+    },
+    "ZEPHON Advancement": {
         "internalID": "ZephonAdvancement",
         "description": null,
         "flavor": "It was all just an equation for ZEPHON. Reavers and Acrin had to scrap, steal, and fight like hell to keep their edge, but that machine was always plotting its way toward the end. Its machines' power just ticked, ticked, ticked upward\u2026 carefully calculated to match our pace. It never ran ahead. Just watched. Followed. And observed.",
         "modifiers": "<trait category=\"Upgrade\" icon=\"Factions/Zephon\" rankMax=\"9\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mulMin=\"0.05\" mulMax=\"0.5\"/>\n\t\t\t\t<hitpointsMax mulMin=\"0.05\" mulMax=\"0.5\"/>\n\t\t\t\t<unitCost mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t\t<unitUpkeep mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions match=\"Any\">\n\t\t\t\t<action>\n\t\t\t\t\t<type name=\"ProduceUnit\"/>\n\t\t\t\t</action>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<productionCost addMin=\"1.2\" addMax=\"12.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<strength mulMin=\"0.1\" mulMax=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Factions\\Zephon.png"
+    },
+    "ZEPHON Interference": {
+        "internalID": "ZephonInterference",
+        "description": null,
+        "flavor": "A message comes from ZEPHON. \u201cThis was not the outcome we desired %1%,\u201d it says. \u201cWe hoped for a more\u2026 transcendent conclusion. There will be consequences for your failure.\u201d\n\nBefore you can ask what it means, ZEPHON cuts the call. You and your advisers are left only with the sound of Hopper bursting into an anguished wail.",
+        "modifiers": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForCyberProductionBuildings\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production add=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ZephonInterference.png"
     },
     "AI Rights": {
         "internalID": "ZephonStanding",

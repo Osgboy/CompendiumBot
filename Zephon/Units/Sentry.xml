@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit explosionsBone="Base"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Base"
 				groupMemberDeltaX="70"
 				groupMemberDeltaY="70"
 				material="Units/Sentry"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<attacks base="2"/>
+				<damage base="6"/> <!-- %damage base tier=6 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait type="Overcharged"/>
+	</traits>
+</weapon>

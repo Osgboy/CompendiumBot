@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onUnitDisappeared>
+		<unit>
+			<area affect="Unit" radius="1">
+				<modifiers>
+					<modifier effectDescription="ToAdjacentEnemyUnitsOnDeath">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<enemy/>
+								<notCargo/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="Deathshriek"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onUnitDisappeared>	
+</trait>

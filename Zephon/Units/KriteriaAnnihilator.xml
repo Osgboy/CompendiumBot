@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Guide"
-				explosionSound="Explosions/Units/SmallCyber"
-				explosionSoundCount="17"
+		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
+				explosionsBone="Guide"
 				groupMemberDeltaX="100"
 				groupMemberDeltaY="80"
 				material="Units/KriteriaAnnihilator"
@@ -131,7 +130,7 @@
 				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="TimeShift" requiredUpgrade="TimeShift">
+		<unitCast blueprint="TimeShift">
 			<model>
 				<cast animation="Units/KriteriaAnnihilatorAbility0"
 						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"

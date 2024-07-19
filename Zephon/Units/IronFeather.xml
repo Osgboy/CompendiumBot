@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Cyber">
+<unit branch="Cyber" icon="Units/MalakimDestroyer" portrait="Units/MalakimDestroyer">
 	<model>
-		<unit explosionsBone="Chest"
-				explosionSound="Explosions/Units/SmallCyber"
-				explosionSoundCount="17"
+		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
+				explosionsBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
 				material="Units/MalakimDestroyer"

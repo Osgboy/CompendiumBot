@@ -6,5 +6,26 @@
 				<populationLoyaltyUpkeep mul="0.25"/>
 			</effects>
 		</modifier>
+		<modifier effectDescription="IndependentUpgrade" requiredUpgrade="IndependentUpgrade">
+			<conditions>
+				<city>
+					<population less="7"/>
+				</city>
+			</conditions>
+			<effects>
+				<populationLoyaltyUpkeep mul="-0.25"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="IndependentUpgrade2" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<city>
+					<population greater="6"/>
+					<population less="13"/>
+				</city>
+			</conditions>
+			<effects>
+				<populationLoyaltyUpkeep mul="-0.25"/>
+			</effects>
+		</modifier>
 	</modifiers>
 </trait>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnBuilding="1">
+	<modifiers>
+		<perBuildingInOwnCitiesModifier effectDescription="VoiceAircraftUpgrade">
+			<perBuildingConditions>
+				<building>
+					<type name="VoiceAircraft"/>
+				</building>
+			</perBuildingConditions>
+			<effects>
+				<experience add="6"/>
+			</effects>
+		</perBuildingInOwnCitiesModifier>
+	</modifiers>
+</trait>

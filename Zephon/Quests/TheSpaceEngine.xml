@@ -1,4 +1,4 @@
-<quest>
+<quest firstTurn="80">
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -47,7 +47,7 @@
 				</option>
 				<option name="ChangeThePast">
 					<nextStages>
-						<nextStage name="ChangeThePastSuccess" weight="100"/>
+						<nextStage name="ChangeThePastSuccess" weight="3"/>
 						<nextStage name="ChangeThePastFailure" weight="1"/>
 					</nextStages>				
 				</option>
@@ -176,7 +176,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addTrait type="ThePastImproved"/>
+							<addTrait type="ThePastImprovedZephon"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -209,7 +209,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addTrait type="ThePastImproved"/>
+							<addTrait type="ThePastImprovedAnchorite"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -242,7 +242,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addTrait type="ThePastImproved"/>
+							<addTrait type="ThePastImprovedChieftess"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -275,10 +275,10 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addItem name="?"/> -->
+							<addItem type="GladialEmanator"/>
 						</effects>
 					</modifier>
-				</playerModifiers>				
+				</playerModifiers>
 			</modifications>
 		</stage>
 		<stage name="SellTechToConcordatFailure"/>

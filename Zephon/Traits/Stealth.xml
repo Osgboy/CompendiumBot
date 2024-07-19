@@ -4,7 +4,16 @@
 		<modifier>
 			<effects>
 				<canEnemyOverwatch add="-1"/>
-				<canOverwatchWithMelee add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WithMeleeWeapons">
+			<conditions ignoreForTraitVisibility="1">
+				<weapon>
+					<trait type="Melee"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<canOverwatch add="1"/>
 			</effects>
 		</modifier>
 	</modifiers>

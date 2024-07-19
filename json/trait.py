@@ -22,7 +22,7 @@ class GTrait(Trait):
     def __init__(self, name: str):
         super().__init__(name)
         self.factionAndID: str
-        self.faction = 'Neutral'
+        self.faction: str = 'Neutral'
 
     def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
         self.factionAndID = entry.get('name')

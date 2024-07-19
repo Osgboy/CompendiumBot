@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Buff" icon="Items/Archaegis" visibleOnUnit="1">
-	<modifiers>
-		<modifier>
-			<effects>
-				<damageReturn add="0.167"/>
-			</effects>
-		</modifier>
-	</modifiers>
+	<onWeaponDefended>
+		<attacker>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="ToAttacker">
+						<effects>
+							<weaponDamage triggerEffects="0" useSourceWeapon="1" factor="0.167"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onWeaponDefended>
 </trait>

@@ -2,9 +2,8 @@
 <unit branch="Human">
 	<model>
 		<unit effectsBlueprint="Effects/Outrider"
+				explosionsBlueprint="Effects/MediumHumanExplosions"
 				explosionsBone="Chassis"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
 				material="Units/Outrider"
 				mesh="Units/Outrider"
 				scale="25 25 25"/>
@@ -170,6 +169,11 @@
 			</model>
 			<beginTargets>
 				<selfTarget>
+					<conditions>
+						<tile>
+							<noFeature type="Mines"/>
+						</tile>
+					</conditions>
 					<areas>
 						<area affect="Tile">
 							<modifiers>

@@ -47,7 +47,8 @@
 				cooldown="10"
 				durationInSeconds="0.1"
 				executeImmediately="1"
-				label="1">
+				label="1"
+				useConditionsForVisiblity="1">
 			<model>
 				<cast blueprint="Effects/FoundationOfBlood"/>
 			</model>
@@ -97,7 +98,8 @@
 		<buildingGroupCast name="QuenchResistance"
 				autoCycle="0"
 				cooldown="1"
-				executeImmediately="1">
+				executeImmediately="1"
+				useConditionsForVisiblity="1">
 			<model>
 				<cast blueprint="Effects/QuenchResistance"/>
 			</model>
@@ -248,6 +250,7 @@
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -255,6 +258,8 @@
 		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
 		<trait type="EngineerLife"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
@@ -262,7 +267,8 @@
 	<unitActions>
 		<unitCast name="ConstructArtificersLaboratory"
 				icon="Units/ArtificersLaboratory"
-				requiredUpgrade="ArtificersLaboratory">
+				requiredUpgrade="ArtificersLaboratory"
+				useConditionsForVisiblity="1">
 			<conditions>
 				<unit>
 					<type name="Engineer"/>

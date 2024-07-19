@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/BlackHole" visibleOnTile="1" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="BlackHole"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+	<modifiers>
+		<modifier>
+			<effects>
+				<movementCost min="100"/>
+				<movementMax mul="-0.667"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

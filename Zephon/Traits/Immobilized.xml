@@ -3,8 +3,9 @@
 	<modifiers>
 		<modifier effectDescription="ForMeleeWeapons">
 			<conditions>
-				<weapon>
+				<weapon match="Any">
 					<trait type="Melee"/>
+					<trait type="TitanMelee"/>
 				</weapon>
 			</conditions>
 			<effects>

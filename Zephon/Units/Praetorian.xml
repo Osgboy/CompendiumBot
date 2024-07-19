@@ -18,7 +18,19 @@
 						mesh="Units/PraetorianSword"/>
 			</models>
 		</weapon>
- 		<weapon type="GaussCarbine">
+		<weapon type="GaussCarbineOvercharged"
+				slotName="GaussCarbineOvercharged"
+				enabled="0"
+				requiredUpgrade="GaussCarbine">
+			<models>
+				<weapon bone="Gun"
+						material="Units/PraetorianGun"
+						mesh="Units/PraetorianGun"/>
+			</models>
+		</weapon>
+		<weapon type="GaussCarbine"
+				slotName="GaussCarbine"
+				requiredUpgrade="GaussCarbine">
 			<models>
 				<weapon bone="Gun"
 						material="Units/PraetorianGun"
@@ -141,19 +153,26 @@
 		<fly name="JumpPack">
 			<model>
 				<action animation="Units/PraetorianAltMove"
+						effectBlueprint=""
 						responseSound="Units/Responses/PraetorianJumpPack"
 						sound="Units/PraetorianJumpPack"
 						soundCount="3"/>
 			</model>
 		</fly>
-		<unitCast name="IronWill">
+		<unitCast blueprint="IronWill">
 			<model>
 				<cast animation="Units/PraetorianAbility0"
+						blueprint="Effects/IronWill"
 						responseSound="Units/Responses/PraetorianIronWill"/>
 			</model>
-		</unitCast>		
+		</unitCast>
+		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
+				weaponSlotNames="GaussCarbine GaussCarbineOvercharged"
+				requiredUpgrade="GaussCarbine"/>
+		<teleport blueprint="OrbitalDeployment"/>
 	</actions>
 	<traits>
+		<trait type="AntimatterShield"/>
 		<trait type="Biological"/>
 		<trait type="FallenSoldierAffinityUpgrade2" requiredUpgrade="FallenSoldierAffinityUpgrade2"/>
 	</traits>

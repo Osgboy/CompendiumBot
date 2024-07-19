@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<grenadeWeapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<attacks base="1"/>
+				<damage base="6"/> <!-- %damage base tier=6 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="AntimatterDiffraction"/>
+		<trait type="Melee"/>
+	</traits>
+</weapon>

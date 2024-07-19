@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnBuilding="1">
 	<modifiers>
-		<perBuildingInCityModifier effectDescription="SingularityCoresUpgrade">
+		<perBuildingInOwnCitiesModifier effectDescription="SingularityCoresUpgrade">
 			<perBuildingConditions>
 				<building>
 					<type name="SingularityCores"/>
@@ -11,8 +11,8 @@
 				<mineralsCost mul="-0.2"/>
 				<productionCost mul="-0.2"/>
 			</effects>
-		</perBuildingInCityModifier>
-		<perBuildingInCityModifier effectDescription="SingularityCoresUpgrade"
+		</perBuildingInOwnCitiesModifier>
+		<perBuildingInOwnCitiesModifier effectDescription="SingularityCoresUpgrade"
 				visible="0">
 			<perBuildingConditions>
 				<building>
@@ -23,6 +23,6 @@
 				<mineralsCost min="0"/>
 				<productionCost min="1"/>
 			</effects>
-		</perBuildingInCityModifier>
+		</perBuildingInOwnCitiesModifier>
 	</modifiers>
 </trait>

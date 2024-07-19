@@ -5,11 +5,12 @@ from os.path import join as pathJoin
 from os.path import normpath
 from typing import Type, Callable
 from lxml import etree as ET
-from item import *
-from unit import *
-from weapon import *
-from trait import *
 from action import *
+from item import *
+from trait import *
+from unit import *
+from upgrade import *
+from weapon import *
 
 OUTPUT_DIR = pathJoin('json')
 
@@ -53,45 +54,9 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
                     obj.GAME, 'Icons', normpath(internalPath) + '.png')
                 objDict[name] = kwargs
         except Exception:
-            print(entry.get('name') + ' failed to convert.')
+            print(f"{objCls} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
-
-
-def get_gunit_attrs(unit: GUnit) -> dict:
-    unit.get_stats()
-    unit.get_weapon_stats()
-    unit.get_group_size()
-    unit.get_weapons()
-    unit.get_traits()
-    unit.get_actions()
-
-    slots = ('internalID', 'description', 'flavor',
-             'weapons', 'traits', 'actions')
-    kwargs = {}
-    kwargs['faction'] = camel_case_split(unit.faction)
-    kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
-    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
-    kwargs['weaponStats'] = dataclasses.asdict(unit.weaponStats)
-    for key in slots:
-        kwargs[key] = getattr(unit, key, None)
-    return kwargs
-
-
-def get_zunit_attrs(unit: ZUnit) -> dict:
-    unit.get_stats()
-    unit.get_weapons()
-    unit.get_traits()
-    unit.get_actions()
-
-    slots = ('internalID', 'branch', 'description',
-             'flavor', 'weapons', 'traits', 'actions')
-    kwargs = {}
-    kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
-    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
-    for key in slots:
-        kwargs[key] = getattr(unit, key, None)
-    return kwargs
 
 
 def get_gitem_attrs(item: GItem) -> dict:
@@ -102,6 +67,7 @@ def get_gitem_attrs(item: GItem) -> dict:
     slots = ('internalID', 'description', 'flavor',
              'ability', 'rarity', 'influenceCost')
     kwargs = {}
+
     for key in slots:
         kwargs[key] = getattr(item, key, None)
     return kwargs
@@ -119,6 +85,96 @@ def get_zitem_attrs(item: ZItem) -> dict:
     kwargs = {}
     for key in slots:
         kwargs[key] = getattr(item, key, None)
+    return kwargs
+
+
+def get_gtrait_attrs(trait: GTrait) -> dict:
+    trait.get_modifiers()
+
+    slots = ('internalID', 'description', 'flavor', 'modifiers')
+    kwargs = {}
+    kwargs['faction'] = camel_case_split(trait.faction)
+    for key in slots:
+
+        kwargs[key] = getattr(trait, key, None)
+    return kwargs
+
+
+def get_ztrait_attrs(trait: ZTrait) -> dict:
+    trait.get_modifiers()
+
+    slots = ('internalID', 'description', 'flavor', 'modifiers')
+    kwargs = {}
+    for key in slots:
+        kwargs[key] = getattr(trait, key, None)
+
+    return kwargs
+
+
+def get_gunit_attrs(unit: GUnit) -> dict:
+    unit.get_dlc()
+    unit.get_stats()
+    unit.get_weapon_stats()
+    unit.get_group_size()
+    unit.get_weapons()
+    unit.get_traits()
+    unit.get_actions()
+
+    slots = ('internalID', 'dlc', 'description', 'flavor',
+             'weapons', 'traits', 'actions')
+    kwargs = {}
+    kwargs['faction'] = camel_case_split(unit.faction)
+    kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
+    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
+    kwargs['weaponStats'] = dataclasses.asdict(unit.weaponStats)
+    for key in slots:
+        kwargs[key] = getattr(unit, key, None)
+    return kwargs
+
+
+def get_zunit_attrs(unit: ZUnit) -> dict:
+    unit.get_branch()
+    unit.get_stats()
+    unit.get_weapons()
+    unit.get_traits()
+    unit.get_actions()
+
+    slots = ('internalID', 'branch', 'description',
+             'flavor', 'weapons', 'traits', 'actions')
+    kwargs = {}
+    kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
+    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
+    for key in slots:
+        kwargs[key] = getattr(unit, key, None)
+    return kwargs
+
+
+def get_gupgrade_attrs(upgrade: GUpgrade) -> dict:
+    upgrade.get_dlc()
+    upgrade.get_tier()
+    upgrade.get_required_upgrades()
+
+    slots = ('internalID', 'dlc', 'description', 'flavor', 'tier', 'requiredUpgrades')
+    kwargs = {}
+    kwargs['faction'] = camel_case_split(upgrade.faction)
+    for key in slots:
+
+        kwargs[key] = getattr(upgrade, key, None)
+    return kwargs
+
+
+def get_zupgrade_attrs(upgrade: ZUpgrade) -> dict:
+    upgrade.get_branch()
+    upgrade.get_faction()
+    upgrade.get_tier()
+    upgrade.get_required_upgrades()
+
+    slots = ('internalID', 'branch', 'description', 'flavor', 'tier', 'requiredUpgrades')
+    kwargs = {}
+    kwargs['faction'] = camel_case_split(upgrade.faction)
+    for key in slots:
+        kwargs[key] = getattr(upgrade, key, None)
+
     return kwargs
 
 
@@ -148,36 +204,17 @@ def get_zweapon_attrs(weapon: ZWeapon) -> dict:
     return kwargs
 
 
-def get_gtrait_attrs(trait: GTrait) -> dict:
-    trait.get_modifiers()
-
-    slots = ('internalID', 'description', 'flavor', 'modifiers')
-    kwargs = {}
-    kwargs['faction'] = camel_case_split(trait.faction)
-    for key in slots:
-        kwargs[key] = getattr(trait, key, None)
-    return kwargs
-
-
-def get_ztrait_attrs(trait: ZTrait) -> dict:
-    trait.get_modifiers()
-
-    slots = ('internalID', 'description', 'flavor', 'modifiers')
-    kwargs = {}
-    for key in slots:
-        kwargs[key] = getattr(trait, key, None)
-    return kwargs
-
-
 mainArgs = {
-    get_gunit_attrs: GUnit,
-    get_zunit_attrs: ZUnit,
     get_gitem_attrs: GItem,
     get_zitem_attrs: ZItem,
-    get_gweapon_attrs: GWeapon,
-    get_zweapon_attrs: ZWeapon,
     get_gtrait_attrs: GTrait,
     get_ztrait_attrs: ZTrait,
+    get_gunit_attrs: GUnit,
+    get_zunit_attrs: ZUnit,
+    get_gupgrade_attrs: GUpgrade,
+    get_zupgrade_attrs: ZUpgrade,
+    get_gweapon_attrs: GWeapon,
+    get_zweapon_attrs: ZWeapon,
 }
 for getAttrs, objCls in mainArgs.items():
     with open(pathJoin(OUTPUT_DIR, objCls.__name__ + '.json'), 'w') as fout:
@@ -258,7 +295,7 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                         action.GAME, 'Icons', normpath(internalPath) + '.png')
                     objDict[actionName] = kwargs
         except Exception:
-            print(entry.get('name') + ' failed to convert.')
+            print(f"Action {unitCls} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
 

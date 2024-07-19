@@ -43,6 +43,30 @@
 				</modifier>
 			</strategyModifiers>
 		</constructPlayerAction>
+		<constructPlayerAction action="AtramentousAura"
+				requiredUpgrade="AtramentousAura">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<dimensionalEchoesCost base="10"/> <!-- %dimensionalEchoesCost base tier=6 factor=0.1 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=6 factor=1 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="UntoldProphetAffinityUpgrade2">
+					<effects>
+						<dimensionalEchoesCost mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseOperationsScore base="0.5"/>
+						<increaseVoiceScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
  		<rushProduction name="ChoralCelerity"
 				requiredUpgrade="VoiceOperationsUpgrade">
 			<model>

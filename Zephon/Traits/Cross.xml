@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1" visible="0">
+	<onWeaponAttacked>
+		<defender>
+			<cross affect="Unit" excludeTarget="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<weaponDamage useSourceWeapon="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</cross>
+		</defender>
+	</onWeaponAttacked>
+</trait>

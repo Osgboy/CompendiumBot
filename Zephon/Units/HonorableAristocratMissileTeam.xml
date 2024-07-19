@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Human">
+<unit branch="Human" icon="Units/MissileTeam" portrait="Units/MissileTeam">
 	<model>
 		<unit bloodBone="Chest"
+				explosionsBlueprint="Effects/SmallHumanExplosions"
 				explosionsBone="Chest"
-				explosionSound="Explosions/Units/SmallHuman"
-				explosionSoundCount="16"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="70"
 				material="Units/MissileTeam"

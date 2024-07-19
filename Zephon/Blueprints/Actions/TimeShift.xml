@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="TimeShift"
+		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="5"
+		requiredActionPoints="0"
+		requiredMovement="0"
+		requiredUpgrade="TimeShift">
+	<beginTargets>
+		<selfTarget>
+			<areas>
+				<area affect="Unit">
+					<modifiers>
+						<modifier>
+							<effects>
+								<actionPoints add="100"/>
+								<movement add="100"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<conditions>
+				<tile>
+					<enemyStrengthInTheArea greater="0"/>
+				</tile>
+			</conditions>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>
+</unitCast>

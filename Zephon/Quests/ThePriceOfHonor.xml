@@ -1,7 +1,6 @@
-<quest image="Factions/HonorableAristocrat">
+<quest firstTurn="40" image="Factions/HonorableAristocrat">
  	<conditions>
 		<player>
-			<!-- <turn greater="40"/> -->
 			<faction name="HonorableAristocrat"/>
 		</player>
 	</conditions>
@@ -223,7 +222,25 @@
 		</stage>	
 		<stage name="DismissMercenariesFailure"/>
 		<stage name="RetrieveCornucopia">
-		
+			<!-- TODO -->
+		</stage>
+		<stage name="RetrieveCornucopiaSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<addTrait type="NeumanaticCornucopia"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 	</stages>
 </quest>

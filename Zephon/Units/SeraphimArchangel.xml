@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBone="Guide"
-				explosionSound="Explosions/Units/MediumCyber"
-				explosionSoundCount="8"
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+				explosionsBone="Guide"
 				material="Units/SeraphimArchangel"
 				mesh="Units/SeraphimArchangel"
 				normalWeight="0.1"
@@ -124,20 +123,72 @@
 				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
 			</model>
 		</skip>
-		<fly name="AngelFlight">
+		<fly name="AngelFlight"
+				cooldown="3">
 			<model>
 				<action animation="Units/SeraphimArchangelAltMove"
+						effectBlueprint=""
 						responseSound="Units/Responses/SeraphimArchangelAngelFlight"
 						sound="Units/SeraphimArchangelFlight"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</fly>
-		<unitCast name="HolyInferno">
+		<unitCast name="HolyInferno"
+				cooldown="3"
+				requiredUpgrade="HolyInferno">
 			<model>
 				<cast animation="Units/SeraphimArchangelAbility0"
+						blueprint=""
+						casterBlueprint=""
 						responseSound="Units/Responses/SeraphimArchangelHolyInferno"/>
 			</model>
+			<beginTargets>
+				<selfTarget>
+					<conditions>
+						<unit>
+							<unitsInRange greater="0" range="1">
+								<unit>
+									<enemy/>
+								</unit>
+							</unitsInRange>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="HolyInferno"/>
+										<addTrait type="Blinded" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<unitsInRange greater="1" range="1">
+								<unit>
+									<enemy/>
+								</unit>
+							</unitsInRange>
+						</unit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>

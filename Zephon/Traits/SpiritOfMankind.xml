@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnCity="1" visibleOnPlayer="1">
+	<modifiers>
+		<modifier/>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="12"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

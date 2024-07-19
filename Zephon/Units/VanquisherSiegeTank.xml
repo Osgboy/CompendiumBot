@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Hull"
-				explosionSound="Explosions/Units/MediumHuman"
-				explosionSoundCount="12"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Hull"
 				groupMemberDeltaX="90"
 				groupMemberDeltaY="50"
 				material="Units/VanquisherSiegeTank"
@@ -149,46 +148,13 @@
 				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="SmokeLauncher"
-				cooldown="10"
-				requiredUpgrade="SmokeLauncher">
+		<unitCast blueprint="SmokeLauncher">
 			<model>
 				<cast responseSound="Units/Responses/VanquisherSiegeTankSmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
-			<beginTargets>
-				<selfTarget>
-					<areas>
-						<area affect="Tile">
-							<modifiers>
-								<modifier>
-									<effects>
-										<addFeature type="SmokeScreen" duration="3"/>
-									</effects>
-								</modifier>
-							</modifiers>
-							<scoreModifiers>
-								<modifier>
-									<conditions>
-										<tile>
-											<enemyStrengthInTheArea greater="0"/>
-										</tile>
-									</conditions>
-									<effects>
-										<score add="0.5"/>
-									</effects>
-								</modifier>
-							</scoreModifiers>
-						</area>
-					</areas>
-				</selfTarget>
-			</beginTargets>
 		</unitCast>
-<!-- 		<useWeapon cooldown="10"
-				consumedActionPoints="0"
-				requiredActionPoints="0"
-				weaponSlotName="ShirakiCruiseMissile"
-				requiredUpgrade="ShirakiCruiseMissile">
+		<!-- <useWeapon blueprint="ShirakiCruiseMissile">
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"

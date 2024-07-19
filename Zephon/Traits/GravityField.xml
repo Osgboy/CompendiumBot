@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Features/GravityField" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<movementCost min="100"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<conditions>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="GravityField"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

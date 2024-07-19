@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnUnit="1">
 	<modifiers>
-		<modifier>
+		<modifier effectDescription="ForActions">
 			<effects>
 				<consumedMovement max="0"/>
 			</effects>
 		</modifier>
+		<modifier effectDescription="IfNotMoved" requiredUpgrade="HitAndRunUpgrade">
+			<conditions>
+				<unit>
+					<notMovedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<attacks mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<attackedThisTurn/>
+					<notMovedThisTurn/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax add="1"/>
+			</effects>
+		</modifier>
 	</modifiers>
+	<onUnitAttacked>
+		<attacker>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="AfterAttackingIfNotMoved" requiredUpgrade="HitAndRunUpgrade2">
+						<conditions>
+							<unit>
+								<notMovedThisTurn/>
+							</unit>
+						</conditions>
+						<effects>
+							<movement add="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onUnitAttacked>
 </trait>
