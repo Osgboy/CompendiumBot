@@ -124,8 +124,8 @@
 			<objectives>
 				<killCamp name="KillCamp">
 					<defenders>
-						<unit type="Reaver" count="2"/>
-						<unit type="Buster" count="2"/>
+						<unit type="Reaver" count="2" rankMin="3" rankMax="5"/>
+						<unit type="Buster" count="2" rankMin="3" rankMax="5"/>
 					</defenders>
 				</killCamp>
 				<keepUnitAlive token="ResourceTransport"/>
@@ -142,8 +142,8 @@
 				<tileModifiers>
 					<modifier>
 						<effects>
-							<addUnit type="Reaver" count="2" skipOverwatchOnNextTileEnter="1"/>
-							<addUnit type="Buster" count="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Reaver" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Buster" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
@@ -174,8 +174,8 @@
 				<killCamp name="KillCamp">
 					<boss type="ReaverCamp" name="Units/ReaverCamp"/>
 					<defenders>
-						<unit type="Reaver" count="4"/>
-						<unit type="Buster" count="4"/>
+						<unit type="Reaver" count="4" rankMin="3" rankMax="5"/>
+						<unit type="Buster" count="4" rankMin="3" rankMax="5"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -216,8 +216,8 @@
 			<objectives>
 				<killCamp name="KillCamp">
 					<defenders>
-						<unit type="Reaver" count="2"/>
-						<unit type="Buster" count="2"/>
+						<unit type="Reaver" count="2" rankMin="3" rankMax="5"/>
+						<unit type="Buster" count="2" rankMin="3" rankMax="5"/>
 					</defenders>
 				</killCamp>
 			</objectives>

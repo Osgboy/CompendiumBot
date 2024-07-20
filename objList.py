@@ -81,11 +81,11 @@ def create_gaction_list(classDict: dict, *, faction: str = None, cooldown: str =
     else:
         return('No actions found to match given filters.')
 
-def create_zaction_list(classDict: dict, *, faction: str = None, cooldown: str = None, condition: str = None, ZUpgrade: str = None) -> str:
+def create_zaction_list(classDict: dict, *, branch: str = None, cooldown: str = None, condition: str = None, ZUpgrade: str = None) -> str:
     actionList = []
     for action, attrs in classDict.items():
         if (
-            (faction and faction != attrs['faction'])
+            (branch and branch != attrs['branch'])
             or (cooldown and cooldown != attrs['cooldown'])
             or (condition and attrs['conditions'][condition])
             or (ZUpgrade and ZUpgrade != attrs['conditions']['requiredUpgrade'])
@@ -141,6 +141,20 @@ def create_gtrait_list(classDict: dict, *, faction: str = None) -> str:
         return('\n'.join(traitList))
     else:
         return('No traits found to match given filters.')
+    
+def create_ztrait_list(classDict: dict, *, branch: str = None) -> str:
+    traitList = []
+    for trait, attrs in classDict.items():
+        if (
+            (branch and branch != attrs['branch'])
+        ):
+            continue
+        traitList.append(trait)
+
+    if traitList:
+        return('\n'.join(traitList))
+    else:
+        return('No traits found to match given filters.')
 
 def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, GWeapon: str = None, GTrait: str = None, GAction: str = None) -> str:
     unitList = []
@@ -177,11 +191,12 @@ def create_zunit_list(classDict: dict, *, branch: str = None, ZWeapon: str = Non
     else:
         return('No units found to match given filters.')
 
-def create_gweapon_list(classDict: dict, *, GTrait: str = None, range: str = None) -> str:
+def create_gweapon_list(classDict: dict, *, faction: str = None, GTrait: str = None, range: str = None) -> str:
     weaponList = []
     for weapon, attrs in classDict.items():
         if (
-            (GTrait and GTrait not in attrs['traits'])
+            (faction and faction != attrs['faction'])
+            or (GTrait and GTrait not in attrs['traits'])
             or (range and range != attrs['range'])
         ):
             continue
@@ -192,11 +207,12 @@ def create_gweapon_list(classDict: dict, *, GTrait: str = None, range: str = Non
     else:
         return('No weapons found to match given filters.')
 
-def create_zweapon_list(classDict: dict, *, ZTrait: str = None, range: str = None) -> str:
+def create_zweapon_list(classDict: dict, *, branch: str = None, ZTrait: str = None, range: str = None) -> str:
     weaponList = []
     for weapon, attrs in classDict.items():
         if (
-            (ZTrait and ZTrait not in attrs['traits'])
+            (branch and branch != attrs['branch'])
+            or (ZTrait and ZTrait not in attrs['traits'])
             or (range and range != attrs['range'])
         ):
             continue

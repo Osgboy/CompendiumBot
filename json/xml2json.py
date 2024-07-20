@@ -13,6 +13,7 @@ from upgrade import *
 from weapon import *
 
 OUTPUT_DIR = pathJoin('json')
+dicts = {}
 
 
 def camel_case_split(s: str) -> str:
@@ -54,7 +55,7 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
                     obj.GAME, 'Icons', normpath(internalPath) + '.png')
                 objDict[name] = kwargs
         except Exception:
-            print(f"{objCls} {entry.get('name')} failed to convert.")
+            print(f"{objCls.__name__} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
 
@@ -93,9 +94,9 @@ def get_gtrait_attrs(trait: GTrait) -> dict:
 
     slots = ('internalID', 'description', 'flavor', 'modifiers')
     kwargs = {}
-    kwargs['faction'] = camel_case_split(trait.faction)
+    if trait.faction:
+        kwargs['faction'] = camel_case_split(trait.faction)
     for key in slots:
-
         kwargs[key] = getattr(trait, key, None)
     return kwargs
 
@@ -204,21 +205,52 @@ def get_zweapon_attrs(weapon: ZWeapon) -> dict:
     return kwargs
 
 
+def get_factions(objDict: str, sourceDicts: tuple, faction: str, objType: str):
+    objDict = dicts[objDict]
+    blank = set()
+    for k, v in objDict.items():
+        if faction not in v:
+            blank.add(k)
+    for sourceDict in sourceDicts:
+        for source in dicts[sourceDict].values():
+            for o in source[objType]:
+                if o in blank:
+                    try:
+                        if objDict[o][faction] != source[faction]:
+                            objDict[o][faction] = 'Neutral'
+                    except KeyError:
+                        objDict[o][faction] = source[faction]
+    for v in objDict.values():
+        if faction not in v:
+            v[faction] = 'Neutral'
+
 mainArgs = {
-    get_gitem_attrs: GItem,
-    get_zitem_attrs: ZItem,
-    get_gtrait_attrs: GTrait,
-    get_ztrait_attrs: ZTrait,
     get_gunit_attrs: GUnit,
     get_zunit_attrs: ZUnit,
+    get_gitem_attrs: GItem,
+    get_zitem_attrs: ZItem,
     get_gupgrade_attrs: GUpgrade,
     get_zupgrade_attrs: ZUpgrade,
     get_gweapon_attrs: GWeapon,
     get_zweapon_attrs: ZWeapon,
+    get_gtrait_attrs: GTrait,
+    get_ztrait_attrs: ZTrait,
+}
+factionArgs = {
+    GTrait: ('GTrait', ('GUnit', 'GWeapon'), 'faction', 'traits'),
+    ZTrait: ('ZTrait', ('ZUnit', 'ZWeapon'), 'branch', 'traits'),
+    GWeapon: ('GWeapon', ('GUnit',), 'faction', 'weapons'),
+    ZWeapon: ('ZWeapon', ('ZUnit',), 'branch', 'weapons'),
 }
 for getAttrs, objCls in mainArgs.items():
     with open(pathJoin(OUTPUT_DIR, objCls.__name__ + '.json'), 'w') as fout:
-        json.dump(main(getAttrs, objCls), fout, indent=4)
+        dicts[objCls.__name__] = main(getAttrs, objCls)
+        try:
+            args = factionArgs[objCls]
+            get_factions(*args)
+        except KeyError:
+            pass
+        json.dump(dicts[objCls.__name__], fout, indent=4)
 
 
 def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
@@ -295,11 +327,13 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                         action.GAME, 'Icons', normpath(internalPath) + '.png')
                     objDict[actionName] = kwargs
         except Exception:
-            print(f"Action {unitCls} {entry.get('name')} failed to convert.")
+            print(f"Action {unitCls.__name__} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
 
 
-for actionCls, unitCls in ((GAction, GUnit), (ZAction, ZUnit)):
+for actionCls, unitCls, faction in ((GAction, GUnit, 'faction'), (ZAction, ZUnit, 'branch')):
     with open(pathJoin(OUTPUT_DIR, actionCls.__name__ + '.json'), 'w') as fout:
-        json.dump(get_action_attrs(actionCls, unitCls), fout, indent=4)
+        dicts[actionCls.__name__] = get_action_attrs(actionCls, unitCls)
+        get_factions(actionCls.__name__, (unitCls.__name__,), faction, 'actions')
+        json.dump(dicts[actionCls.__name__], fout, indent=4)

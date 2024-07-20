@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit explosionsBone="Hull"
-				material="Units/CherubimTitan"
-				mesh="Units/CherubimTitan"
+		<unit bloodBone="Chest"
+				material="Units/ReamingCrodeus"
+				mesh="Units/ReamingCrodeus"
 				normalWeight="0.1"
-				position="0 0 16"
+				position="0 0 48"
 				scale="1.2 1.2 1.2"/>
 	</model>
 	<weapons>
@@ -51,46 +51,52 @@
 	<actions>
 		<attack>
 			<model>
-				<attack animation="Units/CherubimTitanAttack"
+				<attack animation="Units/ReamingCrodeusAttack"
 						beginFire="1.0"
 						endFire="1.73"/>
 			</model>
 		</attack>
 		<die>
 			<model>
-				<die animation="Units/CherubimTitanDie0"
+				<die animation="Units/ReamingCrodeusDie0"
 						groundImpact="1.0"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/CherubimTitanImpact"/> 
+				<action animation="Units/ReamingCrodeusImpact"/> 
 			</model>
 		</endure>
 		<idle>
 			<model>
-				<idle animation="Units/CherubimTitanIdle"
+				<idle animation="Units/ReamingCrodeusIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
 		<move>
 			<model>
-				<action animation="Units/CherubimTitanMove"
+				<action animation="Units/ReamingCrodeusMove"
 						sound="Units/CherubimTitanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
-		<useWeapon cooldown="1"
+		<useWeapon cooldown="3"
 				consumedActionPoints="0"
 				consumedMovement="0"
 				requiredActionPoints="0"
 				requiredMovement="0"
-				weaponSlotName="DimensionalNeedles"/>
+				weaponSlotName="DimensionalNeedles">
+			<model>
+				<attack animation="Units/ReamingCrodeusAbility0"
+						beginFire="1.0"
+						endFire="1.9"/>
+			</model>
+		</useWeapon>
 		<unitCast name="Swallow"
 				cooldown="1">
 			<model>
-				<cast animation=""
+				<cast animation="Units/ReamingCrodeusAbility1"
 						casterBlueprint=""
 						responseSound=""
 						sound=""/>
@@ -101,7 +107,7 @@
 				</unit>
 			</conditions>
 			<beginTargets>
-				<target melee="1">
+				<target>
 					<conditions>
 						<unit>
 							<enemy/>
@@ -132,7 +138,7 @@
 				cooldown="5"
 				requiredUpgrade="SeedOfExtinction">
 			<model>
-				<cast animation=""
+				<cast animation="Units/ReamingCrodeusAbility2"
 						casterBlueprint=""
 						responseSound=""
 						sound=""/>

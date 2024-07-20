@@ -156,6 +156,12 @@ def create_gaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
+    
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+
+    # Faction
+    embed.add_field(name='Faction', value=attrs['faction'])
 
     # Cooldown
     if attrs['cooldown'] == 'Passive':
@@ -197,6 +203,12 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+
+    # Branch
+    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
     # Cooldown
     if attrs['cooldown'] == 'Passive':
@@ -331,6 +343,12 @@ def create_ztrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+
+    # Branch
+    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
     # Modifiers
     if (modifiers := attrs['modifiers']):
@@ -632,15 +650,21 @@ def create_gweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
     else:
         embed = discord.Embed(title=name)
 
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+
+    # Faction
+    embed.add_field(name='Faction', value=attrs['faction'])
+
     # Wielder
     if unitName:
-        embed.add_field(name='Wielder', value=unitName, inline=False)
+        embed.add_field(name='Wielder', value=unitName)
 
     # Stats
     statText = (f"{GLADIUS_ICONS['damage']} {weaponStats['damage']} | {GLADIUS_ICONS['attacks']} {weaponStats['attacks']} | "
                 f"{GLADIUS_ICONS['armorPenetration']} {weaponStats['armorPen']} | {GLADIUS_ICONS['accuracy']} {weaponStats['accuracy']} | "
                 f"{GLADIUS_ICONS['range']} {attrs['range']}")
-    embed.add_field(name='Stats', value=statText)
+    embed.add_field(name='Stats', value=statText, inline=False)
 
     # Traits
     traitsText = []
@@ -680,15 +704,21 @@ def create_zweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
     else:
         embed = discord.Embed(title=name)
 
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+
+    # Branch
+    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+
     # Wielder
     if unitName:
-        embed.add_field(name='Wielder', value=unitName, inline=False)
+        embed.add_field(name='Wielder', value=unitName)
 
     # Stats
     statText = (f"{ZEPHON_ICONS['damage']} {weaponStats['damage']} | {ZEPHON_ICONS['attacks']} {weaponStats['attacks']} | "
                 f"{ZEPHON_ICONS['armorPenetration']} {weaponStats['armorPen']} | {ZEPHON_ICONS['accuracy']} {weaponStats['accuracy']} | "
                 f"{ZEPHON_ICONS['range']} {attrs['range']}")
-    embed.add_field(name='Stats', value=statText)
+    embed.add_field(name='Stats', value=statText, inline=False)
 
     # Traits
     traitsText = []

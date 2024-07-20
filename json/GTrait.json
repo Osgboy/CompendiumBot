@@ -680,132 +680,132 @@
         "iconPath": "Gladius\\Icons\\Actions\\AdeptusMechanicus\\WrathOfMars.png"
     },
     "Aerial Attack": {
-        "faction": "Neutral",
         "internalID": "AerialAttack",
         "description": "Can only target flyers.",
         "flavor": null,
         "modifiers": "<trait>\n\t<targetConditions>\n\t\t<unit>\n\t\t\t<trait name=\"Flyer\"/>\n\t\t</unit>\n\t</targetConditions>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\AerialAttack.png"
+        "iconPath": "Gladius\\Icons\\Traits\\AerialAttack.png",
+        "faction": "Neutral"
     },
     "Agile": {
-        "faction": "Neutral",
         "internalID": "Agile",
         "description": "Increases the movement, but decreases the attacks.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Agile\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"2\"/>\n\t\t\t\t<attacks mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Agile.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Agile.png",
+        "faction": "Neutral"
     },
     "Ammo Runt": {
-        "faction": "Neutral",
         "internalID": "AmmoRunt",
         "description": "Increases the ranged accuracy.",
         "flavor": "An ammo runt is a heavily overburdened Gretchin who carries extra ammunition for his master.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/AmmoRunt\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AmmoRunt.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AmmoRunt.png",
+        "faction": "Neutral"
     },
     "Amphibious": {
-        "faction": "Neutral",
         "internalID": "Amphibious",
         "description": "The unit can move over water and ignores the penalties of rivers.",
         "flavor": "Very few of the standard military vehicles of the 41st millenium are designed with amphibious assault in mind\u2014to reduce weight by eliminating ammunition and armour is often seen as a step too far. However, the Imperial Chimera was designed many millennia ago to be the ultimate flexible light tank and is quite capable of fording rivers.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Amphibious.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Amphibious.png",
+        "faction": "Astra Militarum"
     },
     "And They Shall Know No Fear": {
-        "faction": "Neutral",
         "internalID": "AndTheyShallKnowNoFear",
         "description": "Reduces the morale loss and grants immunity to fear.",
         "flavor": "Some warriors refuse to surrender, fighting on whatever the odds.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactor add=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\AndTheyShallKnowNoFear.png"
+        "iconPath": "Gladius\\Icons\\Traits\\AndTheyShallKnowNoFear.png",
+        "faction": "Space Marines"
     },
     "Animosity": {
-        "faction": "Neutral",
         "internalID": "Animosity",
         "description": "Reduces the attacks.",
         "flavor": "When the tides of Waaagh! flow, the Orks are visibly larger and stronger\u2014but when the tides ebb, the Orks are weakened too.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Traits/Waaagh\" rankMax=\"9\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mulMin=\"-0.02\" mulMax=\"-0.20\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<loyalty mulMin=\"-0.02\" mulMax=\"-0.20\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Waaagh.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Waaagh.png",
+        "faction": "Neutral"
     },
     "Anti-Grav Upwash": {
-        "faction": "Neutral",
         "internalID": "AntiGravUpwash",
         "description": "Increases the movement when the health is above 66%.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<hitpointsFraction greater=\"0.66\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\AntiGravUpwash.png"
+        "iconPath": "Gladius\\Icons\\Traits\\AntiGravUpwash.png",
+        "faction": "Space Marines"
     },
     "Apocalyptic Barrage": {
-        "faction": "Neutral",
         "internalID": "ApocalypticBarrage",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticBarrage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticBarrage.png",
+        "faction": "Astra Militarum"
     },
     "Apocalyptic Blast": {
-        "faction": "Neutral",
         "internalID": "ApocalypticBlast",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"8\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticBlast.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticBlast.png",
+        "faction": "Neutral"
     },
     "Apocalyptic Mega-Blast": {
-        "faction": "Neutral",
         "internalID": "ApocalypticMegaBlast",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"10\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticMegaBlast.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ApocalypticMegaBlast.png",
+        "faction": "Neutral"
     },
     "Armorium Cherub": {
-        "faction": "Neutral",
         "internalID": "ArmoriumCherub",
         "description": "Increases the accuracy.",
         "flavor": "Cherubim are diminutive flying cyborg constructs created to assist the Emperor's servants, be they scribe or soldier. Among the Adeptus Astartes they are rarely seen outside of the Librarius, save for those few that relay targeting data and carry spare ammunition for Devastator Squads.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/ArmoriumCherub\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\ArmoriumCherub.png"
+        "iconPath": "Gladius\\Icons\\Actions\\ArmoriumCherub.png",
+        "faction": "Neutral"
     },
     "Armourbane": {
-        "faction": "Neutral",
         "internalID": "Armourbane",
         "description": "Increases the armour penetration.",
         "flavor": "This weapon has been crafted with one aim in mind: to pierce the hides of armoured vehicles.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Armourbane.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Armourbane.png",
+        "faction": "Neutral"
     },
     "Artefact": {
-        "faction": "Neutral",
         "internalID": "Artefact",
         "description": "Classification.",
         "flavor": "Over the millennia, something in the Old One structures dotting Gladius has attracted many races to this planet. They have brought with them objects with extraordinary powers, meaning the surface is littered with alien technologies of all sizes and kinds.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Artefact.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Artefact.png",
+        "faction": "Neutral"
     },
     "Assault": {
-        "faction": "Neutral",
         "internalID": "Assault",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Assault.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Assault.png",
+        "faction": "Neutral"
     },
     "Assault Doctrine": {
-        "faction": "Neutral",
         "internalID": "AssaultDoctrine",
         "description": "Increases the accuracy.",
         "flavor": "\u201cWhere there is uncertainty, I shall bring light\nWhere there is doubt, I shall sow faith.\nWhere there is shame, I shall point atonement.\nWhere there is rage, I shall show its course.\nMy word in the soul shall be as my bolter in the field.\u201d\n  \u2014 Litany of Devotion, traditional",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/AssaultDoctrine\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<type name=\"SpaceMarines/AssaultSpaceMarine\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AssaultDoctrine.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AssaultDoctrine.png",
+        "faction": "Neutral"
     },
     "Assault Vehicle": {
-        "faction": "Neutral",
         "internalID": "AssaultVehicle",
         "description": "Disembarking does not consume movement.",
         "flavor": "This vehicle is specifically designed to disgorge troops into the thick of the fray.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\AssaultVehicle.png"
+        "iconPath": "Gladius\\Icons\\Traits\\AssaultVehicle.png",
+        "faction": "Neutral"
     },
     "Improved Frag Casings": {
         "faction": "Space Marines",
@@ -848,52 +848,52 @@
         "iconPath": "Gladius\\Icons\\Traits\\AstraMilitarum\\ShootSharpAndScarper.png"
     },
     "Naval Orders": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumAircraftProductionEdict",
         "description": "Increases the production output.",
         "flavor": "Edict, Departmento Munitorum: to all voidport overseers. Labourer sleep cycles are halved until further notice, production targets are raised. Arbitrators are being deployed to all sectors to ensure compliance.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumAircraftProductionEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Aircraft\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumAircraftProductionEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumAircraftProductionEdict.png",
+        "faction": "Neutral"
     },
     "Bulwark of the Emperor": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumDefenseEdict",
         "description": "Increases the armour.",
         "flavor": "Edict, Astra Militarum: to all General Staff, Regimental Commanders, Company Commanders. All units are to be kept under or behind protective cover at all times, even during R&R. Additional resource expenditure for defense repairs is authorised.",
         "modifiers": "<trait icon=\"Actions/AstraMilitarumDefenseEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\t\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumDefenseEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumDefenseEdict.png",
+        "faction": "Neutral"
     },
     "Running Hot": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumEnergyEdict",
         "description": "Increases the energy output.",
         "flavor": "Edict, Departmento Munitorum: to all power unit overseers. Safeguards are to be removed on all plasma ionisers; the labour Corps has been mandated to replenish manpower depleted by resulting meltdowns without further authorisation.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumEnergyEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Energy\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<energy mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumEnergyEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumEnergyEdict.png",
+        "faction": "Neutral"
     },
     "Agronomic Surge": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumFoodEdict",
         "description": "Increases the food output.",
         "flavor": "Edict, Departmento Munitorum: to all Imperial subjects. Personal rations are reduced with immediate effect. Arbitrators have been dispatched to farms, granaries and storehouses to ensure compliance.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumFoodEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Food\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<food mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumFoodEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumFoodEdict.png",
+        "faction": "Neutral"
     },
     "Breeding Licenses": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumGrowthEdict",
         "description": "Increases the growth rate.",
         "flavor": "Edict, Departmento Munitorum: to all registered insula keepers. For the period of this Edict, connubial encounters are encouraged. Also, to all Imperial storehouse overseers. For the period of this Edict, anaphrodisiac dosages are to be eliminated from both the food and water supply.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumGrowthEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<growth mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumGrowthEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumGrowthEdict.png",
+        "faction": "Neutral"
     },
     "Inspired Training": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumInfantryProductionEdict",
         "description": "Increases the production output.",
         "flavor": "Edict, Astra Militarum: to all Commissars and recruitment officers. Volunteering sweeps are to be doubled, the Emperor's Mercy is to be applied to all recusants.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumInfantryProductionEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Infantry\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumInfantryProductionEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumInfantryProductionEdict.png",
+        "faction": "Neutral"
     },
     "Hotshot Power Packs": {
         "faction": "Space Marines",
@@ -904,228 +904,228 @@
         "iconPath": "Gladius\\Icons\\Traits\\LasDamage.png"
     },
     "Propaganda Broadcast": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumLoyaltyEdict",
         "description": "Increases the loyalty output.",
         "flavor": "Edict, Adeptus Arbites: to all Commissars, Arbitrators and Enforcers: a period of increased Imperial communication has been commissioned. During this time, insula-to-insula searches are now authorised in order to ensure maximum devotion to the Emperor. Chasteners are to apply the Lex Imperialis rigorously.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumLoyaltyEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Loyalty\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\t\t\t\n\t\t\t<effects>\n\t\t\t\t<loyalty mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumLoyaltyEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumLoyaltyEdict.png",
+        "faction": "Neutral"
     },
     "Extraction Quotas": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumOreEdict",
         "description": "Increases the ore output.",
         "flavor": "Edict, Departmento Munitorum: to all manufactory overseers: servitors are required to be run continuously for this cycle. Burnouts / fatalities are to be replaced from the lower ranks of the penal and labour corps.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumOreEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Ore\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<ore mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumOreEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumOreEdict.png",
+        "faction": "Neutral"
     },
     "Coven Foci": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumPsykerProductionEdict",
         "description": "Increases the production output.",
         "flavor": "Edict, Adeptus Astra Telepathica: to the Coven Masters and magisters of the Scholastia Psykana. Quality thresholds for recruitment have been lowered; summary executions should thus be minimal, blanks excepted. Assign all recruits to a Sanctioned Psyker immediately.",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumPsykerProductionEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Psykers\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumPsykerProductionEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumPsykerProductionEdict.png",
+        "faction": "Neutral"
     },
     "Revelations of the Omnissiah": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumResearchEdict",
         "description": "Increases the research output.",
         "flavor": "Edict, Adeptus Mechanicus: to all Tech-Priests. During this cycle, the Quest for Knowledge takes precedence. Studies of STC designs, exploratory missions are to be encouraged. Praise the Omnissiah!",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumResearchEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Research\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<research mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumResearchEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumResearchEdict.png",
+        "faction": "Neutral"
     },
     "Rites of the Machine Spirits": {
-        "faction": "Neutral",
         "internalID": "AstraMilitarumVehicleProductionEdict",
         "description": "Increases the production output.",
         "flavor": "Edict, Adeptus Mechanicus: to all Manufactorum Magi. Production quotas for this period are raised. Personal projects must be put on hold during this time. Additional resources / unguents will be provided for performance of the machine rites. Praise the Omnissiah!",
         "modifiers": "<trait visibilityCategory=\"Building\" icon=\"Actions/AstraMilitarumVehicleProductionEdict\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"AstraMilitarum/Vehicles\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumVehicleProductionEdict.png"
+        "iconPath": "Gladius\\Icons\\Actions\\AstraMilitarumVehicleProductionEdict.png",
+        "faction": "Neutral"
     },
     "Aversion to Light": {
-        "faction": "Neutral",
         "internalID": "AversionToLight",
         "description": "Increases the damage taken from flame and melta weapons.",
         "flavor": "The horrors of the Umbra shard flourish at night, in the dark corners of Gladius. But bring a light to them and they shrink, the nightmares turning away. And bring a flamer to them\u2026",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</opponent>\n\t\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Flame\"/>\n\t\t\t\t\t\t<trait name=\"Melta\"/>\n\t\t\t\t\t</weapon>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageTaken mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\AversionToLight.png"
+        "iconPath": "Gladius\\Icons\\Traits\\AversionToLight.png",
+        "faction": "Neutral"
     },
     "Barrage": {
-        "faction": "Neutral",
         "internalID": "Barrage",
         "description": "Does not require line of sight, but cannot overwatch.",
         "flavor": "Barrage weapons lob shells high into the air, landing them in the midst of the foe.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<ignoreLineOfSight add=\"1\"/>\n\t\t\t\t<preventOverwatch add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Barrage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Barrage.png",
+        "faction": "Neutral"
     },
     "Beam": {
-        "faction": "Neutral",
         "internalID": "Beam",
         "description": "Hits with increased accuracy against multiple group members of the target unit.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy min=\"12\" max=\"12\"/> \n\t\t\t\t<additionalMembersHit add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Beam.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Beam.png",
+        "faction": "Astra Militarum"
     },
     "Bike": {
-        "faction": "Neutral",
         "internalID": "Bike",
         "description": "Classification.",
         "flavor": "Units mounted on Bikes excel at vanguard strikes. They are able to use their fast speed to strike deep into enemy territory, complete their mission and escape before an enemy is able to react. These warriors are often regarded as dangerously hot-headed risk-takers, but their effectiveness cannot be denied.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bike.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bike.png",
+        "faction": "Neutral"
     },
     "Bladestorm": {
-        "faction": "Neutral",
         "internalID": "Bladestorm",
         "description": "Increases the damage and armour penetration.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.17\"/>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bladestorm.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bladestorm.png",
+        "faction": "Eldar"
     },
     "Blast": {
-        "faction": "Neutral",
         "internalID": "Blast",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Blast.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Blast.png",
+        "faction": "Neutral"
     },
     "Blighted": {
-        "faction": "Neutral",
         "internalID": "Blighted",
         "description": "Deals damage each turn.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"Blighted\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Blighted.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Blighted.png",
+        "faction": "Neutral"
     },
     "Blind": {
-        "faction": "Neutral",
         "internalID": "Blind",
         "description": "Reduces the accuracy.",
         "flavor": "This attack looses a brilliant flare of light, searing the sight of the victim and forcing him to fight blind for a few moments.",
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Blind.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Blind.png",
+        "faction": "Neutral"
     },
     "Blinding": {
-        "faction": "Neutral",
         "internalID": "Blinding",
         "description": "Reduces the accuracy of the target infantry or monstrous creature unit.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Blind\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Blinding.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Blinding.png",
+        "faction": "Neutral"
     },
     "Blood Blessing": {
-        "faction": "Neutral",
         "internalID": "BloodBlessing",
         "description": "Increases the attacks.",
         "flavor": "Rising from the ground, the Skull Altar is formed out of the violent tributes heaped in offering for Khorne's Throne. From atop the grisly pedestal a priest of Khorne roars out invectives, evoking the judgements of the Blood God to smite down all signs of weakness.",
         "modifiers": "<trait category=\"Buff\" icon=\"Features/SkullAltar\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Features\\SkullAltar.png"
+        "iconPath": "Gladius\\Icons\\Features\\SkullAltar.png",
+        "faction": "Neutral"
     },
     "Bolster Defences": {
-        "faction": "Neutral",
         "internalID": "BolsterDefences",
         "description": "Increases the ranged damage reduction.",
         "flavor": "\u201cEvery position must be held to the last man: there must be no retirement. With our backs to the wall, and believing in the justice of our cause, each one of us must fight on to the end.\u201d\n  \u2014 Imperial Warmaster Solon",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/BolsterDefences\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\BolsterDefences.png"
+        "iconPath": "Gladius\\Icons\\Actions\\BolsterDefences.png",
+        "faction": "Neutral"
     },
     "Bolt Weapon": {
-        "faction": "Neutral",
         "internalID": "BoltWeapon",
         "description": null,
         "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
         "modifiers": "<trait visible=\"0\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\BoltWeapon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\BoltWeapon.png",
+        "faction": "Neutral"
     },
     "Bolter Drill": {
-        "faction": "Neutral",
         "internalID": "BolterDrill",
         "description": "Increases the accuracy.",
         "flavor": "\u201cI believe in three tenets of battle\u2014firepower, firepower, and more firepower.\u201d\n  \u2014 Kardan Stronos, Chapter Master of the Iron Hands",
         "modifiers": "<trait visibilityCategory=\"Weapon\" category=\"Buff\" icon=\"Actions/BolterDrill\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<trait name=\"BoltWeapon\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\BolterDrill.png"
+        "iconPath": "Gladius\\Icons\\Actions\\BolterDrill.png",
+        "faction": "Neutral"
     },
     "Bomb": {
-        "faction": "Neutral",
         "internalID": "Bomb",
         "description": "Fixed accuracy.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy max=\"6\" min=\"6\"/> \n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<targetConditions>\n\t\t<unit>\n\t\t\t<noTrait name=\"Flyer\"/>\n\t\t</unit>\n\t</targetConditions>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bomb.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bomb.png",
+        "faction": "Neutral"
     },
     "Bosspole": {
-        "faction": "Neutral",
         "internalID": "Bosspole",
         "description": "Reduces the morale loss based on the amount of allied units in the area.",
         "flavor": "Ork Nobz often sport a trophy pole that shows they are not to be messed with. A Nob with a Bosspole often finds it comes in handy when cracking heads to restore some order in the heat of battle.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactorPerAllyInArea add=\"-0.015\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bosspole.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bosspole.png",
+        "faction": "Orks"
     },
     "\u201cBring it Down!\u201d": {
-        "faction": "Neutral",
         "internalID": "BringItDown",
         "description": "Increases the armour penetration.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/BringItDown\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration addMin=\"2\" addMax=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\BringItDown.png"
+        "iconPath": "Gladius\\Icons\\Actions\\BringItDown.png",
+        "faction": "Neutral"
     },
     "Broken": {
-        "faction": "Neutral",
         "internalID": "Broken",
         "description": "Reduces the accuracy and increases the damage taken.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.33\"/>\n\t\t\t\t<damageTaken mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Broken.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Broken.png",
+        "faction": "Neutral"
     },
     "Brute Shield": {
-        "faction": "Neutral",
         "internalID": "BruteShield",
         "description": "Increases the damage and damage reduction.",
         "flavor": "These shields resemble large and resilient energised bucklers. They are carried by some Bullgryns, serving equally well in combat as a defensive measure and handy bludgeon.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t\t<invulnerableDamageReduction min=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\BruteShield.png"
+        "iconPath": "Gladius\\Icons\\Traits\\BruteShield.png",
+        "faction": "Astra Militarum"
     },
     "Bulky": {
-        "faction": "Neutral",
         "internalID": "Bulky",
         "description": "Requires an additional cargo slot in a transport.",
         "flavor": "This creature is so massive it takes up an inordinate amount of space in any vehicle or building it enters.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bulky.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bulky.png",
+        "faction": "Neutral"
     },
     "Camo Netting": {
-        "faction": "Neutral",
         "internalID": "CamoNetting",
         "description": "Increases the ranged damage reduction.",
         "flavor": "Whether rare cameleoline netting or crude webbing woven with local flora, camo netting helps conceal a vehicle from prying eyes.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\CamoNetting.png"
+        "iconPath": "Gladius\\Icons\\Traits\\CamoNetting.png",
+        "faction": "Astra Militarum"
     },
     "Capturable": {
-        "faction": "Neutral",
         "internalID": "Capturable",
         "description": "The unit can be captured by another adjacent unit.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Capturable.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Capturable.png",
+        "faction": "Neutral"
     },
     "Ceramite Plating": {
-        "faction": "Neutral",
         "internalID": "CeramitePlating",
         "description": "Increases the armour.",
         "flavor": "These hull plates are thrice-blessed by the Chapter's Techmarines and anointed with the seven sacred unguents of thermic warding to protect against the extreme conditions of orbital re-entry. Such precautions also serve to thwart the fury of certain weapons, absorbing and dispersing even the most extreme temperatures and microwave emissions.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\CeramitePlating.png"
+        "iconPath": "Gladius\\Icons\\Traits\\CeramitePlating.png",
+        "faction": "Space Marines"
     },
     "Chaff": {
-        "faction": "Neutral",
         "internalID": "Chaff",
         "description": "Increases the ranged damage reduction.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/DispenseChaff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\DispenseChaff.png"
+        "iconPath": "Gladius\\Icons\\Actions\\DispenseChaff.png",
+        "faction": "Neutral"
     },
     "Arcane Occulum": {
         "faction": "Chaos Space Marines",
@@ -1576,156 +1576,156 @@
         "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\WorthyOffering.png"
     },
     "Chapter Unity": {
-        "faction": "Neutral",
         "internalID": "ChapterUnity",
         "description": "Increases the loyalty output.",
         "flavor": "The relics housed in the Great Hall remind the Adeptus Astartes of the heroes of the past, and that one day their armour, weapons and bones could also be revered here.",
         "modifiers": "<trait visibilityCategory=\"Building\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<loyalty add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ChapterUnity.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ChapterUnity.png",
+        "faction": "Neutral"
     },
     "City": {
-        "faction": "Neutral",
         "internalID": "City",
         "description": "Increases the damage reduction and the healing rate for allied units. Decreases the movement cost of units. Increases the ranged damage reduction of infantry units.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.33\"/>\n\t\t\t\t<healingRate mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<noFeatureCategory name=\"WireWeed\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost max=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"Necrons/CityDefenseBonus\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.08\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\City.png"
+        "iconPath": "Gladius\\Icons\\Traits\\City.png",
+        "faction": "Neutral"
     },
     "Cluster Mines": {
-        "faction": "Neutral",
         "internalID": "ClusterMines",
         "description": "Deals damage upon entering the tile.",
         "flavor": "While operating behind enemy lines, Scout Bikers carry cluster mines\u2014explosive devices crammed with tiny anti-personnel bomblets and triggered by tripwires or pressure sensors.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Weapons/ClusterMines\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Necrons/ImmuneToNaturalLaw\"/>\n\t\t\t\t\t<noTrait name=\"JetPack\"/>\n\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t<noTrait name=\"Skimmer\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementCost min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTileEnteredModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"ClusterMines\"/>\n\t\t\t\t<removeFeature name=\"ClusterMines\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onTileEnteredModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Weapons\\ClusterMines.png"
+        "iconPath": "Gladius\\Icons\\Weapons\\ClusterMines.png",
+        "faction": "Neutral"
     },
     "Combat Shield": {
-        "faction": "Neutral",
         "internalID": "CombatShield",
         "description": "Increases the damage reduction.",
         "flavor": "A combat shield is a lighter version of the storm shield fitted to the wearer's vambrace, leaving their hand free to wield another weapon whilst providing protection from incoming attacks.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\CombatShield.png"
+        "iconPath": "Gladius\\Icons\\Traits\\CombatShield.png",
+        "faction": "Space Marines"
     },
     "Concussion": {
-        "faction": "Neutral",
         "internalID": "Concussion",
         "description": "Reduces the accuracy.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Concussion.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Concussion.png",
+        "faction": "Neutral"
     },
     "Concussive": {
-        "faction": "Neutral",
         "internalID": "Concussive",
         "description": "Temporarily reduces the accuracy of the target infantry or monstrous creature unit.",
         "flavor": "Some weapons are designed to leave any foe that manages to survive their strike disoriented and easy to slay.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Concussion\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Concussive.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Concussive.png",
+        "faction": "Neutral"
     },
     "Convergent Targeting": {
-        "faction": "Neutral",
         "internalID": "ConvergentTargeting",
         "description": "Increases the accuracy when adjacent to an allied Thunderfire Cannon.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<unitsInRange count=\"1\" range=\"1\">\n\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t<type name=\"SpaceMarines/ThunderfireCannon\"/>\n\t\t\t\t\t</unitsInRange>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ConvergentTargeting.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ConvergentTargeting.png",
+        "faction": "Space Marines"
     },
     "Cult Ambush": {
-        "faction": "Neutral",
         "internalID": "CultAmbush",
         "description": "Increases the accuracy of overwatch attacks.",
         "flavor": "Genestealer Cults plan meticulously before each strike, their strategies honed to give every advantage when they rise up as one.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<overwatching/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\CultAmbush.png"
+        "iconPath": "Gladius\\Icons\\Traits\\CultAmbush.png",
+        "faction": "Neutral"
     },
     "Curse of the Walking Pox": {
-        "faction": "Neutral",
         "internalID": "CurseOfTheWalkingPox",
         "description": "Converts damage into healing for this unit.",
         "flavor": "The rictus grin adorning each Poxwalker belies the torment their souls are in, trapped inside their mutated, dead bodies that fight on for Nurgle, infecting more innocents with the Walking Plague as they go.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<lifeStealFactor add=\"0.83\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\CurseOfTheWalkingPox.png"
+        "iconPath": "Gladius\\Icons\\Traits\\CurseOfTheWalkingPox.png",
+        "faction": "Neutral"
     },
     "Daemon": {
-        "faction": "Neutral",
         "internalID": "Daemon",
         "description": "Increases the damage reduction.",
         "flavor": "The creatures of the Warp are many and foul, with infinite variety, but there are some characteristics that they all share.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Daemon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Daemon.png",
+        "faction": "Neutral"
     },
     "Damaged": {
-        "faction": "Neutral",
         "internalID": "Damaged",
         "description": "Decreases the accuracy.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\" visible=\"0\" visibilityCategory=\"None\">\n\t\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Damaged.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Damaged.png",
+        "faction": "Neutral"
     },
     "Deathshriek": {
-        "faction": "Neutral",
         "internalID": "Deathshriek",
         "description": "Damages attacker on death.",
         "flavor": "At the point of an Umbra\u2019s death, all those around it receive a vision\u2014of the long ago creature that was torn asunder and cast into the Warp, whilst a voice, horrifying and alluring, whispers a curse\u2026 \u201cLINGER\u2026\u201d",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Weapons/Deathshriek\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<destroyed/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"Deathshriek\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Weapons\\Deathshriek.png"
+        "iconPath": "Gladius\\Icons\\Weapons\\Deathshriek.png",
+        "faction": "Neutral"
     },
     "Deeds of Glory": {
-        "faction": "Neutral",
         "internalID": "DeedsOfGlory",
         "description": "When gaining experience from combat the chapter gains influence.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/DeedsOfGlory\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<influencePerExperience addMin=\"2\" addMax=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\DeedsOfGlory.png"
+        "iconPath": "Gladius\\Icons\\Actions\\DeedsOfGlory.png",
+        "faction": "Neutral"
     },
     "Destroyer Weapon": {
-        "faction": "Neutral",
         "internalID": "DestroyerWeapon",
         "description": "Increases the damage.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\DestroyerWeapon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\DestroyerWeapon.png",
+        "faction": "Neutral"
     },
     "Devastator Doctrine": {
-        "faction": "Neutral",
         "internalID": "DevastatorDoctrine",
         "description": "Increases the accuracy.",
         "flavor": "\u201cVictory often rests on the correct weaponry being in the right place and at the right time. Even the most destructive weapons of war are worthless if absent from the battle.\u201d\n  \u2014 Artor Amhrad, Chapter Master of the Astral Knights",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/DevastatorDoctrine\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t<type name=\"SpaceMarines/DevastatorSpaceMarine\"/>\n\t\t\t\t\t<type name=\"SpaceMarines/DevastatorCenturion\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\DevastatorDoctrine.png"
+        "iconPath": "Gladius\\Icons\\Actions\\DevastatorDoctrine.png",
+        "faction": "Neutral"
     },
     "Discipline": {
-        "faction": "Neutral",
         "internalID": "Discipline",
         "description": "Increases the accuracy.",
         "flavor": "Should discipline or morale falter, it is the task of the Commissar to take whatever steps necessary to restore order, and to do so in the absolute knowledge that his actions are just. Under the steely gaze of such a man, Imperial Guardsmen must be inspired to deeds they never believed possible.",
         "modifiers": "<trait category=\"Buff\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t\t<faction name=\"AstraMilitarum\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy addMin=\"1\" addMax=\"3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Discipline.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Discipline.png",
+        "faction": "Neutral"
     },
     "Distort Scythe": {
-        "faction": "Neutral",
         "internalID": "DistortScythe",
         "description": "Increases the damage.",
         "flavor": "The most dangerous of all Aeldari weapons enable their user to open a portal to the Warp. Often called D-weapons, these technological terrors collapse an area of the material universe. Whether the rift is localised or dispersed, the result is invariably fatal for those nearby.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\DistortScythe.png"
+        "iconPath": "Gladius\\Icons\\Traits\\DistortScythe.png",
+        "faction": "Eldar"
     },
     "Dogma Astartes": {
-        "faction": "Neutral",
         "internalID": "DogmaAstrates",
         "description": "Increases the loyalty output of the fortress-city.",
         "flavor": "The Chaplains of the Space Marines are grim spiritual guardians, whose first duty is to be ever watchful for the dangers of pride, doubt and heresy. Daunting even to their own brethren, Chaplains rely on dogma and liturgy to keep their brothers from spiritual corruption.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/DogmaAstrates\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<loyalty addMin=\"4\" addMax=\"12\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\DogmaAstrates.png"
+        "iconPath": "Gladius\\Icons\\Actions\\DogmaAstrates.png",
+        "faction": "Neutral"
     },
     "Dozer Blade": {
-        "faction": "Neutral",
         "internalID": "DozerBlade",
         "description": "Reduces the movement penalty in forests and imperial ruins.",
         "flavor": "Dozer blades are heavy ploughs, blades, rams, or scoops, used to clear obstacles from the vehicle's path.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\DozerBlade.png"
+        "iconPath": "Gladius\\Icons\\Traits\\DozerBlade.png",
+        "faction": "Neutral"
     },
     "Ancient Evil": {
         "faction": "Drukhari",
@@ -1920,12 +1920,12 @@
         "iconPath": "Gladius\\Icons\\Traits\\Drukhari\\NightShields.png"
     },
     "No Escape": {
-        "faction": "Neutral",
         "internalID": "NoEscape",
         "description": "Increases the attacks against open-topped units.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"OpenTopped\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\NoEscape.png"
+        "iconPath": "Gladius\\Icons\\Traits\\NoEscape.png",
+        "faction": "Neutral"
     },
     "Overlord": {
         "faction": "Drukhari",
@@ -2080,12 +2080,12 @@
         "iconPath": "Gladius\\Icons\\Actions\\Drukhari\\WhirlingDeath.png"
     },
     "'Eavy Armor": {
-        "faction": "Neutral",
         "internalID": "EavyArmour",
         "description": "Increases the armour.",
         "flavor": "Ork 'eavy armour is hammered out of scrap iron, sheet metal and the looted battle-plate of fallen foes. Though its fit is dubious, 'eavy armour provides a solid defence for its wearer.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\EavyArmour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\EavyArmour.png",
+        "faction": "Orks"
     },
     "Aerobatic Grace": {
         "faction": "Eldar",
@@ -2504,636 +2504,636 @@
         "iconPath": "Gladius\\Icons\\Traits\\Eldar\\VehicleBuildingBonus.png"
     },
     "Enslaved": {
-        "faction": "Neutral",
         "internalID": "Enslaved",
         "description": "Kill Enslaver to free the unit.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Enslavement\"/>",
-        "iconPath": "Gladius\\Icons\\Actions\\Enslavement.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Enslavement.png",
+        "faction": "Neutral"
     },
     "'Ere We Go!": {
-        "faction": "Neutral",
         "internalID": "EreWeGo",
         "description": "Increases the movement.",
         "flavor": "Ever eager to get stuck into the fray, Orks will barrel across the battlefield as quick as they can when the foe is in their sights.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/EreWeGo\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\EreWeGo.png"
+        "iconPath": "Gladius\\Icons\\Actions\\EreWeGo.png",
+        "faction": "Neutral"
     },
     "Extra Infantry Armour": {
-        "faction": "Neutral",
         "internalID": "ExtraInfantryArmour",
         "description": "Increases the armour.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ExtraInfantryArmour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ExtraInfantryArmour.png",
+        "faction": "Neutral"
     },
     "Extra Monstrous Creature Armour": {
-        "faction": "Neutral",
         "internalID": "ExtraMonstrousCreatureArmour",
         "description": "Increases the armour.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ExtraMonstrousCreatureArmour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ExtraMonstrousCreatureArmour.png",
+        "faction": "Tyranids"
     },
     "Extra Vehicle Armour": {
-        "faction": "Neutral",
         "internalID": "ExtraVehicleArmour",
         "description": "Increases the armour.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ExtraVehicleArmour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ExtraVehicleArmour.png",
+        "faction": "Neutral"
     },
     "Fear": {
-        "faction": "Neutral",
         "internalID": "Fear",
         "description": "Reduces the morale each turn.",
         "flavor": "Some beings are so monstrous or alien that they can force their foes to recoil in horror.",
         "modifiers": "<trait category=\"Debuff\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t\t<noTrait name=\"AndTheyShallKnowNoFear\"/>\n\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<morale add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Fear.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Fear.png",
+        "faction": "Neutral"
     },
     "Fearless": {
-        "faction": "Neutral",
         "internalID": "Fearless",
         "description": "Reduces the morale loss and grants immunity to fear and pinning.",
         "flavor": "Fearless troops never give up and seldom take full use of cover\u2014even if it would be wiser to do so.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactor add=\"-0.67\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Fearless.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Fearless.png",
+        "faction": "Neutral"
     },
     "Feel No Pain": {
-        "faction": "Neutral",
         "internalID": "FeelNoPain",
         "description": "Increases the damage reduction.",
         "flavor": "Whether through force of will, bionic augmentation or foul sorcery, this warrior can fight despite fearsome wounds.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<feelNoPainDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\FeelNoPain.png"
+        "iconPath": "Gladius\\Icons\\Traits\\FeelNoPain.png",
+        "faction": "Neutral"
     },
     "Flail": {
-        "faction": "Neutral",
         "internalID": "Flail",
         "description": "Increases the melee damage reduction.",
         "flavor": "Equipped with a flail weapon, these warriors hinder attackers on approach.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<meleeDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Flail.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Flail.png",
+        "faction": "Chaos Space Marines"
     },
     "Flame": {
-        "faction": "Neutral",
         "internalID": "Flame",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Flame.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Flame.png",
+        "faction": "Neutral"
     },
     "Fleet": {
-        "faction": "Neutral",
         "internalID": "Fleet",
         "description": "Increases the movement.",
         "flavor": "Preternaturally agile, these warriors can cover ground more quickly than their plodding foes.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Fleet.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Fleet.png",
+        "faction": "Neutral"
     },
     "Fleshbane": {
-        "faction": "Neutral",
         "internalID": "Fleshbane",
         "description": "Increases the damage against infantry and monstrous creature units.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" visibilityCategory=\"Weapon\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Fleshbane.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Fleshbane.png",
+        "faction": "Neutral"
     },
     "Flyer": {
-        "faction": "Neutral",
         "internalID": "Flyer",
         "description": "Can fly over cliffs, water and enemy units. Cannot capture artefacts or outposts. Ignores zone of control of enemy ground units. Cannot be hit by ground melee weapons and are hard to hit by ground weapons without skyfire. No penalty for heavy and ordnance weapons.",
         "flavor": "The airspace above a battle is thronged with activity. Fighters and bomber craft hurtle through the skies, duelling with one another providing fire support for the troops on the ground.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Flyer.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Flyer.png",
+        "faction": "Neutral"
     },
     "Forest": {
-        "faction": "Neutral",
         "internalID": "Forest",
         "description": "Increases the ranged damage reduction of infantry units.",
         "flavor": "Gladius' fast-growing forests persist all year around, the vegetal growth stretching to the sky, and blocking lines of sight. Gladius' plants may seem treelike, but they're actually iron-hard, as they draw ores from deep under the planet's surface.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"City\"/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Forest.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Forest.png",
+        "faction": "Neutral"
     },
     "Forest Stealth": {
-        "faction": "Neutral",
         "internalID": "ForestStealth",
         "description": "Increases the ranged damage reduction while in a forest.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<feature name=\"Forest\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ForestStealth.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ForestStealth.png",
+        "faction": "Neutral"
     },
     "Fortification": {
-        "faction": "Neutral",
         "internalID": "Fortification",
         "description": "Stationary and fortified unit. If armed, it exerts control over adjacent outposts.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Fortification.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Fortification.png",
+        "faction": "Neutral"
     },
     "\u201cFull Throttle!\u201d": {
-        "faction": "Neutral",
         "internalID": "FullThrottle",
         "description": "Increases the movement.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/FullThrottle\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax addMin=\"1\" addMax=\"3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\FullThrottle.png"
+        "iconPath": "Gladius\\Icons\\Actions\\FullThrottle.png",
+        "faction": "Neutral"
     },
     "Fuelled By Rage": {
-        "faction": "Neutral",
         "internalID": "FuelledByRage",
         "description": "Increases the attacks when the unit's hitpoints decrease.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\FuelledByRage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\FuelledByRage.png",
+        "faction": "Neutral"
     },
     "Furious Charge": {
-        "faction": "Neutral",
         "internalID": "FuriousCharge",
         "description": "Increases the melee damage.",
         "flavor": "Some warriors use the impetus of the charge to fuel their own fury.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<circumstanceMeleeDamage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\FuriousCharge.png"
+        "iconPath": "Gladius\\Icons\\Traits\\FuriousCharge.png",
+        "faction": "Neutral"
     },
     "Gargantuan": {
-        "faction": "Neutral",
         "internalID": "Gargantuan",
         "description": "Classification.",
         "flavor": "Gargantuan creatures are of such immense size that they can take on entire armies. They tower over the battlefield, making the ground shudder as they advance upon the foe, crushing lesser creatures beneath their feet as they lumber forwards.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Gargantuan.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Gargantuan.png",
+        "faction": "Neutral"
     },
     "Gauss": {
-        "faction": "Neutral",
         "internalID": "Gauss",
         "description": "Scales the minimum damage with the hitpoints of the target unit.",
         "flavor": "Gauss weapons vary in appearance from the rifle-sized flayers to the massive heavy gauss cannon. Unlike more conventional energy weapons, a gauss projector emits a molecular disassembling beam, reducing flesh, bone and even armour to its constituent atoms.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<minDamageFromHitpointsFraction add=\"0.05\"/>\n\t\t\t\t<damageFromHitpoints max=\"1.2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Gauss.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Gauss.png",
+        "faction": "Necrons"
     },
     "Atomic Flayers": {
-        "faction": "Neutral",
         "internalID": "GaussDamage",
         "description": "Increases the armour penetration.",
         "flavor": "For a galaxy full of cruel, monstrous or insane weaponry, Gauss technology is particularly feared. A bolter shell will just explode inside you, but a Gauss weapon will flay you alive, atom by atom.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\GaussDamage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\GaussDamage.png",
+        "faction": "Necrons"
     },
     "Gets Hot": {
-        "faction": "Neutral",
         "internalID": "GetsHot",
         "description": "The unit loses hitpoints each time a ranged weapon fires.",
         "flavor": "Some weapons are fuelled by unstable power sources and risk overheating with each shot\u2014often to the detriment of the wielder.",
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait name=\"Melee\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageSelfFactor add=\"0.05\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\GetsHot.png"
+        "iconPath": "Gladius\\Icons\\Traits\\GetsHot.png",
+        "faction": "Neutral"
     },
     "Graviton": {
-        "faction": "Neutral",
         "internalID": "Graviton",
         "description": "Scales the damage with the armour of the target unit.",
         "flavor": "Some weapons crush their enemies within their own armour.",
         "modifiers": "<trait category=\"Buff\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Graviton.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Graviton.png",
+        "faction": "Adeptus Mechanicus"
     },
     "Grenade": {
-        "faction": "Neutral",
         "internalID": "Grenade",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Grenade.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Grenade.png",
+        "faction": "Neutral"
     },
     "Grot Riggers": {
-        "faction": "Neutral",
         "internalID": "GrotRiggers",
         "description": "Restores hitpoints each turn.",
         "flavor": "Whether hurriedly re-attaching gubbinz with rivet guns, or just getting out and pushing, a crew of grot riggers can help to keep an Ork vehicle in the fight long after it should have fallen apart.",
         "modifiers": "<trait category=\"Buff\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\GrotRiggers.png"
+        "iconPath": "Gladius\\Icons\\Traits\\GrotRiggers.png",
+        "faction": "Orks"
     },
     "Ground Attack": {
-        "faction": "Neutral",
         "internalID": "GroundAttack",
         "description": "Can only target ground units.",
         "flavor": null,
         "modifiers": "<trait>\n\t<targetConditions>\n\t\t<unit>\n\t\t\t<noTrait name=\"Flyer\"/>\n\t\t</unit>\n\t</targetConditions>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\GroundAttack.png"
+        "iconPath": "Gladius\\Icons\\Traits\\GroundAttack.png",
+        "faction": "Neutral"
     },
     "\u201cGunners, Kill on Sight!\u201d": {
-        "faction": "Neutral",
         "internalID": "GunnersKillOnSight",
         "description": "Increases the ranged attacks.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/GunnersKillOnSight\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAttacks mulMin=\"0.15\" mulMax=\"0.45\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\GunnersKillOnSight.png"
+        "iconPath": "Gladius\\Icons\\Actions\\GunnersKillOnSight.png",
+        "faction": "Neutral"
     },
     "Hammer of Wrath": {
-        "faction": "Neutral",
         "internalID": "HammerOfWrath",
         "description": "Increases the damage of non-Bomb weapons.",
         "flavor": "Many warriors hurl themselves headlong into combat, seeking to crush or trample the foe.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Actions/HammerOfWrath\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait name=\"Bomb\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\HammerOfWrath.png"
+        "iconPath": "Gladius\\Icons\\Actions\\HammerOfWrath.png",
+        "faction": "Neutral"
     },
     "Hammerhand": {
-        "faction": "Neutral",
         "internalID": "Hammerhand",
         "description": "Increases melee damage",
         "flavor": "Focussing the raging power of his mind, the psyker augments the strength of his comrades to the point where they can crush flesh and bone with a single blow.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Hammerhand\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<meleeDamage add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Hammerhand.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Hammerhand.png",
+        "faction": "Neutral"
     },
     "Hallucination": {
-        "faction": "Neutral",
         "internalID": "Hallucination",
         "description": "Decreases the attacks.",
         "flavor": "Paranoia, confusion and panic are heightened to a debilitating degree as the telepath alters his foes\u2019 perceptions.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Hallucination\" rankMax=\"0\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Hallucination.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Hallucination.png",
+        "faction": "Neutral"
     },
     "Harvest Resource Tiles": {
-        "faction": "Neutral",
         "internalID": "HarvestResourceFeatures",
         "description": "Harvests resources from adjacent special resource features.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\HarvestResourceFeatures.png"
+        "iconPath": "Gladius\\Icons\\Traits\\HarvestResourceFeatures.png",
+        "faction": "Space Marines"
     },
     "Haywire": {
-        "faction": "Neutral",
         "internalID": "Haywire",
         "description": "Increases the damage and ignores armour against vehicles and fortifications.",
         "flavor": "Haywire weapons send out powerful electromagnetic pulses.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage add=\"3\"/>\n\t\t\t\t<armorPenetration min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Haywire.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Haywire.png",
+        "faction": "Neutral"
     },
     "Headquarters": {
-        "faction": "Neutral",
         "internalID": "Headquarters",
         "description": "Destroying the headquarters unit destroys the entire city.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Headquarters.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Headquarters.png",
+        "faction": "Neutral"
     },
     "Heavy": {
-        "faction": "Neutral",
         "internalID": "HeavyWeapon",
         "description": "Reduces the accuracy after moving.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<movedThisTurn/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"Relentless\"/>\n\t\t\t\t\t<noTrait name=\"SlowAndPurposeful\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\HeavyWeapon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\HeavyWeapon.png",
+        "faction": "Neutral"
     },
     "Hellstorm Template": {
-        "faction": "Neutral",
         "internalID": "HellstormTemplate",
         "description": "Hits with increased accuracy against multiple group members of the target unit.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy min=\"12\" max=\"12\"/> \n\t\t\t\t<additionalMembersHit add=\"5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\HellstormTemplate.png"
+        "iconPath": "Gladius\\Icons\\Traits\\HellstormTemplate.png",
+        "faction": "Neutral"
     },
     "Hero": {
-        "faction": "Neutral",
         "internalID": "Hero",
         "description": "Increases the damage reduction of infantry units.",
         "flavor": "What is it to be a hero? Many would define one as an unusually brave, smart or strong member of a species. In a universe of endless war, that sadly tends to mean someone who is very, very good at causing the deaths of their enemies, and somehow surviving.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<heroDamageReduction add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<duplicateTypeCost mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Hero.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Hero.png",
+        "faction": "Neutral"
     },
     "High Power": {
-        "faction": "Neutral",
         "internalID": "HighPower",
         "description": "Active before moving.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<movedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy min=\"-999\" max=\"-999\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\HighPower.png"
+        "iconPath": "Gladius\\Icons\\Traits\\HighPower.png",
+        "faction": "Necrons"
     },
     "Hit & Run": {
-        "faction": "Neutral",
         "internalID": "HitAndRun",
         "description": "Ignores enemy zone of control.",
         "flavor": "Some troops employ a flexible battle stance, engaging the foe at close quarters one moment, before peeling off to strike with renewed vigour the next.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<ignoreZoneOfControl add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\HitAndRun.png"
+        "iconPath": "Gladius\\Icons\\Traits\\HitAndRun.png",
+        "faction": "Neutral"
     },
     "Homing": {
-        "faction": "Neutral",
         "internalID": "Homing",
         "description": "Does not require line of sight.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<ignoreLineOfSight add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Homing.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Homing.png",
+        "faction": "Neutral"
     },
     "Ignores Cover": {
-        "faction": "Neutral",
         "internalID": "IgnoresCover",
         "description": "Ignores the ranged damage reduction of the target unit.",
         "flavor": "This weapon fires ammunition that cheats an enemy of his shelter.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReductionBypass add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\IgnoresCover.png"
+        "iconPath": "Gladius\\Icons\\Traits\\IgnoresCover.png",
+        "faction": "Neutral"
     },
     "Illuminated": {
-        "faction": "Neutral",
         "internalID": "Illuminated",
         "description": "Reduces the ranged damage reduction.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Illuminated.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Illuminated.png",
+        "faction": "Neutral"
     },
     "Immobilised": {
-        "faction": "Neutral",
         "internalID": "Immobilized",
         "description": "The unit cannot move.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Immobilized.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Immobilized.png",
+        "faction": "Neutral"
     },
     "Imperial Ruins": {
-        "faction": "Neutral",
         "internalID": "ImperialRuin",
         "description": "Increases the ranged damage reduction of infantry units.",
         "flavor": "The pre-invasion human colony was built for defense and mineral exploitation. Nothing was designed to stand the tectonic shifts and warp-born horrors that came with the Ork invasion, and hence very few structures weathered it. This ruin is a rare survivor.",
         "modifiers": "<trait category=\"Buff\" icon=\"Features/ImperialRuin\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"City\"/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Features\\ImperialRuin.png"
+        "iconPath": "Gladius\\Icons\\Features\\ImperialRuin.png",
+        "faction": "Neutral"
     },
     "Imperial Splendour": {
-        "faction": "Neutral",
         "internalID": "ImperialSplendour",
         "description": "Increases the influence.",
         "flavor": "A successful planetary governor will reflect his domain's newfound wealth with monuments to the Imperium\u2014mammoth plascrete basilica and statues of Space Marines, Primarchs and the Emperor.",
         "modifiers": "<trait visibilityCategory=\"Building\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<influence mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ImperialSplendour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ImperialSplendour.png",
+        "faction": "Neutral"
     },
     "Infiltrate": {
-        "faction": "Neutral",
         "internalID": "Infiltrate",
         "description": "Prevents the unit from being targeted by overwatch attacks.",
         "flavor": "Many armies employ reconnaissance troops who sit concealed for days, just waiting for the right moment in which to strike.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<preventEnemyOverwatch add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Infiltrate.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Infiltrate.png",
+        "faction": "Neutral"
     },
     "Instant Death": {
-        "faction": "Neutral",
         "internalID": "InstantDeath",
         "description": "Greatly increases the damage against infantry and monstrous creature units.",
         "flavor": "Some blows can slay an enemy outright, no matter how hardy he may be.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage add=\"8\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\InstantDeath.png"
+        "iconPath": "Gladius\\Icons\\Traits\\InstantDeath.png",
+        "faction": "Drukhari"
     },
     "Invulnerable": {
-        "faction": "Neutral",
         "internalID": "Invulnerable",
         "description": "This unit is invulnerable.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Invulnerable.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Invulnerable.png",
+        "faction": "Neutral"
     },
     "Iron Halo": {
-        "faction": "Neutral",
         "internalID": "IronHalo",
         "description": "Increases the damage reduction.",
         "flavor": "The iron halo is an honour granted to Space Marine commanders and a symbol of their exceptional bravery and wisdom. Usually mounted upon the backpack or built into an armoured collar, it contains an energy field that wards against even the most potent of enemy\u00a0weapons.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\IronHalo.png"
+        "iconPath": "Gladius\\Icons\\Traits\\IronHalo.png",
+        "faction": "Space Marines"
     },
     "Iron Will": {
-        "faction": "Neutral",
         "internalID": "IronWill",
         "description": "After dying, the Lord Commissar immediately comes back to life.",
         "flavor": "\u201cPain is temporary, Honour is forever.\u201d\n  \u2014 Colonel-Commissar Ibram Gaunt, Tanith First and Only",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/IronWill\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<deathExperience max=\"0\"/>\n\t\t\t\t<deathMorale max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\IronWill.png"
+        "iconPath": "Gladius\\Icons\\Actions\\IronWill.png",
+        "faction": "Neutral"
     },
     "It Will Not Die": {
-        "faction": "Neutral",
         "internalID": "ItWillNotDie",
         "description": "Restores hitpoints each turn.",
         "flavor": "In the dark corners of the galaxy, there are creatures that heal at a terrifying speed.",
         "modifiers": "<trait>\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\ItWillNotDie.png"
+        "iconPath": "Gladius\\Icons\\Traits\\ItWillNotDie.png",
+        "faction": "Neutral"
     },
     "Jet Pack": {
-        "faction": "Neutral",
         "internalID": "JetPack",
         "description": "The unit can move over water. Ignores the penalties of rivers and wire weed.",
         "flavor": "Jet packs are designed to provide stable firing platforms rather than a means of getting into close combat.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\JetPack.png"
+        "iconPath": "Gladius\\Icons\\Traits\\JetPack.png",
+        "faction": "Neutral"
     },
     "Jetbike": {
-        "faction": "Neutral",
         "internalID": "Jetbike",
         "description": "The unit can move over water. Ignores the penalties of rivers and wire weed.",
         "flavor": "The technology to make reliable and small fast skimmers is more difficult than it looks, and for many years only the Aeldari had the technical know-how. More recently, the Orks have developed their own clunky version, the Deffkopta, and the emerging Necrons have brought with them unpredictable Tomb Blades.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Jetbike.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Jetbike.png",
+        "faction": "Neutral"
     },
     "Jink": {
-        "faction": "Neutral",
         "internalID": "Jink",
         "description": "Increases the ranged damage reduction but reduces the accuracy.",
         "flavor": "Some units favour speed and agility rather than heavy armour to keep them alive on the battlefield, dodging and weaving unscathed through hails of incoming fire.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Jink\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t\t<accuracy mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Jink.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Jink.png",
+        "faction": "Neutral"
     },
     "Killshot": {
-        "faction": "Neutral",
         "internalID": "Killshot",
         "description": "Increases the damage against monstrous creatures, vehicles and fortifications when adjacent to an allied Predator.",
         "flavor": "There are few things that can stand before the combined might of a Predator Assassin Squadron\u2014a trio of Predators\u2014their Space Marine gunners creating interlocking kill-zones to bring down even massive xenos creatures or slab-sided war machines in a focussed barrage cannon fire.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t\t<trait name=\"MonstrousCreature\"/>\n\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t\t<unit>\n\t\t\t\t\t<unitsInRange count=\"1\" range=\"1\">\n\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t<type name=\"SpaceMarines/Predator\"/>\n\t\t\t\t\t</unitsInRange>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Killshot.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Killshot.png",
+        "faction": "Space Marines"
     },
     "Lance": {
-        "faction": "Neutral",
         "internalID": "Lance",
         "description": "Limits the armour of the target unit.",
         "flavor": "The terror of tank commanders, a lance weapon fires a concentrated beam of energy that can bore through any armour, regardless of thickness.",
         "modifiers": "<trait>\n\t<opponentModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor max=\"8\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</opponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Lance.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Lance.png",
+        "faction": "Neutral"
     },
     "Large Blast": {
-        "faction": "Neutral",
         "internalID": "LargeBlast",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\LargeBlast.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LargeBlast.png",
+        "faction": "Neutral"
     },
     "Last Stand": {
-        "faction": "Neutral",
         "internalID": "LastStand",
         "description": "Increases the morale.",
         "flavor": "\u201cHere we stand and here shall we die, unbroken and unbowed. Though the very hand of death itself come for us, we will spit our defiance to the end!\u201d\n  \u2014 Chaplain Armand Titus of the Howling Griffons",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleMax mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\LastStand.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LastStand.png",
+        "faction": "Space Marines"
     },
     "Life Drain": {
-        "faction": "Neutral",
         "internalID": "LifeDrain",
         "description": "Increases the damage against infantry and monstrous creature units.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" visibilityCategory=\"Weapon\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\LifeDrain.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LifeDrain.png",
+        "faction": "Neutral"
     },
     "Life Steal": {
-        "faction": "Neutral",
         "internalID": "LifeSteal",
         "description": "Converts damage into healing for this and adjacent infantry and monstrous creature units.",
         "flavor": null,
         "modifiers": "<trait icon=\"Attributes/LifeSteal\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<lifeStealFactor add=\"1.0\"/>\n\t\t\t\t<lifeStealRadius add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Attributes\\LifeSteal.png"
+        "iconPath": "Gladius\\Icons\\Attributes\\LifeSteal.png",
+        "faction": "Astra Militarum"
     },
     "Linebreaker Bombardment": {
-        "faction": "Neutral",
         "internalID": "LinebreakerBombardment",
         "description": "Ignores the ranged damage reduction of the target unit when adjacent to an allied Vindicator.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<unitsInRange count=\"1\" range=\"1\">\n\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t<type name=\"SpaceMarines/Vindicator\"/>\n\t\t\t\t\t</unitsInRange>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReductionBypass add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\LinebreakerBombardment.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LinebreakerBombardment.png",
+        "faction": "Space Marines"
     },
     "Luminagen": {
-        "faction": "Neutral",
         "internalID": "Luminagen",
         "description": "Temporarily decreases the ranged damage reduction of the target unit.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Illuminated\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Luminagen.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Luminagen.png",
+        "faction": "Neutral"
     },
     "Locator Beacon": {
-        "faction": "Neutral",
         "internalID": "LocatorBeacon",
         "description": "Causes orbital deployment to not consume action points when deploying adjacent to this unit.",
         "flavor": "Locator beacons are often carried by Scout Bikers or mounted onto Drop Pods, and provide a signalling package, broad-spectrum communicators, and geo-positional tracking. When activated, the beacon uploads detailed positional information to the tactical grid, allowing precision reinforcement by reserve forces.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\LocatorBeacon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LocatorBeacon.png",
+        "faction": "Space Marines"
     },
     "Low Power": {
-        "faction": "Neutral",
         "internalID": "LowPower",
         "description": "Active after moving.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<notMovedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy min=\"-999\" max=\"-999\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\LowPower.png"
+        "iconPath": "Gladius\\Icons\\Traits\\LowPower.png",
+        "faction": "Necrons"
     },
     "Machine Empathy": {
-        "faction": "Neutral",
         "internalID": "MachineEmpathy",
         "description": "Restores hitpoints.",
         "flavor": "\u201cConsider the Predator. Let your soul be armoured with Faith, driven on the tracks of obedience which overcomes all obstacles, and armed with the three great guns of Zeal, Duty and Purity.\u201d\n  \u2014 Traditional Imperial prayer, source unknown",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/MachineEmpathy\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\MachineEmpathy.png"
+        "iconPath": "Gladius\\Icons\\Actions\\MachineEmpathy.png",
+        "faction": "Neutral"
     },
     "Manned Weapon": {
-        "faction": "Neutral",
         "internalID": "MannedWeapon",
         "description": "Requires cargo to fire.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<cargoSlotsTaken equal=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy min=\"-999\" max=\"-999\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\MannedWeapon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MannedWeapon.png",
+        "faction": "Astra Militarum"
     },
     "Massive Blast": {
-        "faction": "Neutral",
         "internalID": "MassiveBlast",
         "description": "Hits multiple group members of the target unit.",
         "flavor": "Blast weapons fire shells, missiles or packets of energy that explode on impact.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\MassiveBlast.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MassiveBlast.png",
+        "faction": "Neutral"
     },
     "Master-Crafted": {
-        "faction": "Neutral",
         "internalID": "MasterCrafted",
         "description": "Increases the accuracy.",
         "flavor": "Some weapons are lovingly maintained artefacts, crafted with a skill now lost. Though the exact form of master-crafting varies, it is always considered to be the pinnacle of the weaponsmith\u2019s art.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\MasterCrafted.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MasterCrafted.png",
+        "faction": "Neutral"
     },
     "Melee": {
-        "faction": "Neutral",
         "internalID": "Melee",
         "description": "Cannot overwatch.",
         "flavor": "Warriors across the galaxy employ a wide variety of close-quarter weapons. Blood-flecked chainswords and crude knives take their places alongside powered weapons of all kinds: swords, axes, hammers and many more. All such weapons are designed to bring quick and painful death to the foe, for every moment's delay brings defeat a step closer.",
         "modifiers": "<trait>\n\t\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Melee.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Melee.png",
+        "faction": "Neutral"
     },
     "Melta": {
-        "faction": "Neutral",
         "internalID": "Melta",
         "description": "Increases the armour penetration at half range.",
         "flavor": "Melta weapons are lethal anti-armour guns, most effective at very short range. When fired, the super-heating of the air produces a distinctive and sinister hiss. Solid rock is reduced to molten slag, and living creatures are vaporised in an instant!",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Melta.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Melta.png",
+        "faction": "Neutral"
     },
     "Mind Control": {
-        "faction": "Neutral",
         "internalID": "MindControl",
         "description": "Reduces the morale each turn.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/MindControl\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<morale add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\MindControl.png"
+        "iconPath": "Gladius\\Icons\\Actions\\MindControl.png",
+        "faction": "Neutral"
     },
     "Misfortune": {
-        "faction": "Neutral",
         "internalID": "Misfortune",
         "description": "Increases the damage taken.",
         "flavor": "With a click of his fingers, the diviner twists fate so that his followers' blows punch through the weakest points in their opponent's armour.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Misfortune\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damageTaken mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Misfortune.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Misfortune.png",
+        "faction": "Neutral"
     },
     "Missing": {
-        "faction": "Neutral",
         "internalID": "Missing",
         "description": null,
         "flavor": null,
         "modifiers": "<trait icon=\"Missing\" visible=\"0\"/>",
-        "iconPath": "Gladius\\Icons\\Missing.png"
+        "iconPath": "Gladius\\Icons\\Missing.png",
+        "faction": "Neutral"
     },
     "Mob Rule": {
-        "faction": "Neutral",
         "internalID": "MobRule",
         "description": "Reduces the morale loss based on the amount of allied units in the area.",
         "flavor": "Orks are simplistic, brutal creatures who love to fight and draw confidence from possessing strength in numbers.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactorPerAllyInArea add=\"-0.03\" min=\"-0.30\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\MobRule.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MobRule.png",
+        "faction": "Orks"
     },
     "Mobile Command": {
-        "faction": "Neutral",
         "internalID": "MobileCommand",
         "description": "Passive abilities work for cargo embarked on this transport.",
         "flavor": "A transport vehicle is typically sealed, rendering any troops ineffective (but protected) until they reach their destination. Unlike gun slits, communication equipment doesn\u2019t compromise the protection, as the Imperial Chimera command variant proves out, enabling commanders to continue to direct their forces.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\MobileCommand.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MobileCommand.png",
+        "faction": "Astra Militarum"
     },
     "Monofilament": {
-        "faction": "Neutral",
         "internalID": "Monofilament",
         "description": "Inversely scales the accuracy with the maximum movement of the target unit. Increases the armour penetration.",
         "flavor": "Many Aeldari units use monofilament weapons, all of which work in a similar fashion by creating a dense monofilament mesh from a complex organo-polymer compound. This is released through thousands of microscopic firing ducts and woven into a net of monofilament wire by spinning gravity clamps. The victim\u2019s own struggles bring about his doom, for the razor-net is so sharp it can reduce an entangled enemy to bloody chunks of flesh in seconds.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Monofilament.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Monofilament.png",
+        "faction": "Eldar"
     },
     "Monstrous Creature": {
-        "faction": "Neutral",
         "internalID": "MonstrousCreature",
         "description": "Classification.",
         "flavor": "These are towering giants that are capable of crushing a tank\u2013like the Tyranid Carnifex, a creature bioengineered and evolved to become a living battering ram.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired add=\"5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\MonstrousCreature.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MonstrousCreature.png",
+        "faction": "Neutral"
     },
     "Morale Soak": {
-        "faction": "Neutral",
         "internalID": "MoraleSoak",
         "description": "Reduces the damage by the target's morale.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\MoraleSoak.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MoraleSoak.png",
+        "faction": "Neutral"
     },
     "Move Through Cover": {
-        "faction": "Neutral",
         "internalID": "MoveThroughCover",
         "description": "Negates the movement penalty in forests and imperial ruins.",
         "flavor": "Some warriors are skilled at moving over broken and tangled terrain.",
         "modifiers": "<trait category=\"Buff\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\MoveThroughCover.png"
+        "iconPath": "Gladius\\Icons\\Traits\\MoveThroughCover.png",
+        "faction": "Neutral"
     },
     "Orphic Starkness": {
         "faction": "Necrons",
@@ -3512,44 +3512,44 @@
         "iconPath": "Gladius\\Icons\\Actions\\Necrons\\WrithingWorldscape.png"
     },
     "Open-Topped": {
-        "faction": "Neutral",
         "internalID": "OpenTopped",
         "description": "Classification.",
         "flavor": "Some vehicles have only a little armour, making them more vulnerable to damage because of their lightweight construction. However, such vehicles make for excellent assault transports as their passengers can disembark with much greater ease.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\OpenTopped.png"
+        "iconPath": "Gladius\\Icons\\Traits\\OpenTopped.png",
+        "faction": "Neutral"
     },
     "Oration of Restoration": {
-        "faction": "Neutral",
         "internalID": "OrationOfRestoration",
         "description": "Restores hitpoints.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/OrationOfRestoration\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\OrationOfRestoration.png"
+        "iconPath": "Gladius\\Icons\\Actions\\OrationOfRestoration.png",
+        "faction": "Neutral"
     },
     "Ordnance": {
-        "faction": "Neutral",
         "internalID": "Ordnance",
         "description": "Increases the armour penetration against vehicles and fortifications. Not usable by infantry after moving.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<movement equal=\"0\"/>\n\t\t\t\t\t<movementMax greater=\"0\"/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"Relentless\"/>\n\t\t\t\t\t<noTrait name=\"SlowAndPurposeful\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy min=\"-999\" max=\"-999\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Ordnance.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Ordnance.png",
+        "faction": "Neutral"
     },
     "Orkoid Fungus": {
-        "faction": "Neutral",
         "internalID": "OrkoidFungus",
         "description": "Restores hitpoints each turn of Ork ground units.",
         "flavor": "Orks have a weirdly symbiotic relationship with the fungus that spreads across their planets\u2014it's genetically identical to them, Squigs and Grots, and all these species tend to emerge from it rather than being born. Ork units depleted by battle would be wise to retreat to these fields to acquire (literally) fresh recruits.",
         "modifiers": "<trait category=\"Buff\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<trait name=\"Orks/GreenTideHealing\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\OrkoidFungus.png"
+        "iconPath": "Gladius\\Icons\\Traits\\OrkoidFungus.png",
+        "faction": "Neutral"
     },
     "Fungal Forests": {
-        "faction": "Neutral",
         "internalID": "OrkoidFungusBonusHealingRate",
         "description": "Restores hitpoints each turn of Ork ground units.",
         "flavor": "Once the Ork fungal spores are well-established across a planet, they can resemble forests\u2014albeit, comprised of immense mushrooms, spewing out feral Orks, Grots and Squigs.",
         "modifiers": "<trait>\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<feature name=\"OrkoidFungus\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\OrkoidFungusBonusHealingRate.png"
+        "iconPath": "Gladius\\Icons\\Traits\\OrkoidFungusBonusHealingRate.png",
+        "faction": "Orks"
     },
     "Big Boss": {
         "faction": "Orks",
@@ -3808,348 +3808,348 @@
         "iconPath": "Gladius\\Icons\\Weapons\\WingMissiles.png"
     },
     "Outpost": {
-        "faction": "Neutral",
         "internalID": "Outpost",
         "description": "Increases the damage reduction and the healing rate of allied units. Increases the ranged damage reduction of infantry units.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Features/Outpost\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t\t<noTrait name=\"City\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<cityDamageReduction add=\"0.17\"/>\n\t\t\t\t<healingRate mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Neutral\"/>\n\t\t\t\t</player>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"City\"/>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\t\t\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Features\\Outpost.png"
+        "iconPath": "Gladius\\Icons\\Features\\Outpost.png",
+        "faction": "Neutral"
     },
     "Outflank": {
-        "faction": "Neutral",
         "internalID": "Outflank",
         "description": "Increases the accuracy when adjacent to an allied unit.",
         "flavor": "The best way to surprise an enemy is to strike from an unexpected quarter.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<unitsInRange count=\"1\" range=\"1\">\n\t\t\t\t\t\t<allied/>\n\t\t\t\t\t</unitsInRange>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Outflank.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Outflank.png",
+        "faction": "Neutral"
     },
     "Pinned": {
-        "faction": "Neutral",
         "internalID": "Pinned",
         "description": "Reduces the movement and ranged accuracy, increases the ranged damage reduction and prevents the unit from doing overwatch attacks.",
         "flavor": "Coming under fire without knowing where the shots are coming from, or having ordnance rain down from the skies, can shake the resolve of even the bravest warriors, making them dive flat and cling to whatever cover presents itself.",
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Bike\"/>\n\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementMax mul=\"-0.67\"/>\n\t\t\t\t<rangedAccuracy mul=\"-0.17\"/>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Bike\"/>\n\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<preventOverwatch add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Pinned.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Pinned.png",
+        "faction": "Neutral"
     },
     "Pinning": {
-        "faction": "Neutral",
         "internalID": "Pinning",
         "description": "Temporarily reduces the movement of the target fearful infantry unit and prevents it from doing overwatch attacks.",
         "flavor": "Coming under fire without knowing where the shots are coming from, or having ordnance rain down from the skies, can shake the resolve of even the bravest warriors, making them dive flat and cling to whatever cover presents itself.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Bike\"/>\n\t\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Pinned\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Pinning.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Pinning.png",
+        "faction": "Neutral"
     },
     "Poisoned": {
-        "faction": "Neutral",
         "internalID": "Poisoned",
         "description": "Increases the damage against infantry and monstrous creature units.",
         "flavor": "There are many virulent and lethal poisons in the dark future. It is simplicity itself to adapt such toxins for battlefield use. It does not matter whether they coat weapon-blades or bullets, or are secreted by alien monstrosities \u2013 all are lethal.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" rankMax=\"4\" visibilityCategory=\"Weapon\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage addMin=\"0.25\" addMax=\"4.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Poisoned.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Poisoned.png",
+        "faction": "Neutral"
     },
     "Power of the Machine Spirit": {
-        "faction": "Neutral",
         "internalID": "PowerOfTheMachineSpirit",
         "description": "Increases the ranged accuracy.",
         "flavor": "The interface between this vehicle's advanced machine spirit and its fire control mechanisms allows the crew to target foes with incredible accuracy.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/PowerOfTheMachineSpirit\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\PowerOfTheMachineSpirit.png"
+        "iconPath": "Gladius\\Icons\\Actions\\PowerOfTheMachineSpirit.png",
+        "faction": "Neutral"
     },
     "Precision Shots": {
-        "faction": "Neutral",
         "internalID": "PrecisionShots",
         "description": "Increases the accuracy.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PrecisionShots.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PrecisionShots.png",
+        "faction": "Neutral"
     },
     "Preferred Enemy": {
-        "faction": "Neutral",
         "internalID": "PreferredEnemy",
         "description": "Increases the accuracy.",
         "flavor": "Many of the galaxy's warriors train hard to overcome a particular foe, allowing them to predict the enemy's battlestances and thus land a blow or shot with greater ease.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PreferredEnemy.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PreferredEnemy.png",
+        "faction": "Necrons"
     },
     "Primary Weapon": {
-        "faction": "Neutral",
         "internalID": "PrimaryWeapon",
         "description": "Increases the armour penetration.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PrimaryWeapon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PrimaryWeapon.png",
+        "faction": "Neutral"
     },
     "Psychic Block": {
-        "faction": "Neutral",
         "internalID": "PsychicBlock",
         "description": "Blocks the damage and effects of the next enemy psychic power.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychicBlock.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychicBlock.png",
+        "faction": "Neutral"
     },
     "Psychic Hood": {
-        "faction": "Neutral",
         "internalID": "PsychicHood",
         "description": "Increases the witchfire damage reduction.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<witchfireDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychicHood.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychicHood.png",
+        "faction": "Space Marines"
     },
     "Psychic Lash": {
-        "faction": "Neutral",
         "internalID": "PsychicLash",
         "description": "Attacks penetrate all armour.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration min=\"100\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychicLash.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychicLash.png",
+        "faction": "Neutral"
     },
     "Psychic Power": {
-        "faction": "Neutral",
         "internalID": "PsychicPower",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychicPower.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychicPower.png",
+        "faction": "Neutral"
     },
     "Psychneuein Infest": {
-        "faction": "Neutral",
         "internalID": "PsychneueinInfest",
         "description": "Causes the target unit to spawn a Psychneuein when killed.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" icon=\"Traits/PsychneueinInfestation\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noType name=\"Eldar/WebwayGate\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"PsychneueinInfestation\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychneueinInfestation.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychneueinInfestation.png",
+        "faction": "Neutral"
     },
     "Psychneuein Infestation": {
-        "faction": "Neutral",
         "internalID": "PsychneueinInfestation",
         "description": "Spawns a Psychneuein when dying.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<onUnitDisappearedModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<addUnit name=\"Neutral/Psychneuein\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onUnitDisappearedModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\PsychneueinInfestation.png"
+        "iconPath": "Gladius\\Icons\\Traits\\PsychneueinInfestation.png",
+        "faction": "Neutral"
     },
     "Psyker": {
-        "faction": "Neutral",
         "internalID": "Psyker",
         "description": "Classification.",
         "flavor": "Psykers are battlefield mystics who harness the power of the Warp.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Psyker.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Psyker.png",
+        "faction": "Neutral"
     },
     "Rage": {
-        "faction": "Neutral",
         "internalID": "Rage",
         "description": "Increases the attacks.",
         "flavor": "Bloodlust is a powerful weapon on the battlefield, spurring a warrior to hack his foes apart in a flurry of mindless (but eminently satisfying) carnage.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<meleeAttacks mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Rage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Rage.png",
+        "faction": "Neutral"
     },
     "Rampage": {
-        "faction": "Neutral",
         "internalID": "Rampage",
         "description": "Increases the attacks when there are more enemies than allies in adjacent tiles.",
         "flavor": "For some warriors, being outnumbered is not a cause for despair, but a call to set about their foes with a berserk counter-attack.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemyMajorityInRange range=\"1\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<meleeAttacks mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Rampage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Rampage.png",
+        "faction": "Neutral"
     },
     "Rapid Fire": {
-        "faction": "Neutral",
         "internalID": "RapidFire",
         "description": "Doubles the attacks at half range.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\RapidFire.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RapidFire.png",
+        "faction": "Neutral"
     },
     "Recovery Gear": {
-        "faction": "Neutral",
         "internalID": "RecoveryGear",
         "description": "Increases the healing rate.",
         "flavor": "Many crews load their vehicles with collections of tools, tow cables and other useful kit that can make the difference between digging an immobilized vehicle out of a tight spot or having to abandon it to its fate.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<healingRate mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RecoveryGear.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RecoveryGear.png",
+        "faction": "Astra Militarum"
     },
     "Red Paint Job": {
-        "faction": "Neutral",
         "internalID": "RedPaintJob",
         "description": "Increases the damage.",
         "flavor": "Orks believe that a vehicle painted red can outstrip a similar vehicle that isn't. As odd as it may seem, they're not wrong.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RedPaintJob.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RedPaintJob.png",
+        "faction": "Orks"
     },
     "Refractor Field": {
-        "faction": "Neutral",
         "internalID": "RefractorField",
         "description": "Increases the damage reduction.",
         "flavor": "Often carried by high-ranking officers and Imperial heroes, shimmering refractor fields refract incoming energy around their bearer, batting aside blasts and swinging blades that would otherwise lay them low.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RefractorField.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RefractorField.png",
+        "faction": "Neutral"
     },
     "Regeneration": {
-        "faction": "Neutral",
         "internalID": "Regeneration",
         "description": "Restores hitpoints each turn.",
         "flavor": "Some units have the ability to recover from horrendous wounds and injuries that should have proven fatal.",
         "modifiers": "<trait category=\"Buff\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Regeneration.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Regeneration.png",
+        "faction": "Neutral"
     },
     "Relentless": {
-        "faction": "Neutral",
         "internalID": "Relentless",
         "description": "Negates the penalty for heavy, ordnance and salvo weapons.",
         "flavor": "Relentless warriors are strong of arm\u2014nothing can slow their implacable advance.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Relentless.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Relentless.png",
+        "faction": "Neutral"
     },
     "Relic Plating": {
-        "faction": "Neutral",
         "internalID": "RelicPlating",
         "description": "Increases the witchfire damage reduction.",
         "flavor": "Occasionally a crew will achieve an empathic relationship with the machine spirit of their battle tank. When such a crew perishes, their remains may be interred within their vehicle, spirits lingering protectively to drive away the baleful energies of the void.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<witchfireDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RelicPlating.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RelicPlating.png",
+        "faction": "Astra Militarum"
     },
     "Rending": {
-        "faction": "Neutral",
         "internalID": "Rending",
         "description": "Increases the damage and armour penetration.",
         "flavor": "Some weapons can inflict critical strikes against which no armour can protect.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Rending.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Rending.png",
+        "faction": "Neutral"
     },
     "Repulsor Grid": {
-        "faction": "Neutral",
         "internalID": "RepulsorGrid",
         "description": "Increases the ranged damage reduction and returns ranged damage from weapons that are not blast, template or witchfire back to the attacker.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait name=\"Melee\"/>\n\t\t\t\t\t<noTrait name=\"Witchfire\"/>\n\t\t\t\t\t<additionalMembersHit equal=\"0\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageReturnFactor add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RepulsorGrid.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RepulsorGrid.png",
+        "faction": "Neutral"
     },
     "Rites of War": {
-        "faction": "Neutral",
         "internalID": "RitesOfWar",
         "description": "Increases the damage.",
         "flavor": "Honour-bound by sacred oaths of fealty to the Imperium, the Chaplain and his warriors vow before the Chapter and the Emperor to secure victory at any cost.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/RitesOfWar\" rankMax=\"2\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mulMin=\"0.1\" mulMax=\"0.3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\RitesOfWar.png"
+        "iconPath": "Gladius\\Icons\\Actions\\RitesOfWar.png",
+        "faction": "Neutral"
     },
     "Rosarius": {
-        "faction": "Neutral",
         "internalID": "Rosarius",
         "description": "Increases the damage reduction.",
         "flavor": "A rosarius is worn by Space Marine Chaplains for protection and as a symbol of office. It emits a protective energy field around the wearer capable of deflecting blows and shots that would smash a ferrocrete bunker. It is said that the stronger the bearer's belief in the might of the Emperor, the stronger a rosarius' force field will be.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Rosarius.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Rosarius.png",
+        "faction": "Neutral"
     },
     "Ruins Stealth": {
-        "faction": "Neutral",
         "internalID": "RuinsStealth",
         "description": "Increases the ranged damage reduction while in imperial ruins.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<feature name=\"ImperialRuin\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\RuinsStealth.png"
+        "iconPath": "Gladius\\Icons\\Traits\\RuinsStealth.png",
+        "faction": "Neutral"
     },
     "Salvo": {
-        "faction": "Neutral",
         "internalID": "Salvo",
         "description": "Halves the attacks and range if the unit has moved.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Salvo.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Salvo.png",
+        "faction": "Neutral"
     },
     "Savant Interlocution": {
-        "faction": "Neutral",
         "internalID": "SavantInterlocution",
         "description": "Increases the ranged accuracy against flyers and skimmers when adjacent to an allied Hunter.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t\t<trait name=\"Skimmer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t\t<unit>\n\t\t\t\t\t<unitsInRange count=\"1\" range=\"1\">\n\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t<type name=\"SpaceMarines/Hunter\"/>\n\t\t\t\t\t</unitsInRange>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SavantInterlocution.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SavantInterlocution.png",
+        "faction": "Space Marines"
     },
     "Savant Lock": {
-        "faction": "Neutral",
         "internalID": "SavantLock",
         "description": "Increases the accuracy against flyers, jetbikes and skimmers.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t\t<trait name=\"JetPack\"/>\n\t\t\t\t\t\t<trait name=\"Jetbike\"/>\n\t\t\t\t\t\t<trait name=\"Skimmer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SavantLock.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SavantLock.png",
+        "faction": "Space Marines"
     },
     "Seeker Missile": {
-        "faction": "Neutral",
         "internalID": "SeekerMissile",
         "description": "Reduced range against targets not acquired by markerlight. Does not require line of sight against targets acquired by markerlight.",
         "flavor": "Seeker missiles are one-shot weapons usually guided to their targets by markerlights, though they can be fired independently as well.",
         "modifiers": "<trait alwaysVisible=\"1\" icon=\"Weapons/SeekerMissile\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"Tau/TargetAcquired\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<ignoreLineOfSight add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Tau/TargetAcquired\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangeMax add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Weapons\\SeekerMissile.png"
+        "iconPath": "Gladius\\Icons\\Weapons\\SeekerMissile.png",
+        "faction": "Tau"
     },
     "Seeking": {
-        "faction": "Neutral",
         "internalID": "Seeking",
         "description": "Increases the ranged accuracy against flyers.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Seeking.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Seeking.png",
+        "faction": "Tyranids"
     },
     "Shaken": {
-        "faction": "Neutral",
         "internalID": "Shaken",
         "description": "Reduces the accuracy and increases the damage taken.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"-0.17\"/>\n\t\t\t\t<damageTaken mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Shaken.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Shaken.png",
+        "faction": "Neutral"
     },
     "Shielded": {
-        "faction": "Neutral",
         "internalID": "Shielded",
         "description": "Increases the damage reduction.",
         "flavor": "Some warriors are protected by more than mere physical armour. They may be shielded by force fields, enveloped in mystical energies or have a constitution that can shrug off hits that would put holes in a battle tank.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Shielded.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Shielded.png",
+        "faction": "Tau"
     },
     "Shop": {
-        "faction": "Neutral",
         "internalID": "Shop",
         "description": "Allows hero units to purchase and sell items.",
         "flavor": null,
         "modifiers": "<trait icon=\"Actions/Shop\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<trait name=\"Hero\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Shop.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Shop.png",
+        "faction": "Neutral"
     },
     "Shred": {
-        "faction": "Neutral",
         "internalID": "Shred",
         "description": "Increases the damage.",
         "flavor": "Some weapons and warriors strike in a flurry of blows, tearing flesh asunder in a series of brutal strikes.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Shred.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Shred.png",
+        "faction": "Neutral"
     },
     "Shrouded": {
-        "faction": "Neutral",
         "internalID": "Shrouded",
         "description": "Increases the ranged damage reduction.",
         "flavor": "The source of the darkness around these warriors matters not\u2014only a lucky shot has any chance of piercing the shroud that hides them from view.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Shrouded.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Shrouded.png",
+        "faction": "Neutral"
     },
     "Siege Masters": {
-        "faction": "Neutral",
         "internalID": "SiegeMasters",
         "description": "Increases the damage against enemy units in cities and fortifications.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Actions/SiegeMasters\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"City\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"City\"/>\n\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\SiegeMasters.png"
+        "iconPath": "Gladius\\Icons\\Actions\\SiegeMasters.png",
+        "faction": "Neutral"
     },
     "Siege Shield": {
-        "faction": "Neutral",
         "internalID": "SiegeShield",
         "description": "Increases the armour and reduces the movement penalty in forests and imperial ruins.",
         "flavor": "Many Vindicators are equipped with an enormous bulldozer blade, allowing them to shoulder aside battlefield detritus without risk.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SiegeShield.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SiegeShield.png",
+        "faction": "Space Marines"
     },
     "Signum": {
-        "faction": "Neutral",
         "internalID": "Signum",
         "description": "Increases the ranged accuracy.",
         "flavor": "The signum is a communication device that quickly processes and broadcasts targeting data. This ancient piece of technology allows one member of a Space Marine squad to fire with even greater accuracy, battering vital targets with a hail of unerring shots.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Signum\" visible=\"0\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Signum.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Signum.png",
+        "faction": "Neutral"
     },
     "Anchorite Sarcophagus": {
         "faction": "Sisters Of Battle",
@@ -4568,108 +4568,108 @@
         "iconPath": "Gladius\\Icons\\Actions\\SistersOfBattle\\WarmachinesWrath.png"
     },
     "Skilled Jink": {
-        "faction": "Neutral",
         "internalID": "SkilledJink",
         "description": "Increases the ranged damage reduction but reduces the accuracy.",
         "flavor": "Some units favour speed and agility rather than heavy armour to keep them alive on the battlefield, dodging and weaving unscathed through hails of incoming fire.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/SkilledJink\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.5\"/>\n\t\t\t\t<accuracy mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\SkilledJink.png"
+        "iconPath": "Gladius\\Icons\\Actions\\SkilledJink.png",
+        "faction": "Neutral"
     },
     "Skimmer": {
-        "faction": "Neutral",
         "internalID": "Skimmer",
         "description": "The unit can move over water. Ignores the penalties of rivers and wire weed. Reduces the movement penalty in forests and imperial ruins.",
         "flavor": "Some highly advanced vehicles are fitted with anti-gravity drives that allow them to skim swiftly over tough terrain and intervening troops, making them perfect for surprise flanking attacks.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Skimmer.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Skimmer.png",
+        "faction": "Neutral"
     },
     "Skull Altar": {
-        "faction": "Neutral",
         "internalID": "SkullAltar",
         "description": "Provides a reward to units entering the tile.",
         "flavor": "Rising from the ground, the Skull Altar is formed out of the violent tributes heaped in offering for Khorne's Throne. From atop the grisly pedestal a priest of Khorne roars out invectives, evoking the judgements of the Blood God to smite down all signs of weakness.",
         "modifiers": "<trait icon=\"Features/SkullAltar\" visibilityCategory=\"None\" visible=\"0\">\n\t\n\t\n</trait>",
-        "iconPath": "Gladius\\Icons\\Features\\SkullAltar.png"
+        "iconPath": "Gladius\\Icons\\Features\\SkullAltar.png",
+        "faction": "Neutral"
     },
     "Skulls for the Skull Throne": {
-        "faction": "Neutral",
         "internalID": "SkullsForTheSkullThrone",
         "description": "Increases the damage reduction.",
         "flavor": "Khorne respects only the strong and boundlessly murderous.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<feelNoPainDamageReduction add=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SkullsForTheSkullThrone.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SkullsForTheSkullThrone.png",
+        "faction": "Neutral"
     },
     "Skyfire": {
-        "faction": "Neutral",
         "internalID": "Skyfire",
         "description": "Increases the accuracy against flyers. Reduces the accuracy against ground units that are not skimmer, jetbike or jet pack.",
         "flavor": "Skyfire weapons excel at shooting down enemy aircraft and skimmers.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t\t<noTrait name=\"JetPack\"/>\n\t\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t\t<noTrait name=\"Skimmer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Skyfire.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Skyfire.png",
+        "faction": "Neutral"
     },
     "Slow and Purposeful": {
-        "faction": "Neutral",
         "internalID": "SlowAndPurposeful",
         "description": "Negates the penalty for heavy and ordnance weapons.",
         "flavor": "Many warriors are steady but sure, slow to advance but no less deadly for it.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\SlowAndPurposeful.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SlowAndPurposeful.png",
+        "faction": "Neutral"
     },
     "Slowed": {
-        "faction": "Neutral",
         "internalID": "Slowed",
         "description": "Reduces the movement.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Slowed.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Slowed.png",
+        "faction": "Neutral"
     },
     "Smash": {
-        "faction": "Neutral",
         "internalID": "Smash",
         "description": "Increases the melee armour penetration.",
         "flavor": "For the most fearsome of creatures, a single blow is sufficient to breach a tank's armour or crush a living creature to bloody pulp.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<meleeArmorPenetration add=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Smash.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Smash.png",
+        "faction": "Neutral"
     },
     "Smoke Screen": {
-        "faction": "Neutral",
         "internalID": "SmokeScreen",
         "description": "Increases the ranged damage reduction.",
         "flavor": "Some vehicles have small launchers mounted onto them that carry smoke canisters. These are used to temporarily obscure the vehicle behind billowing clouds of smoke, allowing it to cross open areas in greater safety\u2014although it does so at the cost of being able to fire its own weapons.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SmokeScreen.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SmokeScreen.png",
+        "faction": "Neutral"
     },
     "Sniper": {
-        "faction": "Neutral",
         "internalID": "Sniper",
         "description": "Increases the damage and armour penetration against infantry and monstrous creature units.",
         "flavor": "Sniper weapons are precision instruments, used to pick out a target\u2019s weak points.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"1.0\"/>\n\t\t\t\t<armorPenetration min=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Sniper.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Sniper.png",
+        "faction": "Neutral"
     },
     "Sonic Boom": {
-        "faction": "Neutral",
         "internalID": "SonicBoom",
         "description": "Increases the damage against flyers.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SonicBoom.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SonicBoom.png",
+        "faction": "Space Marines"
     },
     "Soul Blaze": {
-        "faction": "Neutral",
         "internalID": "SoulBlaze",
         "description": "Deals damage each turn.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" visibilityCategory=\"Weapon\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"SoulBlazed\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SoulBlaze.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SoulBlaze.png",
+        "faction": "Neutral"
     },
     "Soul Blazed": {
-        "faction": "Neutral",
         "internalID": "SoulBlazed",
         "description": "Deals damage each turn.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\" icon=\"Traits/SoulBlaze\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"SoulBlaze\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\SoulBlaze.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SoulBlaze.png",
+        "faction": "Neutral"
     },
     "Bolter Discipline": {
         "faction": "Space Marines",
@@ -4744,124 +4744,124 @@
         "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\StormShield.png"
     },
     "Space Slip": {
-        "faction": "Neutral",
         "internalID": "SpaceSlip",
         "description": "Increases the damage reduction.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/SpaceSlip\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\SpaceSlip.png"
+        "iconPath": "Gladius\\Icons\\Actions\\SpaceSlip.png",
+        "faction": "Neutral"
     },
     "Stealth": {
-        "faction": "Neutral",
         "internalID": "Stealth",
         "description": "Increases the ranged damage reduction.",
         "flavor": "Some warriors are masters of disguise and concealment, able to fade into the ruin of a battlefield until they are ready to strike.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Stealth.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Stealth.png",
+        "faction": "Neutral"
     },
     "Strafing Run": {
-        "faction": "Neutral",
         "internalID": "StrafingRun",
         "description": "Increases the ranged accuracy against ground units.",
         "flavor": "This vehicle is designed as a ground attack craft, the spread and convergence distance of its weapons keyed to maximise carnage on the foes below.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\StrafingRun.png"
+        "iconPath": "Gladius\\Icons\\Traits\\StrafingRun.png",
+        "faction": "Neutral"
     },
     "Strikedown": {
-        "faction": "Neutral",
         "internalID": "Strikedown",
         "description": "Temporarily reduces the movement of target infantry unit.",
         "flavor": "A sufficiently powerful blow can knock even the mightiest warrior off his feet.",
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Slowed\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Strikedown.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Strikedown.png",
+        "faction": "Neutral"
     },
     "Stubborn": {
-        "faction": "Neutral",
         "internalID": "Stubborn",
         "description": "Reduces the morale loss.",
         "flavor": "Many warriors live and die according to the principle of 'death before dishonour'. Seldom do such warriors take a backward step in the face of danger.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactor add=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Stubborn.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Stubborn.png",
+        "faction": "Neutral"
     },
     "Stunned": {
-        "faction": "Neutral",
         "internalID": "Stunned",
         "description": "Prevents the unit from moving or acting.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<actionPointsMax max=\"0.0\"/>\n\t\t\t\t<movementMax max=\"0.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Stunned.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Stunned.png",
+        "faction": "Neutral"
     },
     "Suicider": {
-        "faction": "Neutral",
         "internalID": "Suicider",
         "description": "Enemies do not gain experience when this unit kills itself.",
         "flavor": null,
         "modifiers": "<trait visible=\"0\" visibilityCategory=\"None\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Suicider.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Suicider.png",
+        "faction": "Tyranids"
     },
     "Summon": {
-        "faction": "Neutral",
         "internalID": "Summon",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<biomassUpkeep max=\"0\"/>\n\t\t\t\t<foodUpkeep max=\"0\"/>\n\t\t\t\t<oreUpkeep max=\"0\"/>\n\t\t\t\t<requisitionsUpkeep max=\"0\"/>\n\t\t\t\t<energyUpkeep max=\"0\"/>\n\t\t\t\t<influenceUpkeep max=\"0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTraitRemovedModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<removeUnit/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onTraitRemovedModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Summon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Summon.png",
+        "faction": "Neutral"
     },
     "Super-Heavy": {
-        "faction": "Neutral",
         "internalID": "SuperHeavy",
         "description": "Classification.",
         "flavor": "Huge armour-clad constructions that each carry enough firepower to vaporise, smash or incinerate an entire army.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\SuperHeavy.png"
+        "iconPath": "Gladius\\Icons\\Traits\\SuperHeavy.png",
+        "faction": "Neutral"
     },
     "Supersonic": {
-        "faction": "Neutral",
         "internalID": "Supersonic",
         "description": "Increases the movement.",
         "flavor": "Supersonic vehicles are supremely fast, even by the normal standards of aircraft, making them exceptionally mobile in battle.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/Supersonic\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Supersonic.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Supersonic.png",
+        "faction": "Neutral"
     },
     "Swarms": {
-        "faction": "Neutral",
         "internalID": "Swarms",
         "description": "Damage taken is spread evenly across the whole unit group, but the group takes additional hits against blast and template weapons.",
         "flavor": "These creatures are so multitudinous that they cannot be picked out individually and must be fought as a group.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<additionalMembersHit greater=\"0\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacksTaken mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Swarms.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Swarms.png",
+        "faction": "Necrons"
     },
     "Swiftstrike": {
-        "faction": "Neutral",
         "internalID": "Swiftstrike",
         "description": "Increases the attacks.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" visibilityCategory=\"Weapon\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Swiftstrike.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Swiftstrike.png",
+        "faction": "Neutral"
     },
     "Tactical Doctrine": {
-        "faction": "Neutral",
         "internalID": "TacticalDoctrine",
         "description": "Increases the accuracy.",
         "flavor": "\u201cThey shall be pure of heart and strong of body, untainted by doubt and unsullied by self-aggrandisement. They will be bright stars on the firmament of battle, Angels of Death whose shining wings bring swift annihilation to the enemies of Man. So it shall be for a thousand times for a thousand years, unto the very end of eternity and the extinction of mortal flesh.\u201d\n  \u2014 Codex Astartes, by Roboute Guilliman, Primarch of the Ultramarines, Lord Commander and Imperial Regent",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/TacticalDoctrine\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<type name=\"SpaceMarines/TacticalSpaceMarine\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\TacticalDoctrine.png"
+        "iconPath": "Gladius\\Icons\\Actions\\TacticalDoctrine.png",
+        "faction": "Neutral"
     },
     "Tank": {
-        "faction": "Neutral",
         "internalID": "Tank",
         "description": "Classification.",
         "flavor": "Tanks can use their mass as a weapon, driving right into and through densely packed enemies. This often throws the opposing battle line into disarray, as having some monstrous metal behemoth coming straight at you is unnerving for anybody.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Tank.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Tank.png",
+        "faction": "Neutral"
     },
     "Tank Hunters": {
-        "faction": "Neutral",
         "internalID": "TankHunters",
         "description": "Increases the armour penetration against enemy vehicles.",
         "flavor": "These veterans of armoured warfare are able to identify the weak points of enemy vehicles and target their fire appropriately.",
         "modifiers": "<trait alwaysVisible=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\TankHunters.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TankHunters.png",
+        "faction": "Orks"
     },
     "Advanced Targeting System": {
         "faction": "Tau",
@@ -5272,100 +5272,100 @@
         "iconPath": "Gladius\\Icons\\Actions\\Tau\\ZephyrsGrace.png"
     },
     "Telekine Dome": {
-        "faction": "Neutral",
         "internalID": "TelekineDome",
         "description": "Increases the ranged damage reduction.",
         "flavor": "Bullets bounce off of thin air and are deflected harmlessly away as the psyker erects a barrier of shimmering energy about himself.",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/TelekineDome\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedInvulnerableDamageReduction min=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\TelekineDome.png"
+        "iconPath": "Gladius\\Icons\\Actions\\TelekineDome.png",
+        "faction": "Neutral"
     },
     "Teleport Homer": {
-        "faction": "Neutral",
         "internalID": "TeleportHomer",
         "description": "Causes orbital deployment to not consume action points when deploying Terminators adjacent to this unit.",
         "flavor": "Teleport homers emit a powerful signal enabling orbiting Strike Cruisers to lock onto them with their teleportation equipment. By matching the exact coordinates of this signal, the risk of missing the intended mark is greatly reduced.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\TeleportHomer.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TeleportHomer.png",
+        "faction": "Space Marines"
     },
     "Template": {
-        "faction": "Neutral",
         "internalID": "Template",
         "description": "Hits with increased accuracy against multiple group members of the target unit.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<noTrait name=\"TwinLinked\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy min=\"12\" max=\"12\"/> \n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<trait name=\"TwinLinked\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy min=\"14\" max=\"14\"/> \n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Template.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Template.png",
+        "faction": "Neutral"
     },
     "Terminator Armour": {
-        "faction": "Neutral",
         "internalID": "TerminatorArmour",
         "description": "Increases the damage reduction.",
         "flavor": "Terminator armour is the best protection a Space Marine can be equipped with. It is even said that Terminator armour can withstand the titanic energies at a plasma generator's core and that this was, in fact, the armour's original purpose.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\TerminatorArmour.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TerminatorArmour.png",
+        "faction": "Neutral"
     },
     "Tesla": {
-        "faction": "Neutral",
         "internalID": "Tesla",
         "description": "Increases the attacks.",
         "flavor": "A tesla weapon unleashes a bolt of living lightning that crackles from foe to foe after hitting its target, charring flesh and melting armour. Tesla bolts feed off the energy released by the destruction, the lightning becoming more furious with every fresh arc.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Tesla.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Tesla.png",
+        "faction": "Necrons"
     },
     "Viridian Discharge": {
-        "faction": "Neutral",
         "internalID": "TeslaDamage",
         "description": "Increases the armour penetration.",
         "flavor": "The luminous green lightning discharged by these exotic and ancient Necron weapons crackles with life, writhing and seemingly clawing at any target it hits, moving as if it had a mind of its own.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\TeslaDamage.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TeslaDamage.png",
+        "faction": "Necrons"
     },
     "The Flesh Is Weak": {
-        "faction": "Neutral",
         "internalID": "TheFleshIsWeak",
         "description": "Increases the damage reduction.",
         "flavor": "\u201cWe have been wounded sorely. Yet still we stand, with fire in our eyes and valour in our hearts. Let them think us beaten. We shall teach them otherwise.\u201d\n  \u2014 Pedro Kantor, Chapter Master of the Crimson Fists",
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/TheFleshIsWeak\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<feelNoPainDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\TheFleshIsWeak.png"
+        "iconPath": "Gladius\\Icons\\Actions\\TheFleshIsWeak.png",
+        "faction": "Neutral"
     },
     "Trained Sentinel Pilots": {
-        "faction": "Neutral",
         "internalID": "TrainedSentinelPilots",
         "description": "Increases the damage.",
         "flavor": "Sentinels are used in a wide variety of roles throughout the Imperium of man\u2014from power lifters used to load starship weaponry to open-canopy scouts. Some Sentinels are equipped with improved armour and stabilisers to carry heavier weaponry. This changes the Sentinel's role from support and reconnaissance to that of a heavy fire platform.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\TrainedSentinelPilots.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TrainedSentinelPilots.png",
+        "faction": "Astra Militarum"
     },
     "Traktor": {
-        "faction": "Neutral",
         "internalID": "Traktor",
         "description": "Immobilizes enemy flyers.",
         "flavor": null,
         "modifiers": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Weapons/TraktorKannon\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<trait name=\"Flyer\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Immobilized\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Weapons\\TraktorKannon.png"
+        "iconPath": "Gladius\\Icons\\Weapons\\TraktorKannon.png",
+        "faction": "Orks"
     },
     "Transport": {
-        "faction": "Neutral",
         "internalID": "Transport",
         "description": "Allows transportation of infantry units and monstrous creatures.",
         "flavor": "Some can carry others across the battlefield, providing speed and protection. Of course, if the transport is destroyed, the passengers will be burnt alive in the explosion.",
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Transport.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Transport.png",
+        "faction": "Neutral"
     },
     "Turbo-Boost": {
-        "faction": "Neutral",
         "internalID": "TurboBoost",
         "description": "Increases the movement.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/TurboBoost\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\TurboBoost.png"
+        "iconPath": "Gladius\\Icons\\Actions\\TurboBoost.png",
+        "faction": "Neutral"
     },
     "Tusked": {
-        "faction": "Neutral",
         "internalID": "Tusked",
         "description": "Increases the attacks of melee weapons.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<meleeAttacks add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Tusked.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Tusked.png",
+        "faction": "Orks"
     },
     "Acid Blood": {
         "faction": "Tyranids",
@@ -5784,139 +5784,139 @@
         "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\WarpField.png"
     },
     "Twin-Linked": {
-        "faction": "Neutral",
         "internalID": "TwinLinked",
         "description": "Increases the accuracy.",
         "flavor": "These weapons are grafted to the same targeting system for greater accuracy.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\TwinLinked.png"
+        "iconPath": "Gladius\\Icons\\Traits\\TwinLinked.png",
+        "faction": "Neutral"
     },
     "Uncommon": {
-        "faction": "Neutral",
         "internalID": "Uncommon",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Uncommon.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Uncommon.png",
+        "faction": "Neutral"
     },
     "Unending Horde": {
-        "faction": "Neutral",
         "internalID": "UnendingHorde",
         "description": "Increases the damage reduction.",
         "flavor": "Like the zombies of ancient Terran fiction, Poxwalkers do not stop unless they are thoroughly destroyed. Their dead flesh is unfeeling, so that attacks that would put down a normal human are mere inconveniences as they giggle and groan onward\u2026",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<feelNoPainDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\UnendingHorde.png"
+        "iconPath": "Gladius\\Icons\\Traits\\UnendingHorde.png",
+        "faction": "Neutral"
     },
     "Unique": {
-        "faction": "Neutral",
         "internalID": "Unique",
         "description": "Limits the amount of units of this type.",
         "flavor": null,
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<typeLimit add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Unique.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Unique.png",
+        "faction": "Neutral"
     },
     "Unwieldy": {
-        "faction": "Neutral",
         "internalID": "Unwieldy",
         "description": "Reduces the accuracy.",
         "flavor": "This weapon is very large, and more than a little clumsy, making swift blows all but impossible to achieve.",
         "modifiers": "<trait category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Unwieldy.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Unwieldy.png",
+        "faction": "Neutral"
     },
     "Vectored Afterburners": {
-        "faction": "Neutral",
         "internalID": "VectoredAfterburners",
         "description": "Increases the movement and ranged damage reduction.",
         "flavor": null,
         "modifiers": "<trait category=\"Buff\" icon=\"Actions/VectoredAfterburners\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t\t<rangedDamageReduction add=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\VectoredAfterburners.png"
+        "iconPath": "Gladius\\Icons\\Actions\\VectoredAfterburners.png",
+        "faction": "Neutral"
     },
     "Vehicle": {
-        "faction": "Neutral",
         "internalID": "Vehicle",
         "description": "Negates the penalty for heavy and ordnance weapons. Increases the movement penalty in forests and imperial ruins.",
         "flavor": "War is not a trade solely for living soldiers, but also for mighty war engines and tanks.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Vehicle.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Vehicle.png",
+        "faction": "Neutral"
     },
     "Very Bulky": {
-        "faction": "Neutral",
         "internalID": "VeryBulky",
         "description": "Requires two additional cargo slots in a transport.",
         "flavor": "This creature is so massive it takes up an inordinate amount of space in any vehicle or building it enters.",
         "modifiers": "<trait icon=\"Traits/Bulky\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Bulky.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Bulky.png",
+        "faction": "Neutral"
     },
     "Void Shield": {
-        "faction": "Neutral",
         "internalID": "VoidShield",
         "description": "Increases the ranged damage reduction.",
         "flavor": "The Void Shield is the peak Imperial ranged-defense technology and is normally only mounted on Titans and Superheavy Tanks because of its immense power needs. This variant uses the technology to defend a wide area, though it is useless against melee attacks.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedInvulnerableDamageReduction min=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\VoidShield.png"
+        "iconPath": "Gladius\\Icons\\Traits\\VoidShield.png",
+        "faction": "Neutral"
     },
     "Vox-Caster": {
-        "faction": "Neutral",
         "internalID": "VoxCaster",
         "description": "Reduces the morale loss.",
         "flavor": "A vox-caster is a reliable communications array connected to the tactical command net via tight-beam transmitters.",
         "modifiers": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLossFactor add=\"-0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\VoxCaster.png"
+        "iconPath": "Gladius\\Icons\\Traits\\VoxCaster.png",
+        "faction": "Astra Militarum"
     },
     "Waaagh!": {
-        "faction": "Neutral",
         "internalID": "Waaagh",
         "description": "Increases the attacks.",
         "flavor": "The Waaagh! is joie de vivre, crusade, immense psychic power, a tangible belief aura and perhaps the Ork gods themselves, all rolled into one teeth-rattling, gut-wrenching roar of delighted aggression pushing the Orks across the galaxy and into battle. It is the core of being an Ork.",
         "modifiers": "<trait category=\"Buff\" rankMax=\"9\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mulMin=\"0.02\" mulMax=\"0.20\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<loyalty mulMin=\"0.02\" mulMax=\"0.20\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Waaagh.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Waaagh.png",
+        "faction": "Neutral"
     },
     "Walker": {
-        "faction": "Neutral",
         "internalID": "Walker",
         "description": "Reduces the movement penalty in forests and imperial ruins.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Walker.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Walker.png",
+        "faction": "Neutral"
     },
     "Weakened": {
-        "faction": "Neutral",
         "internalID": "Weakened",
         "description": "Reduces the movement and damage.",
         "flavor": null,
         "modifiers": "<trait category=\"Debuff\" icon=\"Actions/Enfeeble\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t\n\t\t\t\t<circumstanceMeleeDamage mul=\"-0.33\"/>\n\t\t\t\t<movementMax mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Actions\\Enfeeble.png"
+        "iconPath": "Gladius\\Icons\\Actions\\Enfeeble.png",
+        "faction": "Neutral"
     },
     "Wire Weed": {
-        "faction": "Neutral",
         "internalID": "WireWeed",
         "description": "Deals damage each turn.",
         "flavor": "Woe betide anyone who wanders into these thickets of brambles. Slowly at first, but faster and faster, the living weed draws its razor-sharp filaments tighter around the hapless intruder.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Features/WireWeed\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Necrons/ImmuneToNaturalLaw\"/>\n\t\t\t\t\t<noTrait name=\"Necrons/Wraithflight\"/>\n\t\t\t\t\t<noTrait name=\"JetPack\"/>\n\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t<noTrait name=\"Skimmer\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"WireWeed\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Features\\WireWeed.png"
+        "iconPath": "Gladius\\Icons\\Features\\WireWeed.png",
+        "faction": "Neutral"
     },
     "Witchfire": {
-        "faction": "Neutral",
         "internalID": "Witchfire",
         "description": "Classification.",
         "flavor": null,
         "modifiers": "<trait/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Witchfire.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Witchfire.png",
+        "faction": "Neutral"
     },
     "Zzap": {
-        "faction": "Neutral",
         "internalID": "Zzap",
         "description": null,
         "flavor": "Zzap guns fire unstable bolts of lightning. They have the potential to punch through the hull of even the heaviest enemy vehicle amid crackling showers of sparks, but have a tendency to overload and electrocute the operating gunner.",
         "modifiers": "<trait visible=\"0\"/>",
-        "iconPath": "Gladius\\Icons\\Traits\\Zzap.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Zzap.png",
+        "faction": "Orks"
     },
     "Zealot": {
-        "faction": "Neutral",
         "internalID": "Zealot",
         "description": "Reduces the morale loss, increases the melee damage and grants immunity to fear and pinning.",
         "flavor": "Zealots fight on regardless of their casualties or the terrors of war; they are driven forwards by their conviction.",
         "modifiers": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<circumstanceMeleeDamage mul=\"0.1\"/>\n\t\t\t\t<moraleLossFactor add=\"-0.67\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
-        "iconPath": "Gladius\\Icons\\Traits\\Zealot.png"
+        "iconPath": "Gladius\\Icons\\Traits\\Zealot.png",
+        "faction": "Neutral"
     }
 }

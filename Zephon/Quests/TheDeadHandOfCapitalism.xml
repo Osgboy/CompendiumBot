@@ -1,5 +1,4 @@
 <quest firstTurn="40" image="Factions/RogueOperative">
-	<!-- TODO Logic -->
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -8,21 +7,81 @@
 			</options>
 		</stage>
 		<stage name="KillMech" nextStageOnSuccess="KillMechSuccess">
-
+			<modifications>
+				<nearCityTileSelector targetDistance="6">
+					<conditions>
+						<tile>
+							<noUnit/>
+							<land/>
+							<noFeatureCategory name="SpecialResource"/> 
+							<noFeature type="Bleed"/>
+							<noFeature type="City"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp>
+					<defenders>
+						<unit type="VulkanR5" count="1" rankMin="3" rankMax="5"/>
+					</defenders>
+				</killCamp>
+			</objectives>
 		</stage>		
 		<stage name="KillMechSuccess" nextStageOnSuccess="KillMechSuccess">
 			<options>
 				<option name="SolveRiddle" nextStage="SolveRiddle"/>
-				<option name="BruteForce">
+				<option name="BruteForce"> <!-- TODO Make objective -->
 					<nextStages>
-						<nextStage name="BruteForceSuccess" weight="1"/>
+						<nextStage name="BruteForceSuccess" weight="1"/> 
 						<nextStage name="BruteForceFailure" weight="1"/>
 					</nextStages>
 				</option>
 			</options>
 		</stage>		
 		<stage name="SolveRiddle" nextStageOnSuccess="SolveRiddleSuccess">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addItem type="ICARLogo0"/>
+							<addItem type="ICARLogo1"/>
+							<addItem type="ICARLogo2"/>
+							<addItem type="ICARLogo3"/>
+							<addItem type="ICARLogo4"/>
+							<addItem type="ICARLogo5"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<arrangeInventory>
+					<items>
+						<item type="ICARLogo0" slot="0"/>
+						<item type="ICARLogo1" slot="1"/>
+						<item type="ICARLogo2" slot="2"/>
+						<item type="ICARLogo3" slot="3"/>
+						<item type="ICARLogo4" slot="4"/>
+						<item type="ICARLogo5" slot="5"/>
+					</items>
+				</arrangeInventory>
+			</objectives>
 		</stage>
 		<stage name="SolveRiddleSuccess">
 			<options>
@@ -37,7 +96,22 @@
 			</options>
 		</stage>
 		<stage name="BruteForceFailure">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addTrait type="EyeOfPhinnicusDamaged"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 		<stage name="HearHimOut">
 			<options>
@@ -46,13 +120,60 @@
 			</options>
 		</stage>
 		<stage name="HostileTakeover">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addTrait type="EyeOfPhinnicusDamaged"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 		<stage name="TakeTheDeal">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addTrait type="TheDeal"/>
+							<!-- TODO Items -->
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 		<stage name="TakeHisEyes">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addTrait type="EyeOfPhinnicus"/>
+							<!-- TODO Items -->
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 	</stages>
 </quest>

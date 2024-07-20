@@ -277,14 +277,15 @@ class List(app_commands.Group):
 
 class GladiusList(app_commands.Group):
     @app_commands.command()
-    #@app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
+    @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
     @app_commands.choices(cooldown=[app_commands.Choice(name=c, value=c) for c in ACTION_COOLDOWNS])
     @app_commands.choices(condition=[app_commands.Choice(name=k, value=v) for k, v in ACTION_CONDITIONS.items()])
-    async def action(self, interaction: discord.Interaction, cooldown: app_commands.Choice[str] = '',
+    async def action(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '', cooldown: app_commands.Choice[str] = '',
                      condition: app_commands.Choice[str] = '', requiredupgrade: str = '', invisible: bool = False):
         """List Gladius actions according to given filters.
 
         Args:
+            faction (str): Filter by faction
             cooldown (str): Filter by cooldown
             condition (str): Filter by condition
             requiredupgrade (str): Filter by required upgrade
@@ -297,7 +298,7 @@ class GladiusList(app_commands.Group):
             cooldown = cooldown.value
         if condition:
             condition = condition.value
-        await return_list(interaction, invisible, 'GAction', objList.create_gaction_list, cooldown=cooldown,
+        await return_list(interaction, invisible, 'GAction', objList.create_gaction_list, faction=faction, cooldown=cooldown,
                           condition=condition, GUpgrade=requiredupgrade)
 
     @app_commands.command()
@@ -319,7 +320,7 @@ class GladiusList(app_commands.Group):
         """List Gladius traits according to given filters.
 
         Args:
-            faction (str): Filter by faction. Not fully accurate yet.
+            faction (str): Filter by faction
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
         """
         # faction
@@ -370,11 +371,13 @@ class GladiusList(app_commands.Group):
         await return_list(interaction, invisible, 'GUpgrade', objList.create_gupgrade_list, faction=faction, tier=tier, GUpgrade=requiredupgrade)
 
     @app_commands.command()
-    #@app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
-    async def weapon(self, interaction: discord.Interaction, traitname: str = '', range: str = '', invisible: bool = False):
+    @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
+    async def weapon(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '',
+                     traitname: str = '', range: str = '', invisible: bool = False):
         """List Gladius weapons according to given filters.
 
         Args:
+            faction (str): Filter by faction
             trait (str): Filter by trait
             range (str): Filter by weapon range. Use 'melee' for melee range.
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
@@ -382,31 +385,34 @@ class GladiusList(app_commands.Group):
         # faction
         if range == 'melee':
             range = 'Melee'
-        await return_list(interaction, invisible, 'GWeapon', objList.create_gweapon_list, GTrait=traitname, range=range)
+        await return_list(interaction, invisible, 'GWeapon', objList.create_gweapon_list, faction=faction, GTrait=traitname, range=range)
 
 
 class ZephonList(app_commands.Group):
     @app_commands.command()
-    #@app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
+    @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
     @app_commands.choices(cooldown=[app_commands.Choice(name=c, value=c) for c in ACTION_COOLDOWNS])
     @app_commands.choices(condition=[app_commands.Choice(name=k, value=v) for k, v in ACTION_CONDITIONS.items()])
-    async def action(self, interaction: discord.Interaction, cooldown: app_commands.Choice[str] = '',
+    async def action(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '', cooldown: app_commands.Choice[str] = '',
                      condition: app_commands.Choice[str] = '', requiredupgrade: str = '', invisible: bool = False):
         """List Zephon actions according to given filters.
 
         Args:
+            branch (str): Filter by branch
             cooldown (str): Filter by cooldown
             condition (str): Filter by condition
             requiredupgrade (str): Filter by required upgrade
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
         """
         # Add faction
+        if branch:
+            branch = branch.value
         if cooldown:
             cooldown = cooldown.value
         if condition:
             condition = condition.value
-        await return_list(interaction, invisible, 'ZAction', objList.create_zaction_list, cooldown=cooldown,
-                          condition=condition, ZUpgrade=requiredupgrade)
+        await return_list(interaction, invisible, 'ZAction', objList.create_zaction_list, branch=branch,
+                          cooldown=cooldown, condition=condition, ZUpgrade=requiredupgrade)
 
     @app_commands.command()
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
@@ -430,7 +436,7 @@ class ZephonList(app_commands.Group):
     @app_commands.command()
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
     async def trait(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '', invisible: bool = False):
-        """Placeholder. List Zephon traits according to given filters.
+        """List Zephon traits according to given filters.
 
         Args:
             branch (str): Filter by branch
@@ -484,19 +490,21 @@ class ZephonList(app_commands.Group):
         await return_list(interaction, invisible, 'ZUpgrade', objList.create_zupgrade_list, branch=branch, faction=faction, tier=tier, ZUpgrade=requiredupgrade)
 
     @app_commands.command()
-    #@app_commands.choices(faction=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
-    async def weapon(self, interaction: discord.Interaction, traitname: str = '', range: str = '', invisible: bool = False):
+    @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
+    async def weapon(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '', traitname: str = '', range: str = '', invisible: bool = False):
         """List Zephon weapons according to given filters.
 
         Args:
+            branch (str): Filter by branch
             trait (str): Filter by trait
             range (str): Filter by weapon range. Use 'melee' for melee range.
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
         """
-        # faction
+        if branch:
+            branch = branch.value
         if range == 'melee':
             range = 'Melee'
-        await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, ZTrait=traitname, range=range)
+        await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, branch=branch, ZTrait=traitname, range=range)
 
 
 @bot.tree.command()
