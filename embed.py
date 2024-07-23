@@ -52,7 +52,8 @@ GLADIUS_ICONS = {
     'biomass': '<:Biomass:1240218802831233118>', 'requisitions': '<:Requisitions:1240222555588268032>',
     'food': '<:Food:1240218818660532317>', 'ore': '<:Ore:1240218839644377181>',
     'energy': '<:Energy:1240221846343782501>', 'influence': '<:Influence:1240218825836728341>',
-    'production': '<:Production:1240330971514011668>',
+    'production': '<:Production:1240330971514011668>', 'research': '<:Research:1240218854152601640>',
+    'loyalty': '<:Loyalty:1240222250230353921>', 'populationLimit': '<:PopulationLimit:1240218843138228284>',
 
     'armor': '<:Armor:1240218799832174703>', 'hitpoints': '<:Hitpoints:1240330759781482528>',
     'morale': '<:Morale:1240218836171493386>', 'movement': '<:Movement:1240222322770579487>',
@@ -71,7 +72,8 @@ ZEPHON_ICONS = {
     'algae': '<:Algae:1250981089540046929>', 'chips': '<:Chips:1250985791455494174>',
     'antimatter': '<:Antimatter:1250981090278117416>', 'dimensionalEchoes': '<:DimensionalEchoes:1250985794450227240>',
     'singularityCores': '<:SingularityCores:1250986245085986909>', 'transuranium': '<:Transuranium:1250986247086669937>',
-    'production': '<:Production:1250986164626657383>',
+    'production': '<:Production:1250986164626657383>', 'research': '<:Research:1250986242653556799>',
+    'loyalty': '<:Loyalty:1250986098272894986>', 'populationLimit': '<:PopulationLimit:1250986103188750406>',
 
     'groupSize': '<:GroupSize:1250986008606933012>',
     'armor': '<:Armor:1250981091125362788>', 'hitpoints': '<:Hitpoints:1250986009429282866>',
@@ -237,6 +239,172 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
 
     if verbose:
         # Flavor
+        if (flavor := attrs['flavor']):
+            embed.add_field(
+                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+
+    return embed
+
+
+def create_gbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+
+    # Faction
+    embed.add_field(name='Faction', value=attrs['faction'], inline=False)
+
+    # Cost
+    costText = []
+    for costName, costValue in attrs['resourceCosts'].items():
+        if costName[-4:] == 'Cost':
+            costText.extend((' | ', GLADIUS_ICONS[costName[:-4]], ' ', costValue))
+    if costText == []:
+        costText = ['None']
+    else:
+        # delete initial ' | '
+        del costText[0]
+    embed.add_field(name="Cost", value=''.join(costText))
+
+    # Upkeep
+    upkeepText = []
+    for upkeepName, upkeepValue in attrs['resourceCosts'].items():
+        if upkeepName[-6:] == 'Upkeep':
+            upkeepText.extend((' | ', GLADIUS_ICONS[upkeepName[:-6]], ' ', upkeepValue))
+    if upkeepText == []:
+        upkeepText = ['None']
+    else:
+        # delete initial ' | '
+        del upkeepText[0]
+    embed.add_field(name='Upkeep', value=''.join(upkeepText))
+
+    # Output
+    outputText = []
+    for outputName, outputValue in attrs['resourceOutput'].items():
+        outputText.extend((' | ', GLADIUS_ICONS[outputName], ' ', outputValue))
+    if outputText == []:
+        outputText = ['None']
+    else:
+        # delete initial ' | '
+        del outputText[0]
+    embed.add_field(name="Output", value=''.join(outputText))
+
+    # Traits
+    traitsText = []
+    for trait in attrs['traits']:
+        # if upgrade required
+        if attrs['traits'][trait]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        traitsText.extend((trait, upgrade, '\n'))
+    if traitsText == []:
+        traitsText = ['None']
+    embed.add_field(name='Traits', value=''.join(traitsText))
+
+    # Actions
+    actionsText = []
+    for action in attrs['actions']:
+        # if upgrade required
+        if attrs['actions'][action]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        actionsText.extend((action, upgrade, '\n'))
+    if actionsText == []:
+        actionsText = ['None']
+    embed.add_field(name='Actions', value=''.join(actionsText))
+
+    # Flavor
+    if verbose:
+        if (flavor := attrs['flavor']):
+            embed.add_field(
+                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+
+    return embed
+
+
+def create_zbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+
+    # Branch
+    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+
+    # Cost
+    costText = []
+    for costName, costValue in attrs['resourceCosts'].items():
+        if costName[-4:] == 'Cost':
+            costText.extend((' | ', ZEPHON_ICONS[costName[:-4]], ' ', costValue))
+    if costText == []:
+        costText = ['None']
+    else:
+        # delete initial ' | '
+        del costText[0]
+    embed.add_field(name="Cost", value=''.join(costText))
+
+    # Upkeep
+    upkeepText = []
+    for upkeepName, upkeepValue in attrs['resourceCosts'].items():
+        if upkeepName[-6:] == 'Upkeep':
+            upkeepText.extend((' | ', ZEPHON_ICONS[upkeepName[:-6]], ' ', upkeepValue))
+    if upkeepText == []:
+        upkeepText = ['None']
+    else:
+        # delete initial ' | '
+        del upkeepText[0]
+    embed.add_field(name='Upkeep', value=''.join(upkeepText))
+
+    # Output
+    outputText = []
+    for outputName, outputValue in attrs['resourceOutput'].items():
+        outputText.extend((' | ', ZEPHON_ICONS[outputName], ' ', outputValue))
+    if outputText == []:
+        outputText = ['None']
+    else:
+        # delete initial ' | '
+        del outputText[0]
+    embed.add_field(name="Output", value=''.join(outputText))
+
+    # Traits
+    traitsText = []
+    for trait in attrs['traits']:
+        # if upgrade required
+        if attrs['traits'][trait]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        traitsText.extend((trait, upgrade, '\n'))
+    if traitsText == []:
+        traitsText = ['None']
+    embed.add_field(name='Traits', value=''.join(traitsText))
+
+    # Actions
+    actionsText = []
+    for action in attrs['actions']:
+        # if upgrade required
+        if attrs['actions'][action]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        actionsText.extend((action, upgrade, '\n'))
+    if actionsText == []:
+        actionsText = ['None']
+    embed.add_field(name='Actions', value=''.join(actionsText))
+
+    # Flavor
+    if verbose:
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1024]}*', inline=False)

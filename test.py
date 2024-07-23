@@ -257,7 +257,7 @@ async def on_ready():
     print("# CMDs synced: " + str(len(synced)))
 
     JSON_DIR = os.path.join('json')
-    for objClass in ('GAction', 'ZAction', 'GItem', 'ZItem', 'GUnit', 'ZUnit', 'GUpgrade', 'ZUpgrade', 'GTrait', 'ZTrait', 'GWeapon', 'ZWeapon'):
+    for objClass in ('GAction', 'ZAction', 'GBuilding', 'ZBuilding', 'GItem', 'ZItem', 'GUnit', 'ZUnit', 'GUpgrade', 'ZUpgrade', 'GTrait', 'ZTrait', 'GWeapon', 'ZWeapon'):
         with open(os.path.join(JSON_DIR, objClass + '.json'), 'r') as file:
             dicts[objClass] = json.load(file)
             print(f"Loaded {objClass}.json")
@@ -300,6 +300,21 @@ class GladiusList(app_commands.Group):
             condition = condition.value
         await return_list(interaction, invisible, 'GAction', objList.create_gaction_list, faction=faction, cooldown=cooldown,
                           condition=condition, GUpgrade=requiredupgrade)
+
+    @app_commands.command()
+    @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
+    async def building(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '',
+                       traitname: str = '', invisible: bool = False):
+        """List Gladius buildings according to given filters.
+
+        Args:
+            faction (str): Filter by faction
+            trait (str): Filter by trait
+            invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
+        """
+        if faction:
+            faction = faction.value
+        await return_list(interaction, invisible, 'GBuilding', objList.create_gbuilding_list, faction=faction, GTrait=traitname)
 
     @app_commands.command()
     @app_commands.choices(rarity=[app_commands.Choice(name=r, value=r) for r in GLADIUS_RARITIES])
@@ -382,7 +397,8 @@ class GladiusList(app_commands.Group):
             range (str): Filter by weapon range. Use 'melee' for melee range.
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
         """
-        # faction
+        if faction:
+            faction = faction.value
         if range == 'melee':
             range = 'Melee'
         await return_list(interaction, invisible, 'GWeapon', objList.create_gweapon_list, faction=faction, GTrait=traitname, range=range)
@@ -413,6 +429,22 @@ class ZephonList(app_commands.Group):
             condition = condition.value
         await return_list(interaction, invisible, 'ZAction', objList.create_zaction_list, branch=branch,
                           cooldown=cooldown, condition=condition, ZUpgrade=requiredupgrade)
+
+    @app_commands.command()
+    @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
+    async def building(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '',
+                       traitname: str = '', invisible: bool = False):
+        """List Zephon buildings according to given filters.
+
+        Args:
+            branch (str): Filter by branch
+            trait (str): Filter by trait
+            invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
+        """
+        if branch:
+            branch = branch.value
+        await return_list(interaction, invisible, 'ZBuilding', objList.create_zbuilding_list, branch=branch, ZTrait=traitname)
+
 
     @app_commands.command()
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
@@ -527,6 +559,28 @@ async def zaction(interaction: discord.Interaction, actionname: str, verbose: bo
         actionname (str): Name of action to look up
     """
     await return_info(interaction, actionname, verbose, invisible, 'ZAction', embed.create_zaction_embed)
+
+
+@bot.tree.command()
+@docstring_defaults
+async def gbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, invisible: bool = False):
+    """Return info on a Gladius building.
+
+    Args:
+        buildingname (str): Name of building to look up
+    """
+    await return_info(interaction, buildingname, verbose, invisible, 'GBuilding', embed.create_gbuilding_embed)
+
+
+@bot.tree.command()
+@docstring_defaults
+async def zbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, invisible: bool = False):
+    """Return info on a Zephon building.
+
+    Args:
+        buildingname (str): Name of building to look up
+    """
+    await return_info(interaction, buildingname, verbose, invisible, 'ZBuilding', embed.create_zbuilding_embed)
 
 
 @bot.tree.command()

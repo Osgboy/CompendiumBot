@@ -98,6 +98,36 @@ def create_zaction_list(classDict: dict, *, branch: str = None, cooldown: str = 
     else:
         return('No actions found to match given filters.')
 
+def create_gbuilding_list(classDict: dict, *, faction: str = None, GTrait: str = None) -> str:
+    buildingList = []
+    for building, attrs in classDict.items():
+        if (
+            (faction and faction != attrs['faction'])
+            or (GTrait and GTrait not in attrs['traits'])
+        ):
+            continue
+        buildingList.append(building)
+
+    if buildingList:
+        return('\n'.join(buildingList))
+    else:
+        return('No buildings found to match given filters.')
+
+def create_zbuilding_list(classDict: dict, *, branch: str = None, ZTrait: str = None) -> str:
+    buildingList = []
+    for building, attrs in classDict.items():
+        if (
+            (branch and branch != attrs['branch'])
+            or (ZTrait and ZTrait not in attrs['traits'])
+        ):
+            continue
+        buildingList.append(building)
+
+    if buildingList:
+        return('\n'.join(buildingList))
+    else:
+        return('No buildings found to match given filters.')
+
 def create_gitem_list(classDict: dict, *, rarity: str = None) -> str:
     itemList = []
     for item, attrs in classDict.items():

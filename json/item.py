@@ -52,7 +52,7 @@ class ZItem(Item):
     def get_buy_condition(self):
         try:
             buyConditionID = self.tree.find('buyConditions').find(
-                'player').find('unlockedTrait').get('type')
+                'player').find('trait').get('type')
             self.buyCondition = ID2name(buyConditionID, self.GAME, 'Traits')
         except AttributeError:
             pass

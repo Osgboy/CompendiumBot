@@ -6,6 +6,7 @@ from os.path import normpath
 from typing import Type, Callable
 from lxml import etree as ET
 from action import *
+from building import *
 from item import *
 from trait import *
 from unit import *
@@ -58,6 +59,36 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
             print(f"{objCls.__name__} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
+
+
+def get_gbuilding_attrs(building: GBuilding) -> dict:
+    building.get_resource_costs()
+    building.get_resource_output()
+    building.get_traits()
+    building.get_actions()
+
+    slots = ('internalID', 'description', 'flavor',
+             'resourceCosts', 'resourceOutput', 'traits', 'actions')
+    kwargs = {}
+    kwargs['faction'] = camel_case_split(building.faction)
+    for key in slots:
+        kwargs[key] = getattr(building, key, None)
+    return kwargs
+
+
+def get_zbuilding_attrs(building: ZBuilding) -> dict:
+    building.get_branch()
+    building.get_resource_costs()
+    building.get_resource_output()
+    building.get_traits()
+    building.get_actions()
+
+    slots = ('internalID', 'branch', 'description', 'flavor',
+             'resourceCosts', 'resourceOutput', 'traits', 'actions')
+    kwargs = {}
+    for key in slots:
+        kwargs[key] = getattr(building, key, None)
+    return kwargs
 
 
 def get_gitem_attrs(item: GItem) -> dict:
@@ -155,7 +186,8 @@ def get_gupgrade_attrs(upgrade: GUpgrade) -> dict:
     upgrade.get_tier()
     upgrade.get_required_upgrades()
 
-    slots = ('internalID', 'dlc', 'description', 'flavor', 'tier', 'requiredUpgrades')
+    slots = ('internalID', 'dlc', 'description',
+             'flavor', 'tier', 'requiredUpgrades')
     kwargs = {}
     kwargs['faction'] = camel_case_split(upgrade.faction)
     for key in slots:
@@ -170,7 +202,8 @@ def get_zupgrade_attrs(upgrade: ZUpgrade) -> dict:
     upgrade.get_tier()
     upgrade.get_required_upgrades()
 
-    slots = ('internalID', 'branch', 'description', 'flavor', 'tier', 'requiredUpgrades')
+    slots = ('internalID', 'branch', 'description',
+             'flavor', 'tier', 'requiredUpgrades')
     kwargs = {}
     kwargs['faction'] = camel_case_split(upgrade.faction)
     for key in slots:
@@ -205,26 +238,33 @@ def get_zweapon_attrs(weapon: ZWeapon) -> dict:
     return kwargs
 
 
-def get_factions(objDict: str, sourceDicts: tuple, faction: str, objType: str):
+def get_factions(objDict: str, sourceDicts: tuple[str], faction: str, objType: str):
     objDict = dicts[objDict]
     blank = set()
     for k, v in objDict.items():
         if faction not in v:
             blank.add(k)
     for sourceDict in sourceDicts:
-        for source in dicts[sourceDict].values():
-            for o in source[objType]:
-                if o in blank:
-                    try:
-                        if objDict[o][faction] != source[faction]:
-                            objDict[o][faction] = 'Neutral'
-                    except KeyError:
-                        objDict[o][faction] = source[faction]
+        for sourceName, sourceAttrs in dicts[sourceDict].items():
+            if sourceDict == 'ZItem':
+                if sourceName in blank:
+                    objDict[sourceName][faction] = sourceAttrs[faction]
+            else:
+                for o in sourceAttrs[objType]:
+                    if o in blank:
+                        try:
+                            if objDict[o][faction] != sourceAttrs[faction]:
+                                objDict[o][faction] = 'Neutral'
+                        except KeyError:
+                            objDict[o][faction] = sourceAttrs[faction]
     for v in objDict.values():
         if faction not in v:
             v[faction] = 'Neutral'
 
+
 mainArgs = {
+    get_gbuilding_attrs: GBuilding,
+    get_zbuilding_attrs: ZBuilding,
     get_gunit_attrs: GUnit,
     get_zunit_attrs: ZUnit,
     get_gitem_attrs: GItem,
@@ -238,18 +278,16 @@ mainArgs = {
 }
 factionArgs = {
     GTrait: ('GTrait', ('GUnit', 'GWeapon'), 'faction', 'traits'),
-    ZTrait: ('ZTrait', ('ZUnit', 'ZWeapon'), 'branch', 'traits'),
+    ZTrait: ('ZTrait', ('ZUnit', 'ZWeapon', 'ZItem'), 'branch', 'traits'),
     GWeapon: ('GWeapon', ('GUnit',), 'faction', 'weapons'),
     ZWeapon: ('ZWeapon', ('ZUnit',), 'branch', 'weapons'),
 }
 for getAttrs, objCls in mainArgs.items():
     with open(pathJoin(OUTPUT_DIR, objCls.__name__ + '.json'), 'w') as fout:
         dicts[objCls.__name__] = main(getAttrs, objCls)
-        try:
+        if objCls in factionArgs:
             args = factionArgs[objCls]
             get_factions(*args)
-        except KeyError:
-            pass
         json.dump(dicts[objCls.__name__], fout, indent=4)
 
 
@@ -303,7 +341,7 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                     action.get_icon_path()
 
                     slots = ('internalID', 'description',
-                                'flavor', 'modifiers')
+                             'flavor', 'modifiers')
                     kwargs = {}
                     if action.passive:
                         kwargs['cooldown'] = 'Passive'
@@ -327,7 +365,8 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                         action.GAME, 'Icons', normpath(internalPath) + '.png')
                     objDict[actionName] = kwargs
         except Exception:
-            print(f"Action {unitCls.__name__} {entry.get('name')} failed to convert.")
+            print(
+                f"Action {unitCls.__name__} {entry.get('name')} failed to convert.")
             # print(traceback.format_exc())
     return objDict
 
@@ -335,5 +374,6 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
 for actionCls, unitCls, faction in ((GAction, GUnit, 'faction'), (ZAction, ZUnit, 'branch')):
     with open(pathJoin(OUTPUT_DIR, actionCls.__name__ + '.json'), 'w') as fout:
         dicts[actionCls.__name__] = get_action_attrs(actionCls, unitCls)
-        get_factions(actionCls.__name__, (unitCls.__name__,), faction, 'actions')
+        get_factions(actionCls.__name__,
+                     (unitCls.__name__,), faction, 'actions')
         json.dump(dicts[actionCls.__name__], fout, indent=4)

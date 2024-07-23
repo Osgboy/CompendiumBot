@@ -50,6 +50,23 @@
         "iconPath": "Zephon\\Icons\\Actions\\ConjureBleed.png",
         "branch": "Neutral"
     },
+    "Causal Well": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "CausalWell",
+        "description": null,
+        "flavor": "A spiraling energy exchange whirled around the Acrin titan. The fingers on its flesh pulsed in and out, sucking the spirit out of anything\u2014machine, human, or Voice cultist\u2014that drew close. Unless it liked you of course. Then those fingers drifted over your skin, giving you a taste of the life it stole.",
+        "modifiers": "<unitAction name=\"CausalWell\" icon=\"Actions/CausalWell\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"CausalWell\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CausalWell.png",
+        "branch": "Acrin"
+    },
     "Extirpate": {
         "cooldown": "3",
         "conditions": {
@@ -220,7 +237,7 @@
         "iconPath": "Zephon\\Icons\\Units\\CombatDrone.png",
         "branch": "Cyber"
     },
-    "Cherubic Hallowin": {
+    "Cherubic Hallowing": {
         "cooldown": "3",
         "conditions": {
             "requiredUpgrade": null,
@@ -1134,7 +1151,7 @@
         "internalID": "Swallow",
         "description": null,
         "flavor": null,
-        "modifiers": "<unitCast name=\"Swallow\" cooldown=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<cargoSlotsFree greater=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"TargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<embark/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Swallowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "modifiers": "<unitCast name=\"Swallow\" cooldown=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<cargoSlotsFree greater=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"TargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<embark/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Swallowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\Swallow.png",
         "branch": "Voice"
     },

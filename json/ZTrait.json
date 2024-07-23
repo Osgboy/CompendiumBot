@@ -69,7 +69,7 @@
         "flavor": "This rig was a fascinating bit of tech\u2014a muscle-modifier that could fit any human body, any Acrin body, any machine. It studied the pattern of your movement, and just nudged your muscles or motors to make you move faster. Maybe the only piece of tech we made that didn't freak me out. Sometimes I'd sneak out with one, use it to go for long runs around the base. It helped clear my mind.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/AkavishRig\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\AkavishRig.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Blessed Infestation": {
         "internalID": "AlgaeUpgrade",
@@ -197,7 +197,7 @@
         "flavor": "How do you make a shield reflect lasers hot enough to melt your skin? Or bullets that rip organs to shreds? We needed technology that could learn what kind of attack was coming its way and alter a force field to send the attack back where it came from. Planting a tiny cybernetic brain on advanced human tech was our first step in bringing that to life.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/Archaegis\" visibleOnUnit=\"1\">\n\t<onWeaponDefended>\n\t\t<attacker>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttacker\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage triggerEffects=\"0\" useSourceWeapon=\"1\" factor=\"0.167\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</attacker>\n\t</onWeaponDefended>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\Archaegis.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Archai Construct": {
         "internalID": "ArchaiConstruct",
@@ -221,7 +221,7 @@
         "flavor": "I happened to meet the Watchmaker that cooked up this shield once. He spat on my foot after I thanked him for making it. Fair enough\u2014he'd made the shield to protect refugee caravans trying to cross active war zones. We \u201ccommandeered\u201d them and made those war zones worse. He could keep his principles\u2014I was happy keeping our people alive.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ArgosyTarge\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ArgosyTarge.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Armor of Faith": {
         "internalID": "ArmorOfFaith",
@@ -237,7 +237,7 @@
         "flavor": "Your brother pauses as he exits the city. He hands you something\u2014his satchel, the one he clutched in his hands in the days before the war. \u201cWe're together again,\u201d he whispers softly. \u201cAnd we have such great work ahead of us.\u201d\n\nYou look down at the bloody satchel, and wonder just what \u201cwork\u201d Arshem has in mind.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ArshamsSatchel\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss mul=\"-0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Arsham's Satchel (Looted)": {
         "internalID": "ArshamsSatchelLooted",
@@ -245,7 +245,7 @@
         "flavor": "He hands you a box of Arshem's possessions.\n\nYou paw through them, and find a tattered satchel\u2014the one he clutched in his hands on the last day you saw each other.\n\nNow the tears come. You kneel before Arshem's grave and clutch the satchel to your chest. Saving these Reavers seemed such an obvious choice. You just wish you could have saved Arshem too.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ArshamsSatchel\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<moraleLoss mul=\"-0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ArshamsSatchel.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Artificer's Precision": {
         "internalID": "ArtificersPrecision",
@@ -455,7 +455,7 @@
         "iconPath": "Zephon\\Icons\\Traits\\CausalWell.png",
         "branch": "Neutral"
     },
-    "Cherubic Hallowin": {
+    "Cherubic Hallowing": {
         "internalID": "CherubicHallowing",
         "description": null,
         "flavor": "The Cherubim had the power to expand their shielding to other units in the area. The sensation was\u2026 pleasant. Oddly pleasant. A great weapon of war wrapping you up in its embrace, offering protection, and sanctuary\u2026 while its guns pounded the enemy into mulch.",
@@ -693,7 +693,7 @@
         "flavor": "Turn one of these over, and you'll find a curse written in ancient Acrin. \u201cOld wounds can always be reopened.\u201d The Voice couldn't always hurt you\u2026 but at the worst moments, it knew how to make you remember all the pain you'd ever felt.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Items/CursecharmOfCrla\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damageTaken mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\CursecharmOfCrla.png",
-        "branch": "Neutral"
+        "branch": "Voice"
     },
     "Babellian Beacon": {
         "internalID": "CyberAircraftUpgrade",
@@ -853,7 +853,7 @@
         "flavor": "Some worshippers of The Voice carried polished monocles that distorted the light around them. Their victims could SEE The Voice's whispers\u2014not just hear them\u2014\u2014and what they saw would scrape at the edges of their brains. You'd feel this pain in your soul you couldn't unsee, and you'd wonder what was even the point of fighting back.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/DistortedLens\" visibleOnUnit=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToAttackedEnemy\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\DistortedLens.png",
-        "branch": "Neutral"
+        "branch": "Voice"
     },
     "Dozer Blade": {
         "internalID": "DozerBlade",
@@ -893,7 +893,7 @@
         "flavor": "When we were building machines that could think for themselves, this chunk of armor didn't seem all that impressive. But the engineers who cooked it up had made a quiet miracle for us: the metal would turn to liquid, enhance the armor it was fused with, and made it even stronger.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/DynameisPlate\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armor add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\DynameisPlate.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "EMP": {
         "internalID": "EMP",
@@ -989,7 +989,7 @@
         "flavor": "We could use data pulled from the Exousia Marauders to improve another unit's targeting capabilities\u2014but the damn tech was so fickle. A strong breeze could scramble the signal and taking a real hit just shut it all the way down.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ExousiaParser\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"IfNotDamagedThisTurn\">\n\t\t\t<conditions>\n\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<notDamagedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ExousiaParser.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Experimental Drugs (Berserk)": {
         "internalID": "ExperimentalDrugsFailure",
@@ -1173,7 +1173,7 @@
         "flavor": "The Watchmakers were the first ones to design the Emanator\u2014and the Watchmakers were the ones who destroyed most of them. This made it so much easier to kill, and those overprincipled recluses couldn't stomach what they'd created.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/GladialEmanator\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\GladialEmanator.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Gland Harvest": {
         "internalID": "GlandHarvest",
@@ -1445,7 +1445,7 @@
         "flavor": "Followers of the Voice would gladly strap these metal monstrosities to their heads. When they bled, the band would tighten against their skulls and give them the fury of a berserker. Some used them to become better fighters. But I could tell others wore them because they loved the pain.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/HungeringCirclet\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"IfDamagedThisTurn\">\n\t\t\t<conditions>\n\t\t\t\t<unit ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t<damagedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\HungeringCirclet.png",
-        "branch": "Neutral"
+        "branch": "Voice"
     },
     "Hovering": {
         "internalID": "Hovering",
@@ -1501,7 +1501,7 @@
         "flavor": "One of the most powerful weapons created in our AI research looked like a humble lantern\u2014but the light it gave off did far more than illuminate. It hosted intelligent photons that could be programmed to recognize friend from foe. Just passing through a field of them could irritate the skin, and extended exposure was hell on flesh and armor alike.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/IncandescentIcon\" visibleOnUnit=\"1\">\n\t<onTurnStarted>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\" radiusMin=\"1\" radiusMax=\"1\">\n\t\t\t\t<modifiers endure=\"1\">\n\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnitsEachTurn\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<notCargo/>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"IncandescentIcon\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTurnStarted>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\IncandescentIcon.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Independent": {
         "internalID": "Independent",
@@ -1557,7 +1557,7 @@
         "flavor": "Iok'la. Just saying the word makes your skin crawl. Damn freaks just said it was \u201ca word made flesh.\u201d And what an emphasis on flesh. It was green, leathery and wrapped itself around you to give you just a bit more\u2026 body. I hated picking one up. But every time I did, I was able to stay in the fight longer and longer.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/Iokla\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<hitpointsMax add=\"12\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\Iokla.png",
-        "branch": "Neutral"
+        "branch": "Voice"
     },
     "Judgement From Above": {
         "internalID": "JudgementFromAbove",
@@ -1589,7 +1589,7 @@
         "flavor": "When you arrive at the rendezvous point the Chieftess stands alone, arms crossed and with a grim look in her eyes. Why does she have no guards?\n\nYou say nothing as your troops haul Jezina forward. The Chieftess draws a curved knife, then gently drags it across Jezina's cheek. \u201cI could press harder,\u201d she whispers. \u201cDraw the smallest bit of blood, just like you used to.\u201d\n\nJezina is shaking. The Chieftess raises the blade\u2014and then throws it at your feet. \u201cYour payment,\u201d she says. \u201cNow go. This is a family matter.\u201d\n\nYou quickly return to your vehicle. You wonder if that sound you hear is the wind blowing over the wasteland\u2014or Jezina whimpering in terror.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/KnifeOfTheChieftess\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacks mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\KnifeOfTheChieftess.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Large": {
         "internalID": "Large",
@@ -1949,7 +1949,7 @@
         "flavor": "A wide-beam AI array, mounted on a prototype drone. Useless for combat, as it takes an hour to warm up. You set it up, point it where you want to go, and flip the safety off. Then cover your ears to its howl and follow. It finds impossibly perfect way through the most tangled jungle, plant or urban, paths you can never find again.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/Pathcutter\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"3\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n\t<onTraitRemoved>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<movement add=\"-3\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTraitRemoved>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\Pathcutter.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Penance": {
         "internalID": "Penance",
@@ -1981,7 +1981,7 @@
         "flavor": "These devices starting appearing out of nowhere in storage rooms and gunner kits. I volunteered to be the lab rat and find out what it was. I activated one and felt what seemed like electricity flowing through my veins. I shot faster and hit harder than anyone in my unit\u2014but I also had this constant sense of deja vu. Like I'd lived all this before. Like I'd live it all\u2026 again?",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/PhaseFontead\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\PhaseFontead.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Phase Generator": {
         "internalID": "PhaseGeneratorUnit",
@@ -1997,7 +1997,7 @@
         "flavor": "The stone is jagged, with wide facets, and feels pleasantly cold in your hand. Underneath its dark surface, something that resembles the alien algae blooms in slow, hypnotic patterns.\n\nAs you study it, you hear a whispering voice that turns into a thousand screams. Power, they promise, power for blood. You need power. But, thinking of the bandit leader, you decide it\u2019s too risky to use yourself\u2014but that\u2019s why you have lieutenants.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/PhilosophersStone\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<experienceGainRate mul=\"0.5\"/>\n\t\t\t\t<moraleMax add=\"-2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\PhilosophersStone.png",
-        "branch": "Neutral"
+        "branch": "Voice"
     },
     "Pilgrim of the Voice": {
         "internalID": "PilgrimOfTheVoice",
@@ -2197,7 +2197,7 @@
         "flavor": "Armor penetrating rounds ain\u2019t cheap. But plenty of defenses are weak if you pound them with repeating fire or trigger any reactive armor. A simple device that sprayed tracer rounds before a main attack just lets you punchthrough a bit easier.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/ReactiveTrigger\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\ReactiveTrigger.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Recession": {
         "internalID": "Recession",
@@ -2301,7 +2301,7 @@
         "flavor": "Once, long ago, ZEPHON lent one of its creations to a band of humans close to death. Those survivors repaid its kindness by stealing the unit's access codes and trying to kill their savior. It retaliated\u2014viciously. Now the only memory of those idiots is a hard drive carrying the codes, bought and sold on black markets with utmost secrecy. If ZEPHON learned where that drive was\u2014it would stop at nothing to destroy it.",
         "modifiers": "<trait category=\"Debuff\" icon=\"Items/SchismOfRegimina\" visibleOnUnit=\"1\">\n\t<onTraitAdded>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<changePlayer changeOwner=\"0\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTraitAdded>\n\t<onTraitRemoved>\n\t\t<unit>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"WhenDurationRunsOut\">\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<changePlayerToOwner/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</unit>\n\t</onTraitRemoved>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\SchismOfRegimina.png",
-        "branch": "Neutral"
+        "branch": "Cyber"
     },
     "Scientist Strike": {
         "internalID": "ScientistStrike",
@@ -2437,7 +2437,7 @@
         "flavor": "The fog of war can get inside your head. If you don't know what's right in front of your face, you start to imagine all kinds of monsters waiting for you in the dark. Drones could help with that. Sometimes just seeing a little further helped our grunts keep their shit together.",
         "modifiers": "<trait category=\"Buff\" icon=\"Items/SpotterDrone\" visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<sight add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\SpotterDrone.png",
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Stealing Reavers": {
         "internalID": "StealingReavers",

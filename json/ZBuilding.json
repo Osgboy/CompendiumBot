@@ -1,0 +1,811 @@
+{
+    "Acrin Construction Yard": {
+        "internalID": "AcrinConstruction",
+        "branch": "Acrin",
+        "description": "Acquires tiles, clears tiles and constructs buildings as well as generates minerals and influence",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "8",
+            "minerals": "2",
+            "influence": "2"
+        },
+        "traits": {},
+        "actions": {
+            "Acquire Tile": null,
+            "Clear Tile": null,
+            "Construct Acrin Midnight Chorus": null,
+            "Construct Greenhouse Farm": null,
+            "Construct Mineral Extractor": null,
+            "Construct Power Plant": null,
+            "Construct Fermentation Vat": null,
+            "Construct Administration Complex": null,
+            "Construct Research Laboratory": null,
+            "Construct Habitation Block": null,
+            "Construct Holo Theater": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Construction.png"
+    },
+    "Acrin Midnight Chorus": {
+        "internalID": "AcrinInfantry",
+        "branch": "Acrin",
+        "description": "Produces Acrin units as well as increases loyalty and generates algae",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "loyalty": "2",
+            "algae": "1"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Abkluths": null,
+            "Produce Acrin Remnants": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\VoiceInfantry.png"
+    },
+    "Fermentation Vat": {
+        "internalID": "Algae",
+        "branch": "Voice",
+        "description": "Generates algae",
+        "flavor": "Have you ever smelled a mycoprotein vat? It's worse than a barracks toilet on shellfish day. And that's just for making edible sludge. The stuff that's bred in the FermVats\u2026 it\u2019ll send you on a trip that nobody comes back from. We called it algae, but that's just a convenient word for something that doesn't share even a fundamental biology with us. And the Voice cult *eat* it.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "algae": "3"
+        },
+        "traits": {
+            "Blessed Infestation": "AlgaeUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Algae.png"
+    },
+    "Antimatter Plant": {
+        "internalID": "Antimatter",
+        "branch": "Neutral",
+        "description": "Converts energy into antimatter",
+        "flavor": "A great scientist explained this to me once\u2014we generate antiprotons and positrons then fire them into a decelerator to make antihydrogen. We stabilize large quantities of this in synchrotrons, for use in\u2014well, whatever you need insanely dangerous antimatter for.",
+        "resourceCosts": {
+            "energyUpkeep": "4",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "antimatter": "2"
+        },
+        "traits": {
+            "Safety Disjunction": "AntimatterUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Antimatter.png"
+    },
+    "Cryo Fabricator": {
+        "internalID": "Chips",
+        "branch": "Cyber",
+        "description": "Generates chips",
+        "flavor": "It might have been a Chinese Room, whose motivations and thoughts are fundamentally obscure to us, but the ZEPHON AI definitely knew itself and what makes it work best. We built a Fab that could mimic ZEPHON-grade hardware. If we wanted to survive, we needed to steal from the best.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "chips": "3"
+        },
+        "traits": {
+            "Enmeshed Savant": "ChipsUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Chips.png"
+    },
+    "Construction Yard": {
+        "internalID": "Construction",
+        "branch": "Neutral",
+        "description": "Acquires tiles, clears tiles, produces Engineers and constructs buildings as well as generates minerals and influence",
+        "flavor": "We built things, at first, how we'd always done. With sweat and vigor. In the construction yard, there was nothing fancy--diggers, trucks, cranes, geopolymer concretes, girders. But, even with that primitive tech, we could build anything.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "influence": "2"
+        },
+        "traits": {
+            "Industrial Density": "ConstructionUpgrade",
+            "Labor Union": "HumanVehiclesUpgrade"
+        },
+        "actions": {
+            "Acquire Tile": null,
+            "Clear Tile": null,
+            "Construct Bleed": "BleedCultivation",
+            "Produce Engineers": "Engineer",
+            "Construct Construction Yard": "Construction",
+            "Construct Barracks": "HumanInfantry",
+            "Construct Automated Factory": "HumanVehicles",
+            "Construct Assembly Hangar": "HumanAircraft",
+            "Construct Orbital Uplink": "HumanOperations",
+            "Construct Midnight Chorus": "VoiceInfantry",
+            "Construct Canticle of Dusk": "VoiceVehicles",
+            "Construct Paean to the Dawn": "VoiceAircraft",
+            "Construct Masked Hymnal": "VoiceOperations",
+            "Construct Synthetic Printer": "CyberInfantry",
+            "Construct Antigrav Assembler": "CyberVehicles",
+            "Construct Sky Fortress": "CyberAircraft",
+            "Construct Network Splitter": "CyberOperations",
+            "Construct Greenhouse Farm": null,
+            "Construct Mineral Extractor": null,
+            "Construct Transuranium Stabilizer": "Transuranium",
+            "Construct Power Plant": null,
+            "Construct Antimatter Plant": "Antimatter",
+            "Construct Fermentation Vat": "Algae",
+            "Construct Sealed Hermitage": "DimensionalEchoes",
+            "Construct Cryo Fabricator": "Chips",
+            "Construct Quantum Manipulator": "SingularityCores",
+            "Construct Administration Complex": "Influence",
+            "Construct Research Laboratory": "Research",
+            "Construct Habitation Block": "PopulationLimit",
+            "Construct Holo Theater": "Loyalty"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Construction.png"
+    },
+    "Sky Fortress": {
+        "internalID": "CyberAircraft",
+        "branch": "Cyber",
+        "description": "Produces Cyber aircraft, increases housing and loyalty as well as generates chips\nInitially produces  Ophanim Carrier\n    <style color='GUI/Gray'/>Large mechanical flyer equipped to deploy numerous drones",
+        "flavor": "At first glance, none of these machines should have been able to fly. Where were the wings, the blades, the engines, the control surfaces? Our techs told us the secret was \u201ca small ratio of antigrav to mass.\u201d I took their word for it\u2014better than just counting on faith that you wouldn\u2019t fall out of the sky.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "populationLimit": "1",
+            "loyalty": "1",
+            "chips": "1"
+        },
+        "traits": {
+            "Babellian Beacon": "CyberAircraftUpgrade"
+        },
+        "actions": {
+            "Produce Ophanim Carrier": null,
+            "Produce Cherubim Titan": "CherubimTitan"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\CyberAircraft.png"
+    },
+    "Synthetic Printer": {
+        "internalID": "CyberInfantry",
+        "branch": "Cyber",
+        "description": "Produces Cyber infantry as well as generates minerals and chips\nInitially produces  Ishim Enforcers\n    <style color='GUI/Gray'/>Bio-mech infantry that alternates between high-power and low-power attacks while healing their wounds",
+        "flavor": "Printing a soldier? The process seemed like nonsense. On the first day these factories went online, I watched them work and it was\u2026 out of this world. The printing tech could patch up organics and manufacture synthetics without missing a beat. First we used these facilities to improve the human body\u2014eventually, we started printing them from scratch.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "chips": "1"
+        },
+        "traits": {
+            "Part Distribution": "HeartlessArtificerAffinityUpgrade"
+        },
+        "actions": {
+            "Produce Ishim Enforcers": null,
+            "Produce Malakim Destroyers": "MalakimDestroyer",
+            "Produce Aranean Stalkers": "AraneanStalker",
+            "Produce Kriteria Annihilators": "KriteriaAnnihilator",
+            "Produce Elohim Maelstrom": "ElohimMaelstrom"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\CyberInfantry.png"
+    },
+    "Network Splitter": {
+        "internalID": "CyberOperations",
+        "branch": "Cyber",
+        "description": "Produces Cyber operations as well as generates influence and chips\nInitially produces  Interference Protocols\n    <style color='GUI/Gray'/>Temporarily reduces accuracy of target enemy unit",
+        "flavor": "Working in ZEPHON's shadow? It was an ambitious idea. The AI had already built a whole global network, and we could use a fraction of it for sabotage and cyber warfare. It was one hell of a risk. If ZEPHON had noticed us, we might have been wiped out. But maybe\u2026 it did notice us. Maybe it was studying us.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "influence": "1",
+            "chips": "0.5"
+        },
+        "traits": {
+            "Insight Integration": "CyberOperationsUpgrade"
+        },
+        "actions": {
+            "Interference Protocols": null,
+            "Antiparticle Purge": "AntiparticlePurge",
+            "Black Hole": "BlackHole"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\CyberOperations.png"
+    },
+    "Antigrav Assembler": {
+        "internalID": "CyberVehicles",
+        "branch": "Cyber",
+        "description": "Produces Cyber vehicles as well as generates research and chips\nInitially produces  Exousia Marauder\n    <style color='GUI/Gray'/>Large mechanical hover transport from which units can disembark further",
+        "flavor": "I thought antigravity would just be a logistical innovation. Sure, keeping machines flying is tough, but now you didn't have to worry that a pothole would take out your troop transport. Yet those machines were only the beginning. Antigravity wasn't just a scientific parlor trick. It was a secret to new kinds of life.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "research": "2",
+            "chips": "1"
+        },
+        "traits": {
+            "Subatomic Displacement": "CyberVehiclesUpgrade"
+        },
+        "actions": {
+            "Produce Exousia Marauder": null,
+            "Produce Chayot Exterminator": "ChayotExterminator",
+            "Produce Hashmallim Host": "HashmallimHost",
+            "Produce Akavish Provost": "AkavishProvost",
+            "Produce Seraphim Archangel": "SeraphimArchangel"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\CyberVehicles.png"
+    },
+    "Sealed Hermitage": {
+        "internalID": "DimensionalEchoes",
+        "branch": "Voice",
+        "description": "Converts algae into dimensional echoes",
+        "flavor": "You put a maniple of Voice hermits into chambers, seal them up, and never open them again. You'd think they'd die in hours, from lack of air, but the believers say they're alive. And certainly the chambers start producing 'echoes'\u2014alternate futures and pasts, tangible, controllable. Just never, ever open the chambers.",
+        "resourceCosts": {
+            "algaeUpkeep": "2",
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "dimensionalEchoes": "1"
+        },
+        "traits": {
+            "Ichor of Uzhodai": "DimensionalEchoesUpgrade",
+            "Eremite Cells": "FurtiveTribunalAffinityUpgrade2"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\DimensionalEchoes.png"
+    },
+    "Power Plant": {
+        "internalID": "Energy",
+        "branch": "Neutral",
+        "description": "Generates energy",
+        "flavor": "The first time we got the lights back on, it was a miracle. We couldn\u2019t wage war with salvaged gasoline and shitty generators. Some civilians grumbled at the idea of burning coal and gas\u2014two elements that once nearly doomed our planet\u2014but our planet was already doomed. We were on the brink of taking it back. This wasn't the time for such dissent.",
+        "resourceCosts": {
+            "mineralsCost": "20",
+            "mineralsUpkeep": "1.0",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "energy": "6"
+        },
+        "traits": {
+            "Biomass Generator": "EnergyUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Energy.png"
+    },
+    "Greenhouse Farm": {
+        "internalID": "Food",
+        "branch": "Neutral",
+        "description": "Generates food",
+        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.\u201d",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "food": "6"
+        },
+        "traits": {
+            "Fishery Wing": "FoodUpgrade",
+            "Treasures of Life": "HonorableAristocratAffinityUpgrade2"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Food.png"
+    },
+    "Headquarters": {
+        "internalID": "Headquarters",
+        "branch": "Neutral",
+        "description": "Produces heroes and generates baseline resources",
+        "flavor": "You couldn\u2019t wage war without a secure home base. All of our defensive strategies came back to protecting this structure. If it fell, then all was lost.",
+        "resourceCosts": {
+            "productionCost": "348"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "populationLimit": "6",
+            "loyalty": "6",
+            "food": "6",
+            "minerals": "6",
+            "energy": "6",
+            "research": "6",
+            "influence": "6"
+        },
+        "traits": {
+            "Urban Sprawl": "CityTileAcquisitionRange",
+            "Perimeter Extension": "CityTileAcquisitionRange2",
+            "Headquarters": null,
+            "House on the Borderland": "HeadquartersAlgae",
+            "Cysilical Growths": "HeadquartersChips",
+            "Accelerated Gestation": "HeadquartersGrowth",
+            "Lifestyle Implants": "LifestyleImplants"
+        },
+        "actions": {
+            "Produce Commander": "Commander",
+            "Produce Valkyria": "Valkyrie",
+            "Produce Whisperer of Goldrauch": "WhispererOfGoldrauch",
+            "Produce Elect of Uzhodai": "ElectOfUzhodai",
+            "Produce Erelim Assassin": "ErelimAssassin",
+            "Produce Krypt Archai": "KryptArchai"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Headquarters.png"
+    },
+    "Assembly Hangar": {
+        "internalID": "HumanAircraft",
+        "branch": "Human",
+        "description": "Produces Human aircraft as well as generates minerals and influence\nInitially produces  TH-3 Corsair\n    <style color='GUI/Gray'/>Large flying mechanical transport skilled in evasive maneuvers",
+        "flavor": "The weak point of every craft we sent up was the pilot. Pilots can pass out, succumb to G-Forces, bleed to death\u2026 and that\u2019s just to start. Producing quality aircraft meant designing around those weaknesses. We had to prioritize the people over the machinery when getting these in the air\u2026",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "influence": "2"
+        },
+        "traits": {
+            "Air Freightnet": "HumanAircraftUpgrade"
+        },
+        "actions": {
+            "Produce TH-3 Corsair": null,
+            "Produce Phoenix Interceptor": "PhoenixInterceptor",
+            "Produce Hades Bomber": "HadesBomber"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\HumanAircraft.png"
+    },
+    "Barracks": {
+        "internalID": "HumanInfantry",
+        "branch": "Human",
+        "description": "Produces Human infantry as well as increases housing and loyalty\nInitially produces  Militants\n    <style color='GUI/Gray'/>Basic infantry with faster fire rate at close range",
+        "flavor": "You never won any war without the grunts. Before you cracked open any advanced technology or gave into The Voice, you needed armed bodies primed for death. Great soldiers could come out of the infantry ranks\u2014but they had to survive first.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "populationLimit": "2",
+            "loyalty": "2"
+        },
+        "traits": {
+            "Itinerant Recruiters": "HumanInfantryUpgrade"
+        },
+        "actions": {
+            "Produce Militants": null,
+            "Produce Missile Teams": "MissileTeam",
+            "Produce Combat Medics": "CombatMedic",
+            "Produce Assault Troopers": "AssaultTrooper",
+            "Produce Praetorian": "Praetorian"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\HumanInfantry.png"
+    },
+    "Orbital Uplink": {
+        "internalID": "HumanOperations",
+        "branch": "Human",
+        "description": "Produces Human operations as well as generates research and influence\nInitially produces  Satellite Scan\n    <style color='GUI/Gray'/>Reveals tiles",
+        "flavor": "The ground part of this system was familiar enough\u2014a set of high-powered transmitters and dishes. But what it was communicating with wasn't\u2014the wreck of the human satellite network mingled with the destroyed alien fleet. The clever bit was using the former to manipulate the latter for benefit on the ground. It mostly worked.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "research": "1",
+            "influence": "1"
+        },
+        "traits": {
+            "Old Access Protocols": "HumanOperationsUpgrade"
+        },
+        "actions": {
+            "Satellite Scan": null,
+            "Logistics Experts": "LogisticsExperts",
+            "Tactical Nuclear Missile": "TacticalNuclearMissile",
+            "Experimental Drugs": "ExperimentalDrugs"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\HumanOperations.png"
+    },
+    "Automated Factory": {
+        "internalID": "HumanVehicles",
+        "branch": "Human",
+        "description": "Produces Human vehicles as well as generates minerals and research\nInitially produces  Outrider\n    <style color='GUI/Gray'/>Large mechanical transport with light equipment and excellent reconnaissance capabilities",
+        "flavor": "Another classic problem of warfare: whether you needed to haul weapons, supplies or people, you needed hardware that could make the journey. We started small, of course. In time we built transports and tanks that went far beyond the capacity of old world engineers.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "research": "2"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Outrider": null,
+            "Produce Cyclone": "Cyclone",
+            "Produce Crusader Battle Tank": "CrusaderBattleTank",
+            "Produce Vanquisher Siege Tank": "VanquisherSiegeTank",
+            "Produce Vulkan R-5": "VulkanR5",
+            "Produce Atlas Tank": "AtlasTank"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\HumanVehicles.png"
+    },
+    "Administration Complex": {
+        "internalID": "Influence",
+        "branch": "Neutral",
+        "description": "Generates influence",
+        "flavor": "Ugh. This place. The center of organization for our city. Yes, I appreciate that it demonstrated competence\u2014that it organized our society and economy, that it impressed our neighbors. But I just couldn't be near bureaucrats, with their triplicate forms and rubber stamps and cardboard suits. Give me a frontline battle over form 2B(II)i.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "influence": "6"
+        },
+        "traits": {
+            "River Port": "InfluenceUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Influence.png"
+    },
+    "Holo Theater": {
+        "internalID": "Loyalty",
+        "branch": "Neutral",
+        "description": "Increases loyalty",
+        "flavor": "An immersive simulation structure, able to give people a shared dream. The best of us used these to escape our hellish world. The worst of us\u2026 the foul-minded\u2026 they used it for brainwashing. I still don\u2019t know what became of some of those experiments. They may still be suffering to this day.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "loyalty": "6"
+        },
+        "traits": {},
+        "actions": {
+            "Performance Broadcasts": "LoyaltyUpgrade"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Loyalty.png"
+    },
+    "Mineral Extractor": {
+        "internalID": "Minerals",
+        "branch": "Neutral",
+        "description": "Generates minerals",
+        "flavor": "The top brass called it a 'mineral extractor', like we were selling it to ourselves, but we all knew it was just a mine. Yes, it had fancy machines; yes, it prospected, excavated and backfilled automatically. But it was a mine for all that and it was hard work.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "minerals": "6"
+        },
+        "traits": {
+            "Amigara Exploration": "MineralsUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Minerals.png"
+    },
+    "Habitation Block": {
+        "internalID": "PopulationLimit",
+        "branch": "Neutral",
+        "description": "Increases housing",
+        "flavor": "How many people do you think you could pack into an average home? So that they'd be happy living there, indefinitely? How close could everyone be? What suffices for personal space? The architect who sketched the hab-bloc was a devilish genius. People sleep and live cheek-by-jowl\u2014but it works.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "populationLimit": "6"
+        },
+        "traits": {
+            "Collective Conduit": "PopulationLimitUpgrade",
+            "Perpendicular Trancing": "PopulationLimitUpgrade2"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\PopulationLimit.png"
+    },
+    "Reaver Construction Yard": {
+        "internalID": "ReaverConstruction",
+        "branch": "Reaver",
+        "description": "Acquires tiles, clears tiles and constructs buildings as well as generates minerals and influence",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "influence": "2"
+        },
+        "traits": {},
+        "actions": {
+            "Acquire Tile": null,
+            "Clear Tile": null,
+            "Construct Reaver Barracks": null,
+            "Construct Greenhouse Farm": null,
+            "Construct Mineral Extractor": null,
+            "Construct Power Plant": null,
+            "Construct Administration Complex": null,
+            "Construct Research Laboratory": null,
+            "Construct Habitation Block": null,
+            "Construct Holo Theater": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Construction.png"
+    },
+    "Reaver Barracks": {
+        "internalID": "ReaverInfantry",
+        "branch": "Reaver",
+        "description": "Produces Reaver units as well as increases housing and loyalty",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "populationLimit": "2",
+            "loyalty": "2"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Reavers": null,
+            "Produce Busters": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\HumanInfantry.png"
+    },
+    "Research Laboratory": {
+        "internalID": "Research",
+        "branch": "Neutral",
+        "description": "Generates research",
+        "flavor": "Techs, researchers, scientists\u2014they all holed up here. When I was younger\u2014stupider\u2014I thought this was where the soft hid from the harshness of war. That\u2019s what they wanted us to think, of course. Some of the most monstrous minds found their place here. Why pull the trigger\u2026when you could make the gun?",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "research": "6"
+        },
+        "traits": {
+            "Exobiology Station": "ResearchUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Research.png"
+    },
+    "Quantum Manipulator": {
+        "internalID": "SingularityCores",
+        "branch": "Cyber",
+        "description": "Converts chips into singularity cores",
+        "flavor": "Cracking the secrets of quantum physics? Easy. Putting that knowledge to work on the battlefield? Astronomically expensive and nearly impossible. We needed a special facility that could\u2026 what was it? \u201cExtract quantum-tier processing power out of Chips?\u201d It made my head hurt to try and process the math that made this place tick.",
+        "resourceCosts": {
+            "chipsUpkeep": "2",
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "singularityCores": "1"
+        },
+        "traits": {
+            "Quantum Economics": "SingularityCoresUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\SingularityCores.png"
+    },
+    "Transuranium Stabilizer": {
+        "internalID": "Transuranium",
+        "branch": "Neutral",
+        "description": "Converts minerals into transuranium",
+        "flavor": "Now, this, I won't pretend to understand. I know the transuranic elements are unstable. I know that in that instability, there's huge amounts of latent energy. I don't know how the machines worked that stopped it escaping\u2014that made those elements into something dense and unearthly strong. I don't know if there's anyone alive who understands, to be fair.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "mineralsUpkeep": "4",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "transuranium": "2"
+        },
+        "traits": {
+            "Arrayed Accelerators": "TransuraniumUpgrade"
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Buildings\\Transuranium.png"
+    },
+    "Paean to the Dawn": {
+        "internalID": "VoiceAircraft",
+        "branch": "Voice",
+        "description": "Produces Voice flyers as well as generates research and algae\nInitially produces  Iok Swarm\n    <style color='GUI/Gray'/>Biological flyers that vomit acid and devour nearby units to heal themselves",
+        "flavor": "I spoke to an ancient Acrin once\u2014he claimed to be the last of his race's pre-Voice anchorites\u2014and he told me that the Voice is more of a song, cycling, that sings of beginnings and endings, that time is a loop, singing the universe into being. I told him I hoped we were at the Dawn, about to fly into a new world, and he smiled, sadly.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "research": "2",
+            "algae": "1"
+        },
+        "traits": {
+            "Antiphon at Daybreak": "VoiceAircraftUpgrade"
+        },
+        "actions": {
+            "Produce Iok Swarm": null,
+            "Produce Reaming Crodeus": "ReamingCrodeus"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\VoiceAircraft.png"
+    },
+    "Midnight Chorus": {
+        "internalID": "VoiceInfantry",
+        "branch": "Voice",
+        "description": "Produces Voice infantry as well as increases loyalty and generates algae\nInitially produces  Abkluth Dragoons\n    <style color='GUI/Gray'/>Biological melee bleedwalkers that can take control of enemy Abkluth",
+        "flavor": "My scouts found a Chorus building once. It was like a natural arena, an amplifier. They talked to me as they approached, as they fell apart under its song, as they walked themselves into its portal. I listened to the song and I wanted to go with them too, but I was miles away. I never saw them again, but the Voice had new soldiers the next day.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "loyalty": "2",
+            "algae": "1"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Abkluth Dragoons": null,
+            "Produce Aegyllan Worms": "AegyllanWorm",
+            "Produce Cr'la Disciple": "CrlaDisciple",
+            "Produce Phenaris Hunters": "PhenarisHunter",
+            "Produce Phenaris Epicurean": "PhenarisEpicurean",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\VoiceInfantry.png"
+    },
+    "Masked Hymnal": {
+        "internalID": "VoiceOperations",
+        "branch": "Voice",
+        "description": "Produces Voice operations as well as generates influence and algae\nInitially produces  Hymn of Decay\n    <style color='GUI/Gray'/>Temporarily deals damage on target tile",
+        "flavor": "Enlightenment is a worthy goal, say the Voice's devotees, but not the only goal. Sometimes the Voice is a goal in and of itself. I don't pretend to understand their abstruse religion, but they have a direct contact with their... their gods. And the gods will talk back, even answer prayers.",
+        "resourceCosts": {
+            "energyUpkeep": "1.0",
+            "mineralsCost": "20",
+            "productionCost": "24.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "influence": "1",
+            "algae": "0.5"
+        },
+        "traits": {},
+        "actions": {
+            "Hymn of Decay": null,
+            "Apotheosis": "Apotheosis",
+            "Atramentous Aura": "AtramentousAura",
+            "Choral Celerity": "VoiceOperationsUpgrade"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\VoiceOperations.png"
+    },
+    "Canticle of Dusk": {
+        "internalID": "VoiceVehicles",
+        "branch": "Voice",
+        "description": "Produces Voice creatures as well as generates food and algae\nInitially produces  Dark Vassael\n    <style color='GUI/Gray'/>Large biological creature with a horrifying attack that reduces enemy morale",
+        "flavor": "Not all alterations of the Voice achieve enlightenment, I'm told, especially those subacrin in some way. Nor do they die. Those failed drift out of the passion, healed, but changed, often bestial. I wonder if this is where the Acrin's weird creatures come from\u2014failed zealots\u2014or whether they are just creatures native to their home, who joined them in the journey across the stars.",
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "food": "2",
+            "algae": "1"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Dark Vassael": null,
+            "Produce Surthodai's Embrace": "SurthodaisEmbrace",
+            "Produce Fallen Orolos": "FallenOrolos",
+            "Produce Plangent Orolos": "PlangentOrolos",
+            "Produce Vorodai's Leviathan": "VorodaisLeviathan",
+            "In Death, Life": "VoiceVehiclesUpgrade"
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\VoiceVehicles.png"
+    },
+    "ZEPHON Construction Yard": {
+        "internalID": "ZephonConstruction",
+        "branch": "Zephon",
+        "description": "Acquires tiles, clears tiles and constructs buildings as well as generates minerals and influence",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "8",
+            "minerals": "2",
+            "influence": "2"
+        },
+        "traits": {},
+        "actions": {
+            "Acquire Tile": null,
+            "Clear Tile": null,
+            "Construct ZEPHON Synthetic Printer": null,
+            "Construct Mineral Extractor": null,
+            "Construct Power Plant": null,
+            "Construct Cryo Fabricator": null,
+            "Construct Administration Complex": null,
+            "Construct Research Laboratory": null,
+            "Construct Habitation Block": null,
+            "Construct Holo Theater": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\Construction.png"
+    },
+    "ZEPHON Synthetic Printer": {
+        "internalID": "ZephonInfantry",
+        "branch": "Zephon",
+        "description": "Produces ZEPHON units as well as generates minerals and chips",
+        "flavor": null,
+        "resourceCosts": {
+            "energyUpkeep": "2.0",
+            "mineralsCost": "40",
+            "productionCost": "36.0"
+        },
+        "resourceOutput": {
+            "production": "6",
+            "minerals": "2",
+            "chips": "1"
+        },
+        "traits": {},
+        "actions": {
+            "Produce Sentries": null,
+            "Produce Hammerheads": null,
+            "Produce Warden": null
+        },
+        "iconPath": "Zephon\\Icons\\Buildings\\CyberInfantry.png"
+    }
+}
