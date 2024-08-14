@@ -50,8 +50,8 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
-        env:
-          INPUT_PATH: wiki/_site
+        with:
+          path: wiki/_site/
 
   # Deployment job
   deploy:
