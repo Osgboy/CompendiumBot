@@ -54,6 +54,7 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
                         internalPath = pathJoin(obj.OBJ_CLASS, obj.internalID)
                 kwargs['iconPath'] = pathJoin(
                     obj.GAME, 'Icons', normpath(internalPath) + '.png')
+                kwargs['name'] = name
                 objDict[name] = kwargs
         except Exception:
             print(f"{objCls.__name__} {entry.get('name')} failed to convert.")
@@ -363,6 +364,7 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                                 action.OBJ_CLASS, action.internalID)
                     kwargs['iconPath'] = pathJoin(
                         action.GAME, 'Icons', normpath(internalPath) + '.png')
+                    kwargs['name'] = actionName
                     objDict[actionName] = kwargs
         except Exception:
             print(

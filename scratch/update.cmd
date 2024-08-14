@@ -1,12 +1,12 @@
-python c:\Users\Oliver\Downloads\GladiusBot\scratch\update.py
+python C:\Projects\GladiusBot\scratch\update.py
 
-cd C:\Users\Oliver\Downloads\GladiusBot\scratch\ddstronk\src\DDStronk
-dotnet run Program.cs C:\Users\Oliver\Downloads\GladiusBot\Zephon\Icons
-dotnet run Program.cs C:\Users\Oliver\Downloads\GladiusBot\Gladius\Icons
-cd C:\Users\Oliver\Downloads\GladiusBot\Zephon\Icons
+cd C:\Projects\GladiusBot\scratch\ddstronk\src\DDStronk
+dotnet run Program.cs C:\Projects\GladiusBot\Zephon\Icons
+dotnet run Program.cs C:\Projects\GladiusBot\Gladius\Icons
+cd C:\Projects\GladiusBot\Zephon\Icons
 del /S *.dds
-cd C:\Users\Oliver\Downloads\GladiusBot\Gladius\Icons
+cd C:\Projects\GladiusBot\Gladius\Icons
 del /S *.dds
 
-python C:\Users\Oliver\Downloads\GladiusBot\scratch\fixXMLfiles.py C:\Users\Oliver\Downloads\GladiusBot\Zephon\English
-python C:\Users\Oliver\Downloads\GladiusBot\scratch\fixXMLfiles.py C:\Users\Oliver\Downloads\GladiusBot\Gladius\English
+python C:\Projects\GladiusBot\scratch\fixXMLfiles.py C:\Projects\GladiusBot\Zephon\English
+python C:\Projects\GladiusBot\scratch\fixXMLfiles.py C:\Projects\GladiusBot\Gladius\English

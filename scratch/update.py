@@ -8,13 +8,13 @@ gladius_world_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\World
 gladius_english_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\Core\Languages\English'
 gladius_icons_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\Video\Textures\Icons'
 
-zephon_world_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Zephon'
-zephon_english_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Zephon\English'
-zephon_icons_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Zephon\Icons'
+zephon_world_dst = r'C:\Projects\GladiusBot\Zephon'
+zephon_english_dst = r'C:\Projects\GladiusBot\Zephon\English'
+zephon_icons_dst = r'C:\Projects\GladiusBot\Zephon\Icons'
 
-gladius_world_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Gladius'
-gladius_english_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Gladius\English'
-gladius_icons_dst = r'C:\Users\Oliver\Downloads\GladiusBot\Gladius\Icons'
+gladius_world_dst = r'C:\Projects\GladiusBot\Gladius'
+gladius_english_dst = r'C:\Projects\GladiusBot\Gladius\English'
+gladius_icons_dst = r'C:\Projects\GladiusBot\Gladius\Icons'
 
 src_dirs = (
     zephon_world_src, zephon_english_src, zephon_icons_src,
