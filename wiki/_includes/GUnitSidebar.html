@@ -5,7 +5,7 @@
             <ul>
             {% assign factionUnits = site.data.GUnit | where:"faction",faction.first %}
             {% for unit in factionUnits %}
-                <li><a href="{{ site.baseurl }}/Gladius/Units/{{ faction.last.internalID }}/{{ unit.internalID }}">{{ unit.name }}</a></li>
+                <li><a href="{{ site.baseurl }}/Gladius/Units/{{ faction.last.internalID }}/{{ unit.internalID | downcase }}">{{ unit.name }}</a></li>
             {% endfor %}
             </ul>
         {% endfor %}
