@@ -1,22 +1,39 @@
+* {
+    color: rgb(229, 229, 229);
+}
+
 body {
     margin: 0;
+    background-image: 
+        // linear-gradient(
+        //     rgba(1, 1, 1, 0.45), 
+        //     rgba(1, 1, 1, 0.45)
+        // ),
+        url(/CompendiumBot/assets/images/GladiusBackground.png);;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#main {
+    background-color: rgba(1, 1, 1, 0.8);
 }
 
 header {
     position: sticky;
     top: 0;
-    background-color: #DDD;
+    background-color: rgb(1, 1, 1);
     padding: 15px;
 }
 
 h1 {
     text-align: center;
+    margin: 0;
 }
 
 #content {
     padding: 15px
 }
 
-#main {
+#content {
     text-align: center;
 }
