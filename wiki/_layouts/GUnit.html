@@ -1,14 +1,55 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.internalID }}</title>
-  </head>
-  <body>
-    {% include GladiusNav.html %}
-    <ul>
-        <li>internalID: {{ page.internalID }}</li>
-        <li>faction: {{ page.faction }}</li>
-    </ul>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }} - Gladius DB</title>
+        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/sidebar.css">
+    </head>
+    <body>
+        {% include GUnitSidebar.html %}
+        <div id="main">
+            <header>
+                {% include GladiusNav.html %}
+                <h1>{{ page.title }}</h1>
+            </header>
+            <div id="content">
+                {% assign faction = site.data.GFaction | where:"name",page.faction %}
+                <img src="{{ site.baseurl }}/assets/images/Gladius/Units/{{ faction.last.internalID }}/{{ page.internalID }}.png" alt="{{ page.title }} icon">
+                </br>
+                <em>{{ page.description }}</em>
+
+                <p>{{ page.flavor }}</p>
+
+                <h2>Attributes</h2>
+                {% for stat in page.combatStats %}
+                    {{ stat.first }}: {{ stat.last }},
+                {% endfor %}
+
+                <h2>Weapons</h2>
+                {% for weapon in page.weapons %}
+                    {{ weapon.first }} x {{ weapon.last.count }},
+                {% endfor %}
+
+                <h2>Traits</h2>
+                {% for trait in page.traits %}
+                    {{ trait.first }},
+                {% endfor %}
+
+                <h2>Actions</h2>
+                {% for action in page.actions %}
+                    {{ action.first }},
+                {% endfor %}
+
+                <h2>Cost</h2>
+                {% for action in page.actions %}
+                    
+                {% endfor %}
+
+                <h2>Upkeep</h2>
+                {% for action in page.actions %}
+                    
+                {% endfor %}
+            </div>
+        </div>
+    </body>
 </html>

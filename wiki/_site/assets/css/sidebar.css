@@ -1,0 +1,16 @@
+body { margin: 0; }
+
+header { position: sticky; top: 0; background-color: #DDD; padding: 15px; }
+
+h1 { text-align: center; }
+
+#content { padding: 15px; }
+
+#main { text-align: center; }
+
+#sidebar { position: fixed; width: 250px; height: 100%; background-color: #DDD; top: 0; left: 0; display: flex; flex-direction: column; overflow: auto; }
+
+.scrollbox { padding: 10px; }
+.scrollbox h2 { position: sticky; top: 0; background-color: #DDD; }
+
+#main { position: relative; margin-left: 250px; }

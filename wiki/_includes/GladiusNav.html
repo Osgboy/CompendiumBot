@@ -1,4 +1,10 @@
 <nav>
+    {% for item in site.data.navigation %} 
+        <a href="{{ item.link | relative_url }}">
+            {{ item.name }}
+        </a>
+    {% endfor %}
+    </br>
     {% for item in site.data.GladiusNav %} 
         <a href="{{ item.link | relative_url }}">
             {{ item.name }}

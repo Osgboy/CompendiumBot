@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/wiki" # the subpath of your site, e.g. /blog
+baseurl: "/CompendiumBot" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
@@ -43,8 +43,86 @@ page_gen:
     template: 'GUnit'
     name: 'internalID'
     title: 'name'
-    dir: 'Gladius/Units'
-    debug: true
+    dir: 'Gladius/Units/AdeptusMechanicus'
+    filter_condition: "record['faction'] == 'Adeptus Mechanicus'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/AstraMilitarum'
+    filter_condition: "record['faction'] == 'Astra Militarum'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/ChaosSpaceMarines'
+    filter_condition: "record['faction'] == 'ChaosSpaceMarines'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Drukhari'
+    filter_condition: "record['faction'] == 'Drukhari'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Eldar'
+    filter_condition: "record['faction'] == 'Eldar'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Necrons'
+    filter_condition: "record['faction'] == 'Necrons'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Neutral'
+    filter_condition: "record['faction'] == 'Neutral'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Orks'
+    filter_condition: "record['faction'] == 'Orks'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/SistersOfBattle'
+    filter_condition: "record['faction'] == 'SistersOfBattle'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/SpaceMarines'
+    filter_condition: "record['faction'] == 'SpaceMarines'"
+    
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Tau'
+    filter_condition: "record['faction'] == 'Tau'"
+
+  - data: 'GUnit'
+    template: 'GUnit'
+    name: 'internalID'
+    title: 'name'
+    dir: 'Gladius/Units/Tyranids'
+    filter_condition: "record['faction'] == 'Tyranids'"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
