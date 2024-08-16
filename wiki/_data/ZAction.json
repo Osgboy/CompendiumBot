@@ -238,4 +238,1661 @@
         },
         "internalID": "NomadicLife",
         "description": "Consumes the unit to found a new city on target tile\nCities can only be found where there are no other cities within a %1% tile radius\nEach city after the first decreases loyalty in all cities by %2%",
-        "flavor": "Reavers know how to make the wilderness their own. They're skilled at taking the goods they pillage and turning them into supplies for a camp. Be careful if they set up one near your territory\u2014it won't be long before a swarm of them comes crawling
+        "flavor": "Reavers know how to make the wilderness their own. They're skilled at taking the goods they pillage and turning them into supplies for a camp. Be careful if they set up one near your territory\u2014it won't be long before a swarm of them comes crawling over the walls.",
+        "modifiers": [],
+        "rawXML": "<foundCity name=\"NomadicLife\" costScalesWithCities=\"1\" icon=\"Actions/FoundCity\">\n\t\t\t<conditions>\n\t\t\t\t<player match=\"Any\">\n\t\t\t\t\t<noTrait type=\"Trapped\"/>\n\t\t\t\t\t<cityCount equal=\"0\"/>\n\t\t\t\t</player>\n\t\t\t</conditions>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</foundCity>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
+        "name": "Nomadic Life",
+        "branch": "Reaver"
+    },
+    "Hijack": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Hijack",
+        "description": null,
+        "flavor": "After we began deploying mechs, tanks, and other heavy armor, I thought the Chieftess would keep her distance. I was an idiot. The Reavers followed her for a reason. She knew a good pillaging opportunity when she saw one, and knew how surprised we'd be to see her Reavers bearing down on us with our own machines.",
+        "modifiers": [
+            "Hijack",
+            "- min 25% Hitpoints"
+        ],
+        "rawXML": "<unitAction name=\"Hijack\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyLargeMechanicalUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Hijack\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Hijack.png",
+        "name": "Hijack",
+        "branch": "Reaver"
+    },
+    "Combat Drones": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": "Combat Drones",
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "DeployCombatDrone0",
+        "description": null,
+        "flavor": "Did you know a combat drone could be used for psychological warfare? I learned the hard way. You would get cocky knocking them down by the dozen. It felt like we were tearing through hordes of machines. Then you\u2019d hear the sound of your rifle clicking empty, and watch the drones fall back. That\u2019s when the panic set in.",
+        "modifiers": [
+            "Spawn Combat Drones (Level 1)",
+            "Summon (3 turns)",
+            "- max 0 Food Upkeep",
+            "- max 0 Minerals Upkeep",
+            "- max 0 Transuranium Upkeep",
+            "- max 0 Energy Upkeep",
+            "- max 0 Antimatter Upkeep",
+            "- max 0 Algae Upkeep",
+            "- max 0 Dimensional Echoes Upkeep",
+            "- max 0 Chips Upkeep",
+            "- max 0 Singularity Cores Upkeep",
+            "- max 0 Influence Upkeep"
+        ],
+        "rawXML": "<unitCast name=\"DeployCombatDrone0\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/CombatDrone\" requiredActionPoints=\"0\" requiredUpgrade=\"CombatDrone\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"CombatDrone\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Units\\CombatDrone.png",
+        "name": "Combat Drones",
+        "branch": "Cyber"
+    },
+    "Cherubic Hallowing": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "CherubicHallowing",
+        "description": null,
+        "flavor": "The Cherubim had the power to expand their shielding to other units in the area. The sensation was\u2026 pleasant. Oddly pleasant. A great weapon of war wrapping you up in its embrace, offering protection, and sanctuary\u2026 while its guns pounded the enemy into mulch.",
+        "modifiers": [
+            "Cherubic Hallowing (1 turn)",
+            "- +17% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<unitCast name=\"CherubicHallowing\" cooldown=\"3\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"CherubicHallowing\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CherubicHallowing.png",
+        "name": "Cherubic Hallowing",
+        "branch": "Cyber"
+    },
+    "Antimatter Dilation": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "AntimatterDilation",
+        "description": null,
+        "flavor": "Children used to hold up magnifying glasses in the sunlight to burn their names into planks of wood. A Cherubim Titan could use Antimatter Dilation to be the sun and glass all at once, carving the very spirit of an empire into our enemies\u2019 bones. If there were any bones left.",
+        "modifiers": [
+            "Antimatter Dilation (1 turn)",
+            "- +1 Maximum Range",
+            "- +33% Damage"
+        ],
+        "rawXML": "<unitCast name=\"AntimatterDilation\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\" requiredUpgrade=\"AntimatterDilation\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"AntimatterDilation\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\AntimatterDilation.png",
+        "name": "Antimatter Dilation",
+        "branch": "Cyber"
+    },
+    "Paramedic": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Paramedic",
+        "description": null,
+        "flavor": "Stray bolt of plasma had taken a chunk of meat right out of my ass. I watched the Medic hustle to me under heavy fire, ready with a nanite injector. I told her that the agony of regenerating flesh wouldn\u2019t be worth it\u2014I\u2019d rather die. She fixed me up anyway. But her snickering told me everyone was going to hear how she literally saved my ass.",
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Paramedic\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedBiologicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Paramedic.png",
+        "name": "Paramedic",
+        "branch": "Human"
+    },
+    "First Aid Drone": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "FirstAidDrone",
+        "description": null,
+        "flavor": "Can't give a drone a doctorate but you can give it a few hundred CCs of morphine, a pack of bandages and just enough programming to know which one to use. Most of the time, of course\u2026",
+        "modifiers": [
+            "First Aid Drone",
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<unitAction name=\"FirstAidDrone\" passive=\"1\" requiredUpgrade=\"FirstAidDrone\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedBiologicalUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"FirstAidDrone\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\FirstAidDrone.png",
+        "name": "First Aid Drone",
+        "branch": "Human"
+    },
+    "Bionic Implant": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "BionicImplant",
+        "description": null,
+        "flavor": "Medic named Lucia once snuck up on me and shot one of these implants in my arm. Hurt like hell, nearly took a swing at her for it. \u201cToughen up you big baby,\u201d was all she said. \u201cThink of it as high-tech preventative care.\u201d When I kept grumbling she smiled and smacked the shoulder she'd just stabbed with a needle. \u201cDon't worry. I'll bill your insurance.\u201d",
+        "modifiers": [
+            "Bionic Implant",
+            "- +17% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<unitCast name=\"BionicImplant\" cooldown=\"3\" requiredUpgrade=\"BionicImplant\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t<noTrait type=\"BionicImplant\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedBiologicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"BionicImplant\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.75\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\BionicImplant.png",
+        "name": "Bionic Implant",
+        "branch": "Human"
+    },
+    "\u201cTake Cover!\u201d": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "TakeCover",
+        "description": null,
+        "flavor": "I dropped behind cover on so many different battlefields that I started to get a taste for different kinds of dirt. Fresh farm soil has a wetness to it. Desert sand can lure you in with the taste of salt. And land where the Voice bled through\u2026 it made you want to spit until your mouth was dry.",
+        "modifiers": [
+            "\u201cTake Cover!\u201d (1 turn)",
+            "- +10%...+30% Cover Damage Reduction"
+        ],
+        "rawXML": "<unitCast name=\"TakeCover\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedNonLargeUnitsInTheArea\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"TakeCover\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t \t\t\t\t<modifier>\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n \t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\TakeCover.png",
+        "name": "\u201cTake Cover!\u201d",
+        "branch": "Human"
+    },
+    "\u201cNever Surrender!\u201d": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "NeverSurrender",
+        "description": null,
+        "flavor": "A Commander\u2019s job is to keep troops on the battlefield\u2014to make sure they don\u2019t flee when fear takes over. Too many of us would have gladly surrendered if it meant we could live another day. But the right leader in the right place could make you willing to lay down your life for a better world.",
+        "modifiers": [
+            "- +2...+6 Morale"
+        ],
+        "rawXML": "<unitCast name=\"NeverSurrender\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedNonLargeUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\t\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"2\" addMax=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Broken\"/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Shaken\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\NeverSurrender.png",
+        "name": "\u201cNever Surrender!\u201d",
+        "branch": "Human"
+    },
+    "Aura of Discipline": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "AuraOfDiscipline",
+        "description": null,
+        "flavor": "Just the presence of a Commander on the battlefield could keep troops focused. We tried to capture the same effect with armored vehicles but it\u2026 never had the same impact. There was something personal about a leader\u2019s presence, something you can\u2019t replicate with machines.",
+        "modifiers": [
+            "Aura of Discipline",
+            "- +1...+3 Accuracy"
+        ],
+        "rawXML": "<unitAction name=\"AuraOfDiscipline\" passive=\"1\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedNonLargeUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"AuraOfDiscipline\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\AuraOfDiscipline.png",
+        "name": "Aura of Discipline",
+        "branch": "Human"
+    },
+    "Bombardment": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Bombardment",
+        "description": null,
+        "flavor": "Some things never changed with war. One was that if you wanted a reliable artillery strike, you needed a good spotter. We trusted our commanders to call the shots\u2026 not just because they could land the kill. They could also make sure our troops got out of the blast zone.",
+        "modifiers": [
+            "Bombardment",
+            "- attacks: 3.0",
+            "- armorPen: 6",
+            "- damage: 8.0",
+            "- accuracy: 6"
+        ],
+        "rawXML": "<unitCast name=\"Bombardment\" cooldown=\"5\" elite=\"1\" rank=\"-1\" rankMax=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Bombardment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t \t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Bombardment.png",
+        "name": "Bombardment",
+        "branch": "Human"
+    },
+    "Level Up": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "LevelUp",
+        "description": "Choose abilities to level up",
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<levelUp/>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\LevelUp.png",
+        "name": "Level Up",
+        "branch": "Neutral"
+    },
+    "Inevitable End": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "InevitableEnd",
+        "description": null,
+        "flavor": "A Cr'la worshiper was talking my ear off about how he could see \u201cthe threads of life\u201d that \u201cconnected every person to this mortal coil.\u201d I was being an ass, asked if he could cut those threads and save us a heap of trouble. He reached out, pulled at something floating over my head and I hit the ground, choking. \u201cI can,\u201d he said. \u201cOh, I can indeed.\u201d",
+        "modifiers": [
+            "Inevitable End (2 turns)",
+            "- +50% Damage Taken"
+        ],
+        "rawXML": "<unitCast name=\"InevitableEnd\" cooldown=\"3\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InevitableEnd\" duration=\"2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"InevitableEnd\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\InevitableEnd.png",
+        "name": "Inevitable End",
+        "branch": "Voice"
+    },
+    "Unholy Haste": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "UnholyHaste",
+        "description": null,
+        "flavor": "Cr'la wasn't keen on the idea of \u201crest.\u201d When its disciples commanded you to move, you MOVED. Like some other force took over your body and made you reach for your gun one more time, no matter how exhausted you were.",
+        "modifiers": [
+            "Unholy Haste (1 turn)",
+            "- +33% Attacks",
+            "- +2 Movement",
+            "- +2 Movement Max",
+            "- -2 Movement",
+            "- -2 Movement Max"
+        ],
+        "rawXML": "<unitCast name=\"UnholyHaste\" cooldown=\"3\" requiredUpgrade=\"UnholyHaste\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"UnholyHaste\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"UnholyHaste\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\UnholyHaste.png",
+        "name": "Unholy Haste",
+        "branch": "Voice"
+    },
+    "Profane Pilgrimage": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "TheDeepWays",
+        "description": "Teleports unit and adjacent units to target sighted tile",
+        "flavor": "Disciples of Cr'la were eager to lead those on the wretched roads that they mutilated themselves to walk. Their profane god knew how to compress a week-long journey into a matter of minutes. You felt every agonizing second while warping from point A to point B.",
+        "modifiers": [],
+        "rawXML": "<teleport name=\"TheDeepWays\" cooldown=\"5\" radius=\"1\" requiredUpgrade=\"TheDeepWays\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<dimensionalEchoesCost base=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</teleport>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\TheDeepWays.png",
+        "name": "Profane Pilgrimage",
+        "branch": "Voice"
+    },
+    "Create Shoch'itris Lair": {
+        "cooldown": "10",
+        "conditions": {
+            "requiredUpgrade": "Shoch'itris Lair",
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "CreateShochitrisLair",
+        "description": null,
+        "flavor": "You could never forget an encounter with a Shoch\u2019itris. Their bellies were pits of death. Their skin was covered in pus-filled blisters, and the deformities that crawled out of them left you with nightmares. The truly deranged sought out the slick, moist sensation that came with embracing their tendrils.",
+        "modifiers": [
+            "Spawn Shoch'itris Lair (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"CreateShochitrisLair\" cooldown=\"10\" icon=\"Units/ShochitrisLair\" requiredUpgrade=\"ShochitrisLair\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"ShochitrisLair\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Units\\ShochitrisLair.png",
+        "name": "Create Shoch'itris Lair",
+        "branch": "Voice"
+    },
+    "Dream Prison": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "DreamPrison",
+        "description": null,
+        "flavor": "30 Militants. Two Missile Teams. A Praetorian. That's how many I killed while the Dreameater took over my mind. I told Command I was brainwashed and had no memory of it but that was a lie. It fed me a vision of hunting deer in the woods. Downing them. Stalking them. Skinning them. Each one screaming for help as I plunged a knife in its ribs\u2026",
+        "modifiers": [
+            "Dream Prison"
+        ],
+        "rawXML": "<unitCast name=\"DreamPrison\" cooldown=\"3\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<morale less=\"4\"/>\n\t\t\t\t\t\t\t<moraleMax greater=\"0.0\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"DreamPrison\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DreamPrison\" removeOnSourceDeath=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeTrait type=\"Unleashed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeTrait type=\"Leashed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\DreamPrison.png",
+        "name": "Dream Prison",
+        "branch": "Voice"
+    },
+    "Unearthly Passage": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "UnearthlyPassage",
+        "description": "Teleports to target sighted tile",
+        "flavor": "The Voice cultists learned how to pierce the walls between worlds. You knew it was coming when a sour stink of rotting flesh came over you and the sky began to shimmer. A great claw would cut through the air itself. You had moments to run, and if you began to hear the hushed whispers of an Elect of Uzhodai you had seconds before it would flay you alive.",
+        "modifiers": [
+            "- +0...+2 Maximum Range"
+        ],
+        "rawXML": "<teleport name=\"UnearthlyPassage\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<rangeMax addMin=\"0\" addMax=\"2\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</teleport>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\UnearthlyPassage.png",
+        "name": "Unearthly Passage",
+        "branch": "Voice"
+    },
+    "Uzhodai's Zeal": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "UzhodaisZeal",
+        "description": null,
+        "flavor": "Best way to cut down an Elect of Uzhodai was to go at it one-on-one. Swarm it with troops and it only seemed to grow more violent, more resistant to our blows. The creature seemed to feed on the fear of gathering men, but if you faced it with courage then it would wilt under your blade.",
+        "modifiers": [
+            "Uzhodai's Zeal",
+            "- +2%...+6% Invulnerable Damage Reduction",
+            "- +4%...+12% Invulnerable Damage Reduction",
+            "- +6%...+18% Invulnerable Damage Reduction",
+            "- +8%...+24% Invulnerable Damage Reduction",
+            "- +10%...+30% Invulnerable Damage Reduction",
+            "- +12%...+36% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<unitAction name=\"UzhodaisZeal\" passive=\"1\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"UzhodaisZeal\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\UzhodaisZeal.png",
+        "name": "Uzhodai's Zeal",
+        "branch": "Voice"
+    },
+    "Endbringer's Reversal": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "EndbringersReversal",
+        "description": "Swaps positions with target unit",
+        "flavor": "I'd stolen scrolls that the Furtive Tribunal kept close and was minutes away from being caught by her soldiers. As the end came, I felt the pull of another world wash over me and I was sucked to a safe spot nearby. In the place I had stood was an Uzhodai worshiper, ready to slaughter the Tribunal's surprised troops.",
+        "modifiers": [],
+        "rawXML": "<teleport name=\"EndbringersReversal\" cooldown=\"5\" elite=\"1\" rank=\"-1\" rankMax=\"0\" swap=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"3\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</teleport>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\EndbringersReversal.png",
+        "name": "Endbringer's Reversal",
+        "branch": "Voice"
+    },
+    "Pandemonium": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Pandemonium",
+        "description": null,
+        "flavor": "Elohim made all kinds of sounds but I swear I heard them\u2026 purr with delight when a singularity core was near. You'd install one, and their spines arced and stretched as they sucked it into their system. A second later they'd fire a blast so far\u2026 jesus, you couldn't even hear the explosion. Just see the light shining in the distance. All you'd hear was that damn purring.",
+        "modifiers": [
+            "- +1 Singularity Cores Cost",
+            "- +100% Maximum Range"
+        ],
+        "rawXML": "<useWeapon name=\"Pandemonium\" weaponSlotName=\"ElysianBattery\" requiredUpgrade=\"Pandemonium\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<singularityCoresCost add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<rangeMax mul=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</useWeapon>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Pandemonium.png",
+        "name": "Pandemonium",
+        "branch": "Cyber"
+    },
+    "Found City": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "FoundCity",
+        "description": "Consumes the unit to found a new city on target tile\nCities can only be found where there are no other cities within a %1% tile radius\nEach city after the first decreases loyalty in all cities by %2%",
+        "flavor": "Long ago, our ancestors built cities over the course of generations. We didn\u2019t have that luxury. Engineers laid the foundation for massive urban spaces with pre-fabricated buildings and drones that could quickly rig up infrastructure. We could always build over them later\u2026 if the war ever came to an end.",
+        "modifiers": [],
+        "rawXML": "<foundCity costScalesWithCities=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<player match=\"Any\">\n\t\t\t\t\t<noTrait type=\"Trapped\"/>\n\t\t\t\t\t<cityCount equal=\"0\"/>\n\t\t\t\t</player>\n\t\t\t</conditions>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</foundCity>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
+        "name": "Found City",
+        "branch": "Neutral"
+    },
+    "Repair": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Repair",
+        "description": null,
+        "flavor": "Executing repairs took time to prepare and meant the technician had to stay close to the machine. If you wanted to make a fast friend, you kept anyone repairing your tech safe. They were doing the same for you, after all. I still can\u2019t believe there were soldiers who\u2019d sacrifice them like pawns.",
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Repair\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Repair.png",
+        "name": "Repair",
+        "branch": "Neutral"
+    },
+    "Tune": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Tune",
+        "description": null,
+        "flavor": "Mass-producing weapons left them with flaws, unfortunately. In the field, an Engineer could hack together short-term fixes that could make your rifle fire like it was the living embodiment of destiny. Then physics took their toll and you were left with interchangeable junk.",
+        "modifiers": [
+            "Tuned (1 turn)",
+            "- +2 Accuracy"
+        ],
+        "rawXML": "<unitCast name=\"Tune\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Tuned\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" type=\"Tuned\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.75\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Tune.png",
+        "name": "Tune",
+        "branch": "Neutral"
+    },
+    "Construct Bunker": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": "Bunker",
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ConstructBunker",
+        "description": null,
+        "flavor": "Sometimes you take the fight to the enemy, and sometimes they come to you. We'd mostly survived the war in sub-surface bunkers but these defensive ones were different. They were cheaper and easier to build than tanks\u2014but they made one hell of target.",
+        "modifiers": [
+            "Spawn Bunker (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"ConstructBunker\" cooldown=\"5\" icon=\"Units/Bunker\" requiredUpgrade=\"Bunker\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Bunker\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Units\\Bunker.png",
+        "name": "Construct Bunker",
+        "branch": "Neutral"
+    },
+    "Terraform": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Terraform",
+        "description": "Submenu",
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<submenu name=\"Terraform\"/>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Terraform.png",
+        "name": "Terraform",
+        "branch": "Neutral"
+    },
+    "Construct Road": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ConstructRoad",
+        "description": null,
+        "flavor": "I didn't realize how much I missed proper roads. Months of hauling ass in an Outrider made me used to bumpy rock and hard terrain. But getting that smooth path back helped me focus. Helped me focus on the enemy ahead\u2014and protecting home that lay behind.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"ConstructRoad\" cooldown=\"1\" submenu=\"Terraform\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"SpecialResource\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Bleed\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Road\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Fire\"/>\n\t\t\t\t\t\t\t<noEnemyUnit/>\n\t\t\t\t\t\t\t<noCity/>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Road\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\t\t\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ConstructRoad.png",
+        "name": "Construct Road",
+        "branch": "Neutral"
+    },
+    "Remove Road": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "RemoveRoad",
+        "description": null,
+        "flavor": "That's the thing about infrastructure\u2014you can build it, but then your enemy might take it. When things got bad we'd send the Engineers out to begin knocking down roads while we gave them covering fire. If we played our cards right, our enemies would be stuck in the mud, exposed, and ready for us to rain hell down upon them.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"RemoveRoad\" cooldown=\"1\" submenu=\"Terraform\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<featureCategory name=\"Road\"/>\n\t\t\t\t\t\t\t<noEnemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"FromTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Road\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\t\t\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\RemoveRoad.png",
+        "name": "Remove Road",
+        "branch": "Neutral"
+    },
+    "Clear Tile": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ClearTile",
+        "description": null,
+        "flavor": "Buildings and soldiers alike needed solid ground to stand on. We trained Engineers to clear terrain for both purposes. It was back-breaking work\u2014the new world we lived in was filled with all kinds of alien substances. It was like its own kind of combat prep. You could fight the earth or the enemy\u2014doing both was too much for anyone.",
+        "modifiers": [],
+        "rawXML": "<clearTileUnitCast cooldown=\"1\" icon=\"Actions/ClearTile\" name=\"ClearTile\" submenu=\"Terraform\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions match=\"Any\">\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<noEnemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas/>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"5\"/>\n\t\t\t\t\t\t<mineralsCost base=\"5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</clearTileUnitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ClearTile.png",
+        "name": "Clear Tile",
+        "branch": "Neutral"
+    },
+    "Assassinate": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Assassinate",
+        "description": null,
+        "flavor": "First we killed to survive, then we killed those who stood in our way. Then we killed for those watching. To send a message\u2014to use murder as a means of communication. We gave up something\u2026 sacred, when we chose to kill this way. We didn\u2019t care. By then, there was too much at stake.",
+        "modifiers": [
+            "- -1...-3 Hitpoints",
+            "- -1...-3 Morale"
+        ],
+        "rawXML": "<useWeapon name=\"Assassinate\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" weaponSlotName=\"ErelimBlades\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<hitpoints addMin=\"-1\" addMax=\"-3\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<attackScore mulMin=\"0.5\" mulMax=\"0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<endTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<destroyed/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"Assassinate\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"-1\" addMax=\"-3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</endTargets>\n\t\t</useWeapon>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Assassinate.png",
+        "name": "Assassinate",
+        "branch": "Cyber"
+    },
+    "Ghost Walk": {
+        "cooldown": "4 ... 2",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "GhostWalk",
+        "description": null,
+        "flavor": "I always wanted to know\u2026 what was it like for the Erelim to walk where no light could reflect? What did the earth look like? Was it\u2026 more peaceful there? Or did maintaining true invisibility mean you had to step through the void and just use sensor data to navigate the terrain? I asked one, once. She wouldn\u2019t answer.",
+        "modifiers": [
+            "- +1...+1 Movement",
+            "- +1...+1 movement through enemy units"
+        ],
+        "rawXML": "<ghostWalk name=\"GhostWalk\" cooldownMax=\"2\" cooldownMin=\"4\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement addMin=\"1\" addMax=\"1\"/>\n\t\t\t\t\t\t<ignoreZoneOfControl addMin=\"1\" addMax=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</ghostWalk>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\GhostWalk.png",
+        "name": "Ghost Walk",
+        "branch": "Cyber"
+    },
+    "Evasion Processor": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "EvasionProcessor",
+        "description": null,
+        "flavor": "The Erelim could let her machine side take over\u2014just a little\u2014to walk in between the hail of bullets. She lured enemies close, thinking they could land a blow at close-quarters. But close-quarters is where the Erelim do their best work.",
+        "modifiers": [
+            "Evasion Processor (1 turn)",
+            "- +20%...+80% Evasion Damage Reduction"
+        ],
+        "rawXML": "<unitCast name=\"EvasionProcessor\" consumedActionPoints=\"0\" requiredActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<addTrait duration=\"1\" type=\"EvasionProcessor\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\EvasionProcessor.png",
+        "name": "Evasion Processor",
+        "branch": "Cyber"
+    },
+    "Dance of the Erelim": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "DanceOfTheErelim",
+        "description": "Attacks all adjacent enemy units",
+        "flavor": "You'd forget the Erelim weren't entirely human\u2014until you saw them dance. Their eyes glazed over, their machine minds calculated the movements of all enemies surrounding them. Then their faces would open, their blades would extend, and they began the slaughter. The beauty and grace of their movements\u2026 that was the terrifying part. The AI wasn't just killing for efficiency. Now it was killing to\u2026 make art? Express itself? I just knew it wanted you to watch.",
+        "modifiers": [
+            "Erelim Blades",
+            "- attacks: 3.0",
+            "- armorPen: 4",
+            "- damage: 3.0",
+            "- accuracy: 6"
+        ],
+        "rawXML": "<unitCast name=\"DanceOfTheErelim\" cooldown=\"5\" elite=\"1\" rank=\"-1\" rankMax=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"ErelimBlades\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\DanceOfTheErelim.png",
+        "name": "Dance of the Erelim",
+        "branch": "Cyber"
+    },
+    "Internal Repair Station": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "InternalRepairStation",
+        "description": null,
+        "flavor": "A group of aspiring young technicians came to me with a plan to install repair stations in our Marauder transports. Their superiors pushed back\u2014called it a waste of time. I pointed out that there are plenty more spare parts close to the battlefield\u2014and if the senior techs were so eager to run repairs, they could be assigned elsewhere. They relented.",
+        "modifiers": [
+            "Internal Repair Station",
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<unitAction name=\"InternalRepairStation\" passive=\"1\" requiredUpgrade=\"InternalRepairStation\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"InternalRepairStation\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InternalRepairStation\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\InternalRepairStation.png",
+        "name": "Internal Repair Station",
+        "branch": "Cyber"
+    },
+    "Pestilence": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Pestilence",
+        "description": null,
+        "flavor": "Another old trick of war. Rats. Plague carts. Catapults slinging corpses. The first horseman of the Apocalypse was Pestilence, after all. Face down a Fallen Orolos and you'd feel the mold spores choking you on the battlefield, making you wish the monster would just crush you already.",
+        "modifiers": [
+            "Blighted (1 turn)",
+            "- -4 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Pestilence\" cooldown=\"1\" requiredUpgrade=\"Pestilence\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Blighted\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Pestilence.png",
+        "name": "Pestilence",
+        "branch": "Voice"
+    },
+    "Eradicate Bleed": {
+        "cooldown": "10",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "EradicateBleed",
+        "description": null,
+        "flavor": "The Voice still had to play by our laws of physics, even if it managed to bend them a little. That left the Bleed open to decontamination. ZEPHON and our techs seemed to both figure out that you could clean up the Bleed\u2014if you were willing to risk a little close exposure.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"EradicateBleed\" cooldown=\"10\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<featureCategory name=\"Bleed\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\EradicateBleed.png",
+        "name": "Eradicate Bleed",
+        "branch": "Zephon"
+    },
+    "Targeting Relay": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "TargetingRelay",
+        "description": null,
+        "flavor": "The name was ironic. Sure, stand close to a Relay, you\u2019ll get better targeting data. You also became a bigger target.",
+        "modifiers": [
+            "Targeting Relay",
+            "- +1 Accuracy"
+        ],
+        "rawXML": "<unitAction name=\"TargetingRelay\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"TargetingRelay\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\TargetingRelay.png",
+        "name": "Targeting Relay",
+        "branch": "Cyber"
+    },
+    "Graviton Jammer": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "GravitonJammer",
+        "description": null,
+        "flavor": "Our weapons researchers learned by accident that gravitons could be altered to create a disorienting effect. The sensation of your inner organs floating was described as \u201cintensely unpleasant.\u201d",
+        "modifiers": [
+            "Graviton Jammer (3 turns)",
+            "- -2 Accuracy"
+        ],
+        "rawXML": "<unitCast name=\"GravitonJammer\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"GravitonJammer\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\GravitonJammer.png",
+        "name": "Graviton Jammer",
+        "branch": "Cyber"
+    },
+    "Construct Tessera Core": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": "Tessera Core",
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ConstructTesseraCore",
+        "description": null,
+        "flavor": "Hated the Hashmallim Hosts, but something about the defensive Cores they dropped was reassuring\u2014they were easy to understand. Big object. Stayed in place. Defended what was on the other side of it. With a powerful gravity weapon. Simple and to the point, unlike every other overcomplicated clanker\u2026",
+        "modifiers": [
+            "Spawn Tessera Core (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"ConstructTesseraCore\" cooldown=\"5\" icon=\"Units/TesseraCore\" requiredUpgrade=\"TesseraCore\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<antimatterCost base=\"2\"/> \n\t\t\t\t\t\t<chipsCost base=\"20\"/> \n\t\t\t\t\t\t<mineralsCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"TesseraCore\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Units\\TesseraCore.png",
+        "name": "Construct Tessera Core",
+        "branch": "Cyber"
+    },
+    "Set Rally Point": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "SetRallyPoint",
+        "description": null,
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<setRallyPoint/>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SetRallyPoint.png",
+        "name": "Set Rally Point",
+        "branch": "Neutral"
+    },
+    "Construct Greenhouse Farm": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ConstructFarm",
+        "description": null,
+        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.\u201d",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"ConstructFarm\" cooldown=\"5\" icon=\"Buildings/Food\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t</city>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlotsRemaining greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addBuilding type=\"Food\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Buildings\\Food.png",
+        "name": "Construct Greenhouse Farm",
+        "branch": "Human"
+    },
+    "Grounded Fire": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "GroundedFire",
+        "description": null,
+        "flavor": "An operator's keen eye wasn't always enough. To land a precise shot from the missile platform, the machine sometimes needed to dig its heels into the earth and brace against the recoil. It made for a more steady shot. It also made operator and drone alike vulnerable to attack.",
+        "modifiers": [
+            "- +2 Accuracy"
+        ],
+        "rawXML": "<useWeapon name=\"GroundedFire\" cooldown=\"5\" weaponSlotName=\"MissileLauncher\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</useWeapon>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\GroundedFire.png",
+        "name": "Grounded Fire",
+        "branch": "Human"
+    },
+    "Cauterize Wounds": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "CauterizeWounds",
+        "description": null,
+        "flavor": "The first soldiers we augmented with cybernetic tech were still vulnerable to attacks on vital organs. With a little extra programming, our techs could numb their pain sensors, but they still needed to be patched up. If they already couldn\u2019t feel pain, there was no reason to not let them cauterize their own wounds.",
+        "modifiers": [
+            "- +50% Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"CauterizeWounds\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CauterizeWounds.png",
+        "name": "Cauterize Wounds",
+        "branch": "Cyber"
+    },
+    "Carrion Glut": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "CarrionGlut",
+        "description": "<style color='GUI/Green'/>+4<style color='Default'/>  hitpoints each time a unit dies",
+        "flavor": "\u201dLEAVE THEM ALONE!\u201d The rookie was screaming at a cloud of Ioks\u2014our Ioks\u2014dropping on a corpse to feed. Fuck. It was our medic. I'd seen those two sneaking off to lock lips when they thought I wasn't looking. The Ioks didn't care. One swiped at the kid when they tried to get close. I grabbed them\u2026 made her look away as they turned their lover into human jerky.",
+        "modifiers": [
+            "Carrion Glut",
+            "- +4 Hitpoints"
+        ],
+        "rawXML": "<unitAction name=\"CarrionGlut\" icon=\"Traits/CarrionGlut\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"CarrionGlut\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
+        "iconPath": "Zephon\\Icons\\Traits\\CarrionGlut.png",
+        "name": "Carrion Glut",
+        "branch": "Voice"
+    },
+    "Recon": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Recon",
+        "description": null,
+        "flavor": "Outriders were sent out with long photographic lenses, old radar dug up from wartime bunkers and specialized sonar\u2014all so their analysts could spy on enemies from a distance. They\u2019d sit in the back of the Outrider, furiously piecing together information as the vehicle bucked and jolted on the rough road below.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"Recon\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Recon.png",
+        "name": "Recon",
+        "branch": "Human"
+    },
+    "Minelayer": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Minelayer",
+        "description": null,
+        "flavor": "Outrider operators knew when the bullets started flying, they weren\u2019t combatants: they were bait. Their job was to lay mines in key positions and lure the enemy in. Then once the trap was sprung, they could burn rubber and get away\u2014and whatever was hunting them became easy pickings for the rest of us.",
+        "modifiers": [],
+        "rawXML": "<unitAction name=\"Minelayer\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredUpgrade=\"Minelayer\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Mines\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Minelayer.png",
+        "name": "Minelayer",
+        "branch": "Human"
+    },
+    "Particle Repair": {
+        "cooldown": "2",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ParticleRepair",
+        "description": null,
+        "flavor": "The particles pouring out of a Krypt Archai\u2019s\u2026 shell could work wonders on mechanical units. It was like something out of a fairy tale. All it took was a stream of glowing lights to bring battered and broken machines back online. Wiring, servos, energy conduits\u2014they could fix it all.",
+        "modifiers": [
+            "- +6...+18 Hitpoints",
+            "- +18...+54 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"ParticleRepair\" cooldown=\"2\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints addMin=\"6\" addMax=\"18\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"ArchaiConstruct\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints addMin=\"18\" addMax=\"54\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ParticleRepair.png",
+        "name": "Particle Repair",
+        "branch": "Cyber"
+    },
+    "Particle Barrier": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "ParticleBarrier",
+        "description": null,
+        "flavor": "No other shielding behaved the way the Krypt Archai\u2019s Particle Barrier could. Shields normally needed a power source\u2014I lost too many soldiers trying to keep that power online. These barriers\u2026 they just\u2026 worked. Maybe the particles were the power source? Drawing energy from within and clustering to catch incoming fire? It was\u2026 otherworldly.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"ParticleBarrier\" cooldown=\"1\" icon=\"Features/ParticleBarrier\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"ParticleBarrier\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<movement equal=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Features\\ParticleBarrier.png",
+        "name": "Particle Barrier",
+        "branch": "Cyber"
+    },
+    "System Overload": {
+        "cooldown": "2",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "SystemOverload",
+        "description": null,
+        "flavor": "The Krypt Archai had some kind of\u2026 universal sabotage protocol. It didn\u2019t make any sense, drove our techs up the wall. It seemed to work on weaponry by making ammo explode, but it could play havoc with networked systems, or choke Voice weapons on their own power. What was this thing? Where did it get this power?",
+        "modifiers": [
+            "System Overload (2 turns)",
+            "- +20%...+60% Self Damage"
+        ],
+        "rawXML": "<unitCast name=\"SystemOverload\" cooldown=\"2\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SystemOverload\" duration=\"2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"SystemOverload\"/>\n\t\t\t\t\t\t\t\t\t\t\t<rangedWeapons/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SystemOverload.png",
+        "name": "System Overload",
+        "branch": "Cyber"
+    },
+    "Entomb": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Entomb",
+        "description": null,
+        "flavor": "The Archai had the power to exploit every one of your vulnerabilities all at once. If it locked you down\u2026 you couldn\u2019t move. You could barely breathe. If there wasn\u2019t someone who could pull you out of there, that was it, you were dead. All you could do is watch, eyes locked open, as your enemies lined up the killing blow.",
+        "modifiers": [
+            "Entomb (1 turn)",
+            "- max 0 Action Points",
+            "- max 0 Movement",
+            "- max 0 Movement Max",
+            "- -75% Healing Received",
+            "- +33% Damage Taken"
+        ],
+        "rawXML": "<unitCast name=\"Entomb\" cooldown=\"5\" elite=\"1\" rank=\"-1\" rankMax=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Entomb\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Entomb\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Entomb.png",
+        "name": "Entomb",
+        "branch": "Cyber"
+    },
+    "Repair Drones": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "DeployRepairDrone",
+        "description": null,
+        "flavor": "Don\u2019t ignore these drones. Their field repairs made us wish humans were as easy to fix as machines. We joked about what you could get done if mending an arm was as simple as reconnecting some blasted circuitry. Some of us\u2026 some of us decided that wasn\u2019t just a joke.",
+        "modifiers": [
+            "Spawn Repair Drones (Level 1)",
+            "Summon (3 turns)",
+            "- max 0 Food Upkeep",
+            "- max 0 Minerals Upkeep",
+            "- max 0 Transuranium Upkeep",
+            "- max 0 Energy Upkeep",
+            "- max 0 Antimatter Upkeep",
+            "- max 0 Algae Upkeep",
+            "- max 0 Dimensional Echoes Upkeep",
+            "- max 0 Chips Upkeep",
+            "- max 0 Singularity Cores Upkeep",
+            "- max 0 Influence Upkeep"
+        ],
+        "rawXML": "<unitCast name=\"DeployRepairDrone\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/RepairDrone\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"RepairDrone\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Units\\RepairDrone.png",
+        "name": "Repair Drones",
+        "branch": "Cyber"
+    },
+    "EMP Drones": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": "EMP Drones",
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "DeployEMPDrone",
+        "description": null,
+        "flavor": "Combat Drones can be a distraction, but EMP Drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
+        "modifiers": [
+            "Spawn EMP Drones (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"DeployEMPDrone\" cooldown=\"5\" requiredUpgrade=\"EMPDrone\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<chipsCost base=\"15\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"EMPDrone\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\DeployEMPDrone.png",
+        "name": "EMP Drones",
+        "branch": "Cyber"
+    },
+    "Masochism": {
+        "cooldown": "10",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Masochism",
+        "description": null,
+        "flavor": "\u201dThe fuck are you doing?!\u201d I remembered shouting at one of those damned Epicureans as it walked right over our trench, soaking up a spree of bullets that weren't set to hit anything. \u201cCalm yourself\u2026 mentor,\u201d it said. How did it\u2026 it didn't have a face but I swear it was smiling at me. \u201cWe both know pain is a constant. You run from it\u2026\u201d It jerked as another round of bullets ripped into its shoulder. \u201cI savor it.\u201d",
+        "modifiers": [
+            "Masochism (5 turns)",
+            "- +10% Hitpoints Max"
+        ],
+        "rawXML": "<unitCast name=\"Masochism\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"10\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Masochism\" duration=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Masochism.png",
+        "name": "Masochism",
+        "branch": "Voice"
+    },
+    "Nightmare": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Nightmare",
+        "description": null,
+        "flavor": "Intel could never keep up with how many Phenaris Hunters were out on the battlefield. They weren't breeding, they were just\u2026 I don't know. Pulling a version of themselves in from another dimension? Fooling everyone, even the machines? I don't know. Too many monsters and too many tricks to keep in my head. I just wanted to rest\u2026",
+        "modifiers": [
+            "- -2 Cooldown",
+            "Spawn Phenaris Hunters (Level 1)",
+            "- +5 Cooldown",
+            "- -2 Cooldown"
+        ],
+        "rawXML": "<unitCast name=\"Nightmare\" cooldown=\"5\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"PhenarisHunter\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"0\" consumedMovement=\"1\" experienceFromSourceUnit=\"1\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTraitToTargetOrSource type=\"Nightmare\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"UnitAction\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<action>\n\t\t\t\t\t\t\t\t\t\t\t<type name=\"Nightmare\"/>\n\t\t\t\t\t\t\t\t\t\t</action>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\" visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Nightmare.png",
+        "name": "Nightmare",
+        "branch": "Voice"
+    },
+    "Soundquake": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Soundquake",
+        "description": null,
+        "flavor": "Holy fuck! Of all the ways you can get pinned down, this one\u2026 this one hurt. So much. A giant fucking monster pointing a cannon at you and blasting you with noise so intense it makes gravity stronger. My ears started bleeding and my bones felt like they were going to break\u2026 but without a scratch on me. We were already retreating\u2026 why did it need to stop us like this?",
+        "modifiers": [
+            "Immobilized (1 turn)",
+            "- max 0% Attacks",
+            "- max 0% Movement Max"
+        ],
+        "rawXML": "<unitCast name=\"Soundquake\" cooldown=\"3\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToNonTitanEnemy\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Immobilized\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Soundquake.png",
+        "name": "Soundquake",
+        "branch": "Voice"
+    },
+    "Swallow": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "Swallow",
+        "description": null,
+        "flavor": null,
+        "modifiers": [
+            "Swallowed",
+            "- max 0% Action Points Max",
+            "- max 0% Movement Max",
+            "- -10% Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Swallow\" cooldown=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<cargoSlotsFree greater=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"TargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<embark/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyNonTitanNonHeroUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Swallowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Swallow.png",
+        "name": "Swallow",
+        "branch": "Voice"
+    },
+    "Seed of Extinction": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "SeedOfExtinction",
+        "description": null,
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"SeedOfExtinction\" cooldown=\"5\" requiredUpgrade=\"SeedOfExtinction\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeature type=\"SeedOfExtinction\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"SeedOfExtinction\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SeedOfExtinction.png",
+        "name": "Seed of Extinction",
+        "branch": "Voice"
+    },
+    "Frenzy": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Frenzy",
+        "description": "Usable when adjacent to two or more enemy units",
+        "flavor": "It wasn\u2019t surprising that desperation could turn anyone into a killing machine. It was surprising that some fighters seemed to relish it. Outnumbered? Outgunned? That didn\u2019t matter to them. Banding up with these berserkers might keep you alive\u2014but they were just as likely to get you killed.",
+        "modifiers": [
+            "Frenzy (1 turn)",
+            "- +1 Attacks"
+        ],
+        "rawXML": "<unitCast name=\"Frenzy\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"1\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Frenzy\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Frenzy.png",
+        "name": "Frenzy",
+        "branch": "Reaver"
+    },
+    "Combat Routine": {
+        "cooldown": "10",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "CombatRoutine",
+        "description": "Usable when below full hitpoints",
+        "flavor": "The first machines we encountered weren\u2019t always fully ready for combat\u2014but they would be once the shooting started. It was eerie how they\u2019d become better shots once they took a hit. Some kind of triangulation subroutine or something.",
+        "modifiers": [
+            "Combat Routine (3 turns)",
+            "- +2 Accuracy"
+        ],
+        "rawXML": "<unitCast name=\"CombatRoutine\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"10\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"1.0\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"CombatRoutine\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"100.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CombatRoutine.png",
+        "name": "Combat Routine",
+        "branch": "Zephon"
+    },
+    "Angel Flight": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "AngelFlight",
+        "description": null,
+        "flavor": "And lo did the Seraphim take flight, a weapon unlike any unleashed on our Earth before. Getting one airborne took a massive amount of energy, and the discharge could turn weapons into mountain-shattering laser cannons. The Acrin feared technology like this. Now it exists because of their invasion.",
+        "modifiers": [],
+        "rawXML": "<fly name=\"AngelFlight\" cooldown=\"3\">\n\t\t\t</fly>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\AngelFlight.png",
+        "name": "Angel Flight",
+        "branch": "Cyber"
+    },
+    "Holy Inferno": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "HolyInferno",
+        "description": null,
+        "flavor": "Where did the flames come from? The Seraphim didn\u2019t go skybound with explosive fuel like that. I dug through their schematics time after time to try and get an answer. There wasn\u2019t one. The only clue I had was that the melody it made\u2026 always shifted frequency when it unleashed the inferno. Was that it? Did it unleash holy fire with a song?",
+        "modifiers": [
+            null,
+            "- attacks: 1.0",
+            "- armorPen: 7",
+            "- damage: 12.0",
+            "- accuracy: 6",
+            "Blinded (1 turn)",
+            "- -50% Accuracy"
+        ],
+        "rawXML": "<unitCast name=\"HolyInferno\" cooldown=\"3\" requiredUpgrade=\"HolyInferno\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"HolyInferno\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Blinded\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\HolyInferno.png",
+        "name": "Holy Inferno",
+        "branch": "Cyber"
+    },
+    "Breed Deformities": {
+        "cooldown": "0",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "BreedDeformities0",
+        "description": null,
+        "flavor": "In the belly of a Shoch'itris you would find bubbling pools of organic matter. There should be something sacred about life begetting life like this\u2014but there was nothing holy in here. This beast took the refuse of our world and scraped it back together for one last life as a weapon.",
+        "modifiers": [],
+        "rawXML": "<unitCast blueprint=\"BreedDeformities\" name=\"BreedDeformities0\"/>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\BreedDeformities0.png",
+        "name": "Breed Deformities",
+        "branch": "Voice"
+    },
+    "Dark Caress": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "DarkCaress",
+        "description": null,
+        "flavor": "Could you imagine the touch of those foul fingers? Picture a giant hand reaching down to brush your shoulder like a long-lost love? It dreams of that. It remembers such a sensation. And that desire is what you will feel when it reaches out for you in the heat of battle.",
+        "modifiers": [
+            "Dark Caress",
+            "- +1 Hitpoints",
+            "- +1 Morale"
+        ],
+        "rawXML": "<unitAction name=\"DarkCaress\" passive=\"1\" requiredUpgrade=\"DarkCaress\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedBiologicalUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DarkCaress\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\DarkCaress.png",
+        "name": "Dark Caress",
+        "branch": "Voice"
+    },
+    "Abyssal Rage": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "AbyssalRage",
+        "description": null,
+        "flavor": "You've never known an anger like this. Humans feel rage because we find the world unfair. But the Voice could bring out something deeper. Something that fills its creations with a hatred of the universe itself. If you find yourself facing down such anger\u2026 run.",
+        "modifiers": [
+            "Abyssal Rage (1 turn)",
+            "- +33% Attacks",
+            "- +33% Damage Taken"
+        ],
+        "rawXML": "<unitCast name=\"AbyssalRage\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"AbyssalRage\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\AbyssalRage.png",
+        "name": "Abyssal Rage",
+        "branch": "Voice"
+    },
+    "Gravity Field": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "GravityField",
+        "description": null,
+        "flavor": "",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"GravityField\" cooldown=\"1\" icon=\"Features/GravityField\" requiredUpgrade=\"GravityField\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"3\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"GravityField\" duration=\"2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Features\\GravityField.png",
+        "name": "Gravity Field",
+        "branch": "Cyber"
+    },
+    "Hast": {
+        "cooldown": "4 ... 2",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": true,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Hast",
+        "description": null,
+        "flavor": "The Valkyria had repositioning capabilities that no other heavy armor could match. That's because their pilots could override the safety protocols through sheer willpower. When those shut down, the Valkyria operators pushed their exosuits to the limit. They broke their bodies and ravaged their minds in pursuit of victory.",
+        "modifiers": [
+            "- +2...+2 Movement"
+        ],
+        "rawXML": "<fly name=\"Hast\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldownMin=\"4\" cooldownMax=\"2\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement addMin=\"2\" addMax=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</fly>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Hast.png",
+        "name": "Hast",
+        "branch": "Human"
+    },
+    "Skydda": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Skydda",
+        "description": null,
+        "flavor": "Here\u2019s a contradiction: The Valkyria operators were fixated on death, but carried shields into battle. If they sought a great death, why try to preserve their lives? There was another layer to their thinking: that death must come at the correct time and place. Shielding themselves made that day possible.",
+        "modifiers": [
+            "Skydda",
+            "- +10%...+30% Cover Damage Reduction"
+        ],
+        "rawXML": "<unitAction name=\"Skydda\" passive=\"1\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<disk affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Skydda\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</disk>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Skydda.png",
+        "name": "Skydda",
+        "branch": "Human"
+    },
+    "Valhalla": {
+        "cooldown": "10",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Valhalla",
+        "description": null,
+        "flavor": "When soldiers died around the Valkyria, they\u2026 connected to something, some thinning presence between our world and\u2026 another one. Maybe the next one. They drew power in that strength\u2014our scientists guessed it was just a kind of euphoria state. But if you watched how they fought while under the influence of that connection\u2026 you\u2019d believe in an afterlife too.",
+        "modifiers": [
+            "Valhalla (3 turns)",
+            "- +10%...+1000% Damage"
+        ],
+        "rawXML": "<unitCast name=\"Valhalla\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"10\" elite=\"1\" rank=\"-1\" rankMax=\"0\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Valhalla\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.75\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Valhalla.png",
+        "name": "Valhalla",
+        "branch": "Human"
+    },
+    "Vorodai's Gift": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "VorodaisGift",
+        "description": null,
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"VorodaisGift\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\" requiredUpgrade=\"VorodaisGift\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OfTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<resetUnitCooldowns/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\VorodaisGift.png",
+        "name": "Vorodai's Gift",
+        "branch": "Voice"
+    },
+    "Power Spike": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "PowerSpike",
+        "description": null,
+        "flavor": "The techs plastered the Vulkan manuals with all kinds of restrictions. Vulkan pilots knew how and why to break them. If you overcharged the power past its limits, you\u2019d blow out whole pieces of the Vulkan. But in exchange you could fuel that power into all of the Vulkan\u2019s weapons. Risking that extra damage was a gamble but it paid off frequently.",
+        "modifiers": [
+            "- -10% Hitpoints",
+            "Power Spike (1 turn)",
+            "- +50% Damage"
+        ],
+        "rawXML": "<unitCast name=\"PowerSpike\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"PowerSpike\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\PowerSpike.png",
+        "name": "Power Spike",
+        "branch": "Human"
+    },
+    "Echoes from Beyond": {
+        "cooldown": "3 ... 1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "EchoesFromBeyond",
+        "description": null,
+        "flavor": "The Voice knew things. Impossible things. Was it petty to simply use its premonitions to see our enemies? Or was that how the Voice drew people in? Did it show them knowledge, promise power, then offer more? The Whisperer knew. She didn\u2019t ever say.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"EchoesFromBeyond\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldownMin=\"3\" cooldownMax=\"1\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\" sighted=\"0\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noSighted/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\EchoesFromBeyond.png",
+        "name": "Echoes from Beyond",
+        "branch": "Voice"
+    },
+    "Call the Afflicted": {
+        "cooldown": "3",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "CallTheAfflicted",
+        "description": null,
+        "flavor": "The Voice granted the Whisperer a gift: the power to create life. Not true life though, just a mockery of it. But is a Deformity any different than a mayfly? Maybe we deserved to be laughed at for thinking our lives meant anything.",
+        "modifiers": [
+            "Spawn Deformities (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"CallTheAfflicted\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"10\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Deformity\" rankMin=\"0\" rankMax=\"8\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"0.5\" addMax=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CallTheAfflicted.png",
+        "name": "Call the Afflicted",
+        "branch": "Voice"
+    },
+    "Cry of Contrition": {
+        "cooldown": "1",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "internalID": "CryOfContrition",
+        "description": null,
+        "flavor": "Did the Voice\u2026 care\u2026 about those who spoke to it? Did it need to be convinced? Taught to empathize with living beings? I didn\u2019t think such an entity would find value in saving lives. Maybe it had a bigger vision in mind. Or maybe it did feel some kind of mercy.",
+        "modifiers": [
+            "- +6...+18 Hitpoints",
+            "- -2...-6 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"CryOfContrition\" cooldown=\"1\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedBiologicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints addMin=\"6\" addMax=\"18\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"1.0\" addMax=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints addMin=\"-2\" addMax=\"-6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score addMin=\"-1.0\" addMax=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CryOfContrition.png",
+        "name": "Cry of Contrition",
+        "branch": "Voice"
+    },
+    "Quarry Feed": {
+        "cooldown": "Passive",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "QuarryFeed",
+        "description": null,
+        "flavor": "What ZEPHON's Titan saw, all machines saw. The ones nearby at least. And they clambered to get close to it\u2026 connecting to its network, linking to all the other machines\u2014it was the only time I saw them experience what humans feel singing together around the campfire, or in a church: euphoria.",
+        "modifiers": [
+            "Quarry Feed",
+            "- +10% Accuracy"
+        ],
+        "rawXML": "<unitAction name=\"QuarryFeed\" icon=\"Traits/QuarryFeed\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedMechanicalUnitsInTheArea\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"QuarryFeed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Traits\\QuarryFeed.png",
+        "name": "Quarry Feed",
+        "branch": "Zephon"
+    },
+    "Reconstruct": {
+        "cooldown": "2",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "Reconstruct",
+        "description": null,
+        "flavor": "Metal that healed like flesh? In the last days of the war, everything was a fever dream\u2026 I didn't bat an eye when ZEPHON's Titans sewed steel back together like raw meat. This was what it wanted, wasn't it? Machines that were truly alive? Maybe to truly live, you had to bleed\u2026",
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Reconstruct\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Reconstruct.png",
+        "name": "Reconstruct",
+        "branch": "Zephon"
+    },
+    "Construct Warden": {
+        "cooldown": "5",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "internalID": "ConstructWarden",
+        "description": null,
+        "flavor": "ZEPHON could have made any kind of machine and it made\u2026 this? Why would an all-powerful AI forge a machine that looked slapped together from spare parts? We were idiots. ZEPHON didn\u2019t build a weapon, it made a weaponized, self-sustaining, autonomous pile of scrap. Living metal didn\u2019t care if it was ugly as sin, it was just constantly calculating better ways to kill.",
+        "modifiers": [
+            "Spawn Warden (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"ConstructWarden\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/Warden\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Warden\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Units\\Warden.png",
+        "name": "Construct Warden",
+        "branch": "Zephon"
+    }
+}

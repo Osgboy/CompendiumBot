@@ -250,4 +250,205 @@
             "Slowed (2 turns)",
             "- -33% Movement Max"
         ],
-        "rawXML": "<actions>\n\t\t<poweredBolas cooldown=\"2\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\
+        "rawXML": "<actions>\n\t\t<poweredBolas cooldown=\"2\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Slowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</poweredBolas>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\ManCatcher.png",
+        "name": "Man-Catcher"
+    },
+    "Mourning Blade Of Lazaerek": {
+        "internalID": "MourningBladeOfLazaerek",
+        "description": "Item that increases the melee damage and melee armour penetration.",
+        "flavor": "Little survived when an apparently disastrous jump saw the last remnants of the Fire Hawks Chapter lost to the warp in 963.M41, but a few alleged relics yet remain. This axe was thought to belong to their rancorous grand master, Stibor Lazaerek, under whose command the Chapter's ranks were decimated during the lethal rebellions of the Badab War.",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "modifiers": [
+            "Mourning Blade Of Lazaerek",
+            "- +2 Armour Penetration",
+            "- +25% Damage"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/MourningBladeOfLazaerek\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\MourningBladeOfLazaerek.png",
+        "name": "Mourning Blade Of Lazaerek"
+    },
+    "Omni-Scope": {
+        "internalID": "OmniScope",
+        "description": "Item that increases the ranged accuracy.",
+        "flavor": "A rare Imperial weapon sight, the Omni-Scope consists of a precision lens aligned to a cluster of sensors, including telescopic and multi-spectrum vision modes. The user can either use the sight manually or through a direct input that plugs into bionics, biologics or other interfaces. The latter interface enables remote sight and control with any weapon\u2014making it favoured by assassins Imperium-wide.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "modifiers": [
+            "Omni-Scope",
+            "- +1 Ranged Accuracy"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/OmniScope\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\OmniScope.png",
+        "name": "Omni-Scope"
+    },
+    "Powered Bolas": {
+        "internalID": "PoweredBolas",
+        "description": "Item that reduces the movement of the target enemy unit.",
+        "flavor": "On the Imperium's savannah worlds, the local forces often adopt these traditional devices, taken from the local Grox herders. The three-powered weights at the end of the wire do little harm to the target\u2014but so thoroughly entangle it that it can be dealt with at leisure.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "modifiers": [
+            "Slowed (2 turns)",
+            "- -33% Movement Max"
+        ],
+        "rawXML": "<actions>\n\t\t<poweredBolas charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Slowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</poweredBolas>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\PoweredBolas.png",
+        "name": "Powered Bolas"
+    },
+    "Powered Gauntlet": {
+        "internalID": "PoweredGauntlet",
+        "description": "Item that increases the melee damage.",
+        "flavor": "This may look like a simple steel glove, with randomly-placed technology all over it. Yet, as the Administratum say, 'caveat emptor'\u2014for the Jokaero technology in it makes it the match of the larger power fists and power claws employed by the Imperial and Ork forces.",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "modifiers": [
+            "Powered Gauntlet",
+            "- +25% Damage"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/PoweredGauntlet\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\PoweredGauntlet.png",
+        "name": "Powered Gauntlet"
+    },
+    "Recovery Package": {
+        "internalID": "RecoveryPackage",
+        "description": "Item that restores the hitpoints.",
+        "flavor": "This medkit has been thrown together with little sense or reason, perhaps by a Jokaero or an Ork Mad Dok with an instinctive sense of medicine, but there's no doubting the efficacy of its contents. Whatever the injury, there's a neatly-mislabelled package in here that will fix it.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "modifiers": [
+            "- +25% Hitpoints"
+        ],
+        "rawXML": "<actions>\n\t\t<mediPack charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/MysticBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"0.25\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</mediPack>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\RecoveryPackage.png",
+        "name": "Recovery Package"
+    },
+    "Scrolls of Magnus": {
+        "internalID": "ScrollsOfMagnus",
+        "description": "Item that increases the research output.",
+        "flavor": "These illuminated pages of skin are fragments of the repository of sorcery compiled by the Primarch of the Thousand Sons, and contain arcane lore from across the galaxy. None possess them for long and remain sane, for they have their own ghastly sentience.",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "modifiers": [
+            "Scrolls of Magnus",
+            "- +6 Research"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ScrollsOfMagnus\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\ScrollsOfMagnus.png",
+        "name": "Scrolls of Magnus"
+    },
+    "Sightless Helm": {
+        "internalID": "SightlessHelm",
+        "description": "Item that grants the ability to ignore ranged damage reduction and increases the ranged accuracy.",
+        "flavor": "The lenses of this helm remain forever dark, the wearer unable to perceive the galaxy with their own eyes. Instead, strange warp senses are granted by the helms machine spirit, illuminating the foe\u2019s weaknesses.",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "modifiers": [
+            "Sightless Helm",
+            "- +100% Ranged Damage Reduction Bypass",
+            "- +2 Ranged Accuracy"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/SightlessHelm\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\SightlessHelm.png",
+        "name": "Sightless Helm"
+    },
+    "Stun Grenade": {
+        "internalID": "StunGrenade",
+        "description": "Item that prevents the target enemy infantry or monstrous creature from acting.",
+        "flavor": "An ancient design, Stun grenades use a combination of a loud explosion and a bright flash to temporarily disable any combatants in the blast area.",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "modifiers": [
+            "Stunned (1 turn)",
+            "- max 0% Action Points Max",
+            "- max 0% Movement Max"
+        ],
+        "rawXML": "<actions>\n\t\t<stunGrenade charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" icon=\"Items/StunGrenade\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicDebuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Stunned\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Stunned\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</stunGrenade>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\StunGrenade.png",
+        "name": "Stun Grenade"
+    },
+    "Tantalising Icon": {
+        "internalID": "TantalisingIcon",
+        "description": "Item that increases the influence output.",
+        "flavor": "Carved from wraithbone stolen from the hearts of fallen Craftworlds, this elongated form represents Slaanesh in all their glory. Few mortal eyes could rest upon this icon and not lust for it\u2014for Slaanesh\u2014and begin their fall from grace.",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "modifiers": [
+            "Tantalising Icon",
+            "- +8 Influence"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/TantalisingIcon\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\TantalisingIcon.png",
+        "name": "Tantalising Icon"
+    },
+    "Temporary Shield": {
+        "internalID": "TemporaryShield",
+        "description": "Item that increases the armour.",
+        "flavor": "Portable shield generators are fairly rare amongst most species, given the technical capability and rare resources needed to make them. They also burn out quickly, but their ability to stop even the most powerful attacks dead in their tracks make them invaluable.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "modifiers": [
+            "Temporary Shield (2 turns)",
+            "- +2 Armour"
+        ],
+        "rawXML": "<actions>\n\t\t<temporaryShield charges=\"1\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/PsychicBuff\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Items/TemporaryShield\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</temporaryShield>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\TemporaryShield.png",
+        "name": "Temporary Shield"
+    },
+    "Ultra Wideband Auspex": {
+        "internalID": "UltraWidebandAuspex",
+        "description": "Item that prevents the unit from being targeted by overwatch attacks.",
+        "flavor": "To hide yourself, you don\u2019t always need diffraction fields or chameleonic skin\u2014sometimes just knowing more than the enemy is enough. An advanced Auspex uses passive and active sensors to discern the location of every enemy unit so the bearer can decide how best to engage them\u2014or avoid them\u2014at will.",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "modifiers": [
+            "Ultra Wideband Auspex"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/UltraWidebandAuspex\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\UltraWidebandAuspex.png",
+        "name": "Ultra Wideband Auspex"
+    },
+    "Uncreator Gauntlet": {
+        "internalID": "UncreatorGauntlet",
+        "description": "Item that repairs an adjacent allied vehicle or fortification.",
+        "flavor": "The Uncreator Gauntlet was originally devised to reverse-engineer lost technologies. When laid upon a machine, xenotech fields are released that cause the construct\u2019s chronology to be wound back. If the timing is accurate to the picosecond, the temporal anomaly can rejuvenate the machine to the prime of its operative lifespan \u2013 or go on to reduce it to a neatly-arrayed pile of component parts, each ready for the Tech-Priest\u2019s inspection.",
+        "rarity": "Artefact",
+        "influenceCost": "160",
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<actions>\n\t\t<uncreatorGauntlet consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" icon=\"Items/UncreatorGauntlet\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<action sound=\"Actions/Heal\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\" lineOfSight=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t<trait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</uncreatorGauntlet>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\UncreatorGauntlet.png",
+        "name": "Uncreator Gauntlet"
+    },
+    "Volcanis Shroud": {
+        "internalID": "VolcanisShroud",
+        "description": "Item that increases the witchfire damage reduction.",
+        "flavor": "Though this battered, heat-resistant armour was originally designed for industrial work at the deepest and most hazardous layers of Hive Worlds, by some happy accident it also muffles psychic attack. As yet, whatever gives the Shroud this quality has not been identified, for fear that reverse-engineering it may break its uncanny spell.",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "modifiers": [
+            "Volcanis Shroud",
+            "- +25% Witchfire Damage Reduction"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/VolcanisShroud\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\VolcanisShroud.png",
+        "name": "Volcanis Shroud"
+    },
+    "Zoat Hide Jerkin": {
+        "internalID": "ZoatHideJerkin",
+        "description": "Item that increases the hitpoints and healing rate.",
+        "flavor": "The Zoat, a genetically-engineered slave race in the thrall of the Tyranids, have been all but absent from the galaxy for generations. Though renowned for their unusual intelligence and charisma, their dense, scaled skin also made them a frighteningly resilient foe. Zoat-hide armour is vanishingly rare now, but a true boon upon the battlefield.",
+        "rarity": "Uncommon",
+        "influenceCost": "80",
+        "modifiers": [
+            "Zoat Hide Jerkin",
+            "- +100% Healing Rate",
+            "- +3 Hitpoints Max"
+        ],
+        "rawXML": "<actions>\n\t\t<genericUnitAbility passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Items/ZoatHideJerkin\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t</actions>\n\t",
+        "iconPath": "Gladius\\Icons\\Items\\ZoatHideJerkin.png",
+        "name": "Zoat Hide Jerkin"
+    }
+}

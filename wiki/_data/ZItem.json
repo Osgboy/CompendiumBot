@@ -519,4 +519,47 @@
         "internalID": "TraumaKit",
         "branch": "Human",
         "description": null,
-        "flavor": "Our medics\u2026 well, they were amateurs. But they\u2019d survived and th
+        "flavor": "Our medics\u2026 well, they were amateurs. But they\u2019d survived and they patched you up just enough to get back into the field. The Concordat\u2019s kits, though, they were\u2026 something else. The best of the old world mixed with whatever the AIs and aliens knew. They called it a \u201ctrauma kit\u201d, but the real trauma was seeing that *thing* open you up and put you back together. If you could forget it, worth every cent.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "buyCondition": null,
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/HealPluses\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.75\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</unitCast>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\TraumaKit.png",
+        "name": "Trauma Kit"
+    },
+    "Tribunal's Tether": {
+        "internalID": "TribunalsTether",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "modifiers": [],
+        "rawXML": null,
+        "iconPath": "Zephon\\Icons\\Items\\TribunalsTether.png",
+        "name": "Tribunal's Tether"
+    },
+    "Vorodai Proselyte": {
+        "internalID": "VorodaiProselyte",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "One person could never hope to summon a Vorodai on their own. But a piece of their power? A silver claw that reached out from the Bleed to slice at your enemy? That was good enough.",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": "Amoetia's Embrace",
+        "modifiers": [
+            "Vorodai Proselyte",
+            "- attacks: 3.0",
+            "- armorPen: 4",
+            "- damage: 4.0",
+            "- accuracy: 12"
+        ],
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/VorodaiProselyte\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"VorodaiProselyte\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\t\t\t\t\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\VorodaiProselyte.png",
+        "name": "Vorodai Proselyte"
+    }
+}

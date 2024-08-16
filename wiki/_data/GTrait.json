@@ -8897,4 +8897,58 @@
             "- -33% Circumstance Melee Damage",
             "- -33% Movement Max"
         ],
-        "rawXML": "<trait category=\"Debuff\" icon=\"Actions/Enfeeble\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t\n\t\t\t\t<circumstanceMeleeDamage mul=\"-0.33\"/>\n\t\t\t\t<movementMax mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier
+        "rawXML": "<trait category=\"Debuff\" icon=\"Actions/Enfeeble\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t\n\t\t\t\t<circumstanceMeleeDamage mul=\"-0.33\"/>\n\t\t\t\t<movementMax mul=\"-0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Actions\\Enfeeble.png",
+        "name": "Weakened",
+        "faction": "Neutral"
+    },
+    "Wire Weed": {
+        "internalID": "WireWeed",
+        "description": "Deals damage each turn.",
+        "flavor": "Woe betide anyone who wanders into these thickets of brambles. Slowly at first, but faster and faster, the living weed draws its razor-sharp filaments tighter around the hapless intruder.",
+        "modifiers": [
+            "Wire Weed",
+            "- attacks: 2.0",
+            "- armorPen: 2",
+            "- damage: 3.00",
+            "- accuracy: 12"
+        ],
+        "rawXML": "<trait category=\"Debuff\" icon=\"Features/WireWeed\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t<noTrait name=\"Necrons/ImmuneToNaturalLaw\"/>\n\t\t\t\t\t<noTrait name=\"Necrons/Wraithflight\"/>\n\t\t\t\t\t<noTrait name=\"JetPack\"/>\n\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t<noTrait name=\"Skimmer\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<weaponDamage weapon=\"WireWeed\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Features\\WireWeed.png",
+        "name": "Wire Weed",
+        "faction": "Neutral"
+    },
+    "Witchfire": {
+        "internalID": "Witchfire",
+        "description": "Classification.",
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<trait/>",
+        "iconPath": "Gladius\\Icons\\Traits\\Witchfire.png",
+        "name": "Witchfire",
+        "faction": "Neutral"
+    },
+    "Zzap": {
+        "internalID": "Zzap",
+        "description": null,
+        "flavor": "Zzap guns fire unstable bolts of lightning. They have the potential to punch through the hull of even the heaviest enemy vehicle amid crackling showers of sparks, but have a tendency to overload and electrocute the operating gunner.",
+        "modifiers": [],
+        "rawXML": "<trait visible=\"0\"/>",
+        "iconPath": "Gladius\\Icons\\Traits\\Zzap.png",
+        "name": "Zzap",
+        "faction": "Orks"
+    },
+    "Zealot": {
+        "internalID": "Zealot",
+        "description": "Reduces the morale loss, increases the melee damage and grants immunity to fear and pinning.",
+        "flavor": "Zealots fight on regardless of their casualties or the terrors of war; they are driven forwards by their conviction.",
+        "modifiers": [
+            "- +10% Circumstance Melee Damage",
+            "- -67% Morale Loss"
+        ],
+        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<circumstanceMeleeDamage mul=\"0.1\"/>\n\t\t\t\t<moraleLossFactor add=\"-0.67\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\Zealot.png",
+        "name": "Zealot",
+        "faction": "Neutral"
+    }
+}

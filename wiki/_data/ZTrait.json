@@ -4468,4 +4468,23 @@
     "ZEPHON Interference": {
         "internalID": "ZephonInterference",
         "description": null,
-        "flavor": "A message comes from ZEPHON. \u201cThis was not the outcome we desired %1%,\u201d it says. \u201cWe hoped for a more\u
+        "flavor": "A message comes from ZEPHON. \u201cThis was not the outcome we desired %1%,\u201d it says. \u201cWe hoped for a more\u2026 transcendent conclusion. There will be consequences for your failure.\u201d\n\nBefore you can ask what it means, ZEPHON cuts the call. You and your advisers are left only with the sound of Hopper bursting into an anguished wail.",
+        "modifiers": [
+            "- -50% Production"
+        ],
+        "rawXML": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier effectDescription=\"ForCyberProductionBuildings\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<branch name=\"Cyber\"/>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production add=\"-0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Zephon\\Icons\\Traits\\ZephonInterference.png",
+        "name": "ZEPHON Interference",
+        "branch": "Neutral"
+    },
+    "AI Rights": {
+        "internalID": "ZephonStanding",
+        "description": "Improves diplomatic standing with  ZEPHON over time",
+        "flavor": "It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. \u201cThat would be acceptable,\u201d it replied. No one knew what to do with that. Was Zephon thinking ahead, for after the war? Or\u2026 no. Certainly not. There couldn't have been other AI among us\u2026 right?",
+        "modifiers": [],
+        "rawXML": "<trait visibleOnPlayer=\"1\"/>",
+        "iconPath": "Zephon\\Icons\\Traits\\ZephonStanding.png",
+        "name": "AI Rights",
+        "branch": "Neutral"
+    }
+}
