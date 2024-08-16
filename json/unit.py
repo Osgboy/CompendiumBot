@@ -177,7 +177,7 @@ class GUnit(Unit):
         self.faction: str = 'Neutral'
         self.dlc: str = 'None'
 
-    def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
+    def get_obj_info(self, classTree: ET._ElementTree, entry: ET.ElementBase):
         self.factionAndID = entry.get('name')
         factionAndIDList = self.factionAndID.split('/')
         try:
@@ -189,7 +189,7 @@ class GUnit(Unit):
             self.CLASS_DIR, normpath(self.factionAndID) + '.xml')
         self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
             recover=True, remove_comments=True))
-        for e in xmlTree:
+        for e in classTree.getroot():
             targetStr = e.get('name')
             if targetStr == self.factionAndID + 'Description':
                 self.description = val2val(e.get('value'), self.ENGLISH_DIR)

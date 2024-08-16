@@ -59,7 +59,7 @@ page_gen:
     name: 'internalID'
     title: 'name'
     dir: 'Gladius/Units/ChaosSpaceMarines'
-    filter_condition: "record['faction'] == 'ChaosSpaceMarines'"
+    filter_condition: "record['faction'] == 'Chaos Space Marines'"
     
   - data: 'GUnit'
     template: 'GUnit'
@@ -101,14 +101,14 @@ page_gen:
     name: 'internalID'
     title: 'name'
     dir: 'Gladius/Units/SistersOfBattle'
-    filter_condition: "record['faction'] == 'SistersOfBattle'"
+    filter_condition: "record['faction'] == 'Sisters Of Battle'"
     
   - data: 'GUnit'
     template: 'GUnit'
     name: 'internalID'
     title: 'name'
     dir: 'Gladius/Units/SpaceMarines'
-    filter_condition: "record['faction'] == 'SpaceMarines'"
+    filter_condition: "record['faction'] == 'Space Marines'"
     
   - data: 'GUnit'
     template: 'GUnit'

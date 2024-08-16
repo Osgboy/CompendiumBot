@@ -1,22 +1,17 @@
 from obj import Obj, ID2name
 from lxml import etree as ET
+from util import Modifiers
 
 
-class Item(Obj):
+class Item(Obj, Modifiers):
     OBJ_CLASS = 'Items'
 
     def __init__(self, name: str):
         super().__init__(name)
         self.rarity = 'Common'
         self.influenceCost = '0'
-        self.ability: str
-
-    def get_ability(self):
-        try:
-            self.ability = ET.tostring(self.tree.find(
-                'actions'), encoding='unicode')
-        except TypeError:
-            pass
+        self.modifiers: list[str] = []
+        self.rawXML: str
 
     def get_rarity(self):
         trait = self.tree.find('traits')
@@ -29,6 +24,13 @@ class Item(Obj):
     def get_influence_cost(self):
         self.influenceCost = self.tree.find('modifiers').find(
             'modifier').find('effects').find('influenceCost').get('base')
+
+    def get_raw_XML(self):
+        try:
+            self.rawXML = ET.tostring(self.tree.find(
+                'actions'), encoding='unicode')
+        except TypeError:
+            pass
 
 
 class GItem(Item):

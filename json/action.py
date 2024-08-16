@@ -3,6 +3,7 @@ from lxml import etree as ET
 from dataclasses import dataclass
 from obj import Obj, ID2name
 from typing import TYPE_CHECKING
+from util import Modifiers
 if TYPE_CHECKING:
     from unit import Unit
 
@@ -25,7 +26,7 @@ class ActionConditions:
     consumedMovement: bool
 
 
-class Action(Obj):
+class Action(Obj, Modifiers):
     OBJ_CLASS = 'Actions'
 
     def __init__(self, name: str):
@@ -34,7 +35,8 @@ class Action(Obj):
         self.cooldown = '0'
         self.conditions: dataclass = ActionConditions(
             None, True, False, False, True, True)
-        self.modifiers: str
+        self.modifiers: list[str] = []
+        self.rawXML: str
 
     def get_tree(self, unit: Unit):
         try:
@@ -75,8 +77,8 @@ class Action(Obj):
                     setattr(self.conditions, conditionName, ID2name(
                         conditionValue, self.GAME, 'Upgrades'))
 
-    def get_modifiers(self):
-        self.modifiers = ET.tostring(self.tree, encoding='unicode')
+    def get_raw_XML(self):
+        self.rawXML = ET.tostring(self.tree, encoding='unicode')
 
 
 class GAction(Action):

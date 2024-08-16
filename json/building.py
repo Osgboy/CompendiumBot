@@ -1,7 +1,5 @@
-from lxml import etree as ET
-from os.path import join as pathJoin
-from os.path import normpath
-from obj import Obj, ID2name, val2val
+from obj import Obj, ID2name
+from util import Gladius
 
 GLADIUS_RESOURCE_COSTS = (
     'biomassUpkeep', 'biomassCost',
@@ -118,7 +116,7 @@ class Building(Obj):
             pass
 
 
-class GBuilding(Building):
+class GBuilding(Gladius, Building):
     GAME = 'Gladius'
 
     def __init__(self, name: str):
@@ -128,24 +126,7 @@ class GBuilding(Building):
         self.factionAndID: str
         self.faction: str = 'Neutral'
 
-    def get_obj_info(self, xmlTree: ET.ElementBase, entry: ET.ElementBase):
-        self.factionAndID = entry.get('name')
-        if '/' in self.factionAndID:
-            self.faction, self.internalID = self.factionAndID.split('/')
-        else:
-            self.internalID = self.factionAndID
-        self.XMLPath = pathJoin(
-            self.CLASS_DIR, normpath(self.factionAndID) + '.xml')
-        self.tree = ET.parse(self.XMLPath, parser=ET.XMLParser(
-            recover=True, remove_comments=True))
-        for e in xmlTree:
-            targetStr = e.get('name')
-            if targetStr == self.factionAndID + 'Description':
-                self.description = val2val(e.get('value'), self.ENGLISH_DIR)
-            elif targetStr == self.factionAndID + 'Flavor':
-                self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
-
-
+    
 class ZBuilding(Building):
     GAME = 'Zephon'
 

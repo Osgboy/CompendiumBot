@@ -188,9 +188,13 @@ def create_gaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
 
     # Modifiers
     if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value=modifiers[:1024], inline=False)
+        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -235,9 +239,13 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
 
     # Modifiers
     if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value=modifiers[:1024], inline=False)
+        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -427,11 +435,15 @@ def create_gitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         name='Cost', value=f"{GLADIUS_ICONS['influence']} {attrs['influenceCost']}")
 
     # Ability
-    if (ability := attrs['ability']):
-        embed.add_field(name='Ability', value=ability[:1024], inline=False)
+    if (modifiers := attrs['modifiers']):
+        embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
 
-    # Flavor
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
+        # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
@@ -464,11 +476,15 @@ def create_zitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         embed.add_field(name='Prerequisite', value=buyCondition)
 
     # Ability
-    if (ability := attrs['ability']):
-        embed.add_field(name='Ability', value=ability[:1024], inline=False)
+    if (modifiers := attrs['modifiers']):
+        embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
 
-    # Flavor
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
+        # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
@@ -494,9 +510,13 @@ def create_gtrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
 
     # Modifiers
     if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value=modifiers[:1024], inline=False)
+        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -520,9 +540,13 @@ def create_ztrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
 
     # Modifiers
     if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value=modifiers[:1024], inline=False)
+        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
     if verbose:
+        # Raw XML
+        if (rawXML := attrs['rawXML']):
+            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(

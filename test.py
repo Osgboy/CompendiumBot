@@ -265,7 +265,7 @@ async def on_ready():
 
 def docstring_defaults(func):
     doc = func.__doc__ or ''
-    doc += "\tverbose (bool): Flag to include flavor and footer text (default is False)" + \
+    doc += "\tverbose (bool): Flag to include raw XML, flavor text, and footer text if applicable (default is False)" + \
         "\n\tinvisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)"
     func.__doc__ = doc
     return func

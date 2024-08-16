@@ -33,13 +33,12 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
     objDict = {}
     tree = ET.parse(pathJoin(objCls.GAME, 'English', objCls.OBJ_CLASS + '.xml'), parser=ET.XMLParser(
         recover=True, remove_comments=True))
-    root = tree.getroot()
-    for entry in root.iterdescendants('entry'):
+    for entry in tree.iter('entry'):
         try:
             if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
                 name = val2val(entry.get('value'), ENGLISH_DIR)
                 obj = objCls(val2val(name, ENGLISH_DIR))
-                obj.get_obj_info(root, entry)
+                obj.get_obj_info(tree, entry)
                 assert obj.tree is not None
                 kwargs = getAttrs(obj)
                 obj.get_icon_path()
@@ -93,14 +92,14 @@ def get_zbuilding_attrs(building: ZBuilding) -> dict:
 
 
 def get_gitem_attrs(item: GItem) -> dict:
-    item.get_ability()
     item.get_rarity()
     item.get_influence_cost()
+    item.get_modifiers()
+    item.get_raw_XML()
 
     slots = ('internalID', 'description', 'flavor',
-             'ability', 'rarity', 'influenceCost')
+             'rarity', 'influenceCost', 'modifiers', 'rawXML')
     kwargs = {}
-
     for key in slots:
         kwargs[key] = getattr(item, key, None)
     return kwargs
@@ -108,13 +107,14 @@ def get_gitem_attrs(item: GItem) -> dict:
 
 def get_zitem_attrs(item: ZItem) -> dict:
     item.get_branch()
-    item.get_ability()
     item.get_rarity()
     item.get_influence_cost()
     item.get_buy_condition()
+    item.get_modifiers()
+    item.get_raw_XML()
 
     slots = ('internalID', 'branch', 'description', 'flavor',
-             'ability', 'rarity', 'influenceCost', 'buyCondition')
+             'rarity', 'influenceCost', 'buyCondition', 'modifiers', 'rawXML')
     kwargs = {}
     for key in slots:
         kwargs[key] = getattr(item, key, None)
@@ -123,8 +123,9 @@ def get_zitem_attrs(item: ZItem) -> dict:
 
 def get_gtrait_attrs(trait: GTrait) -> dict:
     trait.get_modifiers()
+    trait.get_raw_XML()
 
-    slots = ('internalID', 'description', 'flavor', 'modifiers')
+    slots = ('internalID', 'description', 'flavor', 'modifiers', 'rawXML')
     kwargs = {}
     if trait.faction:
         kwargs['faction'] = camel_case_split(trait.faction)
@@ -135,8 +136,9 @@ def get_gtrait_attrs(trait: GTrait) -> dict:
 
 def get_ztrait_attrs(trait: ZTrait) -> dict:
     trait.get_modifiers()
+    trait.get_raw_XML()
 
-    slots = ('internalID', 'description', 'flavor', 'modifiers')
+    slots = ('internalID', 'description', 'flavor', 'modifiers', 'rawXML')
     kwargs = {}
     for key in slots:
         kwargs[key] = getattr(trait, key, None)
@@ -262,7 +264,7 @@ def get_factions(objDict: str, sourceDicts: tuple[str], faction: str, objType: s
         if faction not in v:
             v[faction] = 'Neutral'
 
-
+# mainArgs order must place factionArgs[0] after anything in factionArgs[1]
 mainArgs = {
     get_gbuilding_attrs: GBuilding,
     get_zbuilding_attrs: ZBuilding,
@@ -306,7 +308,7 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
             if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
                 unitName = val2val(entry.get('value'), ENGLISH_DIR)
                 unit = unitCls(val2val(unitName, ENGLISH_DIR))
-                unit.get_obj_min_info(englishUnit, entry)
+                unit.get_obj_min_info(entry)
                 assert unit.tree is not None
                 for actionEntry in unit.tree.find('actions'):
                     if (tag := actionEntry.tag) in unit.SKIPPED_ACTIONS:
@@ -339,10 +341,11 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                     action.get_cooldown()
                     action.get_conditions()
                     action.get_modifiers()
+                    action.get_raw_XML()
                     action.get_icon_path()
 
                     slots = ('internalID', 'description',
-                             'flavor', 'modifiers')
+                             'flavor', 'modifiers', 'rawXML')
                     kwargs = {}
                     if action.passive:
                         kwargs['cooldown'] = 'Passive'
