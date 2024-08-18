@@ -102,11 +102,10 @@ class GWeapon(Weapon):
         if prefix == 'melee':
             self.finalStats.attacks = self._operate(
                 self.unitStats.meleeAttacks, 'meleeAttacks')
-        self.finalStats.attacks = self._operate(
-            self.finalStats.attacks, 'attacks')
+        self.finalStats.attacks = self._operate(0, 'attacks')
         # Armor penetration
         self.finalStats.armorPen = int(
-            self._operate(self.finalStats.armorPen, prefix + 'ArmorPenetration'))
+            self._operate(0, prefix + 'ArmorPenetration'))
         # Damage
         strengthDamage = self._operate(
             self.unitStats.strengthDamage, 'strengthDamage')

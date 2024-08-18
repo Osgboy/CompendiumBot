@@ -121,11 +121,10 @@ def calculate_gweapon_stats(range: str, weaponStats: dict,
     if prefix == 'melee':
         finalStats['attacks'] = operate(
             unitStats['meleeAttacks'], weaponStats, 'meleeAttacks')
-    finalStats['attacks'] = operate(
-        finalStats['attacks'], weaponStats, 'attacks')
+    finalStats['attacks'] = operate(0, weaponStats, 'attacks')
     # Armor penetration
     finalStats['armorPen'] = int(
-        operate(finalStats['armorPen'], weaponStats, prefix + 'ArmorPenetration'))
+        operate(0, weaponStats, prefix + 'ArmorPenetration'))
     # Damage
     strengthDamage = operate(unitStats['strengthDamage'],
                              weaponStats, 'strengthDamage')
