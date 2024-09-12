@@ -111,7 +111,7 @@ def operate(operand1: float, weaponStats: dict, key: str) -> float:
 
 def calculate_gweapon_stats(range: str, weaponStats: dict,
                             unitStats: dict = {'meleeAccuracy': 6, 'rangedAccuracy': 6, 'meleeAttacks': 1, 'strengthDamage': 1}) -> dict:
-    finalStats = {'attacks': 1, 'armorPen': 0, 'damage': 0, 'accuracy': 6}
+    finalStats = {'attacks': 0, 'armorPen': 0, 'damage': 0, 'accuracy': 6}
     # Melee or ranged
     if range == 'Melee':
         prefix = 'melee'
@@ -121,7 +121,7 @@ def calculate_gweapon_stats(range: str, weaponStats: dict,
     if prefix == 'melee':
         finalStats['attacks'] = operate(
             unitStats['meleeAttacks'], weaponStats, 'meleeAttacks')
-    finalStats['attacks'] = operate(0, weaponStats, 'attacks')
+    finalStats['attacks'] = operate(finalStats['attacks'], weaponStats, 'attacks')
     # Armor penetration
     finalStats['armorPen'] = int(
         operate(0, weaponStats, prefix + 'ArmorPenetration'))
