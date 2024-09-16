@@ -96,6 +96,7 @@ ACTION_CONDITIONS = {
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
+intents.members = True
 intents.message_content = True
 bot = commands.Bot(command_prefix='$', intents=intents)
 dicts: dict[str, dict[str, dict]] = {}  # dict[objClass, dict[obj, objAttrs]]
@@ -243,7 +244,10 @@ async def return_list(interaction: discord.Interaction, invisible: bool, objClas
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {bot.user}')
+    print(f"Logged in as {bot.user}")
+    print("\nRunning on the following guilds:")
+    for guild in bot.guilds:
+        print('\t' + guild.name)
 
     listGroup = List(
         name='list', description='List names of objects of a certain type with optional filters.')
@@ -254,13 +258,13 @@ async def on_ready():
     bot.tree.add_command(listGroup)
 
     synced = await bot.tree.sync()
-    print("# CMDs synced: " + str(len(synced)))
+    print(f"\n# CMDs synced: {len(synced)}")
 
     JSON_DIR = os.path.join('json')
     for objClass in ('GAction', 'ZAction', 'GBuilding', 'ZBuilding', 'GItem', 'ZItem', 'GUnit', 'ZUnit', 'GUpgrade', 'ZUpgrade', 'GTrait', 'ZTrait', 'GWeapon', 'ZWeapon'):
         with open(os.path.join(JSON_DIR, objClass + '.json'), 'r') as file:
             dicts[objClass] = json.load(file)
-            print(f"Loaded {objClass}.json")
+    print(f"\n# JSONs loaded: {len(dicts)}")
 
 
 def docstring_defaults(func):
@@ -537,6 +541,52 @@ class ZephonList(app_commands.Group):
         if range == 'melee':
             range = 'Melee'
         await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, branch=branch, ZTrait=traitname, range=range)
+
+
+class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"):
+    role = discord.ui.TextInput(
+        style=discord.TextStyle.short,
+        label='Role',
+        required=True,
+        placeholder="Role to be assigned"
+    )
+
+    users = discord.ui.TextInput(
+        style=discord.TextStyle.long,
+        label='User List',
+        required=True,
+        placeholder="List of users (separated by new lines) to assign the role to"
+    )
+
+    async def on_submit(self, interaction: discord.Interaction) -> None:
+        role: discord.Role = discord.utils.get(interaction.guild.roles, name=self.role.value)
+        if not role:
+            await interaction.response.send_message(f"Role {self.role.value} not found.", ephemeral=True)
+            return
+        userList = self.users.value.split('\n')
+        confirmList = []
+        for username in userList:
+            user: discord.Member = discord.utils.find(lambda m: m.name == username or m.display_name == username, interaction.guild.members)
+            if not user:
+                confirmList.append(f"User {username} not found.")
+                continue
+            await user.add_roles(role)
+            confirmList.append(f"Role {self.role.value} successfully assigned to member {username}.")
+        await interaction.response.send_message('\n'.join(confirmList), ephemeral=True)
+
+
+@bot.tree.command()
+@app_commands.checks.has_role('Administrator')
+async def addroles(interaction: discord.Interaction):
+    """Assign a role to a list of users."""
+    assign_role_modal = AssignRoleModal()
+    await interaction.response.send_modal(assign_role_modal)
+
+    
+@addroles.error
+async def addroles_error(interaction: discord.Interaction, error):
+    if isinstance(error, discord.app_commands.MissingRole):
+        await interaction.response.send_message("You do not have the Administrator role.", ephemeral=True)
 
 
 @bot.tree.command()
