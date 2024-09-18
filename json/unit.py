@@ -4,7 +4,7 @@ from os.path import join as pathJoin
 from os.path import normpath
 from obj import Obj, ID2name, val2val
 from weapon import GUnitWeaponStats
-
+from upgrade import GUpgrade, ZUpgrade
 
 @dataclass  # (slots=True)
 class GResourceStats:
@@ -89,6 +89,7 @@ class Unit(Obj):
 
     def __init__(self, name: str):
         super().__init__(name)
+        self.tier: str
         # Stats
         self.resourceStats: dataclass
         self.combatStats: dataclass
@@ -195,6 +196,16 @@ class GUnit(Unit):
                 self.description = val2val(e.get('value'), self.ENGLISH_DIR)
             elif targetStr == self.factionAndID + 'Flavor':
                 self.flavor = val2val(e.get('value'), self.ENGLISH_DIR)
+
+    def get_tier(self):
+        upgrade = GUpgrade('placeholder')
+        try:
+            upgrade.tree = ET.parse(pathJoin(upgrade.CLASS_DIR, self.faction, self.internalID + '.xml'), parser=ET.XMLParser(
+                            recover=True, remove_comments=True))
+            upgrade.get_tier()
+            self.tier = upgrade.tier
+        except OSError:
+            self.tier = 'N/A'
 
     def get_group_size(self):
         groupEntry = self.tree.find('group')

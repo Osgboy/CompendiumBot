@@ -48,7 +48,7 @@ class ZUpgrade(Upgrade):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.faction = 'Any'
+        self.faction: str = 'Any'
 
     def get_branch(self):
         self.branch = self.tree.getroot().get('branch')

@@ -64,7 +64,28 @@ ZEPHON_RESOURCES = (
     'food', 'minerals', 'energy', 'transuranium', 'antimatter', 'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence'
 )
 
-def create_gaction_list(classDict: dict, *, faction: str = None, cooldown: str = None, condition: str = None, GUpgrade: str = None) -> str:
+def partition_embed(embed: discord.Embed, objList: list[str]) -> discord.Embed:
+    if objList:
+        startIdx = 0
+        endIdx = 0
+        fieldIdx = 1
+        while endIdx < len(objList):
+            charSum = 0
+            while charSum <= 1024 and endIdx < len(objList):
+                charSum += len(objList[endIdx]) + 1
+                endIdx += 1
+            if endIdx >= len(objList):
+                embed.add_field(name=f"Results Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx]))
+            else:
+                embed.add_field(name=f"Results Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx-1]))
+                fieldIdx += 1
+                startIdx = endIdx - 1
+    else:
+        embed.description = 'No matches found for given filters.'
+    return embed
+
+def create_gaction_list(classDict: dict, *, faction: str = None, cooldown: str = None, condition: str = None, GUpgrade: str = None) -> discord.Embed:
+    embed = discord.Embed(title='Gladius Action search results')
     actionList = []
     for action, attrs in classDict.items():
         if (
@@ -75,13 +96,10 @@ def create_gaction_list(classDict: dict, *, faction: str = None, cooldown: str =
         ):
             continue
         actionList.append(action)
-
-    if actionList:
-        return('\n'.join(actionList))
-    else:
-        return('No actions found to match given filters.')
+    return partition_embed(embed, actionList)
 
 def create_zaction_list(classDict: dict, *, branch: str = None, cooldown: str = None, condition: str = None, ZUpgrade: str = None) -> str:
+    embed = discord.Embed(title='Zephon Action search results')
     actionList = []
     for action, attrs in classDict.items():
         if (
@@ -92,13 +110,10 @@ def create_zaction_list(classDict: dict, *, branch: str = None, cooldown: str = 
         ):
             continue
         actionList.append(action)
-
-    if actionList:
-        return('\n'.join(actionList))
-    else:
-        return('No actions found to match given filters.')
+    return partition_embed(embed, actionList)
 
 def create_gbuilding_list(classDict: dict, *, faction: str = None, GTrait: str = None) -> str:
+    embed = discord.Embed(title='Gladius Building search results')
     buildingList = []
     for building, attrs in classDict.items():
         if (
@@ -107,13 +122,10 @@ def create_gbuilding_list(classDict: dict, *, faction: str = None, GTrait: str =
         ):
             continue
         buildingList.append(building)
-
-    if buildingList:
-        return('\n'.join(buildingList))
-    else:
-        return('No buildings found to match given filters.')
+    return partition_embed(embed, buildingList)
 
 def create_zbuilding_list(classDict: dict, *, branch: str = None, ZTrait: str = None) -> str:
+    embed = discord.Embed(title='Zephon Building search results')
     buildingList = []
     for building, attrs in classDict.items():
         if (
@@ -122,13 +134,10 @@ def create_zbuilding_list(classDict: dict, *, branch: str = None, ZTrait: str = 
         ):
             continue
         buildingList.append(building)
-
-    if buildingList:
-        return('\n'.join(buildingList))
-    else:
-        return('No buildings found to match given filters.')
+    return partition_embed(embed, buildingList)
 
 def create_gitem_list(classDict: dict, *, rarity: str = None) -> str:
+    embed = discord.Embed(title='Gladius Item search results')
     itemList = []
     for item, attrs in classDict.items():
         if (
@@ -136,13 +145,10 @@ def create_gitem_list(classDict: dict, *, rarity: str = None) -> str:
         ):
             continue
         itemList.append(item)
-
-    if itemList:
-        return('\n'.join(itemList))
-    else:
-        return('No items found to match given filters.')
+    return partition_embed(embed, itemList)
     
 def create_zitem_list(classDict: dict, *, branch: str = None, rarity: str = None, ZTrait: str = None) -> str:
+    embed = discord.Embed(title='Zephon Item search results')
     itemList = []
     for item, attrs in classDict.items():
         if (
@@ -152,13 +158,10 @@ def create_zitem_list(classDict: dict, *, branch: str = None, rarity: str = None
         ):
             continue
         itemList.append(item)
-
-    if itemList:
-        return('\n'.join(itemList))
-    else:
-        return('No items found to match given filters.')
+    return partition_embed(embed, itemList)
 
 def create_gtrait_list(classDict: dict, *, faction: str = None) -> str:
+    embed = discord.Embed(title='Gladius Trait search results')
     traitList = []
     for trait, attrs in classDict.items():
         if (
@@ -166,13 +169,10 @@ def create_gtrait_list(classDict: dict, *, faction: str = None) -> str:
         ):
             continue
         traitList.append(trait)
-
-    if traitList:
-        return('\n'.join(traitList))
-    else:
-        return('No traits found to match given filters.')
+    return partition_embed(embed, traitList)
     
 def create_ztrait_list(classDict: dict, *, branch: str = None) -> str:
+    embed = discord.Embed(title='Zephon Trait search results')
     traitList = []
     for trait, attrs in classDict.items():
         if (
@@ -180,13 +180,10 @@ def create_ztrait_list(classDict: dict, *, branch: str = None) -> str:
         ):
             continue
         traitList.append(trait)
-
-    if traitList:
-        return('\n'.join(traitList))
-    else:
-        return('No traits found to match given filters.')
+    return partition_embed(embed, traitList)
 
 def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, GWeapon: str = None, GTrait: str = None, GAction: str = None) -> str:
+    embed = discord.Embed(title='Gladius Unit search results')
     unitList = []
     for unit, attrs in classDict.items():
         if (
@@ -198,13 +195,10 @@ def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, 
         ):
             continue
         unitList.append(unit)
-
-    if unitList:
-        return('\n'.join(unitList))
-    else:
-        return('No units found to match given filters.')
+    return partition_embed(embed, unitList)
 
 def create_zunit_list(classDict: dict, *, branch: str = None, ZWeapon: str = None, ZTrait: str = None, ZAction: str = None) -> str:
+    embed = discord.Embed(title='Zephon Unit search results')
     unitList = []
     for unit, attrs in classDict.items():
         if (
@@ -215,13 +209,39 @@ def create_zunit_list(classDict: dict, *, branch: str = None, ZWeapon: str = Non
         ):
             continue
         unitList.append(unit)
+    return partition_embed(embed, unitList)
 
-    if unitList:
-        return('\n'.join(unitList))
+def create_gupgrade_list(classDict: dict, *, faction: str = None, dlc: str = None, tier: str = None, GUpgrade: str = None) -> str:
+    embed = discord.Embed(title='Gladius Upgrade search results')
+    if faction and not tier and not GUpgrade:
+        tierDict = { k:[] for k in ['Not Researchable'] + [str(i) for i in range(1, 11)]}
+        for upgrade, attrs in classDict.items():
+            if (
+                faction == attrs['faction']
+                and (not dlc or dlc == attrs['dlc'])
+            ):
+                tierDict[attrs['tier']].append(upgrade)
+        for k,v in tierDict.items():
+            if k == 'Not Researchable':
+                embed.add_field(name=k, value='\n'.join(v))
+            else:
+                embed.add_field(name=f"Tier {k}", value='\n'.join(v))
+        return embed
     else:
-        return('No units found to match given filters.')
+        upgradeList = []
+        for upgrade, attrs in classDict.items():
+            if (
+                (faction and faction != attrs['faction'])
+                or (dlc and dlc != attrs['dlc'])
+                or (tier and tier != attrs['tier'])
+                or (GUpgrade and GUpgrade not in attrs['requiredUpgrades'])
+            ):
+                continue
+            upgradeList.append(upgrade)
+        return partition_embed(embed, upgradeList)
 
 def create_gweapon_list(classDict: dict, *, faction: str = None, GTrait: str = None, range: str = None) -> str:
+    embed = discord.Embed(title='Gladius Weapon search results')
     weaponList = []
     for weapon, attrs in classDict.items():
         if (
@@ -231,13 +251,10 @@ def create_gweapon_list(classDict: dict, *, faction: str = None, GTrait: str = N
         ):
             continue
         weaponList.append(weapon)
-
-    if weaponList:
-        return('\n'.join(weaponList))
-    else:
-        return('No weapons found to match given filters.')
+    return partition_embed(embed, weaponList)
 
 def create_zweapon_list(classDict: dict, *, branch: str = None, ZTrait: str = None, range: str = None) -> str:
+    embed = discord.Embed(title='Zephon Weapon search results')
     weaponList = []
     for weapon, attrs in classDict.items():
         if (
@@ -247,8 +264,4 @@ def create_zweapon_list(classDict: dict, *, branch: str = None, ZTrait: str = No
         ):
             continue
         weaponList.append(weapon)
-
-    if weaponList:
-        return('\n'.join(weaponList))
-    else:
-        return('No weapons found to match given filters.')
+    return partition_embed(embed, weaponList)

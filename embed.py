@@ -567,11 +567,11 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
     # Faction
     embed.add_field(name='Faction', value=attrs['faction'])
 
+    # Tier
+    embed.add_field(name='Research Tier', value=attrs['tier'])
+
     # DLC
     embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
-
-    # Placeholder for spacing
-    embed.add_field(name='\u200b', value='\u200b')
 
     # Cost
     costText = [GLADIUS_ICONS['production'],
@@ -906,8 +906,8 @@ def create_zweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
         embed.add_field(name='Wielder', value=unitName)
 
     # Stats
-    statText = (f"{ZEPHON_ICONS['damage']} {weaponStats['damage']} | {ZEPHON_ICONS['attacks']} {weaponStats['attacks']} | "
-                f"{ZEPHON_ICONS['armorPenetration']} {weaponStats['armorPen']} | {ZEPHON_ICONS['accuracy']} {weaponStats['accuracy']} | "
+    statText = (f"{ZEPHON_ICONS['damage']} {weaponStats['damage']} | {ZEPHON_ICONS['armorPenetration']} {weaponStats['armorPen']} | "
+                f"{ZEPHON_ICONS['attacks']} {weaponStats['attacks']} | {ZEPHON_ICONS['accuracy']} {weaponStats['accuracy']} | "
                 f"{ZEPHON_ICONS['range']} {attrs['range']}")
     embed.add_field(name='Stats', value=statText, inline=False)
 

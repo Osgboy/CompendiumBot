@@ -147,6 +147,7 @@ def get_ztrait_attrs(trait: ZTrait) -> dict:
 
 
 def get_gunit_attrs(unit: GUnit) -> dict:
+    unit.get_tier()
     unit.get_dlc()
     unit.get_stats()
     unit.get_weapon_stats()
@@ -155,8 +156,8 @@ def get_gunit_attrs(unit: GUnit) -> dict:
     unit.get_traits()
     unit.get_actions()
 
-    slots = ('internalID', 'dlc', 'description', 'flavor',
-             'weapons', 'traits', 'actions')
+    slots = ('internalID', 'tier', 'dlc', 'description',
+             'flavor', 'weapons', 'traits', 'actions')
     kwargs = {}
     kwargs['faction'] = camel_case_split(unit.faction)
     kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)

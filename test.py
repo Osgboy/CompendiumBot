@@ -150,7 +150,7 @@ class ConfirmFuzzyMatch(discord.ui.View):
     @discord.ui.button(label='Yes', style=discord.ButtonStyle.green)
     async def confirm(self, interaction: discord.Interaction, button: discord.ui.Button):
         try:
-            content, embed, fullIconPath = self.matchFunc(
+            embed, fullIconPath = self.matchFunc(
                 *self.args, **self.kwargs)
         except NotFoundError as nf:
             await interaction.response.edit_message(content=f'**{nf.userInput}** not found. Did you mean **{nf.bestMatch}**?')
@@ -158,22 +158,22 @@ class ConfirmFuzzyMatch(discord.ui.View):
             print(repr(nf))
         else:
             if fullIconPath is None:
-                await interaction.response.edit_message(content=content, embed=embed, view=None)
+                await interaction.response.edit_message(embed=embed, view=None)
                 print('Successfully returned request without icon after editing.')
                 return
             try:
                 image = discord.File(fullIconPath, filename='icon.png')
                 embed.set_thumbnail(url="attachment://icon.png")
-                await interaction.response.edit_message(content=content, embed=embed, attachments=[image], view=None)
+                await interaction.response.edit_message(embed=embed, attachments=[image], view=None)
                 print('Successfully returned request after editing.')
             except FileNotFoundError:
-                await interaction.response.edit_message(content=content, embed=embed, view=None)
+                await interaction.response.edit_message(embed=embed, view=None)
                 print(
                     f'Icon {fullIconPath!r} was not found. Sending embed without icon')
 
 
 def match_and_create_embed(verbose: bool, objClass: str, embedFunc: Callable[[str, dict, bool, str], discord.Embed], unitClass: str,
-                           *, name: str, unitName: str) -> tuple[str, discord.Embed, str]:
+                           *, name: str, unitName: str) -> tuple[discord.Embed, str]:
     if unitName:
         unitArgs = [*fuzzy_match('unitName', unitName, dicts[unitClass])]
     else:
@@ -181,7 +181,7 @@ def match_and_create_embed(verbose: bool, objClass: str, embedFunc: Callable[[st
     objName, objDict = fuzzy_match('name', name, dicts[objClass])
     embed = embedFunc(objName, objDict, verbose, *unitArgs)
     fullIconPath = objDict['iconPath']
-    return None, embed, fullIconPath
+    return embed, fullIconPath
 
 
 async def return_info(interaction: discord.Interaction, name: str, verbose: bool, invisible: bool, objClass: str,
@@ -192,7 +192,7 @@ async def return_info(interaction: discord.Interaction, name: str, verbose: bool
           f'- Unit Name: {unitName}\n')
     kwargs = {'name': name, 'unitName': unitName}
     try:
-        _, embed, fullIconPath = match_and_create_embed(
+        embed, fullIconPath = match_and_create_embed(
             verbose, objClass, embedFunc, unitClass, **kwargs)
     except NotFoundError as nf:
         kwargs[nf.keyword] = nf.bestMatch
@@ -210,8 +210,8 @@ async def return_info(interaction: discord.Interaction, name: str, verbose: bool
             print('Successfully returned request without icon.')
 
 
-def match_and_create_list(objClass: str, embedFunc: Callable[[dict, any], str],
-                          **filters) -> tuple[str, discord.Embed, str]:
+def match_and_create_list(objClass: str, embedFunc: Callable[[dict, any], discord.Embed],
+                          **filters) -> tuple[discord.Embed, str]:
     kwargs = {}
     for filterClass, filterName in filters.items():
         if not filterName:
@@ -221,8 +221,7 @@ def match_and_create_list(objClass: str, embedFunc: Callable[[dict, any], str],
             continue
         name, _ = fuzzy_match(filterClass, filterName, dicts[filterClass])
         kwargs[filterClass] = name
-    content = embedFunc(dicts[objClass], **kwargs)
-    return content, None, None
+    return embedFunc(dicts[objClass], **kwargs), None
 
 
 async def return_list(interaction: discord.Interaction, invisible: bool, objClass: str,
@@ -230,15 +229,14 @@ async def return_list(interaction: discord.Interaction, invisible: bool, objClas
     print(f'\nReceived request to list:\n'
           f'- Class: {objClass}\n')
     try:
-        content, embed, _ = match_and_create_list(
-            objClass, embedFunc, **filters)
+        embed, _ = match_and_create_list(objClass, embedFunc, **filters)
     except NotFoundError as nf:
         filters[nf.keyword] = nf.bestMatch
         await interaction.response.send_message(f'**{nf.userInput}** not found. Did you mean **{nf.bestMatch}**?', ephemeral=invisible,
                                                 view=ConfirmFuzzyMatch(match_and_create_list, objClass, embedFunc, **filters))
         print(repr(nf))
     else:
-        await interaction.response.send_message(content=content, embed=embed, ephemeral=invisible)
+        await interaction.response.send_message(embed=embed, ephemeral=invisible)
         print('Successfully returned request without icon.')
 
 
@@ -371,13 +369,15 @@ class GladiusList(app_commands.Group):
 
     @app_commands.command()
     @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
+    @app_commands.choices(dlc=[app_commands.Choice(name=v, value=k) for k, v in DLCS.items()])
     @app_commands.choices(tier=[app_commands.Choice(name=t, value=t) for t in ['Not Researchable'] + [str(i) for i in range(1, 11)]])
-    async def upgrade(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '', tier: app_commands.Choice[str] = '',
-                      requiredupgrade: str = '', invisible: bool = False):
-        """Placeholder. List Gladius upgrades according to given filters.
+    async def upgrade(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '', dlc: app_commands.Choice[str] = '',
+                      tier: app_commands.Choice[str] = '', requiredupgrade: str = '', invisible: bool = False):
+        """List Gladius upgrades according to given filters.
 
         Args:
             faction (str): Filter by faction
+            dlc (str): Filter by DLC
             tier (str): Filter by tier
             requiredupgrade (str): Filter by prerequisite research
             invisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)
@@ -385,9 +385,11 @@ class GladiusList(app_commands.Group):
         # faction, tier, required upgrade, unlocks
         if faction:
             faction = faction.value
+        if dlc:
+            dlc = dlc.value
         if tier:
             tier = tier.value
-        await return_list(interaction, invisible, 'GUpgrade', objList.create_gupgrade_list, faction=faction, tier=tier, GUpgrade=requiredupgrade)
+        await return_list(interaction, invisible, 'GUpgrade', objList.create_gupgrade_list, faction=faction, dlc=dlc, tier=tier, GUpgrade=requiredupgrade)
 
     @app_commands.command()
     @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
