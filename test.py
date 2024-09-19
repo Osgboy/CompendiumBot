@@ -158,16 +158,16 @@ class ConfirmFuzzyMatch(discord.ui.View):
             print(repr(nf))
         else:
             if fullIconPath is None:
-                await interaction.response.edit_message(embed=embed, view=None)
+                await interaction.response.edit_message(content=None, embed=embed, view=None)
                 print('Successfully returned request without icon after editing.')
                 return
             try:
                 image = discord.File(fullIconPath, filename='icon.png')
                 embed.set_thumbnail(url="attachment://icon.png")
-                await interaction.response.edit_message(embed=embed, attachments=[image], view=None)
+                await interaction.response.edit_message(content=None, embed=embed, attachments=[image], view=None)
                 print('Successfully returned request after editing.')
             except FileNotFoundError:
-                await interaction.response.edit_message(embed=embed, view=None)
+                await interaction.response.edit_message(content=None, embed=embed, view=None)
                 print(
                     f'Icon {fullIconPath!r} was not found. Sending embed without icon')
 
