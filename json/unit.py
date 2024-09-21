@@ -121,8 +121,8 @@ class Unit(Obj):
             attrName = 'name'
         elif self.GAME == 'Zephon':
             attrName = 'type'
-        try:
-            for weapon in self.tree.find('weapons').iterfind('weapon'):
+        if (xmlWeapons := self.tree.find('weapons')) is not None:
+            for weapon in xmlWeapons.iterfind('weapon'):
                 if (weaponID := weapon.get(attrName)) == 'None':
                     continue
                 weaponName = ID2name(weaponID, self.GAME, 'Weapons')
@@ -130,27 +130,21 @@ class Unit(Obj):
                     'count': weapon.get('count', default='1'),
                     'requiredUpgrade': weapon.get('requiredUpgrade'),
                     'secondary': (lambda x: x == '0')(weapon.get('enabled', default='1'))}
-        # no weapons
-        except AttributeError:
-            pass
 
     def get_traits(self):
         if self.GAME == 'Gladius':
             attrName = 'name'
         elif self.GAME == 'Zephon':
             attrName = 'type'
-        try:
-            for trait in self.tree.find('traits').iterfind('trait'):
+        if (xmlTraits := self.tree.find('traits')) is not None:
+            for trait in xmlTraits.iterfind('trait'):
                 traitID = trait.get(attrName)
                 traitName = ID2name(traitID, self.GAME, 'Traits')
                 self.traits[traitName] = trait.get('requiredUpgrade')
-        # no traits
-        except AttributeError:
-            pass
 
     def get_actions(self):
-        try:
-            for action in self.tree.find('actions'):
+        if (xmlActions := self.tree.find('actions')) is not None:
+            for action in xmlActions:
                 if (tag := action.tag) in self.SKIPPED_ACTIONS:
                     continue
                 if not (actionID := action.get('name')):
@@ -159,9 +153,6 @@ class Unit(Obj):
                 actionName = ID2name(actionID, self.GAME, 'Actions')
                 if actionName:
                     self.actions[actionName] = action.get('requiredUpgrade')
-        # no actions
-        except AttributeError:
-            pass
 
 
 class GUnit(Unit):

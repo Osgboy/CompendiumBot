@@ -28,7 +28,8 @@ class Obj():
             recover=True, remove_comments=True))
         bestRatio = 0
         for entry in classTree.iter('entry'):
-            if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
+            if (all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')) and
+                (self.OBJ_CLASS != 'Factions' or all(x not in entry.get('name') for x in ('Discovered', 'Defeated', 'Quote')))):
                 targetStr = val2val(entry.get('value'), self.ENGLISH_DIR)
                 compareStr = targetStr.casefold()
                 try:

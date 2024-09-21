@@ -1,50 +1,259 @@
 {
     "Adeptus Mechanicus": {
         "internalID": "AdeptusMechanicus",
+        "description": "The Adeptus Mechanicus are an empire within the Imperium, with their own agenda, their own god (\u2018The Omnissiah\u2019) and their own fanatical purpose\u2014the discovery of knowledge, of technology. Though they supply the technical and scientific expertise of the Imperium, they also possess their own elite armies of bionically-augmented soldiers. Xenos or man, stand in their way and they will annihilate you.",
+        "flavor": "\u201cKnowledge is the principal thing; therefore get thee knowledge. And in all your getting, get understanding. The Omnissiah directs us to tread the path of wisdom; if anything blocks our way, be it creature, machine or man, we must sacrifice them to the glory of the Machine God and to the Imperium.\u201d\n  \u2014 Genetor Choen, Forge Mistress\n\nYou of the Adeptus Mechanicus\u2014the Cult of the Machine God\u2014have worshipped the Omnissiah long before the Imperium came to your world of Mars. Following His edict, you have never doubted or ceased to pursue your calling\u2014to gather knowledge and to employ it to gather more. In pursuit of that, you built the devices and machines that enabled the Imperium to conquer the galaxy 10,000 years ago and maintain it today.\n\nSo Gladius Prime was your planet more than it was the Imperium\u2019s\u2014what Hive World was not? Its cities, its satellites, its wastes\u2014all were built with Mars\u2019 technology, all answered only to the Adeptus Mechanicus\u2014that is, to you. It was little effort to hide the Adeptus Mechanicus research into the Tyranids here, in a facility deep beneath the ashen wastes.\n\nNow, however, your facility has been compromised, your Skitarii forces scattered and your subjects have escaped. You must rebuild, recover and take Gladius Prime\u2019s secrets for your own. For you have a mission to fulfil, from the Omnissiah himself\u2026",
+        "actions": {
+            "Power Surge": null,
+            "Litany of the Electromancer": "AdeptusMechanicus/LitanyOfTheElectromancer",
+            "Chant of the Remorseless Fist": "AdeptusMechanicus/ChantOfTheRemorselessFist",
+            "Benediction of Omniscience": "AdeptusMechanicus/BenedictionOfOmniscience",
+            "Shroudpsalm": "AdeptusMechanicus/Shroudpsalm",
+            "Invocation of Machine-Might": "AdeptusMechanicus/InvocationOfMachineMight",
+            "Incantation of the Iron Soul": "AdeptusMechanicus/IncantationOfTheIronSoul",
+            "Bulwark Imperative": "AdeptusMechanicus/BulwarkImperative",
+            "Protector Imperative": "AdeptusMechanicus/ProtectorImperative",
+            "Conqueror Imperative": "AdeptusMechanicus/ConquerorImperative",
+            "Aggressor Imperative": "AdeptusMechanicus/AggressorImperative"
+        },
+        "startingUnits": {
+            "Cybernetica Datasmith": "1",
+            "Skitarii Vanguards": "2"
+        },
+        "traits": {
+            "Enslaved to the Past": null,
+            "Stygian Enlightenment": "AdeptusMechanicus/StygianEnlightenment"
+        },
+        "iconPath": "Gladius\\Icons\\Factions\\AdeptusMechanicus.png",
         "name": "Adeptus Mechanicus"
     },
     "Astra Militarum": {
         "internalID": "AstraMilitarum",
+        "description": "Made up of innumerable billions of soldiers from a million different worlds, the Astra Militarum is, by sheer weight of numbers, the greatest army the galaxy has ever known. They hold nothing less than the survival of humanity in their hands.",
+        "flavor": "\u201cThough our tanks and artillery are mighty, it is the vast ranks of Imperial Guardsmen that shall trample the enemy to dust\u2014let them come.\u201d\n  \u2014 Ursarkar E. Creed, Lord Castellan of Cadia\n\nThe Astra Militarum, commonly known as the Imperial Guard, is the primary fighting force of the Imperium of Man. Across a galaxy of a hundred billion stars, there must be billions of Guardsmen at least\u2014yet even the Departmento Munitorum on Terra, which oversees this immense force, has no real idea of how many troops there are at any one time. A safe estimate is to say that there are millions of regiments.\n\nWhat the Imperial Guard lack in strength, courage and resilience, they make up in numbers, organisation and fighting vehicles\u2014the Guard's wide range of tanks is rightly feared. The manpower of the Astra Militarum is predominantly human, though they do employ stable mutant strains, such as the giant Bullgryns. All these troops are equipped with the best mass-produced weaponry that the Techpriest war manufactories can provide, though it is often backward compared to that wielded by their enemies.\n\nAcross the vastness of galactic space, the vast majority of the Imperium's battles involve the Astra Militarum. It is by their actions and endless sacrifice that mankind has claimed and held its place in the universe.",
+        "actions": {},
+        "startingUnits": {
+            "Tech-Priest Enginseers": "1",
+            "Guardsmen": "3"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\AstraMilitarum.png",
         "name": "Astra Militarum"
     },
     "Chaos Space Marines": {
         "internalID": "ChaosSpaceMarines",
+        "description": "Ten thousand years ago the Imperium erupted into open rebellion, led by the forces of the Dark Gods of Chaos. Though it was defeated, those same Traitor Space Marines still live today. They are the equal of their loyalist Brethren, but twisted and corrupted by the Warp into strange death-dealing amalgams of man, monster and machine.",
+        "flavor": "\u201cHeresy\u2026 must be eradicated leaf, brand and root. It must be exorcised utterly or it will return all the stronger, time and time again, until it is too great to destroy.\u201d\n  \u2014 Galan Noirgrim, Master of the Ordo Malleus\n\nInside the Eye of Terror, the Chaos Marines have built a new, dark Imperium. The fallen Primarchs (now Daemon Princes of Chaos) lead their forces in endless internecine war for resources, slaves or favour in the eyes of the gods.\n\nHowever, recently, the balance of power has shifted. With the fall of the fortress-world of Cadia, the Traitor Legions can come and go at will\u2014and with the birth of the massive Warp storm called the Great Rift, the Imperium is divided and weakened. The hive world of Gladius Prime\u2014isolated in a distant corner of the galaxy\u2014should be an easy target\u2026",
+        "actions": {
+            "Mark of Nurgle": "ChaosSpaceMarines/MarkOfNurgle",
+            "Mark of Khorne": "ChaosSpaceMarines/MarkOfKhorne",
+            "Mark of Slaanesh": "ChaosSpaceMarines/MarkOfSlaanesh",
+            "Mark of Tzeentch": "ChaosSpaceMarines/MarkOfTzeentch",
+            "Icon of Vengeance": "ChaosSpaceMarines/IconOfVengeance",
+            "Icon of Wrath": "ChaosSpaceMarines/IconOfWrath",
+            "Icon of Despair": "ChaosSpaceMarines/IconOfDespair",
+            "Icon of Excess": "ChaosSpaceMarines/IconOfExcess",
+            "Icon of Flame": "ChaosSpaceMarines/IconOfFlame"
+        },
+        "startingUnits": {
+            "Chaos Space Marines": "1",
+            "Chaos Cultists": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\ChaosSpaceMarines.png",
         "name": "Chaos Space Marines"
     },
     "Drukhari": {
         "internalID": "Drukhari",
+        "description": "The Drukhari are an ancient race that fell into degeneracy and depravity, with their remnants only surviving in immense Webway cities. Though they have suppressed the psychic power of their Aeldari kin, they have replaced it with preternatural agility and rapacious cruelty. Their lighting raids from the Webway carry off wealth and captives to dark Commorragh where they suffer intensely throughout their short lives\u2026",
+        "flavor": "\u201cWhat was it like, back then? Just sheer joy, I\u2019m told. Entire civilizations, rendered down for stimulants. Stars drained dry of their power, for a decade-long soiree. Oh, to have been alive and powerful in the last days of Empire\u2014before She-Who-Thirsts crashed the party\u2026\u201d\n\u2014 Gyrthineus Roche, former Archon of The Last Blade.\n\nSixty million years ago, the Old Ones and the Necrons fought The War in Heaven. The Old Ones lost, but their mantle was inherited by one of their creations\u2014the Eldar, a psychically-powerful race of immense sensitivity. Over the subsequent millenia, they ruled the galaxy, slipping over time deeper and deeper into depravity and arrogance.\n\nTheir golden age ended with the birth of Slaanesh, the Chaos God of pleasure. At the moment of her birth, the core of the Aeldari civilization was utterly destroyed, its citizens\u2019 souls and even its gods consumed by the nascent god. Where the Aeldari homeworlds once were, now there is only the Eye of Terror, a massive rift into the Warp.\n\nA few ascetics survived on Craftworlds, becoming the modern Aeldari; but far more survived in the hidden cities of the Webway, built in the warp itself. These cities over time have agglomerated into Commorragh, an impossibly vast non-Euclidean space. Here the ancient Aeldari continue their decadent practices, but now with purpose, for only inflicting pain on others rejuvenates their souls as Slaanesh constantly draws at them.\n\nAn arrogant Archon brought a Drukhari raiding party to Gladius Prime, to take advantage of the distracting Ork invasion to gather wealth, power and workers. Unfortunately, someone followed him, someone equally ancient and decadent\u2026",
+        "actions": {
+            "Activate Webway Gate": null,
+            "Found Raider Fortress": "Drukhari/RaiderFortress",
+            "Webway Portal": null,
+            "Archon\u2019s Inspection": "Drukhari/BonusResources",
+            "Studies in Agony": "Drukhari/WealthPlunder",
+            "Feast of Torment": "Drukhari/FeastOfTorment",
+            "Sacrifice to Khaine": "Drukhari/SacrificeToKhaine",
+            "Soulbread and Circuses": "Drukhari/SoulHungerLoyalty",
+            "Webway Artillery": "Drukhari/SoulShelling",
+            "Soul Tithe": "Drukhari/SoulHungerOutposts"
+        },
+        "startingUnits": {
+            "Kabalite Warriors": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Drukhari.png",
         "name": "Drukhari"
     },
-    "Eldar": {
+    "Craftworld Aeldari": {
         "internalID": "Eldar",
-        "name": "Eldar"
+        "description": "The Aeldari are a refined, capable race that experiences everything intensely and artistically. Yet when roused to war, every last one of them can be a fearsome foe, having trained several human lifetimes in the arts of war. Though fragile, they strike quickly and disappear before an enemy can fire back.",
+        "flavor": "\u201cAsk not the Aeldari a question, for they will give you three answers, all of which are true and terrifying to know.\u201d\n  \u2014 Inquisitor Czevak\n\nSixty million years ago, the Old Ones and the Necrons fought The War in Heaven. The Old Ones lost, but their mantle was inherited by one of their creations\u2014the Aeldari, a psychically-powerful race of immense sensitivity. Over the subsequent millenia, they ruled the galaxy, slipping over time deeper and deeper into depravity and arrogance.\n\nTheir golden age ended with the birth of Slaanesh, the Chaos God of pleasure. At the moment of her birth, the core of the Aeldari civilization was utterly destroyed, its citizens\u2019 souls and even its gods consumed by the nascent god. Where the Aeldari homeworlds once were, now there is only the Eye of Terror, a massive rift into the Warp. Only a few Aeldari survived: the hardy Exodites, on distant agrarian planets; the degenerate Drukhari and mysterious Harlequins, hiding in the Webway; and the restrained Aeldari, on enormous trading ships known as Craftworlds.\n\nDoomed and declining, the Aeldari seek to avoid their own consumption by Slaanesh at all costs. They find themselves on Gladius Prime, chasing a Farseer\u2019s prediction that this planet is key to the survival of all Aeldari\u2026",
+        "actions": {
+            "Activate Webway Gate": null,
+            "Found Webway Redoubt": "Eldar/WebwayRedoubt"
+        },
+        "startingUnits": {
+            "Guardians": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Eldar.png",
+        "name": "Craftworld Aeldari"
     },
     "Necrons": {
         "internalID": "Necrons",
+        "description": "An eternity ago, the Necrons ruled the stars as cruel, deathless metal masters. Now they are awakening. Legions of sinister, advanced war machines are pouring from the Tomb Worlds to conquer and enslave\u2014nothing mortal is safe.",
+        "flavor": "\u201cCast off the shackles of your slumber! The galaxy shall be ours once again!\u201d\n  \u2014 Anrakyr the Traveller, Necron Overlord\n\nAn eternity ago, the Necrons forsook the frailties of flesh for deathless bodies wrought from cold metal, in their subjugation to the star-gods known as the C'tan. In their new immortal form, they took on the then-masters of the galaxy\u2014the Old Ones\u2014and in aeons-long battle they defeated them. In their desperation, the Old Ones seeded the galaxy with psychic races, thus awakening the horrors of the warp, and the Necrons\u2014weakened by a simultaneous battle of liberation from the C'tan\u2014retreated to their homeworlds.\n\nThere, falling into hibernation, they slumbered for untold time. As other races were born and drove themselves to extinction, they lay deep and undisturbed in multitudinous worlds, tended and defended in their not-sleep by their monstrous Canoptek automata.\n\nNow, across the galaxy, they are awakening. Even here, this Crownworld's master circuits are stirring. The Necrons\u2014now unthinking machines, save for their few Lords and Triarchs\u2014are arming themselves for war again. Their technology is millennia ahead of that of the galaxy's younger races. Soon, legions of sinister, advanced war machines will pour from the tombs buried beneath the planet to conquer and enslave\u2014nothing mortal is safe.",
+        "actions": {},
+        "startingUnits": {
+            "Canoptek Spyder": "1",
+            "Necron Warriors": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Necrons.png",
         "name": "Necrons"
+    },
+    "None": {
+        "internalID": "None",
+        "description": null,
+        "flavor": null,
+        "actions": {},
+        "startingUnits": {},
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\None.png",
+        "name": "None"
     },
     "Neutral": {
         "internalID": "Neutral",
+        "description": "In its unusually long existence and many wars, the planet of Gladius Prime has gathered some of the galaxy\u2019s stranger wildlife to it. What is strange is their relatively-peaceful coexistence\u2014at least until the Warpstorm arrived, whipping them into a hostile frenzy.",
+        "flavor": "\u201cAmongst the stars, man has met many alien races\u2014and destroyed them all.\u201d\n\nIn its unusually long existence and many wars, the planet of Gladius Prime has gathered some of the galaxy\u2019s stranger wildlife to it. What is strange is their relatively-peaceful coexistence\u2014at least until the Warpstorm arrived, whipping them into a hostile frenzy.",
+        "actions": {},
+        "startingUnits": {},
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Neutral.png",
         "name": "Neutral"
     },
     "Orks": {
         "internalID": "Orks",
+        "description": "Heavily-muscled, aggressive, and incredibly resilient, the fungoid Orks are an anarchic, crude force driven to war by the thrill of the fight.",
+        "flavor": "\u201cWe iz gonna stomp da 'ooniverse flat an' kill anyfing that fights back. We iz gonna do this coz' we're Orks an' we was made ta fight an' win!\u201d\n  \u2014 Ghazghkull Mag Uruk Thraka, Ork Warlord\n\nWhence the Orks? Heavily-muscled, aggressive, eight-foot-tall fungal thugs with a love of warfare, the Orks were a spacefaring peril long before the human Imperium entered the galactic scene. Spread evenly across the galaxy, for the most part they are an irritant to any other inhabitants, like lazy, belligerent neighbours. But occasionally, as a swarm of locusts, the scattered tribes and clans form into a Waaagh!\u2014something between a crusade and a riot\u2014and devastate entire sectors until they run out of things to fight and fall instead into internecine warfare.\n\nThat's not to say the Orks are completely primitive. Despite their thuggish demeanour, they possess a low intelligence augmented by genetically-coded technical excellence. Their technicians\u2014called Meks\u2014build raggedy, ugly vehicles, buildings, guns and spaceships, which should fall apart at first use, but actually perform their job surprisingly effectively. Imperial scholars believe this is due to the pervasive psychic power of the Orks, which simply fills in the technical gaps that should prevent all their devices from working.\n\nIn battle, Orks attacks are undisciplined rampages, full of boisterous chanting and joy of warfare. Their crude weapons and blunt tactics mingled with their resilience and sheer numbers make them a dangerous foe. Even when defeated, their bodies spread spores which, in time, will grow into more Orks, plus their servant races\u2014Grots, Squigs and Snots\u2014which keep them alive. Even when every last Ork is dead, the Orks are far from defeated.",
+        "actions": {},
+        "startingUnits": {
+            "Meks": "1",
+            "Boyz": "3"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Orks.png",
         "name": "Orks"
     },
-    "Sisters Of Battle": {
+    "Random": {
+        "internalID": "Random",
+        "description": "Life in the 41st Millenium is brutish, short and cruel\u2014very few are born into happy lives that a wise man would choose, save perhaps for the Orks whose simple love of war is so perfectly adapted to the era. Selecting a random faction could be considered a rational response to this arbitrary state of being.",
+        "flavor": "\u201cIn the grim darkness of the far future, there is only war.\u201d\n\nLife in the 41st Millenium is brutish, short and cruel\u2014very few are born into happy lives that a wise man would choose, save perhaps for the Orks whose simple love of war is so perfectly adapted to the era. Selecting a random faction could be considered a rational response to this arbitrary state of being.",
+        "actions": {},
+        "startingUnits": {},
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Random.png",
+        "name": "Random"
+    },
+    "Adepta Sororitas": {
         "internalID": "SistersOfBattle",
-        "name": "Sisters Of Battle"
+        "description": "The Ecclesiarchy is the Imperium\u2019s state religion, established contrary to the Emperor\u2019s wishes, and the Adepta Sororitas are its all-female crusaders. They are fanatics, determined to rid the Imperium of all taints, through the three-fold tools: bolter, flamer, melta. Dissent, alien or man, and they shall sing orisons over your ashes.",
+        "flavor": "\u201cThere is no weakness. There is no doubt. There is only service to the God-Emperor and duty and blood. We do our deeds, we endure the galaxy\u2019s horrors, then we die fighting for humanity. Against heretic and mutant and xenos. Until the end of days.\u201d\n  \u2014 Canoness Vandire\n\nThe youngest of humanity\u2019s armies, under 4000 years old, you Adepta Sororitas are the military arm of the Imperium\u2019s state religion, the Ecclesiarchy. You worship the Emperor, enshrined on his Golden Throne, as a god, contrary to his wishes. And in his name, you pursue the faithless and the xenos across the entire galaxy, purging it of the heresy of their being.\n\nHowever, on Gladius Prime, your Order was unusual. Here, you had a reputation for mercy and kindness, and your non-Militant Orders were even known to help the miserable populations of the Hive Cities.\n\nLittle that mattered, though, when half the Xenos in the galaxy were unleashed on this world and your Canoness vanished. Protecting the remaining humans has become secondary to survival and now your prayers have turned from simple worship to desperation\u2014now you pray for a miracle.",
+        "actions": {
+            "Conviction of Faith": "SistersOfBattle/ConvictionOfFaith",
+            "Eternal Crusade": "SistersOfBattle/EternalCrusade",
+            "Mechanised Wrath": "SistersOfBattle/WarmachinesWrath",
+            "Raging Fervour": "SistersOfBattle/RagingFervour",
+            "Sacral Vigor": "SistersOfBattle/SacralVigor",
+            "Chase the Profane": "SistersOfBattle/ChaseTheProfane",
+            "Purifying Recitations": "SistersOfBattle/PurifyingRecitations",
+            "Ministorum Mobilisation": "SistersOfBattle/NonMilitantMobilisation",
+            "Vengeful Spirit": "SistersOfBattle/VengefulSpirit"
+        },
+        "startingUnits": {
+            "Hospitallers": "1",
+            "Battle Sisters": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\SistersOfBattle.png",
+        "name": "Adepta Sororitas"
     },
     "Space Marines": {
         "internalID": "SpaceMarines",
+        "description": "Genetically-engineered warriors clad in iconic power armour, the Space Marines are tasked with the protection of the Imperium of Man. They are the greatest soldiers the galaxy has ever known.",
+        "flavor": "\u201cOne unbreakable shield against the coming darkness. One last blade, forged in defiance of fate.\u201d\n  \u2014 The Emperor of Mankind\n\nWith bolters blazing, the Battle-Brothers of the Adeptus Astartes crush the foes of the Imperium wherever they may be found. Each Space Marine is an elite, genetically-engineered, cybernetically-enhanced super-soldier, a mighty and fearless hero worth a hundred lesser men.\n\nEach Space Marine is recruited into a thousand-man Chapter, before they are extensively modified, with nineteen extra organs and the crucial Chapter gene-seed. From the numerous Ultramarines and mysterious Dark Angels to the fierce Space Wolves and tormented Blood Angels, each chapter has its own traditions and style of combat.\n\nArmed with the finest weapons the Imperium can provide, clad in suits of intimidating ceramite power armour and borne to war aboard swift and deadly fighting vehicles, they are the Imperium's ultimate weapon. Though relatively few in number, it is the Adeptus Astartes who represent Humanity's best hope for survival\u2014for they are the greatest warriors the galaxy has ever known.",
+        "actions": {
+            "Deploy City": null,
+            "Deploy %1%": "SpaceMarines/AquilaMacroCannon",
+            "Orbital Scan": "SpaceMarines/OrbitalScan",
+            "Orbital Strike": "SpaceMarines/OrbitalBombardment",
+            "Deploy Tactical Doctrine": "SpaceMarines/TacticalDoctrine",
+            "Deploy Assault Doctrine": "SpaceMarines/AssaultDoctrine",
+            "Deploy Devastator Doctrine": "SpaceMarines/DevastatorDoctrine",
+            "Deploy Bolter Drill": "SpaceMarines/BolterDrill",
+            "Deploy The Flesh Is Weak": "SpaceMarines/TheFleshIsWeak",
+            "Deploy Machine Empathy": "SpaceMarines/MachineEmpathy",
+            "Deploy Siege Masters": "SpaceMarines/SiegeMasters"
+        },
+        "startingUnits": {
+            "Tactical Space Marines": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\SpaceMarines.png",
         "name": "Space Marines"
     },
-    "Tau": {
+    "Spectator": {
+        "internalID": "Spectator",
+        "description": "The wisest minds of the galaxy\u2014writers whose tomes exist only in the Black Library or the oldest spirits of the Aeldari dead\u2014agree on one thing only. That the best side to take in any war is that of an observer.",
+        "flavor": "\u201cWho watches the Watchers?\u201d\n\nThe wisest minds of the galaxy\u2014writers whose tomes exist only in the Black Library or the oldest spirits of the Aeldari dead\u2014agree on one thing only. That the best side to take in any war is that of an observer.",
+        "actions": {},
+        "startingUnits": {},
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Attributes\\Sight.png",
+        "name": "Spectator"
+    },
+    "T'au": {
         "internalID": "Tau",
-        "name": "Tau"
+        "description": "The T\u2019au are a young race, newly arrived on the galactic stage, with but a handful of worlds to their name and peaceful intentions\u2014they merely wish to work for the Greater Good of all intelligent species. But not all races will listen to their words of peace, so the T\u2019au and their allies will use their advanced military technology to make them listen\u2014or sear the flesh from their bones if they stand in the way of progress.",
+        "flavor": "\u201cIt saddens me greatly that we must take arms against the peoples of the galaxy. By their deaths, they deny themselves the liberation that is only to be found in total surrender to the Greater Good.\u201d\n  \u2014 Aun'Va, Master of the Undying Spirit\n\nThe T\u2019au Empire had never faced such an existential threat. On one side lay the relentless hunger of the Tyranids; on others, the Imperium\u2019s impassable flame-wall, the Sautekh Dynasty of Necrons, and the growing Great Rift, Mont\u2019yhe\u2019va, Devourer of Hope. How could they survive?\n\nThe solution was the Fourth Expansion, led by the great Commander Surestrike. He would lead his Fire Warriors to claim new worlds far from T\u2019au. They might be a young empire, a small people\u2014but they fight for the greater good of all species and they could not fail.\n\nYet, disaster struck with the T\u2019au\u2019s new warp drives. Space twisted, tore, opened, span insanity and monstrosity into reality, swallowing the fleet. One ship was taken, moved by many hands, spat out alone. Above a ruined Imperial hive world, far too far from T\u2019au. Gladius Prime. Now these T\u2019au must fight just to survive.",
+        "actions": {
+            "Convert Auxiliary": null,
+            "For The Greater Good": null,
+            "Subvert City": null,
+            "Wisdom Shared": "Tau/PurchaseResearch",
+            "A Shield For All": "Tau/PurchaseOre",
+            "Many Mouths": "Tau/PurchaseFood",
+            "Proselytise": "Tau/PurchasePopulation",
+            "Equal Under The Sky": "Tau/PurchaseEnergy",
+            "Install Drone Controller": "Tau/DroneController",
+            "Install Counterfire Defence System": "Tau/CounterfireDefenceSystem",
+            "Install Vectored Retro-Thrusters": "Tau/VectoredRetroThrusters",
+            "Install Stimulant Injector": "Tau/StimulantInjector",
+            "Install Velocity Tracker": "Tau/VelocityTracker",
+            "Install Advanced Targeting System": "Tau/AdvancedTargetingSystem",
+            "Install Shield Generator": "Tau/ShieldGenerator"
+        },
+        "startingUnits": {
+            "Builder Drones": "1",
+            "Fire Warriors": "2"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Tau.png",
+        "name": "T'au"
     },
     "Tyranids": {
         "internalID": "Tyranids",
+        "description": "Of all the races in the 41st Millennium, the Tyranids are the most alien. Each Tyranid is a living weapon, a creature perfectly designed to fulfil its role. Driven by the gestalt consciousness of the Hive Mind, the Tyranids overwhelm their prey with weight of numbers. Those that are not swept aside under a tide of razor-sharp claws and lethal bio-weaponry fire are smashed asunder by gigantic alien monsters the size of battle tanks.",
+        "flavor": "\u201cThey come from between the stars, a god of hunger made flesh, to harvest the galaxy of life.\u201d\n  \u2014 Inquisitorial Xenologist, Darnye Gotopo\n\nThe Tyranids are the most alien of the races to infest Imperial space, for they come from beyond. Their hive fleets stretch out like tendrils, great chitinous bio-ships drifting in brooding silence. Once the remorseless shoals of the bioships detect the presence of a prey world, they close upon their target, grasping it like some many-tentacled beast seizing its food. In the ensuing invasion, the world will be consumed, for the Tyranids hunger for all living matter. There is no escape from this final embrace and when the Tyranids finally depart, they leave behind a barren world, a scoured ball of rock now devoid of anything that lives.\n\nA Tyranid hive fleet consists of millions of living starcraft, each home to untold numbers of monstrosities evolved from the geno-organs of the ship's reproductive chambers. All the creatures serve the entity that is the ship, and the ship exists only as part of the horrific super-organism that is the fleet. Even when dead, organic matter is reconstituted back into the ship, along with captured biomass from the invaded planet. It is then all dissolved into a rich biological gruel used to make new Tyranid creatures, each ready to serve the Hive Mind and begin the feeding process anew.\n\nBut on Gladius, the Tyranids are few and scattered, brought here by meddling men. The warp storms keep them distant from the will of the Hive Mind and the Imperial citizens think of them merely as pests. They should worry more\u2026",
+        "actions": {},
+        "startingUnits": {
+            "Malanthrope": "1",
+            "Termagants": "3"
+        },
+        "traits": {},
+        "iconPath": "Gladius\\Icons\\Factions\\Tyranids.png",
         "name": "Tyranids"
     }
 }

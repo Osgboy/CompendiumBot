@@ -27,6 +27,3 @@ class GTrait(Gladius, Trait):
 
 class ZTrait(Trait):
     GAME = 'Zephon'
-
-    def __init__(self, name: str):
-        super().__init__(name)

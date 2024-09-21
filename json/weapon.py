@@ -37,14 +37,11 @@ class Weapon(Obj):
             attrName = 'name'
         elif self.GAME == 'Zephon':
             attrName = 'type'
-        try:
-            for trait in self.tree.find('traits').iterfind('trait'):
+        if (xmlTraits := self.tree.find('traits')) is not None:
+            for trait in xmlTraits.iterfind('trait'):
                 traitID = trait.get(attrName)
                 traitName = ID2name(traitID, self.GAME, 'Traits')
                 self.traits[traitName] = trait.get('requiredUpgrade')
-        # no traits
-        except AttributeError:
-            pass
 
     def get_range(self):
         if 'Melee' in self.traits.keys():

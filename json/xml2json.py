@@ -5,13 +5,15 @@ from os.path import join as pathJoin
 from os.path import normpath
 from typing import Type, Callable
 from lxml import etree as ET
-from action import *
-from building import *
-from item import *
-from trait import *
-from unit import *
-from upgrade import *
-from weapon import *
+from obj import Obj, val2val, ID2name
+from action import Action, GAction, ZAction
+from building import GBuilding, ZBuilding
+from faction import GFaction, ZFaction
+from item import GItem, ZItem
+from trait import GTrait, ZTrait
+from unit import Unit, GUnit, ZUnit
+from upgrade import GUpgrade, ZUpgrade
+from weapon import GWeapon, ZWeapon
 
 OUTPUT_DIR = pathJoin('json')
 dicts = {}
@@ -35,7 +37,9 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
         recover=True, remove_comments=True))
     for entry in tree.iter('entry'):
         try:
-            if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
+            if (all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')) and
+                (objCls != GFaction or all(x not in entry.get('name') for x in ('Discovered', 'Defeated'))) and
+                (objCls != ZFaction or 'Quote' not in entry.get('name'))):
                 name = val2val(entry.get('value'), ENGLISH_DIR)
                 obj = objCls(val2val(name, ENGLISH_DIR))
                 obj.get_obj_info(tree, entry)
@@ -88,6 +92,33 @@ def get_zbuilding_attrs(building: ZBuilding) -> dict:
     kwargs = {}
     for key in slots:
         kwargs[key] = getattr(building, key, None)
+    return kwargs
+
+
+def get_gfaction_attrs(faction: GFaction) -> dict:
+    faction.get_actions()
+    faction.get_starting_units()
+    faction.get_traits()
+
+    slots = ('internalID', 'description', 'flavor', 'actions', 'startingUnits', 'traits')
+    kwargs = {}
+    for key in slots:
+        kwargs[key] = getattr(faction, key, None)
+    return kwargs
+
+
+def get_zfaction_attrs(faction: ZFaction) -> dict:
+    faction.get_branch()
+    faction.get_actions()
+    faction.get_starting_units()
+    faction.get_traits()
+    faction.get_liked_labels()
+    faction.get_disliked_labels()
+
+    slots = ('internalID', 'description', 'flavor', 'branch', 'actions', 'startingUnits', 'traits', 'likedLabels', 'dislikedLabels')
+    kwargs = {}
+    for key in slots:
+        kwargs[key] = getattr(faction, key, None)
     return kwargs
 
 
@@ -271,6 +302,8 @@ mainArgs = {
     get_zbuilding_attrs: ZBuilding,
     get_gunit_attrs: GUnit,
     get_zunit_attrs: ZUnit,
+    get_gfaction_attrs: GFaction,
+    get_zfaction_attrs: ZFaction,
     get_gitem_attrs: GItem,
     get_zitem_attrs: ZItem,
     get_gupgrade_attrs: GUpgrade,

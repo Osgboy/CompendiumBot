@@ -36,9 +36,6 @@ class Item(Obj, Modifiers):
 class GItem(Item):
     GAME = 'Gladius'
 
-    def __init__(self, name: str):
-        super().__init__(name)
-
 
 class ZItem(Item):
     GAME = 'Zephon'

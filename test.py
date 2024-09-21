@@ -28,20 +28,20 @@ DLCS = {
     'Supplement14': 'Demolition Pack',
     'LordOfSkulls': 'Lord of Skulls'
 }
-GLADIUS_FACTIONS = (
-    'Neutral',
-    'Adeptus Mechanicus',
-    'Astra Militarum',
-    'Chaos Space Marines',
-    'Drukhari',
-    'Eldar',
-    'Necrons',
-    'Orks',
-    'Sisters Of Battle',
-    'Space Marines',
-    'Tau',
-    'Tyranids',
-)
+GLADIUS_FACTIONS = {
+    'Neutral': 'Neutral',
+    'Adeptus Mechanicus': 'Adeptus Mechanicus',
+    'Astra Militarum': 'Astra Militarum',
+    'Chaos Space Marines': 'Chaos Space Marines',
+    'Drukhari': 'Drukhari',
+    'Eldar': 'Craftworld Aeldari',
+    'Necrons': 'Necrons',
+    'Orks': 'Orks',
+    'Sisters Of Battle': 'Adepta Sororitas',
+    'Space Marines': 'Space Marines',
+    'Tau': "T'au",
+    'Tyranids': 'Tyranids',
+}
 ZEPHON_FACTIONS = (
     'Anchorite',
     'Chieftess',
@@ -259,7 +259,7 @@ async def on_ready():
     print(f"\n# CMDs synced: {len(synced)}")
 
     JSON_DIR = os.path.join('json')
-    for objClass in ('GAction', 'ZAction', 'GBuilding', 'ZBuilding', 'GItem', 'ZItem', 'GUnit', 'ZUnit', 'GUpgrade', 'ZUpgrade', 'GTrait', 'ZTrait', 'GWeapon', 'ZWeapon'):
+    for objClass in ('GAction', 'ZAction', 'GBuilding', 'ZBuilding', 'GFaction', 'ZFaction', 'GItem', 'ZItem', 'GUnit', 'ZUnit', 'GUpgrade', 'ZUpgrade', 'GTrait', 'ZTrait', 'GWeapon', 'ZWeapon'):
         with open(os.path.join(JSON_DIR, objClass + '.json'), 'r') as file:
             dicts[objClass] = json.load(file)
     print(f"\n# JSONs loaded: {len(dicts)}")
@@ -633,6 +633,30 @@ async def zbuilding(interaction: discord.Interaction, buildingname: str, verbose
         buildingname (str): Name of building to look up
     """
     await return_info(interaction, buildingname, verbose, invisible, 'ZBuilding', embed.create_zbuilding_embed)
+
+
+@bot.tree.command()
+@app_commands.choices(factionname=[app_commands.Choice(name=k, value=v) for k,v in GLADIUS_FACTIONS.items()])
+@docstring_defaults
+async def gfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, invisible: bool = False):
+    """Return info on a Gladius faction.
+
+    Args:
+        factionname (str): Name of faction to look up
+    """
+    await return_info(interaction, factionname.value, verbose, invisible, 'GFaction', embed.create_gfaction_embed)
+
+
+@bot.tree.command()
+@app_commands.choices(factionname=[app_commands.Choice(name=f, value=f) for f in ZEPHON_FACTIONS])
+@docstring_defaults
+async def zfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, invisible: bool = False):
+    """Return info on a Zephon faction.
+
+    Args:
+        factionname (str): Name of faction to look up
+    """
+    await return_info(interaction, factionname.value, verbose, invisible, 'ZFaction', embed.create_zfaction_embed)
 
 
 @bot.tree.command()

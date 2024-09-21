@@ -39,8 +39,8 @@ class Action(Obj, Modifiers):
         self.rawXML: str
 
     def get_tree(self, unit: Unit):
-        try:
-            for action in unit.tree.find('actions'):
+        if (xmlActions := unit.tree.find('actions')) is not None:
+            for action in xmlActions:
                 tag = action.tag
                 tagName = tag[0].upper() + tag[1:]
                 if tagName == self.internalID or action.get('name') == self.internalID:
@@ -50,9 +50,6 @@ class Action(Obj, Modifiers):
                     break
             else:
                 raise ActionNotInUnitError(self.name, unit.name)
-        # no actions
-        except AttributeError:
-            raise ActionNotInUnitError(self.name, unit.name)
 
     def get_cooldown(self):
         if self.tree.get('passive'):
@@ -84,12 +81,6 @@ class Action(Obj, Modifiers):
 class GAction(Action):
     GAME = 'Gladius'
 
-    def __init__(self, name: str):
-        super().__init__(name)
-
 
 class ZAction(Action):
     GAME = 'Zephon'
-
-    def __init__(self, name: str):
-        super().__init__(name)

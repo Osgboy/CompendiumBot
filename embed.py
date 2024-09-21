@@ -31,12 +31,15 @@ GLADIUS_FACTION_COLORS = {
     'Chaos Space Marines': discord.colour.Color.from_rgb(57, 75, 87),
     'Drukhari': discord.colour.Color.from_rgb(15, 69, 78),
     'Eldar': discord.colour.Color.from_rgb(52, 115, 121),
+    'Craftworld Aeldari': discord.colour.Color.from_rgb(52, 115, 121),
     'Necrons': discord.colour.Color.from_rgb(4, 83, 42),
     'Neutral': discord.colour.Color.from_rgb(255, 255, 255),
     'Orks': discord.colour.Color.from_rgb(70, 91, 24),
     'Sisters Of Battle': discord.colour.Color.from_rgb(87, 12, 12),
+    'Adepta Sororitas': discord.colour.Color.from_rgb(87, 12, 12),
     'Space Marines': discord.colour.Color.from_rgb(75, 98, 98),
     'Tau': discord.colour.Color.from_rgb(46, 90, 106),
+    "T'au": discord.colour.Color.from_rgb(46, 90, 106),
     'Tyranids': discord.colour.Color.from_rgb(99, 37, 103)
 }
 ZEPHON_BRANCH_COLORS = {
@@ -197,7 +200,7 @@ def create_gaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -248,7 +251,7 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -331,7 +334,7 @@ def create_gbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Emb
     if verbose:
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -414,7 +417,126 @@ def create_zbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Emb
     if verbose:
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+
+    return embed
+
+
+def create_gfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[name]
+
+    # Starting Units
+    unitsText = []
+    for unit, count in attrs['startingUnits'].items():
+        unitsText.extend(f"{count}x {unit}\n")
+    if unitsText == []:
+        unitsText = ['None']
+    embed.add_field(name='Starting Units', value=''.join(unitsText))
+
+    # Actions
+    actionsText = []
+    for action in attrs['actions']:
+        # if upgrade required
+        if attrs['actions'][action]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        actionsText.extend((action, upgrade, '\n'))
+    if actionsText == []:
+        actionsText = ['None']
+    embed.add_field(name='Actions', value=''.join(actionsText))
+
+    # Traits
+    traitsText = []
+    for trait in attrs['traits']:
+        # if upgrade required
+        if attrs['traits'][trait]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        traitsText.extend((trait, upgrade, '\n'))
+    if traitsText == []:
+        traitsText = ['None']
+    embed.add_field(name='Traits', value=''.join(traitsText))
+
+    if verbose:
+        # Flavor
+        if (flavor := attrs['flavor']):
+            embed.add_field(name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+            if len(flavor) > 1022:
+                embed.add_field(name='Flavor (Cont.)', value=f'*{flavor[1022:2044]}*', inline=False)
+        embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.'))
+
+    return embed
+
+
+def create_zfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    
+    # Branch
+    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+
+    # Starting Units
+    unitsText = []
+    for unit, count in attrs['startingUnits'].items():
+        unitsText.extend(f"{count}x {unit}\n")
+    if unitsText == []:
+        unitsText = ['None']
+    embed.add_field(name='Starting Units', value=''.join(unitsText))
+
+    # Actions
+    actionsText = []
+    for action in attrs['actions']:
+        # if upgrade required
+        if attrs['actions'][action]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        actionsText.extend((action, upgrade, '\n'))
+    if actionsText == []:
+        actionsText = ['None']
+    embed.add_field(name='Actions', value=''.join(actionsText))
+
+    # Traits
+    traitsText = []
+    for trait in attrs['traits']:
+        # if upgrade required
+        if attrs['traits'][trait]:
+            upgrade = ' (U)'
+        else:
+            upgrade = ''
+        traitsText.extend((trait, upgrade, '\n'))
+    if traitsText == []:
+        traitsText = ['None']
+    embed.add_field(name='Traits', value=''.join(traitsText))
+
+    # Liked Labels
+    embed.add_field(name='Liked Labels', value='\n'.join(attrs['likedLabels']))
+
+    # Disliked Labels
+    embed.add_field(name='Disliked Labels', value='\n'.join(attrs['dislikedLabels']))
+
+    if verbose:
+        # Flavor
+        if (flavor := attrs['flavor']):
+            embed.add_field(name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+            if len(flavor) > 1022:
+                embed.add_field(name='Flavor (Cont.)', value=f'*{flavor[1022:2044]}*', inline=False)
+        embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.'))
 
     return embed
 
@@ -445,7 +567,7 @@ def create_gitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -486,7 +608,7 @@ def create_zitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -519,7 +641,7 @@ def create_gtrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -549,7 +671,7 @@ def create_ztrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -652,7 +774,7 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
                                'Weapons marked with (S) are secondary weapons.\n'
                                'Stat-changing traits like Fleet not taken into account.'))
@@ -752,7 +874,7 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
                                'Weapons marked with (S) are secondary weapons.\n'
                                'Stat-changing traits like Fleet not taken into account.'))
@@ -790,7 +912,7 @@ def create_gupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -822,7 +944,7 @@ def create_zupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
 
     return embed
 
@@ -874,7 +996,7 @@ def create_gweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
         embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.\n'
                                'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
                                'Values shown may not be accurate.'))
@@ -928,7 +1050,7 @@ def create_zweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
-                name='Flavor', value=f'*{flavor[:1024]}*', inline=False)
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
         embed.set_footer(text=('Traits marked with (U) require a researchable upgrade.\n'
                                'Weapon stats depend on the unit wielding the weapon. Stat-changing traits like Twin-Linked not taken into account. '
                                'Values shown may not be accurate.'))
