@@ -545,6 +545,24 @@ class ZephonList(app_commands.Group):
         await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, branch=branch, ZTrait=traitname, range=range)
 
 
+def partition_embed(embed: discord.Embed, objList: list[str]) -> discord.Embed:
+    startIdx = 0
+    endIdx = 0
+    fieldIdx = 1
+    while endIdx < len(objList):
+        charSum = 0
+        while charSum <= 1000 and endIdx < len(objList):
+            charSum += len(objList[endIdx]) + 1
+            endIdx += 1
+        if endIdx >= len(objList):
+            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx]))
+        else:
+            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx-1]))
+            fieldIdx += 1
+            startIdx = endIdx - 1
+    return embed
+
+
 class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"):
     role = discord.ui.TextInput(
         style=discord.TextStyle.short,
@@ -561,6 +579,8 @@ class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"
     )
 
     async def on_submit(self, interaction: discord.Interaction) -> None:
+        await interaction.response.defer()
+        successCounter = 0
         role: discord.Role = discord.utils.get(interaction.guild.roles, name=self.role.value)
         if not role:
             await interaction.response.send_message(f"Role {self.role.value} not found.", ephemeral=True)
@@ -570,11 +590,14 @@ class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"
         for username in userList:
             user: discord.Member = discord.utils.find(lambda m: m.name == username or m.display_name == username, interaction.guild.members)
             if not user:
-                confirmList.append(f"User {username} not found.")
+                confirmList.append(f":x: {username}")
+                print(username)
                 continue
             await user.add_roles(role)
-            confirmList.append(f"Role {self.role.value} successfully assigned to member {username}.")
-        await interaction.response.send_message('\n'.join(confirmList), ephemeral=True)
+            successCounter += 1
+            confirmList.append(f":white_check_mark: {username}")
+        embed = discord.Embed(title=f"{self.role.value} successfully assigned to {successCounter}/{len(userList)} users")
+        await interaction.followup.send(embed=partition_embed(embed, confirmList), ephemeral=True)
 
 
 @bot.tree.command()
