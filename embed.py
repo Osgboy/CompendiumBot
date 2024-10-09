@@ -697,20 +697,15 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
 
     # Cost
     costText = [GLADIUS_ICONS['production'],
-                ' ', attrs['resourceStats']['productionCost']]
-    for resource in GLADIUS_RESOURCES:
-        cost = attrs['resourceStats'][resource + 'Cost']
-        if cost != '0':
-            costText.extend((' | ', GLADIUS_ICONS[resource], ' ', cost))
-    embed.add_field(name="Cost", value=''.join(costText))
+                ' ', attrs['costStats']['production']]
+    for resource, cost in attrs['costStats'].items():
+        costText.extend((' | ', GLADIUS_ICONS[resource], ' ', cost))
+    embed.add_field(name='Cost', value=''.join(costText))
 
     # Upkeep
     upkeepText = []
-    for resource in GLADIUS_RESOURCES:
-        upkeep = attrs['resourceStats'][resource + 'Upkeep']
-        if upkeep != '0':
-            upkeepText.extend(
-                (' | ', GLADIUS_ICONS[resource], ' ', upkeep))
+    for resource, upkeep in attrs['upkeepStats'].items():
+        upkeepText.extend((' | ', GLADIUS_ICONS[resource], ' ', upkeep))
     if upkeepText == []:
         upkeepText = ['None']
     else:
@@ -797,20 +792,15 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
 
     # Cost
     costText = [ZEPHON_ICONS['production'],
-                ' ', attrs['resourceStats']['productionCost']]
-    for resource in ZEPHON_RESOURCES:
-        cost = attrs['resourceStats'][resource + 'Cost']
-        if cost != '0':
-            costText.extend((' | ', ZEPHON_ICONS[resource], ' ', cost))
+                ' ', attrs['costStats']['production']]
+    for resource, cost in attrs['costStats'].items():
+        costText.extend((' | ', ZEPHON_ICONS[resource], ' ', cost))
     embed.add_field(name='Cost', value=''.join(costText))
 
     # Upkeep
     upkeepText = []
-    for resource in ZEPHON_RESOURCES:
-        upkeep = attrs['resourceStats'][resource + 'Upkeep']
-        if upkeep != '0':
-            upkeepText.extend(
-                (' | ', ZEPHON_ICONS[resource], ' ', upkeep))
+    for resource, upkeep in attrs['upkeepStats'].items():
+        upkeepText.extend((' | ', ZEPHON_ICONS[resource], ' ', upkeep))
     if upkeepText == []:
         upkeepText = ['None']
     else:

@@ -6,54 +6,13 @@ from obj import Obj, ID2name, val2val
 from weapon import GUnitWeaponStats
 from upgrade import GUpgrade, ZUpgrade
 
-@dataclass  # (slots=True)
-class GResourceStats:
-    __slots__ = ['biomassUpkeep', 'biomassCost', 'requisitionsUpkeep', 'requisitionsCost',
-                 'foodUpkeep', 'foodCost', 'oreUpkeep', 'oreCost',
-                 'energyUpkeep', 'energyCost', 'influenceUpkeep', 'influenceCost', 'productionCost']
-    biomassUpkeep: str
-    biomassCost: str
-    requisitionsUpkeep: str
-    requisitionsCost: str
-    foodUpkeep: str
-    foodCost: str
-    oreUpkeep: str
-    oreCost: str
-    energyUpkeep: str
-    energyCost: str
-    influenceUpkeep: str
-    influenceCost: str
-    productionCost: str
 
-
-@dataclass  # (slots=True)
-class ZResourceStats:
-    __slots__ = ['foodUpkeep', 'foodCost', 'mineralsUpkeep', 'mineralsCost',
-                 'energyUpkeep', 'energyCost', 'transuraniumUpkeep', 'transuraniumCost',
-                 'antimatterUpkeep', 'antimatterCost', 'dimensionalEchoesUpkeep', 'dimensionalEchoesCost',
-                 'singularityCoresUpkeep', 'singularityCoresCost', 'algaeUpkeep', 'algaeCost',
-                 'chipsUpkeep', 'chipsCost', 'influenceUpkeep', 'influenceCost', 'productionCost']
-    foodUpkeep: str
-    foodCost: str
-    mineralsUpkeep: str
-    mineralsCost: str
-    energyUpkeep: str
-    energyCost: str
-    transuraniumUpkeep: str
-    transuraniumCost: str
-    antimatterUpkeep: str
-    antimatterCost: str
-    dimensionalEchoesUpkeep: str
-    dimensionalEchoesCost: str
-    singularityCoresUpkeep: str
-    singularityCoresCost: str
-    algaeUpkeep: str
-    algaeCost: str
-    chipsUpkeep: str
-    chipsCost: str
-    influenceUpkeep: str
-    influenceCost: str
-    productionCost: str
+GLADIUS_RESOURCES = (
+    'biomass', 'requisitions', 'food', 'ore', 'energy', 'influence', 'production'
+)
+ZEPHON_RESOURCES = (
+    'food', 'minerals', 'energy', 'transuranium', 'antimatter', 'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence', 'production'
+)
 
 
 @dataclass  # (slots=True)
@@ -91,7 +50,8 @@ class Unit(Obj):
         super().__init__(name)
         self.tier: str
         # Stats
-        self.resourceStats: dataclass
+        self.costStats: dict[str, str] = {}
+        self.upkeepStats: dict[str, str] = {}
         self.combatStats: dataclass
         self.weaponStats: dataclass
         # Weapons and traits
@@ -100,14 +60,20 @@ class Unit(Obj):
         self.actions: dict[str, str] = {}
 
     def get_stats(self):
-        xmlStats = self.tree.find('modifiers').find('modifier').find('effects')
-        for stat in self.resourceStats.__slots__:
-            statEntry = xmlStats.find(stat)
-            if statEntry is not None:
-                setattr(self.resourceStats, stat,
-                        statEntry.get('base', default='0'))
+        xmlStats: ET.ElementBase = self.tree.find(
+            'modifiers').find('modifier').find('effects')
+        if self.GAME == 'Gladius':
+            resources = GLADIUS_RESOURCES
+        elif self.GAME == 'Zephon':
+            resources = ZEPHON_RESOURCES
+        for statSuffix, statDict in (('Cost', self.costStats), ('Upkeep', self.upkeepStats)):
+            for resource in resources:
+                resourceStat: str = resource + statSuffix
+                statEntry: ET.ElementBase = xmlStats.find(resourceStat)
+                if statEntry is not None:
+                    statDict[resource] = statEntry.get('base')
         for stat in self.combatStats.__slots__:
-            statEntry = xmlStats.find(stat)
+            statEntry: ET.ElementBase = xmlStats.find(stat)
             if statEntry is not None:
                 value = statEntry.get('base', default=0)
                 try:
@@ -161,8 +127,6 @@ class GUnit(Unit):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.resourceStats: dataclass = GResourceStats(
-            *['0']*len(GResourceStats.__slots__))
         self.combatStats: dataclass = GCombatStats(
             *[0]*len(GCombatStats.__slots__))
         self.factionAndID: str
@@ -192,7 +156,7 @@ class GUnit(Unit):
         upgrade = GUpgrade('placeholder')
         try:
             upgrade.tree = ET.parse(pathJoin(upgrade.CLASS_DIR, self.faction, self.internalID + '.xml'), parser=ET.XMLParser(
-                            recover=True, remove_comments=True))
+                recover=True, remove_comments=True))
             upgrade.get_tier()
             self.tier = upgrade.tier
         except OSError:
@@ -225,8 +189,6 @@ class ZUnit(Unit):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.resourceStats: dataclass = ZResourceStats(
-            *['0']*len(ZResourceStats.__slots__))
         self.combatStats: dataclass = ZCombatStats(
             '1', '6', '0', '0', '0', '0', '0', '0')
         self.branch = 'Neutral'

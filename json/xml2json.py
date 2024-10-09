@@ -61,7 +61,7 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
                 objDict[name] = kwargs
         except Exception:
             print(f"{objCls.__name__} {entry.get('name')} failed to convert.")
-            # print(traceback.format_exc())
+            print(traceback.format_exc())
     return objDict
 
 
@@ -187,12 +187,11 @@ def get_gunit_attrs(unit: GUnit) -> dict:
     unit.get_traits()
     unit.get_actions()
 
-    slots = ('internalID', 'tier', 'dlc', 'description',
-             'flavor', 'weapons', 'traits', 'actions')
+    slots = ('internalID', 'tier', 'dlc', 'description', 'flavor',
+             'costStats', 'upkeepStats', 'weapons', 'traits', 'actions')
     kwargs = {}
     kwargs['faction'] = camel_case_split(unit.faction)
     kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
-    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
     kwargs['weaponStats'] = dataclasses.asdict(unit.weaponStats)
     for key in slots:
         kwargs[key] = getattr(unit, key, None)
@@ -206,11 +205,10 @@ def get_zunit_attrs(unit: ZUnit) -> dict:
     unit.get_traits()
     unit.get_actions()
 
-    slots = ('internalID', 'branch', 'description',
-             'flavor', 'weapons', 'traits', 'actions')
+    slots = ('internalID', 'branch', 'description', 'flavor',
+             'costStats', 'upkeepStats', 'weapons', 'traits', 'actions')
     kwargs = {}
     kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
-    kwargs['resourceStats'] = dataclasses.asdict(unit.resourceStats)
     for key in slots:
         kwargs[key] = getattr(unit, key, None)
     return kwargs
