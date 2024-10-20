@@ -1,4 +1,4 @@
-#!~/bot-env/Scripts/python.exe
+#!~/.venv/Scripts/python.exe
 import discord
 import os
 import json
@@ -582,6 +582,7 @@ class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"
         await interaction.response.defer()
         successCounter = 0
         role: discord.Role = discord.utils.get(interaction.guild.roles, name=self.role.value)
+        print(role.name, role.id)
         if not role:
             await interaction.response.send_message(f"Role {self.role.value} not found.", ephemeral=True)
             return
