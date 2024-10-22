@@ -2,7 +2,7 @@
 A Discord bot for the [Proxy Studios Discord](https://discord.gg/proxystudios) that acts as a substitute for the in game compendium for users who can't/don't feel like opening the game itself.
 
 ## Commands
-As of now, the bot supports 10 slash commands: 5 object types (item, unit, weapon, trait, and action) for each of Proxy's 2 games, Gladius and Zephon.
+As of now, the bot has slash commands to return info on 8 object types (action, building, faction, item, trait, unit, upgrade, weapon) for each of Proxy's 2 games, Gladius and Zephon. 
 
 ## Structure
 `main.py` contains all the Discord API code and is responsible for creating and formatting the message embeds.

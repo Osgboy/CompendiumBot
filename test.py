@@ -247,13 +247,15 @@ async def on_ready():
     for guild in bot.guilds:
         print('\t' + guild.name)
 
-    listGroup = List(
+    listGroup = app_commands.Group(
         name='list', description='List names of objects of a certain type with optional filters.')
     listGladius = GladiusList(
         name='gladius', description='List names of Gladius objects of a certain type with optional filters.', parent=listGroup)
     listZephon = ZephonList(
         name='zephon', description='List names of Zephon objects of a certain type with optional filters.', parent=listGroup)
     bot.tree.add_command(listGroup)
+
+    await bot.load_extension('cogs.roles')
 
     synced = await bot.tree.sync()
     print(f"\n# CMDs synced: {len(synced)}")
@@ -271,10 +273,6 @@ def docstring_defaults(func):
         "\n\tinvisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)"
     func.__doc__ = doc
     return func
-
-
-class List(app_commands.Group):
-    pass
 
 
 class GladiusList(app_commands.Group):
@@ -543,76 +541,6 @@ class ZephonList(app_commands.Group):
         if range == 'melee':
             range = 'Melee'
         await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, branch=branch, ZTrait=traitname, range=range)
-
-
-def partition_embed(embed: discord.Embed, objList: list[str]) -> discord.Embed:
-    startIdx = 0
-    endIdx = 0
-    fieldIdx = 1
-    while endIdx < len(objList):
-        charSum = 0
-        while charSum <= 1000 and endIdx < len(objList):
-            charSum += len(objList[endIdx]) + 1
-            endIdx += 1
-        if endIdx >= len(objList):
-            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx]))
-        else:
-            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx-1]))
-            fieldIdx += 1
-            startIdx = endIdx - 1
-    return embed
-
-
-class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"):
-    role = discord.ui.TextInput(
-        style=discord.TextStyle.short,
-        label='Role',
-        required=True,
-        placeholder="Role to be assigned"
-    )
-
-    users = discord.ui.TextInput(
-        style=discord.TextStyle.long,
-        label='User List',
-        required=True,
-        placeholder="List of users (separated by new lines) to assign the role to"
-    )
-
-    async def on_submit(self, interaction: discord.Interaction) -> None:
-        await interaction.response.defer()
-        successCounter = 0
-        role: discord.Role = discord.utils.get(interaction.guild.roles, name=self.role.value)
-        print(role.name, role.id)
-        if not role:
-            await interaction.response.send_message(f"Role {self.role.value} not found.", ephemeral=True)
-            return
-        userList = self.users.value.split('\n')
-        confirmList = []
-        for username in userList:
-            user: discord.Member = discord.utils.find(lambda m: m.name == username or m.display_name == username, interaction.guild.members)
-            if not user:
-                confirmList.append(f":x: {username}")
-                print(username)
-                continue
-            await user.add_roles(role)
-            successCounter += 1
-            confirmList.append(f":white_check_mark: {username}")
-        embed = discord.Embed(title=f"{self.role.value} successfully assigned to {successCounter}/{len(userList)} users")
-        await interaction.followup.send(embed=partition_embed(embed, confirmList), ephemeral=True)
-
-
-@bot.tree.command()
-@app_commands.checks.has_role('Administrator')
-async def addroles(interaction: discord.Interaction):
-    """Assign a role to a list of users."""
-    assign_role_modal = AssignRoleModal()
-    await interaction.response.send_modal(assign_role_modal)
-
-    
-@addroles.error
-async def addroles_error(interaction: discord.Interaction, error):
-    if isinstance(error, discord.app_commands.MissingRole):
-        await interaction.response.send_message("You do not have the Administrator role.", ephemeral=True)
 
 
 @bot.tree.command()
