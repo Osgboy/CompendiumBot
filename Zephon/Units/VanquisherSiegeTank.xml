@@ -7,7 +7,8 @@
 				groupMemberDeltaY="50"
 				material="Units/VanquisherSiegeTank"
 				mesh="Units/VanquisherSiegeTank"
-				scale="0.85 0.85 0.85">
+				scale="0.85 0.85 0.85"
+				uvAnimated="1">
 		</unit>
 	</model>
 	<weapons>
@@ -25,6 +26,19 @@
 						material="Units/CycloneHeavyMachineGun"
 						bone="Machinegun"
 						muzzleBone="Machinegun_Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="ShirakiCruiseMissile" enabled="0"
+				slotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<models>
+				<missileWeapon mesh="Units/VanquisherSiegeTankCruiseMissile"
+						material="Units/CycloneCruiseMissile"
+						bone="Main_GunBody"
+						muzzleBone="CruiseMissileMuzzle"
+						muzzleCount="2"
+						fireInterval="10"
+						missileScale="0.4"/>
 			</models>
 		</weapon>
 		<weapon type="None" requiredUpgrade="DozerBlade">
@@ -75,7 +89,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankAppear"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -84,7 +98,7 @@
 						beginFire="0.1"
 						endFire="1.77"
 						sound="Units/VanquisherSiegeTankAttack"
-						responseSound="Units/Responses/VanquisherSiegeTankAttack"
+						responseSound="Responses/Units/VanquisherSiegeTankAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -97,17 +111,17 @@
 		<endure>
 			<model>
 				<action animation="Units/VanquisherSiegeTankImpact"
-						responseSound="Units/Responses/VanquisherSiegeTankEndureHighDamage"/> 
+						responseSound="Responses/Units/VanquisherSiegeTankEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -118,13 +132,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankKill"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/VanquisherSiegeTankMove"
-						responseSound="Units/Responses/VanquisherSiegeTankMove"
+						responseSound="Responses/Units/VanquisherSiegeTankMove"
 						responseSoundCount="3"
 						sound="Units/CycloneMove"
 						soundCount="1"
@@ -134,33 +148,33 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankPoke"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankSelect"
+				<action responseSound="Responses/Units/VanquisherSiegeTankSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/VanquisherSiegeTankHoldPosition"/>
+				<action responseSound="Responses/Units/VanquisherSiegeTankHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="SmokeLauncher">
 			<model>
-				<cast responseSound="Units/Responses/VanquisherSiegeTankSmokeLauncher"
+				<cast responseSound="Responses/Units/VanquisherSiegeTankSmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
 		</unitCast>
-		<!-- <useWeapon blueprint="ShirakiCruiseMissile">
+		<useWeapon blueprint="ShirakiCruiseMissile">
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"
-						responseSound="Units/Responses/VanquisherSiegeTankShirakiCruiseMissile"/>
+						responseSound="Responses/Units/VanquisherSiegeTankShirakiCruiseMissile"/>
 			</model>
-		</useWeapon> -->
+		</useWeapon>
 	</actions>
 	<traits>
 		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>

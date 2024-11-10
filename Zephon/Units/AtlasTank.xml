@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+		<unit 	explosionsBlueprint="Effects/TitanHumanExplosions"
 				explosionsBone="Hull"
 				groupMemberDeltaX="90"
 				groupMemberDeltaY="50"
 				material="Units/AtlasTank"
 				mesh="Units/AtlasTank"
-				scale="0.95 0.95 0.95">
+				scale="1.1 1.1 1.1"
+				uvAnimated="1">
 		</unit>
 	</model>
 	<weapons>
 		<weapon type="GoliathCannon">
 			<models>
-				<projectileWeapon muzzleBone="CannonMuzzle"/>
+				<projectileWeapon muzzleBone="CannonMuzzle"
+					windupDuration="1.1"
+					fireInterval="2"/>
 			</models>
 		</weapon>
 		<weapon type="GaussCannon"
@@ -22,12 +25,24 @@
 				slotName="GaussCannon">
 			<models>
 				<projectileWeapon muzzleBone="GaussMuzzle"
+						fireInterval="0.5"
 						muzzleCount="2"/>
 			</models>
 		</weapon>
-		<weapon type="MissilePod">
+		<weapon type="GaussCannonOvercharged"
+				count="2"
+				enabled="0"
+				slotName="GaussCannonOvercharged">
+			<models>
+				<projectileWeapon muzzleBone="GaussMuzzle"
+						fireInterval="0.5"
+						muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="MissilePod" count="2">
 			<models>
 				<missileWeapon muzzleBone="MissileMuzzle"
+						missileScale="0.2"
 						muzzleCount="6"/>
 			</models>
 		</weapon>
@@ -44,10 +59,10 @@
 				slotName="ShirakiCruiseMissile"
 				requiredUpgrade="ShirakiCruiseMissile">
 			<models>
-				<missileWeapon mesh="Units/CycloneCruiseMissile"
+				<missileWeapon mesh="Units/AtlasTankCruiseMissile"
 						material="Units/CycloneCruiseMissile"
 						bone="Turret"
-						muzzleBone="MissileMuzzle"
+						muzzleBone="CruiseMissileMuzzle"
 						muzzleCount="2"
 						fireInterval="10"
 						missileScale="0.4"/>
@@ -72,7 +87,7 @@
 		</weapon>
 		<weapon type="None" requiredUpgrade="SmokeLauncher">
 			<models>
-				<weapon mesh="Units/CycloneSmokeLauncher"
+				<weapon mesh="Units/AtlasTankSmokeLauncher"
 						material="Units/CycloneSmokeLauncher"
 						bone="Hull"/>
 			</models>
@@ -82,14 +97,16 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
+				<antimatterCost base="32"/> <!-- %antimatterCost base tier=12 factor=0.1 -->
+				<antimatterUpkeep base="1.6"/> <!-- %antimatterUpkeep base tier=12 factor=0.1 -->
 				<armor base="10"/>
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
-				<mineralsCost base="240"/> <!-- %mineralsCost base tier=11 factor=1 -->
-				<mineralsUpkeep base="12.0"/> <!-- %mineralsUpkeep base tier=11 factor=1 -->
+				<transuraniumCost base="32"/> <!-- %transuraniumCost base tier=12 factor=0.1 -->
+				<transuraniumUpkeep base="1.6"/> <!-- %transuraniumUpkeep base tier=12 factor=0.1 -->
 				<moraleMax base="10"/>
 				<movementMax base="3"/>
-				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
+				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -104,15 +121,15 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankAppear"/>
+				<action responseSound="Responses/Units/AtlasTankAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/AtlasTankAttack"
-						beginFire="0.33"
+						beginFire="0.167"
 						endFire="2.3"
-						responseSound="Units/Responses/AtlasTankAttack"
+						responseSound="Responses/Units/AtlasTankAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -125,17 +142,17 @@
 		<endure>
 			<model>
 				<action animation="Units/AtlasTankImpact"
-						responseSound="Units/Responses/AtlasTankEndureHighDamage"/> 
+						responseSound="Responses/Units/AtlasTankEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+				<action responseSound="Responses/Units/AtlasTankHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+				<action responseSound="Responses/Units/AtlasTankHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -146,13 +163,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankKill"/>
+				<action responseSound="Responses/Units/AtlasTankKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AtlasTankMove"
-						responseSound="Units/Responses/AtlasTankMove"
+						responseSound="Responses/Units/AtlasTankMove"
 						responseSoundCount="4"
 						sound="Units/AtlasTankMove"
 						soundFadeInDuration="0.25"
@@ -161,18 +178,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankPoke"/>
+				<action responseSound="Responses/Units/AtlasTankPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankSelect"
+				<action responseSound="Responses/Units/AtlasTankSelect"
 						responseSoundCount="4"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AtlasTankHoldPosition"/>
+				<action responseSound="Responses/Units/AtlasTankHoldPosition"/>
 			</model>
 		</skip>
 		<useWeapon weaponSlotName="GaussCannon"
@@ -181,14 +198,33 @@
 				requiredActionPoints="0">
 			<model>
 				<attack animation="Units/AtlasTankAbility0"
-						beginFire="1.0"
-						endFire="1.1"
-						responseSound="Units/Responses/AtlasTankGaussCannon"/>
+						beginFire="0.7"
+						endFire="2.2"
+						responseSound="Responses/Units/AtlasTankGaussCannon"/>
 			</model>
+			<sharedCooldowns>
+				<action name="UseWeapon/GaussCannon"/>
+				<action name="UseWeapon/GaussCannonOvercharged"/>
+			</sharedCooldowns>
+		</useWeapon>
+		<useWeapon weaponSlotName="GaussCannonOvercharged"
+				consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0">
+			<model>
+				<attack animation="Units/AtlasTankAbility0"
+						beginFire="0.7"
+						endFire="2.2"
+						responseSound="Responses/Units/AtlasTankGaussCannon"/>
+			</model>
+			<sharedCooldowns>
+				<action name="UseWeapon/GaussCannon"/>
+				<action name="UseWeapon/GaussCannonOvercharged"/>
+			</sharedCooldowns>
 		</useWeapon>
 		<unitCast blueprint="SmokeLauncher">
 			<model>
-				<cast responseSound="Units/Responses/AtlasTankSmokeLauncher"
+				<cast responseSound="Responses/Units/AtlasTankSmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
 		</unitCast>
@@ -196,7 +232,7 @@
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"
-						responseSound="Units/Responses/AtlasTankShirakiCruiseMissile"/>
+						responseSound="Responses/Units/AtlasTankShirakiCruiseMissile"/>
 			</model>
 		</useWeapon>
 	</actions>

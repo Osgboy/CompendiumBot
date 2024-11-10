@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait icon="Attributes/LifeSteal">
+<trait icon="Attributes/LifeSteal" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
 			<effects>
-				<lifeStealFromDamage add="1.0"/>
+				<lifeStealFromDamage add="0.1"/>
 			</effects>
 		</modifier>
 	</modifiers>

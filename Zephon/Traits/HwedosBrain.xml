@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnPlayer="1">
+	<onTurnStarted>
+		<traitSourcePlayer>
+			<modifier effectDescription="Every5Turns">
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="5"/>
+				</conditions>
+				<effects>
+					<singularityCores add="3"/>
+				</effects>
+			</modifier>
+		</traitSourcePlayer>
+	</onTurnStarted>
+</trait>

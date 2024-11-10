@@ -6,7 +6,7 @@
 				material="Units/VulkanR5"
 				mesh="Units/VulkanR5"
 				normalWeight="0.1"
-				scale="0.9 0.9 0.9"
+				scale="1 1 1"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -14,32 +14,67 @@
 			<models>
 				<weapon fireInterval="10"/>
 			</models>
-		</weapon>		
+		</weapon>
 		<weapon type="Incinerator">
 			<models>
 				<flamerWeapon effectFaceWeight="0" muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="SmokeLauncher">
+			<models>
+				<weapon bone="Body_Upper"
+						material="Units/VulkanR5"
+						mesh="Units/VulkanR5SmokeLauncher"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="OrbitalDeployment">
+			<models>
+				<weapon bone="Body_Upper"
+						material="Units/VulkanR5ComDevice"
+						mesh="Units/VulkanR5ComDevice"/>
+			</models>
+		</weapon>
+		<weapon type="ShirakiCruiseMissile"
+				enabled="0"
+				requiredUpgrade="ShirakiCruiseMissile"
+				slotName="ShirakiCruiseMissile">
+			<models>
+				<missileWeapon bone="Body_Upper"
+						fireInterval="10"
+						material="Units/VulkanR5GuidedMissile"
+						mesh="Units/VulkanR5GuidedMissile"
+						missileScale="0.7"
+						muzzleBone="Rocket"/>
 			</models>
 		</weapon>
 	</weapons>
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="6"/>
-				<armor base="7"/>
+				<accuracy base="8"/>
+				<armor base="10"/>
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
-				<mineralsCost base="60"/> <!-- %mineralsCost base tier=7 factor=1 -->
-				<mineralsUpkeep base="3.0"/> <!-- %mineralsUpkeep base tier=7 factor=1 -->
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<transuraniumCost base="16"/> <!-- %transuraniumCost base tier=8 factor=0.2 -->
+				<transuraniumUpkeep base="0.8"/> <!-- %transuraniumUpkeep base tier=8 factor=0.2 -->
 				<moraleMax base="10"/>
 				<movementMax base="3"/>
-				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5Appear"/>
+				<action responseSound="Responses/Units/VulkanR5Appear"/>
 			</model>
 		</appear>
 		<attack>
@@ -54,7 +89,7 @@
 						meleeAnimation="Units/VulkanR5Melee"
 						meleeBeginSwing="0.33"
 						meleeEndSwing="0.43"
-						responseSound="Units/Responses/VulkanR5Attack"
+						responseSound="Responses/Units/VulkanR5Attack"
 						responseSoundCount="3"
 						sound="Units/VulkanR5Melee"/>
 			</model>
@@ -68,17 +103,17 @@
 		<endure>
 			<model>
 				<action animation="Units/VulkanR5Impact"
-						responseSound="Units/Responses/VulkanR5EndureHighDamage"/> 
+						responseSound="Responses/Units/VulkanR5EndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5HoldPosition"/>
+				<action responseSound="Responses/Units/VulkanR5HoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5HoldPosition"/>
+				<action responseSound="Responses/Units/VulkanR5HoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -89,13 +124,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5Kill"/>
+				<action responseSound="Responses/Units/VulkanR5Kill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/VulkanR5Move"
-						responseSound="Units/Responses/VulkanR5Move"
+						responseSound="Responses/Units/VulkanR5Move"
 						responseSoundCount="3"
 						sound="Units/VulkanR5Move"
 						soundCount="1"
@@ -105,18 +140,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5Poke"/>
+				<action responseSound="Responses/Units/VulkanR5Poke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5Select"
+				<action responseSound="Responses/Units/VulkanR5Select"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/VulkanR5HoldPosition"/>
+				<action responseSound="Responses/Units/VulkanR5HoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="PowerSpike"
@@ -126,9 +161,10 @@
 				requiredActionPoints="0"
 				requiredMovement="0">
 			<model>
-				<cast animation=""
-						blueprint=""
-						responseSound="Units/Responses/VulkanR5PowerSpike"/>
+				<cast animation="Units/VulkanR5Ability0"
+						blueprint="Effects/PowerSpike"
+						responseSound="Responses/Units/VulkanR5PowerSpike"
+						sound="Units/VulkanR5PowerSpike"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -142,39 +178,43 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction greater="0.5"/>	
+										</unit>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<tile>
-							<enemyStrengthInTheArea greater="0"/>
-						</tile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<unitCast blueprint="SmokeLauncher">
 			<model>
-				<cast responseSound="Units/Responses/VulkanR5SmokeLauncher"
+				<cast responseSound="Responses/Units/VulkanR5SmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
 		</unitCast>
-		<teleport blueprint="OrbitalDeployment"/>
-		<!-- <useWeapon blueprint="ShirakiCruiseMissile">
+		<orbitalDeployment blueprint="OrbitalDeployment"/>
+		<useWeapon blueprint="ShirakiCruiseMissile">
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"
-						responseSound="Units/Responses/VulkanR5ShirakiCruiseMissile"/>
+						responseSound="Responses/Units/VulkanR5ShirakiCruiseMissile"/>
 			</model>
-		</useWeapon> -->
+		</useWeapon>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="Mechanical"/>
 		<trait type="Large"/>
 	</traits>

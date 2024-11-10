@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				effectsBlueprint="Effects/CrlaDisciple"
 				groupMemberDeltaX="70"
 				groupMemberDeltaY="70"
@@ -34,7 +35,7 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="6"/>
+				<accuracy base="8"/>
 				<armor base="2"/>
 				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
 				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
@@ -61,7 +62,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleAppear"/>
+				<action responseSound="Responses/Units/CrlaDiscipleAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -69,7 +70,7 @@
 				<attack animation="Units/CrlaDiscipleAttack"
 						beginFire="0.2"
 						endFire="2.0"
-						responseSound="Units/Responses/CrlaDiscipleAttack"
+						responseSound="Responses/Units/CrlaDiscipleAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -87,17 +88,17 @@
 		<endure>
 			<model>
 				<action animation="Units/CrlaDiscipleImpact"
-						responseSound="Units/Responses/CrlaDiscipleEndureHighDamage"/> 
+						responseSound="Responses/Units/CrlaDiscipleEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+				<action responseSound="Responses/Units/CrlaDiscipleHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+				<action responseSound="Responses/Units/CrlaDiscipleHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -108,13 +109,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleKill"/>
+				<action responseSound="Responses/Units/CrlaDiscipleKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/CrlaDiscipleMove"
-						responseSound="Units/Responses/CrlaDiscipleMove"
+						responseSound="Responses/Units/CrlaDiscipleMove"
 						responseSoundCount="3"
 						sound="Units/CrlaDiscipleMove"
 						soundCount="3"
@@ -124,18 +125,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/CrlaDisciplePoke"/>
+				<action responseSound="Responses/Units/CrlaDisciplePoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleSelect"
+				<action responseSound="Responses/Units/CrlaDiscipleSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/CrlaDiscipleHoldPosition"/>
+				<action responseSound="Responses/Units/CrlaDiscipleHoldPosition"/>
 			</model>
 		</skip>
 		<useWeapon weaponSlotName="CrlasGambit">
@@ -143,7 +144,7 @@
 				<attack animation="Units/CrlaDiscipleAttack"
 						beginFire="0.5"
 						endFire="2.0"
-						responseSound="Units/Responses/CrlaDiscipleCrlasGambit"/>
+						responseSound="Responses/Units/CrlaDiscipleCrlasGambit"/>
 			</model>
 		</useWeapon>
 		<unitCast name="InevitableEnd"
@@ -151,7 +152,7 @@
 			<model>
 				<cast animation="Units/CrlaDiscipleAbility0"
 						blueprint="Effects/InevitableEnd"
-						responseSound="Units/Responses/CrlaDiscipleInevitableEnd"
+						responseSound="Responses/Units/CrlaDiscipleInevitableEnd"
 						sound="Actions/InevitableEndCaster"/>
 			</model>
 			<beginTargets>
@@ -193,7 +194,7 @@
 			<model>
 				<cast animation="Units/CrlaDiscipleAbility0"
 						blueprint="Effects/UnholyHaste"
-						responseSound="Units/Responses/CrlaDiscipleUnholyHaste"
+						responseSound="Responses/Units/CrlaDiscipleUnholyHaste"
 						sound="Actions/InevitableEndCaster"/>
 			</model>
 			<beginTargets>
@@ -234,9 +235,10 @@
 				radius="1"
 				requiredUpgrade="TheDeepWays">
 			<model>
-				<cast animation="Units/CrlaDiscipleAbility0"
+				<teleport animation="Units/CrlaDiscipleAbility0"
 						blueprint="Effects/TheDeepWays"
-						responseSound="Units/Responses/CrlaDiscipleProfanePilgrimage"
+						casterBlueprint="Effects/TheDeepWays"
+						responseSound="Responses/Units/CrlaDiscipleProfanePilgrimage"
 						sound="Actions/InevitableEndCaster"/>
 			</model>
 			<modifiers>

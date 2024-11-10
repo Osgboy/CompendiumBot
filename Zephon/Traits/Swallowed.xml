@@ -5,6 +5,7 @@
 			<effects>
 				<actionPointsMax max="0.0"/>
 				<movementMax max="0.0"/>
+				<healingReceived mul="-1.0"/>
 			</effects>
 		</modifier>
 	</modifiers>
@@ -14,7 +15,7 @@
 				<modifiers endure="0">
 					<modifier effectDescription="EachTurn">
 						<effects>
-							<hitpointsFromMax add="-0.1"/>
+							<hitpointsFromMax add="-0.2"/>
 						</effects>
 					</modifier>
 				</modifiers>

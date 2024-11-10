@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="60"
 				material="Units/AssaultTrooper"
 				mesh="Units/AssaultTrooper"
 				normalWeight="0.1"
 				scale="1 1 1"
+				sparks="1"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -35,13 +37,8 @@
 				requiredUpgrade="AntimatterExplosive"
 				slotName="AntimatterExplosive">
 			<models>
-				<grenadeWeapon bone=""
-						fireSound="Units/AssaultTrooperAntimatterExplosive"
-						fireSoundCount="3"
-						grenadeBlueprint="Units/MilitantAntiArmorGrenade"
-						material="Units/MilitantAntiArmorGrenade"
-						mesh="Units/MilitantAntiArmorGrenade"
-						muzzleBone=""/>
+				<grenadeWeapon grenadeBlueprint="Units/MilitantAntiArmorGrenade"
+						muzzleBone="Hand_L"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -73,7 +70,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperAppear"/>
+				<action responseSound="Responses/Units/AssaultTrooperAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -81,7 +78,7 @@
 				<attack animation="Units/AssaultTrooperAttack"
 						beginFire="0.37"
 						endFire="2.0"
-						responseSound="Units/Responses/AssaultTrooperAttack"
+						responseSound="Responses/Units/AssaultTrooperAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -99,17 +96,17 @@
 		<endure>
 			<model>
 				<action animation="Units/AssaultTrooperImpact"
-						responseSound="Units/Responses/AssaultTrooperEndureHighDamage"/> 
+						responseSound="Responses/Units/AssaultTrooperEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperHoldPosition"/>
+				<action responseSound="Responses/Units/AssaultTrooperHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperHoldPosition"/>
+				<action responseSound="Responses/Units/AssaultTrooperHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -120,13 +117,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperKill"/>
+				<action responseSound="Responses/Units/AssaultTrooperKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AssaultTrooperMove"
-						responseSound="Units/Responses/AssaultTrooperMove"
+						responseSound="Responses/Units/AssaultTrooperMove"
 						responseSoundCount="3"
 						sound="Units/AssaultTrooperMove"
 						soundCount="3"
@@ -136,18 +133,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperPoke"/>
+				<action responseSound="Responses/Units/AssaultTrooperPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperSelect"
+				<action responseSound="Responses/Units/AssaultTrooperSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AssaultTrooperHoldPosition"/>
+				<action responseSound="Responses/Units/AssaultTrooperHoldPosition"/>
 			</model>
 		</skip>
 		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
@@ -156,17 +153,20 @@
 			<model>
 				<cast animation="Units/AssaultTrooperAbility0"
 						blueprint="Effects/IronWill"
-						responseSound="Units/Responses/AssaultTrooperIronWill"/>
+						responseSound="Responses/Units/AssaultTrooperIronWill"/>
 			</model>
 		</unitCast>
-		<teleport blueprint="OrbitalDeployment"/>
+		<orbitalDeployment blueprint="OrbitalDeployment"/>
 		<useWeapon weaponSlotName="AntimatterExplosive"
 				cooldown="10"
 				requiredUpgrade="AntimatterExplosive">
 			<model>
 				<attack animation="Units/AssaultTrooperAbility1"
-						endFire="1.9"
-						responseSound="Units/Responses/AssaultTrooperAntimatterExplosive"/>
+						beginFire="0.7"
+						endFire="0.8"
+						responseSound="Responses/Units/AssaultTrooperAntimatterExplosive"
+						sound="Units/AssaultTrooperAntimatterExplosive"
+						soundCount="3"/>
 			</model>
 		</useWeapon>
 	</actions>

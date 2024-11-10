@@ -1,4 +1,9 @@
-<quest firstTurn="40" image="Factions/RogueOperative">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/RogueOperative" image="Factions/RogueOperative">
+	<conditions>
+		<player>
+			<faction name="RogueOperative"/>
+		</player>
+	</conditions>
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -11,13 +16,11 @@
 				<nearCityTileSelector targetDistance="6">
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -30,9 +33,9 @@
 				</tileModifiers>
 			</modifications>
 			<objectives>
-				<killCamp>
+				<killCamp name="KillMech">
 					<defenders>
-						<unit type="VulkanR5" count="1" rankMin="3" rankMax="5"/>
+						<unit type="VulkanR5" count="1" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -40,7 +43,12 @@
 		<stage name="KillMechSuccess" nextStageOnSuccess="KillMechSuccess">
 			<options>
 				<option name="SolveRiddle" nextStage="SolveRiddle"/>
-				<option name="BruteForce"> <!-- TODO Make objective -->
+				<option name="BruteForce">
+					<conditions>
+						<player>
+							<upgrade name="IcarusSatellite"/>
+						</player>
+					</conditions>
 					<nextStages>
 						<nextStage name="BruteForceSuccess" weight="1"/> 
 						<nextStage name="BruteForceFailure" weight="1"/>
@@ -60,12 +68,12 @@
 				<playerModifiers>
 					<modifier>
 						<effects>			
-							<addItem type="ICARLogo0"/>
-							<addItem type="ICARLogo1"/>
 							<addItem type="ICARLogo2"/>
-							<addItem type="ICARLogo3"/>
 							<addItem type="ICARLogo4"/>
+							<addItem type="ICARLogo0"/>
 							<addItem type="ICARLogo5"/>
+							<addItem type="ICARLogo1"/>
+							<addItem type="ICARLogo3"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -150,7 +158,9 @@
 					<modifier>
 						<effects>			
 							<addTrait type="TheDeal"/>
-							<!-- TODO Items -->
+							<addItem type="SpotterDrone"/>
+							<addItem type="ReactiveTrigger"/>
+							<addItem type="PhaseFontead"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -169,7 +179,10 @@
 					<modifier>
 						<effects>			
 							<addTrait type="EyeOfPhinnicus"/>
-							<!-- TODO Items -->
+							<addItem type="SpotterDrone"/>
+							<addItem type="ReactiveTrigger"/>
+							<addItem type="PhaseFontead"/>
+							<unlockAchievement name="TheDeadHandOfCapitalism"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

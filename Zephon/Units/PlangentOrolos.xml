@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
-				material="Units/FallenOrolos"
-				effectsBlueprint="Effects/FallenOrolos"
-				mesh="Units/FallenOrolos"
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Chest"
+				material="Units/PlangentOrolos"
+				mesh="Units/PlangentOrolos"
 				normalWeight="0.1"
-				scale="1.3 1.3 1.3"
+				scale="1.5 1.5 1.5"
+				sparks="1"
 				walker="1"/>
 	</model>
 	<weapons>
 		<weapon type="Shrieker" count="2">
 			<models>
-				<projectileWeapon/>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -29,7 +30,7 @@
 				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=9 factor=0.25 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
-				<moraleMax base="8"/>
+				<moraleMax base="10"/>
 				<movementMax base="3"/>
 				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
 			</effects>
@@ -46,59 +47,59 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/PlangenOrolosAppear"/>
+				<action responseSound="Responses/Units/PlangentOrolosAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
-				<attack animation="Units/FallenOrolosAttack"
-						beginFire="1.26"
+				<attack animation="Units/PlangentOrolosAttack"
+						beginFire="1.0"
 						endFire="1.79"
-						sound="Units/FallenOrolosAttack"
-						responseSound="Units/Responses/PlangentOrolosAttack"
-						responseSoundCount="3"/>
+						responseSound="Responses/Units/PlangentOrolosAttack"
+						responseSoundCount="3"
+						sound="Units/PlangentOrolosAttack"/>
 			</model>
 		</attack>
 		<die>
 			<model>
-				<die animation="Units/FallenOrolosDie0"
-						groundImpact="1.1"
+				<die animation="Units/PlangentOrolosDie0"
+						groundImpact="1.4"
 						sound="Units/PlangentOrolosDie"/>
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/FallenOrolosImpact"
-						responseSound="Units/Responses/PlangentOrolosEndureHighDamage"/> 
+				<action animation="Units/PlangentOrolosImpact"
+						responseSound="Responses/Units/PlangentOrolosEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/PlangentOrolosHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/PlangentOrolosHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
 			<model>
-				<idle animation="Units/FallenOrolosIdle"
+				<idle animation="Units/PlangentOrolosIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosKill"/>
+				<action responseSound="Responses/Units/PlangentOrolosKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/FallenOrolosMove"
-						responseSound="Units/Responses/PlangentOrolosMove"
+				<action animation="Units/PlangentOrolosMove"
+						responseSound="Responses/Units/PlangentOrolosMove"
 						responseSoundCount="3"
-						sound="Units/FallenOrolosMove"
+						sound="Units/PlangentOrolosMove"
 						soundCount="1"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
@@ -106,31 +107,34 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosPoke"/>
+				<action responseSound="Responses/Units/PlangentOrolosPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosSelect"
+				<action responseSound="Responses/Units/PlangentOrolosSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PlangentOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/PlangentOrolosHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Soundquake"
 				cooldown="3">
 			<model>
-				<cast responseSound="Units/Responses/PlangentOrolosSoundquake"
-						blueprint=""
-						casterBlueprint=""/>
+				<cast responseSound="Responses/Units/PlangentOrolosSoundquake"
+						animation="Units/PlangentOrolosAbility0"
+						blueprint="Effects/Soundquake"
+						casterBlueprint="Effects/SoundquakeCaster"
+						sound="Units/PlangentOrolosSoundquake"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="2">
 					<conditions>
 						<unit>
+							<enemy/>
 							<noTrait type="Titan"/>
 						</unit>
 					</conditions>
@@ -143,6 +147,24 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<movementMax greater="0"/>
+											<noTrait type="Immobilized"/>
+											<unitsInRange greater="1" range="2">
+												<unit>
+													<ally/>
+												</unit>
+											</unitsInRange>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
 						</area>
 					</areas>
 				</target>
@@ -150,6 +172,7 @@
 		</unitCast>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="DimensionalReverberations" requiredUpgrade="DimensionalReverberations"/>
 		<trait type="Large"/>

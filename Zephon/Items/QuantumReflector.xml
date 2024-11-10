@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <item branch="Cyber" visible="0">
 	<actions>
-		<unitCast name="QuantumReflector" charges="1">
+		<unitCast name="QuantumReflector" charges="1"> <!-- Needs it for the quest to complete. Maybe have validation not check for these if parent is item. -->
 			<model>
 				<cast blueprint="Effects/QuantumReflector"/>
 			</model>

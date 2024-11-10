@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<grenadeWeapon/>
+		<grenadeWeapon explosionsBlueprint="Effects/AntimatterGrenadeExplosions"/>
 	</model>
 	<modifiers>
 		<modifier>
@@ -12,8 +12,8 @@
 			</effects>
 		</modifier>
 	</modifiers>
+	<target rangeMax="1"/>
 	<traits>
 		<trait type="AntimatterDiffraction"/>
-		<trait type="Melee"/>
 	</traits>
 </weapon>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Body"
+		<unit bloodBlueprint="Effects/LargeBlackBlood"
+				bloodBone="Body"
 				effectsBlueprint="Effects/DreamEater"
 				material="Units/Dreameater"
 				mesh="Units/Dreameater"
@@ -32,7 +33,7 @@
 				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=8 factor=0.5 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
-				<moraleMax base="12"/>
+				<moraleMax base="0"/>
 				<movementMax base="3"/>
 				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
 			</effects>
@@ -42,7 +43,8 @@
 		<appear>
 			<model>
 				<action animation="Units/DreameaterAbility1"
-						responseSound="Units/Responses/DreameaterAppear"/>
+						responseSound="Responses/Units/DreameaterAppear"
+						sound="Units/DreameaterAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -59,7 +61,7 @@
 						meleeEndSwing="0.101"
 						meleeSound="Units/DreameaterMelee"
 						meleeSoundCount="1"
-						responseSound="Units/Responses/DreameaterAttack"
+						responseSound="Responses/Units/DreameaterAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -76,17 +78,17 @@
 		<endure>
 			<model>
 				<action animation="Units/DreameaterImpact"
-						responseSound="Units/Responses/DreameaterEndureHighDamage"/> 
+						responseSound="Responses/Units/DreameaterEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DreameaterHoldPosition"/>
+				<action responseSound="Responses/Units/DreameaterHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DreameaterHoldPosition"/>
+				<action responseSound="Responses/Units/DreameaterHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -97,13 +99,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DreameaterKill"/>
+				<action responseSound="Responses/Units/DreameaterKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/DreameaterMove"
-						responseSound="Units/Responses/DreameaterMove"
+						responseSound="Responses/Units/DreameaterMove"
 						responseSoundCount="3"
 						sound="Units/DreameaterMove"
 						soundFadeInDuration="0.25"
@@ -112,25 +114,25 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DreameaterPoke"/>
+				<action responseSound="Responses/Units/DreameaterPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DreameaterSelect"
+				<action responseSound="Responses/Units/DreameaterSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DreameaterHoldPosition"/>
+				<action responseSound="Responses/Units/DreameaterHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="DreamPrison"
 				cooldown="3">
 			<model>
 				<cast animation="Units/DreameaterAbility0"
-						responseSound="Units/Responses/DreameaterEnslave"
+						responseSound="Responses/Units/DreameaterEnslave"
 						blueprint="Effects/DreamPrison"
 						casterBlueprint="Effects/DreamPrisonCaster"/>
 			</model>
@@ -139,9 +141,8 @@
 					<conditions>
 						<unit>
 							<enemy/>
-							<morale less="4"/>
-							<moraleMax greater="0.0"/>
 							<noTrait type="Headquarters"/>
+							<trait type="Broken"/>
 						</unit>
 					</conditions>
 					<areas>

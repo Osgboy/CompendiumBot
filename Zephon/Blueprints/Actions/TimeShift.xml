@@ -6,6 +6,12 @@
 		requiredActionPoints="0"
 		requiredMovement="0"
 		requiredUpgrade="TimeShift">
+	<conditions>
+		<unit match="Any">
+			<actionPoints equal="0"/>
+			<movement equal="0"/>
+		</unit>
+	</conditions>
 	<beginTargets>
 		<selfTarget>
 			<areas>
@@ -13,8 +19,8 @@
 					<modifiers>
 						<modifier>
 							<effects>
-								<actionPoints add="100"/>
-								<movement add="100"/>
+								<resetActionPoints/>
+								<resetMovement/>
 							</effects>
 						</modifier>
 					</modifiers>

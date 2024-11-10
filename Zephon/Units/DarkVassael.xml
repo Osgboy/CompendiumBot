@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Body3"
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Body3"
 				material="Units/DarkVassael"
 				mesh="Units/DarkVassael"
 				normalWeight="0.1"
@@ -50,8 +51,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelAppear"
-						responseSoundCount="1"/>
+				<action responseSound="Responses/Units/DarkVassaelAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -60,7 +60,7 @@
 						beginFire="1.5"
 						endFire="2.0"
 						sound="Units/DarkVassaelAttack"
-						responseSound="Units/Responses/DarkVassaelAttack"
+						responseSound="Responses/Units/DarkVassaelAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -74,20 +74,17 @@
 		<endure>
 			<model>
 				<action animation="Units/DarkVassaelImpact"
-						responseSound="Units/Responses/DarkVassaelEndureHighDamage"
-						responseSoundCount="1"/> 
+						responseSound="Responses/Units/DarkVassaelEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Responses/Units/DarkVassaelHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Responses/Units/DarkVassaelHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -98,14 +95,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelKill"
-						responseSoundCount="1"/>
+				<action responseSound="Responses/Units/DarkVassaelKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/DarkVassaelMove"
-						responseSound="Units/Responses/DarkVassaelMove"
+						responseSound="Responses/Units/DarkVassaelMove"
 						responseSoundCount="3"
 						sound="Units/DarkVassaelMove"
 						soundCount="3"
@@ -115,19 +111,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelPoke"/>
+				<action responseSound="Responses/Units/DarkVassaelPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelSelect"
+				<action responseSound="Responses/Units/DarkVassaelSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action responseSound="Responses/Units/DarkVassaelHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="CreateShochitrisLair"
@@ -136,7 +131,8 @@
 				requiredUpgrade="ShochitrisLair">
 			<model>
 				<cast animation="Units/DarkVassaelAbility0"
-						responseSound="Units/Responses/DarkVassaelConstructLair"
+						beginEffect="0.25"
+						responseSound="Responses/Units/DarkVassaelConstructLair"
 						sound="Units/DarkVassaelConstructLair"/>
 			</model>
 			<modifiers>
@@ -163,7 +159,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="ShochitrisLair" avoidBleed="0" avoidCity="0"/>
+										<addUnit type="ShochitrisLair" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -186,6 +182,7 @@
 		</unitCast>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="Large"/>
 	</traits>

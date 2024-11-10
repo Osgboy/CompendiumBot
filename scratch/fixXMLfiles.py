@@ -10,7 +10,7 @@ def replaceChrs(matchobj: re.Match):
    return f'<entry name="{name}" value="{value}"/>'
 
 for dirpath, dirnames, filenames in os.walk(sys.argv[1]): # .\Zephon\English, .\scratch
-   for filename in filenames:
+    for filename in filenames:
       if filename.endswith(".xml"):
         filepath = os.path.join(dirpath, filename)
         print(filepath)

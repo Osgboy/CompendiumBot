@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -8,6 +8,9 @@
 							<control/>
 							<minerals greater="30"/>
 						</player>
+						<playerWithFaction faction="Chieftess">
+							<standingTier greater="-1"/>
+						</playerWithFaction>
 					</conditions>
 				</playerSelector>
 				<playerModifiers>
@@ -73,7 +76,7 @@
 					</conditions>
 				</unitSelector>
 				<unitModifiers>
-					<modifier>
+					<modifier visible="0">
 						<effects>
 							<hitpoints mul="-0.1"/>
 						</effects>
@@ -90,7 +93,7 @@
 						<nextStage name="ArrangeTheMeetFailure" weight="1"/>
 					</nextStages>
 				</option>
-				<option name="RevealAssassination" nextStage="RevealAssasination"/>
+				<option name="RevealAssassination" nextStage="RevealAssassination"/>
 				<option name="HuntThemDown" nextStage="HuntThemDown"/>
 				<option name="Ignore" nextStage="Ignore"/>
 			</options>
@@ -139,12 +142,11 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -160,9 +162,10 @@
 				<killCamp name="KillCalem"
 						bossKillCompletes="0"
 						turns="10">
-					<boss type="Reaver"/> <!-- TODO Calem -->
+					<boss type="CalemVorshole" name="Units/CalemVorshole" rankMin="3" rankMax="3" skipOverwatchOnNextTileEnter="1"/>
 					<defenders>
-						<unit type="Reaver" count="4"/>
+						<unit type="Reaver" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>

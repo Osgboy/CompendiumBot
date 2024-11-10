@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait icon="Actions/LoyaltyUpgrade" visibleOnUnit="1">
-	<modifiers>
-		<perBuildingInCityModifier effectDescription="LoyaltyUpgrade">
-			<perBuildingConditions>
-				<building>
-					<type name="Loyalty"/>
-				</building>
-			</perBuildingConditions>
-			<conditions>
-				<unit>
-					<ally/>
-				</unit>
-			</conditions>
-			<effects>
-				<moraleRegeneration add="0.1"/>
-			</effects>
-		</perBuildingInCityModifier>
-	</modifiers>
+<trait category="Buff" icon="Actions/LoyaltyUpgrade" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<perBuildingInCityModifier effectDescription="LoyaltyUpgrade">
+						<perBuildingConditions>
+							<building>
+								<type name="Loyalty"/>
+							</building>
+						</perBuildingConditions>
+						<conditions>
+							<unit>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<morale add="1"/>
+						</effects>
+					</perBuildingInCityModifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
 </trait>

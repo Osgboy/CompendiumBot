@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Spine2"
+		<unit bloodBlueprint="Effects/LargeBlackBlood"
+				bloodBone="Spine2"
 				material="Units/ElectOfUzhodai"
 				mesh="Units/ElectOfUzhodai"
 				normalWeight="0.1"
@@ -52,7 +53,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiAppear"
+				<action responseSound="Responses/Units/ElectOfUzhodaiAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -63,7 +64,7 @@
 						meleeBeginSwing="0.5"
 						meleeEndSwing="0.6"
 						sound="Units/ElectOfUzhodaiMelee"
-						responseSound="Units/Responses/ElectOfUzhodaiAttack"
+						responseSound="Responses/Units/ElectOfUzhodaiAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -77,19 +78,19 @@
 		<endure>
 			<model>
 				<action animation="Units/ElectOfUzhodaiImpact"
-						responseSound="Units/Responses/ElectOfUzhodaiEndureHighDamage"
+						responseSound="Responses/Units/ElectOfUzhodaiEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiHoldPosition"
+				<action responseSound="Responses/Units/ElectOfUzhodaiHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiHoldPosition"
+				<action responseSound="Responses/Units/ElectOfUzhodaiHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -101,14 +102,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiKill"
+				<action responseSound="Responses/Units/ElectOfUzhodaiKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ElectOfUzhodaiMove"
-						responseSound="Units/Responses/ElectOfUzhodaiMove"
+						responseSound="Responses/Units/ElectOfUzhodaiMove"
 						responseSoundCount="3"
 						sound="Units/ElectOfUzhodaiMove"
 						soundCount="1"
@@ -118,18 +119,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ElectofUzhodaiPoke"/> <!-- Intentional capitalization because already on Steam which is case-insensitive. -->
+				<action responseSound="Responses/Units/ElectofUzhodaiPoke"/> <!-- Intentional capitalization because already on Steam which is case-insensitive. -->
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiSelect"
+				<action responseSound="Responses/Units/ElectOfUzhodaiSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ElectOfUzhodaiHoldPosition"
+				<action responseSound="Responses/Units/ElectOfUzhodaiHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>
@@ -141,9 +142,10 @@
 				rankMax="2"
 				requiredActionPoints="0">
 			<model>
-				<cast animation="Units/ElectOfUzhodaiAbility1"
+				<teleport animation="Units/ElectOfUzhodaiAbility1"
 						blueprint="Effects/UnearthlyPassage"
-						responseSound="Units/Responses/ElectOfUzhodaiUnearthlyPassage"
+						casterBlueprint="Effects/UnearthlyPassage"
+						responseSound="Responses/Units/ElectOfUzhodaiUnearthlyPassage"
 						sound="Units/ElectOfUzhodaiCast"/>
 			</model>
   			<beginTargets>
@@ -165,7 +167,7 @@
 						</tile>
 					</conditions>
 					<effects>
-						<score addMin="1.0" addMax="1.0"/>
+						<score add="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>
@@ -179,7 +181,7 @@
 						meleeAnimation="Units/ElectOfUzhodaiAbility0"
 						meleeBeginSwing="0.5"
 						meleeEndSwing="0.6"
-						responseSound="Units/Responses/ElectOfUzhodaiCastigate"
+						responseSound="Responses/Units/ElectOfUzhodaiCastigate"
 						sound="Units/ElectOfUzhodaiCastigate"/>
 			</model>
 			<modifiers>
@@ -217,9 +219,10 @@
 				rankMax="0"
 				swap="1">
 			<model>
-				<cast animation="Units/ElectOfUzhodaiAbility1"
+				<teleport animation="Units/ElectOfUzhodaiAbility1"
 						blueprint="Effects/EndbringersReversal"
-						responseSound="Units/Responses/ElectOfUzhodaiEndbringersReversal"
+						casterBlueprint="Effects/EndbringersReversal"
+						responseSound="Responses/Units/ElectOfUzhodaiEndbringersReversal"
 						sound="Units/ElectOfUzhodaiCast"/>
 			</model>
  			<beginTargets>
@@ -235,6 +238,7 @@
 		<levelUp/>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="FerventStrength"/>
 		<trait type="Hero"/>

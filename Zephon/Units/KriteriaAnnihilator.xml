@@ -53,7 +53,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorAppear"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -61,7 +61,7 @@
 				<attack animation="Units/KriteriaAnnihilatorAttack"
 						beginFire="0.2"
 						endFire="1.8"
-						responseSound="Units/Responses/KriteriaAnnihilatorAttack"
+						responseSound="Responses/Units/KriteriaAnnihilatorAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -79,17 +79,17 @@
 		<endure>
 			<model>
 				<action animation="Units/KriteriaAnnihilatorImpact"
-						responseSound="Units/Responses/KriteriaAnnihilatorEndureHighDamage"/> 
+						responseSound="Responses/Units/KriteriaAnnihilatorEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -100,13 +100,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorKill"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/KriteriaAnnihilatorMove"
-						responseSound="Units/Responses/KriteriaAnnihilatorMove"
+						responseSound="Responses/Units/KriteriaAnnihilatorMove"
 						responseSoundCount="3"
 						sound="Units/KriteriaAnnihilatorMove"
 						soundCount="3"
@@ -116,25 +116,26 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorPoke"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorSelect"
+				<action responseSound="Responses/Units/KriteriaAnnihilatorSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/KriteriaAnnihilatorHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="TimeShift">
 			<model>
 				<cast animation="Units/KriteriaAnnihilatorAbility0"
-						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"
+						responseSound="Responses/Units/KriteriaAnnihilatorTimeShift"
 						sound="Units/KriteriaAnnihilatorTimeShift"
+						blueprint="Effects/TimeShift"
 						soundCount="3"/>
 			</model>
 		</unitCast>

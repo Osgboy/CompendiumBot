@@ -5,7 +5,7 @@
 				explosionsBlueprint="Effects/SmallCyberExplosions"
 				explosionsBone="Head"
 				groupMemberDeltaX="80"
-				groupMemberDeltaY="60"
+				groupMemberDeltaY="70"
 				material="Units/AraneanStalker"
 				mesh="Units/AraneanStalker"
 				normalWeight="0.1"
@@ -25,6 +25,7 @@
 			<models>
 				<weapon bone="Head"
 						material="Units/AraneanStalkerCloak"
+						effectsBlueprint="Effects/AraneanStalkerCloak"
 						mesh="Units/AraneanStalkerCloak"/>
 			</models>
 		</weapon>
@@ -57,7 +58,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerAppear"/>
+				<action responseSound="Responses/Units/AraneanStalkerAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -65,7 +66,7 @@
 				<attack animation="Units/AraneanStalkerAttack"
 						beginFire="1.13"
 						endFire="1.73"
-						responseSound="Units/Responses/AraneanStalkerAttack"
+						responseSound="Responses/Units/AraneanStalkerAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -83,17 +84,17 @@
 		<endure>
 			<model>
 				<action animation="Units/AraneanStalkerImpact"
-						responseSound="Units/Responses/AraneanStalkerEndureHighDamage"/> 
+						responseSound="Responses/Units/AraneanStalkerEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+				<action responseSound="Responses/Units/AraneanStalkerHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+				<action responseSound="Responses/Units/AraneanStalkerHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -104,13 +105,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerKill"/>
+				<action responseSound="Responses/Units/AraneanStalkerKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AraneanStalkerMove"
-						responseSound="Units/Responses/AraneanStalkerMove"
+						responseSound="Responses/Units/AraneanStalkerMove"
 						responseSoundCount="3"
 						sound="Units/AraneanStalkerMove"
 						soundCount="3"
@@ -120,18 +121,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerPoke"/>
+				<action responseSound="Responses/Units/AraneanStalkerPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerSelect"
+				<action responseSound="Responses/Units/AraneanStalkerSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AraneanStalkerHoldPosition"/>
+				<action responseSound="Responses/Units/AraneanStalkerHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="MarkTarget"
@@ -139,7 +140,7 @@
 			<model>
 				<cast animation="Units/AraneanStalkerAbility0"
 						blueprint="Effects/MarkTarget"
-						responseSound="Units/Responses/AraneanStalkerMarkTarget"
+						responseSound="Responses/Units/AraneanStalkerMarkTarget"
 						sound="Actions/MarkTargetCaster"/>
 			</model>
 			<beginTargets>

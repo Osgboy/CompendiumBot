@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon icon="Actions/Extirpate">
+	<model>
+		<beamWeapon beamsBlueprint="Effects/Extirpate"
+				chargeBlueprint=""
+				fireInterval="0.05"
+				muzzleFlashesBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="1"/> <!-- %armorPenetration base tier=2 -->
+				<attacks base="2"/>
+				<damage base="1.5"/> <!-- %damage base tier=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMin="2" rangeMax="3">
+   		<conditions>
+			<!-- FIXME: This prevents damage reflection from working. -->
+			<unit>
+				<noTrait type="Fortification"/>
+				<noTrait type="Titan"/>
+				<canBePulled/>
+			</unit>
+		</conditions>
+	</target>
+	<traits>
+		<trait type="Pulling"/>
+	</traits>
+</weapon>

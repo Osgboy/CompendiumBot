@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon fireSound="Weapons/GaussRifleOvercharged"
-				explosionsBlueprint="Effects/GaussOverchargedExplosions"
+		<projectileWeapon explosionsBlueprint="Effects/GaussOverchargedExplosions"
 				muzzleFlashesBlueprint="Effects/GaussOverchargedMuzzleFlashes"
 				projectilesBlueprint="Effects/GaussOverchargedProjectiles"
+				fireSound="Weapons/GaussRifleOvercharged"
 				fireSoundBeginCount="4"
+				fireSoundBeginDuringWindup="1"
 				fireSoundCount="4"
 				fireSoundEndCount="4"
 				fireSoundContinuously="1"

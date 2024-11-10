@@ -64,7 +64,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerAppear"/>
+				<action responseSound="Responses/Units/MalakimDestroyerAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -72,7 +72,7 @@
 				<attack animation="Units/MalakimDestroyerAttack"
 						beginFire="0.2"
 						endFire="1.8"
-						responseSound="Units/Responses/MalakimDestroyerAttack"
+						responseSound="Responses/Units/MalakimDestroyerAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -90,17 +90,17 @@
 		<endure>
 			<model>
 				<action animation="Units/MalakimDestroyerImpact"
-						responseSound="Units/Responses/MalakimDestroyerEndureHighDamage"/> 
+						responseSound="Responses/Units/MalakimDestroyerEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerHold"/>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerHold"/>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -111,13 +111,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerKill"/>
+				<action responseSound="Responses/Units/MalakimDestroyerKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/MalakimDestroyerMove"
-						responseSound="Units/Responses/MalakimDestroyerMove"
+						responseSound="Responses/Units/MalakimDestroyerMove"
 						responseSoundCount="3"
 						sound="Units/MalakimDestroyerMove"
 						soundCount="3"
@@ -127,18 +127,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerPoke"/>
+				<action responseSound="Responses/Units/MalakimDestroyerPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerSelect"
+				<action responseSound="Responses/Units/MalakimDestroyerSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/MalakimDestroyerHold"/>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
 			</model>
 		</skip>
  		<useWeapon weaponSlotName="StickyFoam"
@@ -147,7 +147,9 @@
 			<model>
 				<attack animation="Units/MalakimDestroyerAbility0"
 						beginFire="0.2"
-						endFire="2.3"/>
+						endFire="2.3"
+						responseSound="Responses/Units/MalakimDestroyerStickyFoam"
+						sound="Units/MalakimDestroyerStickyFoam"/>
 			</model>
 		</useWeapon>
 	</actions>

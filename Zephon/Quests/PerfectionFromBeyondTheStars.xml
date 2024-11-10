@@ -1,4 +1,4 @@
-<quest firstTurn="40" image="Factions/HeartlessArtificer">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/HeartlessArtificer" image="Factions/HeartlessArtificer">
  	<conditions>
 		<player>
 			<faction name="HeartlessArtificer"/>
@@ -83,12 +83,11 @@
 				<nearUnitTileSelector count="2" targetDistance="6">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -97,7 +96,7 @@
 				</nearUnitTileSelector>
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="12" waves="3">
+				<surviveInvasion name="SurviveRivalForces" strength="12" waves="3">
 					<attackers>
 						<unit type="MissileTeam"/>
 						<unit type="CrusaderBattleTank"/>
@@ -218,7 +217,7 @@
 				<unitModifiers>
 					<modifier visible="0">
 						<effects>
-							<changePlayer name="Neutral"/>
+							<changePlayer faction="Neutral"/>
 						</effects>
 					</modifier>
 				</unitModifiers>
@@ -227,8 +226,7 @@
 				<killMarkedUnit token="Hwedo"/>
 			</objectives>
 		</stage>
-		<stage name="KillHwedoSuccess"
-				itemAchievement="HwedosBrain">
+		<stage name="KillHwedoSuccess">
 			<modifications>
 				<playerSelector>
 					<conditions>
@@ -240,7 +238,8 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addItem type="HwedosBrain"/>
+							<addTrait type="HwedosBrain"/>
+							<unlockAchievement name="PerfectionFromBeyondTheStars"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

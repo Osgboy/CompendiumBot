@@ -1,4 +1,9 @@
-<quest firstTurn="40" image="Factions/PracticalRomantic">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/PracticalRomantic" image="Factions/PracticalRomantic">
+	<conditions>
+		<player>
+			<faction name="PracticalRomantic"/>
+		</player>
+	</conditions>
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -43,18 +48,17 @@
 				<nearCityTileSelector count="1" targetDistance="12">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
 			</modifications>
 			<objectives>
-				<visitTile name="VisitTileWithResourceTransport" turns="5">
+				<visitTile name="VisitTileWithResourceTransport" turns="10">
 					<unitConditions>
 						<token name="ResourceTransport"/>
 					</unitConditions>
@@ -74,7 +78,7 @@
 								<energyCost add="10"/>
 							</effects>
 						</modifier>
-					</modifiers>				
+					</modifiers>
 				</option>
 				<option name="ScareOff" nextStage="ScareOff">
 					<conditions>
@@ -122,10 +126,10 @@
 		<stage name="Fight" nextStageOnSuccess="BrothersKeeper"
 				nextStageOnFailure="DeliverResourcesFailure">
 			<objectives>
-				<killCamp name="KillCamp">
+				<killCamp name="KillBlockadingReavers">
 					<defenders>
-						<unit type="Reaver" count="2" rankMin="3" rankMax="5"/>
-						<unit type="Buster" count="2" rankMin="3" rankMax="5"/>
+						<unit type="Reaver" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 				<keepUnitAlive token="ResourceTransport"/>
@@ -150,12 +154,11 @@
 				<nearUnitTileSelector targetDistance="6">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -171,11 +174,11 @@
 				</tileModifiers>
 			</modifications>
 			<objectives>
-				<killCamp name="KillCamp">
+				<killCamp name="KillReaverCamp">
 					<boss type="ReaverCamp" name="Units/ReaverCamp"/>
 					<defenders>
-						<unit type="Reaver" count="4" rankMin="3" rankMax="5"/>
-						<unit type="Buster" count="4" rankMin="3" rankMax="5"/>
+						<unit type="Reaver" count="4" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="4" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -214,10 +217,11 @@
 		</stage>
 		<stage name="StopArshem" nextStageOnSuccess="StopArshemSuccess">
 			<objectives>
-				<killCamp name="KillCamp">
+				<killCamp name="KillArshem" bossKillCompletes="0" unleash="1">
+					<boss type="Arshem" name="Units/Arshem" rankMin="6" rankMax="6" skipOverwatchOnNextTileEnter="1"/>
 					<defenders>
-						<unit type="Reaver" count="2" rankMin="3" rankMax="5"/>
-						<unit type="Buster" count="2" rankMin="3" rankMax="5"/>
+						<unit type="Reaver" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -235,6 +239,7 @@
 					<modifier>
 						<effects>
 							<addItem type="ArshamsSatchelLooted"/>
+							<unlockAchievement name="ThickerThanWater"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

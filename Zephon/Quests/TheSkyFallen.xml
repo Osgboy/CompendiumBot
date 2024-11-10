@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="80">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -88,10 +88,11 @@
 				<nearUnitTileSelector targetDistance="1">
 					<conditions>
 						<tile>
-							<noUnit/>
+							<buildingSlots greater="0"/>
 							<noCity/>
+							<noFeature type="Bleed"/>
 							<noFeatureCategory name="Cache"/>
-							<buildingSlotsRemaining greater="1"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -101,7 +102,8 @@
 				<tileModifiers>
 					<modifier>
 						<effects>
-							<addUnit type="AcrinMilitia" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="AcrinMilitia" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="AcrinZealot" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
@@ -112,10 +114,11 @@
 				<nearUnitTileSelector targetDistance="2">
 					<conditions>
 						<tile>
-							<noUnit/>
+							<buildingSlots greater="0"/>
 							<noCity/>
+							<noFeature type="Bleed"/>
 							<noFeatureCategory name="Cache"/>
-							<buildingSlotsRemaining greater="1"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -131,9 +134,10 @@
 				</tileModifiers>
 			</modifications>
 			<objectives>
-				<surviveInvasion name="KillRebelliousAcrin" strength="4" waves="1">
+				<surviveInvasion name="SurviveRebelliousAcrin" strength="4" waves="1">
 					<attackers>
 						<unit type="AcrinMilitia" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AcrinZealot" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</attackers>
 				</surviveInvasion>
 			</objectives>

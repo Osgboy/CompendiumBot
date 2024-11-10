@@ -7,7 +7,8 @@
 				groupMemberDeltaY="50"
 				material="Units/CrusaderBattleTank"
 				mesh="Units/CrusaderBattleTank"
-				scale="0.85 0.85 0.85">
+				scale="0.85 0.85 0.85"
+				uvAnimated="1">
 		</unit>
 	</model>
 	<weapons>
@@ -24,6 +25,19 @@
 						material="Units/CycloneHeavyMachineGun"
 						bone="Machinegun_Base"
 						muzzleBone="Machinegun_Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="ShirakiCruiseMissile" enabled="0"
+				slotName="ShirakiCruiseMissile"
+				requiredUpgrade="ShirakiCruiseMissile">
+			<models>
+				<missileWeapon mesh="Units/CrusaderBattleTankCruiseMissile"
+						material="Units/CycloneCruiseMissile"
+						bone="Turret"
+						muzzleBone="CruiseMissileMuzzle"
+						muzzleCount="2"
+						fireInterval="10"
+						missileScale="0.4"/>
 			</models>
 		</weapon>
 		<weapon type="None" requiredUpgrade="DozerBlade">
@@ -74,7 +88,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankAppear"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -82,7 +96,7 @@
 				<attack animation="Units/CrusaderBattleTankAttack"
 						beginFire="0.1"
 						endFire="1.73"
-						responseSound="Units/Responses/CrusaderBattleTankAttack"
+						responseSound="Responses/Units/CrusaderBattleTankAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -95,17 +109,17 @@
 		<endure>
 			<model>
 				<action animation="Units/CrusaderBattleTankImpact"
-						responseSound="Units/Responses/CrusaderBattleTankEndureHighDamage"/> 
+						responseSound="Responses/Units/CrusaderBattleTankEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankHoldPosition"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankHoldPosition"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -116,13 +130,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankKill"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/CrusaderBattleTankMove"
-						responseSound="Units/Responses/CrusaderBattleTankMove"
+						responseSound="Responses/Units/CrusaderBattleTankMove"
 						responseSoundCount="3"
 						sound="Units/CycloneMove"
 						soundCount="1"
@@ -132,33 +146,33 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankPoke"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankSelect"
+				<action responseSound="Responses/Units/CrusaderBattleTankSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/CrusaderBattleTankHoldPosition"/>
+				<action responseSound="Responses/Units/CrusaderBattleTankHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="SmokeLauncher">
 			<model>
-				<cast responseSound="Units/Responses/CrusaderBattleTankSmokeLauncher"
+				<cast responseSound="Responses/Units/CrusaderBattleTankSmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
 		</unitCast>
-		<!-- <useWeapon blueprint="ShirakiCruiseMissile">
+		<useWeapon blueprint="ShirakiCruiseMissile">
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"
-						responseSound="Units/Responses/CrusaderBattleTankShirakiCruiseMissile"/>
+						responseSound="Responses/Units/CrusaderBattleTankShirakiCruiseMissile"/>
 			</model>
-		</useWeapon> -->
+		</useWeapon>
 	</actions>
 	<traits>
 		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>

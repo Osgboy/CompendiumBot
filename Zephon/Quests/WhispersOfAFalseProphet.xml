@@ -1,5 +1,9 @@
-<quest firstTurn="40" image="Factions/UntoldProphet">
-	<!-- TODO Logic -->
+<quest firstTurn="-1" ambientSound="Ambient/Factions/UntoldProphet" image="Factions/UntoldProphet">
+	<conditions>
+		<player>
+			<faction name="UntoldProphet"/>
+		</player>
+	</conditions>
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -30,31 +34,220 @@
 			</objectives>
 		</stage>
 		<stage name="TakeConfessionSuccess">
-
+			<options>
+				<option name="CaptureErelim" nextStage="CaptureErelim"/>
+			</options>
 		</stage>
-		<stage name="CaptureErelim">
-
+		<stage name="CaptureErelim" nextStageOnSuccess="CaptureErelimSuccess"
+				nextStageOnFailure="CaptureErelimFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<recoverUnits name="CaptureErelimPriest" recoverAtLeast="1">
+					<units>
+						<unit count="1" type="ErelimAssassin" rankMin="2" rankMax="2" name="Units/ErelimPriest" token="ErelimPriest"/>
+					</units>
+				</recoverUnits>
+			</objectives>
 		</stage>
 		<stage name="CaptureErelimSuccess">
-
+			<options>
+				<option name="ProtectErelim" nextStage="ProtectErelim"/>
+			</options>
 		</stage>
-		<stage name="ProtectErelim">
-
+		<stage name="CaptureErelimFailure"/>
+		<stage name="ProtectErelim" nextStageOnSuccess="ProtectErelimSuccess"
+				nextStageOnFailure="CaptureErelimFailure">
+			<modifications>
+				<nearUnitTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<token name="ErelimPriest"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithErelimPriest">
+					<unitConditions>
+						<token name="ErelimPriest"/>
+					</unitConditions>
+				</visitTile>
+				<keepUnitAlive token="ErelimPriest"/>
+			</objectives>
 		</stage>
 		<stage name="ProtectErelimSuccess">
-
+			<options>
+				<option name="DestroyKryptArchai" nextStage="DestroyKryptArchai"/>
+				<option name="EmbraceKryptArchai" nextStage="EmbraceKryptArchai"/>
+			</options>
 		</stage>
 		<stage name="DestroyKryptArchai">
-
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="ErelimPriest"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Neutral"/>
+						</player>
+					</conditions>
+				</playerSelector>		
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<changePlayer/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="TheFalseSpeaker" name="Units/TheFalseSpeaker" neutralPlayer="1" rankMin="5" rankMax="5" token="TheFalseSpeaker" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="TheFalseSpeaker"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<hitpoints mul="-0.5"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>	
+				<killMarkedUnit name="KillTheFalseSpeaker" token="TheFalseSpeaker"/>
+			</objectives>
 		</stage>
 		<stage name="DestroyKryptArchaiSuccess">
-
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>			
+							<addItem type="TheFalseSpeakersCore"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
-		<stage name="EmbraceKryptArchai">
-
+		<stage name="EmbraceKryptArchai" nextStageOnSuccess="EmbraceKryptArchaiSuccess"
+				nextStageOnFailure="DestroyKryptArchaiSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="TheFalseSpeaker" name="Units/TheFalseSpeaker" rankMin="5" rankMax="5" token="TheFalseSpeaker" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="TheFalseSpeaker"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<hitpoints mul="-0.5"/>
+							<addTrait type="Stunned"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<satisfyUnitConditions name="RepairUnit"
+						token="TheFalseSpeaker">
+					<conditions>
+						<hitpointsFraction greater="0.9"/>					
+					</conditions>
+				</satisfyUnitConditions>
+				<keepUnitAlive token="TheFalseSpeaker"/>
+			</objectives>
 		</stage>
 		<stage name="EmbraceKryptArchaiSuccess">
-
+			<modifications>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="Stunned"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WhispersOfAFalseProphet"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 	</stages>
  </quest>

@@ -1,8 +1,8 @@
 import shutil
 
-zephon_world_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON Demo\Data\World'
-zephon_english_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON Demo\Data\Core\Languages\English'
-zephon_icons_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON Demo\Data\Video\Textures\Icons'
+zephon_world_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\World'
+zephon_english_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\Core\Languages\English'
+zephon_icons_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\Video\Textures\Icons'
 
 gladius_world_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\World'
 gladius_english_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\Core\Languages\English'

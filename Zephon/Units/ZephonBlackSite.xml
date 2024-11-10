@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit icon="Units/Headquarters" portrait="Units/ZephonHeadquarters">
 	<model>
-		<unit effectsBlueprint="Effects/ZephonHeadquarters"
-				explosionsBlueprint="Effects/MediumHumanExplosions"
-				explosionsBone="HQ"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Bone"
 				heatImpactSound="Impacts/HeatConcrete"
 				heatImpactSoundCount="5"
 				kineticImpactSound="Impacts/KineticConcrete"
 				kineticImpactSoundCount="17"
-				material="Units/ZephonHeadquarters"
-				mesh="Units/ZephonHeadquarters"
+				material="Buildings/Buildings"
+				mesh="Units/ZephonBlackSite"
 				normalWeight="0.1"
 				onlyRotateWeapons="1"
 				scale="1 1 1"/>
@@ -32,7 +31,7 @@
 			<model>
 				<attack beginFire="1.0"
 						endFire="2.3"
-						responseSound="Units/Responses/HeadquartersAttack"
+						responseSound="Responses/Units/HeadquartersAttack"
 						responseSoundCount="3"/>
 			</model>		
 		</attack>
@@ -43,7 +42,7 @@
 		</die>
 		<endure>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersEndureHighDamage"/> 
+				<action responseSound="Responses/Units/HeadquartersEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
@@ -63,17 +62,17 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersKill"/>
+				<action responseSound="Responses/Units/HeadquartersKill"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersPoke"/>
+				<action responseSound="Responses/Units/HeadquartersPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersSelect"
+				<action responseSound="Responses/Units/HeadquartersSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>

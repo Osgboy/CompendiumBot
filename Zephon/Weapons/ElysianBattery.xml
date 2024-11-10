@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<missileWeapon missileBlueprint="Units/ZephonMissile"
-				missileExhaustBlueprint="Effects/ZephonMissileExhaust"
-				missileSmokeBlueprint="Effects/ZephonMissileSmoke"
-				fireSound="Weapons/DefenseGrid"
-				fireSoundCount="4"/>
+		<missileWeapon missileBlueprint="Units/HiddenMissile"
+				missileExhaustBlueprint="Effects/ElohimMissileExhaust"
+				missileSmokeBlueprint="Effects/ElohimMissileSmoke"
+				explosionsBlueprint="Effects/ElysianExplosions"
+				fireSound="Weapons/ElysianBattery"
+				fireSoundCount="6"/>
 	</model>
 	<modifiers>
 		<modifier>

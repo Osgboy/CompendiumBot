@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<teleport name="OrbitalDeployment"
+<orbitalDeployment name="OrbitalDeployment"
 		cooldown="5"
 		requiredUpgrade="OrbitalDeployment">
-		<!-- hint properties like attar of phenaris -->
+	<model>
+		<teleport modelShift="2.0" beginEffect="0.5"/>
+	</model>
 	<conditions>
 		<tile>
 			<alliedCity/>
@@ -11,4 +13,4 @@
 	<beginTargets>
 		<target rangeMax="-1"/>
 	</beginTargets>
-</teleport>
+</orbitalDeployment>

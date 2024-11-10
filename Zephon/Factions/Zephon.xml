@@ -26,23 +26,23 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+											<noSighted/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<enemyStrengthInTheArea greater="0"/>
-							<noSighted/>
-						</targetTile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</playerCast>
 		<playerCast name="DirectControl"
 				cooldown="3"
@@ -68,23 +68,25 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction greater="0.5"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>		
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<unit>
-							<enemyStrengthInTheArea greater="0"/>
-							<hitpointsFraction greater="0.5"/>
-						</unit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>			
 		</playerCast>
 	</actions>
 	<dislikedLabels>

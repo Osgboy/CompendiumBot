@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <faction branch="Human"
 		initialTrack="Music/Human0"
-		peacefulness="0.625">
+		peacefulness="0.625"
+		quest="ThickerThanWater">
 	<actions>
 	</actions>
 	<buildingActions>
-		<buildingGroupAction name="Reallocate"
+		<buildingGroupCast name="Reallocate"
+				autoCycle="0"
 				durationInSeconds="0.1"
 				executeImmediately="1"
 				label="1"
-				requiredUpgrade="Reallocate">
+				requiredUpgrade="Reallocate"
+				useConditionsForVisiblity="1">
+			<model>
+				<cast blueprint="Effects/Reallocate" targetsTile="1"/>
+			</model>
 			<modifiers>
 				<modifier visible="0">
 					<effects>
@@ -53,7 +59,7 @@
 					</areas>
 				</target>
 			</beginTargets>
-		</buildingGroupAction>
+		</buildingGroupCast>
 	</buildingActions>
 	<dislikedLabels>
 		<label name="FoundationOfBlood"/>
@@ -162,8 +168,8 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -186,7 +192,7 @@
 				label="1"
 				requiredActionPoints="0">
 			<model>
-				<cast/>
+				<cast blueprint="Effects/ThereIsHope"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">
@@ -216,6 +222,27 @@
 					</modifiers>
 				</selfTarget>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+						<unit>
+							<moraleFraction less="0.667"/>
+						</unit>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>	
 	</unitActions>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

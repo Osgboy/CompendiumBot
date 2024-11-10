@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -18,12 +18,11 @@
 				<nearCityTileSelector count="3">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -43,18 +42,17 @@
 				<nearCityTileSelector count="1" targetDistance="6">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="4.2" waves="1">
+				<surviveInvasion name="SurviveSplenetics" strength="4.2" waves="1">
 					<attackers>
 						<unit type="Militant" name="Units/Splenetics" rankMin="4" rankMax="4"/>
 					</attackers>

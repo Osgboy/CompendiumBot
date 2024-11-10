@@ -14,12 +14,13 @@
 						<unit>
 							<faction name="Zephon"/>
 							<noType name="Headquarters"/>
+							<noTrait type="Titan"/>
 						</unit>
 					</conditions>
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="ToTargetEnemyZephonUnit">
+								<modifier effectDescription="ToTargetEnemyZephonNonTitanUnit">
 									<effects>
 										<addTrait type="SchismOfRegimina" duration="5" removeOnSourceDeath="1"/>
 									</effects>

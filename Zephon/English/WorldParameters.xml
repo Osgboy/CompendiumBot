@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <language>
+<entry name="AbkhanDreyDensity" value="Abkhan Drey Density"/>
+<entry name="AbkhanDreyDensity0" value="None"/>
+<entry name="AbkhanDreyDensity1" value="Very Low"/>
+<entry name="AbkhanDreyDensity2" value="Low"/>
+<entry name="AbkhanDreyDensity3" value="Medium"/>
+<entry name="AbkhanDreyDensity4" value="High"/>
+<entry name="AbkhanDreyDensity5" value="Very High"/>
 <entry name="AIControlDisconnectedPlayers" value="AI-Control Disconnected Players"/>
+<entry name="AIControlDisconnectedPlayersHint" value="Allow the AI to take over disconnected players.&lt;br/&gt;&lt;br/&gt;Only available with ironman off."/>
 <entry name="AdaptiveTurnTimer" value="Adaptive Turn Timer"/>
+<entry name="AdaptiveTurnTimerHint" value="Scales the turn timer with the numbers of cities and units."/>
 <entry name="AnchoriteCityDensity" value="Anchorite City Density"/>
 <entry name="AnchoriteCityDensity0" value="None"/>
 <entry name="AnchoriteCityDensity1" value="Very Low"/>
@@ -9,6 +18,13 @@
 <entry name="AnchoriteCityDensity3" value="Medium"/>
 <entry name="AnchoriteCityDensity4" value="High"/>
 <entry name="AnchoriteCityDensity5" value="Very High"/>
+<entry name="ArcDischargeDensity" value="Arc Discharge Density"/>
+<entry name="ArcDischargeDensity0" value="None"/>
+<entry name="ArcDischargeDensity1" value="Very Low"/>
+<entry name="ArcDischargeDensity2" value="Low"/>
+<entry name="ArcDischargeDensity3" value="Medium"/>
+<entry name="ArcDischargeDensity4" value="High"/>
+<entry name="ArcDischargeDensity5" value="Very High"/>
 <entry name="ArcticRegionDensity" value="Arctic Region Density"/>
 <entry name="ArcticRegionDensity0" value="None"/>
 <entry name="ArcticRegionDensity1" value="Very Low"/>
@@ -16,8 +32,17 @@
 <entry name="ArcticRegionDensity3" value="Medium"/>
 <entry name="ArcticRegionDensity4" value="High"/>
 <entry name="ArcticRegionDensity5" value="Very High"/>	
+<entry name="AutoDisableSimultaneousTurns" value="Auto-Disable Simultaneous Turns"/>
+<entry name="AutoDisableSimultaneousTurnsHint" value="Automatically disable simultaneous turns when non-AI enemy units come within 5 tiles of each other."/>
 <entry name="AvoidDuplicateRandomFactions" value="Avoid Duplicate Random Factions"/>
-<entry name="AvoidDuplicateRandomFactionsHint" value="Adjust random faction chances so that the each faction appears an equal amount of times in the game."/>
+<entry name="AvoidDuplicateRandomFactionsHint" value="Adjust random faction chances so that each faction appears an equal amount of times in the game."/>
+<entry name="BleedDensity" value="Bleed Density"/>
+<entry name="BleedDensity0" value="None"/>
+<entry name="BleedDensity1" value="Very Low"/>
+<entry name="BleedDensity2" value="Low"/>
+<entry name="BleedDensity3" value="Medium"/>
+<entry name="BleedDensity4" value="High"/>
+<entry name="BleedDensity5" value="Very High"/>
 <entry name="BrushDensity" value="Brush Density"/>
 <entry name="BrushDensity0" value="None"/>
 <entry name="BrushDensity1" value="Very Low"/>
@@ -32,6 +57,13 @@
 <entry name="ChieftessCityDensity3" value="Medium"/>
 <entry name="ChieftessCityDensity4" value="High"/>
 <entry name="ChieftessCityDensity5" value="Very High"/>
+<entry name="CicadasDensity" value="Cicadas Density"/>
+<entry name="CicadasDensity0" value="None"/>
+<entry name="CicadasDensity1" value="Very Low"/>
+<entry name="CicadasDensity2" value="Low"/>
+<entry name="CicadasDensity3" value="Medium"/>
+<entry name="CicadasDensity4" value="High"/>
+<entry name="CicadasDensity5" value="Very High"/>
 <entry name="ConstructRegionDensity" value="Construct Region Density"/>
 <entry name="ConstructRegionDensity0" value="None"/>
 <entry name="ConstructRegionDensity1" value="Very Low"/>
@@ -47,22 +79,45 @@
 <entry name="DesertRegionDensity4" value="High"/>
 <entry name="DesertRegionDensity5" value="Very High"/>
 <entry name="Difficulty" value="Difficulty"/>
+<entry name="DifficultyHint" value="Modifies AI and natives' advantanges."/>
 <entry name="Difficulty0" value="Very Easy"/>
 <entry name="Difficulty0Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; moderate city loyalty disadvantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty"/>
+<entry name="Difficulty0RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for story-focused players."/>
 <entry name="Difficulty1" value="Easy"/>
 <entry name="Difficulty1Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; small city loyalty disadvantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty"/>
+<entry name="Difficulty1RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for inexperienced turn-based strategy players."/>
 <entry name="Difficulty2" value="Medium"/>
 <entry name="Difficulty2Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; no advantage or disadvantage given."/>
+<entry name="Difficulty2RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for turn-based strategy fans."/>
 <entry name="Difficulty3" value="Hard"/>
 <entry name="Difficulty3Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; small city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty3RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for veterans of Proxy Studios games."/>
 <entry name="Difficulty4" value="Very Hard"/>
 <entry name="Difficulty4Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; moderate city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty4RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended after beating Hard."/>
 <entry name="Difficulty5" value="Ultra Hard"/>
 <entry name="Difficulty5Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; large city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty5RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended after beating Very Hard."/>
 <entry name="Difficulty6" value="Nightmare"/>
 <entry name="Difficulty6Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; extreme city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
-<entry name="DifficultyHint" value="Modifies AI and natives' advantanges."/>
+<entry name="Difficulty6RecommendationHint" value="&lt;style name='Italic'/&gt;Not recommended."/>
+<entry name="DustStormDensity" value="Sandstorm Density"/>
+<entry name="DustStormDensity0" value="None"/>
+<entry name="DustStormDensity1" value="Very Low"/>
+<entry name="DustStormDensity2" value="Low"/>
+<entry name="DustStormDensity3" value="Medium"/>
+<entry name="DustStormDensity4" value="High"/>
+<entry name="DustStormDensity5" value="Very High"/>
+<entry name="EscalationPace" value="Escalation Pace"/>
+<entry name="EscalationPaceHint" value="Adjusts how quickly the escalation towards the finale progresses and if at all."/>
+<entry name="EscalationPace0" value="None"/>
+<entry name="EscalationPace1" value="Very Slow"/>
+<entry name="EscalationPace2" value="Slow"/>
+<entry name="EscalationPace3" value="Standard"/>
+<entry name="EscalationPace4" value="Fast"/>
+<entry name="EscalationPace5" value="Very Fast"/>
 <entry name="FixedTeams" value="Fixed Teams"/>
+<entry name="FixedTeamsHint" value="Don't allow players to change war and alliance status."/>
 <entry name="ForestDensity" value="Forest Density"/>
 <entry name="ForestDensity0" value="None"/>
 <entry name="ForestDensity1" value="Very Low"/>
@@ -71,6 +126,7 @@
 <entry name="ForestDensity4" value="High"/>
 <entry name="ForestDensity5" value="Very High"/>
 <entry name="GameName" value="Game Name"/>
+<entry name="GameNameHint" value="How this game shows in the multiplayer game list."/>
 <entry name="GameVisibility" value="Game Visibility"/> 
 <entry name="GameVisibility0" value="Friends Only"/>
 <entry name="GameVisibility0Hint" value="Game is not publicly listed and only joinable through friends lists, invites or direct connect."/>
@@ -85,8 +141,11 @@
 <entry name="Growth1" value="Low"/>
 <entry name="Growth2" value="Medium"/>
 <entry name="Growth3" value="High"/>
-<entry name="Growth4" value="Very High"/>	
+<entry name="Growth4" value="Very High"/>
+<entry name="Ironman" value="Ironman"/>
+<entry name="IronmanHint" value="Restricts the player's control over their save file, effectively removing the ability to correct mistakes and change decisions made during the course of play.&lt;br/&gt;&lt;br/&gt;Some achievements can only be unlocked with ironman on."/>
 <entry name="LandMass" value="Land Mass"/>
+<entry name="LandMassHint" value="Amount of land tiles."/>
 <entry name="LandMass0" value="Very Low"/>
 <entry name="LandMass1" value="Low"/>
 <entry name="LandMass2" value="Medium"/>
@@ -118,7 +177,7 @@
 <entry name="Mutators/DidOurUnificationMatter" value="&lt;string name='Settings/Achievements/DidOurUnificationMatter'/&gt;"/>
 <entry name="Mutators/DidOurUnificationMatterHint" value="Non-Deformity biological units that die become neutral Deformities. Triggers after other death effects."/>
 <entry name="Mutators/WasITrulyHuman" value="&lt;string name='Settings/Achievements/WasITrulyHuman'/&gt;"/>
-<entry name="Mutators/WasITrulyHumanHint" value="Damage is distributed to all adjacent allied units."/>
+<entry name="Mutators/WasITrulyHumanHint" value="Damage is divided between all adjacent allies of the target unit."/>
 <entry name="Mutators/WasPerfectionWorthIt" value="&lt;string name='Settings/Achievements/WasPerfectionWorthIt'/&gt;"/>
 <entry name="Mutators/WasPerfectionWorthItHint" value="Duplicate units cost +20% resources."/>
 <entry name="Mutators/WasZephonTrulyAlive" value="&lt;string name='Settings/Achievements/WasZephonTrulyAlive'/&gt;"/>
@@ -132,12 +191,20 @@
 <entry name="Mutators/WhyDidHumanityDieAlone" value="&lt;string name='Settings/Achievements/WhyDidHumanityDieAlone'/&gt;"/>
 <entry name="Mutators/WhyDidHumanityDieAloneHint" value="Killing decreases morale."/>
 <entry name="Pace" value="Game Speed"/>
+<entry name="PaceHint" value="Adjusts production costs, research costs and how quickly new quests trigger."/>
 <entry name="Pace0" value="Very Slow"/>
 <entry name="Pace1" value="Slow"/>
 <entry name="Pace2" value="Standard"/>
 <entry name="Pace3" value="Fast"/>
 <entry name="Pace4" value="Very Fast"/>
-<entry name="Quests" value="Quests"/>
+<entry name="QuestPace" value="Quest Pace"/>
+<entry name="QuestPaceHint" value="Adjusts how quickly new quests trigger and if at all."/>
+<entry name="QuestPace0" value="None"/>
+<entry name="QuestPace1" value="Very Slow"/>
+<entry name="QuestPace2" value="Slow"/>
+<entry name="QuestPace3" value="Standard"/>
+<entry name="QuestPace4" value="Fast"/>
+<entry name="QuestPace5" value="Very Fast"/>
 <entry name="RegionDensity" value="Region Density"/>
 <entry name="RegionDensity0" value="None"/>
 <entry name="RegionDensity1" value="Very Low"/>
@@ -210,16 +277,16 @@
 <entry name="SimultaneousTurnsHint" value="If enabled, all players act together.&lt;br/&gt;&lt;br/&gt;If disabled, only players in the same team act at the same time.&lt;br/&gt;&lt;br/&gt;Disabling will also cause AI turns to take longer, albeit have better moves when warring against other AIs."/>
 <entry name="Size" value="World Size"/>
 <entry name="Size0" value="Tiny"/>
-<entry name="Size0Hint" value="%1%: Recommended for 2 players."/>
+<entry name="Size0Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 2 players."/>
 <entry name="Size1" value="Small"/>
-<entry name="Size1Hint" value="%1%: Recommended for 3 players."/>
+<entry name="Size1Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 3 players."/>
 <entry name="Size2" value="Medium"/>
-<entry name="Size2Hint" value="%1%: Recommended for 4 players."/>
+<entry name="Size2Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 4 players."/>
 <entry name="Size3" value="Large"/>
-<entry name="Size3Hint" value="%1%: Recommended for 6 players."/>
+<entry name="Size3Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 6 players."/>
 <entry name="Size4" value="Huge"/>
-<entry name="Size4Hint" value="%1%: Recommended for 8 players."/>
-<entry name="SpecialResourceDensity" value="Special Resource Density"/>
+<entry name="Size4Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 8 players."/>
+<entry name="SpecialResourceDensity" value="Outpost Density"/>
 <entry name="SpecialResourceDensity0" value="None"/>
 <entry name="SpecialResourceDensity1" value="Very Low"/>
 <entry name="SpecialResourceDensity2" value="Low"/>
@@ -246,21 +313,6 @@
 <entry name="TurnTimer3" value="Moderate (3 minutes)"/>
 <entry name="TurnTimer4" value="Long (4 minutes)"/>
 <entry name="TurnTimer5" value="Very Long (5 minutes)"/>
-<entry name="WildlifeDensity" value="Wildlife Density"/>
-<entry name="WildlifeDensity0" value="None"/>
-<entry name="WildlifeDensity1" value="Very Low"/>
-<entry name="WildlifeDensity2" value="Low"/>
-<entry name="WildlifeDensity3" value="Medium"/>
-<entry name="WildlifeDensity4" value="High"/>
-<entry name="WildlifeDensity5" value="Very High"/>
-<entry name="BleedDensity" value="Bleed Density"/>
-<entry name="BleedDensity0" value="None"/>
-<entry name="BleedDensity1" value="Very Low"/>
-<entry name="BleedDensity2" value="Low"/>
-<entry name="BleedDensity3" value="Medium"/>
-<entry name="BleedDensity4" value="High"/>
-<entry name="BleedDensity5" value="Very High"/>
-<entry name="WorldSeed" value="World Seed"/>
 <entry name="VolcanicRegionDensity" value="Volcanic Region Density"/>
 <entry name="VolcanicRegionDensity0" value="None"/>
 <entry name="VolcanicRegionDensity1" value="Very Low"/>
@@ -268,6 +320,21 @@
 <entry name="VolcanicRegionDensity3" value="Medium"/>
 <entry name="VolcanicRegionDensity4" value="High"/>
 <entry name="VolcanicRegionDensity5" value="Very High"/>
+<entry name="VolcanoDensity" value="Volcano Density"/>
+<entry name="VolcanoDensity0" value="None"/>
+<entry name="VolcanoDensity1" value="Very Low"/>
+<entry name="VolcanoDensity2" value="Low"/>
+<entry name="VolcanoDensity3" value="Medium"/>
+<entry name="VolcanoDensity4" value="High"/>
+<entry name="VolcanoDensity5" value="Very High"/>	
+<entry name="WildlifeDensity" value="Wildlife Density"/>
+<entry name="WildlifeDensity0" value="None"/>
+<entry name="WildlifeDensity1" value="Very Low"/>
+<entry name="WildlifeDensity2" value="Low"/>
+<entry name="WildlifeDensity3" value="Medium"/>
+<entry name="WildlifeDensity4" value="High"/>
+<entry name="WildlifeDensity5" value="Very High"/>
+<entry name="WorldSeed" value="World Seed"/>
 <entry name="WastelandRegionDensity" value="Wasteland Region Density"/>
 <entry name="WastelandRegionDensity0" value="None"/>
 <entry name="WastelandRegionDensity1" value="Very Low"/>
@@ -275,6 +342,13 @@
 <entry name="WastelandRegionDensity3" value="Medium"/>
 <entry name="WastelandRegionDensity4" value="High"/>
 <entry name="WastelandRegionDensity5" value="Very High"/>
+<entry name="WhisperingWightsDensity" value="Whispering Wights Density"/>
+<entry name="WhisperingWightsDensity0" value="None"/>
+<entry name="WhisperingWightsDensity1" value="Very Low"/>
+<entry name="WhisperingWightsDensity2" value="Low"/>
+<entry name="WhisperingWightsDensity3" value="Medium"/>
+<entry name="WhisperingWightsDensity4" value="High"/>
+<entry name="WhisperingWightsDensity5" value="Very High"/>
 <entry name="ZephonCityDensity" value="ZEPHON City Density"/>
 <entry name="ZephonCityDensity0" value="None"/>
 <entry name="ZephonCityDensity1" value="Very Low"/>

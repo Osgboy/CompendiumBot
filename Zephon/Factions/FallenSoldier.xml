@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<faction branch="Human" initialTrack="Music/Human0">
+<faction branch="Human"
+		initialTrack="Music/Human0"
+		quest="MeetYourMaker">
 	<actions>
 		<playerCast name="SurvivalTraining"
 				cooldown="1"
@@ -37,19 +39,31 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction greater="0.9"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
 			<scoreModifiers>
- 				<modifier>
+				<modifier>
 					<conditions>
 						<player>
-							<increaseInfluenceStrategy less="0.5"/>
+							<increaseInfluenceStrategy greater="0.5"/>
 						</player>
 					</conditions>
 					<effects>
-						<score add="1"/>
+						<score max="0.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>
@@ -151,8 +165,8 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -168,4 +182,7 @@
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
 	</traits>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

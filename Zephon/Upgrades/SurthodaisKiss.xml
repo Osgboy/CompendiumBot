@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<upgrade branch="Voice" tier="7"/>
+<upgrade branch="Voice" tier="7">
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

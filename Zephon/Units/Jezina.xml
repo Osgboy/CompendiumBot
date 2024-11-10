@@ -25,6 +25,7 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
+				<actWhileCapturable base="1"/>
 				<armor base="6"/>
 				<cargoSlots base="1"/>
 				<groupSizeMax base="1"/>
@@ -48,7 +49,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/OutriderAppear"/>
+				<action responseSound="Responses/Units/OutriderAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -56,7 +57,7 @@
 				<attack animation="Units/OutriderAttack"
 						beginFire="1.0"
 						endFire="2.3"
-						responseSound="Units/Responses/OutriderAttack"
+						responseSound="Responses/Units/OutriderAttack"
 						responseSoundCount="3"/>
 			</model>		
 		</attack>
@@ -69,17 +70,17 @@
 		<endure>
 			<model>
 				<action animation="Units/OutriderImpact"
-						responseSound="Units/Responses/OutriderEndureHighDamage"/> 
+						responseSound="Responses/Units/OutriderEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -90,13 +91,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/OutriderKill"/>
+				<action responseSound="Responses/Units/OutriderKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/OutriderMove"
-						responseSound="Units/Responses/OutriderMove"
+						responseSound="Responses/Units/OutriderMove"
 						responseSoundCount="3"
 						sound="Units/OutriderMove"
 						soundCount="1"
@@ -106,18 +107,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/OutriderPoke"/>
+				<action responseSound="Responses/Units/OutriderPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/OutriderSelect"
+				<action responseSound="Responses/Units/OutriderSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Recon"
@@ -128,7 +129,7 @@
 				requiredMovement="0">
 			<model>
 				<cast casterBlueprint="Effects/Radar"
-						responseSound="Units/Responses/OutriderRecon"
+						responseSound="Responses/Units/OutriderRecon"
 						sound="Actions/Recon"/>
 			</model>
 			<beginTargets>
@@ -163,7 +164,7 @@
 				requiredMovement="0">
 			<model>
 				<action animation="Units/OutriderAbility0"
-						responseSound="Units/Responses/OutriderMinelayer"
+						responseSound="Responses/Units/OutriderMinelayer"
 						sound="Units/OutriderMinelayer"
 						soundCount="1"/>
 			</model>

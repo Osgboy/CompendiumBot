@@ -6,14 +6,15 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<armorPenetration base="9"/> <!-- %armorPenetration base tier=10 -->
 				<attacks base="1"/>
-				<damage base="8"/> <!-- %damage base tier=7 -->
+				<damage base="24"/> <!-- %damage base tier=10 -->
 			</effects>
 		</modifier>
 	</modifiers>
 	<target rangeMax="1"/>
 	<traits>
+		<trait type="MassiveSplash"/>
 		<trait type="TitanMelee"/>
 	</traits>
 </weapon>

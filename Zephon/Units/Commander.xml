@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				bloodTrailBlueprint="Effects/SmallBloodTrail"
 				material="Units/Commander"
 				mesh="Units/Commander"
 				normalWeight="0.1"
 				scale="0.7 0.7 0.7"
+				sparks="1"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -51,7 +53,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/CommanderAppear"/>
+				<action responseSound="Responses/Units/CommanderAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -66,7 +68,7 @@
 						meleeBeginSwing="0.001"
 						meleeEndSwing="0.101"
 						meleeSound="Units/CommanderMelee"
-						responseSound="Units/Responses/CommanderAttack"
+						responseSound="Responses/Units/CommanderAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -83,17 +85,17 @@
 		<endure>
 			<model>
 				<action animation="Units/CommanderImpact"
-						responseSound="Units/Responses/CommanderEndureHighDamage"/> 
+						responseSound="Responses/Units/CommanderEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+				<action responseSound="Responses/Units/CommanderHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+				<action responseSound="Responses/Units/CommanderHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -104,13 +106,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/CommanderKill"/>
+				<action responseSound="Responses/Units/CommanderKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/CommanderMove"
-						responseSound="Units/Responses/CommanderMove"
+						responseSound="Responses/Units/CommanderMove"
 						responseSoundCount="3"
 						sound="Units/CommanderMove"
 						soundCount="3"
@@ -120,19 +122,19 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/CommanderPoke"
+				<action responseSound="Responses/Units/CommanderPoke"
 						responseSoundCount="1"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/CommanderSelect"
+				<action responseSound="Responses/Units/CommanderSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/CommanderHoldPosition"/>
+				<action responseSound="Responses/Units/CommanderHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="TakeCover"
@@ -147,7 +149,7 @@
 				<cast animation="Units/CommanderAbility0"
 						blueprint="Effects/TakeCover"
 						casterBlueprint="Effects/ShoutWaves"
-						responseSound="Units/Responses/CommanderTakeCover"/>
+						responseSound="Responses/Units/CommanderTakeCover"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -169,14 +171,16 @@
 							<scoreModifiers>
 				 				<modifier>
  									<conditions>
-										<unit>
+										<tile>
 											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
 											<ally/>
 											<noTrait type="Large"/>
 										</unit>
 									</conditions>
  									<effects>
-										<score addMin="1.0" addMax="1.0"/>
+										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>
@@ -197,7 +201,7 @@
 				<cast animation="Units/CommanderAbility0"
 						blueprint="Effects/NeverSurrender"
 						casterBlueprint="Effects/ShoutWaves"
-						responseSound="Units/Responses/CommanderNeverSurrender"/>
+						responseSound="Responses/Units/CommanderNeverSurrender"/>
 			</model>
 			<beginTargets>
 				<selfTarget>				
@@ -219,16 +223,16 @@
 							<scoreModifiers>
 								<modifier>
 									<conditions>
-										<unit>
+										<tile>
 											<enemyStrengthInTheArea greater="0"/>
-										</unit>
+										</tile>
 										<unit match="Any">
 											<trait type="Broken"/>
 											<trait type="Shaken"/>
 										</unit>
 									</conditions>
 									<effects>
-										<score addMin="1.0" addMax="1.0"/>
+										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>			
@@ -265,9 +269,8 @@
 			<model>
 				<cast animation="Units/CommanderAbility1"
 						blueprint="Effects/Bombardment"
-						sound="Actions/Bombardment"
 						targetsTile="1"
-						responseSound="Units/Responses/CommanderBombardment"/>
+						responseSound="Responses/Units/CommanderBombardment"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="-1">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Human" portrait="Units/Engineer">
+<unit branch="Human" icon="Units/Engineer" portrait="Units/Engineer">
 	<model>
 		<unit bloodBone="Chest"
 				explosionsBlueprint="Effects/SmallHumanExplosions"
@@ -27,7 +27,7 @@
 				<foodCost base="5"/> <!-- %foodCost base tier=2 factor=0.5 -->
 				<foodUpkeep base="0.25"/> <!-- %foodUpkeep base tier=2 factor=0.5 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
+				<hitpointsMax base="12"/> <!-- %hitpointsMax base tier=6 -->
 				<mineralsCost base="5"/> <!-- %mineralsCost base tier=2 factor=0.5 -->
 				<mineralsUpkeep base="0.25"/> <!-- %mineralsUpkeep base tier=2 factor=0.5 -->
 				<moraleMax base="6"/>

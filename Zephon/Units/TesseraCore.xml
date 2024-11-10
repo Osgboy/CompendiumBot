@@ -3,6 +3,8 @@
 	<model>
 		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
 				explosionsBone="Body"
+				groundMaterial="Units/TesseraCoreGround"
+				groundMesh="Features/MicrochipFabricatorGround"
 				material="Units/TesseraCore"
 				mesh="Units/TesseraCore"
 				normalWeight="0.1"
@@ -54,7 +56,9 @@
 	<actions>
 		<appear>
 			<model>
-				<action voiceSound="Units/Responses/TesseraCoreAppear"/>
+				<action animation="Units/TesseraCoreAppear"
+						sound="Units/TesseraCoreAppear"
+						responseSound="Responses/Units/TesseraCoreAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -62,9 +66,9 @@
 				<attack animation="Units/TesseraCoreAttack"
 						beginFire="1.0"
 						endFire="1.73"
-						responseSound="Units/Responses/TesseraCoreAttack"
+						responseSound="Responses/Units/TesseraCoreAttack"
 						responseSoundCount="3"
-						sound="Units/HashmallimHostAttack"/>
+						sound="Units/TesseraCoreAttack"/>
 			</model>
 		</attack>
 		<die>
@@ -77,17 +81,17 @@
 		<endure>
 			<model>
 				<action animation="Units/TesseraCoreImpact"
-						responseSound="Units/Responses/TesseraCoreEndureHighDamage"/> 
+						responseSound="Responses/Units/TesseraCoreEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+				<action responseSound="Responses/Units/TesseraCoreHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+				<action responseSound="Responses/Units/TesseraCoreHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -97,23 +101,23 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreKill"/>
+				<action responseSound="Responses/Units/TesseraCoreKill"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/TesseraCorePoke"/>
+				<action responseSound="Responses/Units/TesseraCorePoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreSelect"
+				<action responseSound="Responses/Units/TesseraCoreSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/TesseraCoreHoldPosition"/>
+				<action responseSound="Responses/Units/TesseraCoreHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="GravityField"
@@ -124,7 +128,7 @@
 				<cast animation="Units/TesseraCoreAbility0"
 						blueprint=""
 						casterBlueprint=""
-						responseSound="Units/Responses/TesseraCoreDeployGravityField"
+						responseSound="Responses/Units/TesseraCoreDeployGravityField"
 						sound="Units/TesseraCoreDeployGravityField"/>
 			</model>
 			<beginTargets>

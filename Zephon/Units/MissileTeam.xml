@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				explosionsBlueprint="Effects/SmallHumanExplosions"
 				explosionsBone="Chest"
 				groupMemberDeltaX="80"
@@ -50,7 +51,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamAppear"/>
+				<action responseSound="Responses/Units/MissileTeamAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -58,7 +59,7 @@
 				<attack animation="Units/MissileTeamAttack"
 						beginFire="1.36"
 						endFire="1.9"
-						responseSound="Units/Responses/MissileTeamAttack"
+						responseSound="Responses/Units/MissileTeamAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -76,17 +77,17 @@
 		<endure>
 			<model>
 				<action animation="Units/MissileTeamImpact"
-						responseSound="Units/Responses/MissileTeamEndureHighDamage"/> 
+						responseSound="Responses/Units/MissileTeamEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -97,13 +98,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamKill"/>
+				<action responseSound="Responses/Units/MissileTeamKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/MissileTeamMove"
-						responseSound="Units/Responses/MissileTeamMove"
+						responseSound="Responses/Units/MissileTeamMove"
 						responseSoundCount="3"
 						sound="Units/MissileTeamMove"
 						soundCount="3"
@@ -113,18 +114,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamPoke"/>
+				<action responseSound="Responses/Units/MissileTeamPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamSelect"
+				<action responseSound="Responses/Units/MissileTeamSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/MissileTeamHoldPosition"/>
+				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
 			</model>
 		</skip>
 		<useWeapon name="GroundedFire"
@@ -135,7 +136,7 @@
 				<attack animation="Units/MissileTeamAbility0"
 						beginFire="1.21"
 						endFire="1.75"
-						responseSound="Units/Responses/MissileTeamGroundedFire"
+						responseSound="Responses/Units/MissileTeamGroundedFire"
 						sound="Units/MissileTeamGroundedFire"
 						soundCount="3"/>
 			</model>

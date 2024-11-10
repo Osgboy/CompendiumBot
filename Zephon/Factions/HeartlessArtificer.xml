@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <faction branch="Cyber"
 		initialTrack="Music/Cyber0"
-		peacefulness="0.375">
+		peacefulness="0.375"
+		quest="PerfectionFromBeyondTheStars">
 	<actions>
 		<playerCast name="ArtificersPrecision"
-				cooldown="10"
+				cooldown="5"
 				durationInSeconds="0.1"
 				label="1"
 				requiredUpgrade="ArtificersPrecision">
@@ -31,7 +32,7 @@
 										</unit>
 									</conditions>
 									<effects>
-										<addTrait duration="3" type="ArtificersPrecision"/>
+										<addTrait duration="2" type="ArtificersPrecision"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -39,6 +40,18 @@
 					</areas>
 				</selfTarget>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 	</actions>
 	<buildingActions>
@@ -139,9 +152,6 @@
 			<scoreModifiers>
 				<modifier>
 					<conditions>
-						<player>
-							<increaseInfluenceStrategy less="0.5"/>
-						</player>
 						<city>
 							<traitWithRank type="Immoral" greater="8"/> 
 						</city>
@@ -249,8 +259,8 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -278,7 +288,7 @@
 				<cast animation="Units/EngineerAbility0"
 						sound="Units/EngineerWork"
 						soundFirstActingMemberOnly="1"
-						responseSound="Units/Responses/EngineerConstructBunker"
+						responseSound="Responses/Units/EngineerConstructBunker"
 						responseSoundCount="1"/>
 			</model>
 			<modifiers>
@@ -315,4 +325,7 @@
 			</beginTargets>
 		</unitCast>
 	</unitActions>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

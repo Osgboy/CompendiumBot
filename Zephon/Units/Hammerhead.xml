@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+		<unit explosionsBlueprint="Effects/ZephonExplosions"
 				explosionsBone="Shake"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
@@ -46,7 +46,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/HammerheadAppear"/>
+				<action responseSound="Responses/Units/HammerheadAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -54,7 +54,7 @@
 				<attack animation="Units/HammerheadAttack"
 						beginFire="0.5"
 						endFire="1.8"
-						responseSound="Units/Responses/HammerheadAttack"
+						responseSound="Responses/Units/HammerheadAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -72,17 +72,17 @@
 		<endure>
 			<model>
 				<action animation="Units/HammerheadImpact"
-						responseSound="Units/Responses/HammerheadEndureHighDamage"/> 
+						responseSound="Responses/Units/HammerheadEndureHighDamage"/> 
 			</model>
 		</endure>	
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/HammerheadHoldPosition"/>
+				<action responseSound="Responses/Units/HammerheadHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/HammerheadHoldPosition"/>
+				<action responseSound="Responses/Units/HammerheadHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -93,13 +93,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/HammerheadKill"/>
+				<action responseSound="Responses/Units/HammerheadKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/HammerheadMove"
-						responseSound="Units/Responses/HammerheadMove"
+						responseSound="Responses/Units/HammerheadMove"
 						responseSoundCount="3"
 						sound="Units/HammerheadMove"
 						soundCount="3"
@@ -109,25 +109,25 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/HammerheadPoke"/>
+				<action responseSound="Responses/Units/HammerheadPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/HammerheadSelect"
+				<action responseSound="Responses/Units/HammerheadSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/HammerheadHoldPosition"/>
+				<action responseSound="Responses/Units/HammerheadHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="EradicateBleed"
 				cooldown="10">
 			<model>
 				<cast animation="Units/HammerheadAbility0"
-						responseSound="Units/Responses/HammerheadEradicateBleed"
+						responseSound="Responses/Units/HammerheadEradicateBleed"
 						sound="Units/HammerheadEradicateBleed"
 						soundCount="3"/>
 			</model>

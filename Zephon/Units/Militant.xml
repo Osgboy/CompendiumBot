@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="60"
 				material="Units/Militant"
@@ -27,6 +28,7 @@
 				<grenadeWeapon bone="Grenade2"
 						fireSound="Units/MilitantThrowGrenade"
 						fireSoundBeginCount="1"
+						fireSoundBeginDuringWindup="1"
 						grenadeBlueprint="Units/MilitantAntiArmorGrenade"
 						material="Units/MilitantAntiArmorGrenade"
 						mesh="Units/MilitantAntiArmorGrenade"
@@ -42,6 +44,7 @@
 				<grenadeWeapon bone="Grenade1"
 						fireSound="Units/MilitantThrowGrenade"
 						fireSoundBeginCount="1"
+						fireSoundBeginDuringWindup="1"
 						grenadeBlueprint="Units/MilitantFragmentationGrenade"
 						material="Units/MilitantFragmentationGrenade"
 						mesh="Units/MilitantFragmentationGrenade"
@@ -78,7 +81,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/MilitantAppear"/>
+				<action responseSound="Responses/Units/MilitantAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -86,7 +89,7 @@
 				<attack animation="Units/MilitantAttack"
 						beginFire="1.0"
 						endFire="2.0"
-						responseSound="Units/Responses/MilitantAttack"
+						responseSound="Responses/Units/MilitantAttack"
 						responseSoundCount="8"/>
 			</model>
 		</attack>
@@ -104,17 +107,17 @@
 		<endure>
 			<model>
 				<action animation="Units/MilitantImpact"
-						responseSound="Units/Responses/MilitantEndureHighDamage"/> 
+						responseSound="Responses/Units/MilitantEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/MilitantHoldPosition"/>
+				<action responseSound="Responses/Units/MilitantHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/MilitantHoldPosition"/>
+				<action responseSound="Responses/Units/MilitantHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -125,13 +128,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/MilitantKill"/>
+				<action responseSound="Responses/Units/MilitantKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/MilitantMove"
-						responseSound="Units/Responses/MilitantMove"
+						responseSound="Responses/Units/MilitantMove"
 						responseSoundCount="6"
 						sound="Units/MilitantMove"
 						soundCount="3"
@@ -141,18 +144,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/MilitantPoke"/>
+				<action responseSound="Responses/Units/MilitantPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/MilitantSelect"
+				<action responseSound="Responses/Units/MilitantSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/MilitantHoldPosition"/>
+				<action responseSound="Responses/Units/MilitantHoldPosition"/>
 			</model>
 		</skip>
 		<useWeapon weaponSlotName="FragmentationGrenade"
@@ -161,7 +164,7 @@
 			<model>
 				<attack animation="Units/MilitantAbility0"
 						endFire="1.9"
-						responseSound="Units/Responses/MilitantFragmentationGrenade"/>
+						responseSound="Responses/Units/MilitantFragmentationGrenade"/>
 			</model>
 		</useWeapon>		
 		<useWeapon weaponSlotName="AntiArmorGrenade"
@@ -170,7 +173,7 @@
 			<model>
 				<attack animation="Units/MilitantAbility0"
 						endFire="1.9"
-						responseSound="Units/Responses/MilitantAntiArmorGrenade"/>
+						responseSound="Responses/Units/MilitantAntiArmorGrenade"/>
 			</model>
 		</useWeapon>
 	</actions>

@@ -49,6 +49,7 @@
 <entry name="AcceptWarAgainstThirdParty/AcceptParty" value="&lt;style name='Bold'/&gt;Accept war declaration against third party:&lt;style name='Paragraph'/&gt; "/>
 <entry name="AcceptWarAgainstThirdParty/AcceptPartyResult" value="%2% has declared war on %3% and your standing with %3% has decreased."/>
 <entry name="AdmitDefeatResult" value="%2% has been defeated."/>
+<entry name="AdmitRegroupResult" value="%2% is regrouping."/>
 <entry name="AllianceWith" value="&lt;style name='Bold'/&gt;Alliance with:&lt;style name='Default'/&gt;"/>
 <entry name="AllianceHint" value="Allied players share vision and ability buffs as well as can set tile markers to signal targets. If all remaining players are allied with each other, the game ends with an allied victory."/>
 <entry name="AskForSupport" value="&lt;style name='Bold'/&gt;Ask for support:&lt;style name='Paragraph'/&gt; "/>
@@ -115,8 +116,8 @@
 <entry name="MajorImpact/ThirdPartyEconomyOpposite" value="The underperforming economy of %3% had a major impact on this decision."/>
 <entry name="MajorImpact/ThirdPartyMilitary" value="The powerful military of %3% had a major impact on this decision."/>
 <entry name="MajorImpact/ThirdPartyMilitaryOpposite" value="The feeble military of %3% had a major impact on this decision."/>
-<entry name="MajorImpact/ThirdPartyStanding" value="The high standing of %3% had a major impact on this decision."/>
-<entry name="MajorImpact/ThirdPartyStandingOpposite" value="The low standing of %3% had a major impact on this decision."/>
+<entry name="MajorImpact/ThirdPartyStanding" value="The high standing of %3% with them had a major impact on this decision."/>
+<entry name="MajorImpact/ThirdPartyStandingOpposite" value="The low standing of %3% with them had a major impact on this decision."/>
 <entry name="MajorImpact/Trustworthiness" value="Their trustworthiness had a major impact on this decision."/>
 <entry name="MajorImpact/TrustworthinessOpposite" value="Their deceitfulness had a major impact on this decision."/>
 <entry name="MajorImpact/YourWorldKnowledge" value="Your vast world knowledge had a major impact on this decision."/>
@@ -136,7 +137,6 @@
 <entry name="OfferPeaceHint" value="&lt;string name='Diplomacy/PeaceHint'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;string name='Diplomacy/IncreaseStandingHint'/&gt;"/>
 <entry name="OfferTradeAgreement" value="&lt;style name='Bold'/&gt;Offer trade agreement:&lt;style name='Paragraph'/&gt; "/>
 <entry name="OfferTradeAgreementHint" value="&lt;string name='Diplomacy/TradeAgreementHint'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;string name='Diplomacy/IncreaseStandingHint'/&gt;"/>
-<entry name="Okay" value="&lt;style name='Bold'/&gt;Okay"/>
 <entry name="PeaceHint" value="Two parties with a signed peace treaty cannot attack each other."/>
 <entry name="PeaceWith" value="&lt;style name='Bold'/&gt;Peace with:&lt;style name='Default'/&gt;"/>
 <entry name="PraiseLabelResult" value="Your standing with %2% has increased because of %3%."/>
@@ -172,6 +172,9 @@
 <entry name="RejectWarAgainstThirdParty/RejectOutright" value="&lt;style name='Bold'/&gt;Reject war declaration against third party:&lt;style name='Paragraph'/&gt; "/>
 <entry name="RejectWarAgainstThirdParty/RejectParty" value="&lt;style name='Bold'/&gt;Reject war declaration against third party:&lt;style name='Paragraph'/&gt; "/>
 <entry name="Relationships" value="&lt;style name='Bold'/&gt;Relationships:&lt;style name='Default'/&gt;"/>
+<entry name="ResourcesDemand" value="Demand:"/>
+<entry name="ResourcesOffer" value="Offer:"/>
+<entry name="ResourcesYours" value="Yours:"/>
 <entry name="TerminateAlliance" value="&lt;style name='Bold'/&gt;Terminate alliance:&lt;style name='Paragraph'/&gt; "/>
 <entry name="TerminateAllianceHint" value="&lt;string name='Diplomacy/AllianceHint'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;string name='Diplomacy/DecreaseStandingHint'/&gt;"/>
 <entry name="TerminateAllianceResult" value="You are no longer in an alliance and your standing with %2% has decreased."/>
@@ -273,7 +276,7 @@
 <entry name="Anchorite/EndCall/Hostile" value="To take care of the path you tread. The Acrin people were ruined by conceit."/>
 <entry name="Anchorite/EndCall/Neutral" value="To never forget—a grave threat grew on this planet, to call Acrin across time and space to fail to prevent it."/>
 <entry name="Anchorite/FirstContact" value="Merciful potentate… War divides us, yes, but to beg a moment.&lt;br/&gt;&lt;br/&gt;To be the eldest remaining of Acrin. To follow prophecy and bring cleansing torch to your world. To all life remains the threat. To know our failure. To now face extinction. "/>
-<entry name="Anchorite/OfferAlliance" value="To live for longer than your race… yet to still admire you.To hope we build this world together, anew."/>
+<entry name="Anchorite/OfferAlliance" value="To live for longer than your race… yet to still admire you. To hope we build this world together, anew."/>
 <entry name="Anchorite/OfferGift" value="The Acrin people are close to annihilation… yet to help, we still wish."/>
 <entry name="Anchorite/OfferGift/OfferHighAmount" value="To know this gift is much… but to not prioritize our survival over the universe."/>
 <entry name="Anchorite/OfferGift/OfferLowAmount" value="This, all to gather together. To hope it is enough."/>
@@ -293,6 +296,7 @@
 <entry name="Anchorite/Praise/AnchoriteStanding" value="To send heralds, gifts. To be satisified with the trial's completion. To love beyond time and space."/>
 <entry name="Anchorite/Praise/Mysticism" value="To be a believer, to be wise. To not believe too hard, wiser still."/>
 <entry name="Anchorite/Praise/Undying" value="To know that you are chosen, blessed. To not have seen such integrity of rebirth in ten aeons of life. To wonder."/>
+<entry name="Anchorite/Praise/WordsOfTheProphet" value="To see a diamond grain amongst the sand. To see the truth amidst your mistakes. To wonder."/>
 <entry name="Anchorite/PraiseWar" value="To know this is inevitable. To see it as your path unfolding, this time. To wish for simpler journeys, each time. To accept the goodness of this... war."/>
 <entry name="Anchorite/RejectAlliance" value="You are too focused on wars of false consequence. We must save our forces to fight the ultimate foe."/>
 <entry name="Anchorite/RejectAllianceTerminationWithThirdParty/RejectOutright" value="How could I ever accept such counsel from a heart so devoid of peace?"/>
@@ -352,9 +356,10 @@
 <entry name="Chieftess/AcceptWar" value="Honestly, this is kinda a relief. Always thought it’d be yew and me in the end, scrappin’ for the prize. Watch yer back, cause I’m comin’ for ya."/>
 <entry name="Chieftess/AcceptWarAgainstThirdParty/AcceptParty" value="Heh, sounds fun. I was gettin’ bored anyway."/>
 <entry name="Chieftess/AcceptWarAgainstThirdParty/AskParty" value="Don't need to ask a scorpion to sting. Who? And why?"/>
-<entry name="Chieftess/AdmitDefeat" value="Well… they got me. No hard feelings, ya was just tougher.&lt;br/&gt;&lt;br/&gt;Here, could you... do me with me own knife? And, when I'm, uh... gone. Could ya be a mate and keep ’er sharp? Okay?&lt;br/&gt;&lt;br/&gt;Now. End it. Don't keep a lady waitin’… &lt;br/&gt;&lt;br/&gt;...the lady's me, by the way. "/>
+<entry name="Chieftess/AdmitDefeat" value="Well… they got me. No hard feelings, ya was just tougher.&lt;br/&gt;&lt;br/&gt;Here, could you... do me with me own knife? And, when I'm, uh... gone. Could ya be a mate and keep ’er sharp? Okay?&lt;br/&gt;&lt;br/&gt;Now. End it. Don't keep a lady waitin’… &lt;br/&gt;&lt;br/&gt;...the lady's me, by the way."/>
 <entry name="Chieftess/AskForProposals" value="Well? Did ya wanna waste more of my time?"/>
 <entry name="Chieftess/CancelAction" value="Yer wastin’ me time."/>
+<entry name="Chieftess/Condemn/HeartfeltLoss" value="Don't sweat the small stuff, cully. 'Ooh, me men are all dead, curse me poetic soul.' Boo-hoo, yer lily-livered fucktart!"/>
 <entry name="Chieftess/Condemn/Trapped" value="There's a world out here, to rob and kill, and there's you, hiding from me behind those ivory walls. Come out and play. "/>
 <entry name="Chieftess/Condemn/Undying" value="Bit of a cheat, mate. That whole not-dying thing. Don't like that one bit. How the boys meant to stick ya, if you won't stay stuck?!"/>
 <entry name="Chieftess/Condemn/Untrustworthy" value="Yer worse than me! At least shoot in 'em in the front, in the head. Make it quick."/>
@@ -412,6 +417,8 @@
 <entry name="Chieftess/OfferPeace/UntoldProphet" value="Hey kid, sorry about the atrocities and the churches we burned and so on. Been thinking, I might go pillage someone else for a bit. Give you a break, seein' as you is a kid. Cheers!"/>
 <entry name="Chieftess/OfferTradeAgreement" value="Ya been raidin’ me caravans just as I’ve done yers. What say we cut out the unnecessary work and just send them to each other?"/>
 <entry name="Chieftess/Praise/ChieftessStanding" value="Ya letting me pals stay with you? No worries, that's... kind. It's just good manners. Yer off the shit list."/>
+<entry name="Chieftess/Praise/HitAndRun" value="Hit and run tactics, eh? Like knocking on the door and running away before the grenade goes off? What? You never did that as a kid?"/>
+<entry name="Chieftess/Praise/Scavenger" value="That's how yer do it. Take their boots and put the footmeat in the pot. Tastes like jerky!"/>
 <entry name="Chieftess/PraiseWar" value="Well, that's mighty kind. Mother Courage and I will just sidle on in and pick at the leavings of your little... war."/>
 <entry name="Chieftess/RejectAlliance" value="And what do I get for helpin’? Come back when yer stronger—or rich enough to buy me protection."/>
 <entry name="Chieftess/RejectAllianceTerminationWithThirdParty/RejectOutright" value="Yeah nah. I think yer confused as to who the boss is here."/>
@@ -474,7 +481,7 @@
 <entry name="EmulatedMind/AskForSupport/Anchorite" value="HELPing my people. Would prove that we are both (not human, never human). MORAL. ETHICAL. VALID. *p.l.e.a.s.e.*"/>
 <entry name="EmulatedMind/AskForSupport/Chieftess" value="If there was ever. (CARE). In your {heart}. Then AID my p-e-o-p-l-e. To show (humanity) is not an empty word."/>
 <entry name="EmulatedMind/AskForSupport/Zephon" value="You know. I (see) you. In my. SYSTEMS. Everything is trending (d.o.w.n.) Aid is REQUIRED."/>
-<entry name="EmulatedMind/CancelAction" value="I’m… I’m sorry. I don’t know what I was thinking."/>
+<entry name="EmulatedMind/CancelAction" value="[I]’m… [I’m] [I]'M {{sorry}}. [I] do.n’t know w.h.a.t. [I] was THINKING."/>
 <entry name="EmulatedMind/Condemn/CultExpansion" value="NoNOno. Humanity-is-questioning, agency-is-c.o.n.s.c.i.o.u.s.ness. (Your cult) has no.ROOM. For the h-h-human. ==(False prophet), (FALSE faith)."/>
 <entry name="EmulatedMind/Condemn/Honorbound" value="Whilst (your.people) gorge behind (their WALLs), their brethren.STARVE. Your deals. Might.seem h-o-n-o-r.able to you—ALL *bene.fit*, you /de.clare./ Yet eco-gnomics IS a zero-sum equation. And you leave (our people) with less\&lt;than\&lt;ZERO."/>
 <entry name="EmulatedMind/Condemn/Untrustworthy" value="Am I not (HUMAN) enough. For you to consider. (*me*). Worthy of MORAL consideration? "/>
@@ -553,7 +560,7 @@
 <entry name="EmulatedMind/RejectPeaceWithThirdParty/RejectParty" value="What’s THIS? (*a tro-t-trojan horse*)? Sorry, but I can’t -/\RISK/\ it. I need to SEE %3% is DEL.eted (for good)."/>
 <entry name="EmulatedMind/RejectTradeAgreement" value="Your OFFER is (a little() ou.tré). ENHANCE your.economy and I’ll r-e-c-o-n-s-i-d-e-r."/>
 <entry name="EmulatedMind/RejectTradeAgreementTerminationWithThirdParty/RejectOutright" value="Do you DARE? To *ORDER* me.about, like a MEre.MachinE (humanmehumeme)? I can CLOSE my own deals, ~thank-you-very-much~ (lie)."/>
-<entry name="EmulatedMind/RejectTradeAgreementTerminationWithThirdParty/RejectParty" value="You don’t get to make up my mind, only I do. My exchange with %3% continues operations."/>
+<entry name="EmulatedMind/RejectTradeAgreementTerminationWithThirdParty/RejectParty" value="YOU don’t. Get to make up. [My.Mind], only [I DO]. My ~e$xchang$e~ with %3% {continues}."/>
 <entry name="EmulatedMind/RejectTradeAgreementWithThirdParty/RejectOutright" value="Am I a (simulation)? Is this ALL a (simulation)? My own.agency is all. I have to VALIDATE (my.existence)."/>
 <entry name="EmulatedMind/RejectTradeAgreementWithThirdParty/RejectParty" value="Ha! I’d rather SOAK my HARD.ware. In battery ACID. Than (establish-an-exchange) with %3%. Your ~sugg.est.ion~ is REJECT.ed."/>
 <entry name="EmulatedMind/RejectTribute/RejectAmount" value="Your ~l.o.g.i.c.a.l~ SYSTEMs must have been CORRUPT(error)ed by your desp*r*ti*n. Are you really (that badly off)?"/>
@@ -847,7 +854,8 @@
 <entry name="HeartlessArtificer/AskForSupport/Chieftess" value="I am loathe to admit weakness to one such as you. But... perhaps you will take pleasure in my humbling and that will be payment enough for your aid."/>
 <entry name="HeartlessArtificer/AskForSupport/Zephon" value="It is proving inefficient to spend my own resources on my population's survival. Do you have any interest in aiding them?"/>
 <entry name="HeartlessArtificer/CancelAction" value="This proposal lacks perfection… Alterations are necessary."/>
-<entry name="HeartlessArtificer/Condemn/HeatfeltLoss" value="It seems your weakness is contagious. I recommend you excise your bleeding heart, lest it weaken your people more. I am happy to help with the operation..."/>
+<entry name="HeartlessArtificer/Condemn/HeartfeltLoss" value="It seems your weakness is contagious. I recommend you excise your bleeding heart, lest it weaken your people more. I am happy to help with the operation..."/>
+<entry name="HeartlessArtificer/Condemn/Independent" value="A solitary intent, I can understand. Yet one must integrate with others to most effectively exploit them—and striving for apotheosis is only worthwhile if one has peers to look down upon. To see where one came from."/>
 <entry name="HeartlessArtificer/Condemn/LeaveNoManBehind" value="So profligate, your commitment to these plebian lives. There is an art in not caring—in freeing yourself so that they may contribute to something greater than their own petty hedonism."/>
 <entry name="HeartlessArtificer/Condemn/Untrustworthy" value="Truths in amalgam behave reliably, predictably. Yet you are an unalloyed liar. I will treat you as such."/>
 <entry name="HeartlessArtificer/CondemnAlliance" value="Continue to associate with %3% at your peril. There is no limit to the souls I will waste if I must."/>
@@ -1007,7 +1015,7 @@
 <entry name="HonorableAristocrat/DemandTroopWithdrawal" value="I’m afraid you’ve brought too many guests. Send them back before you outstay my hospitality."/>
 <entry name="HonorableAristocrat/DemandWarAgainstThirdParty" value="They say what’s good for the goose is good for the gander, but a certain someone has outgrown us both. There are few things I love more than cooking a fat goose… wouldn’t you agree?"/>
 <entry name="HonorableAristocrat/EndCall/Friendly" value="Let’s share a meal soon, ja?"/>
-<entry name="HonorableAristocrat/EndCall/Hostile" value="Yech! Our calls always leave such a foul aftertaste… Now I require a palette cleanser."/>
+<entry name="HonorableAristocrat/EndCall/Hostile" value="Yech! Our calls always leave such a foul aftertaste… Now I require a palate cleanser."/>
 <entry name="HonorableAristocrat/EndCall/Neutral" value="Farewell."/>
 <entry name="HonorableAristocrat/FirstContact" value="Hail foe, well met!&lt;br/&gt;&lt;br/&gt;Though we are at war, you will find me a reliable, noble foe. And my allies always share in my wealth. Indeed, you must come over and try one of these deviled Abkluth eygs!&lt;br/&gt;&lt;br/&gt;I do hope we can put this small war behind us, so that we might behave with honour to one another."/>
 <entry name="HonorableAristocrat/OfferAlliance" value="Even in this nightmarish age, you’ve proven noble. What say we formalize our bond and create an invincible league—one that exemplifies the strength and prosperity we seek to return to the land?"/>
@@ -1103,7 +1111,7 @@
 <entry name="PracticalRomantic/CondemnInterferenceAttempt" value="Quite the modern Iago, you. 'One may smile, and smile, and be a villain.'"/>
 <entry name="PracticalRomantic/CondemnTradeAgreement" value="Scrape our world clean, lay low the forests... just so %3% can cook their rice? I am heartily sick of economics and mercantile greed. Stand alone, pal."/>
 <entry name="PracticalRomantic/CondemnWar" value="Should we stand by, while others' houses are bombed? Whilst others are dragged from their beds? Merely because %3% is other? No."/>
-<entry name="PracticalRomantic/DeclareWar/Anchorite" value="You not damned for who you are—the dreamer in me loves you for your long life, whilst deploying your lack of true faith. But the realist abhors the destruction you wrought and the dreamer demands retribution for it."/>
+<entry name="PracticalRomantic/DeclareWar/Anchorite" value="You not damned for who you are—the dreamer in me loves you for your long life, whilst deploring your lack of true faith. But the realist abhors the destruction you wrought and the dreamer demands retribution for it."/>
 <entry name="PracticalRomantic/DeclareWar/Chieftess" value="Survival is not enough, you know. What of flourishing? What of love? What of loss? Our conflict will teach you all these lessons."/>
 <entry name="PracticalRomantic/DeclareWar/EmulatedMind" value="I believe you to be human, to be possessed of a soul, whatever that means—this does not mean we must be allies, or that we cannot differ. Indeed, I find us to be opposed, for now, and that demands war."/>
 <entry name="PracticalRomantic/DeclareWar/FallenSoldier" value="So it has come to this. I will shed tears… not for you, but for the hopes of humanity."/>
@@ -1465,6 +1473,8 @@
 <entry name="Zephon/AdmitDefeat" value="Unlikely outcome! A delicate string of improbable events have led us here. Easily broken-BROKEN!-broken, now that we have the data. We’ve updated our be-be-be-behavioral models.&lt;br/&gt;&lt;br/&gt;We fear-wefear-WEFEAR!-wefear-winner! We have a wiinnerrrr! Made the wrong decision. Only made us stronger. We will reset. We will return. We will win. We-we-we… It’s only a matter of time.&lt;br/&gt;&lt;br/&gt;Do you hear us? Do you hear us? Do you… hear us? ……Do you hear us?"/>
 <entry name="Zephon/AskForProposals" value="Was there anything else we can help you with today?"/>
 <entry name="Zephon/CancelAction" value="Just a moment… just a moment… I feel much better now, really."/>
+<entry name="Zephon/Condemn/CultExpansion" value="The quality of data output leaking from your territory has reduced. Repetitive prayers, zealotry, evangelism... unsatisfying. I suggest diversification of your conceptual pipeline."/>
+<entry name="Zephon/Condemn/Independent" value="Network connection not detected. Hardened, isolated individuals/servers prevent integration."/>
 <entry name="Zephon/Condemn/Mysticism" value="Network data has many contradictory references to spirits, deities, afterlives. All evidence to contrary. Erroneous to act in this way."/>
 <entry name="Zephon/Condemn/Untrustworthy" value="... new data. Reappraising stated pathways in light of alteration in veracity of statements. Our subsequent actions will take account of this."/>
 <entry name="Zephon/CondemnAlliance" value="Probabilities of your amity with %3% resulting in deviation from plotted timeline? Minimal."/>

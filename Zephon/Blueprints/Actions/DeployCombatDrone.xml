@@ -7,13 +7,15 @@
 		requiredActionPoints="0">
 	<model>
 		<cast animation="Units/OphanimCarrierAbility0"
-				responseSound="Units/Responses/OphanimCarrierDeployCombatDrones"
+				beginEffect="1.0"
+				responseSound="Responses/Units/OphanimCarrierDeployCombatDrones"
 				sound="Units/OphanimCarrierDeployCombatDrones"/>
 	</model>
 	<beginTargets>
 		<target rangeMax="1">
 			<conditions>
 				<tile>
+					<heightAbsoluteDifference less="2"/>
 					<noFeature type="Volcano"/>
 					<noUnit/>
 				</tile>
@@ -31,6 +33,18 @@
 							</effects>
 						</modifier>
 					</modifiers>
+					<scoreModifiers>
+						<modifier>
+							<conditions>
+								<tile>
+									<enemyStrengthInTheArea greater="0"/>	
+								</tile>
+							</conditions>
+							<effects>
+								<score add="1.0"/>
+							</effects>
+						</modifier>
+					</scoreModifiers>
 				</area>
 				<area affect="Unit">
 					<modifiers>
@@ -44,16 +58,4 @@
 			</areas>
 		</target>
 	</beginTargets>
-	<scoreModifiers>
-		<modifier>
-			<conditions>
-				<targetTile>
-					<enemyStrengthInTheArea greater="0"/>	
-				</targetTile>
-			</conditions>
-			<effects>
-				<score add="1.0"/>
-			</effects>
-		</modifier>
-	</scoreModifiers>
 </unitCast>

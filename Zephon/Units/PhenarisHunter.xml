@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
 				material="Units/PhenarisHunter"
@@ -50,7 +51,7 @@
 				<action animation="Units/PhenarisHunterAbility1"
 						effectBlueprint="Effects/Nightmare"
 						beginEffect="0.2"
-						responseSound="Units/Responses/PhenarisHunterAppear"
+						responseSound="Responses/Units/PhenarisHunterAppear"
 						sound="Units/PhenarisHunterAppear"
 						soundCount="3"/>
 			</model>
@@ -63,7 +64,7 @@
 						meleeEndSwing="0.4"
 						meleeSound="Units/PhenarisHunterMelee"
 						meleeSoundCount="3"
-						responseSound="Units/Responses/PhenarisHunterAttack"
+						responseSound="Responses/Units/PhenarisHunterAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -81,17 +82,17 @@
 		<endure>
 			<model>
 				<action animation="Units/PhenarisHunterImpact"
-						responseSound="Units/Responses/PhenarisHunterEndureHighDamage"/> 
+						responseSound="Responses/Units/PhenarisHunterEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisHunterHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisHunterHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -102,7 +103,7 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterKill"/>
+				<action responseSound="Responses/Units/PhenarisHunterKill"/>
 			</model>
 		</kill>
 		<move>
@@ -112,31 +113,31 @@
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/PhenarisHunterMove"
+						responseSound="Responses/Units/PhenarisHunterMove"
 						responseSoundCount="3"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterPoke"/>
+				<action responseSound="Responses/Units/PhenarisHunterPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterSelect"
+				<action responseSound="Responses/Units/PhenarisHunterSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PhenarisHunterHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisHunterHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Nightmare"
 				cooldown="5">
 			<model>
 				<cast animation="Units/PhenarisHunterAbility0"
-						responseSound="Units/Responses/PhenarisHunterNightmare"
+						responseSound="Responses/Units/PhenarisHunterNightmare"
 						sound="Units/PhenarisHunterNightmare"
 						soundCount="3"/>
 			</model>

@@ -2,21 +2,26 @@
 <unit branch="Cyber">
 	<model>
 		<unit explosionsBone="Hull"
+				explosionsBlueprint="Effects/TitanHumanExplosions"
+		 		effectsBlueprint="Effects/CherubimTitan"
 				material="Units/CherubimTitan"
 				mesh="Units/CherubimTitan"
 				normalWeight="0.1"
 				position="0 0 16"
-				scale="1.2 1.2 1.2"/>
+				scale="1.4 1.4 1.4"/>
 	</model>
 	<weapons>
 		<weapon type="TachyonCannon">
 			<models>
-				<beamWeapon muzzleBone="MainMuzzle"/>
+				<beamWeapon effectFaceWeight="0.9"
+						muzzleBone="MainMuzzle"/>
 			</models>
 		</weapon>
 		<weapon type="TachyonRay" count="6">
 			<models>
-				<beamWeapon muzzleBone="Muzzle"
+				<beamWeapon effectFaceWeight="0.9"
+						windupDuration="1.0"
+						muzzleBone="Muzzle"
 						muzzleCount="6"/>
 			</models>
 		</weapon>
@@ -27,7 +32,7 @@
 						mesh="Units/CherubimTitanDeflectorShield"/>			
 			</models>
 		</weapon>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="AntimatterDilation">
 			<models>
 				<weapon bone="Generator"
 						material="Units/CherubimTitanPowerGenerator"
@@ -39,18 +44,18 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="8"/>
-				<antimatterCost base="120"/> <!-- %antimatterCost base tier=11 factor=0.5 -->
-				<antimatterUpkeep base="6.0"/> <!-- %antimatterUpkeep base tier=11 factor=0.5 -->
-				<armor base="9"/>
+				<antimatterCost base="12"/> <!-- %antimatterCost base tier=11 factor=0.05 -->
+				<antimatterUpkeep base="0.6"/> <!-- %antimatterUpkeep base tier=11 factor=0.05 -->
+				<armor base="8"/>
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
-				<moraleMax base="12"/>
-				<movementMax base="6"/>
+				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
+				<moraleMax base="14"/>
+				<movementMax base="5"/>
 				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
 				<singularityCoresCost base="12"/> <!-- %singularityCoresCost base tier=11 factor=0.05 -->
 				<singularityCoresUpkeep base="0.6"/> <!-- %singularityCoresUpkeep base tier=11 factor=0.05 -->
-				<transuraniumCost base="120"/> <!-- %transuraniumCost base tier=11 factor=0.5 -->
-				<transuraniumUpkeep base="6.0"/> <!-- %transuraniumUpkeep base tier=11 factor=0.5 -->
+				<transuraniumCost base="12"/> <!-- %transuraniumCost base tier=11 factor=0.05 -->
+				<transuraniumUpkeep base="0.6"/> <!-- %transuraniumUpkeep base tier=11 factor=0.05 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -63,46 +68,90 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/CherubimTitanAttack"
-						beginFire="1.0"
-						endFire="1.73"/>
+						beginFire="0.0"
+						endFire="1.73"
+						responseSound="Responses/Units/CherubimTitanAttack"
+						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/CherubimTitanDie0"
-						groundImpact="1.0"/> 
+						groundImpact="1.3"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/CherubimTitanDie"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/CherubimTitanImpact"/> 
+				<action animation="Units/CherubimTitanImpact"
+						responseSound="Responses/Units/CherubimTitanEndureHighDamage"/> 
 			</model>
 		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/CherubimTitanIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanKill"/>
+			</model>
+		</kill>
 		<move>
 			<model>
 				<action animation="Units/CherubimTitanMove"
+						responseSound="Responses/Units/CherubimTitanMove"
+						responseSoundCount="3"
 						sound="Units/CherubimTitanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/CherubimTitanHoldPosition"/>
+			</model>
+		</skip>
 		<unitCast name="CherubicHallowing"
 				cooldown="3">
 			<model>
-				<cast animation=""
-						blueprint=""
-						casterBlueprint=""
-						responseSound=""
-						sound=""/>
+				<cast animation="Units/CherubimTitanAbility0"
+						blueprint="Effects/CherubicHallowing"
+						casterBlueprint="Effects/CherubicHallowingCaster"
+						responseSound="Responses/Units/CherubimTitanCherubicHallowing"
+						sound="Units/CherubimTitanAbility"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -120,6 +169,19 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<ally/>
+											<noTrait type="CherubicHallowing"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>
@@ -133,11 +195,10 @@
 				requiredMovement="0"
 				requiredUpgrade="AntimatterDilation">
 			<model>
-				<cast animation=""
-						blueprint=""
-						casterBlueprint=""
-						responseSound=""
-						sound=""/>
+				<cast animation="Units/CherubimTitanAbility0"
+						blueprint="Effects/AntimatterDilation"
+						responseSound="Responses/Units/CherubimTitanAntimatterDilation"
+						sound="Units/CherubimTitanAbility"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -150,6 +211,18 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</selfTarget>

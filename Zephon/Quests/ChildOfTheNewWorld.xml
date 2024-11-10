@@ -1,4 +1,4 @@
-<quest firstTurn="40">
+<quest firstTurn="20" lastTurn="80">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -7,6 +7,7 @@
 						<player>
 							<faction name="Anchorite"/>
 							<contact/>
+							<notLost/>
 						</player>
 					</conditions>
 				</playerSelector>
@@ -41,23 +42,21 @@
 				<nearCityTileSelector targetDistance="6">
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
 			</modifications>
 			<objectives>
-				<killCamp>
+				<killCamp name="KillAugursMonsters">
 					<defenders>
-						<unit type="Abkluth" count="2" rankMin="3" rankMax="5"/>
-						<unit type="AegyllanWorm" count="4" rankMin="3" rankMax="5"/>
-						<unit type="DarkVassael" count="2" rankMin="3" rankMax="5"/>
+						<unit type="Abkluth" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AegyllanWorm" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="DarkVassael" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -87,13 +86,11 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -113,13 +110,11 @@
 				<nearUnitTileSelector count="2" targetDistance="3">
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -128,7 +123,7 @@
 				</nearUnitTileSelector>			
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="16" waves="3">
+				<surviveInvasion name="SurviveAugursMonsters" strength="16" waves="3">
 					<attackers>
 						<unit type="Abkluth" rankMin="3" rankMax="5"/>
 						<unit type="AegyllanWorm" rankMin="3" rankMax="5"/>
@@ -222,24 +217,22 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
 			</modifications>
 			<objectives>
-				<killCamp name="KillAnchoriteCity" faction="Anchorite" player="Anchorite">
+				<killCamp name="KillAnchoriteCity" faction="Anchorite" city="1">
 					<boss type="Headquarters" rankMin="3" rankMax="5"/>
 					<defenders>
-						<unit type="Abkluth" count="3" rankMin="3" rankMax="5"/>
-						<unit type="AcrinMilitia" count="6" rankMin="3" rankMax="5"/>
-						<unit type="Dreameater" count="1" rankMin="3" rankMax="5"/>
+						<unit type="Abkluth" count="3" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AcrinMilitia" count="6" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Dreameater" count="1" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -254,13 +247,11 @@
 				<nearCityTileSelector count="3">
 					<conditions>
 						<tile>
-							<noUnit/>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	

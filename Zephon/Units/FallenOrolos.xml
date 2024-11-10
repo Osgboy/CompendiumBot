@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Chest"
 				material="Units/FallenOrolos"
 				effectsBlueprint="Effects/FallenOrolos"
 				mesh="Units/FallenOrolos"
@@ -46,7 +47,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosAppear"/>
+				<action responseSound="Responses/Units/FallenOrolosAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -55,7 +56,7 @@
 						beginFire="1.26"
 						endFire="1.79"
 						sound="Units/FallenOrolosAttack"
-						responseSound="Units/Responses/FallenOrolosAttack"
+						responseSound="Responses/Units/FallenOrolosAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -69,17 +70,17 @@
 		<endure>
 			<model>
 				<action animation="Units/FallenOrolosImpact"
-						responseSound="Units/Responses/FallenOrolosEndureHighDamage"/> 
+						responseSound="Responses/Units/FallenOrolosEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/FallenOrolosHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/FallenOrolosHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -90,13 +91,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosKill"/>
+				<action responseSound="Responses/Units/FallenOrolosKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/FallenOrolosMove"
-						responseSound="Units/Responses/FallenOrolosMove"
+						responseSound="Responses/Units/FallenOrolosMove"
 						responseSoundCount="3"
 						sound="Units/FallenOrolosMove"
 						soundCount="1"
@@ -106,18 +107,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosPoke"/>
+				<action responseSound="Responses/Units/FallenOrolosPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosSelect"
+				<action responseSound="Responses/Units/FallenOrolosSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/FallenOrolosHoldPosition"/>
+				<action responseSound="Responses/Units/FallenOrolosHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Pestilence"
@@ -126,7 +127,7 @@
 			<model>
 				<cast animation="Units/FallenOrolosAbility0"
 						casterBlueprint="Effects/Pestilence"
-						responseSound="Units/Responses/FallenOrolosPestilence"
+						responseSound="Responses/Units/FallenOrolosPestilence"
 						sound="Units/FallenOrolosPestilence"/>
 			</model>
 			<beginTargets>
@@ -143,14 +144,14 @@
 					<areas>
 						<area affect="Unit" radius="1" excludeRadius="0">
 							<modifiers>
-								<modifier effectDescription="ToEnemyUnits">
+								<modifier effectDescription="ToAdjacentEnemyUnits">
 									<conditions>
 										<unit>
 											<enemy/>
 										</unit>
 									</conditions>
 									<effects>
-										<addTrait type="Blighted" duration="1"/>
+										<weaponDamage weapon="Pestilence"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -177,6 +178,7 @@
 		</unitCast>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="Contagious"/>
 		<trait type="Large"/>

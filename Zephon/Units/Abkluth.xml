@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice" spawnDistanceMin="6">
 	<model>
-		<unit bloodBone="Back"
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Back"
 				groupMemberDeltaX="120"
 				groupMemberDeltaY="70"
 				material="Units/Abkluth"
@@ -45,7 +46,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AbkluthAppear"
+				<action responseSound="Responses/Units/AbkluthAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -57,7 +58,7 @@
 						meleeEndSwing="0.6"
 						meleeSound="Units/AbkluthMelee"
 						meleeSoundCount="2"
-						responseSound="Units/Responses/AbkluthAttack"
+						responseSound="Responses/Units/AbkluthAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -75,19 +76,19 @@
 		<endure>
 			<model>
 				<action animation="Units/AbkluthImpact"
-						responseSound="Units/Responses/AbkluthEndureHighDamage"
+						responseSound="Responses/Units/AbkluthEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AbkluthHoldPosition"
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AbkluthHoldPosition"
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -99,7 +100,7 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AbkluthKill"
+				<action responseSound="Responses/Units/AbkluthKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
@@ -110,25 +111,25 @@
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/AbkluthMove"
+						responseSound="Responses/Units/AbkluthMove"
 						responseSoundCount="3"/> 
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AbkluthPoke"
+				<action responseSound="Responses/Units/AbkluthPoke"
 						responseSoundCount="1"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AbkluthSelect"
+				<action responseSound="Responses/Units/AbkluthSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AbkluthHoldPosition"
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>

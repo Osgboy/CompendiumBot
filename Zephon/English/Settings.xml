@@ -10,7 +10,7 @@
 <entry name="Achievements/WasPerfectionWorthIt" value="Was Perfection Worth It?"/>
 <entry name="Achievements/WasZephonTrulyAlive" value="Was ZEPHON Truly Alive?"/>
 <entry name="Achievements/WhatAreYou" value="What Are You?"/>
-<entry name="Achievements/WhatPriceForLiberty" value="What Price For Liberty?"/>
+<entry name="Achievements/WhatPriceForLiberty" value="What Is The Price Of Liberty?"/>
 <entry name="Achievements/WhereAreWe" value="Where Are We?"/>
 <entry name="Achievements/WhyDidHumanityDieAlone" value="Why Did Humanity Die Alone?"/>
 <entry name="Audio" value="Audio"/>
@@ -27,7 +27,7 @@
 <entry name="Audio/MusicVolume" value="Music Volume"/>
 <entry name="Audio/MusicVolumeHint" value="Regulates the volume of music."/>
 <entry name="Audio/MuteInBackground" value="Mute In Background"/>
-<entry name="Audio/MuteInBackgroundHint" value=""/>
+<entry name="Audio/MuteInBackgroundHint" value="Mute all audio when the game window is unfocused or minimized."/>
 <entry name="Audio/OutputDevice" value="Output Device"/>
 <entry name="Audio/OutputDeviceHint" value=""/>
 <entry name="Audio/ResponseVolume" value="Response Volume"/>
@@ -63,6 +63,9 @@
 <entry name="Controls/OpenCompendiumScreen" value="Open Compendium Screen"/>
 <entry name="Controls/OpenShopScreen" value="Open Shop Screen"/>
 <entry name="Controls/OpenResearchScreen" value="Open Research Screen"/>
+<entry name="Controls/OrderAllIdleUnits" value="Order All Idle Units"/>
+<entry name="Controls/OrderAllUnits" value="Order All Units"/>
+<entry name="Controls/OrderAreaUnits" value="Order Units In The Area"/>
 <entry name="Controls/PlayerAction0" value="Player Action 1"/>
 <entry name="Controls/PlayerAction1" value="Player Action 2"/>
 <entry name="Controls/PlayerAction2" value="Player Action 3"/>
@@ -139,10 +142,12 @@
 <entry name="General/LanguageHint" value="Specifies the written language."/>
 <entry name="General/ResetTips" value="Reset Tips"/>
 <entry name="General/ResetTipsHint" value="Reset game tips so that they will be displayed again."/>
+<entry name="General/ScreenShake" value="Screen Shake"/>
+<entry name="General/ScreenShakeHint" value="Shake camera for explosions or large units dying on screen."/>
 <entry name="General/ScrollAcceleration" value="Scroll Acceleration"/>
-<entry name="General/ScrollAccelerationHint" value=""/>
+<entry name="General/ScrollAccelerationHint" value="Camera scroll acceleration."/>
 <entry name="General/ScrollSpeed" value="Scroll Speed"/>
-<entry name="General/ScrollSpeedHint" value=""/>
+<entry name="General/ScrollSpeedHint" value="Camera scroll speed."/>
 <entry name="General/ScrollToAction" value="Auto-Scroll to Action"/>
 <entry name="General/ScrollToActionHint" value="The camera automatically scrolls to any action going on during the AI turn."/>
 <entry name="General/ShowAttackArea" value="Show Attack Area"/>
@@ -165,7 +170,7 @@
 <entry name="General/TerminateWithMarkContentCorruptHint" value=""/>
 <entry name="Network" value="Network"/>
 <entry name="Network/ListenPort" value="Listen Port"/>
-<entry name="Network/ListenPortHint" value=""/>
+<entry name="Network/ListenPortHint" value="TCP port to listen on for incoming connections when hosting a game."/>
 <entry name="Network/PreferRelayedData" value="Prefer Relayed Data"/>
 <entry name="Network/PreferRelayedDataHint" value="Instead of connecting directly to the host, relay all data through a relay server if one is available.&lt;br/&gt;&lt;br/&gt;This will increase the network latency.&lt;br/&gt;&lt;br/&gt;When turned off, data is still relayed if the initial direct connection fails.&lt;br/&gt;&lt;br/&gt;&lt;style color='GUI/Yellow'/&gt;Only use if you are experiencing connection issues and cannot resolve them otherwise."/>
 <entry name="Network/RemoteAddress" value="Remote Address"/>
@@ -212,7 +217,7 @@
 <entry name="Video/Monitor" value="Fullscreen Monitor"/>
 <entry name="Video/MonitorHint" value=""/>
 <entry name="Video/MultiThreadedRendering" value="Multi-Threaded Rendering"/>
-<entry name="Video/MultiThreadedRenderingHint" value="Uses multiple CPU cores for rendering, which can increase performance. Disabling this setting might remove potential visual artefacts."/>
+<entry name="Video/MultiThreadedRenderingHint" value="Uses multiple CPU cores for rendering, which can increase performance. Disabling this setting might remove potential visual artifacts."/>
 <entry name="Video/Resolution" value="Resolution"/>
 <entry name="Video/ResolutionHint" value="Allows you to change the game's display resolution. Higher resolutions will result in increased clarity, but greatly affect performance."/>
 <entry name="Video/ShadowQuality" value="Shadow Quality"/>
@@ -226,7 +231,7 @@
 <entry name="Video/TextureQuality2" value="High"/>
 <entry name="Video/TextureQualityHint" value="Determines the size of textures used throughout the game. Higher texture quality will result in more detailed terrain and units, but requires more video memory (VRAM)."/>
 <entry name="Video/VerticalSynchronization" value="Vertical Synchronization"/>
-<entry name="Video/VerticalSynchronization-1" value="Adaptive"/> <!-- TODO: Hints -->
+<entry name="Video/VerticalSynchronization-1" value="Adaptive"/>
 <entry name="Video/VerticalSynchronization0" value="None"/>
 <entry name="Video/VerticalSynchronization1" value="Regular"/>
 <entry name="Video/VerticalSynchronizationHint" value="Synchronizes your frame rate to your monitor's refresh rate."/>

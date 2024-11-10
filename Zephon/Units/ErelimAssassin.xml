@@ -47,7 +47,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinAppear"/>
+				<action responseSound="Responses/Units/ErelimAssassinAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -57,7 +57,7 @@
 						meleeBeginSwing="0.001"
 						meleeEndSwing="0.101"
 						meleeSound="Units/ErelimAssassinMelee"
-						responseSound="Units/Responses/ErelimAssassinAttack"
+						responseSound="Responses/Units/ErelimAssassinAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -74,17 +74,17 @@
 		<endure>
 			<model>
 				<action animation="Units/ErelimAssassinImpact"
-						responseSound="Units/Responses/ErelimAssassinEndureHighDamage"/> 
+						responseSound="Responses/Units/ErelimAssassinEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+				<action responseSound="Responses/Units/ErelimAssassinHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+				<action responseSound="Responses/Units/ErelimAssassinHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -95,13 +95,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinKill"/>
+				<action responseSound="Responses/Units/ErelimAssassinKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ErelimAssassinMove"
-						responseSound="Units/Responses/ErelimAssassinMove"
+						responseSound="Responses/Units/ErelimAssassinMove"
 						responseSoundCount="3"
 						sound="Units/ErelimAssassinMove"
 						soundCount="3"
@@ -111,18 +111,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinPoke"/>
+				<action responseSound="Responses/Units/ErelimAssassinPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinSelect"
+				<action responseSound="Responses/Units/ErelimAssassinSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ErelimAssassinHoldPosition"/>
+				<action responseSound="Responses/Units/ErelimAssassinHoldPosition"/>
 			</model>
 		</skip>
 		<useWeapon name="Assassinate"
@@ -136,7 +136,7 @@
 						meleeBeginSwing="0.001"
 						meleeEndSwing="0.101"
 						meleeSound="Units/ErelimAssassinAssassinate"
-						responseSound="Units/Responses/ErelimAssassinAssassinate"/>
+						responseSound="Responses/Units/ErelimAssassinAssassinate"/>
 			</model>
 			<modifiers>
 				<modifier effectDescription="ToTargetEnemyUnit">
@@ -151,7 +151,7 @@
 				</modifier>
 				<modifier visible="0">
 					<effects>
-						<attackScore mulMin="0.5" mulMax="0.5"/>
+						<attackScore mul="0.5"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -189,7 +189,7 @@
 			<model>
 				<action animation="Units/ErelimAssassinMove"
 						effectBlueprint="Effects/ErelimAssassinGhostWalk"
-						responseSound="Units/Responses/ErelimAssassinGhostWalk"
+						responseSound="Responses/Units/ErelimAssassinGhostWalk"
 						sound="Units/ErelimAssassinGhostWalk"
 						soundCount="1"
 						soundFadeInDuration="1.0"
@@ -198,8 +198,8 @@
 			<modifiers>
 				<modifier>
 					<effects>
-						<movement addMin="1" addMax="1"/>
-						<ignoreZoneOfControl addMin="1" addMax="1"/>
+						<movement add="1"/>
+						<ignoreZoneOfControl add="1"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -211,7 +211,7 @@
 						</tile>
 					</conditions>
 					<effects>
-						<score addMin="1.0" addMax="1.0"/>
+						<score add="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>
@@ -225,7 +225,7 @@
 				rankMax="2">
 			<model>
 				<cast blueprint="Effects/EvasionProcessor"
-						responseSound="Units/Responses/ErelimAssassinEvasionProcessor"
+						responseSound="Responses/Units/ErelimAssassinEvasionProcessor"
 						sound="Actions/EvasionProcessor"/>
 			</model>
 			<beginTargets>
@@ -247,7 +247,7 @@
 						</tile>
 					</conditions>
 					<effects>
-						<score addMin="1.0" addMax="1.0"/>
+						<score add="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>			
@@ -259,7 +259,7 @@
 				rankMax="0">
 			<model>
 				<cast animation="Units/ErelimAssassinAbility1"
-						responseSound="Units/Responses/ErelimAssassinDanceOfTheErelim"
+						responseSound="Responses/Units/ErelimAssassinDanceOfTheErelim"
 						sound="Units/ErelimAssassinDance"/>
 			</model>
 			<beginTargets>

@@ -27,6 +27,7 @@
 				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.333 -->
 				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
 				<groupSizeMax base="5"/>
+				<healingRate base="0"/>
 				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
 				<moraleMax base="6"/>
 				<movementMax base="3"/>
@@ -40,7 +41,7 @@
 				<action animation="Units/DeformityAbility0"
 						effectBlueprint="Effects/DeformityAppear"
 						beginEffect="0.2"
-						responseSound="Units/Responses/DeformityAppear"
+						responseSound="Responses/Units/DeformityAppear"
 						sound="Units/DeformityAppear"
 						soundDelay="0.2"/>
 			</model>
@@ -51,7 +52,7 @@
 						meleeAnimation="Units/DeformityMelee"
 						meleeBeginSwing="0.001"
 						meleeEndSwing="0.101"
-						responseSound="Units/Responses/DeformityAttack"
+						responseSound="Responses/Units/DeformityAttack"
 						responseSoundCount="3"
 						sound="Units/DeformityMelee"
 						soundCount="3"/>
@@ -71,17 +72,17 @@
 		<endure>
 			<model>
 				<action animation="Units/DeformityImpact"
-						responseSound="Units/Responses/DeformityEndureHighDamage"/> 
+						responseSound="Responses/Units/DeformityEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+				<action responseSound="Responses/Units/DeformityHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+				<action responseSound="Responses/Units/DeformityHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -92,13 +93,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DeformityKill"/>
+				<action responseSound="Responses/Units/DeformityKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/DeformityMove"
-						responseSound="Units/Responses/DeformityMove"
+						responseSound="Responses/Units/DeformityMove"
 						responseSoundCount="3"
 						sound="Units/DeformityMove"
 						soundCount="3"
@@ -108,18 +109,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DeformityPoke"/>
+				<action responseSound="Responses/Units/DeformityPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DeformitySelect"
+				<action responseSound="Responses/Units/DeformitySelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DeformityHoldPosition"/>
+				<action responseSound="Responses/Units/DeformityHoldPosition"/>
 			</model>
 		</skip>
 	</actions>

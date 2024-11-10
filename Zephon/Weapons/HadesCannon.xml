@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon/>
+		<projectileWeapon muzzleFlashesBlueprint="Effects/HadesCannonMuzzleFlashes"
+				projectilesBlueprint="Effects/HadesCannonProjectiles"
+				explosionsBlueprint="Effects/HadesCannonExplosions"
+				chargeBlueprint="Effects/HadesCannonCharge"/>
 	</model>
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
 				<attacks base="1"/>
-				<damage base="8"/> <!-- %damage base tier=7 -->
+				<damage base="12"/> <!-- %damage base tier=8 -->
 			</effects>
 		</modifier>
 	</modifiers>
 	<target rangeMax="3"/>
+	<traits>
+		<trait type="AntiGround"/>
+		<trait type="LargeSplash"/>
+	</traits>
 </weapon>

@@ -1,4 +1,4 @@
-<quest firstTurn="40" image="Factions/FallenSoldier">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/FallenSoldier" image="Factions/FallenSoldier">
  	<conditions>
 		<player>
 			<faction name="FallenSoldier"/>
@@ -17,12 +17,11 @@
 				<nearCityTileSelector count="1" targetDistance="12">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -68,19 +67,18 @@
 				<nearCityTileSelector count="1">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="12" waves="3">
+				<surviveInvasion name="SurviveUnknownAssailants" strength="12" waves="3">
 					<attackers>
 						<unit type="Militant" count="1"/>
 						<unit type="MissileTeam" count="1"/>
@@ -135,6 +133,20 @@
 						</effects>
 					</modifier>
 				</cityModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="MeetYourMaker"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
 			</modifications>
 		</stage>
 		<stage name="Shoot">

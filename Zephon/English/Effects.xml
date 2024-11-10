@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <language>
 
-	<!-- %1% feature icon, %2% feature icon, %3% target, %4% duration, %5% details -->
+	<!-- %1% icon, %2% name, %3% target/conditional, %4% duration, %5% details -->
 <entry name="AddFeature" value="&lt;icon texture='GUI/Bullet'/&gt;Creates %1%&lt;nbsp/&gt;%2%%3%%4%%5%"/>
+<entry name="AddItem" value="&lt;icon texture='GUI/Bullet'/&gt;Grants %1%&lt;nbsp/&gt;%2%%3%%4%"/>
 <entry name="AddPlayerAction" value="&lt;icon texture='GUI/Bullet'/&gt;Generates %1%&lt;nbsp/&gt;%2%%3%%4%%5%"/>
 <entry name="AddTrait" value="&lt;icon texture='GUI/Bullet'/&gt;Applies %1%&lt;nbsp/&gt;%2%%3%%4%%5%"/>
 <entry name="AddTraitToTargetOrSource" value="&lt;icon texture='GUI/Bullet'/&gt;Applies %1%&lt;nbsp/&gt;%2% to target or source%3%%4%%5%"/>
 <entry name="AddUnit" value="&lt;icon texture='GUI/Bullet'/&gt;Spawns %1%&lt;nbsp/&gt;%2%%3%%4%%5%%6%"/>
+<entry name="AddUnitToPlayer" value="&lt;string name='Effects/AddUnit'/&gt;"/>
+<entry name="AddUpgrade" value="&lt;icon texture='GUI/Bullet'/&gt;Unlocks %1%&lt;nbsp/&gt;%2%%3%%4%"/>
 <entry name="RemoveFeature" value="&lt;string name='Effects/RemoveTrait'/&gt;"/>
 <entry name="RemoveTrait" value="&lt;icon texture='GUI/Bullet'/&gt;Removes %1%&lt;nbsp/&gt;%2%%3%%4%"/>
 	
@@ -16,11 +19,15 @@
 <entry name="Disembark" value="&lt;icon texture='GUI/Bullet'/&gt;Disembarks%1%"/>
 <entry name="Embark" value="&lt;icon texture='GUI/Bullet'/&gt;Embarks%1%"/>
 <entry name="KillCargo" value="&lt;icon texture='GUI/Bullet'/&gt;Kills cargo%1%"/>
-<entry name="ResetUnitCooldowns" value="&lt;icon texture='GUI/Bullet'/&gt;Resets cooldowns%1%"/>
+<entry name="Pull" value="&lt;icon texture='GUI/Bullet'/&gt;Pulls%1%"/>
+<entry name="ResetActionPoints" value="&lt;icon texture='GUI/Bullet'/&gt;Resets action points%1%"/>
+<entry name="ResetCooldowns" value="&lt;icon texture='GUI/Bullet'/&gt;Resets cooldowns%1%"/>
+<entry name="ResetMovement" value="&lt;icon texture='GUI/Bullet'/&gt;Resets movement points%1%"/>
 <entry name="Reveal" value="&lt;icon texture='GUI/Bullet'/&gt;Reveals tiles%1%"/>
-	
-	<!-- %1% conditional from Modifiers.xml, %2% player name -->
-<entry name="ChangePlayerToOwner" value="&lt;icon texture='GUI/Bullet'/&gt;Restores control%1%"/>
+
+	<!-- %1% name, %2% conditional from Modifiers.xml -->
+	<!-- <entry name="UnlockItem" value="%1% is now available at The Concordat for this and future playthroughs"/> -->
+<entry name="UnlockMutator" value="&lt;icon texture='GUI/Bullet'/&gt;Unlocks mutator %1%%2%—it can now be enabled for future playthroughs"/>
 	
 	<!-- %1% percentage amount, %2% conditional from Modifiers.xml -->
 <entry name="SourceWeaponDamage" value="&lt;icon texture='GUI/Bullet'/&gt;Deals %1% attacks of received weapon damage%2%"/>

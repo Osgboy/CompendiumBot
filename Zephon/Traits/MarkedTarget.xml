@@ -2,7 +2,7 @@
 <trait category="Debuff" icon="Actions/MarkTarget" visibleOnUnit="1">
 	<opponentModifiers>
  		<modifier effectDescription="AgainstThisUnitWithRangedWeapons">
- 			<conditions>
+ 			<conditions ignoreForTraitVisibility="1">
  				<weapon>
  					<noTrait type="Melee"/>
 					<noTrait type="TitanMelee"/>

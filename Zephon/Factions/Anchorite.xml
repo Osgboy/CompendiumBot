@@ -5,7 +5,8 @@
 		native="1"
 		playable="0">
 	<actions>
-		<playerCast name="DarkPact"
+		<playerCast icon="Missing"
+				name="DarkPact"
 				cooldown="10"
 				label="1">
 			<model>
@@ -34,23 +35,23 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<alliedStrengthInTheArea greater="0"/>
-							<enemyStrengthInTheArea greater="0"/>
-						</targetTile>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</playerCast>
 		<playerCast name="TheFog"
 				cooldown="1"
@@ -70,27 +71,27 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit match="Any">
+											<ally/>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<conditions>
-						<targetTile>
-							<alliedStrengthInTheArea greater="0"/>
-							<enemyStrengthInTheArea greater="0"/>
-						</targetTile>
-						<targetUnit match="Any">
-							<ally/>
-							<enemy/>
-						</targetUnit>
-					</conditions>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</playerCast>
 	</actions>	
 	<dislikedLabels>

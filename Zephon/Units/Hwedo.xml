@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber" icon="Units/IshimEnforcer" portrait="Units/IshimEnforcer">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				explosionsBlueprint="Effects/SmallCyberExplosions"
 				explosionsBone="Chest"
 				groupMemberDeltaX="80"
@@ -29,17 +30,19 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="6"/>
+				<accuracy base="8"/>
 				<armor base="4"/>
+				<attacks mul="1"/>
 				<chipsCost base="5"/> <!-- %chipsCost base tier=5 factor=0.167 -->
 				<chipsUpkeep base="0.25"/> <!-- %chipsUpkeep base tier=5 factor=0.167 -->
+				<damage mul="1"/>
 				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.333 -->
 				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
 				<mineralsCost base="10"/> <!-- %mineralsCost base tier=5 factor=0.333 -->
 				<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=5 factor=0.333 -->
-				<moraleMax base="8"/>
+				<moraleMax base="12"/>
 				<movementMax base="3"/>
 				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
 			</effects>
@@ -56,7 +59,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerAppear"
+				<action responseSound="Responses/Units/IshimEnforcerAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -65,7 +68,7 @@
 				<attack animation="Units/IshimEnforcerAttack"
 						beginFire="1.3"
 						endFire="2.0"
-						responseSound="Units/Responses/IshimEnforcerAttack"
+						responseSound="Responses/Units/IshimEnforcerAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -83,19 +86,19 @@
 		<endure>
 			<model>
 				<action animation="Units/IshimEnforcerImpact"
-						responseSound="Units/Responses/IshimEnforcerEndureHighDamage"
+						responseSound="Responses/Units/IshimEnforcerEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerHoldPosition"
+				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerHoldPosition"
+				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -107,14 +110,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerKill"
+				<action responseSound="Responses/Units/IshimEnforcerKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/IshimEnforcerMove"
-						responseSound="Units/Responses/IshimEnforcerMove"
+						responseSound="Responses/Units/IshimEnforcerMove"
 						responseSoundCount="3"
 						sound="Units/IshimEnforcerMove"
 						soundCount="3"
@@ -124,19 +127,19 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerPoke"
+				<action responseSound="Responses/Units/IshimEnforcerPoke"
 						responseSoundCount="1"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerSelect"
+				<action responseSound="Responses/Units/IshimEnforcerSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/IshimEnforcerHoldPosition"
+				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>
@@ -145,7 +148,7 @@
 			<model>
 				<cast animation="Units/IshimEnforcerAbility"
 						blueprint="Effects/CauterizeWounds"
-						responseSound="Units/Responses/IshimEnforcerCauterizeWounds"
+						responseSound="Responses/Units/IshimEnforcerCauterizeWounds"
 						responseSoundCount="1"
 						sound="Units/IshimEnforcerCauterizeWounds"
 						soundCount="3"/>

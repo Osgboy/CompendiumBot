@@ -1,4 +1,4 @@
-<quest firstTurn="40" image="Factions/EmulatedMind">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/EmulatedMind" image="Factions/EmulatedMind">
  	<conditions>
 		<player>
 			<faction name="EmulatedMind"/>
@@ -58,7 +58,7 @@
 			<objectives>
 				<killCamp name="KillIronFeather">
 					<defenders>
-						<unit type="CombatMedic" name="Units/IronFeather" count="7"/>
+						<unit type="CombatMedic" name="Units/IronFeather" count="7" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -69,13 +69,41 @@
 			</options>		
 		</stage>	
 		<stage name="FinishWithZephon" nextStageOnSuccess="FinishWithZephonSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
 			<objectives>
-				<!-- TODO -->
+				<accomplishPlayerConditions name="AccomplishFriendlyZephonStanding">
+					<playerConditions>
+						<standingTier greater="4"/>
+					</playerConditions>
+				</accomplishPlayerConditions>
 			</objectives>
 		</stage>
 		<stage name="FinishWithZephonSuccess">
-			<!-- TODO -->
-		</stage>			
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="Valkyrie" name="Units/AvatarOfTheEmulatedMind" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="FlushCortex" nextStageOnSuccess="FlushCortexSuccess">
 			<modifications>
 				<nearCityTileSelector count="5" targetDistance="3">
@@ -133,7 +161,24 @@
 						orderName="QuantumReflector"/>
 			</objectives>
 		</stage>
-		<stage name="UseReflectorSuccess"/>
+		<stage name="UseReflectorSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="FormFunction"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="CaptureIronFeather">
 			<options>
 				<option name="DefendPeople" nextStage="DefendPeople"/>
@@ -144,12 +189,11 @@
 				<nearCityTileSelector>
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>

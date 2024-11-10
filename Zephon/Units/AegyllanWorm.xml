@@ -47,7 +47,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormAppear"
+				<action responseSound="Responses/Units/AegyllanWormAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -56,7 +56,7 @@
 				<attack animation="Units/AegyllanWormAttack"
 						beginFire="1.2"
 						endFire="2.3"
-						responseSound="Units/Responses/AegyllanWormAttack"
+						responseSound="Responses/Units/AegyllanWormAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -74,19 +74,19 @@
 		<endure>
 			<model>
 				<action animation="Units/AegyllanWormImpact"
-						responseSound="Units/Responses/AegyllanWormEndureHighDamage"
+						responseSound="Responses/Units/AegyllanWormEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
+				<action responseSound="Responses/Units/AegyllanWormHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
+				<action responseSound="Responses/Units/AegyllanWormHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -98,7 +98,7 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormKill"
+				<action responseSound="Responses/Units/AegyllanWormKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
@@ -109,37 +109,42 @@
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/AegyllanWormMove"
+						responseSound="Responses/Units/AegyllanWormMove"
 						responseSoundCount="3"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormPoke"
+				<action responseSound="Responses/Units/AegyllanWormPoke"
 						responseSoundCount="1"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormSelect"
+				<action responseSound="Responses/Units/AegyllanWormSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AegyllanWormHoldPosition"
+				<action responseSound="Responses/Units/AegyllanWormHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>
 		<tunnel cooldown="3">
 			<model>
 				<action animation="Units/AegyllanWormAltMove"
-						responseSound="Units/Responses/AegyllanWormTunnel"
+						responseSound="Responses/Units/AegyllanWormTunnel"
 						responseSoundCount="1"
 						sound="Units/AegyllanWormTunnel"
 						soundCount="3"/>
 			</model>
 			<modifiers>
+				<modifier>
+					<effects>
+						<ignoreZoneOfControl add="1"/>
+					</effects>
+				</modifier>
 				<modifier requiredUpgrade="TunnelingNails">
 					<effects>
 						<movement add="2"/>

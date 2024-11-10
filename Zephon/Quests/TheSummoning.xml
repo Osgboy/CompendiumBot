@@ -5,12 +5,11 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -26,6 +25,15 @@
 			</options>
 		</stage>
 		<stage name="Attack" nextStageOnSuccess="Negotiate">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addFeature type="TheSummoning"/>
+						</effects>
+					</modifier>
+				</tileModifiers>	
+			</modifications>
 			<objectives>
 				<visitTile name="VisitRitualSite"/>
 			</objectives>
@@ -45,7 +53,7 @@
 		<stage name="Combat" nextStageOnSuccess="CombatEarlySuccess"
 				nextStageOnFailure="CombatSummon">
 			<objectives>
-				<killCamp name="KillCultists" turns="5">
+				<killCamp name="KillCultists" turns="5" unleash="1">
 					<defenders>
 						<unit type="CrlaDisciple" count="5" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
@@ -72,7 +80,7 @@
 				</playerModifiers>
 			</modifications>
 			<objectives>
-				<killCamp name="KillCultists" turns="5">
+				<killCamp name="KillCultists" turns="5" unleash="1">
 					<defenders>
 						<unit type="CrlaDisciple" count="5" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
@@ -81,6 +89,13 @@
 		</stage>
 		<stage name="CombatEarlySuccess">
 			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="TheSummoning"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 				<playerSelector>
 					<conditions>
 						<player>
@@ -108,7 +123,7 @@
 				</tileModifiers>
 			</modifications>
 			<objectives>
-				<killCamp name="KillMonster">
+				<killCamp name="KillMonster" unleash="1">
 					<defenders>
 						<unit type="ElectOfUzhodai" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
@@ -117,6 +132,13 @@
 		</stage>
 		<stage name="CombatLateSuccess">
 			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="TheSummoning"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 				<playerSelector>
 					<conditions>
 						<player>
@@ -135,6 +157,13 @@
 		</stage>
 		<stage name="RitualSuccessPayment">
 			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="TheSummoning"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 				<playerSelector>
 					<conditions>
 						<player>
@@ -153,20 +182,7 @@
 					<modifier visible="0">
 						<effects>
 							<reveal/>
-						</effects>
-					</modifier>
-				</tileModifiers>
-				<playerSelector>
-					<conditions>
-						<player>
-							<faction name="Neutral"/>
-						</player>
-					</conditions>
-				</playerSelector>
-				<tileModifiers sourcePlayerFromSelection="1">
-					<modifier visible="0">
-						<effects>
-							<addUnit type="ElectOfUzhodai" rankMin="5" rankMax="5" homeTile="1"/>
+							<addUnit type="ElectOfUzhodai" neutralPlayer="1" rankMin="5" rankMax="5" homeTile="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
@@ -202,6 +218,13 @@
 		</stage>
 		<stage name="RitualFailurePayment">
 			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="TheSummoning"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 				<playerSelector>
 					<conditions>
 						<player>
@@ -224,20 +247,7 @@
 					<modifier visible="0">
 						<effects>
 							<reveal/>
-						</effects>
-					</modifier>
-				</tileModifiers>
-				<playerSelector>
-					<conditions>
-						<player>
-							<faction name="Neutral"/>
-						</player>
-					</conditions>
-				</playerSelector>
-				<tileModifiers sourcePlayerFromSelection="1">
-					<modifier visible="0">
-						<effects>
-							<addUnit type="ElectOfUzhodai" rankMin="5" rankMax="5" homeTile="1"/>
+							<addUnit type="ElectOfUzhodai" neutralPlayer="1" rankMin="5" rankMax="5" homeTile="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>

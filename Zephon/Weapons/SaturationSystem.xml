@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<missileWeapon fireSound="Weapons/GalgalimMissileBattery"
-				fireSoundCount="3"
-				missileExhaustBlueprint="Effects/CyberMissileExhaust"
-				missileSmokeBlueprint="Effects/CyberMissileSmoke"/>
+		<projectileWeapon cycleMuzzles="0"
+				fireInterval="1.0"
+				fireSound="Weapons/SaturationSystem"
+				fireSoundCount="4"
+				explosionsBlueprint="Effects/SaturationSystemExplosions"
+				muzzleFlashesBlueprint="Effects/CannonMuzzleFlashes"
+				explosionOffsetRadius="256"
+				projectilesBlueprint="Effects/HiddenProjectiles"/>
 	</model>
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="5"/> <!-- %armorPenetration base tier=6 -->
-				<attacks base="1"/>
-				<damage base="6"/> <!-- %damage base tier=6 -->
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<attacks base="3"/>
+				<damage base="12"/> <!-- %damage base tier=8 -->
 			</effects>
 		</modifier>
 	</modifiers>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human" icon="Units/Engineer" portrait="Units/Engineer">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				explosionsBlueprint="Effects/SmallHumanExplosions"
 				explosionsBone="Chest"
 				groupMemberDeltaX="80"
@@ -76,9 +77,7 @@
 			<model>
 				<cast animation="Units/EngineerAbility0"
 						sound="Units/EngineerWork"
-						soundFirstActingMemberOnly="1"
-						responseSound="Units/Responses/EngineerConstructBunker"
-						responseSoundCount="1"/>
+						soundFirstActingMemberOnly="1"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">

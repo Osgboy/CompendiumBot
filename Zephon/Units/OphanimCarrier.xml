@@ -3,6 +3,7 @@
 	<model>
 		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
 				explosionsBone="Hull_Shake"
+				effectsBlueprint="Effects/OphanimCarrier"
 				material="Units/OphanimCarrier"
 				mesh="Units/OphanimCarrier"
 				normalWeight="0.1"
@@ -36,8 +37,8 @@
 				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
 				<mineralsCost base="30"/> <!-- %mineralsCost base tier=9 factor=0.25 -->
 				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=9 factor=0.25 -->
-				<moraleMax base="10"/>
-				<movementMax base="6"/>
+				<moraleMax base="12"/>
+				<movementMax base="5"/>
 				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
 			</effects>
 		</modifier>
@@ -53,7 +54,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierAppear"/>
+				<action responseSound="Responses/Units/OphanimCarrierAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -61,7 +62,7 @@
 				<attack animation="Units/OphanimCarrierAttack"
 						beginFire="0.5"
 						endFire="1.0"
-						responseSound="Units/Responses/OphanimCarrierAttack"
+						responseSound="Responses/Units/OphanimCarrierAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -76,17 +77,17 @@
 		<endure>
 			<model>
 				<action animation="Units/OphanimCarrierImpact"
-						responseSound="Units/Responses/OphanimCarrierEndureHighDamage"/> 
+						responseSound="Responses/Units/OphanimCarrierEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierHoldPosition"/>
+				<action responseSound="Responses/Units/OphanimCarrierHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierHoldPosition"/>
+				<action responseSound="Responses/Units/OphanimCarrierHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -97,14 +98,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierKill"
+				<action responseSound="Responses/Units/OphanimCarrierKill"
 						responseSoundCount="2"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/OphanimCarrierMove"
-						responseSound="Units/Responses/OphanimCarrierMove"
+						responseSound="Responses/Units/OphanimCarrierMove"
 						responseSoundCount="3"
 						sound="Units/OphanimCarrierMove"
 						soundFadeInDuration="0.25"
@@ -113,18 +114,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierPoke"/>
+				<action responseSound="Responses/Units/OphanimCarrierPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierSelect"
+				<action responseSound="Responses/Units/OphanimCarrierSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/OphanimCarrierHoldPosition"/>
+				<action responseSound="Responses/Units/OphanimCarrierHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="DeployCombatDrone" name="DeployCombatDrone0"/>
@@ -138,13 +139,15 @@
 				requiredActionPoints="0">
 			<model>
 				<cast animation="Units/OphanimCarrierAbility0"
-						 responseSound="Units/Responses/OphanimCarrierDeployRepairDrones"
+						 beginEffect="1.0"
+						 responseSound="Responses/Units/OphanimCarrierDeployRepairDrones"
 						 sound="Units/OphanimCarrierDeployRepairDrones"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="1">
 					<conditions>
 						<tile>
+							<heightAbsoluteDifference less="2"/>
 							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
@@ -190,23 +193,19 @@
 		</unitCast>
 		<unitCast name="DeployEMPDrone"
 				cooldown="5"
+				icon="Units/EMPDrone"
 				requiredUpgrade="EMPDrone">
 			<model>
 				<cast animation="Units/OphanimCarrierAbility0"
-						responseSound="Units/Responses/OphanimCarrierDeployEMPDrones"
+						beginEffect="1.0"
+						responseSound="Responses/Units/OphanimCarrierDeployEMPDrones"
 						sound="Units/OphanimCarrierDeployEMPDrones"/>
 			</model>
-			<modifiers>
-				<modifier visible="0">
-					<effects>
-						<chipsCost base="15"/>
-					</effects>
-				</modifier>
-			</modifiers>
 			<beginTargets>
 				<target rangeMax="1">
 					<conditions>
 						<tile>
+							<heightAbsoluteDifference less="2"/>
 							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
@@ -232,6 +231,15 @@
 									</effects>
 								</modifier>
 							</scoreModifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Summon" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
 						</area>
 					</areas>
 				</target>

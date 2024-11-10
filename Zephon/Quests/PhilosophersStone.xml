@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -16,8 +16,8 @@
 					<modifiers>
 						<modifier>
 							<effects>
-								<algaeCost add="10"/>
-								<researchCost add="20"/>
+								<algaeCost add="20"/>
+								<researchCost add="40"/>
 							</effects>
 						</modifier>
 					</modifiers>
@@ -35,12 +35,11 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>				
@@ -57,13 +56,13 @@
 		</stage>
 		<stage name="MeetingRetrieve" nextStageOnSuccess="StoneRetrieved">
 			<objectives>
-				<killCamp name="KillBanditKing" bossKillCompletes="0">
-					<boss type="Reaver"/> <!-- TODO Bandit King -->
+				<killCamp name="KillBanditKing" bossKillCompletes="0" unleash="1">
+					<boss type="BanditKing" name="Units/BanditKing" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
 					<defenders>
-						<unit type="Reaver" count="1"/>
+						<unit type="Reaver" count="2" rankMin="2" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
-			</objectives>		
+			</objectives>
 		</stage>
 		<stage name="StoneRetrieved">
 			<modifications>

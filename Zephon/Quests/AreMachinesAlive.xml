@@ -5,12 +5,10 @@
 				<nearCityTileSelector count="1">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
 							<noUnit/>
 						</tile>
 					</conditions>
@@ -41,7 +39,7 @@
 				</playerModifiers>
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="12" waves="3">
+				<surviveInvasion name="SurviveRebelliousVeterans" strength="12" waves="3">
 					<attackers>
 						<unit type="Militant" count="2"/>
 						<unit type="CrusaderBattleTank" count="1"/>
@@ -86,7 +84,7 @@
 				</playerModifiers>
 			</modifications>
 			<objectives>
-				<surviveInvasion strength="12" waves="3">
+				<surviveInvasion name="SurviveRebelliousMachines" strength="12" waves="3">
 					<attackers>
 						<unit type="AraneanStalker" count="2"/>
 						<unit type="ChayotExterminator" count="1"/>

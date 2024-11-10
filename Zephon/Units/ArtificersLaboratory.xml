@@ -2,13 +2,16 @@
 <unit branch="Human">
 	<model>
 		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
-				explosionsBone="Bunker"
-				material="Units/Bunker"
-				mesh="Units/Bunker"
+				explosionsBone="Bone"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Buildings/Buildings"
+				mesh="Units/ArtificersLaboratory"
 				normalWeight="0.1"
 				onlyRotateWeapons="1"
-				position="0 0 0"
-				scale="1.5 1.5 1.5"/>
+				scale="1 1 1"/>
 	</model>
 	<modifiers>
 		<modifier visible="0">
@@ -19,7 +22,6 @@
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
 				<mineralsCost base="40"/> <!-- %mineralsCost base tier=6 factor=1.0 -->
-				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=6 factor=1.0 -->
 				<moraleMax base="10"/>
 				<movementMax base="0"/>
 				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
@@ -31,14 +33,14 @@
 			<model>
 				<action beginEffect="0.2"
 						effectBlueprint="Effects/CircularDust"
-						responseSound="Units/Responses/BunkerAppear"/>
+						responseSound="Responses/Units/BunkerAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.73"
-						responseSound="Units/Responses/BunkerAttack"
+						responseSound="Responses/Units/BunkerAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -49,17 +51,17 @@
 		</die>
 		<endure>
 			<model>
-				<action responseSound="Units/Responses/BunkerEndureHighDamage"/> 
+				<action responseSound="Responses/Units/BunkerEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -69,23 +71,23 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/BunkerKill"/>
+				<action responseSound="Responses/Units/BunkerKill"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/BunkerPoke"/>
+				<action responseSound="Responses/Units/BunkerPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/BunkerSelect"
+				<action responseSound="Responses/Units/BunkerSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</skip>
 	</actions>

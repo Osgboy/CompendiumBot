@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				effectsBlueprint="Effects/IokSwarm"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
@@ -49,7 +50,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmAppear"/>
+				<action responseSound="Responses/Units/IokSwarmAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -60,7 +61,7 @@
 						meleeEndSwing="1.0"
 						meleeSound="Units/IokSwarmMelee"
 						meleeSoundCount="3"
-						responseSound="Units/Responses/IokSwarmAttack"
+						responseSound="Responses/Units/IokSwarmAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -78,17 +79,17 @@
 		<endure>
 			<model>
 				<action animation="Units/IokSwarmImpact"
-						responseSound="Units/Responses/IokSwarmEndureHighDamage"/> 
+						responseSound="Responses/Units/IokSwarmEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+				<action responseSound="Responses/Units/IokSwarmHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+				<action responseSound="Responses/Units/IokSwarmHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>	
 		<idle>
@@ -99,13 +100,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmKill"/>
+				<action responseSound="Responses/Units/IokSwarmKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/IokSwarmMove"
-						responseSound="Units/Responses/IokSwarmMove"
+						responseSound="Responses/Units/IokSwarmMove"
 						responseSoundCount="3"
 						sound="Units/IokSwarmMove"
 						soundCount="3"
@@ -115,18 +116,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmPoke"/>
+				<action responseSound="Responses/Units/IokSwarmPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmSelect"
+				<action responseSound="Responses/Units/IokSwarmSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/IokSwarmHoldPosition"/>
+				<action responseSound="Responses/Units/IokSwarmHoldPosition"/>
 			</model>
 		</skip>
 		<unitAction name="CarrionGlut"

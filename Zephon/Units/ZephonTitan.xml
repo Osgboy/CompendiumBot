@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit bloodBone="Body"
+		<unit 	explosionsBlueprint="Effects/ZephonTitanExplosions"
+		 		effectsBlueprint="Effects/ZephonTitan"
+				explosionsBone="Body"
 				material="Units/ZephonTitan"
 				mesh="Units/ZephonTitan"
 				normalWeight="0.1"
-				scale="1.7 1.7 1.7"
+				scale="1.9 1.9 1.9"
 				walker="1"/>
 	</model>
 	<weapons>
 		<weapon type="SaturationSystem">
 			<models>
-				<projectileWeapon fireInterval="10"/>
+				<projectileWeapon muzzleBone="Muzzle0" windupDuration="0.0"/>
+				<projectileWeapon muzzleBone="Muzzle1" windupDuration="0.1"/>
+				<projectileWeapon muzzleBone="Muzzle2" windupDuration="0.2"/>
+				<projectileWeapon muzzleBone="Muzzle3" windupDuration="0.0"/>
+				<projectileWeapon muzzleBone="Muzzle4" windupDuration="0.1"/>
+				<projectileWeapon muzzleBone="Muzzle5" windupDuration="0.2"/>
+				<projectileWeapon muzzleBone="Muzzle6" windupDuration="0.0"/>
+				<projectileWeapon muzzleBone="Muzzle7" windupDuration="0.1"/>
+				<projectileWeapon muzzleBone="Muzzle8" windupDuration="0.2"/>
+				<projectileWeapon muzzleBone="Muzzle9" windupDuration="0.0"/>
+				<projectileWeapon muzzleBone="Muzzle10" windupDuration="0.1"/>
+				<projectileWeapon muzzleBone="Muzzle11" windupDuration="0.2"/>
+				<projectileWeapon muzzleBone="Muzzle12" windupDuration="0.0"/>
+				<projectileWeapon muzzleBone="Muzzle13" windupDuration="0.1"/>
+				<projectileWeapon muzzleBone="Muzzle14" windupDuration="0.2"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -19,17 +35,12 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<algaeCost base="20"/> <!-- %algaeCost base tier=8 factor=0.25 -->
-				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=8 factor=0.25 -->
-				<armor base="2"/>
-				<cargoSlots base="2"/>
-				<foodCost base="40"/> <!-- %foodCost base tier=8 factor=0.5 -->
-				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=8 factor=0.5 -->
+				<armor base="10"/>
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
-				<moraleMax base="12"/>
+				<hitpointsMax base="96"/> <!-- %hitpointsMax base tier=12 -->
+				<moraleMax base="0"/>
 				<movementMax base="3"/>
-				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<productionCost base="78.0"/> <!-- %productionCost base tier=13 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -44,33 +55,34 @@
 	<actions>
 		<attack>
 			<model>
-				<attack animation="Units/ZephonTitanAttack"/>
+				<attack animation="Units/ZephonTitanAttack"
+						beginFire="1.3"
+						endFire="1.6"
+						sound="Units/ZephonTitanAttack"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/ZephonTitanDie0"
-						groundImpact="1.1"
-						sound="Units/DarkVassaelDie"/>
+						groundImpact="2.0"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/ZephonTitanDie"/>
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/ZephonTitanImpact"
-						responseSound="Units/Responses/DarkVassaelEndureHighDamage"
-						responseSoundCount="1"/> 
+				<action animation="Units/ZephonTitanImpact"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -81,36 +93,30 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelKill"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ZephonTitanMove"
-						responseSound="Units/Responses/DarkVassaelMove"
-						responseSoundCount="3"
-						sound="Units/DarkVassaelMove"
-						soundCount="3"
+						sound="Units/ZephonTitanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelPoke"/>
+				<action/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelSelect"
-						responseSoundCount="3"/>
+				<action/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</skip>
 		<unitAction name="QuarryFeed"
@@ -140,8 +146,9 @@
 				requiredMovement="0">
 			<model>
 				<cast animation="Units/ZephonTitanAbility1"
-						blueprint=""
-						casterBlueprint=""/>
+						blueprint="Effects/Reconstruct"
+						casterBlueprint="Effects/ReconstructCaster"
+						sound="Units/ZephonTitanReconstruct"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="2">
@@ -182,13 +189,23 @@
 				requiredMovement="0">
 			<model>
 				<cast animation="Units/ZephonTitanAbility0"
-						blueprint=""
-						casterBlueprint=""/>
+						beginEffect="1.2"
+						casterBlueprint="Effects/ZephonTitanConstruct"
+						sound="Units/ZephonTitanConstructWarden"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsCost base="5"/> <!-- %chipsCost base tier=8 factor=0.0625 -->
+						<mineralsCost base="10"/> <!-- %mineralsCost base tier=8 factor=0.125 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target melee="1">
+				<target>
 					<conditions>
 						<tile>
+							<heightAbsoluteDifference less="2"/>
 							<land/>
 							<noFeature type="Volcano"/>
 							<noUnit/>

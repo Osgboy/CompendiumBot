@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<faction branch="Voice" initialTrack="Music/Voice0">
+<faction branch="Voice"
+		initialTrack="Music/Voice0"
+		quest="WhispersOfAFalseProphet">
 	<actions>
 		<playerCast name="WordsOfTheProphet"
-				cooldown="10"
+				cooldown="5"
 				label="1">
 			<model>
-				<cast/>
+				<cast blueprint="Effects/WordsOfTheProphet"
+						targetsTile="0"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">
@@ -29,40 +32,62 @@
 					<conditions>
 						<unit>
 							<enemy/>
+							<moraleMax greater="0"/>
 							<noTrait type="Headquarters"/>
 							<noTrait type="Hero"/>
+							<noTrait type="Titan"/>
 						</unit>
 					</conditions>
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="OfTargetEnemyNonHeroNonHeadquartersUnit">
+								<modifier effectDescription="OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMorale">
 									<effects>
 										<changePlayer/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 		<playerCast name="ArmorOfFaith"
-				cooldown="10"
+				cooldown="5"
 				label="1"
 				requiredUpgrade="ArmorOfFaith">
 			<model>
-				<cast/>
+				<cast blueprint="Effects/ArmorOfFaith"
+						targetsTile="0"/>
 			</model>
 			<modifiers>
-				<modifier visible="0">
-					<effects>
-						<influenceCost base="80"/>
-					</effects>
-				</modifier>
 				<modifier requiredUpgrade="ArmorOfFaithUpgrade">
 					<effects>
-						<cooldown mul="-0.5"/>
+						<cooldown add="-3"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -70,7 +95,7 @@
 				<target rangeMax="-1">
 					<conditions>
 						<unit>
-							<control/>
+							<ally/>
 						</unit>
 					</conditions>
 					<areas>
@@ -82,10 +107,37 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction less="0.5"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 	</actions>
 	<dislikedLabels>
@@ -193,8 +245,8 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -209,4 +261,7 @@
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
 	</traits>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

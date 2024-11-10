@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon explosionsBlueprint="Effects/CannonExplosions"
-				muzzleFlashesBlueprint="Effects/BattleCannonMuzzleFlashes"
+		<projectileWeapon explosionsBlueprint="Effects/BlestExplosions"
+				muzzleFlashesBlueprint="Effects/BlestCannonMuzzleFlashes"
 				projectilesBlueprint="Effects/HiddenProjectiles"
-				fireSound="Weapons/BattleCannon"
-				fireSoundCount="4"/>
+				fireSound="Weapons/BlestCannon"
+				fireSoundCount="4"
+				fireSoundBeginCount="4"
+				fireSoundBeginDuringWindup="1"/>
 	</model>
 	<modifiers>
 		<modifier>
@@ -19,5 +21,6 @@
 	<target rangeMax="3"/>
 	<traits>
 		<trait type="LargeSplash"/>
+		<trait type="Overheating"/>
 	</traits>
 </weapon>

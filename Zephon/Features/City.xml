@@ -2,7 +2,8 @@
 <feature blockingSight="1"
 		category="Building">
 	<model>
-		<buildings groundMaterial="Buildings/%1%BuildingsGround"
+		<buildings effectsBlueprint="Effects/%1%City" 
+				groundMaterial="Buildings/%1%BuildingsGround"
 				material="Buildings/Buildings"
 				toggledLights="HumanLamp CyberLamp ConstructionLamp"/>
 	</model>

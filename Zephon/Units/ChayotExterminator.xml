@@ -64,7 +64,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorAppear"/>
+				<action responseSound="Responses/Units/ChayotExterminatorAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -72,7 +72,7 @@
 				<attack animation="Units/ChayotExterminatorAttack"
 						beginFire="0.17"
 						endFire="1.67"
-						responseSound="Units/Responses/ChayotExterminatorAttack"
+						responseSound="Responses/Units/ChayotExterminatorAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -90,12 +90,12 @@
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorHoldPosition"/>
+				<action responseSound="Responses/Units/ChayotExterminatorHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorHoldPosition"/>
+				<action responseSound="Responses/Units/ChayotExterminatorHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -106,13 +106,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorKill"/>
+				<action responseSound="Responses/Units/ChayotExterminatorKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ChayotExterminatorMove"
-						responseSound="Units/Responses/ChayotExterminatorMove"
+						responseSound="Responses/Units/ChayotExterminatorMove"
 						responseSoundCount="3"
 						sound="Units/ChayotExterminatorMove"
 						soundFadeInDuration="1.0"
@@ -121,77 +121,29 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorPoke"/>
+				<action responseSound="Responses/Units/ChayotExterminatorPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorSelect"
+				<action responseSound="Responses/Units/ChayotExterminatorSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ChayotExterminatorHoldPosition"/>
+				<action responseSound="Responses/Units/ChayotExterminatorHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="DeployCombatDrone0"
-				consumedActionPoints="0"
-				consumedMovement="0"
-				cooldown="5"
-				icon="Units/CombatDrone"
-				requiredActionPoints="0"
+		<unitCast blueprint="DeployCombatDrone" 
+				name="DeployCombatDrone0"
 				requiredUpgrade="CombatDrone">
 			<model>
 				<cast animation="Units/ChayotExterminatorAbility0"
-						responseSound="Units/Responses/ChayotExterminatorDeployCombatDrones"
+						beginEffect="1.0"
+						responseSound="Responses/Units/ChayotExterminatorDeployCombatDrones"
 						sound="Units/ChayotExterminatorDeployCombatDrones"/>
 			</model>
-			<beginTargets>
-				<target rangeMax="1">
-					<conditions>
-						<tile>
-							<noUnit/>
-						</tile>
-					</conditions>
-					<areas>
-						<area affect="Tile">
-							<modifiers>
-								<modifier>
-									<effects>
-										<addUnit type="CombatDrone"
-												appearFromSourceUnit="1"
-												avoidBleed="0"
-												avoidCity="0"
-												avoidWater="0"/>
-									</effects>
-								</modifier>
-							</modifiers>
-							<scoreModifiers>
-								<modifier>
-									<conditions>
-										<tile>
-											<enemyStrengthInTheArea greater="0"/>	
-										</tile>
-									</conditions>
-									<effects>
-										<score add="1.0"/>
-									</effects>
-								</modifier>
-							</scoreModifiers>
-						</area>
-						<area affect="Unit">
-							<modifiers>
-								<modifier>
-									<effects>
-										<addTrait type="Summon" duration="3"/>
-									</effects>
-								</modifier>
-							</modifiers>
-						</area>
-					</areas>
-				</target>
-			</beginTargets>
 		</unitCast>
 	</actions>
 	<traits>

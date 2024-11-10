@@ -4,10 +4,11 @@
 		<defender>
 			<area affect="Tile">
 				<modifiers>
-					<modifier effectDescription="WhenKillingBiologicalUnit">
-						<conditions>
+					<modifier effectDescription="WhenKillingNonDeformingBiologicalUnit">
+						<conditions ignoreForTraitVisibility="1">
 							<unit>
 								<trait type="Biological"/>
+								<noTrait type="Deforming"/>
 							</unit>
 						</conditions>
 						<effects>

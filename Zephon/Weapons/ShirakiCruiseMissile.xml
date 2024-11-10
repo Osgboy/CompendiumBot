@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<missileWeapon fireSound="Weapons/MissileLauncher"
-				fireSoundCount="6"/>
+		<missileWeapon fireSound="Weapons/ShirakiCruiseMissile"
+				fireSoundCount="1"/>
 	</model>
 	<modifiers>
 		<modifier>
 			<effects>
+				<accuracy min="6" max="6"/>
 				<armorPenetration base="8"/> <!-- %armorPenetration base tier=9 -->
 				<attacks base="1"/>
 				<damage base="16"/> <!-- %damage base tier=9 -->
@@ -16,5 +17,6 @@
 	<target rangeMax="12"/>
 	<traits>
 		<trait type="IndirectFire"/>
+		<trait type="LargeSplash"/>
 	</traits>
 </weapon>

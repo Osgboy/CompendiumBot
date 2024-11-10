@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
 				material="Units/PhenarisEpicurean"
@@ -18,14 +19,14 @@
 		</weapon>
 		<weapon type="ParadoxTheriac" requiredUpgrade="ParadoxTheriac">
 			<models>
-				<weapon/>
+				<flamerWeapon muzzleBone="Shield"/>
 			</models>
-		</weapon>		
+		</weapon>
 	</weapons>
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="6"/>
+				<accuracy base="8"/>
 				<armor base="6"/>
 				<dimensionalEchoesCost base="6"/> <!-- %dimensionalEchoesCost base tier=9 factor=0.05 -->
 				<dimensionalEchoesUpkeep base="0.3"/> <!-- %dimensionalEchoesUpkeep base tier=9 factor=0.05 -->
@@ -52,23 +53,23 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanAppear"
-						sound="Units/PhenarisHunterAppear"
-						soundCount="3"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/PhenarisEpicureanAttack"
-						beginFire="0.3"
-						endFire="0.4"
+						beginFire="1"
+						endFire="2"
 						chargeAnimation="Units/PhenarisEpicureanCharge"
+						chargeBeginFire="0.2"
+						chargeEndFire="1.0"
 						meleeAnimation="Units/PhenarisEpicureanMelee"
 						meleeBeginSwing="0.3"
 						meleeEndSwing="0.4"
-						meleeSound="Units/PhenarisHunterMelee"
+						meleeSound="Units/PhenarisEpicureanMelee"
 						meleeSoundCount="3"
-						responseSound="Units/Responses/PhenarisEpicureanAttack"
+						responseSound="Responses/Units/PhenarisEpicureanAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -86,17 +87,17 @@
 		<endure>
 			<model>
 				<action animation="Units/PhenarisEpicureanImpact"
-						responseSound="Units/Responses/PhenarisEpicureanEndureHighDamage"/> 
+						responseSound="Responses/Units/PhenarisEpicureanEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -107,34 +108,34 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanKill"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/PhenarisEpicureanMove"
-						sound="Units/PhenarisHunterMove"
+						sound="Units/PhenarisEpicureanMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"
-						responseSound="Units/Responses/PhenarisEpicureanMove"
+						responseSound="Responses/Units/PhenarisEpicureanMove"
 						responseSoundCount="3"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanPoke"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanSelect"
+				<action responseSound="Responses/Units/PhenarisEpicureanSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PhenarisEpicureanHoldPosition"/>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Masochism"
@@ -146,7 +147,9 @@
 			<model>
 				<cast animation="Units/PhenarisEpicureanAbility0"
 						blueprint="Effects/Masochism"
-						responseSound="Units/Responses/PhenarisEpicureanMasochism"/>
+						responseSound="Responses/Units/PhenarisEpicureanMasochism"
+						sound="Units/PhenarisEpicureanMasochism"
+						soundCount="3"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -155,7 +158,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addTrait type="Masochism" duration="5"/>
+										<addTrait type="Masochism" duration="3"/>
 									</effects>
 								</modifier>
 							</modifiers>

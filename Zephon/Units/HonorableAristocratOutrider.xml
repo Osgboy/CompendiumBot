@@ -19,12 +19,12 @@
 		<modifier visible="0">
 			<effects>
 				<armor base="6"/>
-				<cargoSlots base="1"/>
+				<!-- <cargoSlots base="1"/> -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
 				<mineralsCost base="30"/> <!-- %mineralsCost base tier=5 factor=1 -->
 				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=5 factor=1 -->
-				<moraleMax base="10"/>
+				<moraleMax base="12"/>
 				<movementMax base="2"/>
 				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
 			</effects>
@@ -41,7 +41,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/OutriderAppear"/>
+				<action responseSound="Responses/Units/OutriderAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -49,7 +49,7 @@
 				<attack animation="Units/OutriderAttack"
 						beginFire="1.0"
 						endFire="2.3"
-						responseSound="Units/Responses/OutriderAttack"
+						responseSound="Responses/Units/OutriderAttack"
 						responseSoundCount="3"/>
 			</model>		
 		</attack>
@@ -62,17 +62,17 @@
 		<endure>
 			<model>
 				<action animation="Units/OutriderImpact"
-						responseSound="Units/Responses/OutriderEndureHighDamage"/> 
+						responseSound="Responses/Units/OutriderEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -83,13 +83,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/OutriderKill"/>
+				<action responseSound="Responses/Units/OutriderKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/OutriderMove"
-						responseSound="Units/Responses/OutriderMove"
+						responseSound="Responses/Units/OutriderMove"
 						responseSoundCount="3"
 						sound="Units/OutriderMove"
 						soundCount="1"
@@ -99,18 +99,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/OutriderPoke"/>
+				<action responseSound="Responses/Units/OutriderPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/OutriderSelect"
+				<action responseSound="Responses/Units/OutriderSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/OutriderHoldPosition"/>
+				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</skip>
 	</actions>

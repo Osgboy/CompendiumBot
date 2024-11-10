@@ -7,7 +7,8 @@
 				groupMemberDeltaY="50"
 				material="Units/Cyclone"
 				mesh="Units/Cyclone"
-				scale="1 1 1">
+				scale="1 1 1"
+				uvAnimated="1">
 		</unit>
 	</model>
 	<weapons>
@@ -87,7 +88,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/CycloneAppear"/>
+				<action responseSound="Responses/Units/CycloneAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -95,7 +96,7 @@
 				<attack animation="Units/CycloneAttack"
 						beginFire="0.33"
 						endFire="2.3"
-						responseSound="Units/Responses/CycloneAttack"
+						responseSound="Responses/Units/CycloneAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -108,17 +109,17 @@
 		<endure>
 			<model>
 				<action animation="Units/CycloneImpact"
-						responseSound="Units/Responses/CycloneEndureHighDamage"/> 
+						responseSound="Responses/Units/CycloneEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+				<action responseSound="Responses/Units/CycloneHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+				<action responseSound="Responses/Units/CycloneHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -129,13 +130,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/CycloneKill"/>
+				<action responseSound="Responses/Units/CycloneKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/CycloneMove"
-						responseSound="Units/Responses/CycloneMove"
+						responseSound="Responses/Units/CycloneMove"
 						responseSoundCount="3"
 						sound="Units/CycloneMove"
 						soundCount="1"
@@ -145,23 +146,23 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/CyclonePoke"/>
+				<action responseSound="Responses/Units/CyclonePoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/CycloneSelect"
+				<action responseSound="Responses/Units/CycloneSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/CycloneHoldPosition"/>
+				<action responseSound="Responses/Units/CycloneHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="SmokeLauncher">
 			<model>
-				<cast responseSound="Units/Responses/CycloneSmokeLauncher"
+				<cast responseSound="Responses/Units/CycloneSmokeLauncher"
 						sound="Actions/SmokeLauncher"/>
 			</model>
 		</unitCast>
@@ -169,7 +170,7 @@
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.1"
-						responseSound="Units/Responses/CycloneShirakiCruiseMissile"/>
+						responseSound="Responses/Units/CycloneShirakiCruiseMissile"/>
 			</model>
 		</useWeapon>
 	</actions>

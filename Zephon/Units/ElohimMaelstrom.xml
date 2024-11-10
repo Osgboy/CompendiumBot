@@ -2,20 +2,21 @@
 <unit branch="Cyber">
 	<model>
 		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
-				explosionsBone="Guide"
+				explosionsBone="Hull_Shake"
 				groupMemberDeltaX="100"
 				groupMemberDeltaY="80"
-				material="Units/KriteriaAnnihilator"
-				mesh="Units/KriteriaAnnihilator"
+				material="Units/ElohimMaelstrom"
+				mesh="Units/ElohimMaelstrom"
 				normalWeight="0.1"
 				position="0 0 16"
-				scale="0.75 0.75 0.75"/>
+				scale="0.9 0.9 0.9"/>
 	</model>
 	<weapons>
 		<weapon type="ElysianBattery"
 				slotName="ElysianBattery">
 			<models>
-				<missileWeapon windupDuration="1.0" muzzleBone="Muzzle"/>
+				<missileWeapon windupDuration="1.0" muzzleBone="Muzzle"
+						muzzleCount="8"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -47,62 +48,62 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorAppear"/>
+				<action responseSound="Responses/Units/ElohimMaelstromAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
-				<attack animation="Units/KriteriaAnnihilatorAttack"
+				<attack animation="Units/ElohimMaelstromAttack"
 						beginFire="0.2"
 						endFire="1.8"
-						responseSound="Units/Responses/KriteriaAnnihilatorAttack"
+						responseSound="Responses/Units/ElohimMaelstromAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
-				<die animation="Units/KriteriaAnnihilatorDie"
+				<die animation="Units/ElohimMaelstromDie"
 						animationCount="2"
 						sound="Units/MediumMechanicalGroundHit"
 						soundCount="3"
 						soundDelay="1.0"
-						voiceSound="Units/KriteriaAnnihilatorDie"
-						voiceSoundCount="5"/>
+						voiceSound="Units/ElohimMaelstromDie"
+						voiceSoundCount="3"/>
 			</model>
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/KriteriaAnnihilatorImpact"
-						responseSound="Units/Responses/KriteriaAnnihilatorEndureHighDamage"/> 
+				<action animation="Units/ElohimMaelstromImpact"
+						responseSound="Responses/Units/ElohimMaelstromEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/ElohimMaelstromHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/ElohimMaelstromHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
 			<model>
-				<idle animation="Units/KriteriaAnnihilatorIdle"
+				<idle animation="Units/ElohimMaelstromIdle"
 						animationCount="3"/>
 			</model>	
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorKill"/>
+				<action responseSound="Responses/Units/ElohimMaelstromKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/KriteriaAnnihilatorMove"
-						responseSound="Units/Responses/KriteriaAnnihilatorMove"
+				<action animation="Units/ElohimMaelstromMove"
+						responseSound="Responses/Units/ElohimMaelstromMove"
 						responseSoundCount="3"
-						sound="Units/KriteriaAnnihilatorMove"
+						sound="Units/ElohimMaelstromMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
@@ -110,24 +111,25 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorPoke"/>
+				<action responseSound="Responses/Units/ElohimMaelstromPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorSelect"
+				<action responseSound="Responses/Units/ElohimMaelstromSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/KriteriaAnnihilatorHoldPosition"/>
+				<action responseSound="Responses/Units/ElohimMaelstromHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="TimeShift">
 			<model>
-				<cast animation="Units/KriteriaAnnihilatorAbility0"
-						responseSound="Units/Responses/KriteriaAnnihilatorTimeShift"
+				<cast animation="Units/ElohimMaelstromAbility1"
+						responseSound="Responses/Units/ElohimMaelstromTimeShift"
+						blueprint="Effects/TimeShift"
 						sound="Units/KriteriaAnnihilatorTimeShift"
 						soundCount="3"/>
 			</model>
@@ -136,6 +138,12 @@
 				weaponSlotName="ElysianBattery"
 				requiredUpgrade="Pandemonium">
 			<model>
+				<attack animation="Units/ElohimMaelstromAbility0"
+						beginFire="0.2"
+						endFire="1.8"
+						responseSound="Responses/Units/ElohimMaelstromPandemonium"
+						sound="Units/ElohimMaelstromPandemonium"
+						soundCount="3"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">

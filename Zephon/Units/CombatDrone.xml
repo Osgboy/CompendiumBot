@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Cyber">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
 				explosionsBone="HullShake"
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="80"
@@ -24,12 +24,12 @@
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="8"/>
+				<accuracy base="6"/>
 				<armor base="4"/>
 				<chipsCost base="5"/> <!-- %chipsCost base tier=4 factor=0.25 -->
 				<chipsUpkeep base="0.25"/> <!-- %chipsUpkeep base tier=4 factor=0.25 -->
 				<groupSizeMax base="5"/>
-				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<hitpointsMax base="2"/> <!-- %hitpointsMax base tier=1 -->
 				<mineralsCost base="10"/> <!-- %mineralsCost base tier=4 factor=0.5 -->
 				<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=4 factor=0.5 -->
 				<moraleMax base="8"/>
@@ -41,7 +41,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/CombatDroneAppear"
+				<action responseSound="Responses/Units/CombatDroneAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -50,7 +50,7 @@
 				<attack animation="Units/DroneAttack"
 						beginFire="0.86"
 						endFire="2.0"
-						responseSound="Units/Responses/DroneAttack"
+						responseSound="Responses/Units/DroneAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -66,19 +66,19 @@
 		<endure>
 			<model>
 				<action animation="Units/DroneImpact"
-						responseSound="Units/Responses/DroneEndureHighDamage"
+						responseSound="Responses/Units/DroneEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DroneHoldPosition"
+				<action responseSound="Responses/Units/DroneHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DroneHoldPosition"
+				<action responseSound="Responses/Units/DroneHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -90,14 +90,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DroneKill"
+				<action responseSound="Responses/Units/DroneKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/DroneMove"
-						responseSound="Units/Responses/DroneMove"
+						responseSound="Responses/Units/DroneMove"
 						responseSoundCount="3"
 						sound="Units/DroneMove"
 						soundCount="3"
@@ -107,18 +107,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DronePoke"/>
+				<action responseSound="Responses/Units/DronePoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DroneSelect"
+				<action responseSound="Responses/Units/DroneSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DroneHoldPosition"
+				<action responseSound="Responses/Units/DroneHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>

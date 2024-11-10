@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<flamerWeapon explosionsBlueprint="Effects/LaserExplosions"
+		<flamerWeapon explosionsBlueprint="Effects/WitheringBreathExplosions"
+				flamesBlueprint="Effects/WitheringBreath"
 				fireSound="Weapons/Flamethrower"
 				fireSoundBeginCount="1"
+				fireSoundBeginDuringWindup="1"
 				fireSoundContinuously="1"
 				fireSoundCount="1"
 				fireSoundEndCount="1"/>

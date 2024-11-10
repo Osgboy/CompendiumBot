@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+		<unit explosionsBlueprint="Effects/ZephonExplosions"
 				explosionsBone="Base"
 				groupMemberDeltaX="70"
 				groupMemberDeltaY="70"
@@ -47,7 +47,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/SentryAppear"/>
+				<action responseSound="Responses/Units/SentryAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -55,7 +55,7 @@
 				<attack animation="Units/SentryAttack"
 						beginFire="0.87"
 						endFire="1.93"
-						responseSound="Units/Responses/SentryAttack"
+						responseSound="Responses/Units/SentryAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -73,17 +73,17 @@
 		<endure>
 			<model>
 				<action animation="Units/SentryImpact"
-						responseSound="Units/Responses/SentryEndureHighDamage"/> 
+						responseSound="Responses/Units/SentryEndureHighDamage"/> 
 			</model>
 		</endure>	
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/SentryHoldPosition"/>
+				<action responseSound="Responses/Units/SentryHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/SentryHoldPosition"/>
+				<action responseSound="Responses/Units/SentryHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -94,13 +94,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/SentryKill"/>
+				<action responseSound="Responses/Units/SentryKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/SentryMove"
-						responseSound="Units/Responses/SentryMove"
+						responseSound="Responses/Units/SentryMove"
 						responseSoundCount="3"
 						sound="Units/SentryMove"
 						soundCount="3"
@@ -110,13 +110,13 @@
 		</move>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/SentrySelect"
+				<action responseSound="Responses/Units/SentrySelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/SentryHoldPosition"/>
+				<action responseSound="Responses/Units/SentryHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="CombatRoutine"
@@ -128,7 +128,7 @@
 			<model>
 				<cast animation="Units/SentryAbility0"
 						blueprint="Effects/CombatRoutine"
-						responseSound="Units/Responses/SentryCombatRoutine"
+						responseSound="Responses/Units/SentryCombatRoutine"
 						sound="Units/SentryCombatRoutine"
 						soundCount="3"/>
 			</model>

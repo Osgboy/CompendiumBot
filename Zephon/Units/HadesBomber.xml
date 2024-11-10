@@ -2,24 +2,26 @@
 <unit branch="Human">
 	<model>
 		<unit explosionsBone="Hull_Shake"
-				material="Units/HadesBomber"
-				mesh="Units/HadesBomber"
-				normalWeight="0.1"
-				position="0 0 36"
-				scale="1.1 1.1 1.1"/>
+			explosionsBlueprint="Effects/MediumHumanExplosions"
+			material="Units/HadesBomber"
+			effectsBlueprint="Effects/HadesBomber"
+			mesh="Units/HadesBomber"
+			normalWeight="0.1"
+			position="0 0 36"
+			scale="1 1 1"/>
 	</model>
 	<weapons>
-		<weapon type="HadesCannon">
+		<weapon type="HadesCannon" count="2">
 			<models>
-				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						windupDuration="1.8"
+						fireInterval="0.15"/>
 			</models>
 		</weapon>
 		<weapon type="AntimatterBomb"
 				enabled="0"
-				slotName="AntimatterBomb">
-			<models>
-			</models>
-		</weapon>
+				slotName="AntimatterBomb"/>
  		<weapon type="None">
 			<models>
 				<weapon bone="Hull_Shake"
@@ -39,16 +41,16 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<antimatterCost base="60"/> <!-- %antimatterCost base tier=9 factor=0.5 -->
-				<antimatterUpkeep base="3.0"/> <!-- %antimatterUpkeep base tier=9 factor=0.5 -->
+				<antimatterCost base="16"/> <!-- %antimatterCost base tier=10 factor=0.1 -->
+				<antimatterUpkeep base="0.8"/> <!-- %antimatterUpkeep base tier=10 factor=0.1 -->
 				<armor base="8"/>
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
-				<moraleMax base="8"/>
-				<movementMax base="7"/>
-				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
-				<transuraniumCost base="60"/> <!-- %transuraniumCost base tier=9 factor=0.5 -->
-				<transuraniumUpkeep base="3.0"/> <!-- %transuraniumUpkeep base tier=9 factor=0.5 -->
+				<moraleMax base="12"/>
+				<movementMax base="6"/>
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<transuraniumCost base="16"/> <!-- %transuraniumCost base tier=10 factor=0.1 -->
+				<transuraniumUpkeep base="0.8"/> <!-- %transuraniumUpkeep base tier=10 factor=0.1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -63,39 +65,39 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberAppear"/>
+				<action responseSound="Responses/Units/HadesBomberAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/HadesBomberAttack"
-						beginFire="1.0"
-						endFire="1.73"
-						responseSound="Units/Responses/HadesBomberAttack"
+						beginFire="0"
+						endFire="2"
+						responseSound="Responses/Units/HadesBomberAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/HadesBomberDie0"
-						groundImpact="1.0"
+						groundImpact="1.4"
 						sound="Units/HadesBomberDie"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
 				<action animation="Units/HadesBomberImpact"
-						responseSound="Units/Responses/HadesBomberEndureHighDamage"/> 
+						responseSound="Responses/Units/HadesBomberEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+				<action responseSound="Responses/Units/HadesBomberHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+				<action responseSound="Responses/Units/HadesBomberHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -106,13 +108,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberKill"/>
+				<action responseSound="Responses/Units/HadesBomberKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/HadesBomberMove"
-						responseSound="Units/Responses/HadesBomberMove"
+				<action animation=""
+						responseSound="Responses/Units/HadesBomberMove"
 						responseSoundCount="3"
 						sound="Units/HadesBomberMove"
 						soundFadeInDuration="0.25"
@@ -121,30 +123,36 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberPoke"/>
+				<action responseSound="Responses/Units/HadesBomberPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberSelect"
+				<action responseSound="Responses/Units/HadesBomberSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/HadesBomberHoldPosition"/>
+				<action responseSound="Responses/Units/HadesBomberHoldPosition"/>
 			</model>
 		</skip>
-		<useWeapon weaponSlotName="AntimatterBomb"
+		<bombingRun weaponSlotName="AntimatterBomb"
 				cooldown="3">
 			<model>
+				<attack effectBlueprint="Effects/AntimatterBomb"
+						beginFire="1.15"
+						endFire="1.25"
+						sound="Units/HadesBomberMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>			
 			</model>
-		</useWeapon>
+		</bombingRun>
 		<unitCast blueprint="DecoyFlares">
 			<model>
 				<cast animation="Units/HadesBomberAbility0"
 						blueprint="Effects/DecoyFlares"
-						responseSound="Units/Responses/HadesBomberDecoyFlares"/>
+						responseSound="Responses/Units/HadesBomberDecoyFlares"/>
 			</model>
 		</unitCast>	
 	</actions>
@@ -153,6 +161,5 @@
 		<trait type="Large"/>
 		<trait type="Mechanical"/>
 		<trait type="Stealth" requiredUpgrade="MultiSpectralScattering"/>
-		<trait type="Titan"/>
 	</traits>
 </unit>

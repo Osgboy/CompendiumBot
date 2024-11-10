@@ -1,4 +1,4 @@
-<quest>
+<quest firstTurn="40">
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -59,12 +59,11 @@
 				<nearCityTileSelector targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -78,7 +77,7 @@
 			</modifications>
 			<objectives>
 				<killCamp name="KillOminousLair">
-					<boss type="ShochitrisLair" name="Units/OminousLair"/>
+					<boss type="ShochitrisLair" name="Units/OminousLair" skipOverwatchOnNextTileEnter="1"/>
 				</killCamp>
 			</objectives>
 		</stage>		

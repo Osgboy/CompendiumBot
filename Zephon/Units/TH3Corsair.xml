@@ -45,7 +45,7 @@
 				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
 				<mineralsCost base="40"/> <!-- %mineralsCost base tier=8 factor=0.5 -->
 				<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=8 factor=0.5 -->
-				<moraleMax base="8"/>
+				<moraleMax base="10"/>
 				<movementMax base="6"/>
 				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
 			</effects>
@@ -62,7 +62,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairAppear"/>
+				<action responseSound="Responses/Units/TH3CorsairAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -70,7 +70,7 @@
 				<attack animation="Units/TH3CorsairAttack"
 						beginFire="0.33"
 						endFire="2.23"
-						responseSound="Units/Responses/TH3CorsairAttack"
+						responseSound="Responses/Units/TH3CorsairAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -85,17 +85,17 @@
 		<endure>
 			<model>
 				<action animation="Units/TH3CorsairImpact"
-						responseSound="Units/Responses/TH3CorsairEndureHighDamage"/> 
+						responseSound="Responses/Units/TH3CorsairEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+				<action responseSound="Responses/Units/TH3CorsairHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+				<action responseSound="Responses/Units/TH3CorsairHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -106,13 +106,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairKill"/>
+				<action responseSound="Responses/Units/TH3CorsairKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/TH3CorsairMove"
-						responseSound="Units/Responses/TH3CorsairMove"
+						responseSound="Responses/Units/TH3CorsairMove"
 						responseSoundCount="3"
 						sound="Units/TH3CorsairMove"
 						soundFadeInDuration="0.25"
@@ -121,24 +121,25 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairPoke"/>
+				<action responseSound="Responses/Units/TH3CorsairPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairSelect"
+				<action responseSound="Responses/Units/TH3CorsairSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/TH3CorsairHoldPosition"/>
+				<action responseSound="Responses/Units/TH3CorsairHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="EvasiveManeuvers">
 			<model>
 				<cast animation="Units/TH3CorsairAbility1"
-						responseSound="Units/Responses/TH3CorsairEvasiveManeuvers"
+				blueprint="Effects/TH3CorsairEvasiveManeuvers"
+						responseSound="Responses/Units/TH3CorsairEvasiveManeuvers"
 						sound="Units/TH3CorsairEvasiveManeuvers"/>
 			</model>
 		</unitCast>
@@ -146,7 +147,7 @@
 			<model>
 				<cast animation="Units/TH3CorsairAbility0"
 						blueprint="Effects/DecoyFlares"
-						responseSound="Units/Responses/TH3CorsairDecoyFlares"/>
+						responseSound="Responses/Units/TH3CorsairDecoyFlares"/>
 			</model>
 		</unitCast>
 	</actions>

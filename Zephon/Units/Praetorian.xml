@@ -5,9 +5,11 @@
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="70"
 				material="Units/Praetorian"
+		 		effectsBlueprint="Effects/Praetorian"
 				mesh="Units/Praetorian"
 				normalWeight="0.1"
 				scale="0.8 0.8 0.8"
+				sparks="1"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -25,7 +27,8 @@
 			<models>
 				<weapon bone="Gun"
 						material="Units/PraetorianGun"
-						mesh="Units/PraetorianGun"/>
+						mesh="Units/PraetorianGun"
+						muzzleBone="Muzzle"/>
 			</models>
 		</weapon>
 		<weapon type="GaussCarbine"
@@ -34,7 +37,8 @@
 			<models>
 				<weapon bone="Gun"
 						material="Units/PraetorianGun"
-						mesh="Units/PraetorianGun"/>
+						mesh="Units/PraetorianGun"
+						muzzleBone="Muzzle"/>
 			</models>
 		</weapon>
  		<weapon type="None">
@@ -44,7 +48,7 @@
 						mesh="Units/PraetorianShield"/>
 			</models>
 		</weapon>
-		<weapon type="None">
+		<weapon type="None" requiredUpgrade="OrbitalDeployment">
 			<models>
 				<weapon bone="Radio"
 						material="Units/PraetorianComDevice"
@@ -56,42 +60,57 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="8"/>
-				<armor base="8"/>
-				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
-				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<antimatterCost base="4"/> <!-- %antimatterCost base tier=8 factor=0.05 -->
+				<antimatterUpkeep base="0.2"/> <!-- %antimatterUpkeep base tier=8 factor=0.05 -->
+				<armor base="10"/>
+				<foodCost base="40"/> <!-- %foodCost base tier=8 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=8 factor=0.5 -->
 				<groupSizeMax base="6"/>
 				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
 				<moraleMax base="8"/>
 				<movementMax base="3"/>
-				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
-				<transuraniumCost base="20"/> <!-- %transuraniumCost base tier=6 factor=0.5 -->
-				<transuraniumUpkeep base="1.0"/> <!-- %transuraniumUpkeep base tier=6 factor=0.5 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<transuraniumCost base="4"/> <!-- %transuraniumCost base tier=8 factor=0.05 -->
+				<transuraniumUpkeep base="0.2"/> <!-- %transuraniumUpkeep base tier=8 factor=0.05 -->
 			</effects>
 		</modifier>
 	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/PraetorianAppear"/>
+				<action responseSound="Responses/Units/PraetorianAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/PraetorianAttack"
-						beginFire="0.67"
+						beginFire="0.4"
 						endFire="2.0"
 						chargeAnimation="Units/PraetorianCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="1.2"
 						meleeAnimation="Units/PraetorianMelee"
-						responseSound="Units/Responses/PraetorianAttack"
-						responseSoundCount="3"
-						sound="Units/PraetorianMelee"
-						soundCount="5"/>
+						meleeSound="Units/PraetorianMelee"
+						meleeSoundCount="5"
+						responseSound="Responses/Units/PraetorianAttack"
+						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/PraetorianDie"
 						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
 						voiceSound="Units/PraetorianDie"
 						voiceSoundCount="5"/>
 			</model>
@@ -99,17 +118,17 @@
 		<endure>
 			<model>
 				<action animation="Units/PraetorianImpact"
-						responseSound="Units/Responses/PraetorianEndureHighDamage"/> 
+						responseSound="Responses/Units/PraetorianEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+				<action responseSound="Responses/Units/PraetorianHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+				<action responseSound="Responses/Units/PraetorianHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -120,13 +139,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PraetorianKill"/>
+				<action responseSound="Responses/Units/PraetorianKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/PraetorianMove"
-						responseSound="Units/Responses/PraetorianMove"
+						responseSound="Responses/Units/PraetorianMove"
 						responseSoundCount="3"
 						sound="Units/PraetorianMove"
 						soundCount="3"
@@ -136,40 +155,48 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PraetorianPoke"/>
+				<action responseSound="Responses/Units/PraetorianPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PraetorianSelect"
+				<action responseSound="Responses/Units/PraetorianSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PraetorianHoldPosition"/>
+				<action responseSound="Responses/Units/PraetorianHoldPosition"/>
 			</model>
 		</skip>
-		<fly name="JumpPack">
+		<fly name="JumpPack"
+				cooldown="3">
 			<model>
 				<action animation="Units/PraetorianAltMove"
-						effectBlueprint=""
-						responseSound="Units/Responses/PraetorianJumpPack"
+						effectBlueprint="Effects/JumpPack"
+						responseSound="Responses/Units/PraetorianJumpPack"
 						sound="Units/PraetorianJumpPack"
 						soundCount="3"/>
 			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
 		</fly>
 		<unitCast blueprint="IronWill">
 			<model>
 				<cast animation="Units/PraetorianAbility0"
 						blueprint="Effects/IronWill"
-						responseSound="Units/Responses/PraetorianIronWill"/>
+						responseSound="Responses/Units/PraetorianIronWill"/>
 			</model>
 		</unitCast>
 		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
 				weaponSlotNames="GaussCarbine GaussCarbineOvercharged"
 				requiredUpgrade="GaussCarbine"/>
-		<teleport blueprint="OrbitalDeployment"/>
+		<orbitalDeployment blueprint="OrbitalDeployment"/>
 	</actions>
 	<traits>
 		<trait type="AntimatterShield"/>

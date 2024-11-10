@@ -6,13 +6,15 @@
 		requiredActionPoints="0">
 	<model>
 		<cast animation="Units/ShochitrisLairIdle2"
-				responseSound="Units/Responses/ShochitrisLairBreedDeformities"
+				beginEffect="1.0"
+				responseSound="Responses/Units/ShochitrisLairBreedDeformities"
 				sound="Units/ShochitrisLairBreedDeformities"/>
 	</model>
 	<beginTargets>
 		<target melee="1">
 			<conditions>
 				<tile>
+					<heightAbsoluteDifference less="2"/>
 					<land/>
 					<noFeature type="Volcano"/>
 					<noUnit/>

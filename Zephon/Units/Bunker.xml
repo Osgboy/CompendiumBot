@@ -3,6 +3,8 @@
 	<model>
 		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
 				explosionsBone="Bunker"
+				groundMaterial="Units/BunkerGround"
+				groundMesh="Features/MicrochipFabricatorGround"
 				heatImpactSound="Impacts/HeatConcrete"
 				heatImpactSoundCount="5"
 				kineticImpactSound="Impacts/KineticConcrete"
@@ -68,15 +70,14 @@
 			<model>
 				<action beginEffect="0.2"
 						effectBlueprint="Effects/CircularDust"
-						sound="Actions/ConstructHumanBuilding"
-						voiceSound="Units/Responses/BunkerAppear"/>
+						sound="Units/BunkerAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack beginFire="1.0"
 						endFire="1.73"
-						responseSound="Units/Responses/BunkerAttack"
+						responseSound="Responses/Units/BunkerAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -87,17 +88,17 @@
 		</die>
 		<endure>
 			<model>
-				<action responseSound="Units/Responses/BunkerEndureHighDamage"/> 
+				<action responseSound="Responses/Units/BunkerEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -107,23 +108,23 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/BunkerKill"/>
+				<action responseSound="Responses/Units/BunkerKill"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/BunkerPoke"/>
+				<action responseSound="Responses/Units/BunkerPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/BunkerSelect"
+				<action responseSound="Responses/Units/BunkerSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/BunkerHoldPosition"/>
+				<action responseSound="Responses/Units/BunkerHoldPosition"/>
 			</model>
 		</skip>
 	</actions>

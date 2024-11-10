@@ -1,6 +1,17 @@
-<quest firstTurn="40">
+<quest firstTurn="20" lastTurn="80">
 	<stages>
 		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+							<contact/>
+							<notLost/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
 			<options>
 				<option name="RepairShard" nextStage="RepairShard"/>
 				<option name="RejectRepair"/>
@@ -36,23 +47,24 @@
 				<nearCityTileSelector count="3" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
 			</modifications>
 			<objectives>
-				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
-						clearEnemies="1"
-						unitType="Hammerhead">
+				<visitTile name="VisitTileWithHammerheadAndClearEnemies"
+						clearEnemies="1">				
 					<defenders>
 						<unit type="AcrinMilitia" count="2" rankMin="3" rankMax="5"/>
 					</defenders>
+					<unitConditions>
+						<type name="Hammerhead"/>
+					</unitConditions>		
 				</visitTile>
 			</objectives>
 		</stage>

@@ -52,7 +52,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantAppear"/>
+				<action responseSound="Responses/Units/AcrinRemnantAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -60,7 +60,7 @@
 				<attack animation="Units/AcrinMilitiaAttack"
 						beginFire="0.73"
 						endFire="1.63"
-						responseSound="Units/Responses/AcrinRemnantAttack"
+						responseSound="Responses/Units/AcrinRemnantAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -78,17 +78,17 @@
 		<endure>
 			<model>
 				<action animation="Units/AcrinMilitiaImpact"
-						responseSound="Units/Responses/AcrinRemnantEndureHighDamage"/> 
+						responseSound="Responses/Units/AcrinRemnantEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -99,13 +99,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantKill"/>
+				<action responseSound="Responses/Units/AcrinRemnantKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AcrinMilitiaMove"
-						responseSound="Units/Responses/AcrinRemnantMove"
+						responseSound="Responses/Units/AcrinRemnantMove"
 						responseSoundCount="3"
 						sound="Units/AcrinMilitiaMove"
 						soundCount="3"
@@ -115,18 +115,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantPoke"/>
+				<action responseSound="Responses/Units/AcrinRemnantPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantSelect"
+				<action responseSound="Responses/Units/AcrinRemnantSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="WhispersOfHarmony"
@@ -138,16 +138,13 @@
 			<model>
 				<cast animation="Units/AcrinMilitiaAbility"
 						blueprint="Effects/WhispersOfHarmony"
-						responseSound="Units/Responses/AcrinRemnantWhispersOfHarmony"
-						sound="Actions/WhispersOfHarmony"
-						soundDelay="1.5"/>
+						responseSound="Responses/Units/AcrinRemnantWhispersOfHarmony"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="1">
 					<conditions>
 						<unit>
 							<ally/>
-							<damaged/>
 						</unit>
 					</conditions>
 					<areas>
@@ -163,8 +160,15 @@
 							<scoreModifiers>
 								<modifier>
 									<conditions>
+										<unit match="Any">
+											<type name="Abkluth"/>
+											<type name="AcrinMilitia"/>
+											<type name="AcrinTitan"/>
+											<type name="AcrinZealot"/>
+											<faction name="Anchorite"/>
+										</unit>
 										<unit>
-											<type name="AcrinMilitia"/> <!-- TODO Remove when we have branched neutral players -->
+											<hitpointsFraction less="1.0"/>
 										</unit>
 									</conditions>
 									<effects>
@@ -182,7 +186,7 @@
 			<model>
 				<cast animation="Units/AcrinMilitiaAbility"
 						blueprint="Effects/ConjureBleed"
-						responseSound="Units/Responses/AcrinRemnantWhispersOfHarmony"
+						responseSound="Responses/Units/AcrinRemnantWhispersOfHarmony"
 						sound="Actions/WhispersOfHarmony"
 						soundDelay="1.5"
 						targetsTile="1"/>

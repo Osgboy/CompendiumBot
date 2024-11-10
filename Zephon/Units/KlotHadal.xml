@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" icon="Units/AbkluthDragoon" portrait="Units/AbkluthDragoon" spawnDistanceMin="6">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Rider_Chest"
+				groupMemberDeltaX="120"
+				groupMemberDeltaY="70"
+				material="Units/AbkluthDragoon"
+				mesh="Units/AbkluthDragoon"
+				normalWeight="0.1"
+				scale="50 50 50"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AbkluthBite">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="DragoonSpear">
+			<models>
+				<weapon	bone="Rider_Weapon"
+						effectsBlueprint="Effects/AbkluthDragoonToxicSpear"
+						material="Units/AbkluthDragoonToxicSpear"
+						mesh="Units/AbkluthDragoonToxicSpear"
+						unavailableMaterial="Units/AbkluthDragoonSpear"
+						unavailableMesh="Units/AbkluthDragoonSpear"/>
+			</models>
+		</weapon>
+ 		<weapon type="None">
+			<models>
+				<weapon bone="Head"
+						material="Units/AbkluthDragoonArmor"
+						mesh="Units/AbkluthDragoonArmor0"/>
+				<weapon bone="Rider_Bicep_L"
+						material="Units/AbkluthDragoonArmor"
+						mesh="Units/AbkluthDragoonArmor1"/>
+				<weapon bone="Rider_Bicep_R"
+						material="Units/AbkluthDragoonArmor"
+						mesh="Units/AbkluthDragoonArmor2"/>				
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="10"/>
+				<attacks mul="2"/>
+				<algaeCost base="5"/> <!-- %algaeCost base tier=5 factor=0.167 -->
+				<algaeUpkeep base="0.25"/> <!-- %algaeUpkeep base tier=5 factor=0.167 -->
+				<armor base="2"/>
+				<damage mul="2"/>
+				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.333 -->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<mineralsCost base="10"/> <!-- %mineralsCost base tier=5 factor=0.333 -->
+				<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=5 factor=0.333 -->
+				<moraleMax base="6"/>
+				<movementMax base="4"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/AbkluthDragoonCharge"
+						meleeAnimation="Units/AbkluthDragoonMelee"
+						meleeBeginSwing="0.25"
+						meleeEndSwing="0.35"
+						meleeSound="Units/AbkluthDragoonMelee"
+						meleeSoundCount="3"
+						responseSound="Responses/Units/AbkluthDragoonAttack"
+						responseSoundCount="3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AbkluthDragoonDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.4"
+						voiceSound="Units/AbkluthDragoonDie"
+						voiceSoundCount="12"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AbkluthDragoonImpact"
+						responseSound="Responses/Units/AbkluthDragoonEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>	
+		<idle>
+			<model>
+				<idle animation="Units/AbkluthDragoonIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AbkluthDragoonMove"
+						responseSound="Responses/Units/AbkluthDragoonMove"
+						responseSoundCount="3"
+						sound="Units/AbkluthDragoonMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="TameAbkluth"
+				cooldown="5">
+			<model>
+				<cast animation="Units/AbkluthDragoonAbility"
+						blueprint="Effects/TameAbkluth"
+						responseSound="Responses/Units/AbkluthDragoonTameAbkluth"
+						sound="Actions/TameAbkluthCaster"
+						soundFirstActingMemberOnly="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+							<type name="Abkluth"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="OfTargetEnemyAbkluth">
+									<effects>
+										<changePlayer/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<effects>
+										<removeTrait type="Unleashed"/>
+										<removeTrait type="Leashed"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Biological"/>
+		<trait type="Bleedwalker"/>
+		<trait type="DragoonArmor"/>
+	</traits>
+</unit>

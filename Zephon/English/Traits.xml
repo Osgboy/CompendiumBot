@@ -23,6 +23,7 @@
 <entry name="AmoetiasEmbrace" value="Amoetia's Embrace"/>
 <entry name="AmoetiasEmbraceProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Grants access to rare Voice items at &lt;icon height='20' texture='Icons/Shop'/&gt; The Concordat"/>
 <entry name="AnchoriteStanding" value="Trials of the Eremite"/>
+<entry name="AnchoriteStandingFlavor" value="&lt;string name='Upgrades/AnchoriteStandingFlavor'/&gt;"/>
 <entry name="AnchoriteStandingProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Improves diplomatic standing with &lt;icon height='20' texture='Icons/Factions/Anchorite'/&gt; Anchorite over time"/>
 <entry name="Annihilating" value="Annihilating"/>
 <entry name="AnnihilatingFlavor" value="&lt;string name='Traits/AnnihilationProtocolsFlavor'/&gt;"/>
@@ -40,7 +41,7 @@
 <entry name="ArchaegisFlavor" value="&lt;string name='Items/ArchaegisFlavor'/&gt;"/>
 <entry name="ArchaiConstruct" value="Archai Construct"/>
 <entry name="Area" value="Area"/>
-<entry name="AreaProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Also hits units adjacent to target tile"/>
+<entry name="AreaProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Also hits enemies adjacent to target tile at half accuracy"/>
 <entry name="ArgosyTarge" value="&lt;string name='Items/ArgosyTarge'/&gt;"/>
 <entry name="ArgosyTargeFlavor" value="&lt;string name='Items/ArgosyTargeFlavor'/&gt;"/>
 <entry name="ArmorOfFaith" value="&lt;string name='Actions/ArmorOfFaith'/&gt;"/>
@@ -49,7 +50,8 @@
 <entry name="ArshamsSatchelGiftedFlavor" value="&lt;string name='Items/ArshamsSatchelGiftedFlavor'/&gt;"/>
 <entry name="ArshamsSatchelLooted" value="&lt;string name='Items/ArshamsSatchelLooted'/&gt;"/>
 <entry name="ArshamsSatchelLootedFlavor" value="&lt;string name='Items/ArshamsSatchelLootedFlavor'/&gt;"/>
-<entry name="ArtificersPrecision" value="Artificer's Precision"/>
+<entry name="ArtificersPrecision" value="&lt;string name='Actions/ArtificersPrecision'/&gt;"/>
+<entry name="ArtificersPrecisionFlavor" value="&lt;string name='Actions/ArtificersPrecisionFlavor'/&gt;"/>
 <entry name="Artillery" value="Artillery"/>
 <entry name="AssaultTransport" value="Assault Transport"/>
 <entry name="AssaultTransportProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Allows transportation of non-large units&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Disembarking units can move normally&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Embarked units die when the transport is destroyed"/>
@@ -60,6 +62,8 @@
 <entry name="AugmentationsProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Spend influence to improve units with augmentations."/>
 <entry name="AuraOfDiscipline" value="&lt;string name='Actions/AuraOfDiscipline'/&gt;"/>
 <entry name="AuraOfDisciplineFlavor" value="&lt;string name='Actions/AuraOfDisciplineFlavor'/&gt;"/>
+<entry name="AuraOfTheFalseSpeaker" value="&lt;string name='Actions/AuraOfTheFalseSpeaker'/&gt;"/>
+<entry name="AuraOfTheFalseSpeakerFlavor" value="&lt;string name='Actions/AuraOfTheFalseSpeakerFlavor'/&gt;"/>
 <entry name="AxiomaticPendulum" value="&lt;string name='Weapons/AxiomaticPendulum'/&gt;"/>
 <entry name="AxiomaticPendulumFlavor" value="&lt;string name='Weapons/AxiomaticPendulumFlavor'/&gt;"/>
 <entry name="BalancedProgress" value="Balanced Progress"/>
@@ -87,11 +91,13 @@
 <entry name="Burning" value="Burning"/>
 <entry name="CannibalizeMachines" value="Cannibalize Machines"/>
 <entry name="Capturable" value="Capturable"/>
+<entry name="CapturableProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can be captured by units of %1%"/>
 <entry name="CarrionGlut" value="Carrion Glut"/>
 <entry name="CausalWell" value="Causal Well"/>
 <entry name="CherubicHallowing" value="&lt;string name='Actions/CherubicHallowing'/&gt;"/>
 <entry name="CherubicHallowingFlavor" value="&lt;string name='Actions/CherubicHallowingFlavor'/&gt;"/>
 <entry name="ChieftessStanding" value="Reaver Immigration"/>
+<entry name="ChieftessStandingFlavor" value="&lt;string name='Upgrades/ChieftessStandingFlavor'/&gt;"/>
 <entry name="ChieftessStandingProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Improves diplomatic standing with &lt;icon height='20' texture='Icons/Factions/Chieftess'/&gt; Chieftess over time"/>
 <entry name="ChipsUpgrade" value="Enmeshed Savant"/>
 <entry name="Cicadas" value="&lt;string name='Features/Cicadas'/&gt;"/>
@@ -103,6 +109,7 @@
 <entry name="Cliff" value="Cliff"/>
 <entry name="Coast" value="Coast"/>
 <entry name="CombatRoutine" value="&lt;string name='Actions/CombatRoutine'/&gt;"/>
+<entry name="CombatRoutineFlavor" value="&lt;string name='Actions/CombatRoutineFlavor'/&gt;"/>
 <entry name="CombatShield" value="Combat Shield"/>
 <entry name="Common" value="Common"/>
 <entry name="CommonProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Classification"/>
@@ -111,7 +118,7 @@
 <entry name="Concussed" value="Concussed"/>
 <entry name="Concussive" value="Concussive"/>
 <entry name="Cone" value="Cone"/>
-<entry name="ConeProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Also hits units left and right of target tile"/>
+<entry name="ConeProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Also hits enemies left and right of target tile at half accuracy"/>
 <entry name="ConstructionUpgrade" value="Industrial Density"/>
 <entry name="Contagious" value="Contagious"/>
 <entry name="CorpseCities" value="Corpse Cities"/>
@@ -127,6 +134,7 @@
 <entry name="Cross" value="Cross"/>
 <entry name="CrossProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Also hits behind, left and right of target tile"/>
 <entry name="Cruel" value="Cruel"/>
+<entry name="CruelFlavor" value="&lt;string name='Quests/TheSkyFallen/OpenFire'/&gt;"/>
 <entry name="CrystalBasinUnit" value="&lt;string name='Features/CrystalBasin'/&gt;"/>
 <entry name="CrystalBasinUnitFlavor" value="&lt;string name='Features/CrystalBasinFlavor'/&gt;"/>
 <entry name="CultExpansion" value="Cult Expansion"/>
@@ -192,7 +200,9 @@
 <entry name="ExousiaParser" value="&lt;string name='Items/ExousiaParser'/&gt;"/>
 <entry name="ExousiaParserFlavor" value="&lt;string name='Items/ExousiaParserFlavor'/&gt;"/>
 <entry name="ExperimentalDrugsFailure" value="&lt;string name='Actions/ExperimentalDrugs'/&gt; (Berserk)"/>
+<entry name="ExperimentalDrugsFailureFlavor" value="&lt;string name='Quests/Pharmaceutics/Utilize'/&gt;"/>
 <entry name="ExperimentalDrugsSuccess" value="&lt;string name='Actions/ExperimentalDrugs'/&gt;"/>
+<entry name="ExperimentalDrugsSuccessFlavor" value="&lt;string name='Quests/Pharmaceutics/Utilize'/&gt;"/>
 <entry name="Extortive" value="Extortive"/>
 <entry name="ExtortiveProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Frequently demands tribute"/>
 <entry name="ExtraPlating" value="Extra Plating"/>
@@ -203,7 +213,7 @@
 <entry name="FallenSoldierAffinityUpgrade" value="Old Painless"/>
 <entry name="FallenSoldierAffinityUpgradeFlavor" value="&lt;string name='Upgrades/FallenSoldierAffinityUpgradeFlavor'/&gt;"/>
 <entry name="FallenSoldierAffinityUpgrade2" value="Ablative Growth"/>
-<entry name="FallenSoldierAffinityUpgrade2Flavor" value="&lt;string name='Upgrades/FallenSoldierAffinityUpgradeFlavor2'/&gt;"/>
+<entry name="FallenSoldierAffinityUpgrade2Flavor" value="&lt;string name='Upgrades/FallenSoldierAffinityUpgrade2Flavor'/&gt;"/>
 <entry name="FerventStrength" value="Fervent Strength"/>
 <entry name="FerventStrengthProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Does not suffer from reduced accuracy while below 50% hitpoints"/>
 <entry name="Fire" value="&lt;string name='Features/Fire'/&gt;"/>
@@ -213,7 +223,7 @@
 <entry name="FleshTree" value="&lt;string name='Features/FleshTree'/&gt;"/>
 <entry name="FleshTreeFlavor" value="&lt;string name='Features/FleshTreeFlavor'/&gt;"/>
 <entry name="Flying" value="Flying"/>
-<entry name="FlyingProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Unaffected by terrain&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Can move through enemy non-flying units and vice versa&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Ignores zone of control of enemy non-flying units and vice versa&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Cannot be hit by melee weapons of non-flying units"/>
+<entry name="FlyingProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Unaffected by terrain&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Can move through enemy non-flying units and vice versa&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Ignores zone of control of enemy non-flying units and vice versa&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Cannot be hit by melee weapons of non-flying units&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Has an extremely elevated position in line of sight calculations"/>
 <entry name="FoodUpgrade" value="Fishery Wing"/>
 <entry name="Forest" value="&lt;string name='Features/Forest'/&gt;"/>
 <entry name="ForestFlavor" value="&lt;string name='Features/ForestFlavor'/&gt;"/>
@@ -221,13 +231,13 @@
 <entry name="FoundationOfBlood" value="&lt;string name='Actions/FoundationOfBlood'/&gt;"/>
 <entry name="FoundationOfBloodFlavor" value="&lt;string name='Actions/FoundationOfBloodFlavor'/&gt;"/>
 <entry name="Fortification" value="Fortification"/>
-<entry name="FortificationDescription" value="&lt;icon texture='GUI/Bullet'/&gt;Exerts control over adjacent capturable units and features"/>
+<entry name="FortificationDescription" value="&lt;icon texture='GUI/Bullet'/&gt;Exerts control over adjacent capturable units and features&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Has an elevated position in line of sight calculations"/>
 <entry name="FortressArmament" value="Fortress Armament"/>
 <entry name="FortressArmamentProperties" value="&lt;icon texture='GUI/Bullet'/&gt;City has an additional long-range weapon"/>
 <entry name="FragilityOfFlesh" value="Fragility of Flesh"/>
 <entry name="FragilityOfFleshFlavor" value="&lt;string name='Quests/TheDream/AskZephonComplete'/&gt;"/>
 <entry name="Frenzy" value="&lt;string name='Actions/Frenzy'/&gt;"/>
-<entry name="FrenzyFalvor" value="&lt;string name='Actions/FrenzyFlavor'/&gt;"/>
+<entry name="FrenzyFlavor" value="&lt;string name='Actions/FrenzyFlavor'/&gt;"/>
 <entry name="FurtiveTribunalAffinityUpgrade2" value="Eremite Cells"/>
 <entry name="FusionWarhead" value="Fusion Warhead"/>
 <entry name="GladialEmanator" value="&lt;string name='Items/GladialEmanator'/&gt;"/>
@@ -248,6 +258,7 @@
 <entry name="Haunted" value="Haunted"/>
 <entry name="HauntedFlavor" value="&lt;string name='Quests/TheDream/Ignore'/&gt;"/>
 <entry name="Headquarters" value="Headquarters"/>
+<entry name="HeadquartersFlavor" value="&lt;string name='Units/HeadquartersFlavor'/&gt;"/>
 <entry name="HeadquartersProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Destroying the headquarters unit destroys the entire city"/>
 <entry name="HeadquartersAccuracyUpgrade" value="Doomed Spotters"/>
 <entry name="HeadquartersAlgae" value="House on the Borderland"/>
@@ -256,6 +267,7 @@
 <entry name="HeartfeltLoss" value="Heartfelt Loss"/>
 <entry name="HeartlessArtificerAffinityUpgrade" value="Part Distribution"/>
 <entry name="HeartlessArtificerAffinityUpgrade2" value="Transuranic Apathy"/>
+<entry name="HeartlessArtificerAffinityUpgrade2Flavor" value="&lt;string name='Upgrades/HeartlessArtificerAffinityUpgrade2Flavor'/&gt;"/>
 <entry name="Heavy" value="Heavy"/>
 <entry name="Hero" value="Hero"/>
 <entry name="HexeskeltalCreche" value="Hexeskeltal Creche"/>
@@ -271,7 +283,10 @@
 <entry name="HolyBondFlavor" value="&lt;string name='Actions/HolyBondFlavor'/&gt;"/>
 <entry name="HonorableAristocratAffinityUpgrade" value="Well-Fed"/>
 <entry name="HonorableAristocratAffinityUpgrade2" value="Treasures of Life"/>
+<entry name="HonorableAristocratAffinityUpgrade2Flavor" value="&lt;string name='Upgrades/HonorableAristocratAffinityUpgrade2Flavor'/&gt;"/>
 <entry name="Honorbound" value="Honor-bound"/>
+<entry name="HorizonExpansion" value="&lt;string name='Upgrades/HorizonExpansion'/&gt;"/>
+<entry name="HorizonExpansionFlavor" value="&lt;string name='Upgrades/HorizonExpansionFlavor'/&gt;"/>
 <entry name="Horrifying" value="Horrifying"/>
 <entry name="HumanAircraftUpgrade" value="Air Freightnet"/>
 <entry name="HumanAircraftUpgradeFlavor" value="&lt;string name='Traits/AirFreightnetFlavor'/&gt;"/>
@@ -283,12 +298,17 @@
 <entry name="HungeringCirclet" value="&lt;string name='Items/HungeringCirclet'/&gt;"/>
 <entry name="HungeringCircletFlavor" value="&lt;string name='Items/HungeringCircletFlavor'/&gt;"/>
 <entry name="Hovering" value="Hovering"/>
-<entry name="HoveringProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move over water&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Ignores the penalties of rivers and Bleed"/>
+<entry name="HoveringProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move over water&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Unaffected by roads, rivers and Bleed"/>
+<entry name="HwedosBrain" value="Hwedo's Brain"/>
+<entry name="HwedosBrainFlavor" value="&lt;string name='Quests/PerfectionFromBeyondTheStars/KillHwedoSuccess2'/&gt;"/>
 <entry name="HymnOfDecay" value="&lt;string name='Actions/HymnOfDecay'/&gt;"/>
 <entry name="HymnOfDecayFlavor" value="&lt;string name='Actions/HymnOfDecayFlavor'/&gt;"/>
+<entry name="IcarusSatelliteUpgrade" value="&lt;string name='Upgrades/IcarusSatelliteUpgrade'/&gt;"/>
+<entry name="IcarusSatelliteUpgradeFlavor" value="&lt;string name='Upgrades/IcarusSatelliteUpgradeFlavor'/&gt;"/>
 <entry name="IgnoresCover" value="Ignores Cover"/>
 <entry name="Immobilized" value="Immobilized"/>
 <entry name="Immobilizing" value="Immobilizing"/>
+<entry name="ImmobilizingFlavor" value="&lt;string name='Traits/ImmobilizedFlavor'/&gt;"/>
 <entry name="Immoral" value="Immoral"/>
 <entry name="ImmoralProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Loyalty penalty increases each turn"/>
 <entry name="IncandescentIcon" value="&lt;string name='Items/IncandescentIcon'/&gt;"/>
@@ -308,6 +328,7 @@
 <entry name="Kenaz" value="KENAZ"/>
 <entry name="KenazFlavor" value="&lt;string name='Quests/UnderObservation/AcquireShardsSuccess2'/&gt;"/>
 <entry name="Kind" value="Kind"/>
+<entry name="KindFlavor" value="&lt;string name='Quests/TheSkyFallen/HelpThem'/&gt;"/>
 <entry name="KnifeOfTheChieftess" value="&lt;string name='Items/KnifeOfTheChieftess'/&gt;"/>
 <entry name="KnifeOfTheChieftessFlavor" value="&lt;string name='Items/KnifeOfTheChieftessFlavor'/&gt;"/>
 <entry name="Large" value="Large"/>
@@ -334,6 +355,7 @@
 <entry name="MachineTools" value="Machine Tools"/>
 <entry name="MachineToolsFlavor" value="&lt;string name='Quests/AreMachinesAlive/MachineTools'/&gt;"/>
 <entry name="MarkedTarget" value="Marked Target"/>
+<entry name="MarkedTargetFlavor" value="&lt;string name='Actions/MarkTargetFlavor'/&gt;"/>
 <entry name="MarketEconomy" value="Market Economy"/>
 <entry name="MarketEconomyFlavor" value="&lt;string name='Quests/EconomicBubble/FreeMarketSuccess'/&gt;"/>
 <entry name="Masochism" value="&lt;string name='Actions/Masochism'/&gt;"/>
@@ -359,7 +381,7 @@
 <entry name="NanomachineAcceleratorAugment" value="&lt;string name='Actions/NanomachineAcceleratorAugment'/&gt;"/>
 <entry name="NanomachineAcceleratorAugmentFlavor" value="&lt;string name='Actions/NanomachineAcceleratorAugmentFlavor'/&gt;"/>
 <entry name="NeumanaticCornucopia" value="Neumanatic Cornucopia"/>
-<entry name="NeumanaticCornucopiaFlavor" value="&lt;string name='Quests/ThePriceOfHonor/RetrieveCornucopiaSuccess'/&gt;"/>
+<entry name="NeumanaticCornucopiaFlavor" value="&lt;string name='Quests/ThePriceOfHonor/Intro2'/&gt;"/>
 <entry name="Nightmare" value="&lt;string name='Actions/Nightmare'/&gt;"/>
 <entry name="NightmareFlavor" value="&lt;string name='Actions/NightmareFlavor'/&gt;"/>
 <entry name="NightmareProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Only visible to you and allies&lt;br/&gt;&lt;string name='Traits/SummonProperties'/&gt;"/>
@@ -377,6 +399,7 @@
 <entry name="ParticleBarrierFlavor" value="&lt;string name='Actions/ParticleBarrierFlavor'/&gt;"/>
 <entry name="ParticleInterference" value="Particle Interference"/>
 <entry name="ParticleInterfering" value="Particle Interfering"/>
+<entry name="ParticleInterferingFlavor" value="&lt;string name='Traits/ParticleInterferenceFlavor'/&gt;"/>
 <entry name="Pathcutter" value="&lt;string name='Items/Pathcutter'/&gt;"/>
 <entry name="PathcutterFlavor" value="&lt;string name='Items/PathcutterFlavor'/&gt;"/>
 <entry name="PathcutterProperties" value="&lt;string name='Traits/AgileProperties'/&gt;"/>
@@ -391,17 +414,17 @@
 <entry name="PhilosophersStone" value="&lt;string name='Items/PhilosophersStone'/&gt;"/>
 <entry name="PhilosophersStoneFlavor" value="&lt;string name='Items/PhilosophersStoneFlavor'/&gt;"/>
 <entry name="PilgrimOfTheVoice" value="Pilgrim of the Voice"/>
-<entry name="PlagueFullLockdownFailure" value="Plague: Full Lockdown (Failure)"/>
+<entry name="PlagueFullLockdownFailure" value="The Plague, Full Lockdown (Failure)"/>
 <entry name="PlagueFullLockdownFailureFlavor" value="&lt;string name='Quests/ThePlague/FullLockdownFailure'/&gt;"/>
-<entry name="PlagueFullLockdownSuccess" value="Plague: Full Lockdown (Success)"/>
+<entry name="PlagueFullLockdownSuccess" value="The Plague, Full Lockdown (Success)"/>
 <entry name="PlagueFullLockdownSuccessFlavor" value="&lt;string name='Quests/ThePlague/FullLockdownSuccess'/&gt;"/>
-<entry name="PlagueMiddleMeasuresFailure" value="Plague: Middle Measures (Failure)"/>
+<entry name="PlagueMiddleMeasuresFailure" value="The Plague, Middle Measures (Failure)"/>
 <entry name="PlagueMiddleMeasuresFailureFlavor" value="&lt;string name='Quests/ThePlague/MiddleMeasuresFailure'/&gt;"/>
-<entry name="PlagueMiddleMeasuresSuccess" value="Plague: Middle Measures (Success)"/>
+<entry name="PlagueMiddleMeasuresSuccess" value="The Plague, Middle Measures (Success)"/>
 <entry name="PlagueMiddleMeasuresSuccessFlavor" value="&lt;string name='Quests/ThePlague/MiddleMeasuresSuccess'/&gt;"/>
-<entry name="PlagueOpenBusinessFailure" value="Plague: Open Business (Failure)"/>
+<entry name="PlagueOpenBusinessFailure" value="The Plague, Open Business (Failure)"/>
 <entry name="PlagueOpenBusinessFailureFlavor" value="&lt;string name='Quests/ThePlague/OpenBusinessFailure'/&gt;"/>
-<entry name="PlagueOpenBusinessSuccess" value="Plague: Open Business (Success)"/>
+<entry name="PlagueOpenBusinessSuccess" value="The Plague, Open Business (Success)"/>
 <entry name="PlagueOpenBusinessSuccessFlavor" value="&lt;string name='Quests/ThePlague/OpenBusinessSuccess'/&gt;"/>
 <entry name="PlannedEconomy" value="Planned Economy"/>
 <entry name="PlannedEconomyFlavor" value="&lt;string name='Quests/EconomicBubble/StateControlSuccess'/&gt;"/>
@@ -416,10 +439,11 @@
 <entry name="Prey" value="Prey"/>
 <entry name="PreyFlavor" value="&lt;string name='Quests/TheGreatHunt/Ignore'/&gt;"/>
 <entry name="ProfusePropagation" value="Profuse Propagation"/>
+<entry name="Pulling" value="Pulling"/>
 <entry name="QuarryFeed" value="Quarry Feed"/>
 <entry name="QuidProQuo" value="Quid Pro Quo"/>
 <entry name="QuidProQuoFlavor" value="&lt;string name='Actions/QuidProQuoFoodFlavor'/&gt;"/>
-<entry name="QuidProQuoProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Grants abilities to efficiently purchase purchase food, minerals or energy with influence"/>
+<entry name="QuidProQuoProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Grants abilities to efficiently purchase food, minerals or energy with influence"/>
 <entry name="Raiders" value="Raiders"/>
 <entry name="RaidersProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Starts Reaver raids"/>
 <entry name="ReaverAdvancement" value="Reaver Advancement"/>
@@ -447,6 +471,7 @@
 <entry name="RoadFlavor" value="&lt;string name='Features/RoadFlavor'/&gt;"/>
 <entry name="Roaming" value="Roaming"/>
 <entry name="Ruins" value="Ruins"/>
+<entry name="RuinsFlavor" value="&lt;string name='Features/RuinsFlavor'/&gt;"/>
 <entry name="Scavenger" value="Scavenger"/>
 <entry name="SchismOfRegimina" value="&lt;string name='Items/SchismOfRegimina'/&gt;"/>
 <entry name="SchismOfRegiminaFlavor" value="&lt;string name='Items/SchismOfRegiminaFlavor'/&gt;"/>
@@ -481,7 +506,7 @@
 <entry name="Stealth" value="Stealth"/>
 <entry name="Stunned" value="Stunned"/>
 <entry name="Summon" value="Summon"/>
-<entry name="SummonProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Kills unit &lt;string name='Modifiers/WhenDurationRunsOut'/&gt;"/>
+<entry name="SummonProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Kills unit&lt;string name='Modifiers/WhenDurationRunsOut'/&gt;"/>
 <entry name="Supplication" value="&lt;string name='Actions/Supplication'/&gt;"/>
 <entry name="SupplicationFlavor" value="&lt;string name='Actions/SupplicationFlavor'/&gt;"/>
 <entry name="SurvivorsBazaar" value="&lt;string name='Features/SurvivorsBazaar'/&gt;"/>
@@ -517,9 +542,10 @@
 <entry name="ThePastMitigatedFlavor" value="&lt;string name='Quests/TheSpaceEngine/ChangeThePastSuccess'/&gt;"/>
 <entry name="ThereIsHopeUpgrade2" value="Systematic Dreamers"/>
 <entry name="Titan" value="Titan"/>
-<entry name="TitanProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Classification"/>
+<entry name="TitanProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move across cliffs&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Unaffected by roads, rivers, forests, ruins and Bleed&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Ignores zone of control of non-Titan units&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Has an extremely elevated position in line of sight calculations"/>
 <entry name="TitanMelee" value="Titan Melee"/>
 <entry name="Torturer" value="Torturer"/>
+<entry name="TorturerFlavor" value="&lt;string name='Quests/TheInformant/CaptureAndTorture'/&gt;"/>
 <entry name="ToxicSpearhead" value="Toxic Spearhead"/>
 <entry name="Transport" value="Transport"/>
 <entry name="TransportProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Allows transportation of non-large units&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Embarked units die when the transport is destroyed"/>
@@ -561,10 +587,12 @@
 <entry name="WayfaringProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Units travel far away from cities"/>
 <entry name="Weakened" value="Weakened"/>
 <entry name="Weakening" value="Weakening"/>
+<entry name="WeakeningFlavor" value="&lt;string name='Traits/WeakenedFlavor'/&gt;"/>
 <entry name="WhisperingWights" value="&lt;string name='Features/WhisperingWights'/&gt;"/>
 <entry name="WhisperingWightsFlavor" value="&lt;string name='Features/WhisperingWightsFlavor'/&gt;"/>
 <entry name="Wildlife" value="Specimen Containment"/>
 <entry name="WrongfulExecution" value="Wrongful Execution"/>
+<entry name="WrongfulExecutionFlavor" value="&lt;string name='Quests/TheInformant/CaptureAndTorture2'/&gt;"/>
 <entry name="Xenogenesis" value="Xenogenesis"/>
 <entry name="YetundesCausalNexus" value="Yetunde's Causal Nexus"/>
 <entry name="YetundesCausalNexusFlavor" value="&lt;string name='Quests/MeetYourMaker/HoldFire2'/&gt;"/>
@@ -592,7 +620,8 @@
 <entry name="AntimatterUpgradeFlavor" value="Safety measures from old-world power plants slowed us down. So we built plants in the middle of nowhere to reduce casualty risk. Funny. The top brass who decided to throw safety out the window worked real hard to make sure they never went near these plants."/>
 <entry name="AntiphonAtDaybreakFlavor" value="The monsters berthing in the Voice-drenched airfields bayed at the sun every morning. One of the grunts in my unit said she knew why. “It's a song. A song that rises to the sky and carves a path for them to fly through.” I blew it off. My squadmates didn't. Nothing seemed impossible that late into the war."/>
 <entry name="AraneanCloakFlavor" value="The cloaking technology didn’t make Stalkers invisible. Those spikes on their back would warp the light around them, projecting a shape that wasn’t there. What looked like a direct hit would just turn out to be empty air. We were lucky it didn’t work well at close range."/>
-<entry name="ArchaiContructFlavor" value="The Krypt Archai's creations were made of material none of our techs could properly understand. I suspect this was deliberate. It tended to its own machines by using nanobots. It was willing to share its power with us—but by no means did it trust us."/>
+<entry name="ArchaiConstructFlavor" value="The Krypt Archai's creations were made of material none of our techs could properly understand. I suspect this was deliberate. It tended to its own machines by using nanobots. It was willing to share its power with us—but by no means did it trust us."/>
+<entry name="AreaFlavor" value="Piece of advice: don't stand so damn close together. Hell, don’t stand in the same county. Whether it's using bombs, laser blasts, or sick flesh magic shit, titan weaponry can flatten entire regions."/>
 <entry name="ArtilleryFlavor" value="”It's simple fucking math Sergeant,” I said, trying to get this coward to charge through the enemy bombardment. “The cannon points up. The shot arcs up. Then it hits the ground. Between those two spots is the safest place to be for twenty square klicks.” He still didn't move. Or, he did, I guess. When his body went flying when the enemy pounded our position at sunset."/>
 <entry name="AssaultTransportFlavor" value="Assault Transports were best used for urgent missions where you needed boots on the ground quick. No time to even land and unload—we'd just kick open the hatch and unhook soldiers from their safety harnesses. It made for a rougher ride—but this was war, not a luxury jetliner."/>
 <entry name="AsymmetricArbitrageFlavor" value="The most profitable way to deal with black markets in foreign territories was to slip their goods across the border on the back of trade convoys. Like sucker fish riding on the belly of a shark—a little free ride that benefits them, but doesn't bother the bigger beast."/>
@@ -601,6 +630,7 @@
 <entry name="BiologicalFlavor" value="We had a lot in common with the monsters we faced. They bled like us, breathed like us, and died like us. Humans were always good at hurting other humans. It just took a little creativity to hurt our enemies in the same way."/>
 <entry name="BleedwalkerFlavor" value="The Acrin and their pets had a special connection to the Voice—the Bleed would make way for them as they crossed through it. I think they gathered near Bleed outbreaks because on the new hellish Earth, it helped them feel closer to home."/>
 <entry name="BlightedFlavor" value="Everything decays. Voice cultists seemed to enjoy making things rot faster. Flesh. Metal. Dirt. Didn't matter. Creatures like the Orolos spread bile over the battlefield that rotted it all. You could clean it off but… Gods the smell. Even when it burned through metal it still smelled a corpse dipped in sewage."/>
+<entry name="BlindedFlavor" value="In basic training, they blindfolded us, taught us to fight with our other senses. Great for self-esteem, not so much use against a tank. Or plane. Or gibbering Voice horror."/>
 <entry name="BreachCollectorFlavor" value="You'd better believe a bidding war broke out when some hapless hacker wandered out of a Zephon shard with half the backdoor keys for Old World tech. Concordat hosted the auction, got all the players in the room to bid… then declared it would pay the highest price, kept all the tech for itself. What was it playing at?"/>
 <entry name="BrokenFlavor" value="War is hell on the body, and devastating for the mind. Time and time again, I steeled myself against the worst nightmares a man could ever see. Others lacked that iron will. You could see it in their eyes, hear it in their breath. Death had already taken their souls, and their bodies would follow soon enough."/>
 <entry name="BunkerExtensionFlavor" value="Building out the bunkers we held came with risks. The greater surface area made them a larger target for heavy weapons. But there was nothing to be done. Our armies were growing, and we needed space for every soldier we could spare inside these. It was our best chance at mounting a solid defense."/>
@@ -627,6 +657,7 @@
 <entry name="CultExpansionFlavor" value="The Prophet's Cultist had it down to a science. When their leader laid claim to a city, they flooded it with zealots and proselytizers. It didn't matter how many converted to the cause. Plenty of non-believers kept their heads down, worried that their neighbor would turn them in for any half-uttered sacrilege."/>
 <entry name="CyberInfantryUpgradeFlavor" value="Tasked with increasing troop output, the Techs knew the only solution was to turn to more and more automated processing. They linked the Printers' operating units into a single network. The more of them you had in a city, the faster it optimized production… and the more control you handed over to a new artificial life form."/>
 <entry name="CyberVehiclesUpgradeFlavor" value="The machines saw something in our designs that we didn't. They tried to leave us hints—but when we were blind to them, they took matters into their own hands. We arrived one day to find our facilities upgraded, now producing antimatter along with our heavy armor. That was the point we began to lose control."/>
+<entry name="DamagedFlavor" value="I landed a lucky shot on the eye of a Stalker that had pinned me down. It kept firing as I moved to finish it off, but every shot went wide. Was it… screaming, as I approached? I'd taken away the only purpose it had: to kill with precision. It died spraying laser fire everywhere, hitting nothing. Its worst nightmare."/>
 <entry name="DarkOmenFlavor" value="The Tribunal had a sixth sense for when it was in danger—and the Voice was happy to reveal how close its enemies were. That kind of recon capability could have saved lives if the witches had shared it with humanity. But they were selfish. They only wanted to protect the Voice."/>
 <entry name="DeathshriekFlavor" value="Priests of Phenaris whispered about their master's most prime edict: that before they die they scream his true name in the tongue it was meant to be spoken in. Made me think of a grandmother I met in the slums, who warned against speaking the true name of the god she worshiped. A warning shared by her ancestors from thousands of years in the past."/>
 <entry name="DecayingFlavor" value="Deformities were not meant to linger in this world. They lived just long enough to drag someone back to the grave with them. Every moment they were not in the belly of the Shoch'itris, flesh would slough off their body and drip to the ground. Like melting cheese."/>
@@ -639,9 +670,10 @@
 <entry name="DozerBladeFlavor" value="We stripped dozer blades off of old construction vehicles so that our heavy armor could clear out terrain. If we hadn't strapped them on, we'd have lost so many troops to thick forests and dense, tangled ruins. I think some operators preferred clearing out terrain to open combat."/>
 <entry name="DragoonArmorFlavor" value="An Acrin shaman explained to me that forging Dragoon Armor was an ancient tradition that predated the Voice coming to their world. It was one of their last ties to a peaceful era. “The tools we enter the world with are the tools we will need when it comes to an end,” she said. I could only think about how from their earliest days, the Acrin must have been thinking about the apocalypse."/>
 <entry name="EMPFlavor" value="Electromagnetic pulse-based weaponry was an oddly old trick for a new age. In the wars of the old world, military leaders were just worried about the damage to civilian electronic infrastructure. But what did we care now? We just needed to fry machinery as fast as we could."/>
-<entry name="EmulatedMindAffinityUpgrade2Flavor" value="The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When Zephon woke her up it literally birthed her with knowledge of black holes no one else could access… maybe the impossible calculations that could create an event horizon were what had first driven her so mad."/>
+<entry name="EmulatedMindAffinityUpgrade2Flavor" value="The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When ZEPHON woke her up it literally birthed her with knowledge of black holes no one else could access… maybe the impossible calculations that could create an event horizon were what had first driven her so mad."/>
 <entry name="EnergyUpgradeFlavor" value="The most extreme climates on planet Earth were packed with extremophile life forms that survived in impossible conditions. Our Techs found that some life deep in the most toxic swamps and buried under the arctic ice, could be used to fuel exponential energy production. Like pulling up fossil fuels from the earth—except the creatures hadn't yet been fossilized."/>
 <entry name="EngineerLifeFlavor" value="”Life is cheap. I can make life with the snap of my fingers. What is difficult, is making life that fulfills a purpose. Humanity struggled with its purpose for ages. It's time I decided what is best for them.” —Artificer's Log: Date Unknown"/>
+<entry name="EssenceSyphonFlavor" value="The Leviathan’s skin would harden with every life it crushed beneath its feet. The cultists thought Vorodai itself was rewarding the beast with each kill, like a treat you'd give to a favored pet. Little did they know…"/>
 <entry name="ExtortiveFlavor" value="The Chieftess wasn't stupid. She knew most leaders wouldn't give her a cent when she came calling. But she liked rattling her saber on the fences, looking for those who grew complacent at her demands. When they kept ignoring her… she knew they were vulnerable for a strike."/>
 <entry name="ExtraPlatingFlavor" value="We didn't put high-caliber plating on mobile armor to get our people home safe. We did it because if we kept them alive for even a few seconds longer, they'd have the time to fire off a shot that could turn the tide of battle."/>
 <entry name="FerventStrengthFlavor" value="The bodies of Uzhodai's most fervent worshippers were molded for long journeys in the black of space. What did that mean? Pour a thousand bullets into one, get the bone to start sticking out from the skin, and you could see up close how the tendrils of nerves and blood vessels rebound themselves to keep the body alive and fighting. There was no wounding these monsters. Just killing them."/>
@@ -654,7 +686,7 @@
 <entry name="FusionWarheadFlavor" value="”Let me get this straight,” our chief weapons engineer said to me. “The tactical nuclear missile needs to do *more* damage? Is 50 kilotons not enough?” I really didn't feel like arguing. I showed her recon photos of a prototype Titan we'd be fighting within weeks. She gawped at the size. “Against that?” I replied. “50 kilotons is definitely not enough.”"/>
 <entry name="GluttonyFlavor" value="I used to have sympathy for the finer tastes of the Honorable Aristocrat and his people. In time I grew furious with the waste. He'd never budge on how he portioned food—always making sure fine dishes were available to all. Rationing was an afterthought. Maybe there was a history there. A time in the old world when all he could eat was gruel. Perhaps… I was too harsh the last time I spoke to him."/>
 <entry name="GravitationalCompressionFlavor" value="The Earth pulls against larger objects with greater force and with new technology available to us, we could make its might our own. The bigger our enemies came, the louder the noise they made when crashing to the ground."/>
-<entry name="HammerheadProtocolsFlavor" value="Why did Zephon make a weapon that would never shoot first? Was it to teach us a lesson? Were we an experiment? For all we knew this could have been a happy accident, something it was content to let our best minds puzzle over."/>
+<entry name="HammerheadProtocolsFlavor" value="Why did ZEPHON make a weapon that would never shoot first? Was it to teach us a lesson? Were we an experiment? For all we knew this could have been a happy accident, something it was content to let our best minds puzzle over."/>
 <entry name="HammerheadTargetFlavor" value="A code-savvy commando once dumped a Hammerhead CPU after a firefight. She told me that these drones build themselves a little feedback loop where each attack sends data back about the target’s vulnerabilities, and it’s able to calibrate its munitions after every attack. Don’t let them get too many shots in."/>
 <entry name="HasharetExchangeFlavor" value="Weird message from The Concordat came in. “We are pleased to learn you have crossed the Hasharet threshold” it cooed over the comms terminal. Machines in our command center began flickering—it was transmitting a code as we spoke. “You now have access to cyberware we held in reserve for those truly seeking to… transcend.”"/>
 <entry name="HashmallimInstabilityFlavor" value="You never wanted any machine to be damaged, but Hashmallim Hosts were particularly sensitive. If these things took a pounding, the Graviton Projector would play havoc with their programming. "/>
@@ -682,16 +714,17 @@
 <entry name="IndirectFireFlavor" value="Firing without line of sight meant putting faith in a higher power. Maybe it was a computer. Maybe the Voice. You were in a duel with something you could not see, and you needed all the help you could get."/>
 <entry name="InfluenceUpgradeFlavor" value="The rushing rivers were still the best way to trade goods and share news—merchant crews and haulers moved much faster when they glided on the water's surface. We wanted word of our strength to spread across the land—and word travels fastest on the lips of sailors bound for the nearest tavern."/>
 <entry name="InterminableFlavor" value="ZEPHON's cities spread over great distances. If you were to see them from above, from the cockpit of a Corsair, your mind would trick you into thinking there were patterns in the sea of circuitry… but there was no meaning. No intent we could derive. ZEPHON just spread."/>
-<entry name="JudgmentFromAboveFlavor" value="”Judgment from above.” The only ones in need of judgment were whatever dipshit commander put their armies on lower elevation than an artillery unit. Techs wanted to babble about hypermechanical bullshit when they saw how hard our unit got hit but there wasn't anything more to it than simple physics. But hey, no one listens to me anyway…"/>
+<entry name="JudgementFromAboveFlavor" value="”Judgment from above.” The only ones in need of judgment were whatever dipshit commander put their armies on lower elevation than an artillery unit. Techs wanted to babble about hypermechanical bullshit when they saw how hard our unit got hit but there wasn't anything more to it than simple physics. But hey, no one listens to me anyway…"/>
 <entry name="LargeFlavor" value="Bigger creatures and machines could take a pounding, but they grew weaker the more parts of them you stripped away."/>
 <entry name="LargeSplashFlavor" value="Some of our enemies thought they could overwhelm us with numbers—like ants, they'd swarm over our territory in a bid to drag us down. How beautiful it was, when we realized we could squash them beneath our boots—wipe out so many irritating creatures with one strike."/>
 <entry name="LaserFlavor" value="Nothing poetic in using light as a weapon. All light is a weapon. The sun burns the body, the floodlight breaks your cover and the dim bulb of an interrogation chamber can break your mind. Laser tech was at least honest. It told you what it was going to hit — and more importantly, where it was coming from."/>
 <entry name="LeashedFlavor" value="Want to stare death in the face? Find the home of a particularly nasty predator. Take a long walk around its territory and wait until the hairs go up on the back of your neck. Keep on your side of the line. Make eye contact with your stalker and feel your heart pump faster and faster. That's the bridge between this world and the next."/>
 <entry name="LeaveNoManBehindFlavor" value="The Fallen Soldier's obsession with death made him so eager to keep every one of his troops alive. But devotion has its costs. Every life you save, every rogue soldier you bring in from the wastes, is another mouth to feed. He should never have been so… sympathetic. I considered it his sole weakness."/>
-<entry name="LifeStealFlavor" value="You couldn’t steal souls. But some creatures fed on them—your life force would become a battlefield snack, an MRE for the monstrous. I thought everyone was fighting to survive. But this brave new world of ours gave birth to a new kind of predator: one with a taste for the spark of survival.”"/>
+<entry name="LifeStealFlavor" value="You couldn’t steal souls. But some creatures fed on them—your life force would become a battlefield snack, an MRE for the monstrous. I thought everyone was fighting to survive. But this brave new world of ours gave birth to a new kind of predator: one with a taste for the spark of survival."/>
 <entry name="LifestyleImplantsFlavor" value="I thought gathering around a table for a meal with friends was what made this war worth fighting for. But when the nutrient implants came in, people were so eager to abandon the mess halls, instead snacking between shifts on rocks, metal… dirt. I ate alone. I didn't even want to throw away the shitty taste of the MREs."/>
 <entry name="LowPowerFlavor" value="You had to get used to the rhythm of using a laser weapon. Shoot. Recharge. Repeat. Just one, two , three—like you were learning how to dance. Shoot, recharge, repeat. Shoot, recharge, repeat. Shoot… recharge… repeat…"/>
 <entry name="LoyaltyUpgradeFlavor" value="Our hologram library had maybe a few dozen films on file. Command worried the troops would get bored or be driven to mutiny if we played them on a loop. But in hard times, everyone just wanted a good story. Something to make sense of the world."/>
+<entry name="MassiveSplashFlavor" value="Time slowed as a massive explosion loomed over us like a tidal wave. A wave the size of a building that heaves over your ship and prepares to plunge it to the depths. At least those caught in the blast died quicker than the slow torment of death by water."/>
 <entry name="MechanicalFlavor" value="You know what’s funny? People make machines to solve complicated problems. But on the battlefield, a machine becomes a problem to solve. Sometimes it took special skills to bring them down. Sometimes you just needed a bigger machine."/>
 <entry name="MeleeFlavor" value="I know in the old world, humans would craft arts and disciplines of this kind of combat. But it all boiled down to the same thing: a burst of adrenaline and swing of a weapon did more to keep you alive than—forms, or sparring, or made-up ranks. Every living being knows how to hurt another—you just have to get close enough to make it happen."/>
 <entry name="MilitantLegionFlavor" value="”There's strength in numbers, and survival of one depends on the survival of many.” I couldn't argue with the old veteran telling me to centralize our forces. Isolationism killed his people off one by one out in the wastes. He saw what I couldn't, that the world was coming together again for a war unlike anything we ever knew."/>
@@ -709,7 +742,7 @@
 <entry name="OverheatingFlavor" value="There were no safety protocols in war. We discovered otherworldly new forms of energy and used them to fuel devastating weapons and machines. Push any of them past their limit and the energy would break containment, burning their operator. Sometimes that was the price of victory. Often it was just a waste."/>
 <entry name="ParticleInterferenceFlavor" value="The Krypt Archai's particles would stick with a target even if it got away. They wouldn't inflict injury, but they were viciously engineered to interfere with any healing or repair efforts. The Archai it seemed, wanted its victims to linger in pain."/>
 <entry name="PenanceFlavor" value="Oh those Provosts didn't respect their commanders any more they did the troops around them. Their resource needs were astronomical, but if you tried to mitigate them they'd lash out at you. “The price for our service is HIGH,” they'd roar through blown-out speakers. They bent the knee, but demanded a high price to do so."/>
-<entry name="PerimeterRangeFlavor" value="Trial, error, and too many dead scouts helped us clock just how far Zephon's energy defenses could reach. Get too close to the city and you'd be pulverized. If Command had just given us artillery from the start, we could have saved so many lives…"/>
+<entry name="PerimeterRangeFlavor" value="Trial, error, and too many dead scouts helped us clock just how far ZEPHON's energy defenses could reach. Get too close to the city and you'd be pulverized. If Command had just given us artillery from the start, we could have saved so many lives…"/>
 <entry name="PhantasmFlavor" value="Dreameaters belonged to another world. They'd just been pulled through to slaughter people in ours. Sometimes you'd fire three rounds into one… and watch the last bullet pass right through like they were just air."/>
 <entry name="PilgrimOfTheVoiceFlavor" value="The last step to becoming a true disciple of Cr'la was a days-long journey through the wastes. No food. No water. No protection from the sun, the Bleed, or anything else. When they returned and were ready for the field, their six feet would bleed this filthy yellow gunk, shredded by debris that cut deep into their bleached flesh."/>
 <entry name="PopulationLimitUpgrade2Flavor" value="Vile. Inhuman. Treating people like meat just to save space. Putting people side-by-side on cots, sure, that's how you get through hard times. But stunning and hanging them? Like beef in a freezer? Anyone who uses this tech is damned to hell."/>
@@ -717,12 +750,13 @@
 <entry name="PracticalRomanticAffinityUpgrade2Flavor" value="Tech wasn't the Romantic's specialty—but I caught him one day scribbling improved shielding formulas for our champions. “She whispered to me in my dream,” he muttered. “A queen of the old world, the old continent. She…” He trailed off and kept writing. I don't think long-dead royals were the ones sharing advanced technology through the power of dreams."/>
 <entry name="PracticalRomanticAffinityUpgradeFlavor" value="The Concordat hated bargaining with the Practical Romantic. He'd wander into their tents and give their agents hell—always knew what items were the real deal. Could pick out the junk, the fakes, and shame them into haggling on the knockoffs. “Amateurs,” he'd mutter. “I grew up stealing from smarter shopkeepers.”"/>
 <entry name="ProfusePropagationFlavor" value="If Ioks weren't sent out to die they'd breed forever. Cultists whispered about how they had to keep the population in check—but some pushed the limits. What was the harm in breeding one or two more monsters to win the war? Still, even with one more popping out in a swarm… it still seemed to make the skies all the more darker."/>
+<entry name="PullingFlavor" value="Like watching old movies on the lazy boy. The hero gets dragged to certain doom and their lover dives in, to save ‘em. ‘Cept I’m watching a house-sized Abkhan, all muscle and teeth, and a Voice Titan is pulling it in, munching on it like popcorn. And I ain’t doing shit to save it."/>
 <entry name="QuarryFeedFlavor" value="What ZEPHON's Titan saw, all machines saw. The ones nearby at least. And they clambered to get close to it… connecting to its network, linking to all the other machines—it was the only time I saw them experience what humans feel singing together around the campfire, or in a church: euphoria."/>
 <entry name="RaidersFlavor" value="Had the bad luck to be held prisoner in a Reaver camp once. I watched them gather like flies around a corpse, fighting for scraps and even killing each other as the camp grew too crowded. When everyone seemed ready for mass murder, that's when the Chieftess sent them out on the hunt."/>
 <entry name="ReaverAdvancementFlavor" value="The Chieftess was manic, but savvy. Ran circles around us, stealing our gear, distracting us from her scheming. Always stepped her game up another notch. You'd think she and her Reavers were outmatched… and then one would sneak up on you, yank your advanced helmet off, and slit your throat."/>
 <entry name="RegenerationFlavor" value="Sometimes I'd overhear scientists debating how creatures from the Acrin homeworld could heal so efficiently. They'd debate if we could use it to save human lives—or extend them. I made clear if they ever learned how to recreate this healing factor, that we would first use it for our troops before the civilian populace. I worried we would have too many mouths to feed."/>
 <entry name="ResearchUpgradeFlavor" value="It took some time, but our researchers came up with methods and processes to safely study creatures and plants from off-world. They requested the construction of dedicated stations for such research. We had to invest in them. Bringing such creatures into our regular facilities often had fatal outcomes."/>
-<entry name="ResourceNetworkFlavor" value="The Emulated Mind must have connected to some Zephon database in her exposure to the net. She had detailed inventories available of all outposts we encountered—her scouts could leave no stone unturned, bring home every resource hidden from prying eyes. It was one of the few upsides of her painful genesis."/>
+<entry name="ResourceNetworkFlavor" value="The Emulated Mind must have connected to some ZEPHON database in her exposure to the net. She had detailed inventories available of all outposts we encountered—her scouts could leave no stone unturned, bring home every resource hidden from prying eyes. It was one of the few upsides of her painful genesis."/>
 <entry name="RevealingFlavor" value="Oh there was so much to learn when you peered out into the darkness. The Voice had its way of finding secrets and the AI had their own. But all of us went looking out in the world for the same reason—to survive, to grow and to see our enemies before they could see us."/>
 <entry name="RogueOperativeAffinityUpgrade2Flavor" value="Old world corpos strung governments along with promises of AI that would “synergize” infantry units. Like all that other AI crap, it was a bunch of junk. The Rogue Operative somehow got it working for cybernetic ground troops. Just needed troops with a little less free will…"/>
 <entry name="RogueOperativeAffinityUpgradeFlavor" value="One trooper I bunked with—long, grey-haired fellow who read too many books—called these new camo suits “a ghillie suit for the end times.” Laden with what looked like junk, but was actually high-tech adaptive camo. We used it to nestle into the crevices of downed machines, looking like little more than rusted pieces of our dying civilization."/>
@@ -737,12 +771,14 @@
 <entry name="SpiritOfMankindFlavor" value="Couldn't tell you if people are good or evil. But good leaders can make them good. Show your people what you'd sacrifice for them and they'll daydream of what they'd sacrifice for each other. But it never lasts. Gotta make the most of it while everyone's hearts are something close to pure."/>
 <entry name="SplashFlavor" value="Some weapons don’t just hit the target, they take out their closest friends too."/>
 <entry name="StealthFlavor" value="Staying in the shadows could keep you safe. It also let you ambush anyone who got too close."/>
+<entry name="StunnedFlavor" value="All kinds of ways to freeze up on the battlefield—sometimes it's your brain that locks up, sometimes some Voice-fueled bullshit holds your body in place. Reason doesn't matter though. Whatever's made you freeze, you just get to sit there while the world passes by and the wolves tear you apart."/>
 <entry name="SummonFlavor" value="Short-term assets put a ticking clock on your battle plans. Whether deploying Drones or Deformities, we needed to time our attack just right to maximize our firepower. Send them out too soon, and you've already lost the fight."/>
 <entry name="TacticalArcheologyFlavor" value="A smuggler linked to The Concordat rolled up one day with an “exclusive deal.” Special access to top-tier corpo tech the traders had kept squirreled away. Had to be a catch. Why now? “Humans, the Voice, ZEPHON… only one of them will survive this war,” he said, picking something (meat?) out of his teeth. “We're all-in on humanity. Now we know you are too.”"/>
 <entry name="TacticalVisorFlavor" value="Ishim Enforcers were the first cyborgs we created with access to networked intelligence. Our techs cooked up visors that could triangulate enemy positions by pulling data from different Enforcers together. Only problem was, you needed your troops to be close to each other for reliable targeting metrics."/>
 <entry name="TemporalDistensionFlavor" value="The best AI-built infantry were small enough to mess with their singularity cores’ event horizons. If a grunt got close, they'd look up and see the sun rocketing across the sky. Like an old time-lapse shot. Or like it was dragged along by chariots."/>
 <entry name="ThereIsHopeUpgrade2Flavor" value="Everyone was ordered to scratch the name down of someone they loved on a piece of tape. We put that tape on gear we'd grab in the middle of a firefight—magazines, medkits, repair pods, armor, you name it. You'd pick it up, see the name. Remember how much that person meant to you. Nothing could stop you when you were fighting for someone you loved."/>
 <entry name="TitanFlavor" value="”Titan” was just a nickname for our largest machines and creatures, but there was something… awfully appropriate about it. Before the Gods, there were Titans. And now here at the end, we have rebirthed their kind and unleashed them out into the world. Giants once walked the Earth—now some of them soared over it."/>
+<entry name="TitanMeleeFlavor" value="Keep far, far away from any Titan unless you want to be crushed under a hunk of putrid flesh or rusted metal. However far you think you need to be, go even further."/>
 <entry name="ToxicSpearheadFlavor" value="Dragoons would drag their spears through the vile waste the Abkluth left behind after defecating. The tips of their weapons would then be coated in some of the most vile and dangerous substances ever exposed to human skin."/>
 <entry name="TransportFlavor" value="The Engineers had a secret. Every troop transport was built to treat people like cargo. “If they feel too safe, they won’t want to leave,” was the line I heard. We packed soldiers together like bodies in a mass grave. All anyone ever wanted to do was get the hell away from these things."/>
 <entry name="TransuraniumUpgradeFlavor" value="Enemy artillery leveled our city. Only thing left standing was the… uh, “Transuranium Stabilizer”. A rookie on sensor duty caught the increased power in the building and called it in. Our engineers cooked up a way to capture the energy before it flash-fried us all."/>
@@ -760,5 +796,5 @@
 <entry name="WildlifeFlavor" value="We once had an Abkluth contained in a prototype specimen container at a field outpost. It was pacing the confined space, slamming itself into the walls at random intervals. I thought it was trying to escape—until a pack of Abkluth swarmed our camp, devouring a group of helpless techs. It had been &lt;i&gt;signaling&lt;/i&gt; to its pack. We soundproofed the containers after that."/>
 <entry name="XenogenesisFlavor" value="Cultists who grew into Ioks spent a few more days in the Paean to the Dawn? After completing the conversion, their task wasn't done. They had the power to birth more Ioks just by sitting and feeding on bodies. The new ones grew in the boils on their backs, exploding to live in a spray of pus and gore. Then that one birthed another. And another. And another…"/>
 <entry name="ZephonAdvancementFlavor" value="It was all just an equation for ZEPHON. Reavers and Acrin had to scrap, steal, and fight like hell to keep their edge, but that machine was always plotting its way toward the end. Its machines' power just ticked, ticked, ticked upward… carefully calculated to match our pace. It never ran ahead. Just watched. Followed. And observed."/>
-<entry name="ZephonStandingFlavor" value="It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. “That would be acceptable,” it replied. No one knew what to do with that. Was Zephon thinking ahead, for after the war? Or… no. Certainly not. There couldn't have been other AI among us… right?"/>
+<entry name="ZephonStandingFlavor" value="It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. “That would be acceptable,” it replied. No one knew what to do with that. Was ZEPHON thinking ahead, for after the war? Or… no. Certainly not. There couldn't have been other AI among us… right?"/>
 </language>

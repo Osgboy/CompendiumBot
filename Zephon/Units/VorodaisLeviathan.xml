@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/TitanBlood"
+				bloodBone="Chest"
 				material="Units/VorodaisLeviathan"
+		 		effectsBlueprint="Effects/VorodaisLeviathan"
 				mesh="Units/VorodaisLeviathan"
 				normalWeight="0.1"
-				scale="1.1 1.1 1.1"
+				scale="1.2 1.2 1.2"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -18,7 +20,7 @@
 				enabled="0"
 				slotName="WitheringBreath">
 			<models>
-				<flamerWeapon effectFaceWeight="0" muzzleBone="Jaw"/>
+				<flamerWeapon effectFaceWeight="0" muzzleBone="Head"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -30,12 +32,12 @@
 				<antimatterUpkeep base="0.8"/> <!-- %antimatterUpkeep base tier=12 factor=0.05 -->
 				<armor base="6"/>
 				<cargoSlots base="6"/>
-				<dimensionalEchoesCost base="8"/> <!-- %dimensionalEchoesCost base tier=12 factor=0.025 -->
-				<dimensionalEchoesUpkeep base="0.4"/> <!-- %dimensionalEchoesUpkeep base tier=12 factor=0.025 -->
-				<foodCost base="160"/> <!-- %foodCost base tier=12 factor=0.5 -->
-				<foodUpkeep base="8.0"/> <!-- %foodUpkeep base tier=12 factor=0.5 -->
+				<dimensionalEchoesCost base="16"/> <!-- %dimensionalEchoesCost base tier=12 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.8"/> <!-- %dimensionalEchoesUpkeep base tier=12 factor=0.05 -->
+				<foodCost base="80"/> <!-- %foodCost base tier=12 factor=0.25 -->
+				<foodUpkeep base="4.0"/> <!-- %foodUpkeep base tier=12 factor=0.25 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="192"/> <!-- %hitpointsMax base tier=14 -->
+				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
 				<moraleMax base="12"/>
 				<movementMax base="3"/>
 				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
@@ -51,39 +53,46 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/VorodaisLeviathanAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
-				<attack animation="Units/VorodaisLeviathanAttack"
-						beginFire="0.4"
-						endFire="0.5"
-						sound="Units/DarkVassaelAttack"
-						responseSound="Units/Responses/DarkVassaelAttack"
+				<attack meleeAnimation="Units/VorodaisLeviathanAttack"
+						meleeBeginSwing="1.3"
+						meleeEndSwing="1.4"
+						meleeSound="Units/VorodaisLeviathanMelee"
+						responseSound="Responses/Units/VorodaisLeviathanAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/VorodaisLeviathanDie0"
-						groundImpact="1.1"
-						sound="Units/DarkVassaelDie"/>
+						groundImpact="1.4"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/VorodaisLeviathanDie"/>
 			</model>
 		</die>
 		<endure>
 			<model>
 				<action animation="Units/VorodaisLeviathanImpact"
-						responseSound="Units/Responses/DarkVassaelEndureHighDamage"
+						responseSound="Responses/Units/VorodaisLeviathanEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+				<action responseSound="Responses/Units/VorodaisLeviathanHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+				<action responseSound="Responses/Units/VorodaisLeviathanHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -95,35 +104,34 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelKill"
+				<action responseSound="Responses/Units/VorodaisLeviathanKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/VorodaisLeviathanMove"
-						responseSound="Units/Responses/DarkVassaelMove"
+						responseSound="Responses/Units/VorodaisLeviathanMove"
 						responseSoundCount="3"
-						sound="Units/DarkVassaelMove"
-						soundCount="3"
+						sound="Units/VorodaisLeviathanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelPoke"/>
+				<action responseSound="Responses/Units/VorodaisLeviathanPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelSelect"
+				<action responseSound="Responses/Units/VorodaisLeviathanSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/DarkVassaelHoldPosition"
+				<action responseSound="Responses/Units/VorodaisLeviathanHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>
@@ -132,7 +140,9 @@
 			<model>
 				<attack animation="Units/VorodaisLeviathanAbility0"
 						beginFire="1.2"
-						endFire="2.1"/> 
+						endFire="2.1"
+						responseSound="Responses/Units/VorodaisLeviathanWitheringBreath"
+						sound="Units/VorodaisLeviathanWitheringBreath"/> 
 			</model>
 		</useWeapon>
 		<unitCast name="VorodaisGift"
@@ -145,7 +155,9 @@
 			<model>
 				<cast animation="Units/VorodaisLeviathanAbility1"
 						blueprint="Effects/VorodaisGift"
-						casterBlueprint=""/> 
+						casterBlueprint="Effects/VorodaisGiftCaster"
+						responseSound="Responses/Units/VorodaisLeviathanVorodaisGift"
+						sound="Units/VorodaisLeviathanVorodaisGift"/> 
 			</model>
 			<beginTargets>
 				<target rangeMin="1" rangeMax="2">
@@ -159,10 +171,22 @@
 							<modifiers>
 								<modifier effectDescription="OfTargetAlliedUnit">
 									<effects>
-										<resetUnitCooldowns/>
+										<resetCooldowns/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<actionsOnCooldown/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>

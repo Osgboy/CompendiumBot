@@ -1,4 +1,4 @@
-<quest firstTurn="40" image="Factions/FurtiveTribunal">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/FurtiveTribunal" image="Factions/FurtiveTribunal">
  	<conditions>
 		<player>
 			<faction name="FurtiveTribunal"/>
@@ -26,9 +26,9 @@
 				</nearCityTileSelector>
 			</modifications>
 			<objectives>
-				<recoverUnits name="CaptureScientist">
+				<recoverUnits name="CaptureScientist" recoverAtLeast="1">
 					<units>
-						<unit count="1" type="Engineer" name="Units/Orin"/>
+						<unit type="Orin" name="Units/Orin"/>
 					</units>
 				</recoverUnits>
 			</objectives>
@@ -120,6 +120,7 @@
 					<modifier>
 						<effects>
 							<addItem type="TribunalsTether"/>
+							<unlockAchievement name="ThePulledThread"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -139,10 +140,10 @@
 			</modifications>
 			<objectives>
 				<killCamp name="KillOrin" bossKillCompletes="1">
-					<boss type="LandanGraham"/>
+					<boss type="Orin" name="Units/Orin" skipOverwatchOnNextTileEnter="1"/>
 					<defenders>
-						<unit type="Militant" count="3"/>
-						<unit type="Outrider" count="1"/>
+						<unit type="Militant" count="3" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Outrider" count="1" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>

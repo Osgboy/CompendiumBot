@@ -78,7 +78,7 @@
 				<influenceCost base="60"/> <!-- %influenceCost base tier=7 factor=1 -->
 				<influenceUpkeep base="3.0"/> <!-- %influenceUpkeep base tier=7 factor=1 -->
 				<moraleMax base="10"/>
-				<movementMax base="3"/>
+				<movementMax base="4"/>
 				<mineralsCost base="30"/> <!-- %mineralsCost base tier=7 factor=0.5 -->
 				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=7 factor=0.5 -->
 				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
@@ -96,7 +96,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaAppear"/>
+				<action responseSound="Responses/Units/ValkyriaAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -104,7 +104,7 @@
 				<attack animation="Units/ValkyrieAttack"
 						beginFire="1.0"
 						endFire="1.73"
-						responseSound="Units/Responses/ValkyriaAttack"
+						responseSound="Responses/Units/ValkyriaAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -121,17 +121,17 @@
 		<endure>
 			<model>
 				<action animation="Units/ValkyrieImpact"
-						responseSound="Units/Responses/ValkyriaEndureHighDamage"/> 
+						responseSound="Responses/Units/ValkyriaEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaHoldPosition"/>
+				<action responseSound="Responses/Units/ValkyriaHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaHoldPosition"/>
+				<action responseSound="Responses/Units/ValkyriaHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -142,13 +142,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaKill"/>
+				<action responseSound="Responses/Units/ValkyriaKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ValkyrieMove"
-						responseSound="Units/Responses/ValkyriaMove"
+						responseSound="Responses/Units/ValkyriaMove"
 						responseSoundCount="3"
 						sound="Units/ValkyrieMove"
 						soundCount="1"
@@ -158,33 +158,28 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaPoke"/>
+				<action responseSound="Responses/Units/ValkyriaPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaSelect"
+				<action responseSound="Responses/Units/ValkyriaSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ValkyriaHoldPosition"/>
+				<action responseSound="Responses/Units/ValkyriaHoldPosition"/>
 			</model>
 		</skip>
-		<fly name="Hast"
-				consumedActionPoints="0"
-				consumedMovement="0"
-				cooldownMin="4"
+		<fly name="Hast" cooldownMin="4"
 				cooldownMax="2"
 				rank="-1"
-				rankMax="2"
-				requiredActionPoints="0"
-				requiredMovement="1">
+				rankMax="2">
 			<model>
 				<action animation="Units/ValkyrieAltMove"
 						effectBlueprint="Effects/ValkyrieHast"
-						responseSound="Units/Responses/ValkyriaHast"
+						responseSound="Responses/Units/ValkyriaHast"
 						sound="Units/ValkyrieHastMove"
 						soundCount="1"
 						soundFadeInDuration="1.0"
@@ -208,7 +203,7 @@
 						</unit> -->
 					</conditions>
 					<effects>
-						<score addMin="1.0" addMax="1.0"/>
+						<score add="1.0"/>
 					</effects>
 				</modifier>
 			</scoreModifiers>			
@@ -223,13 +218,13 @@
 				<attack animation="Units/ValkyrieAbility1"
 						beginFire="1.0"
 						endFire="1.73"
-						responseSound="Units/Responses/ValkyriaSpjut"
+						responseSound="Responses/Units/ValkyriaSpjut"
 						sound="Units/ValkyrieSpjut"/>
 			</model>
 			<modifiers>
 				<modifier>
 					<effects>
-						<armorPenetration mulMin="0" mulMax="1"/>
+						<armorPenetration addMin="0" addMax="4"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -266,7 +261,7 @@
 			<model>
 				<cast animation="Units/ValkyrieAbility0"
 						blueprint="Effects/Valhalla"
-						responseSound="Units/Responses/ValkyriaValhalla"
+						responseSound="Responses/Units/ValkyriaValhalla"
 						sound="Units/ValkyrieValhalla"/>
 			</model>
 			<beginTargets>

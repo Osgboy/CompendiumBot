@@ -5,6 +5,7 @@
 <entry name="(Turns)" value="(%1% turns)"/>
 <entry name="AI" value="AI"/>
 <entry name="AITurn" value="Enemy Turn"/>
+<entry name="AcceptCall" value="Accept"/>
 <entry name="AchievementsDisabled" value="Achievements disabled."/>
 <entry name="Action" value="Ability"/>
 <entry name="Actions" value="Actions"/>
@@ -38,6 +39,7 @@
 <entry name="Buildings" value="Buildings"/>
 <entry name="BuildingsConstructed" value="Buildings Constructed"/>
 <entry name="Buy" value="Buy"/>
+<entry name="BuyBackground" value="&lt;icon texture='GUI/LeftArrow'/&gt;&lt;nbsp/&gt;&lt;string name='GUI/Buy'/&gt;"/>
 <entry name="Call" value="Call"/>
 <entry name="CallLeaderHint" value="Call leader."/>
 <entry name="CallOrDeselectLeaderHint" value="&lt;string name='GUI/CallLeaderHint'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;style name='Small'/&gt;[&lt;string name='Controls/MouseRight'/&gt;] to deselect."/>
@@ -46,6 +48,7 @@
 <entry name="CancelHint" value="&lt;style name='Title'/&gt;Cancel [&lt;control name='Cancel'/&gt;]"/>
 <entry name="CancelOrders" value="Cancel orders."/>
 <entry name="Capturable" value="Capturable"/>
+<entry name="CapturableOutpost" value="Capturable Outpost"/>
 <entry name="Cargo" value="Cargo"/>
 <entry name="CancelAlliance" value="Cancel Alliance"/>
 <entry name="CancelTrade" value="Cancel Trade"/>
@@ -69,7 +72,8 @@
 <entry name="ConsumesMovement" value="&lt;icon height='20' texture='Icons/Attributes/Movement'/&gt; Consumes movement"/>
 <entry name="Continue" value="Continue"/>
 <entry name="Cooldown" value="Cooldown"/>
-<entry name="Copy" value="Copy"/><entry name="CopyInviteCode" value="Copy Invite Code"/>
+<entry name="Copy" value="Copy"/>
+<entry name="CopyInviteCode" value="Copy Invite Code"/>
 <entry name="CopyInviteCodeHint" value="Copy the invite code which can be pasted to other players to easily join this game.&lt;br/&gt;&lt;br/&gt;Please note that your public IP address can be extracted from the code."/>
 <entry name="Cost" value="Cost"/>
 <entry name="Create" value="Create"/>
@@ -82,14 +86,16 @@
 <entry name="DamageTaken" value="Damage Taken"/>
 <entry name="Debug" value="Debug"/>
 <entry name="DeclareWar" value="Declare War"/>
+<entry name="DeclineCall" value="Decline"/>
 <entry name="Default" value="Default"/>
 <entry name="Defeated" value="Defeated"/>
 <entry name="Delete" value="Delete"/>
 <entry name="Details" value="Details"/>
+<entry name="DigitalArtbook&Wallpapers" value="Digital Artbook &amp; Wallpapers"/>
 <entry name="Diplomacy" value="Diplomacy"/>
 <entry name="DirectConnect" value="Direct Connect"/>
 <entry name="Directory" value="Directory"/>
-<entry name="DisableBuildingHint" value="Disable the lowest output building of this type, freeing its allocated population for other buildings."/>
+<entry name="DisableBuildingHint" value="Disable the lowest output building of this type, freeing its allocated population for other buildings.&lt;br/&gt;&lt;br/&gt;To disable a specific building, interact with building slots on the map."/>
 <entry name="DisableSimultaneousTurns" value="Disable Simultaneous Turns"/>
 <entry name="DisableTips" value="Disable Tips"/>
 <entry name="DisableTipsHint" value="Stop showing pop-up tips. You can re-enable them in the settings."/>
@@ -100,7 +106,7 @@
 <entry name="Economy" value="Economy"/>
 <entry name="Elite" value="Elite"/>
 <entry name="EmptyBuildingSlotHint" value="Empty building slot."/>
-<entry name="EnableBuildingHint" value="Enable the highest output building of this type, allocating population to it."/>
+<entry name="EnableBuildingHint" value="Enable the highest output building of this type, allocating population to it.&lt;br/&gt;&lt;br/&gt;To enable a specific building, interact with building slots on the map."/>
 <entry name="EnableSimultaneousTurns" value="Enable Simultaneous Turns"/>
 <entry name="EnableMod" value="Enable mod."/>
 <entry name="EndTurn" value="End Turn"/>
@@ -119,6 +125,8 @@
 <entry name="ExperienceShort" value="xp"/>
 <entry name="Explored" value="Explored"/>
 <entry name="Factions" value="Leaders"/>
+<entry name="FastForward" value="Fast Forward"/>
+<entry name="FastForwardHint" value="Fast forward AI turn [&lt;control name='NextTask'/&gt;]."/>
 <entry name="Feature" value="Feature"/>
 <entry name="Features" value="Features"/>
 <entry name="FocusOnPlayerCursorHint" value="&lt;style name='Small'/&gt;[&lt;string name='Controls/MouseLeft'/&gt;] to focus on player cursor."/>
@@ -138,6 +146,8 @@
 <entry name="HoldKeyToKeepVisible" value="Hold Shift to keep visible."/>
 <entry name="HoldKeyToShowOpponentAttack" value="Hold Alt to show opponent attack."/>
 <entry name="Host" value="Host"/>
+<entry name="Hotseat" value="Hotseat"/>
+<entry name="HotseatNotAvailable" value="&lt;style name='Small'/&gt;Hotseat only available in single player with simultaneous turns off."/>
 <entry name="Human" value="Human"/>
 <entry name="Inaccessible" value="Inaccessible"/>
 <entry name="IncomingCall" value="Incoming Call: %1%"/>
@@ -171,7 +181,6 @@
 <entry name="MainMenu" value="Main Menu"/>
 <entry name="Map" value="Map"/>
 <entry name="MarkTileHint" value="&lt;style name='Title'/&gt;Mark Tile [&lt;control name='MarkTile'/&gt;]&lt;br/&gt;&lt;style name='Default'/&gt;Place a marker for yourself and your allies. AI allies will tend to move their units towards markers."/>
-<entry name="MarksOfChaos" value="Marks of Chaos"/>
 <entry name="Max" value="max"/>
 <entry name="Melee" value="Melee"/>
 <entry name="Menu" value="Menu"/>
@@ -180,11 +189,13 @@
 <entry name="Minimap" value="Minimap"/>
 <entry name="Missing" value="?"/>
 <entry name="Mixer" value="Mixer"/>
-<entry name="ModDetailsHint" value="Open mod details."/>
+<entry name="ModDetailsHint" value="Open mod details on the Steam Workshop."/>
 <entry name="ModFolderHint" value="Open mod folder."/>
 <entry name="Modifier" value="Modifier"/>
 <entry name="Mods" value="Mods"/>
+<entry name="More" value="More"/>
 <entry name="Multiplayer" value="Multiplayer"/>
+<entry name="Mutators" value="Mutators"/>
 <entry name="MutatorsHint" value="&lt;style name='Title'/&gt;Mutators [&lt;control name='LobbyMutators'/&gt;]"/>
 <entry name="Name" value="Name"/>
 <entry name="New" value="New"/>
@@ -201,14 +212,18 @@
 <entry name="NotOwner" value="Not owner of unit."/>
 <entry name="NotReady" value="Not Ready"/>
 <entry name="NotUsable" value="Not Usable"/>
-<entry name="OK" value="OK"/>
-<entry name="OKHint" value="&lt;style name='Title'/&gt;OK [&lt;control name='OK'/&gt;]"/>
 <entry name="Objectives" value="Objectives"/>
 <entry name="ObjectivesCompleted" value="Objectives Completed"/>
-<entry name="Off" value="Off"/>
-<entry name="On" value="On"/>
+<entry name="Off" value="&lt;style color='GUI/Red'/&gt;Off&lt;style color='Default'/&gt;"/>
+<entry name="OK" value="OK"/>
+<entry name="OKHint" value="&lt;style name='Title'/&gt;OK [&lt;control name='OK'/&gt;]"/>
+<entry name="Okay" value="Okay"/>
+<entry name="On" value="&lt;style color='GUI/Green'/&gt;On&lt;style color='Default'/&gt;"/>
+<entry name="OnlyInMainMenu" value="&lt;br/&gt;&lt;br/&gt;&lt;style color='GUI/Yellow'/&gt;Changing this settings can only be done in the main menu."/>
+<entry name="OnThisSide" value="On this side:"/>
 <entry name="OnCooldown" value="On cooldown."/>
-<entry name="OpenStore" value="Click to open store."/>
+<entry name="OpenHint" value="Open ”%1%”."/>
+<entry name="OpenStoreHint" value="Click to open store."/>
 <entry name="Operation" value="Operation"/>
 <entry name="Or" value="or"/>
 <entry name="OrderCity" value="Order Cities (%1%)"/>
@@ -287,8 +302,9 @@
 <entry name="Queued" value="Queued."/>
 <entry name="QuickSelectLeaderHint" value="Quick-select leader."/>
 <entry name="Quit" value="Quit"/>
-<entry name="Return" value="Return"/>
 <entry name="Save" value="Save"/>
+<entry name="SaveAndExitToMainMenu" value="Save &amp; Exit to Main Menu"/>
+<entry name="SaveAndExitToDesktop" value="Save &amp; Exit to Desktop"/>
 <entry name="SaveGame" value="Save Game"/>
 <entry name="SaveGameHelp" value="Enter new save name or select one to overwrite."/>
 <entry name="Self" value="Self"/>
@@ -307,12 +323,12 @@
 <entry name="SelectUnitHint" value="Select unit."/>
 <entry name="SelectionPortraitHint" value="[&lt;string name='Controls/MouseLeft'/&gt;] to focus.&lt;br/&gt;&lt;string name='GUI/ShowInCompendium'/&gt;"/>
 <entry name="Sell" value="Sell"/>
+<entry name="SellBackground" value="&lt;icon texture='GUI/LeftArrow'/&gt;&lt;nbsp/&gt;&lt;string name='GUI/Sell'/&gt;"/>
 <entry name="Settings" value="Settings"/>
 <entry name="Shop" value="The Concordat"/>
 <entry name="ShopHint" value="&lt;style name='Title'/&gt;The Concordat [&lt;control name='OpenShopScreen'/&gt;]&lt;br/&gt;&lt;style name='Default'/&gt;Trade resources and hero items.&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Everyone knew The Concordat. But no-one knew who they were. Maybe survivors on the surface, maybe a ZEPHON-fork, maybe an old Corp reaching outta the 20th century’s grave. They fed the rumor mill, hiding their truth under the chatter. All we did know was that they traded everything to everyone—and that they never made a loss."/>
 <entry name="ShowInCompendium" value="[&lt;control name='ShowInCompendium'/&gt;] to show in compendium."/>
 <entry name="ShowNatives" value="Show NPCs"/>
-<entry name="ShowNonAffinity" value="Show Non-Affinity"/>
 <entry name="SinglePlayer" value="Single Player"/>
 <entry name="SkipCity" value="Skip City (1/%1%)"/>
 <entry name="SkipCityHint" value="Skip this city [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;control name='SelectNext'/&gt;]: select next idle city.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;]: select previous idle city."/>
@@ -322,13 +338,16 @@
 <entry name="Spectating" value="Spectating"/>
 <entry name="Start" value="Start"/>
 <entry name="Stats" value="Stats"/>
+<entry name="StayingIndependent" value="Staying independent:"/>
 <entry name="SteamWorkshop" value="Steam Workshop"/>
+<entry name="Supporter" value="Supporter"/>
+<entry name="SupporterUpgrade" value="Supporter Upgrade"/>
 <entry name="Surrender" value="Surrender"/>
 <entry name="TakeSlotHint" value="Take slot."/>
 <entry name="Team" value="Team"/>
 <entry name="Team0" value="No Team"/>
-<entry name="Team0Hint" value="No Team: plays alone; not part of an alliance."/>
-<entry name="Team0Short" value="-"/>
+<entry name="Team0Hint" value="No Team:&lt;style name='Default'/&gt; plays alone; not part of an alliance."/>
+<entry name="Team0Short" value="&lt;style name='Bold'/&gt;/"/>
 <entry name="Team1" value="Team A"/>
 <entry name="Team1Short" value="A"/>
 <entry name="Team2" value="Team B"/>
@@ -350,7 +369,7 @@
 <entry name="TierLocked" value="Tier %1% (Locked)"/>
 <entry name="Tip" value="Tip"/>
 <entry name="Tips" value="Tips"/>
-<entry name="ToggleHotseatHint" value="[&lt;string name='Controls/Control'/&gt; + &lt;string name='Controls/MouseLeft'/&gt;] to toggle hotseat."/>
+<entry name="ToggleHotseatHint" value="&lt;style name='Small'/&gt;[&lt;string name='Controls/Control'/&gt; + &lt;string name='Controls/MouseLeft'/&gt;] to toggle hotseat."/>
 <entry name="Total" value="Total"/>
 <entry name="Trait" value="Trait"/>
 <entry name="Traits" value="Traits"/>
@@ -370,14 +389,13 @@
 <entry name="UnitsLost" value="Units Lost"/>
 <entry name="UnitsKilled" value="Units Killed"/>
 <entry name="UnitsKilledByPlayer" value="You killed: %2%"/>
-<entry name="UnlockedItem" value="%1% is now available at The Concordat for this and future playthroughs."/>
-<entry name="UnlockedMutator" value="%1% mutator can now be enabled for future playthroughs."/>
 <entry name="UnpauseTurnTimer" value="Unpause timer."/>
 <entry name="Unready" value="Unready"/>
 <entry name="UpgradeForSubject" value="%1% for %2%"/>
 <entry name="Upgrades" value="Upgrades"/>
 <entry name="Upkeep" value="Upkeep"/>
-<entry name="UploadModHint" value="Upload mod."/>
+<entry name="UploadModHint" value="Upload mod to the Steam Workshop."/>
+<entry name="UserData" value="User Data"/>
 <entry name="VS" value="VS"/>
 <entry name="Version" value="Version"/>
 <entry name="VersionRevisionsDiffer" value="Version revisions differ (local = %1%, server = %2%)."/>
@@ -391,6 +409,8 @@
 <entry name="XTiles" value="%1% tiles"/>
 <entry name="XTurn" value="%1% turn"/>
 <entry name="XTurns" value="%1% turns"/>
+<entry name="XTurnsUntilDead" value="%1% &lt;string name='Attributes/TurnsIcon'/&gt; turns until &lt;style color='GUI/Red'/&gt;dead&lt;style color='Default'/&gt;"/>
+<entry name="XTurnsUntilHealed" value="%1% &lt;string name='Attributes/TurnsIcon'/&gt; turns until &lt;style color='GUI/Green'/&gt;fully healed&lt;style color='Default'/&gt;"/>
 <entry name="You" value="You"/>
 <entry name="YourName" value="Your Name"/>
 	

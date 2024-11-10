@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon/>
+		<projectileWeapon explosionsBlueprint="Effects/LargeExplosions"
+				muzzleFlashesBlueprint="Effects/GoliathCannonMuzzleFlashes"
+				projectilesBlueprint="Effects/HiddenProjectiles"
+				fireSound="Weapons/GoliathCannon"
+				fireSoundCount="1"/>
 	</model>
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<armorPenetration base="9"/> <!-- %armorPenetration base tier=10 -->
 				<attacks base="1"/>
-				<damage base="12"/> <!-- %damage base tier=8 -->
+				<damage base="24"/> <!-- %damage base tier=10 -->
 			</effects>
 		</modifier>
 	</modifiers>
 	<target rangeMax="3"/>
 	<traits>
-		<trait type="LargeSplash"/>
+		<trait type="MassiveSplash"/>
 	</traits>
 </weapon>

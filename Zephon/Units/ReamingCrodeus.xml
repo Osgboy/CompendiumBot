@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/TitanBlood"
+				bloodBone="Chest"
 				material="Units/ReamingCrodeus"
 				mesh="Units/ReamingCrodeus"
 				normalWeight="0.1"
 				position="0 0 48"
-				scale="1.2 1.2 1.2"/>
+				scale="1.3 1.3 1.3"/>
 	</model>
 	<weapons>
 		<weapon type="CrodeusBite">
 			<models>
+				<weapon/>
 			</models>
 		</weapon>
 		<weapon type="DimensionalNeedles"
 				enabled="0"
 				slotName="DimensionalNeedles">
 			<models>
+				<projectileWeapon muzzleBone="Neck2"/>
 			</models>
 		</weapon>
 	</weapons>
 	<modifiers>
 		<modifier visible="0">
 			<effects>
-				<accuracy base="8"/>
-				<antimatterCost base="120"/> <!-- %antimatterCost base tier=11 factor=0.5 -->
-				<antimatterUpkeep base="6.0"/> <!-- %antimatterUpkeep base tier=11 factor=0.5 -->
-				<armor base="9"/>
+				<accuracy base="6"/>
+				<antimatterCost base="12"/> <!-- %antimatterCost base tier=11 factor=0.05 -->
+				<antimatterUpkeep base="0.6"/> <!-- %antimatterUpkeep base tier=11 factor=0.05 -->
+				<armor base="6"/>
 				<cargoSlots base="1"/>
+				<dimensionalEchoesCost base="12"/> <!-- %dimensionalEchoesCost base tier=11 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.6"/> <!-- %dimensionalEchoesUpkeep base tier=11 factor=0.05 -->
+				<foodCost base="60"/> <!-- %foodCost base tier=11 factor=0.25 -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=11 factor=0.25 -->
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
+				<hitpointsMax base="96"/> <!-- %hitpointsMax base tier=12 -->
 				<moraleMax base="12"/>
-				<movementMax base="6"/>
+				<movementMax base="5"/>
 				<productionCost base="66.0"/> <!-- %productionCost base tier=11 factor=1 -->
-				<singularityCoresCost base="12"/> <!-- %singularityCoresCost base tier=11 factor=0.05 -->
-				<singularityCoresUpkeep base="0.6"/> <!-- %singularityCoresUpkeep base tier=11 factor=0.05 -->
-				<transuraniumCost base="120"/> <!-- %transuraniumCost base tier=11 factor=0.5 -->
-				<transuraniumUpkeep base="6.0"/> <!-- %transuraniumUpkeep base tier=11 factor=0.5 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -49,17 +52,28 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
-				<attack animation="Units/ReamingCrodeusAttack"
-						beginFire="1.0"
-						endFire="1.73"/>
+				<attack meleeAnimation="Units/ReamingCrodeusAttack"
+						meleeBeginSwing="1.3"
+						meleeEndSwing="1.4"
+						meleeSound="Units/ReamingCrodeusMelee"
+						responseSound="Responses/Units/ReamingCrodeusAttack"
+						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/ReamingCrodeusDie0"
-						groundImpact="1.0"/> 
+						groundImpact="1.9"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/ReamingCrodeusDie"/> 
 			</model>
 		</die>
 		<endure>
@@ -67,20 +81,53 @@
 				<action animation="Units/ReamingCrodeusImpact"/> 
 			</model>
 		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/ReamingCrodeusIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusKill"/>
+			</model>
+		</kill>
 		<move>
 			<model>
 				<action animation="Units/ReamingCrodeusMove"
-						sound="Units/CherubimTitanMove"
+						responseSound="Responses/Units/ReamingCrodeusMove"
+						responseSoundCount="3"
+						sound="Units/ReamingCrodeusMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/ReamingCrodeusHoldPosition"/>
+			</model>
+		</skip>
 		<useWeapon cooldown="3"
 				consumedActionPoints="0"
 				consumedMovement="0"
@@ -89,17 +136,19 @@
 				weaponSlotName="DimensionalNeedles">
 			<model>
 				<attack animation="Units/ReamingCrodeusAbility0"
-						beginFire="1.0"
-						endFire="1.9"/>
+						beginFire="1.3"
+						endFire="1.9"
+						responseSound="Responses/Units/ReamingCrodeusDimensionalNeedles"
+						sound="Units/ReamingCrodeusDimensionalNeedles"/>
 			</model>
 		</useWeapon>
 		<unitCast name="Swallow"
 				cooldown="1">
 			<model>
 				<cast animation="Units/ReamingCrodeusAbility1"
-						casterBlueprint=""
-						responseSound=""
-						sound=""/>
+						beginEffect="0.85"
+						responseSound="Responses/Units/ReamingCrodeusSwallow"
+						sound="Units/ReamingCrodeusSwallow"/>
 			</model>
 			<conditions>
 				<unit>
@@ -111,6 +160,7 @@
 					<conditions>
 						<unit>
 							<enemy/>
+							<noTrait type="Headquarters"/>
 							<noTrait type="Hero"/>
 							<noTrait type="Titan"/>
 						</unit>
@@ -118,17 +168,24 @@
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="TargetEnemyNonTitanNonHeroUnit">
+								<modifier effectDescription="TargetEnemyNonTitanNonHeroNonHeadquartersUnit">
 									<effects>
 										<embark/>
 									</effects>
 								</modifier>
-								<modifier effectDescription="ToTargetEnemyNonTitanNonHeroUnit">
+								<modifier effectDescription="ToTargetEnemyNonTitanNonHeroNonHeadquartersUnit">
 									<effects>
 										<addTrait type="Swallowed"/>
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="0.75"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>				
 						</area>
 					</areas>
 				</target>
@@ -139,9 +196,9 @@
 				requiredUpgrade="SeedOfExtinction">
 			<model>
 				<cast animation="Units/ReamingCrodeusAbility2"
-						casterBlueprint=""
-						responseSound=""
-						sound=""/>
+						casterBlueprint="Effects/SeedOfExtinctionCaster"
+						responseSound="Responses/Units/ReamingCrodeusSeedOfExtinction"
+						sound="Units/ReamingCrodeusSeedOfExtinction"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="2">
@@ -159,6 +216,32 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<unitsInRange greater="0" range="1">
+												<unit>
+													<enemy/>
+												</unit>
+											</unitsInRange>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
-	<model>
-		<projectileWeapon/>
-	</model>
 	<modifiers>
 		<modifier>
 			<effects>
+				<accuracy min="6" max="6"/>
 				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
 				<attacks base="1"/>
 				<damage base="32"/> <!-- %damage base tier=11 -->
@@ -14,8 +12,9 @@
 	</modifiers>
 	<target rangeMax="1"/>
 	<traits>
+		<trait type="AntiGround"/>
 		<trait type="AntimatterDiffraction"/>
 		<trait type="IgnoresCover"/>
-		<trait type="LargeSplash"/>
+		<trait type="MassiveSplash"/>
 	</traits>
 </weapon>

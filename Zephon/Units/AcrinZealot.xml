@@ -6,7 +6,7 @@
 				groupMemberDeltaX="80"
 				groupMemberDeltaY="60"
 				material="Units/AcrinMilitia"
-				mesh="Units/AcrinMilitia"
+				mesh="Units/AcrinZealot"
 				normalWeight="0.1"
 				scale="8 8 8"
 				walker="1"/>
@@ -14,10 +14,16 @@
 	<weapons>
 		<weapon type="Phalx">
 			<models>
+				<weapon bone="Sword"
+						material="Units/AcrinZealotWeapons"
+						mesh="Units/AcrinZealotPhalx"/>
 			</models>
 		</weapon>
 		<weapon type="Sikka">
 			<models>
+				<weapon bone="Dagger"
+						material="Units/AcrinZealotWeapons"
+						mesh="Units/AcrinZealotSikka"/>
 			</models>
 		</weapon>
 	</weapons>
@@ -51,21 +57,22 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantAppear"/>
+				<action responseSound="Responses/Units/AcrinRemnantAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
-				<attack animation="Units/AcrinMilitiaAttack"
-						beginFire="0.73"
-						endFire="1.63"
-						responseSound="Units/Responses/AcrinRemnantAttack"
+				<attack chargeAnimation="Units/AcrinZealotCharge"
+						meleeAnimation="Units/AcrinZealotMelee"
+						meleeSound="Units/AcrinZealotMelee"
+						meleeSoundCount="3"
+						responseSound="Responses/Units/AcrinRemnantAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
 			<model>
-				<die animation="Units/AcrinMilitiaDie"
+				<die animation="Units/AcrinZealotDie"
 						animationCount="2"
 						sound="Units/MediumBiologicalGroundHit"
 						soundCount="3"
@@ -76,35 +83,35 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/AcrinMilitiaImpact"
-						responseSound="Units/Responses/AcrinRemnantEndureHighDamage"/> 
+				<action animation="Units/AcrinZealotImpact"
+						responseSound="Responses/Units/AcrinRemnantEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
 			<model>
-				<idle animation="Units/AcrinMilitiaIdle"
+				<idle animation="Units/AcrinZealotIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantKill"/>
+				<action responseSound="Responses/Units/AcrinRemnantKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/AcrinMilitiaMove"
-						responseSound="Units/Responses/AcrinRemnantMove"
+				<action animation="Units/AcrinZealotMove"
+						responseSound="Responses/Units/AcrinRemnantMove"
 						responseSoundCount="3"
 						sound="Units/AcrinMilitiaMove"
 						soundCount="3"
@@ -114,28 +121,34 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantPoke"/>
+				<action responseSound="Responses/Units/AcrinRemnantPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantSelect"
+				<action responseSound="Responses/Units/AcrinRemnantSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/AcrinRemnantHoldPosition"/>
+				<action responseSound="Responses/Units/AcrinRemnantHoldPosition"/>
 			</model>
 		</skip>
 		<teleport name="SereneLesion"
-				cooldown="5">
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
 			<model>
-				<cast animation="Units/AcrinMilitiaAbility"
-						blueprint="Effects/WhispersOfHarmony"
-						responseSound="Units/Responses/AcrinRemnantWhispersOfHarmony"
-						sound="Actions/WhispersOfHarmony"
-						soundDelay="1.5"/>
+				<teleport animation="Units/AcrinZealotAbility0"
+						blueprint="Effects/SereneLesion"
+						casterBlueprint="Effects/SereneLesion"
+						modelShift="1.5"
+						responseSound="Responses/Units/AcrinRemnantWhispersOfHarmony"
+						sound="Units/AcrinZealotSereneLesion"
+						soundCount="3"/>
 			</model>
 			<conditions>
 				<tile>
@@ -151,6 +164,21 @@
 					</conditions>
 				</target>
 			</beginTargets>
+			<endTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFromMax add="-0.167"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</endTargets>
 		</teleport>
 	</actions>
 	<traits>

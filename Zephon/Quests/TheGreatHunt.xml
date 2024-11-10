@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -15,7 +15,7 @@
 					<modifiers>
 						<modifier>
 							<effects>
-								<mineralsCost add="36"/>
+								<mineralsCost add="30"/>
 							</effects>
 						</modifier>
 					</modifiers>
@@ -62,12 +62,11 @@
 				<nearCityTileSelector targetDistance="6">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -81,7 +80,7 @@
 			</modifications>
 			<objectives>
 				<killCamp name="KillTheTerror">
-					<boss type="Dreameater" name="Units/TheTerror"/>
+					<boss type="Dreameater" name="Units/TheTerror" skipOverwatchOnNextTileEnter="1"/>
 				</killCamp>
 			</objectives>
 		</stage>

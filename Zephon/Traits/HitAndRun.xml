@@ -16,9 +16,10 @@
 				<attacks mul="0.1"/>
 			</effects>
 		</modifier>
-		<modifier visible="0">
+		<modifier visible="0" requiredUpgrade="HitAndRunUpgrade2">
 			<conditions>
 				<unit>
+					<availableAction name="Move"/>
 					<attackedThisTurn/>
 					<notMovedThisTurn/>
 				</unit>

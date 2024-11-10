@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <faction branch="Cyber"
 		initialTrack="Music/Cyber0"
-		peacefulness="0.625">
+		peacefulness="0.625"
+		quest="FormFunction">
 	<actions>
 		<playerCast name="DataHack"
 				cooldown="10"
@@ -154,8 +155,8 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -187,4 +188,7 @@
 			</model>
 		</useWeapon>
 	</unitActions>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

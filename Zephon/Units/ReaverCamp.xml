@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit>
+<unit icon="Units/Headquarters" portrait="Units/ChieftessHeadquarters">
 	<model>
 		<unit effectsBlueprint="Effects/ChieftessHeadquarters"
 				explosionsBlueprint="Effects/MediumHumanExplosions"
@@ -32,7 +32,7 @@
 			<model>
 				<attack beginFire="1.0"
 						endFire="2.3"
-						responseSound="Units/Responses/HeadquartersAttack"
+						responseSound="Responses/Units/HeadquartersAttack"
 						responseSoundCount="3"/>
 			</model>		
 		</attack>
@@ -43,17 +43,17 @@
 		</die>
 		<endure>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersEndureHighDamage"/> 
+				<action responseSound="Responses/Units/HeadquartersEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -63,23 +63,23 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersKill"/>
+				<action responseSound="Responses/Units/HeadquartersKill"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersPoke"/>
+				<action responseSound="Responses/Units/HeadquartersPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersSelect"
+				<action responseSound="Responses/Units/HeadquartersSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/HeadquartersHoldPosition"/>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
 			</model>
 		</skip>
 		<setRallyPoint/>

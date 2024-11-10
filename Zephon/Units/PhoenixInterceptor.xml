@@ -2,46 +2,63 @@
 <unit branch="Human">
 	<model>
 		<unit explosionsBone="Hull_Guide"
+				effectsBlueprint="Effects/PhoenixInterceptor"
 				material="Units/PhoenixInterceptor"
 				mesh="Units/PhoenixInterceptor"
 				normalWeight="0.1"
-				position="0 0 36"
+				position="0 0 48"
 				scale="1.1 1.1 1.1"/>
 	</model>
 	<weapons>
 		<weapon type="GaussAutocannon"
+				count="2"
 				slotName="GaussAutocannon">
 			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
 			</models>
 		</weapon>
 		<weapon type="GaussAutocannonOvercharged"
+				count="2"
 				slotName="GaussAutocannonOvercharged"
 				enabled="0">
 			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
 			</models>
 		</weapon>
  		<weapon type="InterceptorMissile"
- 				count="2"
+ 				count="4"
  				enabled="0"
  				slotName="InterceptorMissile">
 			<models>
+				<missileWeapon muzzleBone="MissileMuzzle" muzzleCount="2" bone="Hull-Shake"
+						material="Units/PhoenixInterceptorMissiles"
+						fireInterval="1" 
+						missileScale="0.25"
+						mesh="Units/PhoenixInterceptorMissiles"/>
 			</models>
 		</weapon>
+		<weapon type="None" requiredUpgrade="DecoyFlares">
+			<models>
+				<weapon bone="Hull-Shake"
+						material="Units/PhoenixInterceptor"
+						mesh="Units/PhoenixInterceptorDecoyFlares"/>
+			</models>
+		</weapon>		
  	</weapons>
 	<modifiers>
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<antimatterCost base="60"/> <!-- %antimatterCost base tier=9 factor=0.5 -->
-				<antimatterUpkeep base="3.0"/> <!-- %antimatterUpkeep base tier=9 factor=0.5 -->
+				<antimatterCost base="12"/> <!-- %antimatterCost base tier=9 factor=0.1 -->
+				<antimatterUpkeep base="0.6"/> <!-- %antimatterUpkeep base tier=9 factor=0.1 -->
 				<armor base="8"/>
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
-				<moraleMax base="8"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="10"/>
 				<movementMax base="7"/>
 				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
-				<transuraniumCost base="60"/> <!-- %transuraniumCost base tier=9 factor=0.5 -->
-				<transuraniumUpkeep base="3.0"/> <!-- %transuraniumUpkeep base tier=9 factor=0.5 -->
+				<transuraniumCost base="12"/> <!-- %transuraniumCost base tier=9 factor=0.1 -->
+				<transuraniumUpkeep base="0.6"/> <!-- %transuraniumUpkeep base tier=9 factor=0.1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -56,15 +73,15 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorAppear"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/PhoenixInterceptorAttack"
-						beginFire="1.0"
-						endFire="1.73"
-						responseSound="Units/Responses/PhoenixInterceptorAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						responseSound="Responses/Units/PhoenixInterceptorAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -78,17 +95,17 @@
 		<endure>
 			<model>
 				<action animation="Units/PhoenixInterceptorImpact"
-						responseSound="Units/Responses/PhoenixInterceptorEndureHighDamage"/> 
+						responseSound="Responses/Units/PhoenixInterceptorEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -99,13 +116,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorKill"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
-				<action animation="Units/PhoenixInterceptorMove"
-						responseSound="Units/Responses/PhoenixInterceptorMove"
+				<action animation=""
+						responseSound="Responses/Units/PhoenixInterceptorMove"
 						responseSoundCount="3"
 						sound="Units/PhoenixInterceptorMove"
 						soundFadeInDuration="0.25"
@@ -114,18 +131,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorPoke"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorSelect"
+				<action responseSound="Responses/Units/PhoenixInterceptorSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/PhoenixInterceptorHoldPosition"/>
+				<action responseSound="Responses/Units/PhoenixInterceptorHoldPosition"/>
 			</model>
 		</skip>
 		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
@@ -133,8 +150,8 @@
 		<unitCast blueprint="EvasiveManeuvers">
 			<model>
 				<cast animation="Units/PhoenixInterceptorAbility0"
-						blueprint=""
-						responseSound="Units/Responses/PhoenixInterceptorEvasiveManeuvers"
+						blueprint="Effects/PhoenixInterceptorEvasiveManeuvers"
+						responseSound="Responses/Units/PhoenixInterceptorEvasiveManeuvers"
 						sound="Units/PhoenixInterceptorEvasiveManeuvers"/>
 			</model>
 		</unitCast>
@@ -142,7 +159,7 @@
 			<model>
 				<cast animation="Units/PhoenixInterceptorAbility1"
 						blueprint="Effects/DecoyFlares"
-						responseSound="Units/Responses/PhoenixInterceptorDecoyFlares"/>
+						responseSound="Responses/Units/PhoenixInterceptorDecoyFlares"/>
 			</model>
 		</unitCast>
 		<useWeapon weaponSlotName="InterceptorMissile"
@@ -151,7 +168,7 @@
 			<model>
 				<attack animation=""
 						endFire="1.9"
-						responseSound="Units/Responses/PhoenixInterceptorInterceptorMissile"/>
+						responseSound="Responses/Units/PhoenixInterceptorInterceptorMissile"/>
 			</model>
 		</useWeapon>
 	</actions>

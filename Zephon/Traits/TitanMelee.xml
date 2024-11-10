@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait visibleOnWeapon="1"/>
+<trait visibleOnWeapon="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<canOverwatch add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

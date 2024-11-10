@@ -3,4 +3,12 @@
 	<requiredUpgrades>
 		<upgrade name="HumanVehicles"/>
 	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
 </upgrade>

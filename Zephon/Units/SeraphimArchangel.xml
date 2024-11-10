@@ -2,20 +2,21 @@
 <unit branch="Cyber">
 	<model>
 		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+		 		effectsBlueprint="Effects/SeraphimArchangel"
 				explosionsBone="Guide"
 				material="Units/SeraphimArchangel"
 				mesh="Units/SeraphimArchangel"
 				normalWeight="0.1"
 				position="0 0 16"
-				scale="1.8 1.8 1.8"/>
+				scale="1.9 1.9 1.9"/>
 	</model>
 	<weapons>
 		<weapon type="SingularityBlade">
 			<models>
-				<beamWeapon muzzleBone="Muzzle0"/>
+				<beamWeapon muzzleBone="Muzzle0" effectFaceWeight="0.75"/>
 			</models>
 		</weapon>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="DeflectorShield">
 			<models>
 				<weapon bone="Body"
 						material="Units/SeraphimArchangelShard"
@@ -27,16 +28,18 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="8"/>
-				<armor base="10"/>
+				<antimatterCost base="16"/> <!-- %antimatterCost base tier=12 factor=0.05 -->
+				<antimatterUpkeep base="0.8"/> <!-- %antimatterUpkeep base tier=12 factor=0.05 -->
+				<armor base="8"/>
 				<groupSizeMax base="1"/>
-				<hitpointsMax base="192"/> <!-- %hitpointsMax base tier=14 -->
+				<hitpointsMax base="96"/> <!-- %hitpointsMax base tier=12 -->
 				<moraleMax base="0"/>
 				<movementMax base="3"/>
 				<productionCost base="72.0"/> <!-- %productionCost base tier=12 factor=1 -->
 				<singularityCoresCost base="16"/> <!-- %singularityCoresCost base tier=12 factor=0.05 -->
 				<singularityCoresUpkeep base="0.8"/> <!-- %singularityCoresUpkeep base tier=12 factor=0.05 -->
-				<transuraniumCost base="304"/> <!-- %transuraniumCost base tier=12 factor=0.95 -->
-				<transuraniumUpkeep base="15.2"/> <!-- %transuraniumUpkeep base tier=12 factor=0.95 -->
+				<transuraniumCost base="16"/> <!-- %transuraniumCost base tier=12 factor=0.05 -->
+				<transuraniumUpkeep base="0.8"/> <!-- %transuraniumUpkeep base tier=12 factor=0.05 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -51,39 +54,42 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelAppear"/>
+				<action responseSound="Responses/Units/SeraphimArchangelAppear"/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/SeraphimArchangelAttack"
-						beginFire="1.0"
-						endFire="1.73"
-						responseSound="Units/Responses/SeraphimArchangelAttack"
-						responseSoundCount="3"/>
+						beginFire="0.66"
+						endFire="2.33"
+						responseSound="Responses/Units/SeraphimArchangelAttack"
+						responseSoundCount="3"
+						sound="Units/SeraphimArchangelAttack"/>
 			</model>
 		</attack>
 		<die>
 			<model>
 				<die animation="Units/SeraphimArchangelDie0"
-						groundImpact="1.0"
+						groundImpact="2.1"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
 						sound="Units/SeraphimArchangelDie"/> 
 			</model>
 		</die>
 		<endure>
 			<model>
 				<action animation="Units/SeraphimArchangelImpact"
-						responseSound="Units/Responses/SeraphimArchangelEndureHighDamage"/> 
+						responseSound="Responses/Units/SeraphimArchangelEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+				<action responseSound="Responses/Units/SeraphimArchangelHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+				<action responseSound="Responses/Units/SeraphimArchangelHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -94,13 +100,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelKill"/>
+				<action responseSound="Responses/Units/SeraphimArchangelKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/SeraphimArchangelMove"
-						responseSound="Units/Responses/SeraphimArchangelMove"
+						responseSound="Responses/Units/SeraphimArchangelMove"
 						responseSoundCount="3"
 						sound="Units/SeraphimArchangelMove"
 						soundFadeInDuration="1.0"
@@ -109,39 +115,47 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelPoke"/>
+				<action responseSound="Responses/Units/SeraphimArchangelPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelSelect"
+				<action responseSound="Responses/Units/SeraphimArchangelSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/SeraphimArchangelHoldPosition"/>
+				<action responseSound="Responses/Units/SeraphimArchangelHoldPosition"/>
 			</model>
 		</skip>
 		<fly name="AngelFlight"
 				cooldown="3">
 			<model>
 				<action animation="Units/SeraphimArchangelAltMove"
-						effectBlueprint=""
-						responseSound="Units/Responses/SeraphimArchangelAngelFlight"
+						effectBlueprint="Effects/AngelFlight"
+						responseSound="Responses/Units/SeraphimArchangelAngelFlight"
 						sound="Units/SeraphimArchangelFlight"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
 		</fly>
 		<unitCast name="HolyInferno"
 				cooldown="3"
 				requiredUpgrade="HolyInferno">
 			<model>
 				<cast animation="Units/SeraphimArchangelAbility0"
-						blueprint=""
-						casterBlueprint=""
-						responseSound="Units/Responses/SeraphimArchangelHolyInferno"/>
+						blueprint="Effects/HolyInferno"
+						casterBlueprint="Effects/HolyInfernoCaster"
+						responseSound="Responses/Units/SeraphimArchangelHolyInferno"
+						sound="Actions/HolyInfernoCaster"/>
 			</model>
 			<beginTargets>
 				<selfTarget>
@@ -192,7 +206,7 @@
 		</unitCast>
 	</actions>
 	<traits>
-		<trait type="DeflectorShield"/>
+		<trait type="DeflectorShield" requiredUpgrade="DeflectorShield"/>
 		<trait type="HeartlessArtificerAffinityUpgrade2" requiredUpgrade="HeartlessArtificerAffinityUpgrade2"/>
 		<trait type="Hovering"/>
 		<trait type="Large"/>

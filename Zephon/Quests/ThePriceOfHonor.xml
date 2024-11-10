@@ -1,4 +1,4 @@
-<quest firstTurn="40" image="Factions/HonorableAristocrat">
+<quest firstTurn="-1" ambientSound="Ambient/Factions/HonorableAristocrat" image="Factions/HonorableAristocrat">
  	<conditions>
 		<player>
 			<faction name="HonorableAristocrat"/>
@@ -89,7 +89,10 @@
 					<conditions>
 						<tile>
 							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	
@@ -143,7 +146,8 @@
 			</options>
 		</stage>
 		<stage name="DeliverSuppliesByBodyguardFailure"/>
-		<stage name="CommandMercenaries" nextStageOnSuccess="CommandMercenariesSuccess"
+		<stage name="CommandMercenaries"
+				nextStageOnSuccess="CommandMercenariesSuccess"
 				nextStageOnFailure="CommandMercenariesFailure">
 			<modifications>
 				<playerSelector>
@@ -167,7 +171,10 @@
 					<conditions>
 						<tile>
 							<buildingSlots greater="0"/>
-							<noFeature type="City"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>
@@ -175,30 +182,10 @@
 					<modifier visible="0">
 						<effects>
 							<reveal/>
+							<addUnit type="Warden" neutralPlayer="1" token="PriceOfHonorWarden"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
-				<tileModifiers>
-					<modifier visible="0">
-						<effects>
-							<addUnit type="Warden" token="PriceOfHonorWarden"/>
-						</effects>
-					</modifier>
-				</tileModifiers>
-				<unitSelector>
-					<conditions>
-						<unit>
-							<token name="PriceOfHonorWarden"/>
-						</unit>
-					</conditions>
-				</unitSelector>
-				<unitModifiers>
-					<modifier visible="0">
-						<effects>
-							<changePlayer name="Neutral"/>
-						</effects>
-					</modifier>
-				</unitModifiers>
 			</modifications>
 			<objectives>
 				<killMarkedUnit name="KillWardenWithMercenaries" token="PriceOfHonorWarden">
@@ -211,18 +198,116 @@
 		</stage>
 		<stage name="CommandMercenariesSuccess">
 			<options>
+				<option name="RetrieveCornucopiaPersonally" nextStage="RetrieveCornucopiaPersonally"/>
 				<option name="RetrieveCornucopia" nextStage="RetrieveCornucopia"/>
 			</options>
 		</stage>	
 		<stage name="CommandMercenariesFailure"/>
 		<stage name="DismissMercenariesSuccess">
 			<options>
+				<option name="RetrieveCornucopiaPersonally" nextStage="RetrieveCornucopiaPersonally"/>
 				<option name="RetrieveCornucopia" nextStage="RetrieveCornucopia"/>
 			</options>
 		</stage>	
 		<stage name="DismissMercenariesFailure"/>
-		<stage name="RetrieveCornucopia">
-			<!-- TODO -->
+		<stage name="RetrieveCornucopiaPersonally"
+				nextStageOnSuccess="RetrieveCornucopiaPersonallySuccess"
+				nextStageOnFailure="RetrieveCornucopiaPersonallyFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="HonorableAristocratOutrider"
+									name="Factions/HonorableAristocrat"
+									skipOverwatchOnNextTileEnter="1"
+									token="HonorableAristocratOutrider"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitCornucopiaWithHonorableAristocrat">
+					<unitConditions>
+						<token name="HonorableAristocratOutrider"/>
+					</unitConditions>
+				</visitTile>
+				<keepUnitAlive token="HonorableAristocratOutrider"/>
+			</objectives>
+		</stage>
+		<stage name="RetrieveCornucopiaPersonallySuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="HonorableAristocratOutrider"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+	 						<addTrait type="NeumanaticCornucopia"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="RetrieveCornucopiaPersonallyFailure"
+				nextStageOnSuccess="RetrieveCornucopiaSuccess">
+			<objectives>
+				<visitTile name="VisitCornucopia"/>
+			</objectives>
+		</stage>
+		<stage name="RetrieveCornucopia"
+				nextStageOnSuccess="RetrieveCornucopiaSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitCornucopia"/>
+			</objectives>
 		</stage>
 		<stage name="RetrieveCornucopiaSuccess">
 			<modifications>
@@ -237,6 +322,7 @@
 					<modifier>
 						<effects>
 	 						<addTrait type="NeumanaticCornucopia"/>
+	 						<unlockAchievement name="ThePriceOfHonor"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

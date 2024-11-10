@@ -4,6 +4,8 @@
 		<unit bloodBlueprint="Effects/ShochitrisLairBlood"
 				bloodBone="Core2"
 				bloodTrailBlueprint="Effects/ShochitrisLairBloodTrail"
+				groundMaterial="Units/ShochitrisLairGround"
+				groundMesh="Features/MicrochipFabricatorGround"
 				material="Units/ShochitrisLair"
 				mesh="Units/ShochitrisLair"
 				normalWeight="0.0"
@@ -43,8 +45,7 @@
 						beginEffect="0.2"
 						sound="Units/ShochitrisLairAppear"
 						soundDelay="0.5"
-						voiceSound="Units/Responses/ShochitrisLairAppear"
-						voiceSoundDelay="0.5"/>
+						responseSound="Responses/Units/ShochitrisLairAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -62,17 +63,17 @@
 		<endure>
 			<model>
 				<action animation="Units/ShochitrisLairImpact"
-						responseSound="Units/Responses/ShochitrisLairEndureHighDamage"/>
+						responseSound="Responses/Units/ShochitrisLairEndureHighDamage"/>
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+				<action responseSound="Responses/Units/ShochitrisLairHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+				<action responseSound="Responses/Units/ShochitrisLairHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -82,18 +83,18 @@
 		</idle>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ShochitrisLairPoke"/>
+				<action responseSound="Responses/Units/ShochitrisLairPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ShochitrisLairSelect"
+				<action responseSound="Responses/Units/ShochitrisLairSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ShochitrisLairHoldPosition"/>
+				<action responseSound="Responses/Units/ShochitrisLairHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast blueprint="BreedDeformities" name="BreedDeformities0"/>
@@ -102,6 +103,7 @@
 	</actions>
 	<traits>
 		<trait type="Biological"/>
+		<trait type="Fortification"/>
 		<trait type="Large"/>
 	</traits>
 </unit>

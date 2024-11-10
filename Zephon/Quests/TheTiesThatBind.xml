@@ -1,6 +1,17 @@
-<quest firstTurn="40">
+<quest firstTurn="20" lastTurn="80">
 	<stages>
 		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+							<contact/>
+							<notLost/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
 			<options>
 				<option name="HuntJezina" nextStage="HuntJezina"/>
 				<option name="Ignore"/>
@@ -8,24 +19,60 @@
 		</stage>
 		<stage name="HuntJezina" nextStageOnSuccess="ChaseJezina">
 			<modifications>
-				<nearCityTileSelector count="3" targetDistance="8">
+				<nearCityTileSelector count="3" targetDistance="6">
 					<conditions>
 						<tile>
 							<featureCategory name="SpecialResource"/> 
 						</tile>
 					</conditions>
-				</nearCityTileSelector>	
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 			</modifications>
 			<objectives>
-				<visitTile name="VisitJezina"/>
+				<visitTile name="VisitJezina" randomTileCompletes="1">
+					<unitModifiers>
+						<modifier>
+							<effects>
+								<setToken name="JezinaFinder"/>
+							</effects>
+						</modifier>
+					</unitModifiers>
+				</visitTile>
 			</objectives>
 		</stage>
 		<stage name="ChaseJezina" nextStageOnSuccess="ChaseJezinaSuccess" nextStageOnFailure="ChaseJezinaFailure">
 			<modifications>
-				<!-- TODO -->
+				<nearUnitTileSelector count="1" targetDistance="4">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<token name="JezinaFinder"/>
+					</unitConditions>
+				</nearUnitTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+							<addUnit type="Jezina" name="Units/Jezina" capturable="1" neutralPlayer="1" token="Jezina" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 			</modifications>
 			<objectives>
-				<!-- TODO -->
+				<captureUnit token="Jezina"/>
 			</objectives>
 		</stage>
 		<stage name="ChaseJezinaSuccess">
@@ -43,21 +90,18 @@
 		<stage name="ChaseJezinaFailure"/>
 		<stage name="HandOverJezina" nextStageOnSuccess="HandOverJezinaSuccess">
 			<modifications>
-				<playerSelector>
+				<nearNativeCityNearCityTileSelector nativeFaction="Chieftess"
+						targetDistance="8">
 					<conditions>
-						<player>
-							<control/>
-						</player>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
 					</conditions>
-				</playerSelector>
-				<playerModifiers>
-					<modifier>
-						<effects>
-							<addUnitToPlayer type="Jezina" name="Units/Jezina" token="Jezina" skipOverwatchOnNextTileEnter="1"/>
-						</effects>
-					</modifier>			
-				</playerModifiers>
-				<!-- TODO: Select tile near closest chieftess -->
+				</nearNativeCityNearCityTileSelector>
 			</modifications>
 			<objectives>
 				<visitTile name="VisitTileWithJezina">
@@ -103,29 +147,14 @@
 		<stage name="HandOverJezinaFailure"/>
 		<stage name="HelpJezinaEscape" nextStageOnSuccess="HelpJezinaEscapeSuccess">
 			<modifications>
-				<playerSelector>
-					<conditions>
-						<player>
-							<control/>
-						</player>
-					</conditions>
-				</playerSelector>
-				<playerModifiers>
-					<modifier>
-						<effects>
-							<addUnitToPlayer type="Jezina" name="Units/Jezina" token="Jezina" skipOverwatchOnNextTileEnter="1"/>
-						</effects>
-					</modifier>			
-				</playerModifiers>
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>	

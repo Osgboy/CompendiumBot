@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" icon="Units/CombatMedic" portrait="Units/CombatMedic">
+	<model>
+		<unit bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="70"
+				material="Units/CombatMedic"
+				mesh="Units/CombatMedic"
+				normalWeight="0.1"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="Pistol">
+			<models>
+				<projectileWeapon effectFaceWeight="0.75"
+						fireInterval="0.33"
+						muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="GravitationalPull"
+				enabled="0"
+				slotName="GravitationalPull">
+			<models>
+				<beamWeapon effectFaceWeight="1"
+						muzzleBone="Hand_R"/>
+			</models>
+		</weapon>	
+		
+		<weapon type="None">
+			<models>
+				<weapon animationSuffix="Drone"
+						material="Units/CombatMedicDrone"
+						mesh="Units/CombatMedicDrone"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="4"/>
+				<energyCost base="10"/> <!-- %energyCost base tier=5 factor=0.333 -->
+				<energyUpkeep base="0.5"/> <!-- %energyUpkeep base tier=5 factor=0.333 -->
+				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.333 -->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<mineralsCost base="10"/> <!-- %mineralsCost base tier=5 factor=0.333 -->
+				<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=5 factor=0.333 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/CombatMedicAttack"
+						beginFire="0.87"
+						endFire="1.63"
+						responseSound="Responses/Units/CombatMedicAttack"
+						responseSoundCount="4"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CombatMedicDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/CombatMedicDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CombatMedicImpact"
+						responseSound="Responses/Units/CombatMedicEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/CombatMedicIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/CombatMedicMove"
+						responseSound="Responses/Units/CombatMedicMove"
+						responseSoundCount="3"
+						sound="Units/CombatMedicMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="Paramedic"
+				cooldown="1">
+			<model>
+				<cast animation="Units/CombatMedicAbility0"
+						blueprint="Effects/HealPluses"
+						responseSound="Responses/Units/CombatMedicParamedic"/>
+			</model>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<ally/>
+							<damaged/>
+							<trait type="Biological"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedDamagedBiologicalUnit">
+									<effects>
+										<hitpoints add="8"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+		<unitAction name="FirstAidDrone"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedBiologicalUnits">
+									<effects>
+										<addTrait type="FirstAidDrone"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<unitCast name="BionicImplant"
+				cooldown="3">
+			<model>
+				<cast animation="Units/CombatMedicAbility0"
+						blueprint="Effects/BionicImplants"/>
+			</model>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<ally/>
+							<trait type="Biological"/>
+							<noTrait type="BionicImplant"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedBiologicalUnit">
+									<effects>
+										<addTrait type="BionicImplant"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="0.75"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<useWeapon weaponSlotName="GravitationalPull"
+				cooldown="3"
+				icon="Actions/Extirpate">
+			<model>
+				<attack animation="Units/CombatMedicAbility1"
+						beginEffect="1.2"
+						beginFire="0.6"
+						endFire="0.7"
+						sound="Units/AcrinTitanExtirpate"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="CombatShield"/>
+	</traits>
+</unit>

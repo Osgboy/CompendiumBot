@@ -48,7 +48,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderAppear"/>
+				<action responseSound="Responses/Units/ExousiaMarauderAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -56,7 +56,7 @@
 				<attack animation="Units/ExousiaMarauderAttack"
 						beginFire="0.8"
 						endFire="1.8"
-						responseSound="Units/Responses/ExousiaMarauderAttack"
+						responseSound="Responses/Units/ExousiaMarauderAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -70,19 +70,19 @@
 		<endure>
 			<model>
 				<action animation="Units/ExousiaMarauderImpact"
-						responseSound="Units/Responses/ExousiaMarauderEndureHighDamage"
+						responseSound="Responses/Units/ExousiaMarauderEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderHoldPosition"
+				<action responseSound="Responses/Units/ExousiaMarauderHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderHoldPosition"
+				<action responseSound="Responses/Units/ExousiaMarauderHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -94,14 +94,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderKill"
+				<action responseSound="Responses/Units/ExousiaMarauderKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ExousiaMarauderMove"
-						responseSound="Units/Responses/ExousiaMarauderMove"
+						responseSound="Responses/Units/ExousiaMarauderMove"
 						responseSoundCount="3"
 						sound="Units/ExousiaMarauderMove"
 						soundCount="1"
@@ -111,19 +111,19 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderPoke"
+				<action responseSound="Responses/Units/ExousiaMarauderPoke"
 						responseSoundCount="1"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderSelect"
+				<action responseSound="Responses/Units/ExousiaMarauderSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ExousiaMarauderHoldPosition"
+				<action responseSound="Responses/Units/ExousiaMarauderHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>

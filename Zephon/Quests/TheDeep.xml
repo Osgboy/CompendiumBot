@@ -1,65 +1,501 @@
-<quest>
-	<!-- TODO Logic -->
+<quest firstTurn="-1">
 	<stages>
 		<stage name="Ignorance">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
 			<options>
 				<option name="OpenQuestion1" nextStage="OpenQuestion1"/>
 				<option name="OpenQuestion2" nextStage="OpenQuestion2"/>
-				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion"/>
-				<option name="AcrinVictoryQuestion" nextStage="AcrinVictoryQuestion"/>
-				<option name="HumanVictoryQuestion" nextStage="HumanVictoryQuestion"/>
-				<option name="FallenSoldierVictoryQuestion" nextStage="FallenSoldierVictoryQuestion"/>
-				<option name="UntoldProphetVictoryQuestion" nextStage="UntoldProphetVictoryQuestion"/>
-				<option name="RogueOperativeVictoryQuestion" nextStage="RogueOperativeVictoryQuestion"/>
-				<option name="FurtiveTribunalVictoryQuestion" nextStage="FurtiveTribunalVictoryQuestion"/>
-				<option name="HeartlessArtificerVictoryQuestion" nextStage="HeartlessArtificerVictoryQuestion"/>
-				<option name="EmulatedMindVictoryQuestion" nextStage="EmulatedMindVictoryQuestion"/>
-				<option name="HonorableAristocratVictoryQuestion" nextStage="HonorableAristocratVictoryQuestion"/>
-				<option name="PracticalRomanticVictoryQuestion" nextStage="PracticalRomanticVictoryQuestion"/>
-				<option name="Acceptance" nextStage="Acceptance"/>
+				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<questStageCompleted quest="TheLastDaysOfEarth" stage="ZephonVictory"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="AcrinVictoryQuestion" nextStage="AcrinVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<questStageCompleted quest="TheLastDaysOfEarth" stage="AnchoriteVictory"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="HumanVictoryQuestion" nextStage="HumanVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<questStageCompleted quest="TheLastDaysOfEarth" stage="IndependentVictory"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="FallenSoldierVictoryQuestion" nextStage="FallenSoldierVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="FallenSoldier"/>
+							<questStageCompleted quest="MeetYourMaker" stage="HoldFire"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="UntoldProphetVictoryQuestion" nextStage="UntoldProphetVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="UntoldProphet"/>
+							<questStageCompleted quest="WhispersOfAFalseProphet" stage="EmbraceKryptArchaiSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="RogueOperativeVictoryQuestion" nextStage="RogueOperativeVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="RogueOperative"/>
+							<questStageCompleted quest="TheDeadHandOfCapitalism" stage="TakeHisEyes"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="FurtiveTribunalVictoryQuestion" nextStage="FurtiveTribunalVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="FurtiveTribunal"/>
+							<questStageCompleted quest="ThePulledThread" stage="RecoverTetherSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="HeartlessArtificerVictoryQuestion" nextStage="HeartlessArtificerVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="HeartlessArtificer"/>
+							<questStageCompleted quest="PerfectionFromBeyondTheStars" stage="KillHwedoSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="EmulatedMindVictoryQuestion" nextStage="EmulatedMindVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="EmulatedMind"/>
+							<questStageCompleted quest="FormFunction" stage="UseReflectorSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="HonorableAristocratVictoryQuestion" nextStage="HonorableAristocratVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="HonorableAristocrat"/>
+							<questStageCompleted quest="ThePriceOfHonor" stage="RetrieveCornucopiaSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="PracticalRomanticVictoryQuestion" nextStage="PracticalRomanticVictoryQuestion" onlyVisibleIfSelectable="1">
+					<conditions>
+						<player>
+							<faction name="PracticalRomantic"/>
+							<questStageCompleted quest="ThickerThanWater" stage="StopArshemSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="Acceptance" nextStage="Acceptance" onlyVisibleIfSelectable="1">
+					<conditions match="Any">
+						<mutatorActive name="WasZephonTrulyAlive"/>
+						<mutatorActive name="DidOurSacrificeMeanNothing"/>
+						<mutatorActive name="WhyDidHumanityDieAlone"/>
+						<mutatorActive name="DidMyDeathMeanAnything"/>
+						<mutatorActive name="AreYouTheGreatSpeaker"/>
+						<mutatorActive name="WhatPriceForLiberty"/>
+						<mutatorActive name="DidOurUnificationMatter"/>
+						<mutatorActive name="WasPerfectionWorthIt"/>
+						<mutatorActive name="WasITrulyHuman"/>
+						<mutatorActive name="DidHonorBalanceGreed"/>
+						<mutatorActive name="CanLoveBeMoral"/>
+					</conditions>
+				</option>
 			</options>
 		</stage>
-		<stage name="OpenQuestion1"/>
-		<stage name="OpenQuestion2"/>
-		<stage name="ZephonVictoryQuestion"/>
-		<stage name="AcrinVictoryQuestion"/>
-		<stage name="HumanVictoryQuestion"/>
-		<stage name="FallenSoldierVictoryQuestion"/>
-		<stage name="UntoldProphetVictoryQuestion"/>
-		<stage name="RogueOperativeVictoryQuestion"/>
-		<stage name="FurtiveTribunalVictoryQuestion"/>
-		<stage name="HeartlessArtificerVictoryQuestion"/>
-		<stage name="EmulatedMindVictoryQuestion"/>
-		<stage name="HonorableAristocratVictoryQuestion"/>
-		<stage name="PracticalRomanticVictoryQuestion"/>
+		<stage name="OpenQuestion1">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WhatAreYou"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="OpenQuestion2">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WhereAreWe"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ZephonVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WasZephonTrulyAlive"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AcrinVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="DidOurSacrificeMeanNothing"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HumanVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WhyDidHumanityDieAlone"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="FallenSoldierVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="DidMyDeathMeanAnything"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="UntoldProphetVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="AreYouTheGreatSpeaker"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="RogueOperativeVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WhatPriceForLiberty"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="FurtiveTribunalVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="DidOurUnificationMatter"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HeartlessArtificerVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WasPerfectionWorthIt"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="EmulatedMindVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WasITrulyHuman"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HonorableAristocratVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="DidHonorBalanceGreed"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PracticalRomanticVictoryQuestion">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="CanLoveBeMoral"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="Acceptance">
 			<options>
-				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory"/>
-				<option name="AcrinMutatorVictory" nextStage="AcrinMutatorVictory"/>
-				<option name="HumanMutatorVictory" nextStage="HumanMutatorVictory"/>
-				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory"/>
-				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory"/>
-				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory"/>
-				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory"/>
-				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory"/>
-				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory"/>
-				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory"/>
-				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory"/>
-				<option name="CompleteNativeMutatorVictory" nextStage="CompleteNativeMutatorVictory"/>
+				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="WasZephonTrulyAlive"/>
+					</conditions>
+				</option>
+				<option name="AcrinMutatorVictory" nextStage="AcrinMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="DidOurSacrificeMeanNothing"/>
+					</conditions>
+				</option>
+				<option name="HumanMutatorVictory" nextStage="HumanMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="WhyDidHumanityDieAlone"/>
+					</conditions>
+				</option>
+				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="DidMyDeathMeanAnything"/>
+					</conditions>
+				</option>
+				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="AreYouTheGreatSpeaker"/>
+					</conditions>
+				</option>
+				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="WhatPriceForLiberty"/>
+					</conditions>
+				</option>
+				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="DidOurUnificationMatter"/>
+					</conditions>
+				</option>
+				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="WasPerfectionWorthIt"/>
+					</conditions>
+				</option>
+				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="WasITrulyHuman"/>
+					</conditions>
+				</option>
+				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="DidHonorBalanceGreed"/>
+					</conditions>
+				</option>
+				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<mutatorActive name="CanLoveBeMoral"/>
+					</conditions>
+				</option>
 			</options>
 		</stage>
-		<stage name="ZephonMutatorVictory"/>
-		<stage name="AcrinMutatorVictory"/>
-		<stage name="HumanMutatorVictory"/>
-		<stage name="FallenSoldierMutatorVictory"/>
-		<stage name="UntoldProphetMutatorVictory"/>
-		<stage name="RogueOperativeMutatorVictory"/>
-		<stage name="FurtiveTribunalMutatorVictory"/>
-		<stage name="HeartlessArtificerMutatorVictory"/>
-		<stage name="EmulatedMindMutatorVictory"/>
-		<stage name="HonorableAristocratMutatorVictory"/>
-		<stage name="PracticalRomanticMutatorVictory"/>
+		<stage name="ZephonMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WasZephonTrulyAlive2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="CompleteNativeMutatorVictory" nextStage="CompleteNativeMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<achievementUnlocked name="WasZephonTrulyAlive2"/>
+						<achievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<achievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+				<option onlyVisibleIfSelectable="1">
+					<conditions match="Any">
+						<noAchievementUnlocked name="WasZephonTrulyAlive2"/>
+						<noAchievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<noAchievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+			</options>
+		</stage>
+		<stage name="AcrinMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="DidOurSacrificeMeanNothing2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="CompleteNativeMutatorVictory" nextStage="CompleteNativeMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<achievementUnlocked name="WasZephonTrulyAlive2"/>
+						<achievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<achievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+				<option onlyVisibleIfSelectable="1">
+					<conditions match="Any">
+						<noAchievementUnlocked name="WasZephonTrulyAlive2"/>
+						<noAchievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<noAchievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+			</options>
+		</stage>
+		<stage name="HumanMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WhyDidHumanityDieAlone2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="CompleteNativeMutatorVictory" nextStage="CompleteNativeMutatorVictory" onlyVisibleIfSelectable="1">
+					<conditions>
+						<achievementUnlocked name="WasZephonTrulyAlive2"/>
+						<achievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<achievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+				<option onlyVisibleIfSelectable="1">
+					<conditions match="Any">
+						<noAchievementUnlocked name="WasZephonTrulyAlive2"/>
+						<noAchievementUnlocked name="DidOurSacrificeMeanNothing2"/>
+						<noAchievementUnlocked name="WhyDidHumanityDieAlone2"/>
+					</conditions>
+				</option>
+			</options>
+		</stage>
+		<stage name="FallenSoldierMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="DidMyDeathMeanAnything2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="UntoldProphetMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="AreYouTheGreatSpeaker2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="RogueOperativeMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WhatPriceForLiberty2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="FurtiveTribunalMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="DidOurUnificationMatter2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HeartlessArtificerMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WasPerfectionWorthIt2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="EmulatedMindMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WasITrulyHuman2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HonorableAristocratMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="DidHonorBalanceGreed2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PracticalRomanticMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="CanLoveBeMoral2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="CompleteNativeMutatorVictory">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="End"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 			<options>
 				<option name="FinalMentorMessage" nextStage="FinalMentorMessage"/>
 			</options>

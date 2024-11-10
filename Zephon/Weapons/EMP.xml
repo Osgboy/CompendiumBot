@@ -12,6 +12,14 @@
 			</effects>
 		</modifier>
 	</modifiers>
+	<target>
+		<conditions>
+			<!-- FIXME: This prevents damage reflection from working. -->
+			<unit>
+				<trait type="Mechanical"/>
+			</unit>
+		</conditions>
+	</target>
 	<traits>
 		<trait type="EMP"/>
 		<trait type="Melee"/>

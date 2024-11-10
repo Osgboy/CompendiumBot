@@ -1,4 +1,4 @@
-<quest firstTurn="80">
+<quest firstTurn="60">
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -40,8 +40,8 @@
 			<options>
 				<option name="FindInsights">
 					<nextStages>
-						<nextStage name="FindAcrinInsightSuccess" weight="1"/>
-						<nextStage name="FindZephonInsightSuccess" weight="1"/>
+						<nextStage name="FindAcrinInsightsSuccess" weight="1"/>
+						<nextStage name="FindZephonInsightsSuccess" weight="1"/>
 						<nextStage name="FindInsightsFailure" weight="1"/>
 					</nextStages>				
 				</option>
@@ -78,7 +78,7 @@
 				<option name="IgnoreAfterGatherResources" nextStage="IgnoreAfterGatherResources"/>
 			</options>	
 		</stage>
-		<stage name="FindAcrinInsightSuccess">
+		<stage name="FindAcrinInsightsSuccess">
 			<modifications>
 				<playerSelector>
 					<conditions>
@@ -110,7 +110,7 @@
 				</playerModifiers>				
 			</modifications>
 		</stage>
-		<stage name="FindZephonInsightSuccess">
+		<stage name="FindZephonInsightsSuccess">
 			<modifications>
 				<playerSelector>
 					<conditions>
@@ -190,7 +190,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addUnit type="Warden"/>
+							<addUnitToPlayer type="Warden"/>
 						</effects>
 					</modifier>
 				</playerModifiers>				
@@ -223,7 +223,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addUnit type="ReamingCrodeus"/> -->
+							<addUnitToPlayer type="ReamingCrodeus"/>
 						</effects>
 					</modifier>
 				</playerModifiers>				
@@ -256,7 +256,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<!-- <addUnit type="AtlasTank"/> -->
+							<addUnitToPlayer type="AtlasTank"/>
 						</effects>
 					</modifier>
 				</playerModifiers>				
@@ -282,7 +282,24 @@
 			</modifications>
 		</stage>
 		<stage name="SellTechToConcordatFailure"/>
-		<stage name="GatherResourcesFailure"/>
+		<stage name="GatherResourcesFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removePlayerAction type="PayResources/TheSpaceEngine" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
 		<stage name="LockHerUpSuccess">
 			<modifications>
 				<playerSelector>

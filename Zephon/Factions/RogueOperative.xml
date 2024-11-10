@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <faction branch="Cyber"
 		initialTrack="Music/Cyber0"
+		quest="TheDeadHandOfCapitalism"
 		trustworthiness="0.375">
 	<actions>
 		<playerCast name="EnhancedProbabilityAugment"
 				cooldown="1">
+			<model>
+				<cast blueprint="Effects/EnhancedProbabilityAugment"
+						targetsTile="0"/>
+			</model>
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="80"/>
+						<influenceCost base="40"/>
 					</effects>
 				</modifier>
 				<modifier requiredUpgrade="AugmentsUpgrade">
@@ -42,10 +47,37 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction greater="0.667"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 			<sharedCooldowns>
 				<action name="EnhancedProbabilityAugment"/>
 				<action name="LiquidDeflectionAugment"/>
@@ -54,10 +86,14 @@
 		</playerCast>
 		<playerCast name="LiquidDeflectionAugment"
 				cooldown="1">
+			<model>
+				<cast blueprint="Effects/LiquidDeflectionAugment"
+						targetsTile="0"/>
+			</model>
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="80"/>
+						<influenceCost base="40"/>
 					</effects>
 				</modifier>
 				<modifier requiredUpgrade="AugmentsUpgrade">
@@ -91,10 +127,37 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction greater="0.667"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 			<sharedCooldowns>
 				<action name="EnhancedProbabilityAugment"/>
 				<action name="LiquidDeflectionAugment"/>
@@ -103,10 +166,14 @@
 		</playerCast>
 		<playerCast name="NanomachineAcceleratorAugment"
 				cooldown="1">
+			<model>
+				<cast blueprint="Effects/NanomachineAcceleratorAugment"
+						targetsTile="0"/>
+			</model>
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="80"/>
+						<influenceCost base="40"/>
 					</effects>
 				</modifier>
 				<modifier requiredUpgrade="AugmentsUpgrade">
@@ -140,10 +207,37 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction greater="0.667"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 			<sharedCooldowns>
 				<action name="EnhancedProbabilityAugment"/>
 				<action name="LiquidDeflectionAugment"/>
@@ -151,13 +245,17 @@
 			</sharedCooldowns>
 		</playerCast>
 		<playerCast name="IcarusSatellite"
-				cooldown="1"
+				cooldown="3"
 				label="1"
 				requiredUpgrade="IcarusSatellite">
+			<model>
+				<cast blueprint="Effects/IcarusSatellite"
+						targetsTile="1"/>
+			</model>
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="80"/>
+						<influenceCost base="40"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -177,10 +275,34 @@
 									</effects>
 								</modifier>
 							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 	</actions>
 	<dislikedLabels>
@@ -287,9 +409,9 @@
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
 		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
 		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
 		<trait type="Augmentations"/>
 		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
 		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
 		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
@@ -306,4 +428,7 @@
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
 	</traits>
+	<unitTraits>
+		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
+	</unitTraits>
 </faction>

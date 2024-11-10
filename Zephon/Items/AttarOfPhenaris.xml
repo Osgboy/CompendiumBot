@@ -6,7 +6,8 @@
 				consumedMovement="0"
 				requiredActionPoints="0">
 			<model>
-				<cast blueprint="Effects/AttarOfPhenaris"/>
+				<teleport blueprint="Effects/AttarOfPhenaris"
+						casterBlueprint="Effects/AttarOfPhenaris"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="-1"/>

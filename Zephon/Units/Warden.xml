@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Zephon">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+		<unit explosionsBlueprint="Effects/ZephonExplosions"
 				explosionsBone="Chest"
 				material="Units/Warden"
 				mesh="Units/Warden"
@@ -57,7 +57,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/WardenAppear"
+				<action responseSound="Responses/Units/WardenAppear"
 						responseSoundCount="1"/>
 			</model>
 		</appear>
@@ -73,8 +73,9 @@
 						meleeAnimation="Units/WardenMelee"
 						meleeBeginSwing="0.33"
 						meleeEndSwing="0.43"
-						responseSound="Units/Responses/WardenAttack"
-						responseSoundCount="3"/>
+						responseSound="Responses/Units/WardenAttack"
+						responseSoundCount="3"
+						sound="Units/WardenAttack"/>
 			</model>
 		</attack>
 		<die>
@@ -86,19 +87,19 @@
 		<endure>
 			<model>
 				<action animation="Units/WardenImpact"
-						responseSound="Units/Responses/WardenEndureHighDamage"
+						responseSound="Responses/Units/WardenEndureHighDamage"
 						responseSoundCount="1"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/WardenHoldPosition"
+				<action responseSound="Responses/Units/WardenHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/WardenHoldPosition"
+				<action responseSound="Responses/Units/WardenHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</holdPositionUntilHealed>
@@ -110,19 +111,19 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/WardenKill"
+				<action responseSound="Responses/Units/WardenKill"
 						responseSoundCount="1"/>
 			</model>
 		</kill>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/WardenPoke"/>
+				<action responseSound="Responses/Units/WardenPoke"/>
 			</model>
 		</poke>
 		<move>
 			<model>
 				<action animation="Units/WardenMove"
-						responseSound="Units/Responses/WardenMove"
+						responseSound="Responses/Units/WardenMove"
 						responseSoundCount="3"
 						sound="Units/WardenMove"
 						soundCount="1"
@@ -132,18 +133,19 @@
 		</move>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/WardenSelect"
+				<action responseSound="Responses/Units/WardenSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/WardenHoldPosition"
+				<action responseSound="Responses/Units/WardenHoldPosition"
 						responseSoundCount="1"/>
 			</model>
 		</skip>
 	</actions>
 	<traits>
+		<trait type="Agile"/>
 		<trait type="CannibalizeMachines"/>
 		<trait type="Mechanical"/>
 		<trait type="Large"/>

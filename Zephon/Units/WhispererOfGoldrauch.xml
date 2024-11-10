@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				bloodTrailBlueprint="Effects/SmallBloodTrail"
 				effectsBlueprint="Effects/WhispererOfGoldrauch"
 				material="Units/WhispererOfGoldrauch"
@@ -60,7 +61,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchAppear"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -69,7 +70,7 @@
 						beginFire="0.5"
 						endFire="2.0"
 						sound="Weapons/HorrorsOfSpace"
-						responseSound="Units/Responses/WhispererOfGoldrauchAttack"
+						responseSound="Responses/Units/WhispererOfGoldrauchAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -86,17 +87,17 @@
 		<endure>
 			<model>
 				<action animation="Units/WhispererOfGoldrauchImpact"
-						responseSound="Units/Responses/WhispererOfGoldrauchEndureHighDamage"/> 
+						responseSound="Responses/Units/WhispererOfGoldrauchEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchHoldPosition"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchHoldPosition"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -107,13 +108,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchKill"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/WhispererOfGoldrauchMove"
-						responseSound="Units/Responses/WhispererOfGoldrauchMove"
+						responseSound="Responses/Units/WhispererOfGoldrauchMove"
 						responseSoundCount="3"
 						sound="Units/WhispererOfGoldrauchMove"
 						soundCount="1"
@@ -123,18 +124,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchPoke_SteamFix"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchPoke_SteamFix"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchSelect"
+				<action responseSound="Responses/Units/WhispererOfGoldrauchSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/WhispererOfGoldrauchHoldPosition"/>
+				<action responseSound="Responses/Units/WhispererOfGoldrauchHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="EchoesFromBeyond"
@@ -149,7 +150,7 @@
 			<model>
 				<cast animation="Units/WhispererOfGoldrauchAbility0"
 						blueprint="Effects/EchoesFromBeyond"
-						responseSound="Units/Responses/WhispererOfGoldrauchEchoesFromBeyond"
+						responseSound="Responses/Units/WhispererOfGoldrauchEchoesFromBeyond"
 						targetsTile="1"/>
 			</model>
 			<beginTargets>
@@ -172,7 +173,7 @@
 										</tile>
 									</conditions>
 									<effects>
-										<score addMin="1.0" addMax="1.0"/>
+										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>
@@ -187,7 +188,7 @@
 				rankMax="2">
 			<model>
 				<cast animation="Units/WhispererOfGoldrauchAbility0"
-					responseSound="Units/Responses/WhispererOfGoldrauchCallTheAfflicted"/>
+					responseSound="Responses/Units/WhispererOfGoldrauchCallTheAfflicted"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">
@@ -238,7 +239,7 @@
 				<cast animation="Units/WhispererOfGoldrauchAbility0"
 						blueprint="Effects/CryOfContrition"
 						casterBlueprint="Effects/CryOfContritionCaster"
-						responseSound="Units/Responses/WhispererOfGoldrauchCryOfContrition"/>
+						responseSound="Responses/Units/WhispererOfGoldrauchCryOfContrition"/>
 			</model>
 			<beginTargets>
 				<target rangeMin="1" rangeMax="2">
@@ -266,7 +267,7 @@
 										</unit>
 									</conditions>
 									<effects>
-										<score addMin="1.0" addMax="1.0"/>
+										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>
@@ -309,7 +310,7 @@
 				<attack animation="Units/WhispererOfGoldrauchAbility1"
 						beginFire="0.5"
 						endFire="2.0"
-						responseSound="Units/Responses/WhispererOfGoldrauchDisintegrate"/>
+						responseSound="Responses/Units/WhispererOfGoldrauchDisintegrate"/>
 			</model>
 		</useWeapon>
 		<levelUp/>

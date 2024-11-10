@@ -2,7 +2,7 @@
 <item branch="Human">
 	<actions>
 		<clearTileUnitCast name="GauntletOfRuin"
-				cooldown="5"
+				cooldown="3"
 				consumedActionPoints="0"
 				consumedMovement="0"
 				icon="Items/GauntletOfRuin"
@@ -13,7 +13,7 @@
 						targetsTile="1"/>
 			</model>
 			<beginTargets>
-				<target>
+				<target rangeMax="2">
 					<conditions/>
 					<areas/>
 				</target>

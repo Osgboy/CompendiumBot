@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Voice">
 	<model>
-		<unit bloodBone="Back"
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Back"
 				material="Units/SurthodaisEmbrace"
 				mesh="Units/SurthodaisEmbrace"
 				normalWeight="0.1"
@@ -44,7 +45,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceAppear"/>
+				<action responseSound="Responses/Units/SurthodaisEmbraceAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -54,7 +55,7 @@
 						meleeBeginSwing="0.4"
 						meleeEndSwing="0.5"
 						sound="Units/SurthodaisEmbraceMelee"
-						responseSound="Units/Responses/SurthodaisEmbraceAttack"
+						responseSound="Responses/Units/SurthodaisEmbraceAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -68,17 +69,17 @@
 		<endure>
 			<model>
 				<action animation="Units/SurthodaisEmbraceImpact"
-						responseSound="Units/Responses/SurthodaisEmbraceEndureHighDamage"/> 
+						responseSound="Responses/Units/SurthodaisEmbraceEndureHighDamage"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+				<action responseSound="Responses/Units/SurthodaisEmbraceHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+				<action responseSound="Responses/Units/SurthodaisEmbraceHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -89,13 +90,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceKill"/>
+				<action responseSound="Responses/Units/SurthodaisEmbraceKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/SurthodaisEmbraceMove"
-						responseSound="Units/Responses/SurthodaisEmbraceMove"
+						responseSound="Responses/Units/SurthodaisEmbraceMove"
 						responseSoundCount="3"
 						sound="Units/SurthodaisEmbraceMove"
 						soundFadeInDuration="1.0"
@@ -104,18 +105,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbracePoke"/>
+				<action responseSound="Responses/Units/SurthodaisEmbracePoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceSelect"
+				<action responseSound="Responses/Units/SurthodaisEmbraceSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/SurthodaisEmbraceHoldPosition"/>
+				<action responseSound="Responses/Units/SurthodaisEmbraceHoldPosition"/>
 			</model>
 		</skip>
 		<unitAction name="DarkCaress"
@@ -146,7 +147,7 @@
 			<model>
 				<cast animation="Units/SurthodaisEmbraceAbility0"
 						blueprint="Effects/AbyssalRage"
-						responseSound="Units/Responses/SurthodaisEmbraceAbyssalRage"
+						responseSound="Responses/Units/SurthodaisEmbraceAbyssalRage"
 						sound="Units/SurthodaisEmbraceAbyssalRage"/>
 			</model>
 			<beginTargets>

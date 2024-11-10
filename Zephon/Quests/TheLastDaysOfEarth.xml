@@ -1,7 +1,22 @@
-<quest>
-	<!-- TODO Logic -->
+<quest firstTurn="-1">
 	<stages>
 		<stage name="Intro">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<advanceTitanBattle/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+			</modifications>
 			<options>
 				<option name="Prepare" nextStage="Prepare"/>
 			</options>
@@ -13,76 +28,573 @@
 		</stage>
 		<stage name="ChooseSide">
 			<options>
-				<option name="Zephon" nextStage="Zephon"/>
-				<option name="Anchorite" nextStage="Anchorite"/>
+				<option name="Zephon" nextStage="Zephon">
+					<conditions>
+						<playerWithFaction faction="Zephon">
+							<standingTier greater="1"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="Anchorite" nextStage="Anchorite">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<standingTier greater="1"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
 				<option name="Independent" nextStage="Independent"/>
 			</options>
 		</stage>
 		<stage name="Zephon">
-
+			<options>
+				<option name="ZephonObjectives" nextStage="ZephonObjectives" resolveConclusionStages="1"/>
+			</options>
 		</stage>
 		<stage name="Anchorite">
-
+			<options>
+				<option name="AnchoriteObjectives" nextStage="AnchoriteObjectives" resolveConclusionStages="1"/>
+			</options>
 		</stage>
 		<stage name="Independent">
-
+			<options>
+				<option name="IndependentObjectives" nextStage="IndependentObjectives" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		
-<!-- 		<stage name="AlienIntelligence" nextStage="ChildOfTheNewWorld">
-
+		<stage name="AlienIntelligence" concludesStage="EscortSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="LandanGrahamAugmented" name="Units/LandanGrahamAugmented" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="ChildOfTheNewWorld" nextStage="CriesForHelp">
-
+	 	<stage name="ChildOfTheNewWorld" concludesStage="LocatePassageSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="AegyllanWorm" rankMin="9" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="AegyllanWorm" rankMin="9" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="CriesForHelp" nextStage="StolenGoods">
-
+	  	<stage name="CriesForHelp" concludesStage="HelpSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="Praetorian" name="Units/Splenetics" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="StolenGoods" nextStage="TheGreatHunt">
-
+		<stage name="PhilosophersStone" concludesStage="TreasureFound">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="PhenarisEpicurean" name="Units/BanditKing" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="TheGreatHunt" nextStage="ThePhilosophersStone">
-
+		<stage name="StolenGoods" concludesStage="HuntThemDownSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<transuranium add="4"/>
+							<antimatter add="4"/>
+							<dimensionalEchoes add="2"/>
+							<singularityCores add="2"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="ThePhilosophersStone" nextStage="ThePlague">
-
+		<stage name="TheGreatHunt" concludesStage="PaySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="KlotHadal" name="Units/KlotHadal" rankMin="9" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="ThePlague" nextStage="TheSpaceEngine">
-
+		<stage name="ThePlague">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="ThePlague"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="TheSpaceEngine" nextStage="TheTiesThatBind">
-
+		<stage name="TheSpaceEngine">
+			<concludesStages>
+				<stage name="ChangeThePastSuccess"/>
+				<stage name="ChangeThePastFailure"/>
+				<stage name="FindAcrinInsightsSuccess"/>
+				<stage name="FindZephonInsightsSuccess"/>
+				<stage name="FindInsightsFailure"/>
+			</concludesStages>
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="ZandraKyne" name="Units/ZandraKyne" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="TheTiesThatBind" nextStage="TheyreInTheWalls">
-
+		<stage name="TheTiesThatBind" concludesStage="HelpJezinaEscapeSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="Landmines" charges="5"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="TheyreInTheWalls" nextStage="UnderObservation">
-
+		<stage name="TheyAreInTheWalls" concludesStage="Integrate">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="TacticalNuclearMissile" charges="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="UnderObservation" nextStage="WhoWasThursday">
-
+		<stage name="UnderObservation" concludesStage="AcquireShardsSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="120"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="WhoWasThursday" nextStage="WhoWasThursday">
-
-		</stage> -->
-
-
-		<stage name="ZephonObjectives">
-
+		<stage name="WhoWasThursday">
+			<concludesStages>
+				<stage name="ConnectSuccess"/>
+				<stage name="StudySuccess"/>
+			</concludesStages>
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="InterferenceProtocols" charges="3"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
 		</stage>
-		<stage name="AnchoriteObjectives">
-
+		<stage name="ZephonObjectives" nextStageOnSuccess="ZephonVictory" nextStageOnFailure="Defeat">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<acceptAlliance/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<advanceTitanBattle/>
+							<addUnitToPlayer type="ZephonTitan" name="Titles/ZephonTitan" nameArray="1" token="Titan" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Titan"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier>
+						<effects>
+							<changePlayer/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killUnit name="KillAcrinTitan" allExisting="1" anyKiller="1">
+					<conditions>
+						<type name="AcrinTitan"/>
+					</conditions>
+				</killUnit>
+				<keepUnitsAlive name="KeepZephonTitanAlive">
+					<conditions>
+						<type name="ZephonTitan"/>
+					</conditions>
+				</keepUnitsAlive>
+			</objectives>
 		</stage>
-		<stage name="IndependentObjectives">
-
+		<stage name="AnchoriteObjectives" nextStageOnSuccess="AnchoriteVictory" nextStageOnFailure="Defeat">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<acceptAlliance/>
+						</effects>
+					</modifier>
+				</playerModifiers>			
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<advanceTitanBattle/>
+							<addUnitToPlayer type="AcrinTitan" name="Titles/AcrinTitan" nameArray="1" token="Titan" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>			
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Titan"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier>
+						<effects>
+							<changePlayer/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killUnit name="KillZephonTitan" allExisting="1" anyKiller="1">
+					<conditions>
+						<type name="ZephonTitan"/>
+					</conditions>
+				</killUnit>
+				<keepUnitsAlive name="KeepAcrinTitanAlive">
+					<conditions>
+						<type name="AcrinTitan"/>
+					</conditions>
+				</keepUnitsAlive>
+			</objectives>
+		</stage>
+		<stage name="IndependentObjectives" nextStageOnSuccess="IndependentVictory">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<declareWar/>
+						</effects>
+					</modifier>
+				</playerModifiers>			
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<advanceTitanBattle/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<killUnit name="KillAcrinTitan" allExisting="1" anyKiller="1">
+					<conditions>
+						<type name="AcrinTitan"/>
+					</conditions>
+				</killUnit>
+				<killUnit name="KillZephonTitan" allExisting="1" anyKiller="1">
+					<conditions>
+						<type name="ZephonTitan"/>
+					</conditions>
+				</killUnit>
+			</objectives>
 		</stage>
 		<stage name="ZephonVictory">
-
+			<options>
+				<option name="OK" nextStage="VictoryComplete"/>
+			</options>
 		</stage>
 		<stage name="AnchoriteVictory">
-			
+			<options>
+				<option name="OK" nextStage="VictoryComplete"/>
+			</options>
 		</stage>
 		<stage name="IndependentVictory">
-
+			<options>
+				<option name="OK" nextStage="VictoryComplete"/>
+			</options>
+		</stage>
+		<stage name="VictoryComplete">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<win/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Defeat">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<lose/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
 		</stage>
 	</stages>
 </quest>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Reaver">
 	<model>
-		<unit bloodBone="Chest"
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
 				groupMemberDeltaX="70"
 				groupMemberDeltaY="70"
 				material="Units/Reaver"
@@ -27,7 +28,7 @@
 						mesh="Units/ReaverMachete"
 						bone="Blade"/>
 			</models>
-		</weapon>		
+		</weapon>
 	</weapons>
 	<modifiers>
 		<modifier visible="0">
@@ -57,7 +58,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Units/Responses/ReaverAppear"/>
+				<action responseSound="Responses/Units/ReaverAppear"/>
 			</model>
 		</appear>
 		<attack>
@@ -73,7 +74,7 @@
 						meleeEndSwing="0.101"
 						meleeSound="Units/ReaverMelee"
 						meleeSoundCount="3"
-						responseSound="Units/Responses/ReaverAttack"
+						responseSound="Responses/Units/ReaverAttack"
 						responseSoundCount="3"/>
 			</model>
 		</attack>
@@ -91,17 +92,17 @@
 		<endure>
 			<model>
 				<action animation="Units/ReaverImpact"
-						responseSound="Units/Responses/ReaverEndureHighDamage"/> 
+						responseSound="Responses/Units/ReaverEndureHighDamage"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Units/Responses/ReaverHoldPosition"/>
+				<action responseSound="Responses/Units/ReaverHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Units/Responses/ReaverHoldPosition"/>
+				<action responseSound="Responses/Units/ReaverHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -112,13 +113,13 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Units/Responses/ReaverKill"/>
+				<action responseSound="Responses/Units/ReaverKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ReaverMove"
-						responseSound="Units/Responses/ReaverMove"
+						responseSound="Responses/Units/ReaverMove"
 						responseSoundCount="3"
 						sound="Units/ReaverMove"
 						soundCount="3"
@@ -128,18 +129,18 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Units/Responses/ReaverPoke"/>
+				<action responseSound="Responses/Units/ReaverPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Units/Responses/ReaverSelect"
+				<action responseSound="Responses/Units/ReaverSelect"
 						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Units/Responses/ReaverHoldPosition"/>
+				<action responseSound="Responses/Units/ReaverHoldPosition"/>
 			</model>
 		</skip>
 		<unitCast name="Frenzy"
@@ -151,7 +152,7 @@
 			<model>
 				<cast animation="Units/ReaverAbility0"
 						blueprint="Effects/Frenzy"
-						responseSound="Units/Responses/ReaverFrenzy"
+						responseSound="Responses/Units/ReaverFrenzy"
 						sound="Units/ReaverFrenzy"
 						soundCount="3"/>
 			</model>
@@ -204,8 +205,8 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="40"/>
-						<mineralsCost base="40"/>
+						<influenceCost base="60"/>
+						<mineralsCost base="60"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -217,7 +218,7 @@
 					<areas>
 						<area affect="Tile" radius="1" excludeRadius="0">
 							<modifiers>
-								<modifier effectDescription="ToAdjacentEnemyLargeMechanicalUnits">
+								<modifier effectDescription="ToAdjacentEnemyLargeMechanicalNonTitanUnits">
 									<effects>
 										<addTrait type="Hijack"/>
 									</effects>

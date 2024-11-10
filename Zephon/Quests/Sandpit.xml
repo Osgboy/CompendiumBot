@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -13,6 +13,7 @@
 							<noFeatureCategory name="Ruins"/>
 							<noFeatureCategory name="SpecialResource"/>
 							<buildingSlotsRemaining greater="1"/>
+							<sighted/>
 						</tile>
 					</conditions>
 					<unitConditions>
@@ -61,7 +62,7 @@
 				<tileModifiers>
 					<modifier>
 						<effects>
-							<addUnit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="AegyllanWorm" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
@@ -69,9 +70,9 @@
 		</stage>		
 		<stage name="FeedFailure">
 			<objectives>
-				<killCamp name="KillAegyllanWorms">
+				<killCamp name="KillAnnelidDefenders" unleash="1">
 					<defenders>
-						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AegyllanWorm" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -96,9 +97,9 @@
 		</stage>
 		<stage name="StudyFailure">
 			<objectives>
-				<killCamp name="KillAegyllanWorms">
+				<killCamp name="KillAnnelidDefenders" unleash="1">
 					<defenders>
-						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AegyllanWorm" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -122,9 +123,9 @@
 		</stage>
 		<stage name="Kill" nextStageOnSuccess="KillSuccess">
 			<objectives>
-				<killCamp name="KillAegyllanWorms">
+				<killCamp name="KillAnnelidDefenders" unleash="1">
 					<defenders>
-						<unit type="AegyllanWorm" count="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AegyllanWorm" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>

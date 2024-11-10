@@ -1,4 +1,4 @@
-<quest>
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<options>
@@ -34,22 +34,35 @@
 					<conditions>
 						<tile>
 							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<noUnit/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noFeature type="AbkhanDrey"/>
 							<noFeature type="Bleed"/>
 							<noFeature type="City"/>
 							<noFeature type="Fire"/>
 							<noFeature type="Volcano"/>
 						</tile>
 					</conditions>
-				</nearCityTileSelector>	
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addFeature type="AcrinCrashSite"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 			</modifications>
 			<objectives>
-				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
-						clearEnemies="1"
-						unitType="LandanGraham">
+				<visitTile name="VisitTileWithLandanGrahamAndClearEnemies"
+						clearEnemies="1">
 					<defenders>
-						<unit type="AcrinMilitia" count="3" rankMin="0" rankMax="2"/>
+						<unit type="AcrinMilitia" count="1" rankMin="0" rankMax="2"/>
+						<unit type="AcrinZealot" count="2" rankMin="0" rankMax="2"/>
 					</defenders>
+					<unitConditions>
+						<token name="LandanGraham"/>
+					</unitConditions>		
 				</visitTile>
 				<keepUnitAlive token="LandanGraham"/>
 			</objectives>
@@ -76,23 +89,31 @@
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
 						<tile>
-							<land/>
-							<noFeatureCategory name="SpecialResource"/> 
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
-				</nearCityTileSelector>				
+				</nearCityTileSelector>	
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addFeature type="AcrinCrashSite"/>
+						</effects>
+					</modifier>
+				</tileModifiers>						
 			</modifications>
 			<objectives>
-				<visitTile name="VisitTileWithUnitTypeAndClearEnemies"
-						clearEnemies="1"
-						unitType="LandanGraham">
+				<visitTile name="VisitTileWithLandanGrahamAndClearEnemies"
+						clearEnemies="1">
 					<defenders>
 						<unit type="AcrinMilitia" count="3" rankMin="0" rankMax="2"/>
 					</defenders>
+					<unitConditions>
+						<token name="LandanGraham"/>
+					</unitConditions>		
 				</visitTile>
 				<keepUnitAlive token="LandanGraham"/>
 			</objectives>

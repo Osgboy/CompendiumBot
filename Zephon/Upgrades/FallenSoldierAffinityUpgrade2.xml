@@ -8,4 +8,12 @@
 	<requiredUpgrades>
 		<upgrade name="Praetorian"/>
 	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
 </upgrade>
