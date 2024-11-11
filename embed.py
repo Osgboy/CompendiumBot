@@ -161,10 +161,10 @@ def create_gaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool
     else:
         embed = discord.Embed(title=name)
     
-    if not flavorFlag:
-        # Color
-        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'])
 
@@ -214,10 +214,10 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
@@ -267,10 +267,10 @@ def create_gbuilding_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'], inline=False)
 
@@ -351,10 +351,10 @@ def create_zbuilding_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
@@ -435,10 +435,10 @@ def create_gfaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = GLADIUS_FACTION_COLORS[name]
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[name]
 
+    if not flavorFlag:
         # Starting Units
         unitsText = []
         for unit, count in attrs['startingUnits'].items():
@@ -491,10 +491,10 @@ def create_zfaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
         
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
@@ -553,10 +553,10 @@ def create_gitem_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
     # Name and Description
     embed = discord.Embed(title=name, description=attrs['description'])
 
-    if not flavorFlag:
-        # Color
-        embed.colour = RARITY_COLORS[attrs['rarity']]
+    # Color
+    embed.colour = RARITY_COLORS[attrs['rarity']]
 
+    if not flavorFlag:
         # Rarity
         embed.add_field(name='Rarity', value=attrs['rarity'])
 
@@ -589,10 +589,10 @@ def create_zitem_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = RARITY_COLORS[attrs['rarity']]
+    # Color
+    embed.colour = RARITY_COLORS[attrs['rarity']]
 
+    if not flavorFlag:
         # Rarity
         embed.add_field(name='Rarity', value=attrs['rarity'])
 
@@ -632,13 +632,13 @@ def create_gtrait_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool)
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        try:
-            embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
-        except KeyError:
-            embed.colour = GLADIUS_FACTION_COLORS['Neutral']
+    # Color
+    try:
+        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    except KeyError:
+        embed.colour = GLADIUS_FACTION_COLORS['Neutral']
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'])
 
@@ -667,10 +667,10 @@ def create_ztrait_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool)
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
@@ -699,10 +699,10 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'])
 
@@ -801,10 +801,10 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
@@ -897,13 +897,13 @@ def create_gupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        try:
-            embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
-        except KeyError:
-            embed.colour = GLADIUS_FACTION_COLORS['Neutral']
+    # Color
+    try:
+        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    except KeyError:
+        embed.colour = GLADIUS_FACTION_COLORS['Neutral']
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'])
 
@@ -933,10 +933,10 @@ def create_zupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'])
 
@@ -973,10 +973,10 @@ def create_gweapon_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    # Color
+    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
+    if not flavorFlag:
         # Faction
         embed.add_field(name='Faction', value=attrs['faction'])
 
@@ -1028,10 +1028,10 @@ def create_zweapon_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool
     else:
         embed = discord.Embed(title=name)
 
-    if not flavorFlag:
-        # Color
-        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    # Color
+    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
+    if not flavorFlag:
         # Branch
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
