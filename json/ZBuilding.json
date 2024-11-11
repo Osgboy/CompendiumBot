@@ -49,6 +49,7 @@
         "traits": {},
         "actions": {
             "Produce Abkluths": null,
+            "Produce Acrin Zealot": null,
             "Produce Acrin Remnants": null
         },
         "iconPath": "Zephon\\Icons\\Buildings\\VoiceInfantry.png",
@@ -197,7 +198,7 @@
     "Synthetic Printer": {
         "internalID": "CyberInfantry",
         "branch": "Cyber",
-        "description": "Produces Cyber infantry as well as generates minerals and chips\nInitially produces  Ishim Enforcers\n    <style color='GUI/Gray'/>Bio-mech infantry that alternates between high-power and low-power attacks while healing their wounds",
+        "description": "Produces Cyber infantry as well as generates minerals and chips\nInitially produces  Ishim Enforcers\n    <style color='GUI/Gray'/>Bio-mech infantry that alternate between high-power and low-power attacks while healing their wounds",
         "flavor": "Printing a soldier? The process seemed like nonsense. On the first day these factories went online, I watched them work and it was\u2026 out of this world. The printing tech could patch up organics and manufacture synthetics without missing a beat. First we used these facilities to improve the human body\u2014eventually, we started printing them from scratch.",
         "resourceCosts": {
             "energyUpkeep": "2.0",
@@ -322,7 +323,7 @@
         "internalID": "Food",
         "branch": "Neutral",
         "description": "Generates food",
-        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.\u201d",
+        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026 so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.\u201d",
         "resourceCosts": {
             "energyUpkeep": "1.0",
             "mineralsCost": "20",
@@ -345,7 +346,7 @@
         "description": "Produces heroes and generates baseline resources",
         "flavor": "You couldn\u2019t wage war without a secure home base. All of our defensive strategies came back to protecting this structure. If it fell, then all was lost.",
         "resourceCosts": {
-            "productionCost": "348"
+            "productionCost": "156"
         },
         "resourceOutput": {
             "production": "6",
@@ -407,7 +408,7 @@
         "internalID": "HumanInfantry",
         "branch": "Human",
         "description": "Produces Human infantry as well as increases housing and loyalty\nInitially produces  Militants\n    <style color='GUI/Gray'/>Basic infantry with faster fire rate at close range",
-        "flavor": "You never won any war without the grunts. Before you cracked open any advanced technology or gave into The Voice, you needed armed bodies primed for death. Great soldiers could come out of the infantry ranks\u2014but they had to survive first.",
+        "flavor": "You never won any war without the grunts. Before you cracked open any advanced technology or gave into the Voice, you needed armed bodies primed for death. Great soldiers could come out of the infantry ranks\u2014but they had to survive first.",
         "resourceCosts": {
             "energyUpkeep": "2.0",
             "mineralsCost": "40",

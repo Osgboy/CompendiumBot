@@ -1,4 +1,4 @@
-#!~/bot-env/Scripts/python.exe
+#!~/.venv/Scripts/python.exe
 import discord
 import os
 import json
@@ -172,19 +172,19 @@ class ConfirmFuzzyMatch(discord.ui.View):
                     f'Icon {fullIconPath!r} was not found. Sending embed without icon')
 
 
-def match_and_create_embed(verbose: bool, objClass: str, embedFunc: Callable[[str, dict, bool, str], discord.Embed], unitClass: str,
+def match_and_create_embed(verbose: bool, flavor: bool, objClass: str, embedFunc: Callable[[str, dict, bool, str], discord.Embed], unitClass: str,
                            *, name: str, unitName: str) -> tuple[discord.Embed, str]:
     if unitName:
         unitArgs = [*fuzzy_match('unitName', unitName, dicts[unitClass])]
     else:
         unitArgs = []
     objName, objDict = fuzzy_match('name', name, dicts[objClass])
-    embed = embedFunc(objName, objDict, verbose, *unitArgs)
+    embed = embedFunc(objName, objDict, verbose, flavor, *unitArgs)
     fullIconPath = objDict['iconPath']
     return embed, fullIconPath
 
 
-async def return_info(interaction: discord.Interaction, name: str, verbose: bool, invisible: bool, objClass: str,
+async def return_info(interaction: discord.Interaction, name: str, verbose: bool, flavor: bool, invisible: bool, objClass: str,
                       embedFunc: Callable[[dict, bool, str], discord.Embed], unitName: str = '', unitClass: str = ''):
     print(f'\nReceived request for:\n'
           f'- Class: {objClass}\n'
@@ -193,11 +193,11 @@ async def return_info(interaction: discord.Interaction, name: str, verbose: bool
     kwargs = {'name': name, 'unitName': unitName}
     try:
         embed, fullIconPath = match_and_create_embed(
-            verbose, objClass, embedFunc, unitClass, **kwargs)
+            verbose, flavor, objClass, embedFunc, unitClass, **kwargs)
     except NotFoundError as nf:
         kwargs[nf.keyword] = nf.bestMatch
         await interaction.response.send_message(f'**{nf.userInput}** not found. Did you mean **{nf.bestMatch}**?', ephemeral=invisible,
-                                                view=ConfirmFuzzyMatch(match_and_create_embed, verbose, objClass, embedFunc, unitClass, **kwargs))
+                                                view=ConfirmFuzzyMatch(match_and_create_embed, verbose, flavor, objClass, embedFunc, unitClass, **kwargs))
         print(repr(nf))
     else:
         try:
@@ -247,13 +247,15 @@ async def on_ready():
     for guild in bot.guilds:
         print('\t' + guild.name)
 
-    listGroup = List(
+    listGroup = app_commands.Group(
         name='list', description='List names of objects of a certain type with optional filters.')
     listGladius = GladiusList(
         name='gladius', description='List names of Gladius objects of a certain type with optional filters.', parent=listGroup)
     listZephon = ZephonList(
         name='zephon', description='List names of Zephon objects of a certain type with optional filters.', parent=listGroup)
     bot.tree.add_command(listGroup)
+
+    await bot.load_extension('cogs.roles')
 
     synced = await bot.tree.sync()
     print(f"\n# CMDs synced: {len(synced)}")
@@ -268,13 +270,10 @@ async def on_ready():
 def docstring_defaults(func):
     doc = func.__doc__ or ''
     doc += "\tverbose (bool): Flag to include raw XML, flavor text, and footer text if applicable (default is False)" + \
+        "\n\tflavor (bool) Flag to include only flavor text (default is False)" + \
         "\n\tinvisible (bool): Flag to make the bot's reply invisible to everyone except you (default is False)"
     func.__doc__ = doc
     return func
-
-
-class List(app_commands.Group):
-    pass
 
 
 class GladiusList(app_commands.Group):
@@ -545,253 +544,184 @@ class ZephonList(app_commands.Group):
         await return_list(interaction, invisible, 'ZWeapon', objList.create_zweapon_list, branch=branch, ZTrait=traitname, range=range)
 
 
-def partition_embed(embed: discord.Embed, objList: list[str]) -> discord.Embed:
-    startIdx = 0
-    endIdx = 0
-    fieldIdx = 1
-    while endIdx < len(objList):
-        charSum = 0
-        while charSum <= 1000 and endIdx < len(objList):
-            charSum += len(objList[endIdx]) + 1
-            endIdx += 1
-        if endIdx >= len(objList):
-            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx]))
-        else:
-            embed.add_field(name=f"User Page {fieldIdx}", value='\n'.join(objList[startIdx:endIdx-1]))
-            fieldIdx += 1
-            startIdx = endIdx - 1
-    return embed
-
-
-class AssignRoleModal(discord.ui.Modal, title="Assign a role to a list of users"):
-    role = discord.ui.TextInput(
-        style=discord.TextStyle.short,
-        label='Role',
-        required=True,
-        placeholder="Role to be assigned"
-    )
-
-    users = discord.ui.TextInput(
-        style=discord.TextStyle.long,
-        label='User List',
-        required=True,
-        placeholder="List of users (separated by new lines) to assign the role to"
-    )
-
-    async def on_submit(self, interaction: discord.Interaction) -> None:
-        await interaction.response.defer()
-        successCounter = 0
-        role: discord.Role = discord.utils.get(interaction.guild.roles, name=self.role.value)
-        if not role:
-            await interaction.response.send_message(f"Role {self.role.value} not found.", ephemeral=True)
-            return
-        userList = self.users.value.split('\n')
-        confirmList = []
-        for username in userList:
-            user: discord.Member = discord.utils.find(lambda m: m.name == username or m.display_name == username, interaction.guild.members)
-            if not user:
-                confirmList.append(f":x: {username}")
-                print(username)
-                continue
-            await user.add_roles(role)
-            successCounter += 1
-            confirmList.append(f":white_check_mark: {username}")
-        embed = discord.Embed(title=f"{self.role.value} successfully assigned to {successCounter}/{len(userList)} users")
-        await interaction.followup.send(embed=partition_embed(embed, confirmList), ephemeral=True)
-
-
-@bot.tree.command()
-@app_commands.checks.has_role('Administrator')
-async def addroles(interaction: discord.Interaction):
-    """Assign a role to a list of users."""
-    assign_role_modal = AssignRoleModal()
-    await interaction.response.send_modal(assign_role_modal)
-
-    
-@addroles.error
-async def addroles_error(interaction: discord.Interaction, error):
-    if isinstance(error, discord.app_commands.MissingRole):
-        await interaction.response.send_message("You do not have the Administrator role.", ephemeral=True)
-
-
 @bot.tree.command()
 @docstring_defaults
-async def gaction(interaction: discord.Interaction, actionname: str, verbose: bool = False, invisible: bool = False):
+async def gaction(interaction: discord.Interaction, actionname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius action.
 
     Args:
         actionname (str): Name of action to look up
     """
-    await return_info(interaction, actionname, verbose, invisible, 'GAction', embed.create_gaction_embed)
+    await return_info(interaction, actionname, verbose, flavor, invisible, 'GAction', embed.create_gaction_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zaction(interaction: discord.Interaction, actionname: str, verbose: bool = False, invisible: bool = False):
+async def zaction(interaction: discord.Interaction, actionname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon action.
 
     Args:
         actionname (str): Name of action to look up
     """
-    await return_info(interaction, actionname, verbose, invisible, 'ZAction', embed.create_zaction_embed)
+    await return_info(interaction, actionname, verbose, flavor, invisible, 'ZAction', embed.create_zaction_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, invisible: bool = False):
+async def gbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius building.
 
     Args:
         buildingname (str): Name of building to look up
     """
-    await return_info(interaction, buildingname, verbose, invisible, 'GBuilding', embed.create_gbuilding_embed)
+    await return_info(interaction, buildingname, verbose, flavor, invisible, 'GBuilding', embed.create_gbuilding_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, invisible: bool = False):
+async def zbuilding(interaction: discord.Interaction, buildingname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon building.
 
     Args:
         buildingname (str): Name of building to look up
     """
-    await return_info(interaction, buildingname, verbose, invisible, 'ZBuilding', embed.create_zbuilding_embed)
+    await return_info(interaction, buildingname, verbose, flavor, invisible, 'ZBuilding', embed.create_zbuilding_embed)
 
 
 @bot.tree.command()
 @app_commands.choices(factionname=[app_commands.Choice(name=k, value=v) for k,v in GLADIUS_FACTIONS.items()])
 @docstring_defaults
-async def gfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, invisible: bool = False):
+async def gfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius faction.
 
     Args:
         factionname (str): Name of faction to look up
     """
-    await return_info(interaction, factionname.value, verbose, invisible, 'GFaction', embed.create_gfaction_embed)
+    await return_info(interaction, factionname.value, verbose, flavor, invisible, 'GFaction', embed.create_gfaction_embed)
 
 
 @bot.tree.command()
 @app_commands.choices(factionname=[app_commands.Choice(name=f, value=f) for f in ZEPHON_FACTIONS])
 @docstring_defaults
-async def zfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, invisible: bool = False):
+async def zfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon faction.
 
     Args:
         factionname (str): Name of faction to look up
     """
-    await return_info(interaction, factionname.value, verbose, invisible, 'ZFaction', embed.create_zfaction_embed)
+    await return_info(interaction, factionname.value, verbose, flavor, invisible, 'ZFaction', embed.create_zfaction_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, invisible: bool = False):
+async def gitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius item.
 
     Args:
         itemname (str): Name of item to look up
     """
-    await return_info(interaction, itemname, verbose, invisible, 'GItem', embed.create_gitem_embed)
+    await return_info(interaction, itemname, verbose, flavor, invisible, 'GItem', embed.create_gitem_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, invisible: bool = False):
+async def zitem(interaction: discord.Interaction, itemname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon item.
 
     Args:
         itemname (str): Name of item to look up
     """
-    await return_info(interaction, itemname, verbose, invisible, 'ZItem', embed.create_zitem_embed)
+    await return_info(interaction, itemname, verbose, flavor, invisible, 'ZItem', embed.create_zitem_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gtrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, invisible: bool = False):
+async def gtrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius trait.
 
     Args:
         traitname (str): Name of trait to look up
     """
-    await return_info(interaction, traitname, verbose, invisible, 'GTrait', embed.create_gtrait_embed)
+    await return_info(interaction, traitname, verbose, flavor, invisible, 'GTrait', embed.create_gtrait_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def ztrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, invisible: bool = False):
+async def ztrait(interaction: discord.Interaction, traitname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon trait.
 
     Args:
         traitname (str): Name of trait to look up
     """
-    await return_info(interaction, traitname, verbose, invisible, 'ZTrait', embed.create_ztrait_embed)
+    await return_info(interaction, traitname, verbose, flavor, invisible, 'ZTrait', embed.create_ztrait_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, invisible: bool = False):
+async def gunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius unit.
 
     Args:
         unitname (str): Name of unit to look up
     """
-    await return_info(interaction, unitname, verbose, invisible, 'GUnit', embed.create_gunit_embed)
+    await return_info(interaction, unitname, verbose, flavor, invisible, 'GUnit', embed.create_gunit_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, invisible: bool = False):
+async def zunit(interaction: discord.Interaction, unitname: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon unit.
 
     Args:
         unitname (str): Name of unit to look up
     """
-    await return_info(interaction, unitname, verbose, invisible, 'ZUnit', embed.create_zunit_embed)
+    await return_info(interaction, unitname, verbose, flavor, invisible, 'ZUnit', embed.create_zunit_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, invisible: bool = False):
+async def gupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius upgrade.
 
     Args:
         upgradename (str): Name of upgrade to look up
     """
-    await return_info(interaction, upgradename, verbose, invisible, 'GUpgrade', embed.create_gupgrade_embed)
+    await return_info(interaction, upgradename, verbose, flavor, invisible, 'GUpgrade', embed.create_gupgrade_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, invisible: bool = False):
+async def zupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Broken for most entries until I figure out how to add all Zephon upgrades. Return info on a Zephon upgrade.
 
     Args:
         upgradename (str): Name of upgrade to look up
     """
-    await return_info(interaction, upgradename, verbose, invisible, 'ZUpgrade', embed.create_zupgrade_embed)
+    await return_info(interaction, upgradename, verbose, flavor, invisible, 'ZUpgrade', embed.create_zupgrade_embed)
 
 
 @bot.tree.command()
 @docstring_defaults
-async def gweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, invisible: bool = False):
+async def gweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius weapon. Optionally include a unit name for more accurate info.
 
     Args:
         weaponname (str): Name of weapon to look up
         unitname (str): Name of unit wielding the weapon
     """
-    await return_info(interaction, weaponname, verbose, invisible, 'GWeapon', embed.create_gweapon_embed, unitname, 'GUnit')
+    await return_info(interaction, weaponname, verbose, flavor, invisible, 'GWeapon', embed.create_gweapon_embed, unitname, 'GUnit')
 
 
 @bot.tree.command()
 @docstring_defaults
-async def zweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, invisible: bool = False):
+async def zweapon(interaction: discord.Interaction, weaponname: str, unitname: str = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon weapon. Optionally include a unit name for more accurate info.
 
     Args:
         weaponname (str): Name of weapon to look up
         unitname (str): Name of unit wielding the weapon
     """
-    await return_info(interaction, weaponname, verbose, invisible, 'ZWeapon', embed.create_zweapon_embed, unitname, 'ZUnit')
+    await return_info(interaction, weaponname, verbose, flavor, invisible, 'ZWeapon', embed.create_zweapon_embed, unitname, 'ZUnit')
 
 
 bot.run(TOKEN)

@@ -60,7 +60,7 @@
         },
         "internalID": "Abkluth",
         "branch": "Voice",
-        "description": "Biological melee bleedwalkers that regenerate health each turn",
+        "description": "Biological melee bleedwalkers that regenerate hitpoints each turn",
         "flavor": "The Acrin's creatures\u2014pets or food, I never knew. But they got loose from the wreckage of the crash site and made themselves at home here. We couldn't eat them\u2014fundamentally different biologies I hear\u2014but if you didn't hunt them, they'd kill or shred everything that you could eat.",
         "costStats": {
             "food": "10",
@@ -186,26 +186,21 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 2,
-            "hitpointsMax": 64,
-            "moraleMax": 12,
+            "armor": 8,
+            "hitpointsMax": 128,
+            "moraleMax": 0,
             "movementMax": 3,
-            "cargoSlots": 2,
+            "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "AcrinTitan",
         "branch": "Acrin",
-        "description": null,
+        "description": "Biological titan that can pull enemies into it's causal well and devour them",
         "flavor": "I can close my eyes and block out the Titan's limbs, the flesh, the mouth running down the center of its torso but it's the goddamn smell that won't go away. It sounds crazy but it smelled like\u2026 like breaking bones. Like your leg twisting all the way around, your foot turned backwards, your arm crushed by a boulder. It didn't smell like the pain or the blood, just the sensation of looking at your own body and seeing how wrong it was.",
         "costStats": {
-            "food": "40",
-            "algae": "20",
-            "production": "48.0"
+            "production": "78.0"
         },
-        "upkeepStats": {
-            "food": "2.0",
-            "algae": "1.0"
-        },
+        "upkeepStats": {},
         "weapons": {
             "Devouring Maw": {
                 "count": "1",
@@ -213,6 +208,11 @@
                 "secondary": false
             },
             "Abyssal Miasma": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Extirpate": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": true
@@ -243,8 +243,8 @@
         },
         "internalID": "AcrinZealot",
         "branch": "Acrin",
-        "description": null,
-        "flavor": null,
+        "description": "Biological bleedwalkers with crippling melee weapons and the ability to teleport between Bleed tiles",
+        "flavor": "Pity the grunts. One day, they learned about the Zealots\u2014Acrin who could walk into one patch of Bleed tendrils and emerge from another. Next thing, every Bleed hub had a bunch of idiot soldiers hunkered outside it. Like the Acrin were just going to walk into their bullets. Jesus, where do we find these people?",
         "costStats": {
             "food": "10",
             "minerals": "10",
@@ -327,23 +327,23 @@
             "accuracy": 8,
             "armor": 8,
             "hitpointsMax": 32,
-            "moraleMax": 10,
+            "moraleMax": 12,
             "movementMax": 3,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "AkavishProvost",
         "branch": "Cyber",
-        "description": null,
+        "description": "Large mechanical agile vehicle that taunts enemies and manipulates incoming damage",
         "flavor": "The first Provost was supposedly a fluke; an advanced intelligence core that malfunctioned and demanded a cradle to carry it into battle\u2014screaming that \u201cThe Fall of Babylon was nigh.\u201d But I don't think it malfunctioned. I think something was waiting in its code, something its creators didn't put in there. The machines were just as eager as the Voice cultists to see what the end of days looked like.",
         "costStats": {
-            "transuranium": "16",
-            "singularityCores": "8",
-            "production": "60.0"
+            "transuranium": "12",
+            "chips": "30",
+            "production": "54.0"
         },
         "upkeepStats": {
-            "transuranium": "0.8",
-            "singularityCores": "0.4"
+            "transuranium": "0.6",
+            "chips": "1.5"
         },
         "weapons": {
             "Sanctified Trephine": {
@@ -414,6 +414,52 @@
         "iconPath": "Zephon\\Icons\\Units\\AraneanStalker.png",
         "name": "Aranean Stalkers"
     },
+    "Arshem": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 8,
+            "armor": 2,
+            "hitpointsMax": 24,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "Arshem",
+        "branch": "Human",
+        "description": "Your own brother who has turned against you",
+        "flavor": "Your blood runs cold at his words. He speaks of slaughtering innocents, that any living Reaver could one day kill you both. You won't be part of this. You need to stop him, now.",
+        "costStats": {
+            "food": "10",
+            "minerals": "10",
+            "production": "24.0"
+        },
+        "upkeepStats": {
+            "food": "0.5",
+            "minerals": "0.5"
+        },
+        "weapons": {
+            "Pistol": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Machete": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null
+        },
+        "actions": {
+            "Frenzy": null,
+            "Hijack": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Reaver.png",
+        "name": "Arshem"
+    },
     "Artificer's Laboratory": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -427,15 +473,13 @@
         },
         "internalID": "ArtificersLaboratory",
         "branch": "Human",
-        "description": "Special laboratory used to investigate the passing comet.",
+        "description": "Special laboratory used to investigate the passing comet",
         "flavor": "The day you have been waiting for is nigh.\n\nYou watch your soldiers drag bodies to the site of your new lab. You ignore the sound of distant battle and focus on the limbs, organs, and machine parts before you.\n\nIn a short time, a passing comet vibrating with a unique harmonic signal will skip off the Earth's atmosphere. If you time it right, you will be able to direct that signal into a body formed of Acrin, Human, and fragments of ZEPHON.\n\nSuch a being could be the most powerful life form ever to walk planet Earth. No wonder then that other petty warlords stand ready to try and take it from you.\n\nLet them come. All who threaten your work will perish.",
         "costStats": {
             "minerals": "40",
             "production": "36.0"
         },
-        "upkeepStats": {
-            "minerals": "2.0"
-        },
+        "upkeepStats": {},
         "weapons": {},
         "traits": {
             "Fortification": null,
@@ -482,7 +526,7 @@
                 "requiredUpgrade": null,
                 "secondary": true
             },
-            "Antimatter Explosive": {
+            "Antimatter Grenade": {
                 "count": "1",
                 "requiredUpgrade": "AntimatterExplosive",
                 "secondary": true
@@ -492,7 +536,8 @@
             "Biological": null
         },
         "actions": {
-            "Cycle Weapon": null
+            "Cycle Weapon": null,
+            "Orbital Deployment": null
         },
         "iconPath": "Zephon\\Icons\\Units\\AssaultTrooper.png",
         "name": "Assault Troopers"
@@ -510,14 +555,16 @@
         },
         "internalID": "AtlasTank",
         "branch": "Human",
-        "description": null,
+        "description": "Mechanical titan with a variety of powerful weapons and upgrades",
         "flavor": "Tanks like city blocks. They never made these before the fall. Something we found on a mil-server, buried in the design archive. You could strap all kinds of weapons to a vehicle that size. And on the battlefield, firing those guns was like a thunderous orchestra, with each section belching out a violent, earth-cracking score.",
         "costStats": {
-            "minerals": "240",
-            "production": "66.0"
+            "transuranium": "32",
+            "antimatter": "32",
+            "production": "72.0"
         },
         "upkeepStats": {
-            "minerals": "12.0"
+            "transuranium": "1.6",
+            "antimatter": "1.6"
         },
         "weapons": {
             "Goliath Cannon": {
@@ -530,8 +577,13 @@
                 "requiredUpgrade": null,
                 "secondary": true
             },
+            "Gauss Cannon (Overcharged)": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
             "Missile Pod": {
-                "count": "1",
+                "count": "2",
                 "requiredUpgrade": null,
                 "secondary": false
             },
@@ -556,6 +608,52 @@
         "actions": {},
         "iconPath": "Zephon\\Icons\\Units\\AtlasTank.png",
         "name": "Atlas Tank"
+    },
+    "Bandit King": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 8,
+            "armor": 2,
+            "hitpointsMax": 24,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "BanditKing",
+        "branch": "Reaver",
+        "description": "A bandit leader corrupted by the Philosopher's Stone",
+        "flavor": "A light-haired man stumbles about the area, shrieking incomprehensibly at unseen tormentors. Brackish fluid weeps from his eyes and ears, more of it dribbles from his tongue whenever he speaks.",
+        "costStats": {
+            "food": "10",
+            "minerals": "10",
+            "production": "24.0"
+        },
+        "upkeepStats": {
+            "food": "0.5",
+            "minerals": "0.5"
+        },
+        "weapons": {
+            "Pistol": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Machete": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null
+        },
+        "actions": {
+            "Frenzy": null,
+            "Hijack": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Reaver.png",
+        "name": "Bandit King"
     },
     "Bunker": {
         "combatStats": {
@@ -609,7 +707,7 @@
         },
         "internalID": "Buster",
         "branch": "Reaver",
-        "description": "Biological anti-armor infantry that sets enemies aflame",
+        "description": "Biological anti-armor infantry that can set enemies aflame",
         "flavor": "The Reavers refused to be left behind in an arms race. As we built stronger armor, they scavenged more powerful weapons to break through it. Some found a particular love for fire. They would strike our flanks like a blazing hot wind, lobbing incendiary grenades that melted our troops to the bone. They wanted us to know that until all of them were slaughtered, they would always be a threat.",
         "costStats": {
             "food": "15",
@@ -642,6 +740,52 @@
         "iconPath": "Zephon\\Icons\\Units\\Buster.png",
         "name": "Busters"
     },
+    "Calem Vorshole": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 8,
+            "armor": 2,
+            "hitpointsMax": 24,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "CalemVorshole",
+        "branch": "Reaver",
+        "description": "Leader of the Wicked Kings gang",
+        "flavor": "A report comes in that he fled to a Wicked Kings army hiding nearby. Better men have tried to destroy you\u2026 and failed. You welcome the challenge.",
+        "costStats": {
+            "food": "10",
+            "minerals": "10",
+            "production": "24.0"
+        },
+        "upkeepStats": {
+            "food": "0.5",
+            "minerals": "0.5"
+        },
+        "weapons": {
+            "Pistol": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Machete": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null
+        },
+        "actions": {
+            "Frenzy": null,
+            "Hijack": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Reaver.png",
+        "name": "Calem Vorshole"
+    },
     "Chayot Exterminator": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -655,7 +799,7 @@
         },
         "internalID": "ChayotExterminator",
         "branch": "Cyber",
-        "description": "Large mechanical hover vehicle with good ranged combat capabilities and deployable combat drones",
+        "description": "Large mechanical hover vehicle with good ranged capabilities and deployable combat drones",
         "flavor": "I fucking hated how these things talked. Bad enough that you had this massive insect hovering over your shoulder, but to hear how it spoke? Like a child voicing its first words, but never learning what came next. At least its drones kept quiet. If they all started talking together, I might have\u2026 well, I don't want to think about what I might have done.",
         "costStats": {
             "minerals": "30",
@@ -693,26 +837,26 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 8,
-            "armor": 9,
-            "hitpointsMax": 128,
-            "moraleMax": 12,
-            "movementMax": 6,
+            "armor": 8,
+            "hitpointsMax": 64,
+            "moraleMax": 14,
+            "movementMax": 5,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "CherubimTitan",
         "branch": "Cyber",
-        "description": null,
+        "description": "Mechanical titan flyer that blasts enemies with tachyon weaponry and grants damage reduction to allies",
         "flavor": "These things were like\u2013living thunderstorms. Their shields made the air smell like filtered ion. The sound of their cannons could start an avalanche. When such a behemoth took to the battlefield, you knew how the gods of the old waged war.",
         "costStats": {
-            "transuranium": "120",
-            "antimatter": "120",
+            "transuranium": "12",
+            "antimatter": "12",
             "singularityCores": "12",
             "production": "66.0"
         },
         "upkeepStats": {
-            "transuranium": "6.0",
-            "antimatter": "6.0",
+            "transuranium": "0.6",
+            "antimatter": "0.6",
             "singularityCores": "0.6"
         },
         "weapons": {
@@ -744,9 +888,9 @@
     "Combat Drones": {
         "combatStats": {
             "groupSizeMax": 5,
-            "accuracy": 8,
+            "accuracy": 6,
             "armor": 4,
-            "hitpointsMax": 3.0,
+            "hitpointsMax": 2,
             "moraleMax": 8,
             "movementMax": 4,
             "cargoSlots": "0",
@@ -838,7 +982,7 @@
         },
         "internalID": "Commander",
         "branch": "Human",
-        "description": "Biological hero that supports infantry units in battle",
+        "description": "Biological hero that fights well and supports infantry units in battle",
         "flavor": "We hoped that the Commanders were the best of us. They didn't skulk way behind the frontlines, they were out front, risking everything, talking to the refugees, fighting the horrors. Equipping them with exoskeletons improved their combat performance, but also did a hell of a lot for morale.",
         "costStats": {
             "food": "20",
@@ -881,7 +1025,7 @@
     "Cr'la Disciple": {
         "combatStats": {
             "groupSizeMax": 6,
-            "accuracy": 6,
+            "accuracy": 8,
             "armor": 2,
             "hitpointsMax": 2,
             "moraleMax": 8,
@@ -891,7 +1035,7 @@
         },
         "internalID": "CrlaDisciple",
         "branch": "Voice",
-        "description": "Biological infantry which take longer to produce, but ignore line of sight with their attacks and cast a variety of spells",
+        "description": "Biological infantry which are produced slowly, but ignore line of sight with their attacks and cast a variety of spells",
         "flavor": "So many people fell at the feet\u2014too many damn feet\u2014of the Cr'la Disciples. The creatures traveled far and wide to lure in desperate survivors with promises about the power of the Voice. Every poor soul they recruited became damned. The children of hell, desperate for the love of a dark father.",
         "costStats": {
             "food": "10",
@@ -961,6 +1105,11 @@
                 "count": "1",
                 "requiredUpgrade": "HeavyMachineGun",
                 "secondary": false
+            },
+            "Shiraki Cruise Missile": {
+                "count": "1",
+                "requiredUpgrade": "ShirakiCruiseMissile",
+                "secondary": true
             }
         },
         "traits": {
@@ -1054,6 +1203,7 @@
             }
         },
         "traits": {
+            "Agile": null,
             "Biological": null,
             "Large": null
         },
@@ -1076,7 +1226,7 @@
         },
         "internalID": "Deformity",
         "branch": "Voice",
-        "description": "Biological melee monsters that creates Deformities by killing, but lose hitpoints each turn",
+        "description": "Biological melee monsters that create Deformities by killing, but lose hitpoints each turn",
         "flavor": "Every creature begins to die the second it draws breath. Deformities feel that sensation with every passing second. They\u2019re bred to make bloodlines out of enemy corpses. When the killing stops, entire generations of these creatures will simply cease to exist.",
         "costStats": {
             "food": "10",
@@ -1109,14 +1259,14 @@
             "accuracy": 6,
             "armor": 0,
             "hitpointsMax": 24,
-            "moraleMax": 12,
+            "moraleMax": 0,
             "movementMax": 3,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "Dreameater",
         "branch": "Voice",
-        "description": "Large hovering creature that reduces enemy morale and takes control of low morale enemies",
+        "description": "Large hovering creature that reduces enemy morale and takes control of broken enemies",
         "flavor": "We called these things Dreameaters, but they really fed on our souls. They knew exactly where in the human brain was the fine line between chemicals and consciousness. If you drew close, they would grab you, rip open your skull, find that line\u2026 and drink in everything that made you truly alive.",
         "costStats": {
             "food": "40",
@@ -1165,7 +1315,7 @@
         },
         "internalID": "ElectOfUzhodai",
         "branch": "Voice",
-        "description": "Large biological melee hero summoned to teleport across the battlefield and decimate enemies at the front lines",
+        "description": "Large biological melee hero summoned to teleport across the battlefield and castigates enemies at the front lines",
         "flavor": "These big brutal beasts freaked me the fuck out. Size of a tank. Arms that ended in blades. And what did they do when resting at HQ? Sit still, speaking in a dead language about deep philosophies of dimensional movement to Voice cultists sitting at their feet.",
         "costStats": {
             "food": "15",
@@ -1193,6 +1343,7 @@
             }
         },
         "traits": {
+            "Agile": null,
             "Biological": null,
             "Fervent Strength": null,
             "Hero": null,
@@ -1220,7 +1371,7 @@
         },
         "internalID": "ElohimMaelstrom",
         "branch": "Cyber",
-        "description": "Mechanical hover infantry with long range siege weapons that benefits from high ground",
+        "description": "Mechanical hover infantry with long range siege weapons that benefit from high ground",
         "flavor": "Fortresses meant to stand for decades fell like sandcastles when these machines came to call. Their spines arched up and down with each shot fired. Troops who learned to time that arch and get to cover lived just a bit longer before the walls came falling down.",
         "costStats": {
             "transuranium": "12",
@@ -1254,17 +1405,17 @@
     "EMP Drones": {
         "combatStats": {
             "groupSizeMax": 5,
-            "accuracy": 7,
+            "accuracy": 6,
             "armor": 4,
-            "hitpointsMax": 3.0,
+            "hitpointsMax": 2,
             "moraleMax": 8,
-            "movementMax": 3,
+            "movementMax": 4,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "EMPDrone",
         "branch": "Cyber",
-        "description": null,
+        "description": "Mechanical hover infantry that detonate themselves to stun mechanical units",
         "flavor": "Combat Drones can be a distraction, but EMP Drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
         "costStats": {
             "minerals": "10",
@@ -1303,7 +1454,7 @@
         },
         "internalID": "Engineer",
         "branch": "Neutral",
-        "description": "Bio-mech infantry that founds cities, constructs roads, clears tiles as well as repairs and buffs mechanical units",
+        "description": "Bio-mech infantry that found cities, construct roads, clear tiles as well as repair and buff mechanical units",
         "flavor": "Some had formal training, most didn't. Scientists, construction workers, technicians. The thing that distinguished the people we called engineers from everyone else was that they had the skills to get the job done, whatever the job. The ones who hadn't...? Well, they weren't around anymore.",
         "costStats": {
             "food": "10",
@@ -1466,6 +1617,7 @@
             }
         },
         "traits": {
+            "Agile": null,
             "Biological": null,
             "Contagious": null,
             "Large": null
@@ -1482,27 +1634,27 @@
             "accuracy": 6,
             "armor": 8,
             "hitpointsMax": 48,
-            "moraleMax": 8,
-            "movementMax": 7,
+            "moraleMax": 12,
+            "movementMax": 6,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "HadesBomber",
         "branch": "Human",
-        "description": null,
+        "description": "Mechanical flyer that dematerializes enemies with its antimatter bomb",
         "flavor": "Hades Bombers only took off once. It was expensive for them to take off and land repeatedly while carrying such earth-shattering payloads. Maintenance and crew cycling had to happen while it was airborne. They only came back down to earth in a very destructive blaze\u2014and all that was left were these big, empty craters. They were so smooth\u2014just like glass.",
         "costStats": {
-            "transuranium": "60",
-            "antimatter": "60",
-            "production": "54.0"
+            "transuranium": "16",
+            "antimatter": "16",
+            "production": "60.0"
         },
         "upkeepStats": {
-            "transuranium": "3.0",
-            "antimatter": "3.0"
+            "transuranium": "0.8",
+            "antimatter": "0.8"
         },
         "weapons": {
             "Hades Cannon": {
-                "count": "1",
+                "count": "2",
                 "requiredUpgrade": null,
                 "secondary": false
             },
@@ -1516,8 +1668,7 @@
             "Flying": null,
             "Large": null,
             "Mechanical": null,
-            "Stealth": "MultiSpectralScattering",
-            "Titan": null
+            "Stealth": "MultiSpectralScattering"
         },
         "actions": {},
         "iconPath": "Zephon\\Icons\\Units\\HadesBomber.png",
@@ -1656,8 +1807,8 @@
         },
         "internalID": "HonorableAristocratEngineer",
         "branch": "Human",
-        "description": null,
-        "flavor": null,
+        "description": "A particularly slow Engineer that can only do one job",
+        "flavor": "You're up for the task. It's one farm, how hard could it be?",
         "costStats": {
             "food": "5",
             "minerals": "5",
@@ -1684,7 +1835,7 @@
         "iconPath": "Zephon\\Icons\\Units\\Engineer.png",
         "name": "Honorable Aristocrat (Engineer)"
     },
-    "The Neoduke's Brigade": {
+    "The NeoDuke's Brigade": {
         "combatStats": {
             "groupSizeMax": 3,
             "accuracy": 4,
@@ -1697,8 +1848,8 @@
         },
         "internalID": "HonorableAristocratMissileTeam",
         "branch": "Human",
-        "description": null,
-        "flavor": null,
+        "description": "A particularly slow Missile Team",
+        "flavor": "This crew looks capable, but flawed. Surely they can handle one Warden\u2026",
         "costStats": {
             "food": "15",
             "minerals": "15",
@@ -1723,7 +1874,7 @@
             "Grounded Fire": null
         },
         "iconPath": "Zephon\\Icons\\Units\\MissileTeam.png",
-        "name": "The Neoduke's Brigade"
+        "name": "The NeoDuke's Brigade"
     },
     "Honorable Aristocrat (Outrider)": {
         "combatStats": {
@@ -1731,15 +1882,15 @@
             "accuracy": "6",
             "armor": 6,
             "hitpointsMax": 24,
-            "moraleMax": 10,
+            "moraleMax": 12,
             "movementMax": 2,
-            "cargoSlots": 1,
+            "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "HonorableAristocratOutrider",
         "branch": "Human",
-        "description": null,
-        "flavor": null,
+        "description": "A particularly slow Outrider",
+        "flavor": "You used to sneak out and steal the family car in the old days. This should be easy\u2026 right?",
         "costStats": {
             "minerals": "30",
             "production": "30.0"
@@ -1766,10 +1917,10 @@
     "Hwedo": {
         "combatStats": {
             "groupSizeMax": 1,
-            "accuracy": 6,
+            "accuracy": 8,
             "armor": 4,
-            "hitpointsMax": 3.0,
-            "moraleMax": 8,
+            "hitpointsMax": 32,
+            "moraleMax": 12,
             "movementMax": 3,
             "cargoSlots": "0",
             "itemSlots": "0"
@@ -1812,8 +1963,8 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 8,
-            "armor": 6,
-            "hitpointsMax": 12,
+            "armor": 4,
+            "hitpointsMax": 32,
             "moraleMax": 8,
             "movementMax": 4,
             "cargoSlots": "0",
@@ -1821,8 +1972,8 @@
         },
         "internalID": "IronFeather",
         "branch": "Cyber",
-        "description": "Your former pen pal imprisoned in a very special Malakim Destroyer",
-        "flavor": null,
+        "description": "IronFeather imprisoned in a special Malakim Destroyer",
+        "flavor": "IronFeather wished to replace you. Now she will serve you. Forever.",
         "costStats": {
             "food": "10",
             "minerals": "10",
@@ -1912,7 +2063,7 @@
         },
         "internalID": "IshimEnforcer",
         "branch": "Cyber",
-        "description": "Bio-mech infantry that alternates between high-power and low-power attacks while healing their wounds",
+        "description": "Bio-mech infantry that alternate between high-power and low-power attacks while healing their wounds",
         "flavor": "A soldier\u2019s broken body was just the foundation for a better weapon. Paralyzed? They shunted your spine. Missing limbs? They'd give you something better. Pretty soon they were standardizing the replacement parts and just outfitting the soldiers with them, whether they needed them or not.",
         "costStats": {
             "food": "10",
@@ -1958,7 +2109,7 @@
         "internalID": "Jezina",
         "branch": "Human",
         "description": null,
-        "flavor": null,
+        "flavor": "Jezina knows how to keep a low profile. The Chieftess nearly killed your messenger when they asked for details on her appearance. \u201cShe's a vicious monster who whips children. You'll know her when you see her\u201d was her only response. Strange. You've never heard the Chieftess express worry for children before. What a\u2026 specific description.",
         "costStats": {
             "minerals": "30",
             "production": "30.0"
@@ -1985,6 +2136,56 @@
         },
         "iconPath": "Zephon\\Icons\\Units\\Outrider.png",
         "name": "Jezina"
+    },
+    "Klot'Hadal": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 10,
+            "armor": 2,
+            "hitpointsMax": 32,
+            "moraleMax": 6,
+            "movementMax": 4,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "KlotHadal",
+        "branch": "Voice",
+        "description": "A legendary Abkluth Dragoon",
+        "flavor": "You race to the walls at the sound of a war horn\u2014where a single Tattooed Hunter waits for you, atop an outsized Abkluth. She is called \u201cKlot'Hadal,\u201d after a mythical Acrin giantslayer. \u201cYou will bring me a Titan to slay,\u201d she bellows. It's in your best interest to obey her command.",
+        "costStats": {
+            "food": "10",
+            "minerals": "10",
+            "algae": "5",
+            "production": "30.0"
+        },
+        "upkeepStats": {
+            "food": "0.5",
+            "minerals": "0.5",
+            "algae": "0.25"
+        },
+        "weapons": {
+            "Abkluth Bite": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Dragoon Spear": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Agile": null,
+            "Biological": null,
+            "Bleedwalker": null,
+            "Dragoon Armor": null
+        },
+        "actions": {
+            "Tame Abkluth": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\AbkluthDragoon.png",
+        "name": "Klot'Hadal"
     },
     "Kriteria Annihilators": {
         "combatStats": {
@@ -2035,7 +2236,7 @@
             "armor": 6,
             "hitpointsMax": 32,
             "moraleMax": 12,
-            "movementMax": 3,
+            "movementMax": 4,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
@@ -2085,7 +2286,7 @@
             "groupSizeMax": 1,
             "accuracy": 6,
             "armor": 6,
-            "hitpointsMax": 4,
+            "hitpointsMax": 12,
             "moraleMax": 6,
             "movementMax": 3,
             "cargoSlots": "0",
@@ -2093,7 +2294,7 @@
         },
         "internalID": "LandanGraham",
         "branch": "Human",
-        "description": "Bio-mech character that can clear tiles",
+        "description": "Bio-mech scientist that can clear tiles",
         "flavor": "Landan Graham. Proof that the Watchmakers weren't all working toward the same goal. He was a scientist who sought power from stories\u2014but far from the average idiosyncratic idiot you'd find in their ranks. Each time we crossed paths, I grew more and more sure he knew more about the Acrin than he was letting on about. You'd think he was born on their world\u2026",
         "costStats": {
             "food": "5",
@@ -2118,8 +2319,55 @@
         "actions": {
             "Clear Tile": null
         },
-        "iconPath": "Zephon\\Icons\\Units\\LandanGraham.png",
+        "iconPath": "Zephon\\Icons\\Units\\Engineer.png",
         "name": "Landan Graham"
+    },
+    "Landan Graham (Augmented)": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 32,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "LandanGrahamAugmented",
+        "branch": "Human",
+        "description": "Bio-mech scientist augmented with a magnificent weapon made of Human and Acrin technologies",
+        "flavor": "Graham pulled something powerful out of that ship. As the final battle nears, he shows up on your doorstep, armed with a weapon none of your scientists recognize. It's a gauss pistol that purrs like a great cat, and firing it seems to give him a jolt of Acrin life force.",
+        "costStats": {
+            "food": "5",
+            "minerals": "5",
+            "production": "12.0"
+        },
+        "upkeepStats": {
+            "food": "0.25",
+            "minerals": "0.25"
+        },
+        "weapons": {
+            "Landan Graham's Disintegrator": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Landan Graham's Disintegrator (Overcharged)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Mechanical": null
+        },
+        "actions": {
+            "Clear Tile": null,
+            "Cycle Weapon": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Engineer.png",
+        "name": "Landan Graham (Augmented)"
     },
     "Malakim Destroyers": {
         "combatStats": {
@@ -2264,8 +2512,8 @@
             "accuracy": 6,
             "armor": 6,
             "hitpointsMax": 32,
-            "moraleMax": 10,
-            "movementMax": 6,
+            "moraleMax": 12,
+            "movementMax": 5,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
@@ -2303,6 +2551,47 @@
         },
         "iconPath": "Zephon\\Icons\\Units\\OphanimCarrier.png",
         "name": "Ophanim Carrier"
+    },
+    "Orin": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 12,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "Orin",
+        "branch": "Human",
+        "description": "A sacrilegious scientist",
+        "flavor": "Finally, the Voice's whispers guided you to a worthy servant: a slick-haired recluse who only gives you the name \u201cOrin.\u201d It seems Orin has spent years in the wastes conducting experiments that you might once have branded sacrilegious.",
+        "costStats": {
+            "food": "5",
+            "minerals": "5",
+            "production": "12.0"
+        },
+        "upkeepStats": {
+            "food": "0.25",
+            "minerals": "0.25"
+        },
+        "weapons": {
+            "Pistol": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Mechanical": null
+        },
+        "actions": {
+            "Clear Tile": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Engineer.png",
+        "name": "Orin"
     },
     "Outrider": {
         "combatStats": {
@@ -2349,7 +2638,7 @@
     "Phenaris Epicurean": {
         "combatStats": {
             "groupSizeMax": 5,
-            "accuracy": 6,
+            "accuracy": 8,
             "armor": 6,
             "hitpointsMax": 6,
             "moraleMax": 8,
@@ -2359,7 +2648,7 @@
         },
         "internalID": "PhenarisEpicurean",
         "branch": "Voice",
-        "description": null,
+        "description": "Biological melee infantry that temporarily boost their own hitpoints and heal allies when attacking enemies in melee",
         "flavor": "Cultists transformed into Phenaris Epicurean kept their intelligence. No, that's not true. They became smarter. Poetic. You'd walk through the yard and see a group of them debating philosophy while picking apart the guts of prisoners dragged back to base. I think if the Voice's worshippers won the war\u2026 this would be the future of the human race.",
         "costStats": {
             "food": "30",
@@ -2445,38 +2734,38 @@
             "groupSizeMax": 1,
             "accuracy": 6,
             "armor": 8,
-            "hitpointsMax": 48,
-            "moraleMax": 8,
+            "hitpointsMax": 32,
+            "moraleMax": 10,
             "movementMax": 7,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "PhoenixInterceptor",
         "branch": "Human",
-        "description": null,
+        "description": "Large mechanical flyer capable of tremendous speed and excellent performance against other aerial targets",
         "flavor": "Hotshots and knuckleheads still made for the best fighter pilots. When you went up in one of these, you needed to be ready to dance with another ace pilot, or play chicken with the jaws of a monster. A well-stocked Interceptor was ready for both.",
         "costStats": {
-            "transuranium": "60",
-            "antimatter": "60",
+            "transuranium": "12",
+            "antimatter": "12",
             "production": "54.0"
         },
         "upkeepStats": {
-            "transuranium": "3.0",
-            "antimatter": "3.0"
+            "transuranium": "0.6",
+            "antimatter": "0.6"
         },
         "weapons": {
             "Gauss Autocannon": {
-                "count": "1",
+                "count": "2",
                 "requiredUpgrade": null,
                 "secondary": false
             },
             "Gauss Autocannon (Overcharged)": {
-                "count": "1",
+                "count": "2",
                 "requiredUpgrade": null,
                 "secondary": true
             },
             "Interceptor Missile": {
-                "count": "2",
+                "count": "4",
                 "requiredUpgrade": null,
                 "secondary": true
             }
@@ -2498,15 +2787,15 @@
             "accuracy": 6,
             "armor": 6,
             "hitpointsMax": 48,
-            "moraleMax": 8,
+            "moraleMax": 10,
             "movementMax": 3,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "PlangentOrolos",
         "branch": "Voice",
-        "description": null,
-        "flavor": "Cancer cells that formed Fallen Orolos could be shaped by sound waves. The creatures born from that process could hear whispers from The Voice no one else could\u2014whispers that it turned into destructive weapons of its own, every blast a hellish sermon from a god that reshaped our world.",
+        "description": "Large biological creature that manipulates sound to damage and immobilize enemies",
+        "flavor": "Cancer cells that formed Fallen Orolos could be shaped by sound waves. The creatures born from that process could hear whispers from the Voice no one else could\u2014whispers that it turned into destructive weapons of its own, every blast a hellish sermon from a god that reshaped our world.",
         "costStats": {
             "food": "30",
             "energy": "30",
@@ -2526,6 +2815,7 @@
             }
         },
         "traits": {
+            "Agile": null,
             "Biological": null,
             "Dimensional Reverberations": "DimensionalReverberations",
             "Large": null
@@ -2540,7 +2830,7 @@
         "combatStats": {
             "groupSizeMax": 6,
             "accuracy": 8,
-            "armor": 8,
+            "armor": 10,
             "hitpointsMax": 3.0,
             "moraleMax": 8,
             "movementMax": 3,
@@ -2549,16 +2839,18 @@
         },
         "internalID": "Praetorian",
         "branch": "Human",
-        "description": null,
+        "description": "Biological infantry carrying antimatter equipment and jump packs to shock and devastate enemies in close combat",
         "flavor": "Soldiers equipped with Praetorian armor were prepared to slash open the veins of creatures three times their size. Or rip through the wiring of a machine that could tear open the world. We had to remind these troops that they were not gods-they were just trained in killing them.",
         "costStats": {
-            "food": "20",
-            "transuranium": "20",
-            "production": "36.0"
+            "food": "40",
+            "transuranium": "4",
+            "antimatter": "4",
+            "production": "48.0"
         },
         "upkeepStats": {
-            "food": "1.0",
-            "transuranium": "1.0"
+            "food": "2.0",
+            "transuranium": "0.2",
+            "antimatter": "0.2"
         },
         "weapons": {
             "Antimatter Sword": {
@@ -2583,7 +2875,9 @@
             "Ablative Growth": "FallenSoldierAffinityUpgrade2"
         },
         "actions": {
-            "Cycle Weapon": "GaussCarbine"
+            "Jump Pack": null,
+            "Cycle Weapon": "GaussCarbine",
+            "Orbital Deployment": null
         },
         "iconPath": "Zephon\\Icons\\Units\\Praetorian.png",
         "name": "Praetorian"
@@ -2591,28 +2885,28 @@
     "Reaming Crodeus": {
         "combatStats": {
             "groupSizeMax": 1,
-            "accuracy": 8,
-            "armor": 9,
-            "hitpointsMax": 128,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 96,
             "moraleMax": 12,
-            "movementMax": 6,
+            "movementMax": 5,
             "cargoSlots": 1,
             "itemSlots": "0"
         },
         "internalID": "ReamingCrodeus",
         "branch": "Voice",
-        "description": null,
-        "flavor": null,
+        "description": "Biological titan flyer that cripples and swallows foes only to digest them in its stomach",
+        "flavor": "After these entered the battlefield, every village and town I visited was\u2026 quieter. Everyone stayed huddled indoors, terrified of a Crodeus dropping on their town and swallowing them whole. Peasants, scared of the dragon living up on the mountain\u2026",
         "costStats": {
-            "transuranium": "120",
-            "antimatter": "120",
-            "singularityCores": "12",
+            "food": "60",
+            "antimatter": "12",
+            "dimensionalEchoes": "12",
             "production": "66.0"
         },
         "upkeepStats": {
-            "transuranium": "6.0",
-            "antimatter": "6.0",
-            "singularityCores": "0.6"
+            "food": "3.0",
+            "antimatter": "0.6",
+            "dimensionalEchoes": "0.6"
         },
         "weapons": {
             "Crodeus Bite": {
@@ -2700,7 +2994,7 @@
         },
         "internalID": "ReaverCamp",
         "branch": "Neutral",
-        "description": null,
+        "description": "Large mechanical fortification",
         "flavor": "When all this is done, it will be you who kept him safe. A familial debt, decades old, will be repaid. Capture one camp, one single Reaver camp\u2014and you can be truly reunited.",
         "costStats": {},
         "upkeepStats": {},
@@ -2714,7 +3008,7 @@
         "actions": {
             "Set Rally Point": null
         },
-        "iconPath": "Zephon\\Icons\\Units\\ReaverCamp.png",
+        "iconPath": "Zephon\\Icons\\Units\\Headquarters.png",
         "name": "Reaver Camp"
     },
     "Repair Drones": {
@@ -2722,15 +3016,15 @@
             "groupSizeMax": 5,
             "accuracy": 6,
             "armor": 4,
-            "hitpointsMax": 3.0,
+            "hitpointsMax": 2,
             "moraleMax": 8,
-            "movementMax": 3,
+            "movementMax": 4,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "RepairDrone",
         "branch": "Cyber",
-        "description": null,
+        "description": "Mechanical hover infantry that repair mechanical allies",
         "flavor": "Don\u2019t ignore these drones. Their field repairs made us wish humans were as easy to fix as machines. We joked about what you could get done if mending an arm was as simple as reconnecting some blasted circuitry. Some of us\u2026 some of us decided that wasn\u2019t just a joke.",
         "costStats": {
             "minerals": "10",
@@ -2797,8 +3091,8 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 8,
-            "armor": 10,
-            "hitpointsMax": 192,
+            "armor": 8,
+            "hitpointsMax": 96,
             "moraleMax": 0,
             "movementMax": 3,
             "cargoSlots": "0",
@@ -2806,15 +3100,17 @@
         },
         "internalID": "SeraphimArchangel",
         "branch": "Cyber",
-        "description": null,
+        "description": "Mechanical hover titan that obliterates enemies with its singularity blade",
         "flavor": "The parallel processes driving this colossal machine spoke as one. Never with words, but with a melody that made your arteries vibrate. Maybe some creatures were tuned to hear the message it had to offer. Anything that couldn\u2019t, faced obliteration.",
         "costStats": {
-            "transuranium": "304",
+            "transuranium": "16",
+            "antimatter": "16",
             "singularityCores": "16",
             "production": "72.0"
         },
         "upkeepStats": {
-            "transuranium": "15.2",
+            "transuranium": "0.8",
+            "antimatter": "0.8",
             "singularityCores": "0.8"
         },
         "weapons": {
@@ -2825,7 +3121,7 @@
             }
         },
         "traits": {
-            "Deflector Shield": null,
+            "Deflector Shield": "DeflectorShield",
             "Transuranic Apathy": "HeartlessArtificerAffinityUpgrade2",
             "Hovering": null,
             "Large": null,
@@ -2866,6 +3162,7 @@
         "weapons": {},
         "traits": {
             "Biological": null,
+            "Fortification": null,
             "Large": null
         },
         "actions": {
@@ -2924,7 +3221,7 @@
             "accuracy": 6,
             "armor": 6,
             "hitpointsMax": 32,
-            "moraleMax": 8,
+            "moraleMax": 10,
             "movementMax": 6,
             "cargoSlots": 3,
             "itemSlots": "0"
@@ -3050,7 +3347,7 @@
         },
         "internalID": "TheFalseSpeaker",
         "branch": "Cyber",
-        "description": null,
+        "description": "A corrupted Krypt Archai",
         "flavor": "The Archai is restored. Though its metal flesh is still battered, the cube on its back pulses to a far healthier beat. \u201cThank you, your holiness,\u201d it says. \u201cYou and the Great Speaker have saved us.\u201d",
         "costStats": {
             "minerals": "15",
@@ -3085,6 +3382,7 @@
             "System Overload": null,
             "Entomb": null,
             "Level Up": null,
+            "Aura of The False Speaker": null,
             "Conjure Bleed": null
         },
         "iconPath": "Zephon\\Icons\\Units\\KryptArchai.png",
@@ -3097,7 +3395,7 @@
             "armor": 6,
             "hitpointsMax": 32,
             "moraleMax": 10,
-            "movementMax": 3,
+            "movementMax": 4,
             "cargoSlots": "0",
             "itemSlots": "0"
         },
@@ -3181,6 +3479,11 @@
                 "count": "1",
                 "requiredUpgrade": "HeavyMachineGun",
                 "secondary": false
+            },
+            "Shiraki Cruise Missile": {
+                "count": "1",
+                "requiredUpgrade": "ShirakiCruiseMissile",
+                "secondary": true
             }
         },
         "traits": {
@@ -3198,7 +3501,7 @@
             "groupSizeMax": 1,
             "accuracy": 6,
             "armor": 6,
-            "hitpointsMax": 192,
+            "hitpointsMax": 128,
             "moraleMax": 12,
             "movementMax": 3,
             "cargoSlots": 6,
@@ -3206,18 +3509,18 @@
         },
         "internalID": "VorodaisLeviathan",
         "branch": "Voice",
-        "description": null,
-        "flavor": null,
+        "description": "Biological titan transport that excels at clearing large groups of enemies and draining their essence",
+        "flavor": "They never cleaned the cage hanging from the Leviathan's belly. You could smell the mixture of stale blood from wounded troops and gooey pus dripping down. I always retched, but some\u2026 some were so far gone. The horrors just left them staring out dead-eyed into the distance, waiting for their end.",
         "costStats": {
-            "food": "160",
+            "food": "80",
             "antimatter": "16",
-            "dimensionalEchoes": "8",
+            "dimensionalEchoes": "16",
             "production": "72.0"
         },
         "upkeepStats": {
-            "food": "8.0",
+            "food": "4.0",
             "antimatter": "0.8",
-            "dimensionalEchoes": "0.4"
+            "dimensionalEchoes": "0.8"
         },
         "weapons": {
             "Wrath of the Leviathan": {
@@ -3248,9 +3551,9 @@
     "Vulkan R-5": {
         "combatStats": {
             "groupSizeMax": 1,
-            "accuracy": 6,
-            "armor": 7,
-            "hitpointsMax": 24,
+            "accuracy": 8,
+            "armor": 10,
+            "hitpointsMax": 32,
             "moraleMax": 10,
             "movementMax": 3,
             "cargoSlots": "0",
@@ -3258,14 +3561,14 @@
         },
         "internalID": "VulkanR5",
         "branch": "Human",
-        "description": null,
+        "description": "Large mechanical mech that slams and incinerates its enemies",
         "flavor": "Those early exoskeletons we gave to the Commanders\u2014they were just prototypes. When our techs got going, the stuff they made... he R-5 was a terror machine, designed to survive long enough to get up close. Imagine launching every missile you had at this thing, seeing it vanish in a cloud of fire and smoke\u2026 only for it to burst out of the flames, undeterred and guns blazing.",
         "costStats": {
-            "minerals": "60",
-            "production": "42.0"
+            "transuranium": "16",
+            "production": "48.0"
         },
         "upkeepStats": {
-            "minerals": "3.0"
+            "transuranium": "0.8"
         },
         "weapons": {
             "Power Fist": {
@@ -3277,14 +3580,21 @@
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": false
+            },
+            "Shiraki Cruise Missile": {
+                "count": "1",
+                "requiredUpgrade": "ShirakiCruiseMissile",
+                "secondary": true
             }
         },
         "traits": {
+            "Agile": null,
             "Mechanical": null,
             "Large": null
         },
         "actions": {
-            "Power Spike": null
+            "Power Spike": null,
+            "Orbital Deployment": null
         },
         "iconPath": "Zephon\\Icons\\Units\\VulkanR5.png",
         "name": "Vulkan R-5"
@@ -3331,6 +3641,7 @@
             }
         },
         "traits": {
+            "Agile": null,
             "Cannibalize Machines": null,
             "Mechanical": null,
             "Large": null
@@ -3338,6 +3649,56 @@
         "actions": {},
         "iconPath": "Zephon\\Icons\\Units\\Warden.png",
         "name": "Warden"
+    },
+    "Warden (Augmented)": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 10,
+            "armor": 8,
+            "hitpointsMax": 48,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "WardenAugmented",
+        "branch": "Zephon",
+        "description": "A highly advanced Warden",
+        "flavor": "The next day, a swarm of aerial drones drop off a silver-alloyed casket outside your city. The casket slides open with a hiss, revealing ZEPHON\u2019s half of the bargain: a sleeker, upgraded Warden with carbyne-edge blades and an improved payload.",
+        "costStats": {
+            "transuranium": "16",
+            "chips": "40",
+            "production": "60.0"
+        },
+        "upkeepStats": {
+            "transuranium": "0.8",
+            "chips": "2.0"
+        },
+        "weapons": {
+            "Circular Saw": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Flamethrower": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Missile Pod": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Cannibalize Machines": null,
+            "Mechanical": null,
+            "Large": null
+        },
+        "actions": {},
+        "iconPath": "Zephon\\Icons\\Units\\Warden.png",
+        "name": "Warden (Augmented)"
     },
     "Whisperer of Goldrauch": {
         "combatStats": {
@@ -3391,6 +3752,56 @@
         "iconPath": "Zephon\\Icons\\Units\\WhispererOfGoldrauch.png",
         "name": "Whisperer of Goldrauch"
     },
+    "Zandra Kyne": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 4,
+            "hitpointsMax": 32,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "ZandraKyne",
+        "branch": "Human",
+        "description": "A brilliant and slightly mad scientist that manipulates time",
+        "flavor": "As the screech of the titans\u2014both monster and machine\u2014is heard across the wasteland, a portal opens in your command center and none other than Zandra Kyne falls out and crashes onto your war table.\n\nShe babbles something about breaking that table \u201cevery time\u201d she reaches this moment before offering to fight by your side. \u201cI have to be here,\u201d she tells you. \u201cEvery time. I have to be here. Or it all just breaks.\u201d",
+        "costStats": {
+            "food": "10",
+            "minerals": "10",
+            "energy": "10",
+            "production": "30.0"
+        },
+        "upkeepStats": {
+            "food": "0.5",
+            "minerals": "0.5",
+            "energy": "0.5"
+        },
+        "weapons": {
+            "Pistol": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Gravitational Pull": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Combat Shield": null
+        },
+        "actions": {
+            "Paramedic": null,
+            "First Aid Drone": null,
+            "Bionic Implant": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\CombatMedic.png",
+        "name": "Zandra Kyne"
+    },
     "ZEPHON Black Site": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -3404,8 +3815,8 @@
         },
         "internalID": "ZephonBlackSite",
         "branch": "Neutral",
-        "description": null,
-        "flavor": null,
+        "description": "Large mechanical fortification",
+        "flavor": "One of your recon teams reports they found evidence of an underground ZEPHON black site. They ran a Crypt-Scan, hoping to find a server bunker or skunkworks, but instead the images returned a massive shielded hollow.",
         "costStats": {},
         "upkeepStats": {},
         "weapons": {},
@@ -3425,26 +3836,21 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 2,
-            "hitpointsMax": 64,
-            "moraleMax": 12,
+            "armor": 10,
+            "hitpointsMax": 96,
+            "moraleMax": 0,
             "movementMax": 3,
-            "cargoSlots": 2,
+            "cargoSlots": "0",
             "itemSlots": "0"
         },
         "internalID": "ZephonTitan",
         "branch": "Zephon",
-        "description": null,
-        "flavor": null,
+        "description": "Mechanical titan that constructs Wardens, aids mechanical units and rains death and destruction on a large area",
+        "flavor": "Sentries. Hammerheads. Wardens. ZEPHON always had this attachment to human machines\u2014like it could look inside them and see the monsters that made them. Its Titan was a machine of deep anger, carved from the heart of a rusted battleship that once ferried death back and forth across the ocean.",
         "costStats": {
-            "food": "40",
-            "algae": "20",
-            "production": "48.0"
+            "production": "78.0"
         },
-        "upkeepStats": {
-            "food": "2.0",
-            "algae": "1.0"
-        },
+        "upkeepStats": {},
         "weapons": {
             "Saturation System": {
                 "count": "1",

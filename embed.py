@@ -154,49 +154,51 @@ def calculate_zweapon_stats(weaponStats: dict, unitAccuracy: int = 6) -> dict:
     return finalStats
 
 
-def create_gaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
     
-    # Color
-    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    if not flavorFlag:
+        # Color
+        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
 
-    # Cooldown
-    if attrs['cooldown'] == 'Passive':
-        embed.add_field(name='Cooldown', value='Passive', inline=False)
-    else:
-        embed.add_field(
-            name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {attrs['cooldown']}", inline=False)
+        # Cooldown
+        if attrs['cooldown'] == 'Passive':
+            embed.add_field(name='Cooldown', value='Passive', inline=False)
+        else:
+            embed.add_field(
+                name='Cooldown', value=f"{GLADIUS_ICONS['cooldown']} {attrs['cooldown']}", inline=False)
 
-    # Conditions
-    embed.add_field(name=f"Required upgrade", value=str(
-        attrs['conditions']['requiredUpgrade']))
-    embed.add_field(name=f"Requires {GLADIUS_ICONS['actions']} AP?", value=str(
-        attrs['conditions']['requiredActionPoints']))
-    embed.add_field(name=f"Requires {GLADIUS_ICONS['movement']} movement?", value=str(
-        attrs['conditions']['requiredMovement']))
-    embed.add_field(name=f"Usable in {GLADIUS_ICONS['transport']} transport?", value=str(
-        attrs['conditions']['usableInTransport']))
-    embed.add_field(name=f"Consumes {GLADIUS_ICONS['actions']} AP?", value=str(
-        attrs['conditions']['consumedActionPoints']))
-    embed.add_field(name=f"Consumes {GLADIUS_ICONS['movement']} movement?", value=str(
-        attrs['conditions']['consumedMovement']))
+        # Conditions
+        embed.add_field(name=f"Required upgrade", value=str(
+            attrs['conditions']['requiredUpgrade']))
+        embed.add_field(name=f"Requires {GLADIUS_ICONS['actions']} AP?", value=str(
+            attrs['conditions']['requiredActionPoints']))
+        embed.add_field(name=f"Requires {GLADIUS_ICONS['movement']} movement?", value=str(
+            attrs['conditions']['requiredMovement']))
+        embed.add_field(name=f"Usable in {GLADIUS_ICONS['transport']} transport?", value=str(
+            attrs['conditions']['usableInTransport']))
+        embed.add_field(name=f"Consumes {GLADIUS_ICONS['actions']} AP?", value=str(
+            attrs['conditions']['consumedActionPoints']))
+        embed.add_field(name=f"Consumes {GLADIUS_ICONS['movement']} movement?", value=str(
+            attrs['conditions']['consumedMovement']))
 
-    # Modifiers
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
+        # Modifiers
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
 
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -205,49 +207,51 @@ def create_gaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
     return embed
 
 
-def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
-    # Cooldown
-    if attrs['cooldown'] == 'Passive':
-        embed.add_field(name='Cooldown', value='Passive', inline=False)
-    else:
-        embed.add_field(
-            name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {attrs['cooldown']}", inline=False)
+        # Cooldown
+        if attrs['cooldown'] == 'Passive':
+            embed.add_field(name='Cooldown', value='Passive', inline=False)
+        else:
+            embed.add_field(
+                name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {attrs['cooldown']}", inline=False)
 
-    # Conditions
-    embed.add_field(name=f"Required upgrade", value=str(
-        attrs['conditions']['requiredUpgrade']))
-    embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(
-        attrs['conditions']['requiredActionPoints']))
-    embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(
-        attrs['conditions']['requiredMovement']))
-    embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(
-        attrs['conditions']['usableInTransport']))
-    embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(
-        attrs['conditions']['consumedActionPoints']))
-    embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(
-        attrs['conditions']['consumedMovement']))
+        # Conditions
+        embed.add_field(name=f"Required upgrade", value=str(
+            attrs['conditions']['requiredUpgrade']))
+        embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(
+            attrs['conditions']['requiredActionPoints']))
+        embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(
+            attrs['conditions']['requiredMovement']))
+        embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(
+            attrs['conditions']['usableInTransport']))
+        embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(
+            attrs['conditions']['consumedActionPoints']))
+        embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(
+            attrs['conditions']['consumedMovement']))
 
-    # Modifiers
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
+        # Modifiers
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
 
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -256,82 +260,83 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed
     return embed
 
 
-def create_gbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gbuilding_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    if not flavorFlag:
+        # Color
+        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'], inline=False)
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'], inline=False)
 
-    # Cost
-    costText = []
-    for costName, costValue in attrs['resourceCosts'].items():
-        if costName[-4:] == 'Cost':
-            costText.extend((' | ', GLADIUS_ICONS[costName[:-4]], ' ', costValue))
-    if costText == []:
-        costText = ['None']
-    else:
-        # delete initial ' | '
-        del costText[0]
-    embed.add_field(name="Cost", value=''.join(costText))
-
-    # Upkeep
-    upkeepText = []
-    for upkeepName, upkeepValue in attrs['resourceCosts'].items():
-        if upkeepName[-6:] == 'Upkeep':
-            upkeepText.extend((' | ', GLADIUS_ICONS[upkeepName[:-6]], ' ', upkeepValue))
-    if upkeepText == []:
-        upkeepText = ['None']
-    else:
-        # delete initial ' | '
-        del upkeepText[0]
-    embed.add_field(name='Upkeep', value=''.join(upkeepText))
-
-    # Output
-    outputText = []
-    for outputName, outputValue in attrs['resourceOutput'].items():
-        outputText.extend((' | ', GLADIUS_ICONS[outputName], ' ', outputValue))
-    if outputText == []:
-        outputText = ['None']
-    else:
-        # delete initial ' | '
-        del outputText[0]
-    embed.add_field(name="Output", value=''.join(outputText))
-
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
+        # Cost
+        costText = []
+        for costName, costValue in attrs['resourceCosts'].items():
+            if costName[-4:] == 'Cost':
+                costText.extend((' | ', GLADIUS_ICONS[costName[:-4]], ' ', costValue))
+        if costText == []:
+            costText = ['None']
         else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+            # delete initial ' | '
+            del costText[0]
+        embed.add_field(name="Cost", value=''.join(costText))
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
+        # Upkeep
+        upkeepText = []
+        for upkeepName, upkeepValue in attrs['resourceCosts'].items():
+            if upkeepName[-6:] == 'Upkeep':
+                upkeepText.extend((' | ', GLADIUS_ICONS[upkeepName[:-6]], ' ', upkeepValue))
+        if upkeepText == []:
+            upkeepText = ['None']
         else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+            # delete initial ' | '
+            del upkeepText[0]
+        embed.add_field(name='Upkeep', value=''.join(upkeepText))
 
-    # Flavor
-    if verbose:
+        # Output
+        outputText = []
+        for outputName, outputValue in attrs['resourceOutput'].items():
+            outputText.extend((' | ', GLADIUS_ICONS[outputName], ' ', outputValue))
+        if outputText == []:
+            outputText = ['None']
+        else:
+            # delete initial ' | '
+            del outputText[0]
+        embed.add_field(name="Output", value=''.join(outputText))
+
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
+
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
+
+    if verbose or flavorFlag:
+        # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
@@ -339,82 +344,83 @@ def create_gbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Emb
     return embed
 
 
-def create_zbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zbuilding_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
-    # Cost
-    costText = []
-    for costName, costValue in attrs['resourceCosts'].items():
-        if costName[-4:] == 'Cost':
-            costText.extend((' | ', ZEPHON_ICONS[costName[:-4]], ' ', costValue))
-    if costText == []:
-        costText = ['None']
-    else:
-        # delete initial ' | '
-        del costText[0]
-    embed.add_field(name="Cost", value=''.join(costText))
-
-    # Upkeep
-    upkeepText = []
-    for upkeepName, upkeepValue in attrs['resourceCosts'].items():
-        if upkeepName[-6:] == 'Upkeep':
-            upkeepText.extend((' | ', ZEPHON_ICONS[upkeepName[:-6]], ' ', upkeepValue))
-    if upkeepText == []:
-        upkeepText = ['None']
-    else:
-        # delete initial ' | '
-        del upkeepText[0]
-    embed.add_field(name='Upkeep', value=''.join(upkeepText))
-
-    # Output
-    outputText = []
-    for outputName, outputValue in attrs['resourceOutput'].items():
-        outputText.extend((' | ', ZEPHON_ICONS[outputName], ' ', outputValue))
-    if outputText == []:
-        outputText = ['None']
-    else:
-        # delete initial ' | '
-        del outputText[0]
-    embed.add_field(name="Output", value=''.join(outputText))
-
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
+        # Cost
+        costText = []
+        for costName, costValue in attrs['resourceCosts'].items():
+            if costName[-4:] == 'Cost':
+                costText.extend((' | ', ZEPHON_ICONS[costName[:-4]], ' ', costValue))
+        if costText == []:
+            costText = ['None']
         else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+            # delete initial ' | '
+            del costText[0]
+        embed.add_field(name="Cost", value=''.join(costText))
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
+        # Upkeep
+        upkeepText = []
+        for upkeepName, upkeepValue in attrs['resourceCosts'].items():
+            if upkeepName[-6:] == 'Upkeep':
+                upkeepText.extend((' | ', ZEPHON_ICONS[upkeepName[:-6]], ' ', upkeepValue))
+        if upkeepText == []:
+            upkeepText = ['None']
         else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+            # delete initial ' | '
+            del upkeepText[0]
+        embed.add_field(name='Upkeep', value=''.join(upkeepText))
 
-    # Flavor
-    if verbose:
+        # Output
+        outputText = []
+        for outputName, outputValue in attrs['resourceOutput'].items():
+            outputText.extend((' | ', ZEPHON_ICONS[outputName], ' ', outputValue))
+        if outputText == []:
+            outputText = ['None']
+        else:
+            # delete initial ' | '
+            del outputText[0]
+        embed.add_field(name="Output", value=''.join(outputText))
+
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
+
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
+
+    if verbose or flavorFlag:
+        # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
@@ -422,51 +428,52 @@ def create_zbuilding_embed(name: str, attrs: dict, verbose: bool) -> discord.Emb
     return embed
 
 
-def create_gfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gfaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = GLADIUS_FACTION_COLORS[name]
+    if not flavorFlag:
+        # Color
+        embed.colour = GLADIUS_FACTION_COLORS[name]
 
-    # Starting Units
-    unitsText = []
-    for unit, count in attrs['startingUnits'].items():
-        unitsText.extend(f"{count}x {unit}\n")
-    if unitsText == []:
-        unitsText = ['None']
-    embed.add_field(name='Starting Units', value=''.join(unitsText))
+        # Starting Units
+        unitsText = []
+        for unit, count in attrs['startingUnits'].items():
+            unitsText.extend(f"{count}x {unit}\n")
+        if unitsText == []:
+            unitsText = ['None']
+        embed.add_field(name='Starting Units', value=''.join(unitsText))
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
@@ -477,60 +484,61 @@ def create_gfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
     return embed
 
 
-def create_zfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zfaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
-    
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+        
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
-    # Starting Units
-    unitsText = []
-    for unit, count in attrs['startingUnits'].items():
-        unitsText.extend(f"{count}x {unit}\n")
-    if unitsText == []:
-        unitsText = ['None']
-    embed.add_field(name='Starting Units', value=''.join(unitsText))
+        # Starting Units
+        unitsText = []
+        for unit, count in attrs['startingUnits'].items():
+            unitsText.extend(f"{count}x {unit}\n")
+        if unitsText == []:
+            unitsText = ['None']
+        embed.add_field(name='Starting Units', value=''.join(unitsText))
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
 
-    # Liked Labels
-    embed.add_field(name='Liked Labels', value='\n'.join(attrs['likedLabels']))
+        # Liked Labels
+        embed.add_field(name='Liked Labels', value='\n'.join(attrs['likedLabels']))
 
-    # Disliked Labels
-    embed.add_field(name='Disliked Labels', value='\n'.join(attrs['dislikedLabels']))
+        # Disliked Labels
+        embed.add_field(name='Disliked Labels', value='\n'.join(attrs['dislikedLabels']))
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
@@ -541,29 +549,31 @@ def create_zfaction_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
     return embed
 
 
-def create_gitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gitem_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     embed = discord.Embed(title=name, description=attrs['description'])
 
-    # Color
-    embed.colour = RARITY_COLORS[attrs['rarity']]
+    if not flavorFlag:
+        # Color
+        embed.colour = RARITY_COLORS[attrs['rarity']]
 
-    # Rarity
-    embed.add_field(name='Rarity', value=attrs['rarity'])
+        # Rarity
+        embed.add_field(name='Rarity', value=attrs['rarity'])
 
-    # Influence cost
-    embed.add_field(
-        name='Cost', value=f"{GLADIUS_ICONS['influence']} {attrs['influenceCost']}")
+        # Influence cost
+        embed.add_field(
+            name='Cost', value=f"{GLADIUS_ICONS['influence']} {attrs['influenceCost']}")
 
-    # Ability
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
+        # Ability
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
 
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
 
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -572,39 +582,41 @@ def create_gitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
     return embed
 
 
-def create_zitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zitem_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = RARITY_COLORS[attrs['rarity']]
+    if not flavorFlag:
+        # Color
+        embed.colour = RARITY_COLORS[attrs['rarity']]
 
-    # Rarity
-    embed.add_field(name='Rarity', value=attrs['rarity'])
+        # Rarity
+        embed.add_field(name='Rarity', value=attrs['rarity'])
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'])
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'])
 
-    # Influence cost
-    embed.add_field(
-        name='Cost', value=f"{ZEPHON_ICONS['influence']} {attrs['influenceCost']}")
+        # Influence cost
+        embed.add_field(
+            name='Cost', value=f"{ZEPHON_ICONS['influence']} {attrs['influenceCost']}")
 
-    # Buy condition
-    if (buyCondition := attrs['buyCondition']):
-        embed.add_field(name='Prerequisite', value=buyCondition)
+        # Buy condition
+        if (buyCondition := attrs['buyCondition']):
+            embed.add_field(name='Prerequisite', value=buyCondition)
 
-    # Ability
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
+        # Ability
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Ability', value='\n'.join(modifiers)[:1024], inline=False)
 
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
 
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -613,159 +625,164 @@ def create_zitem_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
     return embed
 
 
-def create_gtrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gtrait_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    try:
+    if not flavorFlag:
+        # Color
+        try:
+            embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+        except KeyError:
+            embed.colour = GLADIUS_FACTION_COLORS['Neutral']
+
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
+
+        # Modifiers
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
+
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
+    if verbose or flavorFlag:
+        # Flavor
+        if (flavor := attrs['flavor']):
+            embed.add_field(
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+
+    return embed
+
+
+def create_ztrait_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+
+        # Modifiers
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
+
+        if verbose:
+            # Raw XML
+            if (rawXML := attrs['rawXML']):
+                embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+
+    if verbose or flavorFlag:
+        # Flavor
+        if (flavor := attrs['flavor']):
+            embed.add_field(
+                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+
+    return embed
+
+
+def create_gunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
+    # Name and Description
+    if (description := attrs['description']):
+        embed = discord.Embed(title=name, description=description)
+    else:
+        embed = discord.Embed(title=name)
+
+    if not flavorFlag:
+        # Color
         embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
-    except KeyError:
-        embed.colour = GLADIUS_FACTION_COLORS['Neutral']
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
 
-    # Modifiers
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
+        # Tier
+        embed.add_field(name='Research Tier', value=attrs['tier'])
 
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
+        # DLC
+        embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
 
-        # Flavor
-        if (flavor := attrs['flavor']):
-            embed.add_field(
-                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+        # Cost
+        costText = [GLADIUS_ICONS['production'],
+                    ' ', attrs['costStats']['production']]
+        for resource, cost in attrs['costStats'].items():
+            costText.extend((' | ', GLADIUS_ICONS[resource], ' ', cost))
+        embed.add_field(name='Cost', value=''.join(costText))
 
-    return embed
-
-
-def create_ztrait_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
-    # Name and Description
-    if (description := attrs['description']):
-        embed = discord.Embed(title=name, description=description)
-    else:
-        embed = discord.Embed(title=name)
-
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
-
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
-
-    # Modifiers
-    if (modifiers := attrs['modifiers']):
-        embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
-
-    if verbose:
-        # Raw XML
-        if (rawXML := attrs['rawXML']):
-            embed.add_field(name='Raw XML', value=rawXML[:1024], inline=False)
-
-        # Flavor
-        if (flavor := attrs['flavor']):
-            embed.add_field(
-                name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
-
-    return embed
-
-
-def create_gunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
-    # Name and Description
-    if (description := attrs['description']):
-        embed = discord.Embed(title=name, description=description)
-    else:
-        embed = discord.Embed(title=name)
-
-    # Color
-    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
-
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
-
-    # Tier
-    embed.add_field(name='Research Tier', value=attrs['tier'])
-
-    # DLC
-    embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
-
-    # Cost
-    costText = [GLADIUS_ICONS['production'],
-                ' ', attrs['costStats']['production']]
-    for resource, cost in attrs['costStats'].items():
-        costText.extend((' | ', GLADIUS_ICONS[resource], ' ', cost))
-    embed.add_field(name='Cost', value=''.join(costText))
-
-    # Upkeep
-    upkeepText = []
-    for resource, upkeep in attrs['upkeepStats'].items():
-        upkeepText.extend((' | ', GLADIUS_ICONS[resource], ' ', upkeep))
-    if upkeepText == []:
-        upkeepText = ['None']
-    else:
-        # delete initial ' | '
-        del upkeepText[0]
-    embed.add_field(name='Upkeep', value=''.join(upkeepText))
-
-    # Stats
-    statText = (f"**{attrs['combatStats']['groupSizeMax']} model(s)**\n"
-                f"{GLADIUS_ICONS['armor']} {attrs['combatStats']['armor']} | {GLADIUS_ICONS['hitpoints']} {round(attrs['combatStats']['hitpointsMax'])} | "
-                f"{GLADIUS_ICONS['morale']} {attrs['combatStats']['moraleMax']}\n {GLADIUS_ICONS['movement']} {attrs['combatStats']['movementMax']} | "
-                f"{GLADIUS_ICONS['cargoSlots']} {attrs['combatStats']['cargoSlots']} | {GLADIUS_ICONS['itemSlots']} {attrs['combatStats']['itemSlots']}")
-    embed.add_field(name='Stats', value=statText)
-
-    # Weapons
-    weaponsText = []
-    for weapon in attrs['weapons']:
-        # if upgrade required
-        if attrs['weapons'][weapon]['requiredUpgrade']:
-            upgrade = ' (U)'
+        # Upkeep
+        upkeepText = []
+        for resource, upkeep in attrs['upkeepStats'].items():
+            upkeepText.extend((' | ', GLADIUS_ICONS[resource], ' ', upkeep))
+        if upkeepText == []:
+            upkeepText = ['None']
         else:
-            upgrade = ''
-        # if weapon is secondary
-        if attrs['weapons'][weapon]['secondary']:
-            secondary = ' (S)'
-        else:
-            secondary = ''
-        weaponsText.extend(
-            f"{attrs['weapons'][weapon]['count']}x {weapon}{upgrade}{secondary}\n")
-    if weaponsText == []:
-        weaponsText = ['None']
-    embed.add_field(name='Weapons', value=''.join(weaponsText))
+            # delete initial ' | '
+            del upkeepText[0]
+        embed.add_field(name='Upkeep', value=''.join(upkeepText))
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+        # Stats
+        statText = (f"**{attrs['combatStats']['groupSizeMax']} model(s)**\n"
+                    f"{GLADIUS_ICONS['armor']} {attrs['combatStats']['armor']} | {GLADIUS_ICONS['hitpoints']} {round(attrs['combatStats']['hitpointsMax'])} | "
+                    f"{GLADIUS_ICONS['morale']} {attrs['combatStats']['moraleMax']}\n {GLADIUS_ICONS['movement']} {attrs['combatStats']['movementMax']} | "
+                    f"{GLADIUS_ICONS['cargoSlots']} {attrs['combatStats']['cargoSlots']} | {GLADIUS_ICONS['itemSlots']} {attrs['combatStats']['itemSlots']}")
+        embed.add_field(name='Stats', value=statText)
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+        # Weapons
+        weaponsText = []
+        for weapon in attrs['weapons']:
+            # if upgrade required
+            if attrs['weapons'][weapon]['requiredUpgrade']:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            # if weapon is secondary
+            if attrs['weapons'][weapon]['secondary']:
+                secondary = ' (S)'
+            else:
+                secondary = ''
+            weaponsText.extend(
+                f"{attrs['weapons'][weapon]['count']}x {weapon}{upgrade}{secondary}\n")
+        if weaponsText == []:
+            weaponsText = ['None']
+        embed.add_field(name='Weapons', value=''.join(weaponsText))
 
-    if verbose:
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
+
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
+
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -777,90 +794,91 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
     return embed
 
 
-def create_zunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
-    # Cost
-    costText = [ZEPHON_ICONS['production'],
-                ' ', attrs['costStats']['production']]
-    for resource, cost in attrs['costStats'].items():
-        costText.extend((' | ', ZEPHON_ICONS[resource], ' ', cost))
-    embed.add_field(name='Cost', value=''.join(costText))
+        # Cost
+        costText = [ZEPHON_ICONS['production'],
+                    ' ', attrs['costStats']['production']]
+        for resource, cost in attrs['costStats'].items():
+            costText.extend((' | ', ZEPHON_ICONS[resource], ' ', cost))
+        embed.add_field(name='Cost', value=''.join(costText))
 
-    # Upkeep
-    upkeepText = []
-    for resource, upkeep in attrs['upkeepStats'].items():
-        upkeepText.extend((' | ', ZEPHON_ICONS[resource], ' ', upkeep))
-    if upkeepText == []:
-        upkeepText = ['None']
-    else:
-        # delete initial ' | '
-        del upkeepText[0]
-    embed.add_field(name='Upkeep', value=''.join(upkeepText))
-
-    # Stats
-    statText = (f"{ZEPHON_ICONS['groupSize']} {attrs['combatStats']['groupSizeMax']} | {ZEPHON_ICONS['accuracy']} {attrs['combatStats']['accuracy']}\n"
-                f"{ZEPHON_ICONS['armor']} {attrs['combatStats']['armor']} | {ZEPHON_ICONS['hitpoints']} {attrs['combatStats']['hitpointsMax']} | "
-                f"{ZEPHON_ICONS['morale']} {attrs['combatStats']['moraleMax']}\n {ZEPHON_ICONS['movement']} {attrs['combatStats']['movementMax']} | "
-                f"{ZEPHON_ICONS['cargoSlots']} {attrs['combatStats']['cargoSlots']} | {ZEPHON_ICONS['itemSlots']} {attrs['combatStats']['itemSlots']}")
-    embed.add_field(name='Stats', value=statText)
-
-    # Weapons
-    weaponsText = []
-    for weapon in attrs['weapons']:
-        # if upgrade required
-        if attrs['weapons'][weapon]['requiredUpgrade']:
-            upgrade = ' (U)'
+        # Upkeep
+        upkeepText = []
+        for resource, upkeep in attrs['upkeepStats'].items():
+            upkeepText.extend((' | ', ZEPHON_ICONS[resource], ' ', upkeep))
+        if upkeepText == []:
+            upkeepText = ['None']
         else:
-            upgrade = ''
-        # if weapon is secondary
-        if attrs['weapons'][weapon]['secondary']:
-            secondary = ' (S)'
-        else:
-            secondary = ''
-        weaponsText.extend(
-            f"{attrs['weapons'][weapon]['count']}x {weapon}{upgrade}{secondary}\n")
-    if weaponsText == []:
-        weaponsText = ['None']
-    embed.add_field(name='Weapons', value=''.join(weaponsText))
+            # delete initial ' | '
+            del upkeepText[0]
+        embed.add_field(name='Upkeep', value=''.join(upkeepText))
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText))
+        # Stats
+        statText = (f"{ZEPHON_ICONS['groupSize']} {attrs['combatStats']['groupSizeMax']} | {ZEPHON_ICONS['accuracy']} {attrs['combatStats']['accuracy']}\n"
+                    f"{ZEPHON_ICONS['armor']} {attrs['combatStats']['armor']} | {ZEPHON_ICONS['hitpoints']} {attrs['combatStats']['hitpointsMax']} | "
+                    f"{ZEPHON_ICONS['morale']} {attrs['combatStats']['moraleMax']}\n {ZEPHON_ICONS['movement']} {attrs['combatStats']['movementMax']} | "
+                    f"{ZEPHON_ICONS['cargoSlots']} {attrs['combatStats']['cargoSlots']} | {ZEPHON_ICONS['itemSlots']} {attrs['combatStats']['itemSlots']}")
+        embed.add_field(name='Stats', value=statText)
 
-    # Actions
-    actionsText = []
-    for action in attrs['actions']:
-        # if upgrade required
-        if attrs['actions'][action]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        actionsText.extend((action, upgrade, '\n'))
-    if actionsText == []:
-        actionsText = ['None']
-    embed.add_field(name='Actions', value=''.join(actionsText))
+        # Weapons
+        weaponsText = []
+        for weapon in attrs['weapons']:
+            # if upgrade required
+            if attrs['weapons'][weapon]['requiredUpgrade']:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            # if weapon is secondary
+            if attrs['weapons'][weapon]['secondary']:
+                secondary = ' (S)'
+            else:
+                secondary = ''
+            weaponsText.extend(
+                f"{attrs['weapons'][weapon]['count']}x {weapon}{upgrade}{secondary}\n")
+        if weaponsText == []:
+            weaponsText = ['None']
+        embed.add_field(name='Weapons', value=''.join(weaponsText))
 
-    if verbose:
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText))
+
+        # Actions
+        actionsText = []
+        for action in attrs['actions']:
+            # if upgrade required
+            if attrs['actions'][action]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            actionsText.extend((action, upgrade, '\n'))
+        if actionsText == []:
+            actionsText = ['None']
+        embed.add_field(name='Actions', value=''.join(actionsText))
+
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -872,33 +890,34 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
     return embed
 
 
-def create_gupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_gupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    try:
-        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
-    except KeyError:
-        embed.colour = GLADIUS_FACTION_COLORS['Neutral']
+    if not flavorFlag:
+        # Color
+        try:
+            embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+        except KeyError:
+            embed.colour = GLADIUS_FACTION_COLORS['Neutral']
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
 
-    # DLC
-    embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
+        # DLC
+        embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
 
-    # Tier
-    embed.add_field(name='Tier', value=attrs['tier'])
+        # Tier
+        embed.add_field(name='Tier', value=attrs['tier'])
 
-    # Required upgrades
-    embed.add_field(name='Required Upgrades', value='\n'.join(
-        attrs['requiredUpgrades']), inline=False)
+        # Required upgrades
+        embed.add_field(name='Required Upgrades', value='\n'.join(
+            attrs['requiredUpgrades']), inline=False)
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -907,30 +926,31 @@ def create_gupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
     return embed
 
 
-def create_zupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embed:
+def create_zupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) -> discord.Embed:
     # Name and Description
     if (description := attrs['description']):
         embed = discord.Embed(title=name, description=description)
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'])
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'])
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
 
-    # Tier
-    embed.add_field(name='Tier', value=attrs['tier'])
+        # Tier
+        embed.add_field(name='Tier', value=attrs['tier'])
 
-    # Required upgrades
-    embed.add_field(name='Required Upgrades', value='\n'.join(
-        attrs['requiredUpgrades']), inline=False)
+        # Required upgrades
+        embed.add_field(name='Required Upgrades', value='\n'.join(
+            attrs['requiredUpgrades']), inline=False)
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -939,7 +959,7 @@ def create_zupgrade_embed(name: str, attrs: dict, verbose: bool) -> discord.Embe
     return embed
 
 
-def create_gweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = None, unitDict: dict = None) -> discord.Embed:
+def create_gweapon_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool, unitName: str = None, unitDict: dict = None) -> discord.Embed:
     if unitDict:
         weaponStats = calculate_gweapon_stats(
             attrs['range'], attrs['innateStats'], unitDict['weaponStats'])
@@ -953,36 +973,37 @@ def create_gweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
+    if not flavorFlag:
+        # Color
+        embed.colour = GLADIUS_FACTION_COLORS[attrs['faction']]
 
-    # Faction
-    embed.add_field(name='Faction', value=attrs['faction'])
+        # Faction
+        embed.add_field(name='Faction', value=attrs['faction'])
 
-    # Wielder
-    if unitName:
-        embed.add_field(name='Wielder', value=unitName)
+        # Wielder
+        if unitName:
+            embed.add_field(name='Wielder', value=unitName)
 
-    # Stats
-    statText = (f"{GLADIUS_ICONS['damage']} {weaponStats['damage']} | {GLADIUS_ICONS['attacks']} {weaponStats['attacks']} | "
-                f"{GLADIUS_ICONS['armorPenetration']} {weaponStats['armorPen']} | {GLADIUS_ICONS['accuracy']} {weaponStats['accuracy']} | "
-                f"{GLADIUS_ICONS['range']} {attrs['range']}")
-    embed.add_field(name='Stats', value=statText, inline=False)
+        # Stats
+        statText = (f"{GLADIUS_ICONS['damage']} {weaponStats['damage']} | {GLADIUS_ICONS['attacks']} {weaponStats['attacks']} | "
+                    f"{GLADIUS_ICONS['armorPenetration']} {weaponStats['armorPen']} | {GLADIUS_ICONS['accuracy']} {weaponStats['accuracy']} | "
+                    f"{GLADIUS_ICONS['range']} {attrs['range']}")
+        embed.add_field(name='Stats', value=statText, inline=False)
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText), inline=False)
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText), inline=False)
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(
@@ -994,7 +1015,7 @@ def create_gweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
     return embed
 
 
-def create_zweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = None, unitDict: dict = None) -> discord.Embed:
+def create_zweapon_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool, unitName: str = None, unitDict: dict = None) -> discord.Embed:
     if unitName:
         weaponStats = calculate_zweapon_stats(
             attrs['innateStats'], unitDict['combatStats']['accuracy'])
@@ -1007,36 +1028,37 @@ def create_zweapon_embed(name: str, attrs: dict, verbose: bool, unitName: str = 
     else:
         embed = discord.Embed(title=name)
 
-    # Color
-    embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
+    if not flavorFlag:
+        # Color
+        embed.colour = ZEPHON_BRANCH_COLORS[attrs['branch']]
 
-    # Branch
-    embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+        # Branch
+        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
-    # Wielder
-    if unitName:
-        embed.add_field(name='Wielder', value=unitName)
+        # Wielder
+        if unitName:
+            embed.add_field(name='Wielder', value=unitName)
 
-    # Stats
-    statText = (f"{ZEPHON_ICONS['damage']} {weaponStats['damage']} | {ZEPHON_ICONS['armorPenetration']} {weaponStats['armorPen']} | "
-                f"{ZEPHON_ICONS['attacks']} {weaponStats['attacks']} | {ZEPHON_ICONS['accuracy']} {weaponStats['accuracy']} | "
-                f"{ZEPHON_ICONS['range']} {attrs['range']}")
-    embed.add_field(name='Stats', value=statText, inline=False)
+        # Stats
+        statText = (f"{ZEPHON_ICONS['damage']} {weaponStats['damage']} | {ZEPHON_ICONS['armorPenetration']} {weaponStats['armorPen']} | "
+                    f"{ZEPHON_ICONS['attacks']} {weaponStats['attacks']} | {ZEPHON_ICONS['accuracy']} {weaponStats['accuracy']} | "
+                    f"{ZEPHON_ICONS['range']} {attrs['range']}")
+        embed.add_field(name='Stats', value=statText, inline=False)
 
-    # Traits
-    traitsText = []
-    for trait in attrs['traits']:
-        # if upgrade required
-        if attrs['traits'][trait]:
-            upgrade = ' (U)'
-        else:
-            upgrade = ''
-        traitsText.extend((trait, upgrade, '\n'))
-    if traitsText == []:
-        traitsText = ['None']
-    embed.add_field(name='Traits', value=''.join(traitsText), inline=False)
+        # Traits
+        traitsText = []
+        for trait in attrs['traits']:
+            # if upgrade required
+            if attrs['traits'][trait]:
+                upgrade = ' (U)'
+            else:
+                upgrade = ''
+            traitsText.extend((trait, upgrade, '\n'))
+        if traitsText == []:
+            traitsText = ['None']
+        embed.add_field(name='Traits', value=''.join(traitsText), inline=False)
 
-    if verbose:
+    if verbose or flavorFlag:
         # Flavor
         if (flavor := attrs['flavor']):
             embed.add_field(

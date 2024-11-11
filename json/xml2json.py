@@ -61,7 +61,7 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
                 objDict[name] = kwargs
         except Exception:
             print(f"{objCls.__name__} {entry.get('name')} failed to convert.")
-            print(traceback.format_exc())
+            # print(traceback.format_exc())
     return objDict
 
 
