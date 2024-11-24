@@ -549,6 +549,7 @@ def add_upgrade(objClsName: str, objName: str, upgradeStr: str):
         return
     upgrade = ZUpgrade('placeholder')
     upgrade.internalID = upgradeStr
+    print(f"Adding upgrade {upgradeStr}")
     upgrade.XMLPath = pathJoin(upgrade.CLASS_DIR, upgradeStr + '.xml')
     try:
         upgrade.tree = ET.parse(upgrade.XMLPath, parser=ET.XMLParser(
@@ -592,3 +593,6 @@ for objClsName in ZEPHON_CLASSES:
                 for weapon, weaponProperties in properties['weapons'].items():
                     if upgrade := weaponProperties['requiredUpgrade']:
                         add_upgrade('ZWeapon', weapon, upgrade)
+
+with open(pathJoin(OUTPUT_DIR, 'ZUpgrade.json'), 'w') as fout:
+    json.dump(dicts['ZUpgrade'], fout, indent=4)

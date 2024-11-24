@@ -506,9 +506,9 @@ class ZephonList(app_commands.Group):
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
     @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in ZEPHON_FACTIONS])
     @app_commands.choices(tier=[app_commands.Choice(name=t, value=t) for t in ['Not Researchable'] + [str(i) for i in range(11)]])
-    async def upgrade(self, interaction: discord.Interaction, branch: app_commands.Choice[str], faction: app_commands.Choice[str] = '',
+    async def upgrade(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '', faction: app_commands.Choice[str] = '',
                       tier: app_commands.Choice[str] = '', requiredupgrade: str = '', invisible: bool = False):
-        """Placeholder. List Zephon upgrades according to given filters.
+        """List Zephon upgrades according to given filters.
 
         Args:
             branch (str): Filter by branch

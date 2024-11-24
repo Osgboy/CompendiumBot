@@ -239,6 +239,33 @@ def create_gupgrade_list(classDict: dict, *, faction: str = None, dlc: str = Non
                 continue
             upgradeList.append(upgrade)
         return partition_embed(embed, upgradeList)
+    
+def create_zupgrade_list(classDict: dict, *, branch: str = None, faction: str = None, tier: str = None, ZUpgrade: str = None) -> str:
+    embed = discord.Embed(title='Zephon Upgrade search results')
+    if not faction and not tier and not ZUpgrade:
+        tierDict = { k:[] for k in ['Not Researchable'] + [str(i) for i in range(0, 11)]}
+        for upgrade, attrs in classDict.items():
+            if branch and branch != attrs['branch']:
+                continue
+            tierDict[attrs['tier']].append(upgrade)
+        for k,v in tierDict.items():
+            if k == 'Not Researchable':
+                embed.add_field(name=k, value='\n'.join(v))
+            else:
+                embed.add_field(name=f"Tier {k}", value='\n'.join(v))
+        return embed
+    else:
+        upgradeList = []
+        for upgrade, attrs in classDict.items():    
+            if (
+                (faction and faction != attrs['faction'])
+                or (branch and branch != attrs['branch'])
+                or (tier and tier != attrs['tier'])
+                or (ZUpgrade and ZUpgrade not in attrs['requiredUpgrades'])
+            ):
+                continue
+            upgradeList.append(upgrade)
+        return partition_embed(embed, upgradeList)
 
 def create_gweapon_list(classDict: dict, *, faction: str = None, GTrait: str = None, range: str = None) -> str:
     embed = discord.Embed(title='Gladius Weapon search results')
