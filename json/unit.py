@@ -8,10 +8,10 @@ from upgrade import GUpgrade, ZUpgrade
 
 
 GLADIUS_RESOURCES = (
-    'biomass', 'requisitions', 'food', 'ore', 'energy', 'influence', 'production'
+    'production', 'biomass', 'requisitions', 'food', 'ore', 'energy', 'influence'
 )
 ZEPHON_RESOURCES = (
-    'food', 'minerals', 'energy', 'transuranium', 'antimatter', 'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence', 'production'
+    'production', 'food', 'minerals', 'energy', 'transuranium', 'antimatter', 'dimensionalEchoes', 'singularityCores', 'algae', 'chips', 'influence'
 )
 
 

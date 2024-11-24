@@ -713,11 +713,10 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
         embed.add_field(name='DLC', value=DLCS[attrs['dlc']])
 
         # Cost
-        costText = [GLADIUS_ICONS['production'],
-                    ' ', attrs['costStats']['production']]
+        costText = []
         for resource, cost in attrs['costStats'].items():
             costText.extend((' | ', GLADIUS_ICONS[resource], ' ', cost))
-        embed.add_field(name='Cost', value=''.join(costText))
+        embed.add_field(name='Cost', value=''.join(costText[1:]))
 
         # Upkeep
         upkeepText = []
@@ -809,11 +808,10 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
         embed.add_field(name='Branch', value=attrs['branch'], inline=False)
 
         # Cost
-        costText = [ZEPHON_ICONS['production'],
-                    ' ', attrs['costStats']['production']]
+        costText = []
         for resource, cost in attrs['costStats'].items():
             costText.extend((' | ', ZEPHON_ICONS[resource], ' ', cost))
-        embed.add_field(name='Cost', value=''.join(costText))
+        embed.add_field(name='Cost', value=''.join(costText[1:]))
 
         # Upkeep
         upkeepText = []
