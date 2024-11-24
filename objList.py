@@ -70,8 +70,11 @@ def partition_embed(embed: discord.Embed, objList: list[str]) -> discord.Embed:
         endIdx = 0
         fieldIdx = 1
         while endIdx < len(objList):
-            charSum = 0
-            while charSum <= 1024 and endIdx < len(objList):
+            if startIdx == 0:
+                charSum = 0
+            else:
+                charSum = len(objList[startIdx]) + 1
+            while charSum < 1024 and endIdx < len(objList):
                 charSum += len(objList[endIdx]) + 1
                 endIdx += 1
             if endIdx >= len(objList):

@@ -504,7 +504,7 @@ def get_blueprint_actions() -> dict:
 
     actionDir = Path('Zephon', 'Blueprints', 'Actions')
     for path in actionDir.glob('*.xml'):
-        blueprintAction = ET.parse(path, parser=ET.XMLParser(
+        blueprintAction = ET.parse(str(path), parser=ET.XMLParser(
             recover=True, remove_comments=True))
         actionEntry = blueprintAction.getroot()
         action, kwargs = action_from_xml(ZAction, objDict, englishAction, actionEntry)
