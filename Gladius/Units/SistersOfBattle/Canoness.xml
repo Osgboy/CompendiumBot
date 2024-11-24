@@ -19,7 +19,7 @@
 				 		fireInterval="0.2"/>
 			</model>
 		</weapon>
-		<weapon name="CombiBolter">
+		<weapon name="Boltgun">
 			<model>
 				<projectileWeapon muzzleBone="Muzzle"
 						fireInterval="0.35"/>
@@ -220,6 +220,7 @@
 										<unit>
 											<allied/>
 											<noTrait name="Vehicle"/>
+											<noTrait name="Fortification"/>
 											<faction name="SistersOfBattle"/>
 										</unit>
 									</conditions>

@@ -2933,6 +2933,7 @@
             "Champion of Chaos": null,
             "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
             "Fearless": null,
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
             "Hero": null,
             "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
         },
@@ -3841,6 +3842,7 @@
             "Champion of Chaos": null,
             "Daemon": null,
             "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
             "Hero": null,
             "Psyker": null,
             "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
@@ -4127,6 +4129,7 @@
             "Champion of Chaos": null,
             "Daemon": null,
             "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
             "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
         },
         "actions": {
@@ -4198,6 +4201,7 @@
         "traits": {
             "Champion of Chaos": null,
             "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
             "Hero": null,
             "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
         },
@@ -6910,7 +6914,6 @@
             "Monstrous Creature": null,
             "Move Through Cover": null,
             "Relentless": null,
-            "Smash": null,
             "Spirit Preservation": null
         },
         "actions": {
@@ -11069,7 +11072,7 @@
                 "requiredUpgrade": null,
                 "secondary": false
             },
-            "Combi-Bolter": {
+            "Boltgun": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": false
@@ -16670,7 +16673,7 @@
         "combatStats": {
             "groupSizeMax": "1",
             "armor": 6,
-            "hitpointsMax": 30.0,
+            "hitpointsMax": 36.0,
             "moraleMax": 12,
             "movementMax": 3,
             "cargoSlots": 0,
@@ -16707,11 +16710,15 @@
             }
         },
         "traits": {
+            "Acid Blood": "Tyranids/AcidBlood",
             "Extra Monstrous Creature Armour": "Tyranids/ExtraMonstrousCreatureArmour",
             "Psyker": null,
             "Fearless": null,
+            "Fleet": "Tyranids/AdrenalGlands",
+            "Furious Charge": "Tyranids/AdrenalGlands",
             "Move Through Cover": null,
             "Monstrous Creature": null,
+            "Regeneration": "Tyranids/Regeneration",
             "Smash": null,
             "Psychic Barrier": null,
             "Megaunt Instincts": "Tyranids/VehiclesUpkeep"
@@ -16720,7 +16727,7 @@
             "Synapse Creature": null,
             "Aura of Fear": null,
             "Shadow In The Warp": null,
-            "Living Battering Ram": null,
+            "Hammer of Wrath": "Tyranids/HammerOfWrath",
             "Diffusion Field": null,
             "Subterranean Assault": null
         },
@@ -17258,11 +17265,14 @@
             }
         },
         "traits": {
+            "Acid Blood": "Tyranids/AcidBlood",
             "Extra Monstrous Creature Armour": "Tyranids/ExtraMonstrousCreatureArmour",
             "Fearless": null,
+            "Fleet": "Tyranids/AdrenalGlands",
             "Instinctive Fire": null,
             "Monstrous Creature": null,
             "Move Through Cover": null,
+            "Regeneration": "Tyranids/Regeneration",
             "Relentless": null,
             "Transport": null,
             "Megaunt Instincts": "Tyranids/VehiclesUpkeep"

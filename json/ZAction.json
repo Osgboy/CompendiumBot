@@ -66,8 +66,8 @@
         "flavor": "A spiraling energy exchange whirled around the Acrin titan. The fingers on its flesh pulsed in and out, sucking the spirit out of anything\u2014machine, human, or Voice cultist\u2014that drew close. Unless it liked you of course. Then those fingers drifted over your skin, giving you a taste of the life it stole.",
         "modifiers": [
             "Causal Well",
-            "- +3 Hitpoints",
-            "- -3 Hitpoints"
+            "- +4 Hitpoints",
+            "- -4 Hitpoints"
         ],
         "rawXML": "<unitAction name=\"CausalWell\" icon=\"Traits/CausalWell\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"CausalWell\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
         "iconPath": "Zephon\\Icons\\Traits\\CausalWell.png",
@@ -131,7 +131,7 @@
             "- +1 movement through enemy units",
             "- +2 Movement"
         ],
-        "rawXML": "<tunnel cooldown=\"3\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<ignoreZoneOfControl add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"TunnelingNails\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<targetTile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t</targetTile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</tunnel>\n\t",
+        "rawXML": "<tunnel cooldown=\"3\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<ignoreZoneOfControl add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"TunnelingNails\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<targetTile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t</targetTile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</tunnel>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Tunnel.png",
         "name": "Tunnel",
         "conditions": {
@@ -1212,7 +1212,7 @@
         "internalID": "CarrionGlut",
         "description": "<style color='GUI/Green'/>+4<style color='Default'/>  hitpoints each time a unit dies",
         "cooldown": "Passive",
-        "flavor": "\u201dLEAVE THEM ALONE!\u201d The rookie was screaming at a cloud of Ioks\u2014our Ioks\u2014dropping on a corpse to feed. Fuck. It was our medic. I'd seen those two sneaking off to lock lips when they thought I wasn't looking. The Ioks didn't care. One swiped at the kid when they tried to get close. I grabbed them\u2026 made her look away as they turned their lover into human jerky.",
+        "flavor": "\u201cLEAVE THEM ALONE!\u201d The rookie was screaming at a cloud of Ioks\u2014our Ioks\u2014dropping on a corpse to feed. Fuck. It was our medic. I'd seen those two sneaking off to lock lips when they thought I wasn't looking. The Ioks didn't care. One swiped at the kid when they tried to get close. I grabbed them\u2026 made her look away as they turned their lover into human jerky.",
         "modifiers": [
             "Carrion Glut",
             "- +4 Hitpoints"
@@ -1424,7 +1424,7 @@
         "internalID": "Masochism",
         "description": null,
         "cooldown": "10",
-        "flavor": "\u201dThe fuck are you doing?!\u201d I remembered shouting at one of those damned Epicureans as it walked right over our trench, soaking up a spree of bullets that weren't set to hit anything. \u201cCalm yourself\u2026 mentor,\u201d it said. How did it\u2026 it didn't have a face but I swear it was smiling at me. \u201cWe both know pain is a constant. You run from it\u2026\u201d It jerked as another round of bullets ripped into its shoulder. \u201cI savor it.\u201d",
+        "flavor": "\u201cThe fuck are you doing?!\u201d I remembered shouting at one of those damned Epicureans as it walked right over our trench, soaking up a spree of bullets that weren't set to hit anything. \u201cCalm yourself\u2026 mentor,\u201d it said. How did it\u2026 it didn't have a face but I swear it was smiling at me. \u201cWe both know pain is a constant. You run from it\u2026\u201d It jerked as another round of bullets ripped into its shoulder. \u201cI savor it.\u201d",
         "modifiers": [
             "Masochism (3 turns)",
             "- +33% Hitpoints Max"
@@ -1491,7 +1491,7 @@
     },
     "Jump Pack": {
         "internalID": "JumpPack",
-        "description": null,
+        "description": "Flies to target sighted tile",
         "cooldown": "3",
         "flavor": "Antigravity technology vastly outpaced whatever a rocket could do in keeping soldiers airborne. That was fine. Slow airborne units made for easier targets. There was still value in using precision rocket bursts to reposition our elite infantry. War is a game of positioning, after all.",
         "modifiers": [
@@ -2182,7 +2182,7 @@
         "internalID": "LiquidDeflectionAugment",
         "description": null,
         "cooldown": "1",
-        "flavor": "The Operative\u2019s troops couldn\u2019t dodge every shot. She turned her attention to reducing the brunt of the blows. \u201dBe like water,\u201d a great master once said. With some experimentation, she could make that a\u2026 literal improvement.",
+        "flavor": "The Operative\u2019s troops couldn\u2019t dodge every shot. She turned her attention to reducing the brunt of the blows. \u201cBe like water,\u201d a great master once said. With some experimentation, she could make that a\u2026 literal improvement.",
         "modifiers": [
             "- -25% Influence Cost",
             "- -25% Influence Cost",
@@ -2237,7 +2237,7 @@
             "- -25% Influence Cost",
             "- -25% Influence Cost"
         ],
-        "rawXML": "<playerCast name=\"WordsOfTheProphet\" cooldown=\"5\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience base=\"80\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<moraleMax greater=\"0\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMorale\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<changePlayer/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"WordsOfTheProphet\" cooldown=\"5\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<moraleMax greater=\"0\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMoraleBelow50PercentHitpoints\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<changePlayer/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.25\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\WordsOfTheProphet.png",
         "name": "Words of the Prophet",
         "branch": null
@@ -2263,7 +2263,7 @@
         "internalID": "EyeOfZephon",
         "description": null,
         "cooldown": "3",
-        "flavor": "ZEPHON was always watching you. Dead cameras came to life while clearing warehouses. It used seismographs to track troop movements. We knew how to dodge drones, but after a while we would stare up at the stars and wonder if that blinking light was a distant ball of gas\u2014or one of its satellites snapping pretty polaroids of our position. ",
+        "flavor": "ZEPHON was always watching you. Dead cameras came to life while clearing warehouses. It used seismographs to track troop movements. We knew how to dodge drones, but after a while we would stare up at the stars and wonder if that blinking light was a distant ball of gas\u2014or one of its satellites snapping pretty polaroids of our position.",
         "modifiers": [],
         "rawXML": "<playerCast name=\"EyeOfZephon\" cooldown=\"3\" label=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\" sighted=\"0\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"2\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noSighted/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\EyeOfZephon.png",
@@ -2701,10 +2701,10 @@
         "cooldown": "3",
         "flavor": "Funny thing, flares. Pilots who deploy them don't see them. Missiles they're scrambling don't know what they are. The people who lay eyes on them are usually troops on the ground\u2014the ones who have a second to look up and see them move like slow lightning through the sky.",
         "modifiers": [
-            "Decoy Flares",
+            "Decoy Flares (1 turn)",
             "- +33% Cover Damage Reduction"
         ],
-        "rawXML": "<unitCast name=\"DecoyFlares\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredUpgrade=\"DecoyFlares\">\n\t<beginTargets>\n\t\t<selfTarget>\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<addTrait type=\"DecoyFlares\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</selfTarget>\n\t</beginTargets>\n\t<scoreModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<score add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</scoreModifiers>\t\t\t\n</unitCast>",
+        "rawXML": "<unitCast name=\"DecoyFlares\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredUpgrade=\"DecoyFlares\">\n\t<beginTargets>\n\t\t<selfTarget>\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<addTrait type=\"DecoyFlares\" duration=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</selfTarget>\n\t</beginTargets>\n\t<scoreModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<tile>\n\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t</tile>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<score add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</scoreModifiers>\t\t\t\n</unitCast>",
         "iconPath": "Zephon\\Icons\\Actions\\DecoyFlares.png",
         "name": "Decoy Flares",
         "conditions": {

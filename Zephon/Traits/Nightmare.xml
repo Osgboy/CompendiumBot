@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Debuff" icon="Actions/Nightmare" visibleOnUnit="1" visibleToNonAllies="0">
+	<modifiers>
+		<modifier>
+			<effects>
+				<deathMorale max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
 	<onUnitDefended>
 		<defender>
 			<area affect="Unit">

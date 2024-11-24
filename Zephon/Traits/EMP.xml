@@ -4,10 +4,11 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
-					<modifier effectDescription="ToMechanicalEnemy">
+					<modifier effectDescription="ToMechanicalNonTitanEnemy">
 						<conditions>
 							<unit>
 								<trait type="Mechanical"/>
+								<noTrait type="Titan"/>
 							</unit>
 						</conditions>
 						<effects>

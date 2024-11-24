@@ -111,11 +111,14 @@
 		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
 	</actions>
 	<traits>
+		<trait name="Tyranids/AcidBlood" requiredUpgrade="Tyranids/AcidBlood"/>
 		<trait name="ExtraMonstrousCreatureArmour" requiredUpgrade="Tyranids/ExtraMonstrousCreatureArmour"/>
 		<trait name="Fearless"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
 		<trait name="Tyranids/InstinctiveFire"/>
 		<trait name="MonstrousCreature"/>
 		<trait name="MoveThroughCover"/>
+		<trait name="Regeneration" requiredUpgrade="Tyranids/Regeneration"/>
 		<trait name="Relentless"/>
 		<!-- <trait name="Smash"/> -->
 		<trait name="Transport"/>

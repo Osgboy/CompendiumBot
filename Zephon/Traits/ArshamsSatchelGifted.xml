@@ -2,6 +2,11 @@
 <trait category="Buff" icon="Items/ArshamsSatchel" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<unit>
+					<ally/>
+				</unit>			
+			</conditions>
 			<effects>
 				<moraleLoss mul="-0.5"/>
 			</effects>

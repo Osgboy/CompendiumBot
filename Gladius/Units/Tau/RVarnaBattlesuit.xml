@@ -191,11 +191,19 @@
 			<beginTargets>
 				<selfTarget>
 					<areas>
-						<area affects="Unit" radius="1">
+						<area affects="Unit">
 							<modifiers>
 								<modifier>
 									<effects>
 										<hitpointsFactorFromMax add="-0.1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affects="Unit" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
 										<weaponDamage weapon="NovaElectromagneticShockwave"/>
 									</effects>
 								</modifier>

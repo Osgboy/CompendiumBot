@@ -29,7 +29,7 @@
 				<armor base="6"/> <!-- %armor base armor=4+ -->
 				<biomassUpkeep base="6.0"/> <!-- %biomassUpkeep base tier=9 factor=1 -->
 				<biomassCost base="120.0"/> <!-- %biomassCost base tier=9 factor=1 -->
-				<hitpointsMax base="30.0"/> <!-- %hitpointsMax base toughness=6 wounds=5 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base toughness=6 wounds=6 -->
 				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
 				<meleeAttacks base="2"/>
 				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
@@ -60,7 +60,7 @@
 				<action animation="Units/Tyranids/MaleceptorDie0"
 						sound="Units/LargeUnarmoredDie"
 						soundCount="4"
-						soundDelay="1.0"
+						soundDelay="1.35"
 						voiceSound="Units/Tyranids/LargeDie"
 						voiceSoundCount="4"/>
 			</model>		
@@ -131,8 +131,8 @@
 		<hammerOfWrath consumedActionPoints="0" 
 				consumedMovement="0"
 				cooldown="3"
-				name="Tyranids/LivingBatteringRam"
-				requiredActionPoints="0">
+				requiredActionPoints="0"
+				requiredUpgrade="Tyranids/HammerOfWrath">
 			<model>
 				<action sound="Actions/PsychicBuff"/>
 			</model>
@@ -198,11 +198,15 @@
 		<subterraneanAssault name="Tyranids/SubterraneanAssault"/>
 	</actions>
 	<traits>
+		<trait name="Tyranids/AcidBlood" requiredUpgrade="Tyranids/AcidBlood"/>
 		<trait name="ExtraMonstrousCreatureArmour" requiredUpgrade="Tyranids/ExtraMonstrousCreatureArmour"/>
 		<trait name="Psyker"/>
 		<trait name="Fearless"/>
+		<trait name="Fleet" requiredUpgrade="Tyranids/AdrenalGlands"/>
+		<trait name="FuriousCharge" requiredUpgrade="Tyranids/AdrenalGlands"/>
 		<trait name="MoveThroughCover"/>
 		<trait name="MonstrousCreature"/>
+		<trait name="Regeneration" requiredUpgrade="Tyranids/Regeneration"/>
 		<!-- <trait name="Relentless"/> -->
 		<trait name="Smash"/>
 		<trait name="Tyranids/PsychicBarrier"/>

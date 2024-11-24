@@ -13,7 +13,7 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCostFromExperience base="80"/>
+						<influenceCostFromExperience base="60"/>
 					</effects>
 				</modifier>
 				<modifier requiredUpgrade="WordsOfTheProphetUpgrade">
@@ -31,6 +31,7 @@
 				<target rangeMax="-1">
 					<conditions>
 						<unit>
+							<hitpointsFraction less="0.5"/>
 							<enemy/>
 							<moraleMax greater="0"/>
 							<noTrait type="Headquarters"/>
@@ -41,7 +42,7 @@
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMorale">
+								<modifier effectDescription="OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMoraleBelow50PercentHitpoints">
 									<effects>
 										<changePlayer/>
 									</effects>
@@ -53,6 +54,9 @@
 										<tile>
 											<alliedStrengthInTheArea greater="0"/>
 										</tile>
+										<unit>
+											<hitpointsFraction greater="0.25"/>
+										</unit>
 									</conditions>
 									<effects>
 										<score add="1.0"/>

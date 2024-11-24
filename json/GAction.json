@@ -281,7 +281,7 @@
         "modifiers": [
             "Control Edict (1 turn)"
         ],
-        "rawXML": "<controlEdict cooldown=\"2\" name=\"AdeptusMechanicus/ControlEdict\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radiusMin=\"1\" radiusMax=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<faction name=\"AdeptusMechanicus\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"AdeptusMechanicus/ControlEdict\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</controlEdict>\n\t\t",
+        "rawXML": "<controlEdict cooldown=\"2\" name=\"AdeptusMechanicus/ControlEdict\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radiusMin=\"1\" radiusMax=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<faction name=\"AdeptusMechanicus\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"AdeptusMechanicus/ControlEdict\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</controlEdict>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\AdeptusMechanicus\\ControlEdict.png",
         "name": "Control Edict",
         "conditions": {
@@ -303,7 +303,7 @@
             "Aggression Override (1 turn)",
             "- +25%...+75% Attacks"
         ],
-        "rawXML": "<aggressionOverride cooldown=\"2\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"AdeptusMechanicus/AggressionOverride\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<faction name=\"AdeptusMechanicus\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"AdeptusMechanicus/AggressionOverride\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</aggressionOverride>\n\t\t",
+        "rawXML": "<aggressionOverride cooldown=\"2\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"AdeptusMechanicus/AggressionOverride\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<faction name=\"AdeptusMechanicus\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"AdeptusMechanicus/AggressionOverride\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</aggressionOverride>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\AdeptusMechanicus\\AggressionOverride.png",
         "name": "Aggression Override",
         "conditions": {
@@ -2486,7 +2486,7 @@
     },
     "Spirit Mark": {
         "internalID": "Eldar/SpiritMark",
-        "description": "Increases the accuracy of allied Wraithblades and Wraithknights.",
+        "description": "Increases the accuracy of allied Wraithblades, Wraithknights and Wraithlords.",
         "cooldown": "Passive",
         "flavor": "The Avatar\u2019s presence invigorates the dead distinctly from the living. Whilst the latter are filled with Khaine\u2019s incandescent rage, those machines manned by spirit crystals instead find their awareness raised from their usual somnambulance, enabling them to better focus on their targets.",
         "modifiers": [
@@ -2837,13 +2837,13 @@
     },
     "Mindshackle Scarabs": {
         "internalID": "Necrons/MindshackleScarabs",
-        "description": "Reduces the morale of the target enemy unit.",
+        "description": "Reduces the morale of the target fearful enemy unit.",
         "cooldown": "1",
         "flavor": "At the bearer's command, tiny mindshackle scarabs burrow into their target's brain, bypassing cerebral functions and robbing the unfortunate victim of their wits.",
         "modifiers": [
             "- -4...-12 Morale"
         ],
-        "rawXML": "<mindshackleScarabs cooldown=\"1\" name=\"Necrons/MindshackleScarabs\" rank=\"-1\" rankMax=\"2\"> \n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"3\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"AndTheyShallKnowNoFear\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"-4\" addMax=\"-12\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</mindshackleScarabs>\n\t\t",
+        "rawXML": "<mindshackleScarabs cooldown=\"1\" name=\"Necrons/MindshackleScarabs\" rank=\"-1\" rankMax=\"2\"> \n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"3\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"AndTheyShallKnowNoFear\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"-4\" addMax=\"-12\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</mindshackleScarabs>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Necrons\\MindshackleScarabs.png",
         "name": "Mindshackle Scarabs",
         "conditions": {
@@ -3791,7 +3791,7 @@
             "Warpath (1 turn)",
             "- +15%...+45% Melee Attacks"
         ],
-        "rawXML": "<warpath cooldown=\"2\" levelUpPriority=\"0.3\" name=\"Orks/Warpath\" rank=\"-1\" rankMax=\"2\"> \n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<trait name=\"MobRule\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Orks/Warpath\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</warpath>\n\t\t",
+        "rawXML": "<warpath cooldown=\"2\" consumedActionPoints=\"0\" levelUpPriority=\"0.3\" name=\"Orks/Warpath\" rank=\"-1\" rankMax=\"2\"> \n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<trait name=\"MobRule\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Orks/Warpath\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</warpath>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Orks\\Warpath.png",
         "name": "Warpath",
         "conditions": {
@@ -3799,7 +3799,7 @@
             "requiredActionPoints": true,
             "requiredMovement": false,
             "usableInTransport": false,
-            "consumedActionPoints": true,
+            "consumedActionPoints": false,
             "consumedMovement": true
         },
         "faction": "Orks"
@@ -3902,7 +3902,7 @@
             "Lead The Righteous (1 turn)",
             "- +1...+3 Accuracy"
         ],
-        "rawXML": "<leadTheRighteous cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"SistersOfBattle/LeadTheRighteous\" requiredActionPoints=\"0\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"2\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t\t\t\t\t<faction name=\"SistersOfBattle\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"SistersOfBattle/LeadTheRighteous\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</leadTheRighteous>\n\t\t",
+        "rawXML": "<leadTheRighteous cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"SistersOfBattle/LeadTheRighteous\" requiredActionPoints=\"0\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"2\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t\t\t\t\t<faction name=\"SistersOfBattle\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"SistersOfBattle/LeadTheRighteous\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</leadTheRighteous>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\SistersOfBattle\\LeadTheRighteous.png",
         "name": "Lead The Righteous",
         "conditions": {
@@ -5323,7 +5323,7 @@
             "Pulse Accelerator (1 turn)",
             "- +1 Maximum Range"
         ],
-        "rawXML": "<pulseAccelerator cooldown=\"1\" name=\"Tau/PulseAccelerator\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<noTrait name=\"Tau/PulseAccelerator\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t\t\t<type name=\"PulseDriverCannon\"/>\n\t\t\t\t\t\t\t<type name=\"PulseRifle\"/>\n\t\t\t\t\t\t\t<type name=\"PulseSubmunitionsCannon\"/>\n\t\t\t\t\t\t\t<type name=\"TwinLinkedPulseCarbine\"/>\n\t\t\t\t\t\t</weapon>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Tau/PulseAccelerator\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</pulseAccelerator>\n\t",
+        "rawXML": "<pulseAccelerator cooldown=\"1\" name=\"Tau/PulseAccelerator\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<noTrait name=\"Tau/PulseAccelerator\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t\t\t<type name=\"PulseBlaster\"/>\n\t\t\t\t\t\t\t<type name=\"PulseDriverCannon\"/>\n\t\t\t\t\t\t\t<type name=\"PulseRifle\"/>\n\t\t\t\t\t\t\t<type name=\"PulseSubmunitionsCannon\"/>\n\t\t\t\t\t\t\t<type name=\"TwinLinkedPulseCarbine\"/>\n\t\t\t\t\t\t</weapon>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Tau/PulseAccelerator\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</pulseAccelerator>\n\t",
         "iconPath": "Gladius\\Icons\\Actions\\Tau\\PulseAccelerator.png",
         "name": "Pulse Accelerator",
         "conditions": {
@@ -5418,7 +5418,7 @@
             "- damage: 0.75",
             "- accuracy: 6"
         ],
-        "rawXML": "<novaElectromagneticShockwave consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"2\" name=\"Tau/NovaElectromagneticShockwave\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"NovaElectromagneticShockwave\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"Tau/NovaBoost\"/>\n\t\t\t\t<action name=\"Tau/NovaFire\"/>\n\t\t\t\t<action name=\"Tau/NovaShield\"/>\n\t\t\t</sharedCooldowns>\n\t\t</novaElectromagneticShockwave>\n\t\t",
+        "rawXML": "<novaElectromagneticShockwave consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"2\" name=\"Tau/NovaElectromagneticShockwave\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"NovaElectromagneticShockwave\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"Tau/NovaBoost\"/>\n\t\t\t\t<action name=\"Tau/NovaFire\"/>\n\t\t\t\t<action name=\"Tau/NovaShield\"/>\n\t\t\t</sharedCooldowns>\n\t\t</novaElectromagneticShockwave>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Tau\\NovaElectromagneticShockwave.png",
         "name": "Nova Electromagnetic Shockwave",
         "conditions": {

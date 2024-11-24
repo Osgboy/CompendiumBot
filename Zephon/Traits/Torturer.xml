@@ -2,6 +2,9 @@
 <trait icon="Traits/TheInformant" visibleOnCity="1" visibleOnPlayer="1">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<building/>
+			</conditions>
 			<effects>
 				<influence mul="0.1"/>
 			</effects>

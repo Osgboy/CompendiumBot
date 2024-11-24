@@ -1676,7 +1676,7 @@
         },
         "iconPath": "Gladius\\Icons\\Weapons\\CombiBolter.png",
         "name": "Combi-Bolter",
-        "faction": "Neutral"
+        "faction": "Chaos Space Marines"
     },
     "Combi-Plasma": {
         "internalID": "CombiPlasma",
@@ -2679,7 +2679,7 @@
     "Eviscerating Claws": {
         "internalID": "EvisceratingClaws",
         "description": null,
-        "flavor": null,
+        "flavor": "Warriors across the galaxy employ a wide variety of close-quarter weapons. Blood-flecked chainswords and crude knives take their places alongside powered weapons of all kinds: swords, axes, hammers and many more. All such weapons are designed to bring quick and painful death to the foe, for every moment's delay brings defeat a step closer.",
         "traits": {
             "Melee": null,
             "Conjoined Weaponry": "ChaosSpaceMarines/MeleeDamage"
@@ -3424,7 +3424,7 @@
             },
             "strengthDamage": {
                 "operator": "add",
-                "value": 0.5
+                "value": 2.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\Ghostglaive.png",
@@ -5539,6 +5539,7 @@
         "description": null,
         "flavor": "Melta weapons are lethal anti-armour guns, most effective at very short range. When fired, the super-heating of the air produces a distinctive and sinister hiss. Solid rock is reduced to molten slag, and living creatures are vaporised in an instant!",
         "traits": {
+            "Forbidden Energies": "ChaosSpaceMarines/LasDamage",
             "Heavy": null,
             "Melta": null
         },
@@ -6456,6 +6457,7 @@
         "flavor": "A power weapon is sheathed in the lethal haze of a disruptive energy field that eats through armour, flesh and bone with ease.",
         "traits": {
             "Melee": null,
+            "Conjoined Weaponry": "ChaosSpaceMarines/MeleeDamage",
             "Sub-Molecular Planes": "Eldar/MeleeWeaponBonus",
             "Necrodermic Blades": "Necrons/MeleeDamage",
             "Bigga Choppas": "Orks/MeleeDamage",
@@ -6866,9 +6868,12 @@
         "traits": {
             "Morale Soak": null,
             "Assault": null,
+            "Ignores Cover": null,
             "Ocular Proliferation": "Tyranids/LongRangedDamage",
+            "Psychic Lash": null,
             "Psychic Power": null,
-            "Psychic Overload": null
+            "Psychic Overload": null,
+            "Witchfire": null
         },
         "range": "2",
         "innateStats": {
@@ -8223,7 +8228,7 @@
     "Skyhammer Missile Launcher": {
         "internalID": "SkyhammerMissileLauncher",
         "description": null,
-        "flavor": null,
+        "flavor": "These weapons fire volleys of missiles that smash into their targets with devastating force\u2014perfect for turning armoured vehicles into scrap metal.",
         "traits": {
             "Improved Frag Casings": "SpaceMarines/BlastDamage",
             "Heavy": null
@@ -9398,8 +9403,8 @@
                 "value": 4.0
             },
             "strengthDamage": {
-                "operator": "mul",
-                "value": 1.0
+                "operator": "add",
+                "value": 4.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\TaserLance.png",

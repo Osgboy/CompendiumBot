@@ -2,6 +2,9 @@
 <trait category="Debuff" visibleOnCity="1">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<building/>
+			</conditions>
 			<effects>
 				<energy max="0"/>
 			</effects>

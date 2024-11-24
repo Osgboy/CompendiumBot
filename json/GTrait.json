@@ -3727,7 +3727,7 @@
         "modifiers": [
             "- +1 Accuracy"
         ],
-        "rawXML": "<trait category=\"Buff\" icon=\"Actions/Eldar/SpiritMark\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t<type name=\"Eldar/Wraithblade\"/>\n\t\t\t\t\t<type name=\"Eldar/Wraithknight\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\" icon=\"Actions/Eldar/SpiritMark\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t</unit>\n\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t<type name=\"Eldar/Wraithblade\"/>\n\t\t\t\t\t<type name=\"Eldar/Wraithknight\"/>\n\t\t\t\t\t<type name=\"Eldar/Wraithlord\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Actions\\Eldar\\SpiritMark.png",
         "name": "Spirit Mark"
     },
@@ -5800,7 +5800,7 @@
             "- -17% Ranged Accuracy",
             "- +17% Ranged Damage Reduction"
         ],
-        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Bike\"/>\n\t\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Pinned\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatOpponentModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t<noTrait name=\"Bike\"/>\n\t\t\t\t\t\t<noTrait name=\"Fearless\"/>\n\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t<noTrait name=\"Jetbike\"/>\n\t\t\t\t\t\t<noTrait name=\"Eldar/KhaineAwakened\"/>\n\t\t\t\t\t\t<noTrait name=\"MonstrousCreature\"/>\n\t\t\t\t\t\t<noTrait name=\"Tyranids/SynapseLink\"/>\n\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t<noTrait name=\"Zealot\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"Pinned\" duration=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatOpponentModifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Traits\\Pinning.png",
         "name": "Pinning",
         "faction": "Neutral"
@@ -7722,7 +7722,7 @@
         "modifiers": [
             "- +1 Maximum Range"
         ],
-        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Actions/Tau/PulseAccelerator\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t<type name=\"PulseDriverCannon\"/>\n\t\t\t\t\t<type name=\"PulseRifle\"/>\n\t\t\t\t\t<type name=\"PulseSubmunitionsCannon\"/>\n\t\t\t\t\t<type name=\"TwinLinkedPulseCarbine\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangeMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\" icon=\"Actions/Tau/PulseAccelerator\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon match=\"Any\">\n\t\t\t\t\t<type name=\"PulseBlaster\"/>\n\t\t\t\t\t<type name=\"PulseDriverCannon\"/>\n\t\t\t\t\t<type name=\"PulseRifle\"/>\n\t\t\t\t\t<type name=\"PulseSubmunitionsCannon\"/>\n\t\t\t\t\t<type name=\"TwinLinkedPulseCarbine\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangeMax add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Actions\\Tau\\PulseAccelerator.png",
         "name": "Pulse Accelerator"
     },
@@ -7812,7 +7812,7 @@
         "faction": "Tau",
         "internalID": "StabilisingAnchors",
         "description": "Increases the ranged attacks if the unit has not moved this turn.",
-        "flavor": "KV128 Stormsurge Ballistic Suits are too large to mount a jetpack like their Battle Suit counterparts. Instead, the Earth Case scientist Bork'an designed them to lock into place once deployed, allowing them to divert all their reactor power to their immense weaponry.",
+        "flavor": "KV128 Stormsurge Ballistic Suits are too large to mount a jetpack like their Battle Suit counterparts. Instead, the Earth Caste scientist Bork'an designed them to lock into place once deployed, allowing them to divert all their reactor power to their immense weaponry.",
         "modifiers": [
             "- +100% Ranged Attacks"
         ],
@@ -7995,7 +7995,7 @@
     },
     "Teleport Homer": {
         "internalID": "TeleportHomer",
-        "description": "Causes orbital deployment to not consume action points when deploying Terminators adjacent to this unit.",
+        "description": "Causes orbital deployment to not consume action points when deploying Chaplain, Assault Terminators and Terminators adjacent to this unit.",
         "flavor": "Teleport homers emit a powerful signal enabling orbiting Strike Cruisers to lock onto them with their teleportation equipment. By matching the exact coordinates of this signal, the risk of missing the intended mark is greatly reduced.",
         "modifiers": [],
         "rawXML": "<trait/>",
@@ -8558,7 +8558,7 @@
         "faction": "Tyranids",
         "internalID": "PsychicBarrier",
         "description": "Increases the invulnerable damage reduction.",
-        "flavor": "Tyranid horrors the size of the Maleceptor are not without inherent defenses. But beyond its sheer bulk and resilient armour, the Malceptor\u2019s encephalic tissue also projects a formidable psychic barrier, capable of vaporizing or deflecting bullets and energy bolts fired at it before they strike it.",
+        "flavor": "Tyranid horrors the size of the Maleceptor are not without inherent defenses. But beyond its sheer bulk and resilient armour, the Malceptor also projects a formidable psychic barrier, capable of vaporizing or deflecting bullets and energy bolts fired at it before they strike it.",
         "modifiers": [
             "- min 33% Invulnerable Damage Reduction"
         ],

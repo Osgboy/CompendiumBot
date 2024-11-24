@@ -8,7 +8,11 @@
 		<stage name="Intro">
 			<options>
 				<option name="ZephonFacility" nextStage="ZephonFacility"/>
-				<option name="VoiceAcolytes" nextStage="VoiceAcolytes"/>
+				<option name="VoiceAcolytes" nextStage="VoiceAcolytes">
+					<conditions>
+						<noMutatorActive name="WhatAreYou"/>
+					</conditions>
+				</option>
 				<option name="Ignore" nextStage=""/>
 			</options>
 		</stage>

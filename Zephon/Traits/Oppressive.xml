@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait visibleOnCity="1" visibleOnPlayer="1">
+<trait visibleOnCity="1">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<building/>
+			</conditions>
 			<effects>
 				<influence mul="0.1"/>
 			</effects>
