@@ -50,6 +50,19 @@ class Obj():
                 except AttributeError:
                     pass
 
+    def obj_from_name(self):
+        classTree = ET.parse(self.CLASS_XML_PATH, parser=ET.XMLParser(
+            recover=True, remove_comments=True))
+        for entry in classTree.iter('entry'):
+            targetStr = val2val(entry.get('value'), self.ENGLISH_DIR)
+            if targetStr == self.name:
+                self.get_obj_info(classTree, entry)
+                return
+    
+    def obj_from_id(self, internalID):
+        self.name = ID2name(internalID, self.GAME, self.OBJ_CLASS)
+        self.obj_from_name()
+
     def get_obj_info(self, classTree: ET._ElementTree, entry: ET.ElementBase):
         '''Gets internal ID, XML path, XML tree, flavor, and description.'''
         self.internalID = entry.get('name')

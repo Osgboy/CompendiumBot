@@ -31,7 +31,6 @@ class Action(Obj, Modifiers):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.passive = False
         self.cooldown = '0'
         self.conditions: dataclass = ActionConditions(
             None, True, False, False, True, True)
@@ -53,7 +52,7 @@ class Action(Obj, Modifiers):
 
     def get_cooldown(self):
         if self.tree.get('passive'):
-            self.passive = True
+            self.cooldown = 'Passive'
         elif (cooldownMin := self.tree.get('cooldownMin')):
             cooldownMax = self.tree.get('cooldownMax')
             self.cooldown = cooldownMin + ' ... ' + cooldownMax
@@ -61,7 +60,7 @@ class Action(Obj, Modifiers):
             self.cooldown = cooldown
 
     def get_conditions(self):
-        if self.passive:
+        if self.cooldown == 'Passive':
             self.conditions = ActionConditions(None, False, False, False, False, False)
         else:
             for conditionName in self.conditions.__slots__:

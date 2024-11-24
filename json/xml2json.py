@@ -3,12 +3,13 @@ import dataclasses
 import traceback
 from os.path import join as pathJoin
 from os.path import normpath
+from pathlib import Path
 from typing import Type, Callable
 from lxml import etree as ET
 from obj import Obj, val2val, ID2name
 from action import Action, GAction, ZAction
-from building import GBuilding, ZBuilding
-from faction import GFaction, ZFaction
+from building import Building, GBuilding, ZBuilding
+from faction import Faction, GFaction, ZFaction
 from item import GItem, ZItem
 from trait import GTrait, ZTrait
 from unit import Unit, GUnit, ZUnit
@@ -37,6 +38,7 @@ def main(getAttrs: Callable[[Obj], dict], objCls: Type[Obj]) -> dict:
         recover=True, remove_comments=True))
     for entry in tree.iter('entry'):
         try:
+            # Get only object names by filtering out any flavor text like properties, victory text, quotes, etc.
             if (all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')) and
                 (objCls != GFaction or all(x not in entry.get('name') for x in ('Discovered', 'Defeated'))) and
                 (objCls != ZFaction or 'Quote' not in entry.get('name'))):
@@ -200,12 +202,13 @@ def get_gunit_attrs(unit: GUnit) -> dict:
 
 def get_zunit_attrs(unit: ZUnit) -> dict:
     unit.get_branch()
+    unit.get_tier()
     unit.get_stats()
     unit.get_weapons()
     unit.get_traits()
     unit.get_actions()
 
-    slots = ('internalID', 'branch', 'description', 'flavor',
+    slots = ('internalID', 'branch', 'tier', 'description', 'flavor',
              'costStats', 'upkeepStats', 'weapons', 'traits', 'actions')
     kwargs = {}
     kwargs['combatStats'] = dataclasses.asdict(unit.combatStats)
@@ -240,7 +243,10 @@ def get_zupgrade_attrs(upgrade: ZUpgrade) -> dict:
     kwargs = {}
     kwargs['faction'] = camel_case_split(upgrade.faction)
     for key in slots:
-        kwargs[key] = getattr(upgrade, key, None)
+        try:
+            kwargs[key] = getattr(upgrade, key, None)
+        except AttributeError:
+            pass
 
     return kwargs
 
@@ -326,7 +332,60 @@ for getAttrs, objCls in mainArgs.items():
         json.dump(dicts[objCls.__name__], fout, indent=4)
 
 
-def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
+def action_from_xml(actionCls: Type[Obj], objDict: dict, englishAction: ET.ElementBase, entry: ET.ElementBase) -> tuple[Type[Action], dict]:
+    tag = entry.tag
+    if not (actionID := entry.get('name')):
+        # Capitalizes first letter of tag
+        actionID = tag[0].upper() + tag[1:]
+    actionName = ID2name(actionID, actionCls.GAME, 'Actions')
+    if not actionName or actionName in objDict:
+        # check faction
+        return None, None
+    action = actionCls(actionName)
+    action.internalID = actionID
+    if (model := entry.find('model')) is not None:
+        entry.remove(model)
+    action.tree = entry
+    for e in englishAction:
+        targetStr = e.get('name')
+        if targetStr == actionID + 'Flavor':
+            action.flavor = val2val(
+                e.get('value'), action.ENGLISH_DIR)
+        elif action.GAME == 'Gladius':
+            if targetStr == actionID + 'Description':
+                action.description = val2val(
+                    e.get('value'), action.ENGLISH_DIR)
+        elif action.GAME == 'Zephon':
+            if targetStr == actionID + 'Properties':
+                action.description = val2val(e.get('value'), action.ENGLISH_DIR).replace(
+                    "<icon texture='GUI/Bullet'/>", '')
+    action.get_cooldown()
+    action.get_modifiers()
+    action.get_raw_XML()
+    action.get_icon_path()
+
+    slots = ('internalID', 'description', 'cooldown',
+            'flavor', 'modifiers', 'rawXML')
+    kwargs = {}
+    for key in slots:
+        kwargs[key] = getattr(action, key, None)
+    try:
+        if not (internalPath := action.iconPath):
+            raise AttributeError
+    except AttributeError:
+        try:
+            internalPath = pathJoin(
+                action.OBJ_CLASS, action.factionAndID)
+        except AttributeError:
+            internalPath = pathJoin(
+                action.OBJ_CLASS, action.internalID)
+    kwargs['iconPath'] = pathJoin(
+        action.GAME, 'Icons', normpath(internalPath) + '.png')
+    kwargs['name'] = actionName
+    return action, kwargs
+
+
+def get_unit_actions(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
     ENGLISH_DIR = pathJoin(actionCls.GAME, 'English')
     objDict = {}
     unitTree = ET.parse(pathJoin(unitCls.GAME, 'English', 'Units.xml'), parser=ET.XMLParser(
@@ -343,64 +402,15 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
                 unit.get_obj_min_info(entry)
                 assert unit.tree is not None
                 for actionEntry in unit.tree.find('actions'):
-                    if (tag := actionEntry.tag) in unit.SKIPPED_ACTIONS:
+                    if actionEntry.tag in unit.SKIPPED_ACTIONS:
                         continue
-                    if not (actionID := actionEntry.get('name')):
-                        # Capitalizes first letter of tag
-                        actionID = tag[0].upper() + tag[1:]
-                    actionName = ID2name(actionID, unit.GAME, 'Actions')
-                    if not actionName or actionName in objDict:
-                        # check faction
+                    action, kwargs = action_from_xml(actionCls, objDict, englishAction, actionEntry)
+                    if not action:
                         continue
-                    action = actionCls(actionName)
-                    action.internalID = actionID
-                    if (model := actionEntry.find('model')) is not None:
-                        actionEntry.remove(model)
-                    action.tree = actionEntry
-                    for e in englishAction:
-                        targetStr = e.get('name')
-                        if targetStr == actionID + 'Flavor':
-                            action.flavor = val2val(
-                                e.get('value'), ENGLISH_DIR)
-                        elif action.GAME == 'Gladius':
-                            if targetStr == actionID + 'Description':
-                                action.description = val2val(
-                                    e.get('value'), ENGLISH_DIR)
-                        elif action.GAME == 'Zephon':
-                            if targetStr == actionID + 'Properties':
-                                action.description = val2val(e.get('value'), ENGLISH_DIR).replace(
-                                    "<icon texture='GUI/Bullet'/>", '')
-                    action.get_cooldown()
                     action.get_conditions()
-                    action.get_modifiers()
-                    action.get_raw_XML()
-                    action.get_icon_path()
-
-                    slots = ('internalID', 'description',
-                             'flavor', 'modifiers', 'rawXML')
-                    kwargs = {}
-                    if action.passive:
-                        kwargs['cooldown'] = 'Passive'
-                    else:
-                        kwargs['cooldown'] = action.cooldown
                     kwargs['conditions'] = dataclasses.asdict(
                         action.conditions)
-                    for key in slots:
-                        kwargs[key] = getattr(action, key, None)
-                    try:
-                        if not (internalPath := action.iconPath):
-                            raise AttributeError
-                    except AttributeError:
-                        try:
-                            internalPath = pathJoin(
-                                action.OBJ_CLASS, action.factionAndID)
-                        except AttributeError:
-                            internalPath = pathJoin(
-                                action.OBJ_CLASS, action.internalID)
-                    kwargs['iconPath'] = pathJoin(
-                        action.GAME, 'Icons', normpath(internalPath) + '.png')
-                    kwargs['name'] = actionName
-                    objDict[actionName] = kwargs
+                    objDict[kwargs['name']] = kwargs
         except Exception:
             print(
                 f"Action {unitCls.__name__} {entry.get('name')} failed to convert.")
@@ -408,9 +418,177 @@ def get_action_attrs(actionCls: Type[Action], unitCls: Type[Unit]) -> dict:
     return objDict
 
 
-for actionCls, unitCls, faction in ((GAction, GUnit, 'faction'), (ZAction, ZUnit, 'branch')):
-    with open(pathJoin(OUTPUT_DIR, actionCls.__name__ + '.json'), 'w') as fout:
-        dicts[actionCls.__name__] = get_action_attrs(actionCls, unitCls)
-        get_factions(actionCls.__name__,
-                     (unitCls.__name__,), faction, 'actions')
-        json.dump(dicts[actionCls.__name__], fout, indent=4)
+def get_faction_actions(actionCls: Type[Action], factionCls: Type[Faction]) -> dict:
+    ENGLISH_DIR = pathJoin(actionCls.GAME, 'English')
+    objDict = {}
+    factionTree = ET.parse(pathJoin(factionCls.GAME, 'English', 'Factions.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishFaction = factionTree.getroot()
+    actionTree = ET.parse(pathJoin(actionCls.GAME, 'English', 'Actions.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishAction = actionTree.getroot()
+    for entry in englishFaction.iterdescendants('entry'):
+        try:
+            if all(x not in entry.get('name') for x in ('Flavor', 'Properties', 'Quote', 'Discovered', 'Defeated')):
+                factionName = val2val(entry.get('value'), ENGLISH_DIR)
+                faction = factionCls(val2val(factionName, ENGLISH_DIR))
+                faction.get_obj_min_info(entry)
+                factionActions = [faction.tree.find('actions'), faction.tree.find('buildingActions')]
+                for actionElement in factionActions:
+                    if actionElement is not None:
+                        for actionEntry in actionElement:
+                            action, kwargs = action_from_xml(actionCls, objDict, englishAction, actionEntry)
+                            if not action:
+                                continue
+                            if action.GAME == 'Gladius':
+                                kwargs['faction'] = factionName
+                            elif action.GAME == 'Zephon':
+                                kwargs['branch'] = faction.get_branch()
+                            objDict[kwargs['name']] = kwargs
+        except Exception:
+            print(
+                f"Faction {factionCls.__name__} {entry.get('name')} failed to convert.")
+            print(traceback.format_exc())
+    return objDict
+
+
+def get_building_actions(actionCls: Type[Action], buildingCls: Type[Building]) -> dict:
+    ENGLISH_DIR = pathJoin(actionCls.GAME, 'English')
+    objDict = {}
+    buildingTree = ET.parse(pathJoin(buildingCls.GAME, 'English', 'Buildings.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishBuilding = buildingTree.getroot()
+    actionTree = ET.parse(pathJoin(actionCls.GAME, 'English', 'Actions.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishAction = actionTree.getroot()
+    for entry in englishBuilding.iterdescendants('entry'):
+        try:
+            if all(x not in entry.get('name') for x in ('Flavor', 'Description', 'Properties')):
+                buildingName = val2val(entry.get('value'), ENGLISH_DIR)
+                building = buildingCls(val2val(buildingName, ENGLISH_DIR))
+                building.get_obj_min_info(entry)
+                assert building.tree is not None
+                for actionEntry in building.tree.find('actions'):
+                    action, kwargs = action_from_xml(actionCls, objDict, englishAction, actionEntry)
+                    if not action:
+                        continue
+                    objDict[kwargs['name']] = kwargs
+        except Exception:
+            print(
+                f"Faction {buildingCls.__name__} {entry.get('name')} failed to convert.")
+            # print(traceback.format_exc())
+    return objDict
+
+
+def get_player_actions() -> dict:
+    objDict = {}
+    actionTree = ET.parse(pathJoin('Zephon', 'English', 'Actions.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishAction = actionTree.getroot()
+    playerActionTree = ET.parse(pathJoin('Zephon', 'Blueprints', 'ActionTypeManager.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    for actionEntry in playerActionTree.find('actions'):
+        action, kwargs = action_from_xml(ZAction, objDict, englishAction, actionEntry)
+        if not action:
+            continue
+        kwargs['cooldown'] = '1'
+        objDict[kwargs['name']] = kwargs
+    return objDict
+
+
+def get_blueprint_actions() -> dict:
+    objDict = {}
+    actionTree = ET.parse(pathJoin('Zephon', 'English', 'Actions.xml'), parser=ET.XMLParser(
+        recover=True, remove_comments=True))
+    englishAction = actionTree.getroot()
+
+    actionDir = Path('Zephon', 'Blueprints', 'Actions')
+    for path in actionDir.glob('*.xml'):
+        blueprintAction = ET.parse(path, parser=ET.XMLParser(
+            recover=True, remove_comments=True))
+        actionEntry = blueprintAction.getroot()
+        action, kwargs = action_from_xml(ZAction, objDict, englishAction, actionEntry)
+        if not action:
+            continue
+        action.get_conditions()
+        kwargs['conditions'] = dataclasses.asdict(
+            action.conditions)
+        objDict[kwargs['name']] = kwargs
+    return objDict
+
+GActionArgs = (
+    (get_unit_actions, GUnit),
+    (get_faction_actions, GFaction),
+    (get_building_actions, GBuilding),
+)
+ZActionArgs = (
+    (get_unit_actions, ZUnit),
+    (get_faction_actions, ZFaction),
+    (get_building_actions, ZBuilding),
+)
+dicts['GAction'] = {}
+dicts['ZAction'] = {}
+with open(pathJoin(OUTPUT_DIR, 'GAction.json'), 'w') as fout:
+    for actionFunc, sourceCls in GActionArgs:
+        dicts['GAction'].update(actionFunc(GAction, sourceCls))
+    get_factions('GAction', ('GUnit', 'GBuilding'), 'faction', 'actions')
+    json.dump(dicts['GAction'], fout, indent=4)
+
+with open(pathJoin(OUTPUT_DIR, 'ZAction.json'), 'w') as fout:
+    for actionFunc, sourceCls in ZActionArgs:
+        dicts['ZAction'].update(actionFunc(ZAction, sourceCls))
+    dicts['ZAction'].update(get_player_actions())
+    dicts['ZAction'].update(get_blueprint_actions())
+    get_factions('ZAction', ('ZUnit', 'ZBuilding'), 'branch', 'actions')
+    json.dump(dicts['ZAction'], fout, indent=4)
+
+
+# Get Zephon upgrades
+def add_upgrade(objClsName: str, objName: str, upgradeStr: str):
+    if upgradeStr in [upgrade['internalID'] for upgrade in dicts['ZUpgrade'].values()]:
+        return
+    upgrade = ZUpgrade('placeholder')
+    upgrade.internalID = upgradeStr
+    upgrade.XMLPath = pathJoin(upgrade.CLASS_DIR, upgradeStr + '.xml')
+    try:
+        upgrade.tree = ET.parse(upgrade.XMLPath, parser=ET.XMLParser(
+            recover=True, remove_comments=True))
+    except OSError:
+        print(f"{upgrade.XMLPath} not found")
+        return
+    
+    kwargs = get_zupgrade_attrs(upgrade)
+    obj: dict = dicts[objClsName][objName]
+    kwargs['description'] = obj.get('description')
+    kwargs['flavor'] = obj.get('flavor')
+    kwargs['iconPath'] = obj.get('iconPath')
+    kwargs['name'] = objName
+    dicts['ZUpgrade'][objName] = kwargs
+
+
+ZEPHON_CLASSES = {
+    'ZBuilding',
+    'ZFaction',
+    'ZUnit',
+    'ZWeapon',
+}
+for objClsName in ZEPHON_CLASSES:
+    for obj, properties in dicts[objClsName].items(): # str, dict
+        if 'actions' in properties:
+            for action, upgrade in properties['actions'].items():
+                if upgrade:
+                    if action[:10] == 'Construct ':
+                        add_upgrade('ZBuilding', action[10:], upgrade)
+                    elif action[:8] == 'Produce ':
+                        add_upgrade('ZUnit', action[8:], upgrade)
+                    else:
+                        add_upgrade('ZAction', action, upgrade)
+        if 'traits' in properties:
+            for trait, upgrade in properties['traits'].items():
+                if upgrade:
+                    add_upgrade('ZTrait', trait, upgrade)
+        if objClsName == 'ZUnit':
+            if 'weapons' in properties:
+                for weapon, weaponProperties in properties['weapons'].items():
+                    if upgrade := weaponProperties['requiredUpgrade']:
+                        add_upgrade('ZWeapon', weapon, upgrade)

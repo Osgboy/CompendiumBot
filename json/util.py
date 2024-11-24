@@ -27,6 +27,7 @@ class Gladius():
 class Modifiers():
     def get_modifiers(self):
         from trait import GTrait, ZTrait
+        from action import GAction, ZAction
         for effects in self.tree.iter('effects'):
             for effect in effects:
                 tag = effect.tag
@@ -69,6 +70,17 @@ class Modifiers():
                     unitID = effect.get('name') or effect.get('type')
                     self.modifiers.append(
                         f"Spawn {ID2name(unitID, self.GAME, 'Units')} (Level 1)")  # Unit name
+                # elif tag == 'actions':
+                #     for action in effect:
+                #         actionID = action.tag
+                #         actionStr = ID2name(actionID, self.GAME, 'Actions')
+                #         self.modifiers.append(actionStr)
+                #         if self.GAME == 'Gladius':
+                #             appliedAction = GAction('placeholder')
+                #         elif self.GAME == 'Zephon':
+                #             appliedAction = ZAction('placeholder')
+                #         appliedAction.tree = ET.parse(pathJoin(appliedAction.CLASS_DIR, actionID + '.xml'), parser=ET.XMLParser(
+                #             recover=True, remove_comments=True))
                 else:
                     attributeXMLPath = pathJoin(
                         self.ENGLISH_DIR, 'Attributes.xml')

@@ -22,8 +22,7 @@ class Upgrade(Obj):
     def get_required_upgrades(self):
         try:
             for upgrade in self.tree.find('requiredUpgrades').iterfind('upgrade'):
-                upgradeID = upgrade.get('name')
-                self.requiredUpgrades.append(ID2name(upgradeID, self.GAME, 'Upgrades'))
+                self.requiredUpgrades.append(upgrade.get('name'))
         # no required upgrades
         except AttributeError:
             pass

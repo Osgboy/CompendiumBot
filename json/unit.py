@@ -193,6 +193,16 @@ class ZUnit(Unit):
             '1', '6', '0', '0', '0', '0', '0', '0')
         self.branch = 'Neutral'
 
+    def get_tier(self):
+        upgrade = ZUpgrade('placeholder')
+        try:
+            upgrade.tree = ET.parse(pathJoin(upgrade.CLASS_DIR, self.internalID + '.xml'), parser=ET.XMLParser(
+                recover=True, remove_comments=True))
+            upgrade.get_tier()
+            self.tier = upgrade.tier
+        except OSError:
+            self.tier = 'N/A'
+
     def get_branch(self):
         self.branch = self.tree.getroot().get('branch')
         if not self.branch:
