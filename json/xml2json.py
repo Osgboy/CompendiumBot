@@ -561,6 +561,7 @@ def add_upgrade(objClsName: str, objName: str, upgradeStr: str):
     kwargs = get_zupgrade_attrs(upgrade)
     obj: dict = dicts[objClsName][objName]
     kwargs['description'] = obj.get('description')
+    kwargs['modifiers'] = obj.get('modifiers')
     kwargs['flavor'] = obj.get('flavor')
     kwargs['iconPath'] = obj.get('iconPath')
     kwargs['name'] = objName

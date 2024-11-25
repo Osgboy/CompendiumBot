@@ -805,7 +805,13 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
 
     if not flavorFlag:
         # Branch
-        embed.add_field(name='Branch', value=attrs['branch'], inline=False)
+        embed.add_field(name='Branch', value=attrs['branch'])
+
+        # Tier
+        embed.add_field(name='Research Tier', value=attrs['tier'])
+
+        # Placeholder
+        embed.add_field(name='\u200b', value='\u200b')
 
         # Cost
         costText = []
@@ -947,6 +953,10 @@ def create_zupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
         # Required upgrades
         embed.add_field(name='Required Upgrades', value='\n'.join(
             attrs['requiredUpgrades']), inline=False)
+        
+        # Modifiers
+        if (modifiers := attrs['modifiers']):
+            embed.add_field(name='Modifiers', value='\n'.join(modifiers)[:1024], inline=False)
 
     if verbose or flavorFlag:
         # Flavor
