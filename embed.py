@@ -229,18 +229,19 @@ def create_zaction_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool
                 name='Cooldown', value=f"{ZEPHON_ICONS['turns']} {attrs['cooldown']}", inline=False)
 
         # Conditions
-        embed.add_field(name=f"Required upgrade", value=str(
-            attrs['conditions']['requiredUpgrade']))
-        embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(
-            attrs['conditions']['requiredActionPoints']))
-        embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(
-            attrs['conditions']['requiredMovement']))
-        embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(
-            attrs['conditions']['usableInTransport']))
-        embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(
-            attrs['conditions']['consumedActionPoints']))
-        embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(
-            attrs['conditions']['consumedMovement']))
+        if 'conditions' in attrs:
+            embed.add_field(name=f"Required upgrade", value=str(
+                attrs['conditions']['requiredUpgrade']))
+            embed.add_field(name=f"Requires {ZEPHON_ICONS['actions']} AP?", value=str(
+                attrs['conditions']['requiredActionPoints']))
+            embed.add_field(name=f"Requires {ZEPHON_ICONS['movement']} movement?", value=str(
+                attrs['conditions']['requiredMovement']))
+            embed.add_field(name=f"Usable in {ZEPHON_ICONS['transport']} transport?", value=str(
+                attrs['conditions']['usableInTransport']))
+            embed.add_field(name=f"Consumes {ZEPHON_ICONS['actions']} AP?", value=str(
+                attrs['conditions']['consumedActionPoints']))
+            embed.add_field(name=f"Consumes {ZEPHON_ICONS['movement']} movement?", value=str(
+                attrs['conditions']['consumedMovement']))
 
         # Modifiers
         if (modifiers := attrs['modifiers']):
@@ -786,6 +787,8 @@ def create_gunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+        
+    if verbose:
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
                                'Weapons marked with (S) are secondary weapons.\n'
                                'Stat-changing traits like Fleet not taken into account.'))
@@ -887,6 +890,8 @@ def create_zunit_embed(name: str, attrs: dict, verbose: bool, flavorFlag: bool) 
         if (flavor := attrs['flavor']):
             embed.add_field(
                 name='Flavor', value=f'*{flavor[:1022]}*', inline=False)
+
+    if verbose:
         embed.set_footer(text=('Traits/weapons marked with (U) require a researchable upgrade.\n'
                                'Weapons marked with (S) are secondary weapons.\n'
                                'Stat-changing traits like Fleet not taken into account.'))

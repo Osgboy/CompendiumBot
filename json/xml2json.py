@@ -443,7 +443,8 @@ def get_faction_actions(actionCls: Type[Action], factionCls: Type[Faction]) -> d
                             if action.GAME == 'Gladius':
                                 kwargs['faction'] = factionName
                             elif action.GAME == 'Zephon':
-                                kwargs['branch'] = faction.get_branch()
+                                faction.get_branch()
+                                kwargs['branch'] = faction.branch
                             objDict[kwargs['name']] = kwargs
         except Exception:
             print(

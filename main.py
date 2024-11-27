@@ -171,6 +171,9 @@ class ConfirmFuzzyMatch(discord.ui.View):
                 print(
                     f'Icon {fullIconPath!r} was not found. Sending embed without icon')
 
+    @discord.ui.button(label='No', style=discord.ButtonStyle.red)
+    async def delete(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.message.delete()
 
 def match_and_create_embed(verbose: bool, flavor: bool, objClass: str, embedFunc: Callable[[str, dict, bool, str], discord.Embed], unitClass: str,
                            *, name: str, unitName: str) -> tuple[discord.Embed, str]:
