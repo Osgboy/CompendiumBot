@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement15">
+	<model>
+		<unit mesh="Units/SpaceMarines/PrimarisRedemptorDreadnought"
+				material="Units/SpaceMarines/PrimarisRedemptorDreadnought"
+				idleAnimation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				syncMovementSounds="1"
+				explosionsBone="Body"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="MacroPlasmaIncineratorStandard" slotName="MacroPlasmaIncineratorStandard">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle0"
+						effectScale="2.0"
+						fireInterval="1"
+						muzzleCount="1"/>
+			</model>
+		</weapon>
+		<weapon name="MacroPlasmaIncineratorSupercharged" slotName="MacroPlasmaIncineratorSupercharged" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle0"
+						effectScale="2.0"
+						fireInterval="1"
+						muzzleCount="1"/>	
+			</model>
+		</weapon>
+		<weapon name="PowerFist">
+			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+		<weapon name="IcarusRocketPod">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle2"
+						fireInterval="0.2"
+						missileScale="0.5"
+						muzzleCount="1"/>		
+			</model>
+		</weapon>
+		<weapon name="OnslaughtGatlingCannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle1"
+						muzzleCount="1"/>	
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedStormBolter">
+			<model>
+				<projectileWeapon muzzleBone="LeftBolterMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedStormBolter">
+			<model>
+				<projectileWeapon muzzleBone="RightBolterMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<hitpointsMax base="36.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=3 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="3"/>
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="3"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="6.0"/> <!-- %requisitionsUpkeep base tier=9 factor=1 -->
+				<requisitionsCost base="120.0"/> <!-- %requisitionsCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtAttack"
+						beginFire="1.3"
+						endFire="2.1"
+						chargeAnimation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtCharge"
+						chargeBeginFire="0.2"
+						chargeEndFire="1.0"						
+						meleeAnimation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtMelee"
+						meleeBeginSwing="0.05"
+						meleeEndSwing="0.5"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtDie0"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="0.9"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisRedemptorDreadnoughtMove"
+						sound="Units/SpaceMarines/DreadnoughtMove"
+						soundCount="2"/>
+			</model>				
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="MacroPlasmaIncineratorStandard MacroPlasmaIncineratorSupercharged"/>
+		<hammerOfWrath consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="SpaceMarines/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="SpaceMarines/DutyEternal"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Vehicle"/>
+		<trait name="Walker"/>
+	</traits>
+</unit>

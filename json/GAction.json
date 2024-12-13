@@ -4846,6 +4846,28 @@
         },
         "faction": "Space Marines"
     },
+    "Repulsor Field": {
+        "internalID": "SpaceMarines/RepulsorField",
+        "description": "Reduces the movement of enemies on adjacent tiles.",
+        "cooldown": "Passive",
+        "flavor": "When Arkhan Land rediscovered the STC for anti-gravity devices, it is unlikely that he intended them as yet another weapon in the Repulsor tank\u2019s already weighty arsenal. Yet, as a Repulsor Executioner coasts to a halt, it discharges directed crushing pulses of gravitic force through its ventral grab plates, pinning any foes just before its cargo of Primaris marines spring upon them\u2026",
+        "modifiers": [
+            "Repulsor Field",
+            "- -1 Movement Max"
+        ],
+        "rawXML": "<genericUnitAbility passive=\"1\" name=\"SpaceMarines/RepulsorField\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Tile\" excludeRadius=\"0\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"SpaceMarines/RepulsorField\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\SpaceMarines\\RepulsorField.png",
+        "name": "Repulsor Field",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Space Marines"
+    },
     "Cluster Mines": {
         "internalID": "ClusterMines",
         "description": "Places cluster mines on the target adjacent tile to slow and damage enemies.",

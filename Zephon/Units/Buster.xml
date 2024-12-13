@@ -169,30 +169,8 @@
 					</effects>
 				</modifier>
 			</modifiers>
-		</useWeapon>		
-		<foundCity name="NomadicLife"
-				costScalesWithCities="1"
-				icon="Actions/FoundCity">
-			<model>
-				<action animation="Units/ReaverAbility0"
-						sound="Actions/FoundCity"
-						soundFirstActingMemberOnly="1"/>
-			</model>
-			<conditions>
-				<player match="Any">
-					<noTrait type="Trapped"/>
-					<cityCount equal="0"/>
-				</player>
-			</conditions>
-			<modifiers>
-				<modifier visible="0">
-					<effects>
-						<influenceCost base="60"/>
-						<mineralsCost base="60"/>
-					</effects>
-				</modifier>
-			</modifiers>
-		</foundCity>
+		</useWeapon>
+		<foundCity blueprint="NomadicLife"/>
 		<unitAction name="Hijack"
 				passive="1">
 			<beginTargets>

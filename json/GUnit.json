@@ -13008,7 +13008,7 @@
             "hitpointsMax": 64.0,
             "moraleMax": 12,
             "movementMax": 4,
-            "cargoSlots": 3,
+            "cargoSlots": 4,
             "itemSlots": 0
         },
         "weaponStats": {
@@ -13261,6 +13261,384 @@
         "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\Predator.png",
         "name": "Predator"
     },
+    "Primaris Aggressors": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "2",
+            "armor": 8,
+            "hitpointsMax": 8.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "PrimarisAggressor",
+        "tier": "4",
+        "dlc": "Supplement15",
+        "description": "Close-quarters anti-infantry unit equipped with flamestorm gauntlets.",
+        "flavor": "Capable of spearheading devastating offensives or shattering the most determined enemy assaults, Aggressors are walking ceramite strongpoints. They excel at close-quarters combat and laying down torrents of devastating fire before crushing their foes beneath their energised fists.",
+        "costStats": {
+            "production": "42.0",
+            "requisitions": "60.0"
+        },
+        "upkeepStats": {
+            "requisitions": "3.0"
+        },
+        "weapons": {
+            "Flamestorm Gauntlets": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Fragstorm Grenade Launcher": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Power Fists": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Close-quarters Firepower": null,
+            "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Very Bulky": null
+        },
+        "actions": {
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisAggressor.png",
+        "name": "Primaris Aggressors"
+    },
+    "Primaris Hellblasters": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "3",
+            "armor": 8,
+            "hitpointsMax": 6.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "PrimarisHellblaster",
+        "tier": "5",
+        "dlc": "Supplement15",
+        "description": "Heavy armour-piercing ranged infantry.",
+        "flavor": "Few foes can survive the incandescent fury of a Hellblaster Squad. Whether they be Tyranid Hive Tyrant, Ork Warboss or Heretic Astartes battle tank, all are reduced to ash and slag by searing, well-aimed plasma fire pouring from the Hellblasters\u2019 ferocious weapons.",
+        "costStats": {
+            "production": "48.0",
+            "requisitions": "80.0"
+        },
+        "upkeepStats": {
+            "requisitions": "4.0"
+        },
+        "weapons": {
+            "Plasma Incinerator (Standard)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Plasma Incinerator (Supercharged)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Frag Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Krak Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Bulky": null
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisHellblaster.png",
+        "name": "Primaris Hellblasters"
+    },
+    "Primaris Inceptors": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "2",
+            "armor": 8,
+            "hitpointsMax": 8.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "PrimarisInceptor",
+        "tier": "6",
+        "dlc": "Supplement15",
+        "description": "Powerful short-range unit equipped with jump packs.",
+        "flavor": "Equipped with heavy jump packs, Inceptor Squads are superb spearhead troops that deliver overwhelming blows to the enemy. Plummeting to the surface from the very edge of a world\u2019s atmosphere, they strike with devastating force, unleashing a hurricane of fire that turns whole squads of enemy infantry to bloody mist.",
+        "costStats": {
+            "production": "48.0",
+            "requisitions": "80.0"
+        },
+        "upkeepStats": {
+            "requisitions": "4.0"
+        },
+        "weapons": {
+            "Plasma Exterminator (Standard)": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Plasma Exterminator (Supercharged)": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Very Bulky": null,
+            "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
+            "Last Stand": "SpaceMarines/LastStand"
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Jump Pack": null,
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisInceptor.png",
+        "name": "Primaris Inceptors"
+    },
+    "Primaris Intercessors": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "4",
+            "armor": 8,
+            "hitpointsMax": 6.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "PrimarisIntercessor",
+        "tier": "2",
+        "dlc": "Supplement15",
+        "description": "Tough versatile infantry unit",
+        "flavor": "Intercessor Squads are capable of laying down punishing fire while advancing or holding ground against the enemy. They have access to a range of bolt weaponry suited to varied battlefield assignments, from engaging enemies at long range to cleansing bunker complexes.",
+        "costStats": {
+            "production": "36.0",
+            "requisitions": "40.0"
+        },
+        "upkeepStats": {
+            "requisitions": "2.0"
+        },
+        "weapons": {
+            "Bolt Rifle": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Frag Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Krak Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Bolter Discipline": null,
+            "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
+            "Last Stand": "SpaceMarines/LastStand"
+        },
+        "actions": {
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisIntercessor.png",
+        "name": "Primaris Intercessors"
+    },
+    "Primaris Invader ATVs": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "2",
+            "armor": 8,
+            "hitpointsMax": 12.0,
+            "moraleMax": 8,
+            "movementMax": 5,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1
+        },
+        "internalID": "PrimarisInvaderATV",
+        "tier": "3",
+        "dlc": "Supplement15",
+        "description": "Fast vehicle equipped with a gatling cannon.",
+        "flavor": "The Invader is a highly flexible all-terrain vehicle, perfectly adapted to an aggressive reconnaissance role. Outfitted with an onslaught gatling cannon, it can rapidly deliver punishing fire against vulnerable parts of the enemy line, or swiftly engage and destroy scouting elements of opposing forces.",
+        "costStats": {
+            "production": "42.0",
+            "requisitions": "60.0"
+        },
+        "upkeepStats": {
+            "requisitions": "3.0"
+        },
+        "weapons": {
+            "Onslaught Gatling Cannon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Bolt Rifle": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Bike": null,
+            "Extra Vehicle Armour": "SpaceMarines/ExtraVehicleArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Very Bulky": null
+        },
+        "actions": {
+            "Jink": null,
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisInvaderATV.png",
+        "name": "Primaris Invader ATVs"
+    },
+    "Primaris Repulsor Executioner": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 48.0,
+            "moraleMax": 12,
+            "movementMax": 4,
+            "cargoSlots": 2,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 6,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1,
+            "strengthDamage": 1
+        },
+        "internalID": "PrimarisRepulsorExecutioner",
+        "tier": "8",
+        "dlc": "Supplement15",
+        "description": "Heavy tank with transport capabilities and a significant payload of ranged weapons.",
+        "flavor": "Based on the Repulsor chassis, the Repulsor Executioner sacrifices some transport capacity to accommodate powerful turret weaponry. Even the largest battle tanks can be crippled by the beam of a heavy laser destroyer, while the incinerating blasts of a macro plasma incinerator can obliterate infantry formations.",
+        "costStats": {
+            "production": "54.0",
+            "requisitions": "120.0"
+        },
+        "upkeepStats": {
+            "requisitions": "6.0"
+        },
+        "weapons": {
+            "Heavy Laser Destroyer": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Heavy Onslaught Gatling Cannon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Icarus Rocket Pod": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Ironhail Heavy Stubber": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Heavy Bolter": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Icarus Ironhail Heavy Bolter": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Storm Bolter": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Fragstorm Grenade Launcher": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Extra Vehicle Armour": "SpaceMarines/ExtraVehicleArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Tank": null,
+            "Transport": null,
+            "Vehicle": null
+        },
+        "actions": {
+            "Create Smoke Screen": "SpaceMarines/SmokeLauncher",
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment",
+            "Repulsor Field": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisRepulsorExecutioner.png",
+        "name": "Primaris Repulsor Executioner"
+    },
     "Razorback": {
         "faction": "Space Marines",
         "combatStats": {
@@ -13322,6 +13700,83 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\Razorback.png",
         "name": "Razorback"
+    },
+    "Primaris Redemptor Dreadnought": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 36.0,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 3.0,
+            "strengthDamage": 3.0
+        },
+        "internalID": "RedemptorDreadnought",
+        "tier": "7",
+        "dlc": "Supplement15",
+        "description": "Powerful walker unit with a vast array of weapons.",
+        "flavor": "Redemptor Dreadnoughts are some of the largest of their kind ever fielded by the Adeptus Astartes. Armed to the teeth, they can be equipped to utterly destroy almost any kind of battlefield target with hails of superheated plasma.",
+        "costStats": {
+            "production": "54.0",
+            "requisitions": "120.0"
+        },
+        "upkeepStats": {
+            "requisitions": "6.0"
+        },
+        "weapons": {
+            "Macro Plasma Incinerator (Standard)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Macro Plasma Incinerator (Supercharged)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Power Fist": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Icarus Rocket Pod": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Onslaught Gatling Cannon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Storm Bolter": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Duty Eternal": null,
+            "Extra Vehicle Armour": "SpaceMarines/ExtraVehicleArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Vehicle": null,
+            "Walker": null
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Hammer of Wrath": "SpaceMarines/HammerOfWrath",
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\RedemptorDreadnought.png",
+        "name": "Primaris Redemptor Dreadnought"
     },
     "Scouts": {
         "faction": "Space Marines",
@@ -13535,6 +13990,68 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\StormravenGunship.png",
         "name": "Stormraven Gunship"
+    },
+    "Storm Speeder Thunderstrike": {
+        "faction": "Space Marines",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 18.0,
+            "moraleMax": 8,
+            "movementMax": 5,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 6,
+            "rangedAccuracy": 10.0,
+            "meleeAttacks": 1,
+            "strengthDamage": 1
+        },
+        "internalID": "StormSpeederThunderstrike",
+        "tier": "4",
+        "dlc": "Supplement15",
+        "description": "Fast assault vehicle with a powerful anti-armour armament.",
+        "flavor": "Thunderstrikes outmanoeuvre the foe at every turn, targeting vulnerable points in armour, fuel stores and missile hoppers to turn tanks into raging fireballs. Just a single Thunderstrike is capable of destroying armoured breakthrough attempts, and when one is on the battlefield, few enemies are safe.",
+        "costStats": {
+            "production": "42.0",
+            "requisitions": "30.0",
+            "energy": "30.0"
+        },
+        "upkeepStats": {
+            "requisitions": "3.0"
+        },
+        "weapons": {
+            "Thunderstrike Las Talon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Stormfury Missiles": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Twin-Linked Icarus Rocket Pod": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "And They Shall Know No Fear": null,
+            "Extra Vehicle Armour": "SpaceMarines/ExtraVehicleArmour",
+            "Last Stand": "SpaceMarines/LastStand",
+            "Skimmer": null,
+            "Thunderstrike": null,
+            "Vehicle": null
+        },
+        "actions": {
+            "Jink": null,
+            "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\StormSpeederThunderstrike.png",
+        "name": "Storm Speeder Thunderstrike"
     },
     "Stormtalon Gunship": {
         "faction": "Space Marines",

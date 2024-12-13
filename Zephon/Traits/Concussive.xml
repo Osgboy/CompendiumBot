@@ -4,10 +4,11 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
-					<modifier effectDescription="ToBiologicalEnemy">
-						<conditions>
+					<modifier effectDescription="ToBiologicalNonTitanEnemy">
+						<conditions ignoreForTraitVisibility="1">
 							<unit>
 								<trait type="Biological"/>
+								<noTrait type="Titan"/>
 							</unit>
 						</conditions>
 						<effects>

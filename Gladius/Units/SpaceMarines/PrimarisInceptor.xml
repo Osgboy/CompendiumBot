@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement15">
+	<model>
+		<unit mesh="Units/SpaceMarines/PrimarisInceptor"
+				material="Units/SpaceMarines/PrimarisInceptor"
+				idleAnimation="Units/SpaceMarines/PrimarisInceptorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.0"
+				scale="0.9 0.9 0.9"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="100" memberDeltaY="90"/>
+	<weapons>
+		<weapon name="PlasmaExterminatorStandard" count="2" slotName="PlasmaExterminatorStandard">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="0.67"/>			
+			</model>
+		</weapon>
+		<weapon name="PlasmaExterminatorSupercharged" count="2" slotName="PlasmaExterminatorSupercharged" enabled="0">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="0.67"/>			
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="8.0"/> <!-- %hitpointsMax base toughness=5 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="4.0"/> <!-- %requisitionsUpkeep base tier=8 factor=1 -->
+				<requisitionsCost base="80.0"/> <!-- %requisitionsCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInceptorAttack"
+						beginFire="1.0"
+						endFire="1.43"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInceptorDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.6"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInceptorMove"
+						sound="Units/SpaceMarines/PrimarisInceptorMove"/>
+			</model>
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="PlasmaExterminatorStandard PlasmaExterminatorSupercharged"/>
+		<jumpPack cooldown="3">
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInceptorJumpMove"
+						sound="Actions/JumpPack"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+						<movementMax add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="SpaceMarines/HammerOfWrath">
+									<effects>
+										<addTrait duration="1" name="HammerOfWrath"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</jumpPack>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="VeryBulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+	</traits>
+</unit>

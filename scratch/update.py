@@ -1,20 +1,29 @@
+import argparse
+from pathlib import Path
 import shutil
 
-zephon_world_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\World'
-zephon_english_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\Core\Languages\English'
-zephon_icons_src = r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data\Video\Textures\Icons'
+parser = argparse.ArgumentParser()
+parser.add_argument('base', help="base path of this repository")
+args = parser.parse_args()
 
-gladius_world_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\World'
-gladius_english_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\Core\Languages\English'
-gladius_icons_src = r'C:\Program Files\Epic Games\Warhammer40KGladius\Data\Video\Textures\Icons'
+zephon_base = Path(r'C:\Program Files (x86)\Steam\steamapps\common\ZEPHON\Data')
+zephon_world_src = zephon_base / 'World'
+zephon_english_src = zephon_base / 'Core' / 'Languages' / 'English'
+zephon_icons_src = zephon_base / 'Video' / 'Textures' / 'Icons'
 
-zephon_world_dst = r'C:\Projects\GladiusBot\Zephon'
-zephon_english_dst = r'C:\Projects\GladiusBot\Zephon\English'
-zephon_icons_dst = r'C:\Projects\GladiusBot\Zephon\Icons'
+gladius_base = Path(r'C:\Program Files (x86)\Steam\steamapps\common\Warhammer 40000 Gladius - Relics of War\Data')
+gladius_world_src = gladius_base / 'World'
+gladius_english_src = gladius_base / 'Core' / 'Languages' / 'English'
+gladius_icons_src = gladius_base / 'Video' / 'Textures' / 'Icons'
 
-gladius_world_dst = r'C:\Projects\GladiusBot\Gladius'
-gladius_english_dst = r'C:\Projects\GladiusBot\Gladius\English'
-gladius_icons_dst = r'C:\Projects\GladiusBot\Gladius\Icons'
+base = Path(args.base)
+zephon_world_dst = base / 'Zephon'
+zephon_english_dst = base / 'Zephon' / 'English'
+zephon_icons_dst = base / 'Zephon' / 'Icons'
+
+gladius_world_dst = base / 'Gladius'
+gladius_english_dst = base / 'Gladius' / 'English'
+gladius_icons_dst = base / 'Gladius' / 'Icons'
 
 src_dirs = (
     zephon_world_src, zephon_english_src, zephon_icons_src,

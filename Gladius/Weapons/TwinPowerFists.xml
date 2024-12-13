@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/PowerFist"
+				fireSoundCount="3"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="6"/> <!-- %meleeArmorPenetration add armorPiercing=2 -->
+				<strengthDamage mul="2"/> <!-- %strengthDamage mul strength=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="SpaceMarines/MeleeDamage" requiredUpgrade="SpaceMarines/MeleeDamage"/>
+		<trait name="TwinLinked"/>
+		<trait name="Unwieldy"/>
+	</traits>
+</weapon>

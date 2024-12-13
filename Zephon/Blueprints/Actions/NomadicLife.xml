@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<foundCity name="NomadicLife"
+		costScalesWithCities="1"
+		icon="Actions/FoundCity">
+	<model>
+		<action animation="Units/ReaverAbility0"
+				sound="Actions/FoundCity"
+				soundFirstActingMemberOnly="1"/>
+	</model>
+	<conditions>
+		<player match="Any">
+			<noTrait type="Trapped"/>
+			<cityCount equal="0"/>
+		</player>
+	</conditions>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<influenceCost base="40"/>
+				<mineralsCost base="40"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<player>
+					<noFaction name="Chieftess"/>
+				</player>
+			</conditions>
+			<effects>
+				<influenceCost add="40"/>
+				<mineralsCost add="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</foundCity>

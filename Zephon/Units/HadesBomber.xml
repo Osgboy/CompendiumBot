@@ -22,14 +22,14 @@
 		<weapon type="AntimatterBomb"
 				enabled="0"
 				slotName="AntimatterBomb"/>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="DecoyFlares">
 			<models>
 				<weapon bone="Hull_Shake"
 						material="Units/HadesBomber"
 						mesh="Units/HadesBomberDecoyFlares"/>			
 			</models>
 		</weapon>
- 		<weapon type="None">
+ 		<weapon type="None" requiredUpgrade="MultiSpectralScattering">
 			<models>
 				<weapon bone="Hull_Shake"
 						material="Units/HadesBomberStealthDevice"

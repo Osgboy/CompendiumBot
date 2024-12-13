@@ -157,7 +157,7 @@
 		<unitCast name="PowerSpike"
 				consumedActionPoints="0"
 				consumedMovement="0"
-				cooldown="3"
+				cooldown="1"
 				requiredActionPoints="0"
 				requiredMovement="0">
 			<model>
@@ -182,11 +182,14 @@
 								<modifier>
 									<conditions>
 										<unit>
-											<hitpointsFraction greater="0.5"/>	
+											<actionPoints greater="0"/>
+											<hitpointsFraction greater="0.5"/>
+											<unitsInRange greater="0" range="1">
+												<unit>
+													<enemy/>
+												</unit>
+											</unitsInRange>
 										</unit>
-										<tile>
-											<enemyStrengthInTheArea greater="0"/>
-										</tile>
 									</conditions>
 									<effects>
 										<score add="1.0"/>

@@ -1,12 +1,14 @@
-python C:\Projects\GladiusBot\scratch\update.py
+set base=C:\Users\olive\Documents\GitHub\CompendiumBot
 
-cd C:\Projects\GladiusBot\scratch\ddstronk\src\DDStronk
-dotnet run Program.cs C:\Projects\GladiusBot\Zephon\Icons
-dotnet run Program.cs C:\Projects\GladiusBot\Gladius\Icons
-cd C:\Projects\GladiusBot\Zephon\Icons
+python %base%\scratch\update.py %base%
+
+cd %base%\scratch\ddstronk\src\DDStronk
+dotnet run Program.cs %base%\Zephon\Icons
+dotnet run Program.cs %base%\Gladius\Icons
+cd %base%\Zephon\Icons
 del /S *.dds
-cd C:\Projects\GladiusBot\Gladius\Icons
+cd %base%\Gladius\Icons
 del /S *.dds
 
-python C:\Projects\GladiusBot\scratch\fixXMLfiles.py C:\Projects\GladiusBot\Zephon\English
-python C:\Projects\GladiusBot\scratch\fixXMLfiles.py C:\Projects\GladiusBot\Gladius\English
+python %base%\scratch\fixXMLfiles.py %base%\Zephon\English
+python %base%\scratch\fixXMLfiles.py %base%\Gladius\English

@@ -67,7 +67,7 @@
             },
             "attacks": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "damage": {
                 "operator": "base",
@@ -87,7 +87,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "attacks": {
                 "operator": "base",
@@ -95,7 +95,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 2.0
+                "value": 3.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\AntiArmorGrenade.png",
@@ -146,7 +146,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 6.0
+                "value": 5.0
             },
             "attacks": {
                 "operator": "base",
@@ -420,19 +420,50 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 4.0
+                "value": 10.0
             },
             "attacks": {
                 "operator": "base",
-                "value": 3.0
+                "value": 1.0
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 32.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
         "name": "Black Hole",
+        "branch": "Neutral"
+    },
+    "Black Hole (Adjacent)": {
+        "internalID": "BlackHoleAdjacent",
+        "description": null,
+        "flavor": "Our humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
+        "traits": {
+            "Eventful Horizons": "EmulatedMindAffinityUpgrade2",
+            "Massive Splash": null
+        },
+        "range": "0",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 0.5
+            },
+            "damage": {
+                "operator": "base",
+                "value": 32.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
+        "name": "Black Hole (Adjacent)",
         "branch": "Neutral"
     },
     "Bleed": {
@@ -1127,7 +1158,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 0.0
+                "value": 1.0
             },
             "attacks": {
                 "operator": "base",
@@ -1840,7 +1871,7 @@
         "traits": {
             "Burning": null,
             "Ignores Cover": null,
-            "Splash": null
+            "Large Splash": null
         },
         "range": "1",
         "innateStats": {
@@ -2603,7 +2634,7 @@
             },
             "attacks": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "damage": {
                 "operator": "base",
@@ -2629,15 +2660,15 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 4.0
+                "value": 10.0
             },
             "attacks": {
                 "operator": "base",
-                "value": 3.0
+                "value": 1.0
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 32.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\SeedOfExtinction.png",
@@ -2660,7 +2691,7 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 8.0
+                "value": 7.0
             },
             "attacks": {
                 "operator": "base",
@@ -2668,7 +2699,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 16.0
+                "value": 12.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\ShirakiCruiseMissile.png",
@@ -2957,15 +2988,15 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 4.0
+                "value": 9.0
             },
             "attacks": {
                 "operator": "base",
-                "value": 3.0
+                "value": 1.0
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 24.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
@@ -2988,15 +3019,15 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 4.0
+                "value": 9.0
             },
             "attacks": {
                 "operator": "base",
-                "value": 1.5
+                "value": 0.5
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 24.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",

@@ -7111,6 +7111,30 @@
         "iconPath": "Gladius\\Icons\\Upgrades\\CityTier4.png",
         "name": "Fortress Supreme"
     },
+    "Close-quarters Firepower": {
+        "faction": "Space Marines",
+        "internalID": "CloseQuartersFirepower",
+        "description": "Increases armour penetration.",
+        "flavor": "At shorter ranges, the range of weapons designed by Belisarius Cawl for his Primaris marines are lethally effective, encouraging the Emperor\u2019s finest to close the distance with their foes.",
+        "modifiers": [
+            "- +1 Armour Penetration"
+        ],
+        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\CloseQuartersFirepower.png",
+        "name": "Close-quarters Firepower"
+    },
+    "Duty Eternal": {
+        "faction": "Space Marines",
+        "internalID": "DutyEternal",
+        "description": "Increases invulnerable damage reduction.",
+        "flavor": "All Adeptus Astartes possess an indomitable will. Yet those few Primaris given the privilege of being encased in a Redemptor Dreadnought after their effective death know a deeper responsibility, of living up to this unique honour. They will fight on no matter how grievous the injury or how severe the damage.",
+        "modifiers": [
+            "- min 17% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\DutyEternal.png",
+        "name": "Duty Eternal"
+    },
     "Stronghold Shielding": {
         "faction": "Space Marines",
         "internalID": "FortressOfRedemptionDamageReduction",
@@ -7147,6 +7171,18 @@
         "iconPath": "Gladius\\Icons\\Actions\\SpaceMarines\\Omniscope.png",
         "name": "Omniscope"
     },
+    "Repulsor Field": {
+        "faction": "Space Marines",
+        "internalID": "RepulsorField",
+        "description": "Reduces the movement.",
+        "flavor": "When Arkhan Land rediscovered the STC for anti-gravity devices, it is unlikely that he intended them as yet another weapon in the Repulsor tank\u2019s already weighty arsenal. Yet, as a Repulsor Executioner coasts to a halt, it discharges directed crushing pulses of gravitic force through its ventral grab plates, pinning any foes just before its cargo of Primaris marines spring upon them\u2026",
+        "modifiers": [
+            "- -1 Movement Max"
+        ],
+        "rawXML": "<trait category=\"Debuff\" icon=\"Actions/SpaceMarines/RepulsorField\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<enemy/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<movementMax add=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Actions\\SpaceMarines\\RepulsorField.png",
+        "name": "Repulsor Field"
+    },
     "Suppressive Bombardment": {
         "faction": "Space Marines",
         "internalID": "SuppressiveBombardment",
@@ -7174,6 +7210,18 @@
         "rawXML": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.67\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\StormShield.png",
         "name": "Storm Shield"
+    },
+    "Thunderstrike": {
+        "faction": "Space Marines",
+        "internalID": "ThunderstrikeTarget",
+        "description": "Increases the ranged damage from Space Marines units against this unit.",
+        "flavor": "The heavily armed Storm Speeders designed by Belisarius Cawl are specialised against certain targets, with the Thunderstrike focused on eliminating enemy vehicles and key targets. Indeed, a foe crippled by its armaments becomes even more vulnerable to follow-up attacks by fellow battle brothers.",
+        "modifiers": [
+            "- +17% Damage Taken"
+        ],
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t\t<faction name=\"SpaceMarines\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t\t<weapon>\n\t\t\t\t\t\t<noTrait name=\"Melee\"/>\n\t\t\t\t\t</weapon>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<damageTaken mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\ThunderstrikeTarget.png",
+        "name": "Thunderstrike"
     },
     "Space Slip": {
         "internalID": "SpaceSlip",

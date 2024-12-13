@@ -882,6 +882,113 @@
         "iconPath": "Zephon\\Icons\\Upgrades\\WordsOfTheProphetUpgrade2.png",
         "name": "Tetragrammatonic Texts"
     },
+    "Eventful Horizons": {
+        "faction": "Emulated Mind",
+        "internalID": "EmulatedMindAffinityUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When ZEPHON woke her up it literally birthed her with knowledge of black holes no one else could access\u2026 maybe the impossible calculations that could create an event horizon were what had first driven her so mad.",
+        "tier": "10",
+        "requiredUpgrades": [
+            "BlackHole"
+        ],
+        "modifiers": [
+            "- +25% Damage"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\EmulatedMindAffinityUpgrade2.png",
+        "name": "Eventful Horizons"
+    },
+    "Toxic Spearhead": {
+        "faction": "Any",
+        "internalID": "ToxicSpearhead",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "Dragoons would drag their spears through the vile waste the Abkluth left behind after defecating. The tips of their weapons would then be coated in some of the most vile and dangerous substances ever exposed to human skin.",
+        "tier": "1",
+        "requiredUpgrades": [
+            "VoiceInfantry"
+        ],
+        "modifiers": [
+            "Poisoned (1 turn)",
+            "- -3 Hitpoints"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\ToxicSpearhead.png",
+        "name": "Toxic Spearhead"
+    },
+    "Old Painless": {
+        "faction": "Fallen Soldier",
+        "internalID": "FallenSoldierAffinityUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Watchmaker Yetunde delivered three code-locked boxes to the Fallen Soldier, saying they were gifts from \u201ca mutual friend.\u201d The first box carried blueprints for faster, meaner heavy machine guns. The message that came with it dripped with delight for violence: \u201cLet hot lead spew from the maw of the great dragon, and may your enemies drown in a nightmare of molten metal.\u201d",
+        "tier": "5",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +20% Damage"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\FallenSoldierAffinityUpgrade.png",
+        "name": "Old Painless"
+    },
+    "Stacked Mines": {
+        "faction": "Fallen Soldier",
+        "internalID": "MilitaryBackgroundUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Watchmaker Yetunde delivered three code-locked boxes to the Fallen Soldier, saying they were gifts from \u201ca mutual friend.\u201d The second one read \u201cPunish any who dare stalk your trail. Leave them limbless and screaming in the dirt.\u201d Inside the box\u2026 plans for stackable mines.",
+        "tier": "6",
+        "requiredUpgrades": [
+            "Minelayer"
+        ],
+        "modifiers": [
+            "- +1 Attacks"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\MilitaryBackgroundUpgrade2.png",
+        "name": "Stacked Mines"
+    },
+    "The Mind's Eye": {
+        "faction": "Emulated Mind",
+        "internalID": "OblivionUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "When I was a young fool, gossip went around; of a scientist, a genius, who died attempting to fulfill that old billionaire dream of living forever by uploading herself. It didn\u2019t work, of course-the giant machine was inert, unmotivated, left operating as a curiosity. Until ZEPHON found it and brought that mind to life, focusing its will as a weapon against the invading Acrin. In time, its\u2014I should say, \u2018her\u2019\u2014her will could stretch for miles, a thought could snuff out an enemy half a world away. A good reason not to gossip anymore\u2026",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +6 Maximum Range"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\OblivionUpgrade.png",
+        "name": "The Mind's Eye"
+    },
+    "Extinction": {
+        "faction": "Emulated Mind",
+        "internalID": "OblivionUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "If \u201cOblivion's\u201d power was like gaining control of lightning, \u201cExtinction\u201d was mastering the entire storm. The Emulated Mind became a god of old, perched atop her mountain, hurling depleted uranium across the land like thunderbolts. Children are taught to fear such gods. We had to learn how to serve one.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +100% Attacks"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\OblivionUpgrade2.png",
+        "name": "Extinction"
+    },
+    "Fusion Warhead": {
+        "faction": "Any",
+        "internalID": "FusionWarhead",
+        "branch": "Human",
+        "description": null,
+        "flavor": "\u201cLet me get this straight,\u201d our chief weapons engineer said to me. \u201cThe tactical nuclear missile needs to do *more* damage? Is 50 kilotons not enough?\u201d I really didn't feel like arguing. I showed her recon photos of a prototype Titan we'd be fighting within weeks. She gawped at the size. \u201cAgainst that?\u201d I replied. \u201c50 kilotons is definitely not enough.\u201d",
+        "tier": "8",
+        "requiredUpgrades": [
+            "TacticalNuclearMissile"
+        ],
+        "modifiers": [
+            "- +25% Damage"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\FusionWarhead.png",
+        "name": "Fusion Warhead"
+    },
     "Blessed Infestation": {
         "faction": "Any",
         "internalID": "AlgaeUpgrade",
@@ -1229,7 +1336,7 @@
         "requiredUpgrades": [],
         "modifiers": [
             "- +1 Production",
-            "- +2 Energy Upkeep"
+            "- +1 Energy Upkeep"
         ],
         "iconPath": "Zephon\\Icons\\Traits\\ConstructionUpgrade.png",
         "name": "Industrial Density"
@@ -1269,7 +1376,7 @@
         "internalID": "CyberAircraftUpgrade",
         "branch": "Cyber",
         "description": null,
-        "flavor": "Sky fortresses erected on tall mountains could be seen for miles. By the time we were building them, the techs were cooking up ways to program machines through light itself. Pairing them together made sense. If every time a machine looked up it saw the fortress\u2014it could sync with the rest of the network and feel like a part of a greater whole.",
+        "flavor": null,
         "tier": "7",
         "requiredUpgrades": [
             "CyberAircraft"
@@ -1380,15 +1487,20 @@
         ],
         "modifiers": [
             "Black Hole",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
+            "- accuracy: 12",
+            "Black Hole (Adjacent)",
+            "- attacks: 0.5",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 12",
             "Black Hole (3 turns)",
             "Black Hole",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 12",
             "- min 100 Movement Cost",
             "- -67% Movement Max",
@@ -1806,7 +1918,7 @@
         "iconPath": "Zephon\\Icons\\Units\\AssaultTrooper.png",
         "name": "Assault Troopers"
     },
-    "Praetorian": {
+    "Praetorians": {
         "faction": "Any",
         "internalID": "Praetorian",
         "branch": "Human",
@@ -1818,7 +1930,7 @@
         ],
         "modifiers": null,
         "iconPath": "Zephon\\Icons\\Units\\Praetorian.png",
-        "name": "Praetorian"
+        "name": "Praetorians"
     },
     "Itinerant Recruiters": {
         "faction": "Any",
@@ -1866,14 +1978,14 @@
         ],
         "modifiers": [
             "Tactical Nuclear Missile",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 9",
+            "- damage: 24.0",
             "- accuracy: 12",
             "Tactical Nuclear Missile (Adjacent)",
-            "- attacks: 1.5",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 0.5",
+            "- armorPen: 9",
+            "- damage: 24.0",
             "- accuracy: 12"
         ],
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
@@ -2349,6 +2461,368 @@
         ],
         "iconPath": "Zephon\\Icons\\Actions\\VoiceVehiclesUpgrade.png",
         "name": "In Death, Life"
+    },
+    "Data Hack": {
+        "faction": "Emulated Mind",
+        "internalID": "DataHack",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Emulated Mind knew the back roads and less-used byways of every networking system. She loathed using such paths, but found there was some purpose to them. She\u2019d reach out her mind, walk through the back door, and have a look at what our enemies were researching. She could accept that function.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "Data Hack (5 turns)",
+            "- +100% Research Copied",
+            "- +20% Resources Copied"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\DataHack.png",
+        "name": "Data Hack"
+    },
+    "Amoetias Caress": {
+        "faction": "Any",
+        "internalID": "AmoetiasCaress",
+        "branch": "Voice",
+        "description": "Grants access to uncommon Voice items at  The Concordat",
+        "flavor": "The Concordat sent kids out into The Bleed. Bastards. Dangerous work for anyone but something about the children's small hands let them dig out crystals they needed for rare Voice artifacts. You'd buy them. The blood on the surface would stain your hands. And we all knew where the blood came from\u2026",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\AmoetiasCaress.png",
+        "name": "Amoetias Caress"
+    },
+    "Amoetia's Embrace": {
+        "faction": "Any",
+        "internalID": "AmoetiasEmbrace",
+        "branch": "Voice",
+        "description": "Grants access to rare Voice items at  The Concordat",
+        "flavor": "The hooded Concordat agent drew close and whispered into my ear after we concluded a trade. \u201cThe Fulcrum's power was greater than we ever imagined\u2026 When its power washed over the planet's surface, it pulled wondrous objects through the veil of a parallel world.\u201d I tried to pull away but he just grabbed my wrist. \u201cYou have heard their melody. And now you are ready to receive their blessing.\u201d",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\AmoetiasEmbrace.png",
+        "name": "Amoetia's Embrace"
+    },
+    "Trials of the Eremite": {
+        "faction": "Any",
+        "internalID": "AnchoriteStanding",
+        "branch": "Voice",
+        "description": "Improves diplomatic standing with  Anchorite over time",
+        "flavor": "It was the damndest thing. The Anchorite's messengers would appear out of the blue with gifts for our people. \u201cTo congratulate you for completing a trial.\u201d they would be told. But what trials? The Practical Romantic had a guess\u2014that the Anchorite was testing us. If we could piece together the deeds it was rewarding\u2026 we might permanently ingratiate ourselves with the mysterious hermit.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\AnchoriteStanding.png",
+        "name": "Trials of the Eremite"
+    },
+    "Asymmetric Arbitrage": {
+        "faction": "Any",
+        "internalID": "AsymmetricArbitrage",
+        "branch": "Human",
+        "description": null,
+        "flavor": "The most profitable way to deal with black markets in foreign territories was to slip their goods across the border on the back of trade convoys. Like sucker fish riding on the belly of a shark\u2014a little free ride that benefits them, but doesn't bother the bigger beast.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +50% Trade Gain"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\AsymmetricArbitrage.png",
+        "name": "Asymmetric Arbitrage"
+    },
+    "Balanced Progress": {
+        "faction": "Any",
+        "internalID": "BalancedProgress",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "War's a gamble, right? Can't place your bets down on one strategy. Sometimes it's worth spending coin to spread out your odds, help you turn on a dime if one plan goes south.",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- -33% Research Cost",
+            "- -33% Research Cost",
+            "- -33% Research Cost"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\BalancedProgress.png",
+        "name": "Balanced Progress"
+    },
+    "Breach Collector": {
+        "faction": "Any",
+        "internalID": "BreachCollector",
+        "branch": "Cyber",
+        "description": "Grants access to uncommon Cyber items at  The Concordat",
+        "flavor": "You'd better believe a bidding war broke out when some hapless hacker wandered out of a Zephon shard with half the backdoor keys for Old World tech. Concordat hosted the auction, got all the players in the room to bid\u2026 then declared it would pay the highest price, kept all the tech for itself. What was it playing at?",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\BreachCollector.png",
+        "name": "Breach Collector"
+    },
+    "Reaver Immigration": {
+        "faction": "Any",
+        "internalID": "ChieftessStanding",
+        "branch": "Human",
+        "description": "Improves diplomatic standing with  Chieftess over time",
+        "flavor": "No deal with the Chieftess came with guarantees\u2014except for one. She made it known that anyone who allowed Reavers to mingle with their people would drop off her shit list. \u201cIt's just good manners,\u201d she'd say if you pressed her on it. Was it a streak of kindness for her people? Or some kind of plan to infiltrate us and take over?",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\ChieftessStanding.png",
+        "name": "Reaver Immigration"
+    },
+    "Corpse Cities": {
+        "faction": "Any",
+        "internalID": "CorpseCities",
+        "branch": "Human",
+        "description": "Grants access to uncommon Human items at  The Concordat",
+        "flavor": "Concordat operatives would whisper about scavenging bodies, digging through the flesh to find the most valuable pieces. Told them it was disgusting. Got weirded out when they said I do it too. \u201cYou pull apart the metal flesh of the land to find rewards\u2026 we do too.\u201d They were talking about looting cities. Did they\u2026 think cities were alive once?",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\CorpseCities.png",
+        "name": "Corpse Cities"
+    },
+    "Ha'sharet Exchange": {
+        "faction": "Any",
+        "internalID": "HasharetExchange",
+        "branch": "Cyber",
+        "description": "Grants access to rare Cyber items at  The Concordat",
+        "flavor": "Weird message from The Concordat came in. \u201cWe are pleased to learn you have crossed the Hasharet threshold\u201d it cooed over the comms terminal. Machines in our command center began flickering\u2014it was transmitting a code as we spoke. \u201cYou now have access to cyberware we held in reserve for those truly seeking to\u2026 transcend.\u201d",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\HasharetExchange.png",
+        "name": "Ha'sharet Exchange"
+    },
+    "Holopatter": {
+        "faction": "Any",
+        "internalID": "Holopatter",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": "Oldest trick in war is covering yourself in branches so it's harder to see you in the forest. The techs cooked up holographic cloaks that also worked well in dense ruins. Couldn't keep you hidden forever, but bought you a few extra seconds to line up the perfect shot. Don't need to hide if the thing you're shooting is dead.",
+        "tier": "7",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +17% Accuracy"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\Holopatter.png",
+        "name": "Holopatter"
+    },
+    "Spirit of Mankind": {
+        "faction": "Any",
+        "internalID": "SpiritOfMankind",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Couldn't tell you if people are good or evil. But good leaders can make them good. Show your people what you'd sacrifice for them and they'll daydream of what they'd sacrifice for each other. But it never lasts. Gotta make the most of it while everyone's hearts are something close to pure.",
+        "tier": "8",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +6 Loyalty"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\SpiritOfMankind.png",
+        "name": "Spirit of Mankind"
+    },
+    "Tactical Archeology": {
+        "faction": "Any",
+        "internalID": "TacticalArcheology",
+        "branch": "Human",
+        "description": "Grants access to rare Human items at  The Concordat",
+        "flavor": "A smuggler linked to The Concordat rolled up one day with an \u201cexclusive deal.\u201d Special access to top-tier corpo tech the traders had kept squirreled away. Had to be a catch. Why now? \u201cHumans, the Voice, ZEPHON\u2026 only one of them will survive this war,\u201d he said, picking something (meat?) out of his teeth. \u201cWe're all-in on humanity. Now we know you are too.\u201d",
+        "tier": "4",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\TacticalArcheology.png",
+        "name": "Tactical Archeology"
+    },
+    "Specimen Containment": {
+        "faction": "Any",
+        "internalID": "Wildlife",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "We once had an Abkluth contained in a prototype specimen container at a field outpost. It was pacing the confined space, slamming itself into the walls at random intervals. I thought it was trying to escape\u2014until a pack of Abkluth swarmed our camp, devouring a group of helpless techs. It had been <i>signaling</i> to its pack. We soundproofed the containers after that.",
+        "tier": "1",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +3 Research"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\Wildlife.png",
+        "name": "Specimen Containment"
+    },
+    "AI Rights": {
+        "faction": "Any",
+        "internalID": "ZephonStanding",
+        "branch": "Cyber",
+        "description": "Improves diplomatic standing with  ZEPHON over time",
+        "flavor": "It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. \u201cThat would be acceptable,\u201d it replied. No one knew what to do with that. Was ZEPHON thinking ahead, for after the war? Or\u2026 no. Certainly not. There couldn't have been other AI among us\u2026 right?",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [],
+        "iconPath": "Zephon\\Icons\\Traits\\ZephonStanding.png",
+        "name": "AI Rights"
+    },
+    "Survival Training": {
+        "faction": "Fallen Soldier",
+        "internalID": "SurvivalTraining",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Strong soldiers saw value in sharing knowledge. If you lived this long, you\u2019ve learned a thousand lessons the hard way. There was value in passing what you know to the next generation. I hope there\u2019s still truth in that.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +9 Experience",
+            "- +9 Experience"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\SurvivalTraining.png",
+        "name": "Survival Training"
+    },
+    "The Outsider": {
+        "faction": "Furtive Tribunal",
+        "internalID": "TheOutsider",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Whatever body that the Voice spoke from, it never set foot on earth. It had a servant though. The Tribunal whispered about it, told us that it walked just on the other side of a thin veil. I knew the trio wanted to bring it through\u2014they thought it was a gift for our world. I\u2026 disagreed. Loudly.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "Spawn Dreameater (Level 1)",
+            "Summon (5 turns)",
+            "- max 0 Food Upkeep",
+            "- max 0 Minerals Upkeep",
+            "- max 0 Transuranium Upkeep",
+            "- max 0 Energy Upkeep",
+            "- max 0 Antimatter Upkeep",
+            "- max 0 Algae Upkeep",
+            "- max 0 Dimensional Echoes Upkeep",
+            "- max 0 Chips Upkeep",
+            "- max 0 Singularity Cores Upkeep",
+            "- max 0 Influence Upkeep",
+            "- +9 Level"
+        ],
+        "iconPath": "Zephon\\Icons\\Units\\Dreameater.png",
+        "name": "The Outsider"
+    },
+    "Artificer's Precision": {
+        "faction": "Heartless Artificer",
+        "internalID": "ArtificersPrecision",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Artificer had an eye for precision. In her craft, in her programming and in warfare. When she monitored a battle, she\u2019d use every tool at her disposal to survey and amplify all the targeting data sent out to the troops. Few other leaders were so\u2026 intimate with the killing their soldiers did.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "Artificer's Precision (2 turns)",
+            "- +25% Accuracy",
+            "- +17% Attacks"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\ArtificersPrecision.png",
+        "name": "Artificer's Precision"
+    },
+    "Quid Pro Quo (Food)": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "QuidProQuo",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Everyone was always squirreling away food. The Aristocrat was the only one who could get people to part with it. It was like the old fable about a savior who could feed his followers with an infinite supply of bread and fish. If that savior was real, maybe he and the Aristocrat spoke the same language\u2014the language of mutual aid and survival.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- -2 Cooldown",
+            "- +40 Food"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\QuidProQuoFood.png",
+        "name": "Quid Pro Quo (Food)"
+    },
+    "Well-Fed": {
+        "faction": "Honorable Aristocrat",
+        "internalID": "HonorableAristocratAffinityUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "\u201cA chief\u2026 nutritionist?\u201d I was stunned. But the Aristocrat said I could accept it or find a new boss. His theory was that a dedicated food scientist managing our supply lines could ensure every soldier ate a meal that maximized their job function. And I'll be damned if it didn't work. I certainly ate better fighting for him.",
+        "tier": "5",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +10% Hitpoints Max"
+        ],
+        "iconPath": "Zephon\\Icons\\Upgrades\\HonorableAristocratAffinityUpgrade.png",
+        "name": "Well-Fed"
+    },
+    "Icarus Satellite": {
+        "faction": "Rogue Operative",
+        "internalID": "IcarusSatellite",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "The Icarus Satellite network was a weapon developed by an old world company named ICAR Corp that never got online. For too long we thought it was just a myth. Then the Rogue Operative showed up on the scene with the missing link: an authorization key that assumed she was the CEO of ICAR. Only she could call down the Icarus' firepower\u2014even if someone killed her and took it, they'd never crack her layers of encryption on the damn thing.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "Icarus Satellite",
+            "- attacks: 2.0",
+            "- armorPen: 7",
+            "- damage: 12.0",
+            "- accuracy: 6"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\IcarusSatellite.png",
+        "name": "Icarus Satellite"
+    },
+    "Trash Camo": {
+        "faction": "Rogue Operative",
+        "internalID": "RogueOperativeAffinityUpgrade",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "One trooper I bunked with\u2014long, grey-haired fellow who read too many books\u2014called these new camo suits \u201ca ghillie suit for the end times.\u201d Laden with what looked like junk, but was actually high-tech adaptive camo. We used it to nestle into the crevices of downed machines, looking like little more than rusted pieces of our dying civilization.",
+        "tier": "5",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +5% Cover Damage Reduction"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade.png",
+        "name": "Trash Camo"
+    },
+    "Ghost Corps": {
+        "faction": "Rogue Operative",
+        "internalID": "RogueOperativeAffinityUpgrade2",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Old world corpos strung governments along with promises of AI that would \u201csynergize\u201d infantry units. Like all that other AI crap, it was a bunch of junk. The Rogue Operative somehow got it working for cybernetic ground troops. Just needed troops with a little less free will\u2026",
+        "tier": "10",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- +5% Damage"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade2.png",
+        "name": "Ghost Corps"
+    },
+    "Armor of Faith": {
+        "faction": "Untold Prophet",
+        "internalID": "ArmorOfFaith",
+        "branch": "Neutral",
+        "description": null,
+        "flavor": "Most of us mustered willpower on the battlefield, but the Prophet channeled something else\u2014faith. With it, he could do something the techs never came close to figuring out: project pure invulnerability. Was it supernatural? A power beyond the Voice? I never found out.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "modifiers": [
+            "- -3 Cooldown",
+            "Armor of Faith (1 turn)",
+            "- +83% Cover Damage Reduction",
+            "- +83% Evasion Damage Reduction",
+            "- +83% Invulnerable Damage Reduction"
+        ],
+        "iconPath": "Zephon\\Icons\\Actions\\ArmorOfFaith.png",
+        "name": "Armor of Faith"
+    },
+    "Interpolated Production": {
+        "faction": "Any",
+        "internalID": "CyberInfantryUpgrade",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": "Tasked with increasing troop output, the Techs knew the only solution was to turn to more and more automated processing. They linked the Printers' operating units into a single network. The more of them you had in a city, the faster it optimized production\u2026 and the more control you handed over to a new artificial life form.",
+        "tier": "1",
+        "requiredUpgrades": [
+            "CyberInfantry"
+        ],
+        "modifiers": [
+            "- -5% Minerals Cost"
+        ],
+        "iconPath": "Zephon\\Icons\\Traits\\CyberInfantryUpgrade.png",
+        "name": "Interpolated Production"
     },
     "Dragoon Armor": {
         "faction": "Any",
@@ -2948,6 +3422,20 @@
         "iconPath": "Zephon\\Icons\\Weapons\\ParadoxTheriac.png",
         "name": "Paradox Theriac"
     },
+    "Interceptor Missile": {
+        "faction": "Any",
+        "internalID": "InterceptorMissile",
+        "branch": "Human",
+        "description": null,
+        "flavor": "Pilots would make a game out of calling their Interceptor Missile shots. You won good money if you could call out how much damage you\u2019d do. Gambling on lives kept the pilots distracted from the danger faced in the air. We allowed it\u2014mostly.",
+        "tier": "8",
+        "requiredUpgrades": [
+            "PhoenixInterceptor"
+        ],
+        "modifiers": null,
+        "iconPath": "Zephon\\Icons\\Weapons\\InterceptorMissile.png",
+        "name": "Interceptor Missile"
+    },
     "Dimensional Reverberations": {
         "faction": "Any",
         "internalID": "DimensionalReverberations",
@@ -3091,474 +3579,5 @@
         "modifiers": [],
         "iconPath": "Zephon\\Icons\\Actions\\VorodaisGift.png",
         "name": "Vorodai's Gift"
-    },
-    "Eventful Horizons": {
-        "faction": "Emulated Mind",
-        "internalID": "EmulatedMindAffinityUpgrade2",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When ZEPHON woke her up it literally birthed her with knowledge of black holes no one else could access\u2026 maybe the impossible calculations that could create an event horizon were what had first driven her so mad.",
-        "tier": "10",
-        "requiredUpgrades": [
-            "BlackHole"
-        ],
-        "modifiers": [
-            "- +33% Damage"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\EmulatedMindAffinityUpgrade2.png",
-        "name": "Eventful Horizons"
-    },
-    "Toxic Spearhead": {
-        "faction": "Any",
-        "internalID": "ToxicSpearhead",
-        "branch": "Voice",
-        "description": null,
-        "flavor": "Dragoons would drag their spears through the vile waste the Abkluth left behind after defecating. The tips of their weapons would then be coated in some of the most vile and dangerous substances ever exposed to human skin.",
-        "tier": "1",
-        "requiredUpgrades": [
-            "VoiceInfantry"
-        ],
-        "modifiers": [
-            "Poisoned (1 turn)",
-            "- -3 Hitpoints"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\ToxicSpearhead.png",
-        "name": "Toxic Spearhead"
-    },
-    "Old Painless": {
-        "faction": "Fallen Soldier",
-        "internalID": "FallenSoldierAffinityUpgrade",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Watchmaker Yetunde delivered three code-locked boxes to the Fallen Soldier, saying they were gifts from \u201ca mutual friend.\u201d The first box carried blueprints for faster, meaner heavy machine guns. The message that came with it dripped with delight for violence: \u201cLet hot lead spew from the maw of the great dragon, and may your enemies drown in a nightmare of molten metal.\u201d",
-        "tier": "5",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +20% Damage"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\FallenSoldierAffinityUpgrade.png",
-        "name": "Old Painless"
-    },
-    "Stacked Mines": {
-        "faction": "Fallen Soldier",
-        "internalID": "MilitaryBackgroundUpgrade2",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Watchmaker Yetunde delivered three code-locked boxes to the Fallen Soldier, saying they were gifts from \u201ca mutual friend.\u201d The second one read \u201cPunish any who dare stalk your trail. Leave them limbless and screaming in the dirt.\u201d Inside the box\u2026 plans for stackable mines.",
-        "tier": "6",
-        "requiredUpgrades": [
-            "Minelayer"
-        ],
-        "modifiers": [
-            "- +1 Attacks"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\MilitaryBackgroundUpgrade2.png",
-        "name": "Stacked Mines"
-    },
-    "The Mind's Eye": {
-        "faction": "Emulated Mind",
-        "internalID": "OblivionUpgrade",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "When I was a young fool, gossip went around; of a scientist, a genius, who died attempting to fulfill that old billionaire dream of living forever by uploading herself. It didn\u2019t work, of course-the giant machine was inert, unmotivated, left operating as a curiosity. Until ZEPHON found it and brought that mind to life, focusing its will as a weapon against the invading Acrin. In time, its\u2014I should say, \u2018her\u2019\u2014her will could stretch for miles, a thought could snuff out an enemy half a world away. A good reason not to gossip anymore\u2026",
-        "tier": "2",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +6 Maximum Range"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\OblivionUpgrade.png",
-        "name": "The Mind's Eye"
-    },
-    "Extinction": {
-        "faction": "Emulated Mind",
-        "internalID": "OblivionUpgrade2",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "If \u201cOblivion's\u201d power was like gaining control of lightning, \u201cExtinction\u201d was mastering the entire storm. The Emulated Mind became a god of old, perched atop her mountain, hurling depleted uranium across the land like thunderbolts. Children are taught to fear such gods. We had to learn how to serve one.",
-        "tier": "7",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +100% Attacks"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\OblivionUpgrade2.png",
-        "name": "Extinction"
-    },
-    "Fusion Warhead": {
-        "faction": "Any",
-        "internalID": "FusionWarhead",
-        "branch": "Human",
-        "description": null,
-        "flavor": "\u201cLet me get this straight,\u201d our chief weapons engineer said to me. \u201cThe tactical nuclear missile needs to do *more* damage? Is 50 kilotons not enough?\u201d I really didn't feel like arguing. I showed her recon photos of a prototype Titan we'd be fighting within weeks. She gawped at the size. \u201cAgainst that?\u201d I replied. \u201c50 kilotons is definitely not enough.\u201d",
-        "tier": "8",
-        "requiredUpgrades": [
-            "TacticalNuclearMissile"
-        ],
-        "modifiers": [
-            "- +33% Damage"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\FusionWarhead.png",
-        "name": "Fusion Warhead"
-    },
-    "Data Hack": {
-        "faction": "Emulated Mind",
-        "internalID": "DataHack",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Emulated Mind knew the back roads and less-used byways of every networking system. She loathed using such paths, but found there was some purpose to them. She\u2019d reach out her mind, walk through the back door, and have a look at what our enemies were researching. She could accept that function.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "Data Hack (5 turns)",
-            "- +100% Research Copied",
-            "- +20% Resources Copied"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\DataHack.png",
-        "name": "Data Hack"
-    },
-    "Amoetias Caress": {
-        "faction": "Any",
-        "internalID": "AmoetiasCaress",
-        "branch": "Voice",
-        "description": "Grants access to uncommon Voice items at  The Concordat",
-        "flavor": "The Concordat sent kids out into The Bleed. Bastards. Dangerous work for anyone but something about the children's small hands let them dig out crystals they needed for rare Voice artifacts. You'd buy them. The blood on the surface would stain your hands. And we all knew where the blood came from\u2026",
-        "tier": "2",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\AmoetiasCaress.png",
-        "name": "Amoetias Caress"
-    },
-    "Amoetia's Embrace": {
-        "faction": "Any",
-        "internalID": "AmoetiasEmbrace",
-        "branch": "Voice",
-        "description": "Grants access to rare Voice items at  The Concordat",
-        "flavor": "The hooded Concordat agent drew close and whispered into my ear after we concluded a trade. \u201cThe Fulcrum's power was greater than we ever imagined\u2026 When its power washed over the planet's surface, it pulled wondrous objects through the veil of a parallel world.\u201d I tried to pull away but he just grabbed my wrist. \u201cYou have heard their melody. And now you are ready to receive their blessing.\u201d",
-        "tier": "4",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\AmoetiasEmbrace.png",
-        "name": "Amoetia's Embrace"
-    },
-    "Trials of the Eremite": {
-        "faction": "Any",
-        "internalID": "AnchoriteStanding",
-        "branch": "Voice",
-        "description": "Improves diplomatic standing with  Anchorite over time",
-        "flavor": "It was the damndest thing. The Anchorite's messengers would appear out of the blue with gifts for our people. \u201cTo congratulate you for completing a trial.\u201d they would be told. But what trials? The Practical Romantic had a guess\u2014that the Anchorite was testing us. If we could piece together the deeds it was rewarding\u2026 we might permanently ingratiate ourselves with the mysterious hermit.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\AnchoriteStanding.png",
-        "name": "Trials of the Eremite"
-    },
-    "Asymmetric Arbitrage": {
-        "faction": "Any",
-        "internalID": "AsymmetricArbitrage",
-        "branch": "Human",
-        "description": null,
-        "flavor": "The most profitable way to deal with black markets in foreign territories was to slip their goods across the border on the back of trade convoys. Like sucker fish riding on the belly of a shark\u2014a little free ride that benefits them, but doesn't bother the bigger beast.",
-        "tier": "7",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +50% Trade Gain"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\AsymmetricArbitrage.png",
-        "name": "Asymmetric Arbitrage"
-    },
-    "Balanced Progress": {
-        "faction": "Any",
-        "internalID": "BalancedProgress",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "War's a gamble, right? Can't place your bets down on one strategy. Sometimes it's worth spending coin to spread out your odds, help you turn on a dime if one plan goes south.",
-        "tier": "4",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- -33% Research Cost",
-            "- -33% Research Cost",
-            "- -33% Research Cost"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\BalancedProgress.png",
-        "name": "Balanced Progress"
-    },
-    "Breach Collector": {
-        "faction": "Any",
-        "internalID": "BreachCollector",
-        "branch": "Cyber",
-        "description": "Grants access to uncommon Cyber items at  The Concordat",
-        "flavor": "You'd better believe a bidding war broke out when some hapless hacker wandered out of a Zephon shard with half the backdoor keys for Old World tech. Concordat hosted the auction, got all the players in the room to bid\u2026 then declared it would pay the highest price, kept all the tech for itself. What was it playing at?",
-        "tier": "2",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\BreachCollector.png",
-        "name": "Breach Collector"
-    },
-    "Reaver Immigration": {
-        "faction": "Any",
-        "internalID": "ChieftessStanding",
-        "branch": "Human",
-        "description": "Improves diplomatic standing with  Chieftess over time",
-        "flavor": "No deal with the Chieftess came with guarantees\u2014except for one. She made it known that anyone who allowed Reavers to mingle with their people would drop off her shit list. \u201cIt's just good manners,\u201d she'd say if you pressed her on it. Was it a streak of kindness for her people? Or some kind of plan to infiltrate us and take over?",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\ChieftessStanding.png",
-        "name": "Reaver Immigration"
-    },
-    "Corpse Cities": {
-        "faction": "Any",
-        "internalID": "CorpseCities",
-        "branch": "Human",
-        "description": "Grants access to uncommon Human items at  The Concordat",
-        "flavor": "Concordat operatives would whisper about scavenging bodies, digging through the flesh to find the most valuable pieces. Told them it was disgusting. Got weirded out when they said I do it too. \u201cYou pull apart the metal flesh of the land to find rewards\u2026 we do too.\u201d They were talking about looting cities. Did they\u2026 think cities were alive once?",
-        "tier": "2",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\CorpseCities.png",
-        "name": "Corpse Cities"
-    },
-    "Interpolated Production": {
-        "faction": "Any",
-        "internalID": "CyberInfantryUpgrade",
-        "branch": "Cyber",
-        "description": null,
-        "flavor": "Tasked with increasing troop output, the Techs knew the only solution was to turn to more and more automated processing. They linked the Printers' operating units into a single network. The more of them you had in a city, the faster it optimized production\u2026 and the more control you handed over to a new artificial life form.",
-        "tier": "1",
-        "requiredUpgrades": [
-            "CyberInfantry"
-        ],
-        "modifiers": [
-            "- -5% Minerals Cost"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\CyberInfantryUpgrade.png",
-        "name": "Interpolated Production"
-    },
-    "Ha'sharet Exchange": {
-        "faction": "Any",
-        "internalID": "HasharetExchange",
-        "branch": "Cyber",
-        "description": "Grants access to rare Cyber items at  The Concordat",
-        "flavor": "Weird message from The Concordat came in. \u201cWe are pleased to learn you have crossed the Hasharet threshold\u201d it cooed over the comms terminal. Machines in our command center began flickering\u2014it was transmitting a code as we spoke. \u201cYou now have access to cyberware we held in reserve for those truly seeking to\u2026 transcend.\u201d",
-        "tier": "4",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\HasharetExchange.png",
-        "name": "Ha'sharet Exchange"
-    },
-    "Holopatter": {
-        "faction": "Any",
-        "internalID": "Holopatter",
-        "branch": "Cyber",
-        "description": null,
-        "flavor": "Oldest trick in war is covering yourself in branches so it's harder to see you in the forest. The techs cooked up holographic cloaks that also worked well in dense ruins. Couldn't keep you hidden forever, but bought you a few extra seconds to line up the perfect shot. Don't need to hide if the thing you're shooting is dead.",
-        "tier": "7",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +17% Accuracy"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\Holopatter.png",
-        "name": "Holopatter"
-    },
-    "Spirit of Mankind": {
-        "faction": "Any",
-        "internalID": "SpiritOfMankind",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Couldn't tell you if people are good or evil. But good leaders can make them good. Show your people what you'd sacrifice for them and they'll daydream of what they'd sacrifice for each other. But it never lasts. Gotta make the most of it while everyone's hearts are something close to pure.",
-        "tier": "8",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +6 Loyalty"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\SpiritOfMankind.png",
-        "name": "Spirit of Mankind"
-    },
-    "Tactical Archeology": {
-        "faction": "Any",
-        "internalID": "TacticalArcheology",
-        "branch": "Human",
-        "description": "Grants access to rare Human items at  The Concordat",
-        "flavor": "A smuggler linked to The Concordat rolled up one day with an \u201cexclusive deal.\u201d Special access to top-tier corpo tech the traders had kept squirreled away. Had to be a catch. Why now? \u201cHumans, the Voice, ZEPHON\u2026 only one of them will survive this war,\u201d he said, picking something (meat?) out of his teeth. \u201cWe're all-in on humanity. Now we know you are too.\u201d",
-        "tier": "4",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\TacticalArcheology.png",
-        "name": "Tactical Archeology"
-    },
-    "Specimen Containment": {
-        "faction": "Any",
-        "internalID": "Wildlife",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "We once had an Abkluth contained in a prototype specimen container at a field outpost. It was pacing the confined space, slamming itself into the walls at random intervals. I thought it was trying to escape\u2014until a pack of Abkluth swarmed our camp, devouring a group of helpless techs. It had been <i>signaling</i> to its pack. We soundproofed the containers after that.",
-        "tier": "1",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +3 Research"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\Wildlife.png",
-        "name": "Specimen Containment"
-    },
-    "AI Rights": {
-        "faction": "Any",
-        "internalID": "ZephonStanding",
-        "branch": "Cyber",
-        "description": "Improves diplomatic standing with  ZEPHON over time",
-        "flavor": "It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. \u201cThat would be acceptable,\u201d it replied. No one knew what to do with that. Was ZEPHON thinking ahead, for after the war? Or\u2026 no. Certainly not. There couldn't have been other AI among us\u2026 right?",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [],
-        "iconPath": "Zephon\\Icons\\Traits\\ZephonStanding.png",
-        "name": "AI Rights"
-    },
-    "Survival Training": {
-        "faction": "Fallen Soldier",
-        "internalID": "SurvivalTraining",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Strong soldiers saw value in sharing knowledge. If you lived this long, you\u2019ve learned a thousand lessons the hard way. There was value in passing what you know to the next generation. I hope there\u2019s still truth in that.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +9 Experience",
-            "- +9 Experience"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\SurvivalTraining.png",
-        "name": "Survival Training"
-    },
-    "The Outsider": {
-        "faction": "Furtive Tribunal",
-        "internalID": "TheOutsider",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Whatever body that the Voice spoke from, it never set foot on earth. It had a servant though. The Tribunal whispered about it, told us that it walked just on the other side of a thin veil. I knew the trio wanted to bring it through\u2014they thought it was a gift for our world. I\u2026 disagreed. Loudly.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "Spawn Dreameater (Level 1)",
-            "Summon (5 turns)",
-            "- max 0 Food Upkeep",
-            "- max 0 Minerals Upkeep",
-            "- max 0 Transuranium Upkeep",
-            "- max 0 Energy Upkeep",
-            "- max 0 Antimatter Upkeep",
-            "- max 0 Algae Upkeep",
-            "- max 0 Dimensional Echoes Upkeep",
-            "- max 0 Chips Upkeep",
-            "- max 0 Singularity Cores Upkeep",
-            "- max 0 Influence Upkeep",
-            "- +5 Level"
-        ],
-        "iconPath": "Zephon\\Icons\\Units\\Dreameater.png",
-        "name": "The Outsider"
-    },
-    "Artificer's Precision": {
-        "faction": "Heartless Artificer",
-        "internalID": "ArtificersPrecision",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Artificer had an eye for precision. In her craft, in her programming and in warfare. When she monitored a battle, she\u2019d use every tool at her disposal to survey and amplify all the targeting data sent out to the troops. Few other leaders were so\u2026 intimate with the killing their soldiers did.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "Artificer's Precision (2 turns)",
-            "- +25% Accuracy",
-            "- +17% Attacks"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\ArtificersPrecision.png",
-        "name": "Artificer's Precision"
-    },
-    "Quid Pro Quo (Food)": {
-        "faction": "Honorable Aristocrat",
-        "internalID": "QuidProQuo",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Everyone was always squirreling away food. The Aristocrat was the only one who could get people to part with it. It was like the old fable about a savior who could feed his followers with an infinite supply of bread and fish. If that savior was real, maybe he and the Aristocrat spoke the same language\u2014the language of mutual aid and survival.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- -2 Cooldown",
-            "- +40 Food"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\QuidProQuoFood.png",
-        "name": "Quid Pro Quo (Food)"
-    },
-    "Well-Fed": {
-        "faction": "Honorable Aristocrat",
-        "internalID": "HonorableAristocratAffinityUpgrade",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "\u201cA chief\u2026 nutritionist?\u201d I was stunned. But the Aristocrat said I could accept it or find a new boss. His theory was that a dedicated food scientist managing our supply lines could ensure every soldier ate a meal that maximized their job function. And I'll be damned if it didn't work. I certainly ate better fighting for him.",
-        "tier": "5",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +10% Hitpoints Max"
-        ],
-        "iconPath": "Zephon\\Icons\\Upgrades\\HonorableAristocratAffinityUpgrade.png",
-        "name": "Well-Fed"
-    },
-    "Icarus Satellite": {
-        "faction": "Rogue Operative",
-        "internalID": "IcarusSatellite",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "The Icarus Satellite network was a weapon developed by an old world company named ICAR Corp that never got online. For too long we thought it was just a myth. Then the Rogue Operative showed up on the scene with the missing link: an authorization key that assumed she was the CEO of ICAR. Only she could call down the Icarus' firepower\u2014even if someone killed her and took it, they'd never crack her layers of encryption on the damn thing.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "Icarus Satellite",
-            "- attacks: 2.0",
-            "- armorPen: 7",
-            "- damage: 12.0",
-            "- accuracy: 6"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\IcarusSatellite.png",
-        "name": "Icarus Satellite"
-    },
-    "Trash Camo": {
-        "faction": "Rogue Operative",
-        "internalID": "RogueOperativeAffinityUpgrade",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "One trooper I bunked with\u2014long, grey-haired fellow who read too many books\u2014called these new camo suits \u201ca ghillie suit for the end times.\u201d Laden with what looked like junk, but was actually high-tech adaptive camo. We used it to nestle into the crevices of downed machines, looking like little more than rusted pieces of our dying civilization.",
-        "tier": "5",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +5% Cover Damage Reduction"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade.png",
-        "name": "Trash Camo"
-    },
-    "Ghost Corps": {
-        "faction": "Rogue Operative",
-        "internalID": "RogueOperativeAffinityUpgrade2",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Old world corpos strung governments along with promises of AI that would \u201csynergize\u201d infantry units. Like all that other AI crap, it was a bunch of junk. The Rogue Operative somehow got it working for cybernetic ground troops. Just needed troops with a little less free will\u2026",
-        "tier": "10",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- +5% Damage"
-        ],
-        "iconPath": "Zephon\\Icons\\Traits\\RogueOperativeAffinityUpgrade2.png",
-        "name": "Ghost Corps"
-    },
-    "Armor of Faith": {
-        "faction": "Untold Prophet",
-        "internalID": "ArmorOfFaith",
-        "branch": "Neutral",
-        "description": null,
-        "flavor": "Most of us mustered willpower on the battlefield, but the Prophet channeled something else\u2014faith. With it, he could do something the techs never came close to figuring out: project pure invulnerability. Was it supernatural? A power beyond the Voice? I never found out.",
-        "tier": "3",
-        "requiredUpgrades": [],
-        "modifiers": [
-            "- -3 Cooldown",
-            "Armor of Faith (1 turn)",
-            "- +83% Cover Damage Reduction",
-            "- +83% Evasion Damage Reduction",
-            "- +83% Invulnerable Damage Reduction"
-        ],
-        "iconPath": "Zephon\\Icons\\Actions\\ArmorOfFaith.png",
-        "name": "Armor of Faith"
     }
 }

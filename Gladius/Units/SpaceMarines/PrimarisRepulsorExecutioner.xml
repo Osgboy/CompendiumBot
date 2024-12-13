@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement15">
+	<model>		
+		<unit mesh="Units/SpaceMarines/PrimarisRepulsorExecutioner"
+				material="Units/SpaceMarines/PrimarisRepulsorExecutioner"
+				idleAnimation="Units/SpaceMarines/PrimarisRepulsorExecutionerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1.1 1.1 1.1"
+				bloodBone="Marine_Chest"
+				explosionsBone="Hull"/>
+	</model>
+	<weapons>
+		<weapon name="HeavyLaserDestroyer">
+			<model>
+				<beamWeapon muzzleBone="DestroyerMuzzle" fireDelay="0.9" fireInterval="10"/>
+			</model>		
+		</weapon>
+		<weapon name="HeavyOnslaughtGatlingCannon">
+			<model>
+				<projectileWeapon muzzleBone="GatlingMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="IcarusRocketPod">
+			<model>
+				<missileWeapon muzzleBone="IcarusMuzzle" muzzleCount="2" missileScale="0.5"/>
+			</model>		
+		</weapon>
+		<weapon name="IronhailHeavyStubber">
+			<model>
+				<projectileWeapon muzzleBone="FrontStubberMuzzle"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone="FrontBolterMuzzle"
+						muzzleCount="2"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinIcarusIronhailHeavyStubber">
+			<model>
+				<projectileWeapon muzzleBone="RearStubberMuzzle"
+						muzzleCount="2"
+						effectFaceWeight="0"/>
+			</model>		
+		</weapon>
+		<weapon name="StormBolter">
+			<model>
+				<projectileWeapon muzzleBone="LeftRearBolterMuzzle"
+						muzzleCount="2"
+						effectFaceWeight="0"/>
+			</model>		
+		</weapon>
+		<weapon name="StormBolter">
+			<model>
+				<projectileWeapon muzzleBone="RightRearBolterMuzzle"
+						muzzleCount="2"
+						effectFaceWeight="0"/>
+			</model>		
+		</weapon>
+		<weapon name="FragstormGrenadeLauncher" count="2">
+			<model>
+				<grenadeWeapon muzzleBone="FragstormMuzzle"
+						muzzleCount="2"
+						grenadeScale="0.8 0.8 0.8"
+						fireInterval="0.4"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=13/11/10 -->
+				<cargoSlots base="2"/> <!-- %cargoSlots base capacity=5 -->
+				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base armor=13/11/10 wounds=4 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="4"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="6.0"/> <!-- %requisitionsUpkeep base tier=9 factor=1 -->
+				<requisitionsCost base="120.0"/> <!-- %requisitionsCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisRepulsorExecutionerAttack"
+						beginFire="0.5"
+						endFire="2.5"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisRepulsorExecutionerDie0"
+						sound="Units/LargeVehicleDie"
+						soundCount="3"
+						soundDelay="0"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisRepulsorExecutionerMove"
+						sound="Units/SpaceMarines/LandSpeederMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<createSmokeScreen cooldown="10"
+				icon="Traits/SmokeScreen"
+				requiredUpgrade="SpaceMarines/SmokeLauncher">
+			<model>
+				<action sound="Actions/SmokeScreen"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature duration="3" name="SmokeScreen"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</createSmokeScreen>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+		<genericUnitAbility passive="1"
+				name="SpaceMarines/RepulsorField">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="SpaceMarines/RepulsorField"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Tank"/>
+		<trait name="Transport"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

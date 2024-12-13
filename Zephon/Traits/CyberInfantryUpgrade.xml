@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait visibleOnPlayer="1">
+<trait visibleOnUnit="1">
 	<modifiers>
 		<perBuildingInCityModifier effectDescription="CyberInfantryUpgrade">
 			<perBuildingConditions>
@@ -7,11 +7,6 @@
 					<type name="CyberInfantry"/>
 				</building>
 			</perBuildingConditions>
-			<conditions>
-				<unit>
-					<noTrait type="Large"/>
-				</unit>
-			</conditions>
 			<effects>
 				<mineralsCost mul="-0.05"/>
 			</effects>

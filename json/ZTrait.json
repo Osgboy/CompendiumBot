@@ -316,7 +316,7 @@
     },
     "Area": {
         "internalID": "Area",
-        "description": "Also hits enemies adjacent to target tile at half accuracy",
+        "description": "Also hits enemies adjacent to target tile at half attacks",
         "flavor": "Piece of advice: don't stand so damn close together. Hell, don\u2019t stand in the same county. Whether it's using bombs, laser blasts, or sick flesh magic shit, titan weaponry can flatten entire regions.",
         "modifiers": [],
         "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage useAttackerWeapon=\"1\" factor=\"0.5\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
@@ -524,9 +524,9 @@
         "flavor": "Our humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
         "modifiers": [
             "Black Hole",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 12",
             "- min 100 Movement Cost",
             "- -67% Movement Max"
@@ -891,14 +891,14 @@
             "Concussed (1 turn)",
             "- -25% Accuracy"
         ],
-        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToBiologicalEnemy\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Concussed\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
+        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<area affect=\"Unit\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToBiologicalNonTitanEnemy\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<addTrait type=\"Concussed\" duration=\"1\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Concussive.png",
         "name": "Concussive",
         "branch": "Neutral"
     },
     "Cone": {
         "internalID": "Cone",
-        "description": "Also hits enemies left and right of target tile at half accuracy",
+        "description": "Also hits enemies left and right of target tile at half attacks",
         "flavor": "In the war's early days that idea of sky-high monsters breathing fire over miles and miles still seemed the stuff of bad movies we watched in the bunker. But then we'd encounter the Abkhan\u2014a creature that could breathe out a blizzard that swallowed whole armies. I began dreaming of other terrors. Beasts that could breathe acid, radiation or lightning. It made me miss my old nightmares.",
         "modifiers": [],
         "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<onWeaponAttacked>\n\t\t<defender>\n\t\t\t<cone affect=\"Unit\" excludeTarget=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t<conditions ignoreForTraitVisibility=\"1\">\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage useAttackerWeapon=\"1\" factor=\"0.5\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</cone>\n\t\t</defender>\n\t</onWeaponAttacked>\n</trait>",
@@ -912,9 +912,9 @@
         "flavor": "Time was already running out the second we brought our first cities online. The Engineers informed us they could speed up construction\u2014but it would cost more power. \u201cMake sure you can run that kind of voltage,\u201d one engineer warned us. \u201cIf the electricity cuts out while a crane's hauling material\u2014it might be you it comes crashing down on.\u201d",
         "modifiers": [
             "- +1 Production",
-            "- +2 Energy Upkeep"
+            "- +1 Energy Upkeep"
         ],
-        "rawXML": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<production add=\"1\"/>\n\t\t\t\t<energyUpkeep add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait visibleOnBuilding=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<production add=\"1\"/>\n\t\t\t\t<energyUpkeep add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\ConstructionUpgrade.png",
         "name": "Industrial Density",
         "branch": "Neutral"
@@ -1082,7 +1082,7 @@
     "Babellian Beacon": {
         "internalID": "CyberAircraftUpgrade",
         "description": null,
-        "flavor": "Sky fortresses erected on tall mountains could be seen for miles. By the time we were building them, the techs were cooking up ways to program machines through light itself. Pairing them together made sense. If every time a machine looked up it saw the fortress\u2014it could sync with the rest of the network and feel like a part of a greater whole.",
+        "flavor": null,
         "modifiers": [
             "- +1 Loyalty",
             "- +2 Loyalty"
@@ -1099,7 +1099,7 @@
         "modifiers": [
             "- -5% Minerals Cost"
         ],
-        "rawXML": "<trait visibleOnPlayer=\"1\">\n\t<modifiers>\n\t\t<perBuildingInCityModifier effectDescription=\"CyberInfantryUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"CyberInfantry\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost mul=\"-0.05\"/>\n\t\t\t</effects>\n\t\t</perBuildingInCityModifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<perBuildingInCityModifier effectDescription=\"CyberInfantryUpgrade\">\n\t\t\t<perBuildingConditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"CyberInfantry\"/>\n\t\t\t\t</building>\n\t\t\t</perBuildingConditions>\n\t\t\t<effects>\n\t\t\t\t<mineralsCost mul=\"-0.05\"/>\n\t\t\t</effects>\n\t\t</perBuildingInCityModifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\CyberInfantryUpgrade.png",
         "name": "Interpolated Production",
         "branch": "Neutral"
@@ -1407,9 +1407,9 @@
         "description": null,
         "flavor": "The Emulated Mind's core database contained exabytes of singularity research from Old World universities. When ZEPHON woke her up it literally birthed her with knowledge of black holes no one else could access\u2026 maybe the impossible calculations that could create an event horizon were what had first driven her so mad.",
         "modifiers": [
-            "- +33% Damage"
+            "- +25% Damage"
         ],
-        "rawXML": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\EmulatedMindAffinityUpgrade2.png",
         "name": "Eventful Horizons",
         "branch": "Neutral"
@@ -1736,11 +1736,11 @@
         "description": null,
         "flavor": "People were just tools, to the Artificer. You\u2019d hope a good craftswoman would learn to love her tools, but she never developed such attachments. I warned her once that objects could be replaced, but people couldn\u2019t. She disagreed. Violently.",
         "modifiers": [
-            "- +33% Production",
-            "- +17% Production",
-            "- +17% Production"
+            "- +25% Production",
+            "- +8% Production",
+            "- +8% Production"
         ],
-        "rawXML": "<trait category=\"Buff\" icon=\"Actions/FoundationOfBlood\" visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"FoundationOfBloodUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"FoundationOfBloodUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.167\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\" icon=\"Actions/FoundationOfBlood\" visibleOnCity=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"FoundationOfBloodUpgrade\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.083\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier requiredUpgrade=\"FoundationOfBloodUpgrade2\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<production mul=\"0.083\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Actions\\FoundationOfBlood.png",
         "name": "Foundation of Blood",
         "branch": "Neutral"
@@ -1806,9 +1806,9 @@
         "description": null,
         "flavor": "\u201cLet me get this straight,\u201d our chief weapons engineer said to me. \u201cThe tactical nuclear missile needs to do *more* damage? Is 50 kilotons not enough?\u201d I really didn't feel like arguing. I showed her recon photos of a prototype Titan we'd be fighting within weeks. She gawped at the size. \u201cAgainst that?\u201d I replied. \u201c50 kilotons is definitely not enough.\u201d",
         "modifiers": [
-            "- +33% Damage"
+            "- +25% Damage"
         ],
-        "rawXML": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.333\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\FusionWarhead.png",
         "name": "Fusion Warhead",
         "branch": "Neutral"
@@ -1818,9 +1818,9 @@
         "description": null,
         "flavor": "The Watchmakers were the first ones to design the Emanator\u2014and the Watchmakers were the ones who destroyed most of them. This made it so much easier to kill, and those overprincipled recluses couldn't stomach what they'd created.",
         "modifiers": [
-            "- +2 Group Members Hit At Half Accuracy"
+            "- +25% Attacks Per Additional Enemy Group Member"
         ],
-        "rawXML": "<trait category=\"Buff\" icon=\"Items/GladialEmanator\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\" icon=\"Items/GladialEmanator\" visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacksPerAdditionalEnemyGroupMember mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Items\\GladialEmanator.png",
         "name": "Gladial Emanator",
         "branch": "Human"
@@ -2547,9 +2547,9 @@
         "description": null,
         "flavor": "Some of our enemies thought they could overwhelm us with numbers\u2014like ants, they'd swarm over our territory in a bid to drag us down. How beautiful it was, when we realized we could squash them beneath our boots\u2014wipe out so many irritating creatures with one strike.",
         "modifiers": [
-            "- +4 Group Members Hit At Half Accuracy"
+            "- +50% Attacks Per Additional Enemy Group Member"
         ],
-        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"4\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacksPerAdditionalEnemyGroupMember mul=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\LargeSplash.png",
         "name": "Large Splash",
         "branch": "Neutral"
@@ -2758,9 +2758,9 @@
         "description": null,
         "flavor": "Time slowed as a massive explosion loomed over us like a tidal wave. A wave the size of a building that heaves over your ship and prepares to plunge it to the depths. At least those caught in the blast died quicker than the slow torment of death by water.",
         "modifiers": [
-            "- +6 Group Members Hit At Half Accuracy"
+            "- +100% Attacks Per Additional Enemy Group Member"
         ],
-        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"6\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacksPerAdditionalEnemyGroupMember mul=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\MassiveSplash.png",
         "name": "Massive Splash",
         "branch": "Neutral"
@@ -3640,9 +3640,9 @@
         "flavor": "I couldn't shake that soldier's instinct. To me, the Crodeus Seeds were just another explosive to run from on the battlefield. But the barracks chatter was that the Seeds came from another world. That the Crodeus were dragging multiple dimensions together. It sounded\u2026 no more insane than anything else that Tuesday.",
         "modifiers": [
             "Seed of Extinction",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 6"
         ],
         "rawXML": "<trait category=\"Debuff\" icon=\"Actions/SeedOfExtinction\" visibleOnUnit=\"1\" visibleSourcePlayer=\"1\">\n\t<onTraitRemoved>\n\t\t<tile>\n\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t<modifiers>\n\t\t\t\t\t<modifier effectDescription=\"ToEnemyUnitAndAdjacentEnemyUnitsOnRemoval\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t<weaponDamage weapon=\"SeedOfExtinction\"/>\n\t\t\t\t\t\t</effects>\n\t\t\t\t\t</modifier>\n\t\t\t\t</modifiers>\n\t\t\t</area>\n\t\t</tile>\n\t</onTraitRemoved>\n</trait>",
@@ -3814,9 +3814,9 @@
         "description": null,
         "flavor": "Some weapons don\u2019t just hit the target, they take out their closest friends too.",
         "modifiers": [
-            "- +2 Group Members Hit At Half Accuracy"
+            "- +25% Attacks Per Additional Enemy Group Member"
         ],
-        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<additionalMembersHit add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait visibleOnWeapon=\"1\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<attacksPerAdditionalEnemyGroupMember mul=\"0.25\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Splash.png",
         "name": "Splash",
         "branch": "Neutral"
@@ -4125,8 +4125,10 @@
         "internalID": "Titan",
         "description": "Can move across cliffs\nUnaffected by roads, rivers, forests, ruins and Bleed\nIgnores zone of control of non-Titan units\nHas an extremely elevated position in line of sight calculations",
         "flavor": "\u201cTitan\u201d was just a nickname for our largest machines and creatures, but there was something\u2026 awfully appropriate about it. Before the Gods, there were Titans. And now here at the end, we have rebirthed their kind and unleashed them out into the world. Giants once walked the Earth\u2014now some of them soared over it.",
-        "modifiers": [],
-        "rawXML": "<trait visibleOnUnit=\"1\"/>",
+        "modifiers": [
+            "- min -1 Cargo Slots Required"
+        ],
+        "rawXML": "<trait visibleOnUnit=\"1\">\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<cargoSlotsRequired min=\"-1\" max=\"-1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Zephon\\Icons\\Traits\\Titan.png",
         "name": "Titan",
         "branch": "Neutral"

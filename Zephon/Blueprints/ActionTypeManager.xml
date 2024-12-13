@@ -190,6 +190,10 @@
 			<beginTargets>
 				<target rangeMax="-1">
 					<conditions>
+						<tile match="Any">
+							<noUnit/>
+							<enemyUnit/>
+						</tile>
 						<tile>
  							<unitsInRange equal="0" range="1">
  								<unit>
@@ -211,9 +215,9 @@
 								</modifier>
 							</modifiers>
 						</area>
-						<area affect="Unit" radius="1">
+						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="OnTargetAndAdjacentTiles">
+								<modifier effectDescription="OnTargetTileAndHalfOnAdjacentTiles">
 									<effects>
 										<weaponDamage weapon="BlackHole"/>
 									</effects>
@@ -225,6 +229,27 @@
 										<tile>
 											<alliedStrengthInTheArea greater="0"/>
 										</tile>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Unit" radius="1" excludeTarget="1">
+							<modifiers>
+								<modifier visible="0" effectDescription="OnAdjacentTilesToTarget">
+									<effects>
+										<weaponDamage weapon="BlackHoleAdjacent"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
 										<unit>
 											<enemy/>
 										</unit>
@@ -256,7 +281,7 @@
 						</area>
 						<area affect="Tile" radius="2" excludeRadius="1">
 							<modifiers>
-								<modifier effectDescription="OnTilesInTheArea" requiredUpgrade="HorizonExpansion">
+								<modifier effectDescription="OnTilesAdjacentToBlackHole" requiredUpgrade="HorizonExpansion">
 									<effects>
 										<addTrait type="HorizonExpansion" duration="3"/>
 									</effects>
@@ -464,6 +489,8 @@
 										</tile>
 										<unit>
 											<noTrait type="InterferenceProtocols"/>
+											<noType name="Engineer"/>
+											<noType name="ShochitrisLair"/>
 										</unit>
 									</conditions>
 									<effects>
@@ -733,6 +760,10 @@
 			<beginTargets>
 				<target rangeMax="-1">
 					<conditions>
+						<tile match="Any">
+							<noUnit/>
+							<enemyUnit/>
+						</tile>
 						<tile>
  							<unitsInRange equal="0" range="1">
  								<unit>
@@ -755,7 +786,7 @@
 						</area>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="OnTargetTile">
+								<modifier effectDescription="OnTargetTileAndHalfOnAdjacentTiles">
 									<effects>
 										<weaponDamage weapon="TacticalNuclearMissile"/>
 									</effects>
@@ -764,67 +795,38 @@
 							<scoreModifiers>
 								<modifier>
 									<conditions>
-										<unit>
-											<enemy/>
-										</unit>
-									</conditions>
-									<effects>
-										<score add="1.0"/>
-									</effects>
-								</modifier>
-								<modifier>
-									<conditions>
-										<unit>
-											<enemy/>
-											<trait type="Large"/>
-										</unit>
-									</conditions>
-									<effects>
-										<score add="1.0"/>
-									</effects>
-								</modifier>
-								<modifier>
-									<conditions>
-										<unit>
-											<enemy/>
-											<trait type="Titan"/>
-										</unit>
-									</conditions>
-									<effects>
-										<score add="1.0"/>
-									</effects>
-								</modifier>
-								<modifier>
-									<conditions>
-										<unit>
-											<ally/>
-										</unit>
-									</conditions>
-									<effects>
-										<score max="0"/>
-									</effects>
-								</modifier>
-								<modifier>
-									<conditions>
 										<tile>
-											<alliedStrengthInTheArea equal="0"/>
+											<alliedStrengthInTheArea greater="0"/>
 										</tile>
+										<unit>
+											<enemy/>
+										</unit>
 									</conditions>
 									<effects>
-										<score max="0"/>
+										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>
 						</area>
 						<area affect="Unit" radius="1" excludeTarget="1">
 							<modifiers>
-								<modifier effectDescription="OnAdjacentTilesToTarget">
+								<modifier visible="0" effectDescription="OnAdjacentTilesToTarget">
 									<effects>
 										<weaponDamage weapon="TacticalNuclearMissileAdjacent"/>
 									</effects>
 								</modifier>
 							</modifiers>
 							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
 								<modifier>
 									<conditions>
 										<unit>

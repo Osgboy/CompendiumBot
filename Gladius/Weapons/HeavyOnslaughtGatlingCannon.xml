@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/Boltgun"
+				fireSoundCount="13"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="12"/>
+				<rangedArmorPenetration add="0"/> <!-- %rangedArmorPenetration add armorPiercing=- -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="BoltWeapon"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="SpaceMarines/BoltDamage" requiredUpgrade="SpaceMarines/BoltDamage"/>
+		<trait name="Rending"/>
+	</traits>
+</weapon>

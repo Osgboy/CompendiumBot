@@ -21,7 +21,7 @@
 <entry name="ArchaiConstruct" value=" unless healed by &lt;string name='Actions/ParticleRepair'/&gt;"/>
 <entry name="Assassinate" value=" to enemy units in the area if target dies"/>
 <entry name="CannibalizeMachines" value=" for melee attacks against mechanical units"/>
-<entry name="CyberInfantryUpgrade" value=" for infantry for each Synthetic Printer in the city"/>
+<entry name="CyberInfantryUpgrade" value=" for each Synthetic Printer in the city"/>
 <entry name="DreamPrison" value=" to target broken enemy"/>
 <entry name="DreamPrisonRestore" value=" when Dreameater dies"/>
 <entry name="EachTurn" value=" each turn"/>
@@ -92,6 +92,8 @@
 <entry name="OnRivers" value=" on rivers"/>
 <entry name="OnTargetAndAdjacentTiles" value=" on target and adjacent tiles"/>
 <entry name="OnTargetTile" value=" on target tile"/>
+<entry name="OnTargetTileAndHalfOnAdjacentTiles" value=" on target tile and with half attacks on adjacent tiles"/>
+<entry name="OnTilesAdjacentToBlackHole" value=" on tiles adjacent to &lt;icon texture='Icons/Actions/BlackHole' height='20'/&gt;&lt;nbsp/&gt;&lt;string name='Actions/BlackHole'/&gt;"/>
 <entry name="OnTilesInTheArea" value=" on tiles in the area"/>
 <entry name="OnTilesWithOnlyThisTypeOfBuilding" value=" on tiles with only this type of building"/>
 <entry name="PerExperienceWhenKillingNeutralUnit" value=" per experience gained when killing a neutral unit"/>
@@ -120,6 +122,7 @@
 <entry name="ToAttackedEnemy" value=" to attacked enemy"/>
 <entry name="ToAttacker" value=" to attacker"/>
 <entry name="ToBiologicalEnemy" value=" to biological enemy"/>
+<entry name="ToBiologicalNonTitanEnemy" value=" to biological non-titan enemy"/>
 <entry name="ToBiologicalUnits" value=" to biological units"/>
 <entry name="ToCity" value=" to city"/>
 <entry name="ToEnemy" value=" to enemy"/>

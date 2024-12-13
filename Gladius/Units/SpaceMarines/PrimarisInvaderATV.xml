@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement15">
+	<model>		
+		<unit mesh="Units/SpaceMarines/PrimarisInvaderATV"
+				material="Units/SpaceMarines/PrimarisInvaderATV"
+				idleAnimation="Units/SpaceMarines/PrimarisInvaderATVIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Hull"
+				uvAnimated="0"
+				rotationSpeed="0.5"/>
+	</model>
+	<group size="2" rowSize="3" memberDeltaX="135" memberDeltaY="100"/>
+	<weapons>
+		<weapon name="OnslaughtGatlingCannon">
+			<model>
+				<projectileWeapon muzzleBone="TopMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="TwinBoltRifle">
+			<model>
+				<projectileWeapon muzzleBone="FrontMuzzle"
+						muzzleCount="2"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="12.0"/> <!-- %hitpointsMax base toughness=5 wounds=3 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<!-- <meleeInitiative base="4"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="5"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsUpkeep base="3.0"/> <!-- %requisitionsUpkeep base tier=7 factor=1 -->
+				<requisitionsCost base="60.0"/> <!-- %requisitionsCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/SpaceMarines/PrimarisInvaderATVAttack"
+						beginFire="0.7"
+						endFire="2.5"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInvaderATVDie0"
+						sound="Units/SmallVehicleDie"
+						soundCount="3"
+						soundDelay="0.2"
+						voiceSound="Units/SpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action animation="Units/SpaceMarines/PrimarisInvaderATVMove"
+						sound="Units/SpaceMarines/ScoutBikerMove"
+						soundCount="3"/>
+			</model>		
+		</move>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<orbitalDeployment requiredUpgrade="SpaceMarines/OrbitalDeployment">
+			<model>
+				<action sound="Actions/DropPod"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</orbitalDeployment>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="Bike"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="VeryBulky"/>
+	</traits>
+</unit>

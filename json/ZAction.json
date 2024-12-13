@@ -292,15 +292,15 @@
         },
         "branch": "Human"
     },
-    "Nomadic Life": {
-        "internalID": "NomadicLife",
+    "Found City": {
+        "internalID": "FoundCity",
         "description": "Consumes the unit to found a new city on target tile\nCities can only be found where there are no other cities within a %1% tile radius\nEach city after the first decreases loyalty in all cities by %2%",
         "cooldown": "0",
-        "flavor": "Reavers know how to make the wilderness their own. They're skilled at taking the goods they pillage and turning them into supplies for a camp. Be careful if they set up one near your territory\u2014it won't be long before a swarm of them comes crawling over the walls.",
+        "flavor": "Long ago, our ancestors built cities over the course of generations. We didn\u2019t have that luxury. Engineers laid the foundation for massive urban spaces with pre-fabricated buildings and drones that could quickly rig up infrastructure. We could always build over them later\u2026 if the war ever came to an end.",
         "modifiers": [],
-        "rawXML": "<foundCity name=\"NomadicLife\" costScalesWithCities=\"1\" icon=\"Actions/FoundCity\">\n\t\t\t<conditions>\n\t\t\t\t<player match=\"Any\">\n\t\t\t\t\t<noTrait type=\"Trapped\"/>\n\t\t\t\t\t<cityCount equal=\"0\"/>\n\t\t\t\t</player>\n\t\t\t</conditions>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"60\"/>\n\t\t\t\t\t\t<mineralsCost base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</foundCity>\n\t\t",
+        "rawXML": "<foundCity blueprint=\"NomadicLife\"/>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
-        "name": "Nomadic Life",
+        "name": "Found City",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": true,
@@ -309,7 +309,7 @@
             "consumedActionPoints": true,
             "consumedMovement": true
         },
-        "branch": "Reaver"
+        "branch": "Neutral"
     },
     "Combat Drones": {
         "internalID": "DeployCombatDrone0",
@@ -603,7 +603,7 @@
         "cooldown": "5",
         "flavor": "Disciples of Cr'la were eager to lead those on the wretched roads that they mutilated themselves to walk. Their profane god knew how to compress a week-long journey into a matter of minutes. You felt every agonizing second while warping from point A to point B.",
         "modifiers": [],
-        "rawXML": "<teleport name=\"TheDeepWays\" cooldown=\"5\" radius=\"1\" requiredUpgrade=\"TheDeepWays\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<dimensionalEchoesCost base=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</teleport>\n\t",
+        "rawXML": "<teleport name=\"TheDeepWays\" cooldown=\"5\" radius=\"1\" requiredUpgrade=\"TheDeepWays\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<dimensionalEchoesCost base=\"3\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</teleport>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\TheDeepWays.png",
         "name": "Profane Pilgrimage",
         "conditions": {
@@ -746,25 +746,6 @@
             "consumedMovement": true
         },
         "branch": "Cyber"
-    },
-    "Found City": {
-        "internalID": "FoundCity",
-        "description": "Consumes the unit to found a new city on target tile\nCities can only be found where there are no other cities within a %1% tile radius\nEach city after the first decreases loyalty in all cities by %2%",
-        "cooldown": "0",
-        "flavor": "Long ago, our ancestors built cities over the course of generations. We didn\u2019t have that luxury. Engineers laid the foundation for massive urban spaces with pre-fabricated buildings and drones that could quickly rig up infrastructure. We could always build over them later\u2026 if the war ever came to an end.",
-        "modifiers": [],
-        "rawXML": "<foundCity costScalesWithCities=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<player match=\"Any\">\n\t\t\t\t\t<noTrait type=\"Trapped\"/>\n\t\t\t\t\t<cityCount equal=\"0\"/>\n\t\t\t\t</player>\n\t\t\t</conditions>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</foundCity>\n\t\t",
-        "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
-        "name": "Found City",
-        "conditions": {
-            "requiredUpgrade": null,
-            "requiredActionPoints": true,
-            "requiredMovement": false,
-            "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
-        },
-        "branch": "Neutral"
     },
     "Repair": {
         "internalID": "Repair",
@@ -1817,14 +1798,14 @@
     "Power Spike": {
         "internalID": "PowerSpike",
         "description": null,
-        "cooldown": "3",
+        "cooldown": "1",
         "flavor": "The techs plastered the Vulkan manuals with all kinds of restrictions. Vulkan pilots knew how and why to break them. If you overcharged the power past its limits, you\u2019d blow out whole pieces of the Vulkan. But in exchange you could fuel that power into all of the Vulkan\u2019s weapons. Risking that extra damage was a gamble but it paid off frequently.",
         "modifiers": [
             "- -10% Hitpoints",
             "Power Spike (1 turn)",
             "- +50% Damage"
         ],
-        "rawXML": "<unitCast name=\"PowerSpike\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"PowerSpike\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"PowerSpike\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"1\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"PowerSpike\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<actionPoints greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\PowerSpike.png",
         "name": "Power Spike",
         "conditions": {
@@ -2036,9 +2017,9 @@
             "- max 0 Chips Upkeep",
             "- max 0 Singularity Cores Upkeep",
             "- max 0 Influence Upkeep",
-            "- +5 Level"
+            "- +9 Level"
         ],
-        "rawXML": "<playerCast name=\"TheOutsider\" cooldown=\"5\" icon=\"Units/Dreameater\" label=\"1\" requiredUpgrade=\"TheOutsider\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"80\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Dreameater\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier requiredUpgrade=\"TheOutsiderUpgrade\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<level add=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t",
+        "rawXML": "<playerCast name=\"TheOutsider\" cooldown=\"5\" icon=\"Units/Dreameater\" label=\"1\" requiredUpgrade=\"TheOutsider\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Dreameater\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier requiredUpgrade=\"TheOutsiderUpgrade\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<level add=\"9\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t",
         "iconPath": "Zephon\\Icons\\Units\\Dreameater.png",
         "name": "The Outsider",
         "branch": "Voice"
@@ -2066,9 +2047,9 @@
         "modifiers": [
             "- -1 Population",
             "Foundation of Blood (10 turns)",
-            "- +33% Production",
-            "- +17% Production",
-            "- +17% Production"
+            "- +25% Production",
+            "- +8% Production",
+            "- +8% Production"
         ],
         "rawXML": "<buildingGroupCast name=\"FoundationOfBlood\" autoCycle=\"0\" cooldown=\"10\" durationInSeconds=\"0.1\" executeImmediately=\"1\" label=\"1\" useConditionsForVisiblity=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t<population greater=\"1\"/>\n\t\t\t\t\t\t</city>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"City\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<population add=\"-1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToCity\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"10\" type=\"FoundationOfBlood\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t<populationIdle greater=\"1\"/> \n\t\t\t\t\t\t</city>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</buildingGroupCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\FoundationOfBlood.png",
@@ -2150,14 +2131,14 @@
     },
     "Reallocate": {
         "internalID": "Reallocate",
-        "description": "Use the production building to disband the target unit in the city and regain invested resources",
+        "description": "Use the production building to disband target non-summon non-decaying unit in the city and regain invested resources",
         "cooldown": "0",
         "flavor": "Spend enough time digging in the junk and every piece of trash looks like treasure. Don\u2019t know how he did it, but the Romantic knew how to make the most of everything. He tasked factory operators to follow the same logic\u2014weapons, armor, tools\u2014they could all be re-used for a greater purpose.",
         "modifiers": [
-            "- +50% Resources Recycled",
-            "- +25% Resources Recycled"
+            "- +50% Resources Regained",
+            "- +25% Resources Regained"
         ],
-        "rawXML": "<buildingGroupCast name=\"Reallocate\" autoCycle=\"0\" durationInSeconds=\"0.1\" executeImmediately=\"1\" label=\"1\" requiredUpgrade=\"Reallocate\" useConditionsForVisiblity=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<resourcesPerReallocateFromCost add=\"0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"ReallocateUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<resourcesPerReallocateFromCost add=\"0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"3\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t\t<selfCity/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reallocateUnit/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</buildingGroupCast>\n\t",
+        "rawXML": "<buildingGroupCast name=\"Reallocate\" autoCycle=\"0\" durationInSeconds=\"0.1\" executeImmediately=\"1\" label=\"1\" requiredUpgrade=\"Reallocate\" useConditionsForVisiblity=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<resourcesPerReallocateFromCost add=\"0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"ReallocateUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<resourcesPerReallocateFromCost add=\"0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<production greater=\"0\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"3\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t\t<selfCity/>\n\t\t\t\t\t\t\t<noTrait type=\"Decaying\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Summon\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reallocateUnit/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</buildingGroupCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Reallocate.png",
         "name": "Reallocate",
         "branch": "Human"
@@ -2429,15 +2410,20 @@
         "flavor": "Our humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
         "modifiers": [
             "Black Hole",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
+            "- accuracy: 12",
+            "Black Hole (Adjacent)",
+            "- attacks: 0.5",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 12",
             "Black Hole (3 turns)",
             "Black Hole",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
             "- accuracy: 12",
             "- min 100 Movement Cost",
             "- -67% Movement Max",
@@ -2445,7 +2431,7 @@
             "- min 100 Movement Cost",
             "- -67% Movement Max"
         ],
-        "rawXML": "<playerCast name=\"BlackHole\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"BlackHole\" duration=\"3\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"2\" excludeRadius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTilesInTheArea\" requiredUpgrade=\"HorizonExpansion\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HorizonExpansion\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"BlackHole\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"BlackHole\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHoleAdjacent\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"BlackHole\" duration=\"3\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"2\" excludeRadius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTilesAdjacentToBlackHole\" requiredUpgrade=\"HorizonExpansion\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HorizonExpansion\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"BlackHole\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
         "name": "Black Hole",
         "branch": "Cyber"
@@ -2513,7 +2499,7 @@
             "- -33% Movement Max",
             "- -17% Accuracy"
         ],
-        "rawXML": "<playerCast name=\"InterferenceProtocols\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InterferenceProtocols\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"InterferenceProtocols\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"InterferenceProtocols\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InterferenceProtocols\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"InterferenceProtocols\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"Engineer\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"ShochitrisLair\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\InterferenceProtocols.png",
         "name": "Interference Protocols",
         "branch": "Cyber"
@@ -2653,17 +2639,17 @@
         "flavor": "There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition.",
         "modifiers": [
             "Tactical Nuclear Missile",
-            "- attacks: 3.0",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 1.0",
+            "- armorPen: 9",
+            "- damage: 24.0",
             "- accuracy: 12",
             "Tactical Nuclear Missile (Adjacent)",
-            "- attacks: 1.5",
-            "- armorPen: 4",
-            "- damage: 4.0",
+            "- attacks: 0.5",
+            "- armorPen: 9",
+            "- damage: 24.0",
             "- accuracy: 12"
         ],
-        "rawXML": "<playerCast name=\"TacticalNuclearMissile\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissile\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Titan\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score max=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea equal=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score max=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissileAdjacent\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"NuclearFallout\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"TacticalNuclearMissile\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissile\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissileAdjacent\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"NuclearFallout\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
         "name": "Tactical Nuclear Missile",
         "branch": "Human"
@@ -2757,6 +2743,28 @@
             "usableInTransport": false,
             "consumedActionPoints": false,
             "consumedMovement": false
+        },
+        "branch": "Neutral"
+    },
+    "Nomadic Life": {
+        "internalID": "NomadicLife",
+        "description": "Consumes the unit to found a new city on target tile\nCities can only be found where there are no other cities within a %1% tile radius\nEach city after the first decreases loyalty in all cities by %2%\nDouble cost when not controlled by <nbsp/>Chieftess",
+        "cooldown": "0",
+        "flavor": "Reavers know how to make the wilderness their own. They're skilled at taking the goods they pillage and turning them into supplies for a camp. Be careful if they set up one near your territory\u2014it won't be long before a swarm of them comes crawling over the walls.",
+        "modifiers": [
+            "- +40 Influence Cost",
+            "- +40 Minerals Cost"
+        ],
+        "rawXML": "<foundCity name=\"NomadicLife\" costScalesWithCities=\"1\" icon=\"Actions/FoundCity\">\n\t<conditions>\n\t\t<player match=\"Any\">\n\t\t\t<noTrait type=\"Trapped\"/>\n\t\t\t<cityCount equal=\"0\"/>\n\t\t</player>\n\t</conditions>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier visible=\"0\">\n\t\t\t<conditions>\n\t\t\t\t<player>\n\t\t\t\t\t<noFaction name=\"Chieftess\"/>\n\t\t\t\t</player>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<influenceCost add=\"40\"/>\n\t\t\t\t<mineralsCost add=\"40\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</foundCity>",
+        "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
+        "name": "Nomadic Life",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
         },
         "branch": "Neutral"
     },

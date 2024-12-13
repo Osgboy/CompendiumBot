@@ -17,6 +17,7 @@ DLCS = {
     'Supplement12': 'Firepower Pack',
     'Supplement13': 'Drukhari',
     'Supplement14': 'Demolition Pack',
+    'Supplement15': 'Ultima Founding',
     'LordOfSkulls': 'Lord of Skulls'
 }
 RARITY_COLORS = {

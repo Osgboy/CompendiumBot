@@ -133,6 +133,7 @@
             "Agile": null,
             "Biological": null,
             "Bleedwalker": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Dragoon Armor": "DragoonArmor"
         },
         "actions": {
@@ -320,7 +321,8 @@
         },
         "traits": {
             "Aegyllan Sight": null,
-            "Biological": null
+            "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade"
         },
         "actions": {
             "Tunnel": null
@@ -414,6 +416,7 @@
         "traits": {
             "Agile": null,
             "Aranean Cloak": "AraneanCloak",
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Mechanical": null,
             "Stealth": null
         },
@@ -750,7 +753,7 @@
             "Biological": null
         },
         "actions": {
-            "Nomadic Life": null,
+            "Found City": null,
             "Hijack": null
         },
         "iconPath": "Zephon\\Icons\\Units\\Buster.png",
@@ -980,7 +983,8 @@
         },
         "traits": {
             "Biological": null,
-            "Combat Shield": null
+            "Combat Shield": null,
+            "Interpolated Production": "CyberInfantryUpgrade"
         },
         "actions": {
             "Paramedic": null,
@@ -1031,6 +1035,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Hero": null,
             "Her Infinite Variety": "PracticalRomanticAffinityUpgrade2"
         },
@@ -1508,6 +1513,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Mechanical": null
         },
         "actions": {
@@ -1559,6 +1565,7 @@
         },
         "traits": {
             "Agile": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Hero": null,
             "Mechanical": null,
             "Stealth": null
@@ -2131,6 +2138,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Mechanical": null,
             "Shoulder Plate": "ShoulderPlate",
             "Tactical Visor": "TacticalVisor"
@@ -2270,6 +2278,7 @@
         "traits": {
             "Annihilation Protocols": null,
             "Agile": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Hovering": null,
             "Mechanical": null,
             "Temporal Distension": null
@@ -2462,6 +2471,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Hovering": null,
             "Mechanical": null
         },
@@ -2513,6 +2523,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Militant Legion": "MilitantLegion"
         },
         "actions": {},
@@ -2553,6 +2564,7 @@
         },
         "traits": {
             "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
             "Mechanical": null
         },
         "actions": {
@@ -2827,7 +2839,7 @@
             },
             "Interceptor Missile": {
                 "count": "4",
-                "requiredUpgrade": null,
+                "requiredUpgrade": "InterceptorMissile",
                 "secondary": true
             }
         },
@@ -2888,7 +2900,7 @@
         "iconPath": "Zephon\\Icons\\Units\\PlangentOrolos.png",
         "name": "Plangent Orolos"
     },
-    "Praetorian": {
+    "Praetorians": {
         "combatStats": {
             "groupSizeMax": 6,
             "accuracy": 8,
@@ -2905,15 +2917,15 @@
         "description": "Biological infantry carrying antimatter equipment and jump packs to shock and devastate enemies in close combat",
         "flavor": "Soldiers equipped with Praetorian armor were prepared to slash open the veins of creatures three times their size. Or rip through the wiring of a machine that could tear open the world. We had to remind these troops that they were not gods-they were just trained in killing them.",
         "costStats": {
-            "production": "48.0",
-            "food": "40",
-            "transuranium": "4",
-            "antimatter": "4"
+            "production": "54.0",
+            "food": "60",
+            "transuranium": "6",
+            "antimatter": "6"
         },
         "upkeepStats": {
-            "food": "2.0",
-            "transuranium": "0.2",
-            "antimatter": "0.2"
+            "food": "3.0",
+            "transuranium": "0.3",
+            "antimatter": "0.3"
         },
         "weapons": {
             "Antimatter Sword": {
@@ -2943,7 +2955,7 @@
             "Orbital Deployment": null
         },
         "iconPath": "Zephon\\Icons\\Units\\Praetorian.png",
-        "name": "Praetorian"
+        "name": "Praetorians"
     },
     "Reaming Crodeus": {
         "combatStats": {
@@ -3040,7 +3052,7 @@
         },
         "actions": {
             "Frenzy": null,
-            "Nomadic Life": null,
+            "Found City": null,
             "Hijack": null
         },
         "iconPath": "Zephon\\Icons\\Units\\Reaver.png",

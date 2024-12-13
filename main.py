@@ -239,8 +239,11 @@ async def return_list(interaction: discord.Interaction, invisible: bool, objClas
                                                 view=ConfirmFuzzyMatch(match_and_create_list, objClass, embedFunc, **filters))
         print(repr(nf))
     else:
-        await interaction.response.send_message(embed=embed, ephemeral=invisible)
-        print('Successfully returned request without icon.')
+        if len(embed) <= 6000:
+            await interaction.response.send_message(embed=embed, ephemeral=invisible)
+            print('Successfully returned request without icon.')
+        else:
+            await interaction.response.send_message('Embed size exceeds 6000 characters! Please limit your query and try again.', ephemeral=invisible)
 
 
 @bot.event

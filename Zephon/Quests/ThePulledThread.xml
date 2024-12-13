@@ -28,12 +28,28 @@
 			<objectives>
 				<recoverUnits name="CaptureScientist" recoverAtLeast="1">
 					<units>
-						<unit type="Orin" name="Units/Orin"/>
+						<unit type="Orin" token="Orin" name="Units/Orin"/>
 					</units>
 				</recoverUnits>
 			</objectives>
 		</stage>
 		<stage name="CaptureScientistSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Orin"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
 			<options>
 				<option name="EnemyGlands" nextStage="EnemyGlands"/>
 				<option name="PeopleGlands" nextStage="PeopleGlands"/>
@@ -148,7 +164,24 @@
 				</killCamp>
 			</objectives>
 		</stage>
-		<stage name="KillOrinSuccess"/>
+		<stage name="KillOrinSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<influence add="80"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="Ignore"/>
 	</stages>
 </quest>

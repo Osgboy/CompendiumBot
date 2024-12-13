@@ -748,7 +748,7 @@
                 "value": 0.0
             }
         },
-        "iconPath": "Gladius\\Icons\\Weapons\\Blaster.png",
+        "iconPath": "Gladius\\Icons\\Missing.png",
         "name": "Blaster",
         "faction": "Neutral"
     },
@@ -937,6 +937,38 @@
         "iconPath": "Gladius\\Icons\\Weapons\\Boltgun.png",
         "name": "Boltgun",
         "faction": "Neutral"
+    },
+    "Bolt Rifle": {
+        "internalID": "BoltRifle",
+        "description": null,
+        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
+        "traits": {
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Bolt Weapon": null,
+            "Rapid Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\BoltRifle.png",
+        "name": "Bolt Rifle",
+        "faction": "Space Marines"
     },
     "Bombast Field Gun": {
         "internalID": "BombastFieldGun",
@@ -2855,6 +2887,100 @@
         "name": "Flamer",
         "faction": "Neutral"
     },
+    "Flame Breath": {
+        "internalID": "FlameBreath",
+        "description": null,
+        "flavor": "A torrent of psychic flames pour forth from the psyker's eyes and mouth, engulfing the target.",
+        "traits": {
+            "Flame": null,
+            "Ignores Cover": null,
+            "No Escape": null,
+            "Psychic Power": null,
+            "Soul Blaze": null,
+            "Template": null,
+            "Witchfire": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\FlameBreath.png",
+        "name": "Flame Breath",
+        "faction": "Astra Militarum"
+    },
+    "Flamestorm Gauntlets": {
+        "internalID": "FlamestormGauntlets",
+        "description": null,
+        "flavor": "Flamestorm Gauntlets are close combat weapons mounted with short-ranged flamers that spew out highly volatile gouts of promethium and other chemicals. Aggressors use these as they wade into combat, before crushing any remaining foes with their twin power fists.",
+        "traits": {
+            "Improved Frag Casings": "SpaceMarines/BlastDamage",
+            "Flame": null,
+            "Ignores Cover": null,
+            "Template": null,
+            "Twin-Linked": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\FlamestormGauntlets.png",
+        "name": "Flamestorm Gauntlets",
+        "faction": "Space Marines"
+    },
+    "Flayer Claws": {
+        "internalID": "FlayerClaws",
+        "description": null,
+        "flavor": "Flayed Ones replace their hands with an array of lethally sharp blades, claws and mechanical shears to better tear and shred their prey into ribbons of bloody flesh.",
+        "traits": {
+            "Melee": null,
+            "Shred": null,
+            "Conjoined Weaponry": "ChaosSpaceMarines/MeleeDamage",
+            "Necrodermic Blades": "Necrons/MeleeDamage",
+            "Bigga Choppas": "Orks/MeleeDamage",
+            "Close Combat Mastery": "SpaceMarines/MeleeDamage",
+            "Bioweapon Symbiosis": "Tyranids/MeleeDamage"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\FlayerClaws.png",
+        "name": "Flayer Claws",
+        "faction": "Necrons"
+    },
     "Flechette Blaster": {
         "internalID": "FlechetteBlaster",
         "description": null,
@@ -3059,6 +3185,106 @@
         },
         "iconPath": "Gladius\\Icons\\Weapons\\FragGrenade.png",
         "name": "Frag Grenade",
+        "faction": "Neutral"
+    },
+    "Frag Missile Launcher": {
+        "internalID": "FragMissileLauncher",
+        "description": null,
+        "flavor": "Missile launchers can fire a variety of different missiles, making them incredibly versatile weapons.",
+        "traits": {
+            "Blast": null,
+            "Heavy": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\FragMissileLauncher.png",
+        "name": "Frag Missile Launcher",
+        "faction": "Neutral"
+    },
+    "Fragstorm Grenade Launcher": {
+        "internalID": "FragstormGrenadeLauncher",
+        "description": null,
+        "flavor": "A paired set of grenade launchers mounted on Primaris Aggressors or Redemptor Dreadnoughts. The only element that distinguishes these from launchers used by other Adeptus Astartes or even Astra Militarum forces is their ability to thoroughly saturate a target at range.",
+        "traits": {
+            "Large Blast": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\FragstormGrenadeLauncher.png",
+        "name": "Fragstorm Grenade Launcher",
+        "faction": "Space Marines"
+    },
+    "Frazzle": {
+        "internalID": "Frazzle",
+        "description": null,
+        "flavor": "The Weirdboy sends out arcs of crackling psychic energy that ground themselves upon the enemy, reducing them to shrivelled husks before the eyes of their terrified comrades.",
+        "traits": {
+            "Assault": null,
+            "Blast": null,
+            "Psychic Power": null,
+            "Witchfire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\Frazzle.png",
+        "name": "Frazzle",
         "faction": "Neutral"
     },
     "Fusion Blaster": {
@@ -4039,6 +4265,70 @@
         "name": "Heavy Grav-Cannon",
         "faction": "Adeptus Mechanicus"
     },
+    "Heavy Laser Destroyer": {
+        "internalID": "HeavyLaserDestroyer",
+        "description": null,
+        "flavor": "The Laser Destroyer is an ancient and complex weapons system produced by very few Forge Worlds, with a reputation for huge range and reliable damage even exceeding that of a Lascannon. In those rare Adeptus Mechanicus sites that still produce them, it is a lengthy process with the components hand-crafted painstakingly. Of course, nothing less would do for Belisarius Cawl and rare Executioner tank designs replace their Macro Plasma Incinerator with a Heavy Laser Destroyer.",
+        "traits": {
+            "Heavy": null,
+            "Hotshot Power Packs": "SpaceMarines/LasDamage"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 12.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\HeavyLaserDestroyer.png",
+        "name": "Heavy Laser Destroyer",
+        "faction": "Space Marines"
+    },
+    "Heavy Onslaught Gatling Cannon": {
+        "internalID": "HeavyOnslaughtGatlingCannon",
+        "description": null,
+        "flavor": "Like many rotary machine guns through Terra\u2019s long history, the Onslaught makes up for its lack of armour penetration with an absolute hail of high calibre bullets. Given its relative reliability of fire, the Adeptus Mechanicus have mounted it on many Primaris vehicles, ranging from the light Invader right up to heavier versions on Redemptor Dreadnoughts and Repulsor Executioners.",
+        "traits": {
+            "Bolt Weapon": null,
+            "Heavy": null,
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Rending": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 12.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\HeavyOnslaughtGatlingCannon.png",
+        "name": "Heavy Onslaught Gatling Cannon",
+        "faction": "Space Marines"
+    },
     "Heavy Phosphor Blaster": {
         "internalID": "HeavyPhosphorBlaster",
         "description": null,
@@ -4382,6 +4672,38 @@
         "name": "Hyperphase Threshers",
         "faction": "Necrons"
     },
+    "Icarus Rocket Pod": {
+        "internalID": "IcarusRocketPod",
+        "description": null,
+        "flavor": "Intended as an air defence system, the seven rockets contained in an Icarus Pod are designed to bring any aerial threats crashing to the ground. Though the rockets are small, their guidance systems make them extremely effective against flying targets.",
+        "traits": {
+            "Heavy": null,
+            "Skyfire": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage"
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\IcarusRocketPod.png",
+        "name": "Icarus Rocket Pod",
+        "faction": "Space Marines"
+    },
     "Impaler Cannon": {
         "internalID": "ImpalerCannon",
         "description": null,
@@ -4415,80 +4737,19 @@
         "name": "Impaler Cannon",
         "faction": "Tyranids"
     },
-    "Flame Breath": {
-        "internalID": "FlameBreath",
+    "Ironhail Heavy Stubber": {
+        "internalID": "IronhailHeavyStubber",
         "description": null,
-        "flavor": "A torrent of psychic flames pour forth from the psyker's eyes and mouth, engulfing the target.",
+        "flavor": "These are low-tech solutions to ranged warfare on high-tech battlefields. Encompassing such weapons as shotguns, stub guns and heavy stubbers (sometimes called sluggers), the common bond between all of these weapons is that they are, without exception, cumbersome, noisy and fairly primitive firearms. Often employed by gangers, law enforcement officers and even civilians across the Imperium, these weapons make a formidable din when fired, and are easy to maintain.",
         "traits": {
-            "Flame": null,
-            "Ignores Cover": null,
-            "No Escape": null,
-            "Psychic Power": null,
-            "Soul Blaze": null,
-            "Template": null,
-            "Witchfire": null
+            "Rapid Fire": null,
+            "Kraken Bolts": "SpaceMarines/BoltDamage"
         },
-        "range": "1",
+        "range": "2",
         "innateStats": {
             "attacks": {
                 "operator": "add",
-                "value": 1.0
-            },
-            "rangedArmorPenetration": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "rangedDamage": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "strengthDamage": {
-                "operator": "base",
-                "value": 0.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Weapons\\FlameBreath.png",
-        "name": "Flame Breath",
-        "faction": "Astra Militarum"
-    },
-    "Flayer Claws": {
-        "internalID": "FlayerClaws",
-        "description": null,
-        "flavor": "Flayed Ones replace their hands with an array of lethally sharp blades, claws and mechanical shears to better tear and shred their prey into ribbons of bloody flesh.",
-        "traits": {
-            "Melee": null,
-            "Shred": null,
-            "Conjoined Weaponry": "ChaosSpaceMarines/MeleeDamage",
-            "Necrodermic Blades": "Necrons/MeleeDamage",
-            "Bigga Choppas": "Orks/MeleeDamage",
-            "Close Combat Mastery": "SpaceMarines/MeleeDamage",
-            "Bioweapon Symbiosis": "Tyranids/MeleeDamage"
-        },
-        "range": "Melee",
-        "innateStats": {
-            "meleeArmorPenetration": {
-                "operator": "add",
-                "value": 1.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Weapons\\FlayerClaws.png",
-        "name": "Flayer Claws",
-        "faction": "Necrons"
-    },
-    "Frag Missile Launcher": {
-        "internalID": "FragMissileLauncher",
-        "description": null,
-        "flavor": "Missile launchers can fire a variety of different missiles, making them incredibly versatile weapons.",
-        "traits": {
-            "Blast": null,
-            "Heavy": null,
-            "Improved Frag Casings": "SpaceMarines/BlastDamage"
-        },
-        "range": "3",
-        "innateStats": {
-            "attacks": {
-                "operator": "add",
-                "value": 1.0
+                "value": 3.0
             },
             "rangedArmorPenetration": {
                 "operator": "add",
@@ -4503,46 +4764,9 @@
                 "value": 0.0
             }
         },
-        "iconPath": "Gladius\\Icons\\Weapons\\FragMissileLauncher.png",
-        "name": "Frag Missile Launcher",
-        "faction": "Neutral"
-    },
-    "Frazzle": {
-        "internalID": "Frazzle",
-        "description": null,
-        "flavor": "The Weirdboy sends out arcs of crackling psychic energy that ground themselves upon the enemy, reducing them to shrivelled husks before the eyes of their terrified comrades.",
-        "traits": {
-            "Assault": null,
-            "Blast": null,
-            "Psychic Power": null,
-            "Witchfire": null
-        },
-        "range": "2",
-        "innateStats": {
-            "accuracy": {
-                "operator": "min",
-                "value": 12.0
-            },
-            "attacks": {
-                "operator": "add",
-                "value": 1.0
-            },
-            "rangedArmorPenetration": {
-                "operator": "add",
-                "value": 4.0
-            },
-            "rangedDamage": {
-                "operator": "add",
-                "value": 3.0
-            },
-            "strengthDamage": {
-                "operator": "base",
-                "value": 0.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Weapons\\Frazzle.png",
-        "name": "Frazzle",
-        "faction": "Neutral"
+        "iconPath": "Gladius\\Icons\\Weapons\\IronhailHeavyStubber.png",
+        "name": "Ironhail Heavy Stubber",
+        "faction": "Space Marines"
     },
     "Implosion Missile": {
         "internalID": "ImplosionMissile",
@@ -5387,6 +5611,71 @@
         "name": "Litany of the Electromancer",
         "faction": "Neutral"
     },
+    "Macro Plasma Incinerator (Standard)": {
+        "internalID": "MacroPlasmaIncineratorStandard",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Heavy": null,
+            "Large Blast": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\MacroPlasmaIncineratorStandard.png",
+        "name": "Macro Plasma Incinerator (Standard)",
+        "faction": "Space Marines"
+    },
+    "Macro Plasma Incinerator (Supercharged)": {
+        "internalID": "MacroPlasmaIncineratorSupercharged",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Heavy": null,
+            "Large Blast": null,
+            "Gets Hot": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\MacroPlasmaIncineratorSupercharged.png",
+        "name": "Macro Plasma Incinerator (Supercharged)",
+        "faction": "Space Marines"
+    },
     "Mandiblasters": {
         "internalID": "Mandiblasters",
         "description": null,
@@ -5846,6 +6135,39 @@
         "name": "Omnissian Staff",
         "faction": "Adeptus Mechanicus"
     },
+    "Onslaught Gatling Cannon": {
+        "internalID": "OnslaughtGatlingCannon",
+        "description": null,
+        "flavor": "Like many rotary machine guns through Terra\u2019s long history, the Onslaught makes up for its lack of armour penetration with an absolute hail of high calibre bullets. Given its relative reliability of fire, the Adeptus Mechanicus have mounted it on many Primaris vehicles, ranging from the light Invader right up to heavier versions on Redemptor Dreadnoughts and Repulsor Executioners.",
+        "traits": {
+            "Bolt Weapon": null,
+            "Heavy": null,
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Rending": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\OnslaughtGatlingCannon.png",
+        "name": "Onslaught Gatling Cannon",
+        "faction": "Space Marines"
+    },
     "Oppressor Cannon": {
         "internalID": "OppressorCannon",
         "description": null,
@@ -5877,6 +6199,42 @@
         "iconPath": "Gladius\\Icons\\Weapons\\OppressorCannon.png",
         "name": "Oppressor Cannon",
         "faction": "Astra Militarum"
+    },
+    "Orbital Bombardment": {
+        "internalID": "OrbitalBombardment",
+        "description": null,
+        "flavor": null,
+        "traits": {
+            "Barrage": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage",
+            "Apocalyptic Blast": null
+        },
+        "range": "-1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 12.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Actions\\OrbitalBombardment.png",
+        "name": "Orbital Bombardment",
+        "faction": "Neutral"
     },
     "Paragon Grenade Launcher": {
         "internalID": "ParagonGrenadeLauncher",
@@ -5935,42 +6293,6 @@
         "iconPath": "Gladius\\Icons\\Weapons\\ParagonWarBlade.png",
         "name": "Paragon War Blade",
         "faction": "Sisters Of Battle"
-    },
-    "Orbital Bombardment": {
-        "internalID": "OrbitalBombardment",
-        "description": null,
-        "flavor": null,
-        "traits": {
-            "Barrage": null,
-            "Improved Frag Casings": "SpaceMarines/BlastDamage",
-            "Apocalyptic Blast": null
-        },
-        "range": "-1",
-        "innateStats": {
-            "accuracy": {
-                "operator": "min",
-                "value": 8.0
-            },
-            "attacks": {
-                "operator": "add",
-                "value": 1.0
-            },
-            "rangedArmorPenetration": {
-                "operator": "add",
-                "value": 8.0
-            },
-            "rangedDamage": {
-                "operator": "add",
-                "value": 12.0
-            },
-            "strengthDamage": {
-                "operator": "base",
-                "value": 0.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Actions\\OrbitalBombardment.png",
-        "name": "Orbital Bombardment",
-        "faction": "Neutral"
     },
     "Particle Whip": {
         "internalID": "ParticleWhip",
@@ -6219,6 +6541,136 @@
         },
         "iconPath": "Gladius\\Icons\\Weapons\\PlasmaCutter.png",
         "name": "Plasma Cutter",
+        "faction": "Space Marines"
+    },
+    "Plasma Exterminator (Standard)": {
+        "internalID": "PlasmaExterminatorStandard",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Assault": null,
+            "Blast": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PlasmaExterminatorStandard.png",
+        "name": "Plasma Exterminator (Standard)",
+        "faction": "Space Marines"
+    },
+    "Plasma Exterminator (Supercharged)": {
+        "internalID": "PlasmaExterminatorSupercharged",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Assault": null,
+            "Blast": null,
+            "Gets Hot": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PlasmaExterminatorSupercharged.png",
+        "name": "Plasma Exterminator (Supercharged)",
+        "faction": "Space Marines"
+    },
+    "Plasma Incinerator (Standard)": {
+        "internalID": "PlasmaIncineratorStandard",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Assault": null,
+            "Rapid Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PlasmaIncineratorStandard.png",
+        "name": "Plasma Incinerator (Standard)",
+        "faction": "Space Marines"
+    },
+    "Plasma Incinerator (Supercharged)": {
+        "internalID": "PlasmaIncineratorSupercharged",
+        "description": null,
+        "flavor": "Cawl\u2019s ten millennia of tinkering produced many surprising results. Even the unstable plasma weaponry commonplace to many races didn\u2019t escape his cogitator\u2019s attention. His Mark III Belisarius Pattern Plasma Incinerators are a marked improvement on previous Imperial versions, harnessing the raw power of stellar fusion to melt enemy armour. This Primaris-only technology is deployed at every scale, from the pistol-sized Exterminators to the Dreadnought-sized Macro Plasma Incinerators.",
+        "traits": {
+            "Hotshot Power Packs": "SpaceMarines/LasDamage",
+            "Assault": null,
+            "Gets Hot": null,
+            "Rapid Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PlasmaIncineratorSupercharged.png",
+        "name": "Plasma Incinerator (Supercharged)",
         "faction": "Space Marines"
     },
     "Plasma Grenade": {
@@ -9031,6 +9483,37 @@
         "name": "Storm Bolter",
         "faction": "Space Marines"
     },
+    "Stormfury Missiles": {
+        "internalID": "StormfuryMissiles",
+        "description": null,
+        "flavor": "These heavy anti-armour missiles are carried on a Thunderstrike\u2019s control surfaces. These add to the Thunderstrike\u2019s powerful anti-armour arsenal without drawing on the Storm Speeder\u2019s already overloaded power systems.",
+        "traits": {
+            "Heavy": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 12.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\StormfuryMissiles.png",
+        "name": "Stormfury Missiles",
+        "faction": "Space Marines"
+    },
     "Stormstrike Missile": {
         "internalID": "StormstrikeMissile",
         "description": null,
@@ -9691,6 +10174,37 @@
         "name": "Thunderfire Cannon",
         "faction": "Space Marines"
     },
+    "Thunderstrike Las Talon": {
+        "internalID": "ThunderstrikeLasTalon",
+        "description": null,
+        "flavor": "A specialised type of anti-armour weapon used primarily by the Primaris Space Marines, the Las Talon is much lighter than an equivalent Lascannon. This does reduce its raw punch and its range, but not its armour penetration or the damage inflicted, making it perfect for lighter vehicles like the Storm Speeder.",
+        "traits": {
+            "Heavy": null,
+            "Hotshot Power Packs": "SpaceMarines/LasDamage"
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\ThunderstrikeLasTalon.png",
+        "name": "Thunderstrike Las Talon",
+        "faction": "Space Marines"
+    },
     "Torment Grenade Launchers": {
         "internalID": "TormentGrenadeLaunchers",
         "description": null,
@@ -9923,6 +10437,140 @@
         "iconPath": "Gladius\\Icons\\Weapons\\TransuranicArquebus.png",
         "name": "Transuranic Arquebus",
         "faction": "Adeptus Mechanicus"
+    },
+    "Twin-Linked Bolt Rifle": {
+        "internalID": "TwinBoltRifle",
+        "description": null,
+        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
+        "traits": {
+            "Assault": null,
+            "Bolt Weapon": null,
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinBoltRifle.png",
+        "name": "Twin-Linked Bolt Rifle",
+        "faction": "Space Marines"
+    },
+    "Twin-Linked Heavy Bolter": {
+        "internalID": "TwinLinkedHeavyBolter",
+        "description": null,
+        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
+        "traits": {
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
+            "Bolt Weapon": null,
+            "Heavy": null,
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedHeavyBolter.png",
+        "name": "Twin-Linked Heavy Bolter",
+        "faction": "Neutral"
+    },
+    "Twin-Linked Icarus Rocket Pod": {
+        "internalID": "TwinIcarusRocketPod",
+        "description": null,
+        "flavor": "Intended as an air defence system, the seven rockets contained in an Icarus Pod are designed to bring any aerial threats crashing to the ground. Though the rockets are small, their guidance systems make them extremely effective against flying targets.",
+        "traits": {
+            "Heavy": null,
+            "Skyfire": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage",
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinIcarusRocketPod.png",
+        "name": "Twin-Linked Icarus Rocket Pod",
+        "faction": "Space Marines"
+    },
+    "Twin-Linked Icarus Ironhail Heavy Bolter": {
+        "internalID": "TwinIcarusIronhailHeavyStubber",
+        "description": null,
+        "flavor": "These are low-tech solutions to ranged warfare on high-tech battlefields. Encompassing such weapons as shotguns, stub guns and heavy stubbers (sometimes called sluggers), the common bond between all of these weapons is that they are, without exception, cumbersome, noisy and fairly primitive firearms. Often employed by gangers, law enforcement officers and even civilians across the Imperium, these weapons make a formidable din when fired, and are easy to maintain.",
+        "traits": {
+            "Bolt Weapon": null,
+            "Rapid Fire": null,
+            "Skyfire": null,
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinIcarusIronhailHeavyStubber.png",
+        "name": "Twin-Linked Icarus Ironhail Heavy Bolter",
+        "faction": "Space Marines"
     },
     "Twin-Linked Airbursting Fragmentation Projector": {
         "internalID": "TwinLinkedAirburstingFragmentationProjector",
@@ -10324,40 +10972,6 @@
         "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedGaussBlaster.png",
         "name": "Twin-Linked Gauss Blaster",
         "faction": "Necrons"
-    },
-    "Twin-Linked Heavy Bolter": {
-        "internalID": "TwinLinkedHeavyBolter",
-        "description": null,
-        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
-        "traits": {
-            "Kraken Bolts": "SpaceMarines/BoltDamage",
-            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
-            "Bolt Weapon": null,
-            "Heavy": null,
-            "Twin-Linked": null
-        },
-        "range": "2",
-        "innateStats": {
-            "attacks": {
-                "operator": "add",
-                "value": 3.0
-            },
-            "rangedArmorPenetration": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "rangedDamage": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "strengthDamage": {
-                "operator": "base",
-                "value": 0.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedHeavyBolter.png",
-        "name": "Twin-Linked Heavy Bolter",
-        "faction": "Neutral"
     },
     "Twin-Linked Heavy Flamer": {
         "internalID": "TwinLinkedHeavyFlamer",
@@ -11062,6 +11676,40 @@
         "name": "Twin-Linked Splinter Rifle",
         "faction": "Drukhari"
     },
+    "Twin-Linked Storm Bolter": {
+        "internalID": "TwinLinkedStormBolter",
+        "description": null,
+        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
+        "traits": {
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
+            "Bolt Weapon": null,
+            "Rapid Fire": null,
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedStormBolter.png",
+        "name": "Twin-Linked Storm Bolter",
+        "faction": "Space Marines"
+    },
     "Twin-Linked Supa Shoota": {
         "internalID": "TwinLinkedSupaShoota",
         "description": null,
@@ -11128,6 +11776,31 @@
         "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedTeslaDestructor.png",
         "name": "Twin-Linked Tesla Destructor",
         "faction": "Necrons"
+    },
+    "Twin-Linked Power Fists": {
+        "internalID": "TwinPowerFists",
+        "description": null,
+        "flavor": "A power weapon is sheathed in the lethal haze of a disruptive energy field that eats through armour, flesh and bone with ease.",
+        "traits": {
+            "Melee": null,
+            "Close Combat Mastery": "SpaceMarines/MeleeDamage",
+            "Twin-Linked": null,
+            "Unwieldy": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "mul",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinPowerFists.png",
+        "name": "Twin-Linked Power Fists",
+        "faction": "Space Marines"
     },
     "The Spiders' Parlour": {
         "internalID": "TyranidCity",
