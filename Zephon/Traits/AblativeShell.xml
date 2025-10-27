@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Actions/AblativeShell" category="Buff" visibleOnUnit="1">
+	<modifiers>
+ 		<modifier>
+			<effects>
+				<hitpointsMax mul="0.333"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnRemoval">
+						<effects>
+							<hitpointsFromMax add="0.333"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

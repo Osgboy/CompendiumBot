@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/Arena" category="None">
+	<model>
+		<simpleModel material="Buildings/Buildings"
+				mesh="Features/ReaverArena"
+				scale="1 1 1"
+				transparent="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<minerals mul="0.1"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
+				<buildingSlots add="-1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Ruins"/>
+	</traits>
+</feature>

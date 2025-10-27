@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Traits/Ambush" visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="InForestRuinSmokeScreen">
+			<conditions ignoreForTraitVisibility="1">
+				<tile match="Any">
+					<feature type="Forest"/>
+					<feature type="Ruins"/>
+					<feature type="SmokeScreen"/>
+				</tile>
+			</conditions>
+			<effects>
+				<attacks mul="0.167"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

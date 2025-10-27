@@ -7,4 +7,17 @@
 			</effects>
 		</modifier>
 	</modifiers>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnRemoval">
+						<effects>
+							<hitpointsFromMax add="0.333"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
 </trait>

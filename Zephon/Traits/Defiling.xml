@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<onWeaponAttacked>
+		<defender>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Defiled" duration="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onWeaponAttacked>
+</trait>

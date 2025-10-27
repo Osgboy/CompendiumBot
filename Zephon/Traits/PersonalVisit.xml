@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/PersonalVisit" visibleOnBuilding="1" visibleOnTile="1">
+	<modifiers>
+		<modifier>
+			<conditions ignoreForTraitVisibility="1">
+				<building>
+					<noTrait type="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<algae mul="0.5"/>
+				<antimatter mul="0.5"/>
+				<chips mul="0.5"/>
+				<dimensionalEchoes mul="0.5"/>
+				<energy mul="0.5"/>
+				<food mul="0.5"/>
+				<influence mul="0.5"/>
+				<minerals mul="0.5"/>
+				<production mul="0.5"/>
+				<research mul="0.5"/>
+				<singularityCores mul="0.5"/>
+				<transuranium mul="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Cyber"
+		coerciveness="0.625"
+		dlc="DLC2"
+		generosity="0.375"
+		initialTrack="Music/Voice1DLC2"
+		trustworthiness="0.375"
+		quest="TouchTheSky">
+	<actions>
+		<playerAction name="TheSureThingShort"
+				cooldown="5"
+				label="1"
+				interfaceSound="Interface/TheSureThingShort">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="TheSureThingShort" duration="5"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseMineralsStrategy less="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="TheSureThingMedium"/>
+				<action name="TheSureThingLong"/>
+			</sharedCooldowns>
+		</playerAction>
+		<playerAction name="TheSureThingMedium"
+				cooldown="5"
+				label="1"
+				interfaceSound="Interface/TheSureThingMedium">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="60"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="TheSureThingMedium" duration="5"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseMineralsStrategy less="0.333"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.1"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="TheSureThingShort"/>
+				<action name="TheSureThingLong"/>
+			</sharedCooldowns>
+		</playerAction>
+		<playerAction name="TheSureThingLong"
+				cooldown="5"
+				label="1"
+				interfaceSound="Interface/TheSureThingLong">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<modifiers>
+						<modifier>
+							<effects>
+								<addTrait type="TheSureThingLong" duration="5"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseMineralsStrategy less="0.167"/>
+						</player>
+					</conditions>
+					<effects>
+						<score add="1.2"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="TheSureThingShort"/>
+				<action name="TheSureThingMedium"/>
+			</sharedCooldowns>
+		</playerAction>
+		<playerCast name="PersonalVisit"
+				cooldown="10"
+				label="1"
+				requiredUpgrade="PersonalVisit">
+			<model>
+				<cast blueprint="Effects/PersonalVisit"
+						targetsTile="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="PersonalVisitUpgrade">
+					<effects>
+						<cooldown add="-5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<alliedCity/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="ToNonHeadquartersBuildingsOnTargetAlliedCityTile">
+									<effects>
+										<addTrait type="PersonalVisit" duration="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<buildingSlotsUsed greater="1"/>
+										</tile>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="JustShipItUpgrade2"
+				label="1"
+				requiredUpgrade="JustShipItUpgrade2">
+			<model>
+				<cast blueprint="Effects/ProductRecall"
+						targetsTile="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCostFromExperience base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<actionPoints greater="0"/>
+							<notMovedThisTurn/>
+							<control/>
+						</unit>
+						<unit match="Any">
+							<trait type="JustShipItDebuffAttacks"/>
+							<trait type="JustShipItDebuffAttacksTaken"/>
+							<trait type="JustShipItDebuffMovement"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="FromTargetAlliedUnit">
+									<effects>
+										<removeTrait type="JustShipItDebuffAttacks"/>
+										<removeTrait type="JustShipItDebuffAttacksTaken"/>
+										<removeTrait type="JustShipItDebuffMovement"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<ally/>
+											<level greater="2"/>
+										</unit>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+		<playerCast name="PlatinumScionAffinityUpgrade2"
+				label="1"
+				charges="1"
+				requiredUpgrade="PlatinumScionAffinityUpgrade2">
+			<model>
+				<cast blueprint="Effects/FlagshipProduct"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<type name="CherubimTitan"/>
+							<ally/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedCherubimTitan">
+									<effects>
+										<addTrait type="PlatinumScionAffinityUpgrade2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction greater="0.9"/>
+										</unit>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+	</actions>
+	<dislikedLabels>
+		<label name="Mysticism"/>
+		<label name="SeeAsISee"/>
+		<label name="TenderMinistrations"/>
+		<label name="Untrustworthy"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/PlatinumScionHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						muzzleCount="9"
+						windupDuration="0.0"/>																													
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="CultExpansion"/>
+		<label name="EngineerLife"/>
+		<label name="IcarusSatellite"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="IshimEnforcer" count="2"/>
+	</startingUnits>
+	<traits>
+		<trait type="EconomiesOfScale"/>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="PlatinumScionAffinityUpgrade" requiredUpgrade="PlatinumScionAffinityUpgrade"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+	<unitTraits>
+		<trait type="JustShipIt"/>
+	</unitTraits>
+</faction>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Actions/TheSureThingShort" visibleOnPlayer="1">
+	<onTraitRemoved>
+		<traitSourcePlayer>
+			<modifier effectDescription="OnRemoval">
+				<effects>
+					<minerals add="50"/>
+				</effects>
+			</modifier>
+			<modifier effectDescription="OnRemoval" requiredUpgrade="TheSureThingUpgrade">
+				<effects>
+					<minerals mul="0.2"/>
+				</effects>
+			</modifier>
+			<modifier effectDescription="OnRemoval" requiredUpgrade="TheSureThingUpgrade2">
+				<effects>
+					<minerals mul="0.2"/>
+				</effects>
+			</modifier>
+		</traitSourcePlayer>
+	</onTraitRemoved>
+</trait>

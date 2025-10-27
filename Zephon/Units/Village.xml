@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="DLC2">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Bone"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Buildings/Buildings"
+				mesh="Units/ReaverVillage"
+				normalWeight="0.1"
+				onlyRotateWeapons="1"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="4"/>
+				<cargoSlots base="2"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<die>
+			<model>
+				<die/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersHoldPosition"/>
+			</model>
+		</skip>
+		<setRallyPoint/>
+	</actions>
+	<traits>
+		<trait type="Fortification"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

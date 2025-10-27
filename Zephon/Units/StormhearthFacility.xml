@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="DLC2">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Bone"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Buildings/Buildings"
+				mesh="Units/StormhearthFacility"
+				normalWeight="0.1"
+				onlyRotateWeapons="1"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="2"/>
+				<energyUpkeep base="4"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<manipulateStorm visible="0">
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<player>
+								<native/>
+							</player>
+						</unit>
+					</conditions>
+					<effects>
+						<score add="100.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</manipulateStorm>
+ 		<unitAction name="StormTarget"
+				cooldown="10"
+				icon="Features/StormOfStorms">
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile match="Any">
+							<noUnit/>
+							<enemyUnit/>
+						</tile>
+						<tile>
+ 							<unitsInRange equal="0" range="1">
+ 								<unit>
+ 									<noEnemy/>
+ 									<aiControlled/>
+ 								</unit>
+ 							</unitsInRange>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="OnTargetTileAndHalfOnAdjacentTiles">
+									<effects>
+										<weaponDamage weapon="StormOfStorms"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Unit" radius="1" excludeTarget="1">
+							<modifiers>
+								<modifier visible="0" effectDescription="OnAdjacentTilesToTarget">
+									<effects>
+										<weaponDamage weapon="StormOfStorms" factor="0.5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="-1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="OnTargetAndAdjacentTiles">
+									<effects>
+										<addTrait type="StormOfStorms" duration="3"/> 
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Tile">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addFeature type="StormOfStorms" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<traits>
+		<trait type="Fortification"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

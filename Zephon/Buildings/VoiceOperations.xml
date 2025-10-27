@@ -62,6 +62,25 @@
 				</modifier>
 			</strategyModifiers>
 		</constructPlayerAction>
+		<constructPlayerAction action="VorodaisBargain"
+				requiredUpgrade="VorodaisBargain">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="5"/> <!-- %algaeCost base tier=2 factor=0.5 -->
+						<productionCost base="12.0"/> <!-- %productionCost base tier=2 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseOperationsScore base="0.5"/>
+						<increaseVoiceScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
 		<constructPlayerAction action="AtramentousAura"
 				requiredUpgrade="AtramentousAura">
 			<modifiers>

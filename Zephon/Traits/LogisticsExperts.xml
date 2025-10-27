@@ -6,9 +6,35 @@
 				<flatResourcesFromOutposts mul="4.0"/>
 			</effects>
 		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="10"/>
+				</conditions>
+				<tile>
+					<feature type="AcrinCrashSite"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="-3.333"/>
+			</effects>
+		</modifier>
 		<modifier requiredUpgrade="AssetStripping">
 			<effects>
 				<flatResourcesFromOutposts mul="1.0"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="AssetStripping" visible="0">
+			<conditions>
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="10"/>
+				</conditions>
+				<tile>
+					<feature type="AcrinCrashSite"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="-0.833"/>
 			</effects>
 		</modifier>
 	</modifiers>

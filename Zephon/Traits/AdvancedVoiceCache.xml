@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visible="0">
 	<onTileEntered>
+	<!-- Resources: 50%, Items: 25%, Operations: 12.5%, Units: 12.5% -->
 		<tile>
-			<area affect="UnitPlayer" randomizeRank="1" weight="12" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="UnitPlayer" randomizeRank="1" weight="16" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -16,7 +17,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="UnitPlayer" randomizeRank="1" weight="12" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="UnitPlayer" randomizeRank="1" weight="16" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -30,7 +31,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="UnitPlayer" randomizeRank="1" weight="12" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="UnitPlayer" randomizeRank="1" weight="16" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -44,7 +45,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="UnitPlayer" randomizeRank="1" weight="12" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="UnitPlayer" randomizeRank="1" weight="16" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -58,7 +59,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="UnitPlayer" randomizeRank="1" weight="12" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="UnitPlayer" randomizeRank="1" weight="16" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -114,6 +115,20 @@
 					</modifier>
 				</modifiers>
 			</area>
+			<area affect="UnitPlayer" weight="10" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addItem type="PlanarPhlebotomizer"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
 			<area affect="Tile" weight="5" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
@@ -156,7 +171,21 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="UnitPlayer" weight="15" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="Tile" weight="5" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addUnit type="Caitiff" consumedAction="1" consumedMovement="1" playerFromUnitOnTile="1" hitpointsPercentage="0.49"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="10" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier>
 						<conditions>
@@ -166,6 +195,20 @@
 						</conditions>
 						<effects>
 							<addPlayerAction type="Transubstantiation" charges="1"/>>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer" weight="10" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<notNative/>
+							</unit>
+						</conditions>
+						<effects>
+							<addPlayerAction type="VorodaisBargain" charges="1"/>>
 						</effects>
 					</modifier>
 				</modifiers>

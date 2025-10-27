@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/BreacherShotgunSlug"
+				muzzleFlashesBlueprint="Effects/BreacherShotgunMuzzleFlashes"
+				projectilesBlueprint="Effects/BreacherShotgunSlug"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
+				<attacks base="1"/>
+				<damage base="12"/> <!-- %damage base tier=8 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+</weapon> 

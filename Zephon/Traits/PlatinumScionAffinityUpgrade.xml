@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnPlayer="1">
+	<modifiers>
+		<modifier effectDescription="ForCyberTechnologies">
+ 			<conditions>
+ 				<upgrade>
+					<branch name="Cyber"/>
+				</upgrade>
+			</conditions>
+			<effects>
+				<researchCost mul="-0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

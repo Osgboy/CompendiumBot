@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human" dlc="DLC2">
+	<actions>
+		<unitCast cooldown="2"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/HoloDecoy"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Titan"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedNonTitanUnit">
+									<effects>
+										<addTrait type="HoloDecoy" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<trait type="CorpseCities"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

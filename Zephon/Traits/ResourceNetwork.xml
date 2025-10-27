@@ -11,6 +11,19 @@
 				<flatResourcesFromOutposts mul="1.0"/>
 			</effects>
 		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="10"/>
+				</conditions>
+				<tile>
+					<feature type="AcrinCrashSite"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="-0.833"/>
+			</effects>
+		</modifier>
 		<modifier requiredUpgrade="ResourceNetworkUpgrade">
 			<conditions>
 				<tile>
@@ -19,6 +32,19 @@
 			</conditions>
 			<effects>
 				<flatResourcesFromOutposts mul="0.25"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ResourceNetworkUpgrade" visible="0">
+			<conditions>
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="10"/>
+				</conditions>
+				<tile>
+					<feature type="AcrinCrashSite"/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="-0.208"/>
 			</effects>
 		</modifier>
 		<modifier effectDescription="WhileAlliedNonFlyingUnitOnTile" requiredUpgrade="ResourceNetworkUpgrade2">
@@ -33,6 +59,23 @@
 			</conditions>
 			<effects>
 				<flatResourcesFromOutposts mul="2.0"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ResourceNetworkUpgrade2" visible="0">
+			<conditions>
+				<conditions ignoreForTraitVisibility="1">
+					<turn divisible="10"/>
+				</conditions>
+				<tile>
+					<feature type="AcrinCrashSite"/>
+				</tile>
+				<unit>
+					<ally/>
+					<noTrait type="Flying"/>
+				</unit>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="-1.667"/>
 			</effects>
 		</modifier>
 	</modifiers>

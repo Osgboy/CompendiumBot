@@ -34,7 +34,7 @@
 				</modifier>
 				<modifier requiredUpgrade="EnrichedAlloysUpgrade">
 					<effects>
-						<mineralsCost mul="-0.25"/>
+						<mineralsCost mul="-0.667"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -53,6 +53,25 @@
 					<effects>
 						<mineralsCost base="20"/> <!-- %mineralsCost base tier=4 factor=1 -->
 						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseHumanScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+		<constructPlayerAction action="TacticalInsertion" requiredUpgrade="TacticalInsertion">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+						<mineralsCost base="20"/> <!-- %mineralsCost base tier=6 factor=0.5 -->
+						<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
 					</effects>
 				</modifier>
 			</modifiers>

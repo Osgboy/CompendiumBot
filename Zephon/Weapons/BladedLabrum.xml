@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="8"/> <!-- %armorPenetration base tier=9 -->
+				<attacks base="1"/>
+				<damage base="16"/> <!-- %damage base tier=9 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="LargeSplash"/>
+		<trait type="Melee"/>
+		<trait type="Rustbinging"/>
+	</traits>
+</weapon>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/BreacherShotgunShell"
+				muzzleFlashesBlueprint="Effects/BreacherShotgunMuzzleFlashes"
+				projectilesBlueprint="Effects/BreacherShotgunShell"
+				fireSoundCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<attacks base="1"/>
+				<damage base="8"/> <!-- %damage base tier=7 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="LargeSplash"/>
+	</traits>
+</weapon> 

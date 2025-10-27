@@ -55,15 +55,6 @@
 			</objectives>
 		</stage>
 		<stage name="Contact">
-			<modifications>
-				<tileModifiers>
-					<modifier visible="0">
-						<effects>
-							<removeFeature type="ServerFarm"/>
-						</effects>
-					</modifier>
-				</tileModifiers>
-			</modifications>
 			<options>
 				<option name="TrustZephon" nextStage="MessageSent"/>
 				<option name="FindYourWay" nextStage="DoItYourself"/>
@@ -110,8 +101,8 @@
 			</objectives>
 		</stage>
 		<stage name="DoItYourself2"
-		nextStageOnFailure="DoItYourselfFailure"
-		nextStageOnSuccess="DoItYourselfSuccess">
+				nextStageOnFailure="DoItYourselfFailure"
+				nextStageOnSuccess="DoItYourselfSuccess">
 			<modifications>
 				<playerSelector>
 					<conditions>

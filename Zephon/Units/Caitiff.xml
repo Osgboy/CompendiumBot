@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" dlc="DLC2">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest1"
+				groupMemberDeltaX="120"
+				groupMemberDeltaY="70"
+				material="Units/Caitiff"
+				mesh="Units/Caitiff"
+				normalWeight="0.1"
+				scale="1 1 1"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="FusedBillhooks">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="LeechingTouch"
+				enabled="0"
+				slotName="LeechingTouch">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<algaeCost base="10"/> <!-- %algaeCost base tier=7 factor=0.167 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=7 factor=0.167 -->
+				<armor base="2"/>
+				<energyCost base="20"/> <!-- %energyCost base tier=7 factor=0.333 -->
+				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=7 factor=0.333 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=7 factor=0.333 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=7 factor=0.333 -->
+				<groupSizeMax base="3"/>
+				<hitpointsMax base="8"/> <!-- %hitpointsMax base tier=5 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/CaitiffAbility0"
+						responseSound="Responses/Units/CaitiffAppear"
+						sound="Units/CaitiffAppear"
+						soundCount="3"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/CaitiffCharge"
+						meleeAnimation="Units/CaitiffMelee"
+						meleeBeginSwing="0.25"
+						meleeEndSwing="0.35"
+						meleeSound="Units/CaitiffMelee"
+						meleeSoundCount="5"
+						responseSound="Responses/Units/CaitiffAttack"
+						responseSoundCount="3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/CaitiffDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/CaitiffDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CaitiffImpact"
+						responseSound="Responses/Units/CaitiffEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/CaitiffHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/CaitiffHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>	
+		<idle>
+			<model>
+				<idle animation="Units/CaitiffIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/CaitiffKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/CaitiffMove"
+						responseSound="Responses/Units/CaitiffMove"
+						responseSoundCount="3"
+						sound="Units/DeformityMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/CaitiffPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/CaitiffSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/CaitiffHoldPosition"/>
+			</model>
+		</skip>
+		<unitAction name="Infinite"
+				cooldown="10"
+				disableable="1"
+				passive="1">
+			<model>
+				<action responseSound="Responses/Units/CaitiffInfinite"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Infinite"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<useWeapon weaponSlotName="LeechingTouch"
+				cooldown="1">
+			<model>
+				<attack chargeAnimation="Units/CaitiffCharge"
+						meleeAnimation="Units/CaitiffAbility1"
+						meleeBeginSwing="0.25"
+						meleeEndSwing="0.35"
+						meleeSound="Units/CaitiffLeechingTouch"
+						meleeSoundCount="5"
+						responseSound="Responses/Units/CaitiffLeechingTouch"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="Desiccated"/>
+		<trait type="Elusive" requiredUpgrade="Elusive"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
+	</traits>
+</unit>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" dlc="DLC2">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Chest"
+				material="Units/JaegerR2"
+				mesh="Units/JaegerR2"
+				normalWeight="0.1"
+				scale="0.7 0.7 0.7"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="BreacherShotgunShell"
+				slotName="BreacherShotgunShell">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"
+						 fireInterval="1.0"/>
+			</models>
+		</weapon>
+		<weapon type="BreacherShotgunSlug"
+				enabled="0"
+				slotName="BreacherShotgunSlug">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"
+						 fireInterval="1.0"/>
+			</models>
+		</weapon>
+		<weapon type="GrenadePod"
+				count="2"
+				enabled="0"
+				slotName="GrenadePod">
+			<models>
+				<grenadeWeapon muzzleBone="GrenadeMuzzle"
+						muzzleCount="6"
+						grenadeBlueprint="Units/MilitantAntiArmorGrenade"
+						fireInterval="0.67"/>
+			</models>
+		</weapon>
+		<weapon type="None"
+				requiredUpgrade="VerticalThrusters">
+			<models>
+				<weapon bone="Chest"
+						material="Units/JaegerR2Jetpack"
+						mesh="Units/JaegerR2Jetpack"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="60"/> <!-- %mineralsCost base tier=7 factor=1 -->
+				<mineralsUpkeep base="3.0"/> <!-- %mineralsUpkeep base tier=7 factor=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2Appear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/JaegerR2Attack"
+						beginFire="1.17"
+						endFire="1.27"
+						responseSound="Responses/Units/JaegerR2Attack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/JaegerR2Die0"
+						sound="Units/JaegerR2Die"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/JaegerR2Impact"
+						responseSound="Responses/Units/JaegerR2EndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2HoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2HoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/JaegerR2Idle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2Kill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/JaegerR2Move"
+						responseSound="Responses/Units/JaegerR2Move"
+						responseSoundCount="3"
+						sound="Units/JaegerR2Move"
+						soundFadeInDuration="1.0"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2Poke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2Select"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/JaegerR2HoldPosition"/>
+			</model>
+		</skip>
+		<cycleWeapon interfaceSounds="Interface/Charge Interface/Overcharge"
+				weaponSlotNames="BreacherShotgunShell BreacherShotgunSlug"/>
+		<useWeapon weaponSlotName="GrenadePod"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<attack animation="Units/JaegerR2Ability0"
+						beginFire="1.0"
+						endFire="1.67"
+						responseSound="Responses/Units/JaegerR2GrenadePod"/>
+			</model>
+		</useWeapon>
+		<fly name="VerticalThrusters"
+				cooldown="3"
+				requiredUpgrade="VerticalThrusters">
+			<model>
+				<action animation="Units/JaegerR2AltMove"
+						effectBlueprint="Effects/JaegerR2VerticalThrusters"
+						sound="Units/JaegerR2VerticalThrusters"
+						soundFadeInDuration="0.33"
+						responseSound="Responses/Units/JaegerR2VerticalThrusters"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</fly>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Large"/>		
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
+		<trait type="Mechanical"/>
+		<trait type="VanguardShield"/>
+	</traits>
+</unit>

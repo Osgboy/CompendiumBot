@@ -1,0 +1,135 @@
+<quest firstTurn="60" dlc="DLC2">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="AssaultStormhearth" nextStage="AssaultStormhearth"/>
+				<option name="BegAndBargain" nextStage="BegAndBargain"/>
+			</options>
+		</stage>
+		<stage name="AssaultStormhearth"
+				nextStageOnSuccess="AssaultStormhearthSuccess"
+				nextStageOnFailure="AssaultStormhearthFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="12">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addTokenToTile name="StormOrigin"/>
+							<addStormOfStorms type="StormOfStorms"/>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="StormhearthFacility" name="Units/StormhearthFacility" token="Stormhearth"
+									neutralPlayer="1" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Reaver" count="3" rankMin="3" rankMax="5" neutralPlayer="1" skipOverwatchOnNextTileEnter="1"/>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Stormhearth"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<setPrimaryEnemy/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killMarkedUnit name="KillStormhearthFacility" token="Stormhearth"/>
+			</objectives>
+		</stage>
+		<stage name="AssaultStormhearthSuccess">
+			<options>
+				<option name="TakeOverFacility" nextStage="TakeOverFacility"/>
+				<option name="DestroyFacility" nextStage="DestroyFacility"/>
+			</options>
+		</stage>
+		<stage name="TakeOverFacility">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="StormhearthFacility" name="Units/StormhearthFacility" token="Stormhearth" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>
+		<stage name="DestroyFacility">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="80"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="BegAndBargain">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ApolineNegotiation" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="AssaultStormhearthFailure"/>
+	</stages>
+ </quest>

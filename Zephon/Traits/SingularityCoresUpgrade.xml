@@ -8,21 +8,13 @@
 				</building>
 			</perBuildingConditions>
 			<effects>
-				<mineralsCost mul="-0.2"/>
-				<productionCost mul="-0.2"/>
+				<singularityCores add="0.2"/>
 			</effects>
 		</perBuildingInOwnCitiesModifier>
-		<perBuildingInOwnCitiesModifier effectDescription="SingularityCoresUpgrade"
-				visible="0">
-			<perBuildingConditions>
-				<building>
-					<type name="SingularityCores"/>
-				</building>
-			</perBuildingConditions>
+		<modifier visible="0">
 			<effects>
-				<mineralsCost min="0"/>
-				<productionCost min="1"/>
+				<singularityCores add="-0.2"/>
 			</effects>
-		</perBuildingInOwnCitiesModifier>
+		</modifier>
 	</modifiers>
 </trait>

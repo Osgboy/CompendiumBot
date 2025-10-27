@@ -1,0 +1,472 @@
+<quest firstTurn="-1">
+ 	<conditions>
+		<player>
+			<faction name="InfiniteCount"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="ConquerorPath" nextStage="ConquerorPath"/>
+				<option name="PoetPath" nextStage="PoetPath"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="ConquerorPath"
+				nextStageOnSuccess="ConquerorPathSuccess">
+			<objectives>
+				<killUnit name="CreateCaitiffWithPerfectForever" count="3">
+					<conditions>
+						<trait type="PerfectForever"/>
+					</conditions>
+				</killUnit>
+			</objectives>
+		</stage>
+		<stage name="ConquerorPathSuccess">
+			<options>
+				<option name="ThreeStrikes" nextStage="ThreeStrikes"/>
+			</options>
+		</stage>
+		<stage name="ThreeStrikes" nextStageOnSuccess="ThreeStrikesSuccess">
+			<modifications>	
+				<nearCityTileSelector count="3" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="Village" token="Village" name="Units/Village" neutralPlayer="1" skipOverwatchOnNextTileEnter="1"/>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>	
+			<objectives>
+				<killUnit name="KillVillage" anyKiller="1" count="3" highlight="1">
+					<conditions>
+						<type name="Village"/>
+					</conditions>
+				</killUnit>
+			</objectives>
+		</stage>
+		<stage name="ThreeStrikesSuccess">
+			<options>
+				<option name="ConquerorsChoice" nextStage="ConquerorsChoice"/>
+			</options>
+		</stage>
+		<stage name="ConquerorsChoice" nextStageOnSuccess="ConquerorsChoiceSuccess">
+			<objectives>
+				<executePlayerOrder name="ExecuteTimeOutOfJoint"
+						count="3"
+						orderName="TimeOutOfJoint"/>
+			</objectives>
+		</stage>
+		<stage name="ConquerorsChoiceSuccess">
+			<options>
+				<option name="ConquerorsInfinity" nextStage="ConquerorsInfinity"/>
+				<option name="ConquerorsPresent" nextStage="ConquerorsPresent"/>
+			</options>
+		</stage>
+		<stage name="ConquerorsInfinity" nextStageOnSuccess="ConquerorsInfinitySuccess">
+			<modifications>
+				<nearCityTileSelector targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithIokSwarm">
+					<unitConditions>
+						<type name="IokSwarm"/>
+					</unitConditions>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="ConquerorsInfinitySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="TheLooper"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ConquerorsPresent" nextStageOnSuccess="ConquerorsPresentSuccess">
+			<modifications>
+				<nearCityTileSelector targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithPhenarisHunter">
+					<unitConditions>
+						<type name="PhenarisHunter"/>
+					</unitConditions>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="ConquerorsPresentSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="TheArrival"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PoetPath" nextStageOnSuccess="PoetPathSuccess">	
+			<objectives>
+				<executeDiplomacyAction name="ExecuteDiplomaticActions"
+						count="5">
+					<targetActions>
+						<action name="AcceptAlliance"/>
+						<action name="AcceptAllianceTermination"/>
+						<action name="AcceptAllianceTerminationWithThirdParty/AcceptParty"/>
+						<action name="AcceptAllianceWithThirdParty/AcceptParty"/>
+						<action name="AcceptGift/AcceptAmount"/>
+						<action name="AcceptMapSharing"/>
+						<action name="AcceptPeace"/>
+						<action name="AcceptPeaceWithThirdParty/AcceptParty"/>
+						<action name="AcceptSupport/AcceptType"/>
+						<action name="AcceptTradeAgreement"/>
+						<action name="AcceptTradeAgreementTermination"/>
+						<action name="AcceptTradeAgreementTerminationWithThirdParty/AcceptParty"/>
+						<action name="AcceptTradeAgreementWithThirdParty/AcceptParty"/>
+						<action name="AcceptTribute/AcceptAmount"/>
+						<action name="AcceptTroopWithdrawal"/>
+						<action name="AcceptWar"/>
+						<action name="AcceptWarAgainstThirdParty/AcceptParty"/>
+					</targetActions>
+				</executeDiplomacyAction>
+			</objectives>
+		</stage>
+		<stage name="PoetPathSuccess">
+			<options>
+				<option name="FiveSoldiers" nextStage="FiveSoldiers"/>
+			</options>
+		</stage>
+		<stage name="FiveSoldiers" nextStageOnSuccess="FiveSoldiersSuccess">	
+			<modifications>	
+				<nearCityTileSelector count="5" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addTokenToTile name="FiveSoldiers"/>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<randomTileSelector count="2">
+					<conditions>
+						<tile>
+							<token name="FiveSoldiers"/>
+						</tile>
+					</conditions>
+				</randomTileSelector>			
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addFeature type="FiveSoldiers1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<randomTileSelector count="2">
+					<conditions>
+						<tile>
+							<token name="FiveSoldiers"/>
+							<noFeature type="FiveSoldiers1"/>
+						</tile>
+					</conditions>
+				</randomTileSelector>			
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addFeature type="FiveSoldiers3"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<randomTileSelector count="1">
+					<conditions>
+						<tile>
+							<token name="FiveSoldiers"/>
+							<noFeature type="FiveSoldiers1"/>
+							<noFeature type="FiveSoldiers3"/>
+						</tile>
+					</conditions>
+				</randomTileSelector>			
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addFeature type="FiveSoldiers6"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<tileSelector>
+					<conditions>
+						<tile>
+							<feature type="FiveSoldiers1"/>
+						</tile>
+					</conditions>
+				</tileSelector>
+				<tileSelector clearSelection="0">
+					<conditions>
+						<tile>
+							<feature type="FiveSoldiers3"/>
+						</tile>
+					</conditions>
+				</tileSelector>
+				<tileSelector clearSelection="0">
+					<conditions>
+						<tile>
+							<feature type="FiveSoldiers6"/>
+						</tile>
+					</conditions>
+				</tileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithGroupSize1"
+						selectionBegin="0" selectionEnd="1">
+					<tileModifiers>
+						<modifier>
+							<effects>
+								<removeFeature type="FiveSoldiers1"/>
+							</effects>
+						</modifier>
+					</tileModifiers>
+					<unitConditions>
+						<groupSize equal="1"/>
+					</unitConditions>
+				</visitTile>
+				<visitTile name="VisitTileWithGroupSize3"
+						selectionBegin="2" selectionEnd="3">
+					<tileModifiers>
+						<modifier>
+							<effects>
+								<removeFeature type="FiveSoldiers3"/>
+							</effects>
+						</modifier>
+					</tileModifiers>
+					<unitConditions>
+						<groupSize equal="3"/>
+					</unitConditions>
+				</visitTile>
+				<visitTile name="VisitTileWithGroupSize6"
+						selectionBegin="4" selectionEnd="4">
+					<tileModifiers>
+						<modifier>
+							<effects>
+								<removeFeature type="FiveSoldiers6"/>
+							</effects>
+						</modifier>
+					</tileModifiers>
+					<unitConditions>
+						<groupSize equal="6"/>
+					</unitConditions>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="FiveSoldiersSuccess">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="FiveSoldiers1"/>
+							<removeFeature type="FiveSoldiers3"/>
+							<removeFeature type="FiveSoldiers6"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<options>
+				<option name="PoetsChoice" nextStage="PoetsChoice"/>
+			</options>
+		</stage>
+		<stage name="PoetsChoice"
+				nextStageOnFailure="PoetsChoiceFailure"	
+				nextStageOnSuccess="PoetsChoiceSuccess">
+			<modifications>
+				<nearCityTileSelector count="6" targetDistance="12">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Deformity" name="Units/Deformity" token="OneSurvives"
+									rankMin="10" rankMax="10" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<nearCityTileSelector count="1" targetDistance="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithDeformity">
+					<unitConditions>
+						<token name="OneSurvives"/>
+					</unitConditions>
+				</visitTile>
+				<keepUnitsAlive name="KeepDeformityAlive">
+					<conditions>
+						<token name="OneSurvives"/>
+					</conditions>
+				</keepUnitsAlive>
+			</objectives>
+		</stage>
+		<stage name="PoetsChoiceFailure">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="OneSurvives"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="PoetsChoiceSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="OneSurvives"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<options>
+				<option name="PoetsInfinity" nextStage="PoetsInfinity"/>
+				<option name="PoetsPresent" nextStage="PoetsPresent"/>
+			</options>
+		</stage>
+		<stage name="PoetsInfinity">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="HungerEmbraced" duration="10"/>
+							<addUpgrade name="GourmandsFate"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PoetsPresent"
+			nextStageOnSuccess="PoetsPresentSuccess">
+			<objectives>
+				<surviveInvasion name="SurviveVoiceInvasion" strength="12" waves="3">
+					<attackers>
+						<unit type="Caitiff" count="2"/>
+						<unit type="PhenarisEpicurean" count="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="PoetsPresentSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="CadentialTravel"/>
+							<unlockAchievement name="BecomingUnbound"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

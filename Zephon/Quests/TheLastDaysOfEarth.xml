@@ -211,6 +211,27 @@
 				<option name="OK" resolveConclusionStages="1"/>
 			</options>
 		</stage>
+		<stage name="TheMartialEthic" concludesStage="ArenaCyberVictory" minVersion="1.2.0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="Quakecaller"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
+		</stage>
 		<stage name="ThePlague">
 			<modifications>
 				<playerSelector>

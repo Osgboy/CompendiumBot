@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onTraitAdded>
+		<unit>
+			<area affect="Unit" weight="1">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noTrait type="Headquarters"/>
+								<noTrait type="Hero"/>
+							</unit>
+						</conditions>
+						<effects>
+							<addTrait type="JustShipItDebuffAttacks"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="JustShipIt"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Unit" weight="1">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noTrait type="Headquarters"/>
+								<noTrait type="Hero"/>
+							</unit>
+						</conditions>
+						<effects>
+							<addTrait type="JustShipItDebuffAttacksTaken"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="JustShipIt"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Unit" weight="1">
+				<modifiers>
+					<modifier>
+						<conditions>
+							<unit>
+								<noTrait type="Headquarters"/>
+								<noTrait type="Hero"/>
+							</unit>
+						</conditions>
+						<effects>
+							<addTrait type="JustShipItDebuffMovement"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="JustShipIt"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitAdded>
+</trait>

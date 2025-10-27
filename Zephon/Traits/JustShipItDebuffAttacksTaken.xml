@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<opponentModifiers>
+ 		<modifier effectDescription="AgainstThisUnit">
+			<effects>
+				<attacks mul="0.167"/>
+			</effects>
+		</modifier>
+	</opponentModifiers>
+	<modifiers>
+		<modifier requiredUpgrade="JustShipItUpgrade">
+			<effects>
+				<influence add="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

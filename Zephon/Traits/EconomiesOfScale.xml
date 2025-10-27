@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit match="Any">
+					<typeLimit less="1"/>
+					<typeLimit greater="1"/>
+				</unit>
+			</conditions>
+			<effects>
+				<duplicateTypeCost mul="-0.05"/>
+				<duplicateTypeCostLimit mul="-0.2"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="EconomiesOfScaleUpgrade">
+			<conditions>
+				<unit match="Any">
+					<typeLimit less="1"/>
+					<typeLimit greater="1"/>
+				</unit>
+			</conditions>
+			<effects>
+				<duplicateTypeCostLimit mul="-0.1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="EconomiesOfScaleUpgrade2">
+			<conditions>
+				<unit match="Any">
+					<typeLimit less="1"/>
+					<typeLimit greater="1"/>
+				</unit>
+			</conditions>
+			<effects>
+				<duplicateTypeCostLimit mul="-0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

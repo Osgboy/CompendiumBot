@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/PerfectForever" visibleOnUnit="1">
+	<onUnitDisappeared>
+		<unit>
+			<area affect="Tile">
+				<modifiers>
+					<modifier effectDescription="OnDeath">
+						<conditions>
+							<unit>
+								<noTrait type="Infinite"/>
+							</unit>
+						</conditions>
+						<effects>
+							<addUnit type="Caitiff" avoidBleed="0" avoidCity="0" consumedAction="1" consumedMovement="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+		<tile>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="PerfectForeverUpgrade">
+						<conditions>
+							<unit match="Any">
+								<noTrait type="Infinite"/>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<level add="4"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="PerfectForeverUpgrade2">
+						<conditions>
+							<unit match="Any">
+								<noTrait type="Infinite"/>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<level add="4"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="ToSpawnedUnit">
+						<conditions>
+							<unit match="Any">
+								<noTrait type="Infinite"/>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpointsFromMax add="-0.667"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="InfiniteCountAffinityUpgrade">
+						<conditions>
+							<unit match="Any">
+								<noTrait type="Infinite"/>
+								<ally/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpointsFromMax add="0.333"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onUnitDisappeared>
+</trait>

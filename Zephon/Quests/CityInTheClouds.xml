@@ -1,0 +1,279 @@
+<quest firstTurn="80" dlc="DLC2">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="HuntForTheCity" nextStage="HuntForTheCity"/>
+				<option name="LetItGo" nextStage="LetItGo"/>
+			</options>
+		</stage>
+		<stage name="HuntForTheCity"
+				nextStageOnSuccess="HuntForTheCitySuccess">
+			<modifications>
+				<nearCityTileSelector count="3" targetDistance="8">
+					<conditions>
+						<tile>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithFlyingUnit">
+					<unitConditions>
+						<trait type="Flying"/>
+					</unitConditions>
+				</visitTile>
+			</objectives>
+		</stage>
+		<stage name="HuntForTheCitySuccess">
+			<options>
+				<option name="SupportRulers" nextStage="SupportRulers"/>
+				<option name="SupportRebels" nextStage="SupportRebels"/>
+				<option name="DestroyTheCity" nextStage="DestroyTheCity"/>
+				<option name="IgnoreThisConflict" nextStage="LetItGo"/>
+			</options>
+		</stage>
+		<stage name="SupportRulers"
+				nextStageOnSuccess="SupportRulersSuccess"
+				nextStageOnFailure="SupportRulersFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="CaelumCete" name="Units/CaelumCete" neutralPlayer="1" token="CaelumCete" skipOverwatchOnNextTileEnter="1"/>
+							<reveal/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/UrsaMajor" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="CaelumCete"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="Invulnerable"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/UrsaMajor"
+						turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="SupportRulersSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="CaelumCete"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="Invulnerable"/>
+							<changePlayer/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUpgrade name="CaelumCeteRuler"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="SupportRulersFailure"/>
+		<stage name="SupportRebels"
+				nextStageOnSuccess="SupportRebelsSuccess"
+				nextStageOnFailure="SupportRebelsFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="3">
+					<conditions>
+						<tile>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="PhoenixInterceptor" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="TH3Corsair" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnit type="CaelumCete" name="Units/CaelumCete" neutralPlayer="1" token="CaelumCete" skipOverwatchOnNextTileEnter="1"/>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="CaelumCete"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="Invulnerable"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillUrsaMajorDefenders" turns="10">
+					<defenders>
+						<unit type="OphanimCarrier" count="4" rankMin="5" rankMax="8" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="SupportRebelsSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="CaelumCete"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="CaelumCeteRebel"/>
+							<removeTrait type="Invulnerable"/>
+							<changePlayer/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="SupportRebelsFailure"/>
+		<stage name="DestroyTheCity" nextStageOnSuccess="DestroyTheCitySuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noFeatureCategory name="SpecialResource"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillCityInTheClouds">
+					<boss type="CaelumCete" name="Units/CaelumCete"/>
+					<defenders>
+						<unit type="OphanimCarrier" count="3" rankMin="5" rankMax="8" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="TH3Corsair" count="1" rankMin="5" rankMax="8" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="PhoenixInterceptor" count="2" rankMin="5" rankMax="8" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="DestroyTheCitySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<antimatter add="20"/>
+							<transuranium add="20"/>
+							<singularityCores add="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="LetItGo"/>
+	</stages>
+ </quest>

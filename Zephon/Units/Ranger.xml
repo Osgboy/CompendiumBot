@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" dlc="DLC2">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="60"
+				material="Units/Ranger"
+				mesh="Units/Ranger"
+				normalWeight="0.1"
+				scale="0.7 0.7 0.7"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="SubmachineGun">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="Katana">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="AntiArmorGrenade"
+				enabled="0"
+				requiredUpgrade="AntiArmorGrenade"
+				slotName="AntiArmorGrenade">
+			<models>
+				<grenadeWeapon bone="Grenade2"
+						fireSound="Units/MilitantThrowGrenade"
+						fireSoundBeginCount="1"
+						fireSoundBeginDuringWindup="1"
+						grenadeBlueprint="Units/MilitantAntiArmorGrenade"
+						material="Units/MilitantAntiArmorGrenade"
+						mesh="Units/MilitantAntiArmorGrenade"
+						muzzleBone="Grenade2"
+						windupDuration="1.5"/>
+			</models>
+		</weapon>
+		<weapon type="FragmentationGrenade"
+				enabled="0"
+				requiredUpgrade="FragmentationGrenade"
+				slotName="FragmentationGrenade">
+			<models>
+				<grenadeWeapon bone="Grenade1"
+						fireSound="Units/MilitantThrowGrenade"
+						fireSoundBeginCount="1"
+						fireSoundBeginDuringWindup="1"
+						grenadeBlueprint="Units/MilitantFragmentationGrenade"
+						material="Units/MilitantFragmentationGrenade"
+						mesh="Units/MilitantFragmentationGrenade"
+						muzzleBone="Grenade1"
+						windupDuration="1.5"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<groupSizeMax base="6"/>
+				<hitpointsMax base="2"/> <!-- %hitpointsMax base tier=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=6 factor=0.5 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/RangerAbility0"
+						beginEffect="0.7"
+						effectBlueprint="Effects/TacticalInsertion"
+						responseSound="Responses/Units/RangerAppear"
+						sound="Units/RangerAppear"
+						soundCount="3"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/RangerAttack"
+						beginFire="0.9"
+						endFire="2.1"
+						chargeAnimation="Units/RangerCharge"
+						chargeBeginFire="0.5"
+						chargeEndFire="1.0"
+						meleeAnimation="Units/RangerMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"
+						meleeSound="Units/RangerMelee"
+						meleeSoundCount="3"
+						responseSound="Responses/Units/RangerAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/RangerDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/RangerDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/RangerImpact"
+						responseSound="Responses/Units/RangerEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/RangerHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/RangerHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/RangerIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/RangerKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/RangerMove"
+						responseSound="Responses/Units/RangerMove"
+						responseSoundCount="3"
+						sound="Units/MilitantMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/RangerPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/RangerSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/RangerHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="FragmentationGrenade"
+				cooldown="10"
+				requiredUpgrade="FragmentationGrenade">
+			<model>
+				<attack animation="Units/RangerAbility1"
+						endFire="1.6"
+						responseSound="Responses/Units/RangerFragmentationGrenade"/>
+			</model>
+		</useWeapon>		
+		<useWeapon weaponSlotName="AntiArmorGrenade"
+				cooldown="10"
+				requiredUpgrade="AntiArmorGrenade">
+			<model>
+				<attack animation="Units/RangerAbility1"
+						endFire="1.6"
+						responseSound="Responses/Units/RangerAntiArmorGrenade"/>
+			</model>
+		</useWeapon>
+		<unitCast name="SmokeGrenade"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="10"
+				requiredActionPoints="0"
+				requiredUpgrade="SmokeGrenade">
+			<model>
+				<cast animation="Units/RangerAbility1"
+						responseSound="Responses/Units/RangerSmokeGrenade"
+						sound="Units/MilitantThrowGrenadeBegin"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="SmokeScreen" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<movement equal="0"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Ambush"/>
+		<trait type="Biological"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
+		<trait type="Stealth"/>
+	</traits>
+</unit>

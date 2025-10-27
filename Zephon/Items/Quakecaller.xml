@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human" dlc="DLC2" visible="0">
+	<actions>
+		<unitCast cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/Quakecaller"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnitAndWithHalfAttacksToEnemiesLeftAndRightOfTargetTile">
+									<effects>
+										<weaponDamage weapon="Quakecaller"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<cone affect="Unit" excludeTarget="1">
+							<modifiers>
+								<modifier visible="0">
+									<conditions ignoreForTraitVisibility="1">
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="Quakecaller" factor="0.5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</cone>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

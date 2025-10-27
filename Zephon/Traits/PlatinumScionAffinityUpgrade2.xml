@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<damage mul="0.5"/>
+				<invulnerableDamageReduction mul="0.333"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onUnitDisappeared>
+		<unit>
+			<area affect="SourceAction">
+				<modifiers>
+					<modifier effectDescription="OfFlagshipProductOnDeath">
+						<effects>
+							<charges add="1"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onUnitDisappeared>
+</trait>

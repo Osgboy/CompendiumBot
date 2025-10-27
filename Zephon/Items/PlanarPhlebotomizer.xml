@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Voice" dlc="DLC2">
+	<actions>
+		<unitCast cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/PlanarPhlebotomizer"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addFeature type="Bleed"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<trait type="AmoetiasCaress"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="80"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Uncommon"/>
+	</traits>
+</item>

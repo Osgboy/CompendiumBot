@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/PlatinumScion" tier="6">
+	<conditions>
+		<player>
+			<faction name="PlatinumScion"/>
+		</player>
+	</conditions>
+	<requiredUpgrades>
+		<upgrade name="TheSureThingUpgrade"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

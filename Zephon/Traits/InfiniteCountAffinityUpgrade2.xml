@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForVoiceUnits">
+			<conditions>
+				<unit>
+					<branch name="Voice"/>
+				</unit>
+			</conditions>
+			<effects>
+				<lifeStealFromDamage add="0.25"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

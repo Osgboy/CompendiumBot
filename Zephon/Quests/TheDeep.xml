@@ -15,6 +15,8 @@
 				<option name="OpenQuestion2" nextStage="OpenQuestion2" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhereAreWe"/>
 				<option name="OpenQuestion3" nextStage="OpenQuestion3" onlyVisibleIfSelectable="1" dlc="DLC1" newIfAchievementLocked="MustWeSufferSo"/>
 				<option name="OpenQuestion4" nextStage="OpenQuestion4" onlyVisibleIfSelectable="1" dlc="DLC1" newIfAchievementLocked="CanFreeWillExist"/>
+				<option name="OpenQuestion5" nextStage="OpenQuestion5" onlyVisibleIfSelectable="1" dlc="DLC2" newIfAchievementLocked="WhatAmITruly"/>
+				<option name="OpenQuestion6" nextStage="OpenQuestion6" onlyVisibleIfSelectable="1" dlc="DLC2" newIfAchievementLocked="IsWisdomTheMeasureOfWorth"/>
 				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasZephonTrulyAlive">
 					<conditions>
 						<player>
@@ -116,21 +118,99 @@
 						</player>
 					</conditions>
 				</option>
+				<option name="InfiniteCountVictoryQuestion" nextStage="InfiniteCountVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidIDoomMyFriends">
+					<conditions>
+						<player>
+							<faction name="InfiniteCount"/>
+							<questStageCompleted quest="BecomingUnbound" stage="PoetsPresentSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="PlatinumScionVictoryQuestion" nextStage="PlatinumScionVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasITheBestPersonAliveOrWhat">
+					<conditions>
+						<player>
+							<faction name="PlatinumScion"/>
+							<questStageCompleted quest="TouchTheSky" stage="CarveFaceSunCanon"/>
+						</player>
+					</conditions>
+				</option>
 				<option name="Acceptance" nextStage="Acceptance" onlyVisibleIfSelectable="1">
 					<conditions match="Any">
 						<mutatorActive name="WasZephonTrulyAlive"/>
 						<mutatorActive name="DidOurSacrificeMeanNothing"/>
 						<mutatorActive name="WhyDidHumanityDieAlone"/>
-						<mutatorActive name="DidMyDeathMeanAnything"/>
-						<mutatorActive name="AreYouTheGreatSpeaker"/>
-						<mutatorActive name="WhatPriceForLiberty"/>
-						<mutatorActive name="DidOurUnificationMatter"/>
-						<mutatorActive name="WasPerfectionWorthIt"/>
-						<mutatorActive name="WasITrulyHuman"/>
-						<mutatorActive name="DidHonorBalanceGreed"/>
-						<mutatorActive name="CanLoveBeMoral"/>
-						<mutatorActive name="CanAJourneyBeAnEndInItself"/>
-						<mutatorActive name="CanAnythingRedeemThisHorror"/>
+						<conditions>
+							<mutatorActive name="DidMyDeathMeanAnything"/>
+							<player>
+								<faction name="FallenSoldier"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="AreYouTheGreatSpeaker"/>
+							<player>
+								<faction name="UntoldProphet"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="WhatPriceForLiberty"/>
+							<player>
+								<faction name="RogueOperative"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="DidOurUnificationMatter"/>
+							<player>
+								<faction name="FurtiveTribunal"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="WasPerfectionWorthIt"/>
+							<player>
+								<faction name="HeartlessArtificer"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="WasITrulyHuman"/>
+							<player>
+								<faction name="EmulatedMind"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="DidHonorBalanceGreed"/>
+							<player>
+								<faction name="HonorableAristocrat"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="CanLoveBeMoral"/>
+							<player>
+								<faction name="PracticalRomantic"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="CanAJourneyBeAnEndInItself"/>
+							<player>
+								<faction name="HollowWarlord"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="CanAnythingRedeemThisHorror"/>
+							<player>
+								<faction name="TwistedMother"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="DidIDoomMyFriends"/>
+							<player>
+								<faction name="InfiniteCount"/>
+							</player>
+						</conditions>
+						<conditions>
+							<mutatorActive name="WasITheBestPersonAliveOrWhat"/>
+							<player>
+								<faction name="PlatinumScion"/>
+							</player>
+						</conditions>
 					</conditions>
 				</option>
 			</options>
@@ -174,6 +254,28 @@
 					<modifier>
 						<effects>
 							<unlockMutator name="CanFreeWillExist"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="OpenQuestion5" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WhatAmITruly"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="OpenQuestion6" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="IsWisdomTheMeasureOfWorth"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -322,6 +424,28 @@
 				</playerModifiers>
 			</modifications>
 		</stage>
+		<stage name="InfiniteCountVictoryQuestion" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="DidIDoomMyFriends"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PlatinumScionVictoryQuestion" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="WasITheBestPersonAliveOrWhat"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="Acceptance">
 			<options>
 				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasZephonTrulyAlive2">
@@ -342,51 +466,97 @@
 				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidMyDeathMeanAnything2">
 					<conditions>
 						<mutatorActive name="DidMyDeathMeanAnything"/>
+						<player>
+							<faction name="FallenSoldier"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="AreYouTheGreatSpeaker2">
 					<conditions>
 						<mutatorActive name="AreYouTheGreatSpeaker"/>
+						<player>
+							<faction name="UntoldProphet"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhatPriceForLiberty2">
 					<conditions>
 						<mutatorActive name="WhatPriceForLiberty"/>
+						<player>
+							<faction name="RogueOperative"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidOurUnificationMatter2">
 					<conditions>
 						<mutatorActive name="DidOurUnificationMatter"/>
+						<player>
+							<faction name="FurtiveTribunal"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasPerfectionWorthIt2">
 					<conditions>
 						<mutatorActive name="WasPerfectionWorthIt"/>
+						<player>
+							<faction name="HeartlessArtificer"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasITrulyHuman2">
 					<conditions>
 						<mutatorActive name="WasITrulyHuman"/>
+						<player>
+							<faction name="EmulatedMind"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidHonorBalanceGreed2">
 					<conditions>
 						<mutatorActive name="DidHonorBalanceGreed"/>
+						<player>
+							<faction name="HonorableAristocrat"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanLoveBeMoral2">
 					<conditions>
 						<mutatorActive name="CanLoveBeMoral"/>
+						<player>
+							<faction name="PracticalRomantic"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="HollowWarlordMutatorVictory" nextStage="HollowWarlordMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAJourneyBeAnEndInItself2">
 					<conditions>
 						<mutatorActive name="CanAJourneyBeAnEndInItself"/>
+						<player>
+							<faction name="HollowWarlord"/>
+						</player>
 					</conditions>
 				</option>
 				<option name="TwistedMotherMutatorVictory" nextStage="TwistedMotherMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAnythingRedeemThisHorror2">
 					<conditions>
 						<mutatorActive name="CanAnythingRedeemThisHorror"/>
+						<player>
+							<faction name="TwistedMother"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="InfiniteCountMutatorVictory" nextStage="InfiniteCountMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidIDoomMyFriends2">
+					<conditions>
+						<mutatorActive name="DidIDoomMyFriends"/>
+						<player>
+							<faction name="InfiniteCount"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="PlatinumScionMutatorVictory" nextStage="PlatinumScionMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasITheBestPersonAliveOrWhat2">
+					<conditions>
+						<mutatorActive name="WasITheBestPersonAliveOrWhat"/>
+						<player>
+							<faction name="PlatinumScion"/>
+						</player>
 					</conditions>
 				</option>
 			</options>
@@ -577,6 +747,28 @@
 					<modifier>
 						<effects>
 							<unlockAchievement name="CanAnythingRedeemThisHorror2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="InfiniteCountMutatorVictory" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="DidIDoomMyFriends2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PlatinumScionMutatorVictory" minVersion="1.2.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="WasITheBestPersonAliveOrWhat2"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

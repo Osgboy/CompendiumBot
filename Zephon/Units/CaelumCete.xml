@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="DLC2">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Bone"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Buildings/Buildings"
+				mesh="Units/CaelumCete"
+				normalWeight="0.1"
+				onlyRotateWeapons="1"
+				position="0 0 48"
+				scale="1 1 1"
+				transparent="1"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="3"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="10"/>
+				<movementMax base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<unitAction name="ConstructOphanimCarrier"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				icon="Units/OphanimCarrier"
+				requiredActionPoints="0"
+				requiredUpgrade="CaelumCeteRuler">
+			<beginTargets>
+				<target rangeMax="1">
+					<conditions>
+						<tile>
+							<noFeature type="Volcano"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="OphanimCarrier" 
+												spawnedBySourceUnit="1"
+												avoidBleed="0"
+												avoidCity="0"
+												avoidWater="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>	
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<traits>
+		<trait type="CaelumCeteRebel" requiredUpgrade="CaelumCeteRebel"/>
+		<trait type="Fortification"/>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

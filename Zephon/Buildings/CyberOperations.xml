@@ -58,6 +58,25 @@
 				</modifier>
 			</strategyModifiers>
 		</constructPlayerAction>
+		<constructPlayerAction action="CloneWave"
+				requiredUpgrade="CloneWave">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsCost base="10"/> <!-- %chipsCost base tier=4 factor=0.5 -->
+						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseCyberScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
 		<constructPlayerAction action="BlackHole"
 				requiredUpgrade="BlackHole">
 			<modifiers>

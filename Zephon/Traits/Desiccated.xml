@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="FromFireDamage">
+			<conditions match="Any" ignoreForTraitVisibility="1">
+				<weapon>
+					<trait type="Burning"/>
+				</weapon>
+				<weapon>
+					<type name="Fire"/>
+				</weapon>
+			</conditions>
+			<effects>
+				<damageTaken mul="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="OnFire"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints add="-3"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

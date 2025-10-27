@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Features/ReaverDepot" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<influence add="1"/>
+				<minerals add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<influence mul="0.1"/>
+				<minerals mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="Tile" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every20Turns" visible="0">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="20"/>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addUnit type="Buster" avoidBleed="0" avoidCity="0" homeTile="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Tile" weight="1" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every20Turns" visible="0">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="20"/>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addUnit type="Reaver" avoidBleed="0" avoidCity="0" homeTile="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

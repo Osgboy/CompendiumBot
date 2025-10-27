@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<onWeaponAttacked>
+		<attacker>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="AfterAttackingMechanicalUnit">
+						<conditions ignoreForTraitVisibility="1">
+							<targetUnit>
+								<trait type="Mechanical"/>
+							</targetUnit>
+						</conditions>
+						<effects>
+							<addTrait type="Rustbinged" duration="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onWeaponAttacked>
+</trait>

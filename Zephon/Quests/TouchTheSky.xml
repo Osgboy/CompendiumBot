@@ -1,0 +1,192 @@
+<quest firstTurn="-1">
+ 	<conditions>
+		<player>
+			<faction name="PlatinumScion"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="RiseToTheOccasion" nextStage="RiseToTheOccasion"/>
+				<option name="LetItGo" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="RiseToTheOccasion"
+				nextStageOnSuccess="RiseToTheOccasionSuccess"
+				nextStageOnFailure="TouchTheSkyFail">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="PayResources/RepurposeFunds" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/RepurposeFunds"
+						turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="RiseToTheOccasionSuccess">
+			<options>
+				<option name="ConcordatResearch" nextStage="ConcordatResearch"/>
+			</options>
+		</stage>
+		<stage name="ConcordatResearch"
+				nextStageOnSuccess="ConcordatResearchSuccess"
+				nextStageOnFailure="TouchTheSkyFail">
+			<objectives>
+				<accumulateResearch count="150" turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="ConcordatResearchSuccess">
+			<options>
+				<option name="WhinersAndComplainers" nextStage="WhinersAndComplainers"/>
+				<option name="BargainingTable" nextStage="BargainingTable"/>
+			</options>
+		</stage>
+		<stage name="WhinersAndComplainers"
+				nextStageOnSuccess="WhinersAndComplainersSuccess"
+				nextStageOnFailure="TouchTheSkyFail">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="4">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillLaborUnionUnits" turns="10">
+					<defenders>
+						<unit type="Buster" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="IthurielHarbinger" count="1" rankMin="4" rankMax="6" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Reaver" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Wastelander" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="WhinersAndComplainersSuccess">
+			<options>
+				<option name="CarveFaceSunWhiners" nextStage="CarveFaceSunWhiners"/>
+			</options>
+		</stage>
+		<stage name="CarveFaceSunWhiners" nextStageOnSuccess="CarveFaceSun">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="PayResources/CarveFaceSun" charges="1"/>
+							<addUpgrade name="UnionSuppression"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/CarveFaceSun"/>
+			</objectives>
+		</stage>
+		<stage name="BargainingTable" nextStageOnSuccess="BargainingTableSuccess">
+			<objectives>
+				<executePlayerOrder name="ExecutePlayerAbilityProductRecall"
+						count="4"
+						orderName="JustShipItUpgrade2"/>
+			</objectives>
+		</stage>
+		<stage name="BargainingTableSuccess">
+			<options>
+				<option name="CarveFaceSunBargaining" nextStage="CarveFaceSunBargaining"/>
+			</options>
+		</stage>
+		<stage name="CarveFaceSunBargaining" nextStageOnSuccess="CarveFaceSun">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="PayResources/CarveFaceSun" charges="1"/>
+							<addUpgrade name="TediousNegotiations"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/CarveFaceSun"/>
+			</objectives>
+		</stage>
+		<stage name="CarveFaceSun">
+			<options>
+				<option name="CarveFaceSunCanon" nextStage="CarveFaceSunCanon"/>
+				<option name="CarveFaceSunHighRoad" nextStage="CarveFaceSunHighRoad"/>
+			</options>
+		</stage>
+		<stage name="CarveFaceSunCanon">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="SolarVisage"/>
+							<unlockAchievement name="TouchTheSky"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="CarveFaceSunHighRoad">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="AccidentalBrilliance"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="TouchTheSkyFail"/>
+	</stages>
+</quest>

@@ -32,16 +32,12 @@
 				</playerModifiers>
 				<nearCityTileSelector count="1" targetDistance="8">
 					<conditions>
-						<tile>
-							<land/>
-							<noUnit/>
-							<noFeatureCategory name="Cache"/>
-							<noFeatureCategory name="SpecialResource"/>
-							<noFeature type="AbkhanDrey"/>
+						<tile>			
+							<buildingSlots greater="0"/>
+							<noCity/>
 							<noFeature type="Bleed"/>
-							<noFeature type="City"/>
-							<noFeature type="Fire"/>
-							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
 						</tile>
 					</conditions>
 				</nearCityTileSelector>

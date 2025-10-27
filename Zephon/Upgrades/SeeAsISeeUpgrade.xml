@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/InfiniteCount" tier="8">
+	<conditions>
+		<player>
+			<faction name="InfiniteCount"/>
+		</player>
+	</conditions>
+	<requiredUpgrades>
+		<upgrade name="SeeAsISee"/>
+	</requiredUpgrades>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

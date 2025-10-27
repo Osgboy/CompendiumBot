@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnWeapon="1">
+	<modifiers>
+ 		<modifier effectDescription="AgainstFortifications">
+			<conditions ignoreForTraitVisibility="1">
+				<targetUnit>
+					<trait type="Fortification"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damage mul="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

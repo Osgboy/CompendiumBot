@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/Infinite" visibleOnUnit="1">
+	<onUnitDisappeared>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnDeath">
+						<effects>
+							<hitpointsFromMax add="0.333"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnDeath" requiredUpgrade="InfiniteCountAffinityUpgrade">
+						<effects>
+							<hitpointsFromMax add="0.333"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="SourceAction">
+				<modifiers>
+					<modifier effectDescription="OnDeath">
+						<effects>
+							<cooldown add="10"/>
+						</effects>
+					</modifier>
+				</modifiers> 
+			</area>
+		</unit>
+	</onUnitDisappeared>
+</trait>

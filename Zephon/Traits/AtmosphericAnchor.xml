@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Features/AtmosphericAnchor" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<chips add="1"/>
+				<energy add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<chips mul="0.1"/>
+				<energy mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="TilePlayer" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every10Turns">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="10"/>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addPlayerAction type="IonDischarge" charges="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

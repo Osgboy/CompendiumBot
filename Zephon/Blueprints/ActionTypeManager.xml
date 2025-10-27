@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manager fallback="Units/Sentry/Poke"> <!-- Temporary 1.1.6 fix. Remove with DLC2. -->
+<manager>
 	<actions>
 		<playerCast name="AntiparticlePurge">
 			<model>
@@ -324,6 +324,52 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerCast name="CloneWave">
+			<model>
+				<cast blueprint="Effects/CloneWave"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<city>
+							<populationLimitFree greater="0"/>
+						</city>
+						<unit>
+							<ally/>
+							<type name="Headquarters"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="City">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedCity">
+									<effects>
+										<accumulatedGrowth add="15"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="CloneWaveUpgrade">
+									<effects>
+										<accumulatedGrowth add="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<city>
+							<populationIdle less="0"/>
+						</city>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
 		<playerCast name="EnrichedAlloys">
 			<model>
 				<cast blueprint="Effects/EnrichedAlloys"/>
@@ -562,6 +608,44 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerCast name="IonDischarge">
+			<model>
+				<cast blueprint="Effects/IonDischarge"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>					
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnit">
+									<effects>
+										<weaponDamage weapon="IonDischarge"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
 		<playerCast name="Landmines">
 			<model>
 				<cast blueprint=""
@@ -616,13 +700,13 @@
 						<tile>
 							<noTrait type="LogisticsExperts"/>
 							<featureCategory name="SpecialResource"/>
-							<control/>
+							<ally/>
 						</tile>
 					</conditions>
 					<areas>
 						<area affect="Tile">
 							<modifiers>
-								<modifier>
+								<modifier effectDescription="ToTargetAlliedOutpost">
 									<effects>
 										<addTrait type="LogisticsExperts" duration="5"/>
 									</effects>
@@ -645,6 +729,25 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerAction name="PayResources/CarveFaceSun"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0" requiredUpgrade="UnionSuppression">
+					<effects>
+						<antimatterCost base="12"/>
+						<singularityCoresCost base="12"/>
+					</effects>
+				</modifier>
+				<modifier visible="0" requiredUpgrade="TediousNegotiations">
+					<effects>
+						<antimatterCost base="24"/>
+						<singularityCoresCost base="6"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerAction name="PayResources/CajoleAnchorite"
 				durationInSeconds="0.1"
 				icon="Actions/ParlayWithTheAnchorite"
@@ -708,6 +811,20 @@
 				</modifier>
 			</modifiers>
 		</playerAction>
+		<playerAction name="PayResources/RepurposeFunds"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsCost base="10"/>
+						<influenceCost base="60"/>
+						<mineralsCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerAction name="PayResources/StrikeADeal"
 				durationInSeconds="0.1"
 				icon="Actions/PayResources"
@@ -758,6 +875,20 @@
 						<foodCost base="20"/>
 						<mineralsCost base="20"/>
 						<energyCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/UrsaMajor"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterCost base="2"/>
+						<transuraniumCost base="4"/>
+						<singularityCoresCost base="2"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -1036,6 +1167,50 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerAction name="TacticalInsertion">
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addUnit type="Ranger"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="TacticalInsertionUpgrade">
+									<effects>
+										<level add="5"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerAction>
 		<playerCast name="TacticalNuclearMissile">
 			<model>
 				<cast blueprint="Effects/TacticalNuclearMissile"
@@ -1295,6 +1470,69 @@
 									</effects>
 								</modifier>
 							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="VorodaisBargain">
+			<model>
+				<cast blueprint="Effects/VorodaisBargain"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<control/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<addTrait type="NoDeathMoraleOrExperience"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction less="0.1"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<hitpointsFromMax add="-1.0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="UnitPlayer">
+							<modifiers>
+								<modifier>
+									<effects>
+										<influence add="40"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="VorodaisBargainUpgrade">
+									<effects>
+										<influence add="10"/>
+									</effects>
+								</modifier>
+							</modifiers>
 						</area>
 					</areas>
 				</target>

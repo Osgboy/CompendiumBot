@@ -16,9 +16,9 @@
 	</modifiers>
 	<onTurnStarted>
 		<tile>
-			<area affect="TilePlayer" weight="1197" sendNotification="1">
+			<area affect="TilePlayer" weight="2394" sendNotification="1">
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1">
+			<area affect="TilePlayer" weight="6" sendNotification="1">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -32,7 +32,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1">
+			<area affect="TilePlayer" weight="6" sendNotification="1">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -46,7 +46,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1">
+			<area affect="TilePlayer" weight="6" sendNotification="1">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -60,7 +60,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1">
+			<area affect="TilePlayer" weight="6" sendNotification="1">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -74,7 +74,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -88,7 +88,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -102,7 +102,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -116,7 +116,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -130,7 +130,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -144,7 +144,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -158,7 +158,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -172,7 +172,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="6" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -186,7 +186,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -200,7 +200,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -214,7 +214,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -228,7 +228,21 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="HoloDecoy"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -242,7 +256,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -256,7 +270,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -270,7 +284,21 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="InvasiveAuditor"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -284,7 +312,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -298,7 +326,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -312,7 +340,21 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="PlanarPhlebotomizer"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -326,7 +368,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -340,7 +382,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -354,7 +396,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -368,7 +410,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -382,7 +424,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -396,7 +438,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -410,7 +452,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>
@@ -424,7 +466,7 @@
 					</modifier>
 				</modifiers>
 			</area>
-			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
 				<modifiers>
 					<modifier visible="0">
 						<conditions>

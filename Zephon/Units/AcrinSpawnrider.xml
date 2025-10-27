@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Acrin" dlc="DLC2" minAdvancement="5">
+	<model>
+		<unit bloodBone="Chest"
+				bloodBlueprint="Effects/LargeBlood"
+				material="Units/AcrinSpawnrider"
+				mesh="Units/AcrinSpawnrider"
+				normalWeight="0.1"
+				position="0 0 0"
+				scale="1.0 1.0 1.0"/>
+	</model>
+	<weapons>
+		<weapon type="BleedIncitation">
+			<models>
+				<beamWeapon muzzleBone="Muzzle" muzzleCount="3"/>
+			</models>
+		</weapon>
+		<weapon type="ThricefoldHunger"
+				enabled="0"
+				slotName="ThricefoldHunger">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<foodCost base="80"/> <!-- %foodCost base tier=10 factor=0.5 -->
+				<foodUpkeep base="4.0"/> <!-- %foodUpkeep base tier=10 factor=0.5 -->
+				<armor base="4"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="5"/>
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+				<algaeCost base="40"/> <!-- %algaeCost base tier=10 factor=0.25 -->
+				<algaeUpkeep base="2.0"/> <!-- %algaeUpkeep base tier=10 factor=0.25 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/> <!-- Native leader units are all built from infantry building -->
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/AcrinSpawnriderAttack"
+						beginFire="1.0"
+						endFire="2.0"
+						responseSound="Responses/Units/AcrinSpawnriderAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AcrinSpawnriderDie0"
+						groundImpact="1.3"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/ReamingCrodeusDie"
+						voiceSound="Units/AcrinSpawnriderDieVoice"
+						voiceSoundCount="1"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AcrinSpawnriderImpact"
+						responseSound="Responses/Units/AcrinSpawnriderEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AcrinSpawnriderIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AcrinSpawnriderMove"
+						responseSound="Responses/Units/AcrinSpawnriderMove"
+						responseSoundCount="3"
+						sound="Units/ReamingCrodeusMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/AcrinSpawnriderHoldPosition"/>
+			</model>
+		</skip>
+		<unitAction name="PsychicSpoor"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToUnitAndAdjacentAlliedUnits">
+									<effects>
+										<addTrait type="PsychicSpoor"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+		<useWeapon weaponSlotName="ThricefoldHunger"
+				cooldown="3">
+			<model>
+				<attack chargeAnimation="Units/AcrinSpawnriderCharge"
+						meleeAnimation="Units/AcrinSpawnriderMelee"
+						meleeBeginSwing="0.3"
+						meleeEndSwing="0.4"
+						responseSound="Responses/Units/AcrinSpawnriderThricefoldHunger"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="Regeneration"/>
+	</traits>
+</unit>

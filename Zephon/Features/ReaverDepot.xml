@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/ReaverDepot" category="SpecialResource" dlc="DLC2">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="ReaverDepotResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel groundMaterial="Features/ReaverDepotGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Buildings/Buildings"
+				mesh="Features/ReaverDepot"
+				scale="1 1 1"
+				transparent="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="ReaverDepot"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>
