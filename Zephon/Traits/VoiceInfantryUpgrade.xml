@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Buff" icon="Actions/VoiceInfantryUpgrade" visibleOnUnit="1">
+<trait category="Buff" icon="Actions/VoiceInfantryUpgrade" visibleOnBuilding="1">
 	<modifiers>
 		<perBuildingInCityModifier effectDescription="VoiceInfantryUpgrade">
 			<perBuildingConditions>
@@ -7,13 +7,8 @@
 					<type name="VoiceInfantry"/>
 				</building>
 			</perBuildingConditions>
-			<conditions>
-				<unit>
-					<ally/>
-				</unit>
-			</conditions>
 			<effects>
-				<moraleLoss add="-0.167"/>
+				<experience add="2"/>
 			</effects>
 		</perBuildingInCityModifier>
 	</modifiers>

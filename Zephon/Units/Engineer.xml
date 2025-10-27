@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit>
+<unit support="1">
 	<model>
 		<unit bloodBlueprint="Effects/Blood"
 				bloodBone="Chest"
@@ -43,7 +43,6 @@
 		<modifier>
 			<effects>
 				<increaseColonizersScore base="1.0"/>
-<!-- 				<increaseSupportScore base="1.0"/>	 -->		
 			</effects>
 		</modifier>
 	</strategyModifiers>
@@ -281,7 +280,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="Bunker" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0" consumedAction="1"/>
+										<addUnit type="Bunker" spawnedBySourceUnit="1" avoidBleed="0" avoidCity="0" consumedAction="1"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -296,11 +295,23 @@
 										<score add="0.5"/>
 									</effects>
 								</modifier>
-							</scoreModifiers>			
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseMineralsStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 		<submenu name="Terraform"/>
 		<unitCast name="ConstructRoad"
@@ -317,6 +328,11 @@
 				<modifier visible="0">
 					<effects>
 						<mineralsCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="RestlessUpgrade2">
+					<effects>
+						<mineralsCost mul="-1"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -419,6 +435,50 @@
 				</modifier>
 			</modifiers>
 		</clearTileUnitCast>
+		<unitCast name="ConstructRadioTelescope"
+				icon="Units/RadioTelescope"
+				requiredUpgrade="RadioTelescope"
+				useConditionsForVisiblity="1">
+			<model>
+				<cast animation="Units/EngineerAbility0"
+						sound="Units/EngineerWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Responses/Units/EngineerConstructBunker"
+						responseSoundCount="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noUnit/>
+						</tile>
+						<tile match="Any">
+							<noFeature type="Bleed"/>
+							<city/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="RadioTelescope" token="RadioTelescope" avoidBleed="0" avoidCity="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
 	</actions>
 	<traits>
 		<trait type="Biological"/>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnPlayer="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<tradeGain mul="-0.25"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="FromGenerousContacts" requiredUpgrade="AbhorrentUpgrade">
+			<conditions>
+				<targetPlayer>
+					<standingTier greater="5"/>
+				</targetPlayer>
+			</conditions>
+			<effects>
+				<tradeGain mul="0.25"/>
+			</effects>
+		</modifier>
+		<perOtherPlayerModifier effectDescription="PerGenerousContact" requiredUpgrade="AbhorrentUpgrade2">
+			<conditions>
+				<onlyPlayer/>
+			</conditions>
+			<perPlayerConditions>
+				<targetPlayer>
+					<standingTier greater="5"/>
+				</targetPlayer>
+			</perPlayerConditions>
+			<effects>
+				<influence add="3"/>
+			</effects>
+		</perOtherPlayerModifier>
+	</modifiers>
+</trait>

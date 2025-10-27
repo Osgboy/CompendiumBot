@@ -1,0 +1,293 @@
+<quest firstTurn="-1">
+ 	<conditions>
+		<player>
+			<faction name="HollowWarlord"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Conquer" nextStage="AnchoriteAssault"/>
+				<option name="Cajole" nextStage="AnchoriteCajole"/>
+				<option name="Ignore" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="AnchoriteAssault" nextStageOnSuccess="AnchoriteAssaultSuccess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillAnchoriteCamp">
+					<boss type="AnchoriteCamp" name="Units/AnchoriteCamp" skipOverwatchOnNextTileEnter="1"/>
+					<defenders>
+						<unit type="AmoetiasDevourer" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AcrinMilitia" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AcrinZealot" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="AnchoriteCajole" nextStageOnSuccess="AnchoriteCajoleSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/CajoleAnchorite" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="PayResources/CajoleAnchorite"/>
+			</objectives>
+		</stage>
+		<stage name="AnchoriteAssaultSuccess" nextStageOnSuccess="FollowTheChieftess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillBrynnAndForces" bossKillCompletes="0">
+					<boss type="Brynn" name="Units/Brynn" token="Brynn" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					<defenders>
+						<unit type="ExousiaMarauder" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="IthurielHarbinger" count="1" rankMin="4" rankMax="6" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="AnchoriteCajoleSuccess" nextStageOnSuccess="FollowTheChieftess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillBrynnAndForces" bossKillCompletes="0">
+					<boss type="Brynn" name="Units/Brynn" token="Brynn" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					<defenders>
+						<unit type="ExousiaMarauder" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="IthurielHarbinger" count="1" rankMin="4" rankMax="6" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="FollowTheChieftess"
+				nextStageOnSuccess="FightChieftess"
+				nextStageOnFailure="FollowTheChieftessFailure">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="12">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="HollowWarlord" name="Factions/HollowWarlord" token="HollowWarlord" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="12">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>	
+			</modifications>
+			<objectives>
+				<visitTile name="VisitTileWithHollowWarlord">
+					<unitConditions>
+						<token name="HollowWarlord"/>
+					</unitConditions>		
+				</visitTile>
+				<keepUnitAlive token="HollowWarlord"/>
+			</objectives>
+		</stage>
+		<stage name="FollowTheChieftessFailure"/>
+		<stage name="FightChieftess" 
+				nextStageOnFailure="FightChieftessFailure"
+				nextStageOnSuccess="FightChieftessSuccess">
+			<objectives>
+				<killCamp name="FightChieftessForReyndverra">
+					<defenders>
+						<unit type="Reaver" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Chieftess" name="Factions/Chieftess" token="Chieftess" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+				<keepUnitAlive token="HollowWarlord"/>
+			</objectives>
+		</stage>
+		<stage name="FightChieftessSuccess">
+			<options>
+				<option name="TakeBlade" nextStage="TakeBlade"/>
+				<option name="GiveUpBlade" nextStage="GiveUpBlade"/>
+			</options>
+		</stage>
+		<stage name="FightChieftessFailure">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Chieftess"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="TakeBlade">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="Reyndverra"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="HollowWarlord"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="GiveUpBlade">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<influence add="320"/>
+							<unlockAchievement name="Reyndverra"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="HollowWarlord"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

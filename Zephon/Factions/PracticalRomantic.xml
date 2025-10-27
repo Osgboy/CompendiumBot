@@ -67,6 +67,7 @@
 		<label name="FoundationOfBlood"/>
 		<label name="Gluttony"/>
 		<label name="Immoral"/>
+		<label name="TalesOfTheHunt"/>
 		<label name="Untrustworthy"/>
 	</dislikedLabels>
 	<headquarterWeapons>
@@ -144,6 +145,15 @@
 						windupDuration="0.2"/>										
 			</models>
 		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
 	</headquarterWeapons>
 	<likedLabels>
 		<label name="HonorBound"/>
@@ -164,7 +174,7 @@
 	</startingResourceModifiers>
 	<startingUnits>
 		<unit type="Engineer" count="1"/>
-		<unit type="Militant" count="3"/>
+		<unit type="Militant" count="4"/>
 	</startingUnits>
 	<traits>
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
@@ -179,8 +189,12 @@
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
 		<trait type="HeartfeltLoss"/>
 		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
 		<trait type="Scavenger"/>
-		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
@@ -243,7 +257,4 @@
 			</scoreModifiers>
 		</unitCast>	
 	</unitActions>
-	<unitTraits>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
-	</unitTraits>
 </faction>

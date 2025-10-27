@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human" dlc="DLC1">
+	<actions>
+		<unitCast cooldown="10"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/SuicideDrones"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnit">
+									<effects>
+										<weaponDamage weapon="SuicideDrones"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Common"/>
+		<trait type="PracticalRomanticAffinityUpgrade" requiredUpgrade="PracticalRomanticAffinityUpgrade"/>
+	</traits>
+</item>

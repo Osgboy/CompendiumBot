@@ -1,0 +1,359 @@
+<quest firstTurn="-1">
+ 	<conditions>
+		<player>
+			<faction name="TwistedMother"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="FindYourTrueLove" nextStage="FindYourTrueLove"/>
+				<option name="SaveTheFamilyYouHave" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="FindYourTrueLove" 
+				nextStageOnFailure="FindYourTrueLoveFailure"
+				nextStageOnSuccess="FindYourTrueLoveSuccess">
+			<modifications>
+				<nearCityTileSelector count="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<recoverUnits name="RecoverHusband" recoverAtLeast="1">
+					<units>
+						<unit count="1" type="Husband" token="Husband" rankMin="4" rankMax="4"/>
+					</units>
+				</recoverUnits>
+				<keepUnitAlive token="Husband"/>
+			</objectives>
+		</stage>
+		<stage name="FindYourTrueLoveFailure"/>
+		<stage name="FindYourTrueLoveSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Husband"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<options>
+				<option name="BeginExperiment" nextStage="MotherExperiment0"/>
+			</options>
+		</stage>
+		<stage name="MotherExperiment0" nextStageOnSuccess="MotherExperiment1">
+			<modifications>	
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="ProduceChild/Voice" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="ProduceChild/Voice"/>
+			</objectives>
+		</stage>
+		<stage name="MotherExperiment1">
+			<options>
+				<option name="TryAgain" nextStage="MotherExperiment2"/>
+			</options>
+		</stage>
+		<stage name="MotherExperiment2" nextStageOnSuccess="MotherExperiment3">
+			<modifications>
+				<nearCityTileSelector avoidCitiesNearby="0" avoidUnitsNearby="0" targetDistance="1">
+					<conditions>
+						<tile>
+							<noFeature type="Bleed"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+							<addUnit type="TwistedChildVoice" name="Units/TwistedChildVoice" neutralPlayer="1" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="ProduceChild/Cyber" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="ProduceChild/Cyber"/>
+			</objectives>
+		</stage>
+		<stage name="MotherExperiment3">
+			<options>
+				<option name="AttemptTheImpossible" nextStage="MotherExperiment4"/>
+			</options>
+		</stage>
+		<stage name="MotherExperiment4" nextStageOnSuccess="MotherExperimentSuccess">
+			<modifications>
+				<nearCityTileSelector avoidCitiesNearby="0" avoidUnitsNearby="0" targetDistance="1">
+					<conditions>
+						<tile>
+							<noFeature type="Bleed"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal/>
+							<addUnit type="TwistedChildCyber" name="Units/TwistedChildCyber" neutralPlayer="1" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="ProduceChild/Mix" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="ProduceChild/Mix"/>
+			</objectives>
+		</stage>
+		<stage name="MotherExperimentSuccess" nextStageOnSuccess="MotherDefendSuccess">
+			<modifications>
+				<nearCityTileSelector>
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveZephonAssaultForce" strength="12" waves="2">
+					<attackers>
+						<unit type="IthurielHarbinger" rankMin="0" rankMax="2"/>
+						<unit type="MalakimDestroyer" rankMin="0" rankMax="2"/>
+						<unit type="AraneanStalker" rankMin="1" rankMax="3"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="MotherDefendSuccess">
+			<options>
+				<option name="SaveYourHusband" nextStage="SaveYourHusband"/>
+				<option name="LetHimGo" nextStage="LetHimGo"/>
+			</options>
+		</stage>
+		<stage name="SaveYourHusband"
+				nextStageOnFailure="SaveYourHusbandFailure"
+				nextStageOnSuccess="SaveYourHusbandSuccess">
+			<modifications>
+				<nearCityTileSelector avoidCitiesNearby="0" avoidUnitsNearby="0" targetDistance="1">
+					<conditions>
+						<tile>
+							<noFeature type="Bleed"/>
+							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUnitToPlayer type="Husband" name="Units/Husband" token="Husband" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Husband"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ZephonVirus"/>
+							<hitpoints mul="-0.5"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<wait name="ResistVirus" turns="5"/>
+				<keepUnitAlive token="Husband"/>
+			</objectives>
+		</stage>
+		<stage name="LetHimGo" nextStageOnSuccess="LetHimGoSuccess">
+			<modifications>
+				<nearCityTileSelector avoidCitiesNearby="0" avoidUnitsNearby="0" targetDistance="1">
+					<conditions>
+						<tile>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>			
+			<objectives>
+				<killCamp name="KillYourHusband">
+					<defenders>
+						<unit type="Husband" name="Units/Husband" token="Husband" count="1" rankMin="9" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="SaveYourHusbandFailure">
+			<modifications>	
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="SaveYourHusbandSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="FamilysFavor"/>
+							<unlockAchievement name="ImpossibleConception"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Husband"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="LetHimGoSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MothersVengeance"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

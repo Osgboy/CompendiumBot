@@ -28,6 +28,7 @@
 	</strategyModifiers>
 	<actions>
 		<produceUnit unit="DarkVassael"/>
+		<produceUnit unit="AmoetiasDevourer" requiredUpgrade="AmoetiasDevourer"/>		
 		<produceUnit unit="SurthodaisEmbrace" requiredUpgrade="SurthodaisEmbrace"/>
 		<produceUnit unit="FallenOrolos" requiredUpgrade="FallenOrolos"/>
 		<produceUnit unit="PlangentOrolos" requiredUpgrade="PlangentOrolos"/>
@@ -52,4 +53,7 @@
 			</beginTargets>
 		</buildingGroupAction>
 	</actions>
+	<traits>
+		<trait type="VoiceInfantryUpgrade" requiredUpgrade="VoiceInfantryUpgrade"/>
+	</traits>
 </building>

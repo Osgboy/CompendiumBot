@@ -12,5 +12,15 @@
 				<damageSelf addMin="0.25" addMax="0.75"/>
 			</effects>
 		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<hitpointsFraction less="0.5"/>
+				</unit>
+			</conditions>
+			<effects>
+				<attackScore max="0"/>
+			</effects>
+		</modifier>
 	</modifiers>
 </trait>

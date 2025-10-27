@@ -6,12 +6,30 @@
 				<modifiers>
 					<modifier effectDescription="ToEnemyUnitAndAdjacentEnemyUnitsOnRemoval">
 						<conditions>
+							<tile>
+								<feature type="SeedOfExtinction"/>
+							</tile>
 							<unit>
 								<enemy/>
+								<notCargo/>
 							</unit>
 						</conditions>
 						<effects>
 							<weaponDamage weapon="SeedOfExtinction"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<conditions>
+							<tile>
+								<noFeature type="SeedOfExtinction"/>
+							</tile>
+							<unit>
+								<enemy/>
+								<notCargo/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="SeedOfExtinction" factor="0.5"/>
 						</effects>
 					</modifier>
 				</modifiers>

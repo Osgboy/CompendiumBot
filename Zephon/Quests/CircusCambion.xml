@@ -1,0 +1,314 @@
+<quest firstTurn="40" dlc="DLC1">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="WelcomeCircus">
+					<modifiers>
+						<modifier>
+							<effects>
+								<foodCost add="30"/>
+							</effects>
+						</modifier>
+					</modifiers>
+					<nextStages>
+						<nextStage name="FortuneTelling" weight="1"/>
+						<nextStage name="AbkluthJousting" weight="1"/>
+						<nextStage name="ZephonOrigin" weight="1"/>
+						<nextStage name="ErelimPuppets" weight="1"/>
+						<nextStage name="HighVoltage" weight="1"/>
+					</nextStages>		
+				</option>
+				<option name="TakeYourCut">
+					<nextStages>
+						<nextStage name="TakeYourCutCursed" weight="1"/>
+						<nextStage name="TakeYourCutPayback" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="ShooThemAway">
+					<nextStages>
+						<nextStage name="MissingResources" weight="1"/>
+						<nextStage name="NothingHappens" weight="1"/>
+					</nextStages>
+				</option>
+			</options>
+		</stage>
+		<stage name="FortuneTelling">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ConcordatSanctions" rank="0" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Anchorite"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Chieftess"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>		
+		<stage name="AbkluthJousting">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="CircusAbkhan" token="CircusAbkhan" rankMin="0" rankMax="0" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearStartCitySelector count="1"/>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<population add="-1"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="ZephonOrigin">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<singularityCores add="4"/>
+							<research add="-20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ErelimPuppets">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="SomethingWicked"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearStartCitySelector count="1"/>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="EnthralledByTheErelim" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="HighVoltage">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Blackout" duration="3"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector avoidCitiesNearby="0" avoidUnitsNearby="0" targetDistance="1">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addFeature type="PhaseGenerator"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>
+		<stage name="TakeYourCutCursed">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="Cursed" duration="10"/>
+							<food add="30"/>
+							<minerals add="30"/>
+							<addItem type="AcrinBoneWhistle"/>
+							<addItem type="ExousiaParser"/>
+							<addItem type="RallyingHolobeacon"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="TakeYourCutPayback">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<food add="30"/>
+							<minerals add="30"/>
+							<addItem type="AcrinBoneWhistle"/>
+							<addItem type="ExousiaParser"/>
+							<addItem type="RallyingHolobeacon"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<nearCityTileSelector count="1" targetDistance="4">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<reveal radius="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveCircusPerformers" strength="12" waves="1">
+					<attackers>
+						<unit type="AmoetiasDevourer" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="CircusAbkhan" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="ErelimAssassin" rankMin="2" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="MalakimDestroyer" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Reaver" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Scrambler" skipOverwatchOnNextTileEnter="1"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="MissingResources">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<food mul="-0.1"/>
+							<minerals mul="-0.1"/>
+							<chips mul="-0.1"/>
+							<algae mul="-0.1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="NothingHappens"/>
+	</stages>
+ </quest>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" dlc="DLC1" icon="Units/Abkhan" portrait="Units/Abkhan">
+	<model>
+		<unit bloodBone="Back"
+				bloodBlueprint="Effects/LargeBlood"
+				effectsBlueprint="Effects/Abkhan"
+				material="Units/Abkhan"
+				mesh="Units/Abkhan"
+				normalWeight="0.1"
+				scale="13.92 13.92 13.92"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AbkhanBite">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="FrostBreath"
+				enabled="0"
+				slotName="FrostBreath">
+			<models>
+				<flamerWeapon effectFaceWeight="0"
+						muzzleBone="Head"
+						windupDuration="0.67"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="2"/>
+				<algaeCost base="20"/> <!-- %algaeCost base tier=8 factor=0.25 -->
+				<algaeUpkeep base="1.0"/> <!-- %algaeUpkeep base tier=8 factor=0.25 -->
+				<foodCost base="40"/> <!-- %foodCost base tier=8 factor=0.5 -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=8 factor=0.5 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="64"/> <!-- %hitpointsMax base tier=11 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/AbkluthAppear"
+						responseSoundCount="1"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack chargeAnimation="Units/AbkluthCharge"
+						meleeAnimation="Units/AbkluthMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"
+						meleeSound="Units/AbkhanMelee"
+						meleeSoundCount="1"
+						responseSound="Responses/Units/AbkluthAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/AbkluthDie0"
+						effectDisable="0.6"
+						groundImpact="0.6"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/AbkhanDie"
+						voiceSoundCount="1"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/AbkluthImpact"
+						responseSound="Responses/Units/AbkluthEndureHighDamage"
+						responseSoundCount="1"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/AbkluthIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/AbkluthKill"
+						responseSoundCount="1"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/AbkluthMove"
+						sound="Units/AbkhanMove"
+						soundCount="1"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"
+						responseSound="Responses/Units/AbkluthMove"
+						responseSoundCount="3"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/AbkluthPoke"
+						responseSoundCount="1"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/AbkluthSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/AbkluthHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="FrostBreath"
+				consumedActionPoints="0"
+				cooldown="1"
+				requiredActionPoints="0">
+			<model>
+				<attack animation="Units/AbkluthAbility0"
+						beginFire="0.2"
+						endFire="2.0"
+						responseSound="Responses/Units/AbkluthAttack"
+						responseSoundCount="3"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Biological"/>
+		<trait type="Bleedwalker"/>
+		<trait type="Large"/>
+		<trait type="Regeneration"/>
+	</traits>
+</unit>

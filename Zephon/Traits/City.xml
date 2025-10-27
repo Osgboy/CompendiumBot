@@ -2,6 +2,11 @@
 <trait category="Buff" icon="Features/City" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
+			<effects>
+				<blockSight add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
 			<conditions>
 				<tile>
 					<noFeatureCategory name="Bleed"/>

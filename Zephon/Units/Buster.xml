@@ -168,9 +168,25 @@
 						<attackScore mul="0.5"/>
 					</effects>
 				</modifier>
+				<modifier visible="0">
+					<conditions>
+						<targetUnit>
+							<trait type="OnFire"/>
+						</targetUnit>
+					</conditions>
+					<effects>
+						<attackScore max="0"/>
+					</effects>
+				</modifier>				
 			</modifiers>
 		</useWeapon>
-		<foundCity blueprint="NomadicLife"/>
+		<foundCity blueprint="NomadicLife">
+			<model>
+				<action animation="Units/ReaverAbility0"
+						sound="Actions/FoundCity"
+						soundFirstActingMemberOnly="1"/>
+			</model>
+		</foundCity>
 		<unitAction name="Hijack"
 				passive="1">
 			<beginTargets>

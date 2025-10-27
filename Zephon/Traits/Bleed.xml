@@ -2,6 +2,11 @@
 <trait category="Debuff" icon="Features/Bleed" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
+			<effects>
+				<blockSight add="1"/>
+			</effects>
+		</modifier>
+		<modifier>
 			<conditions>
 				<tile>
 					<noCity/>
@@ -10,6 +15,7 @@
 					<noTrait type="Bleedwalker"/>
 					<noTrait type="Flying"/>
 					<noTrait type="Hovering"/>
+					<noTrait type="SurthodaisKiss"/>
 					<noTrait type="Titan"/>
 				</unit>
 			</conditions>
@@ -26,6 +32,7 @@
 					<noTrait type="Bleedwalker"/>
 					<noTrait type="Flying"/>
 					<noTrait type="Hovering"/>
+					<noTrait type="SurthodaisKiss"/>
 					<noTrait type="Titan"/>
 				</unit>
 			</conditions>
@@ -45,6 +52,7 @@
 					<noTrait type="Bleedwalker"/>
 					<noTrait type="Flying"/>
 					<noTrait type="Hovering"/>
+					<noTrait type="SurthodaisKiss"/>
 					<noTrait type="Titan"/>
 				</unit>
 			</conditions>
@@ -67,6 +75,7 @@
 								<noTrait type="Bleedwalker"/>
 								<noTrait type="Flying"/>
 								<noTrait type="Hovering"/>
+								<noTrait type="SurthodaisKiss"/>
 								<noTrait type="Titan"/>
 							</unit>
 						</conditions>
@@ -84,6 +93,7 @@
 								<noTrait type="Bleedwalker"/>
 								<noTrait type="Flying"/>
 								<noTrait type="Hovering"/>
+								<noTrait type="SurthodaisKiss"/>
 								<noTrait type="Titan"/>
 							</unit>
 						</conditions>
@@ -104,6 +114,7 @@
 								<noTrait type="Bleedwalker"/>
 								<noTrait type="Flying"/>
 								<noTrait type="Hovering"/>
+								<noTrait type="SurthodaisKiss"/>
 								<noTrait type="Titan"/>
 							</unit>
 						</conditions>

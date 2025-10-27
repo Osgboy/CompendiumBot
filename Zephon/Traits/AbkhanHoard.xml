@@ -5,6 +5,11 @@
 			<area affect="Tile">
 				<modifiers>
 					<modifier visible="0">
+						<conditions ignoreForTraitVisibility="1">
+							<tile>
+								<feature type="AbkhanDrey"/>
+							</tile>
+						</conditions>
 						<effects>
 							<addTrait type="AbkhanRespawn" duration="19"/>
 						</effects>
@@ -14,7 +19,7 @@
 		</homeTile>
 	</onUnitDisappeared>
 	<onUnitKilled>
-		<attacker>
+		<attacker> <!-- This should be <attackerPlayer>, but we can't do randomness without area, and area only makes sense for units and tiles. -->
 			<area affect="UnitPlayer" randomizeRank="1" sendNotification="1">
 				<modifiers>
 					<modifier visible="0">

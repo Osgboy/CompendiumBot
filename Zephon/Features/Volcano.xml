@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feature ambientSound="Ambient/Features/Volcano"
-		category="Volcano"
-		blockingSight="1">
+		category="Volcano">
 	<model>
 		<simpleModel effectsBlueprint="Effects/Volcano"
 				flow="1"
@@ -16,6 +15,7 @@
 	<modifiers>
 		<modifier>
 			<effects>
+				<blockSight add="1"/>
 				<buildingSlots max="0"/>
 			</effects>
 		</modifier>

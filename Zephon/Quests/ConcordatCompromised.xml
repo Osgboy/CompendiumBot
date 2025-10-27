@@ -1,0 +1,161 @@
+<quest firstTurn="60" dlc="DLC1">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="ComplyViolently" nextStage="ComplyViolently"/>
+				<option name="ComplyCarefully" nextStage="ComplyCarefully"/>
+				<option name="DontComply" nextStage="DontComply"/>
+			</options>
+		</stage>
+		<stage name="ComplyViolently"
+				nextStageOnFailure="ComplyViolentlyFailure"
+				nextStageOnSuccess="ComplyViolentlySuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<killCamp name="KillDreadPearlman" turns="20">
+					<boss type="DreadPearlman" name="Units/DreadPearlman" skipOverwatchOnNextTileEnter="1"/>
+					<defenders>
+						<unit type="Praetorian" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="VulkanR5" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>		
+		<stage name="ComplyCarefully"
+				nextStageOnFailure="ComplyCarefullyFailure"
+				nextStageOnSuccess="ComplyCarefullySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/StrikeADeal" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/StrikeADeal"
+						turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="ComplyViolentlySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="IthurielHarbinger" count="2" rankMin="7" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="AssaultTrooper" count="1" rankMin="4" rankMax="6" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="KriteriaAnnihilator" count="1" rankMin="2" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ComplyCarefullySuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="DimensionalShunts"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="DontComply">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ConcordatSanctions" rank="0" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ComplyViolentlyFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ConcordatSanctions" rank="1" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ComplyCarefullyFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>			
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ConcordatSanctions" rank="1" duration="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removePlayerAction type="PayResources/StrikeADeal" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

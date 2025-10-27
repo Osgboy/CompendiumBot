@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Acrin" icon="Units/Headquarters" portrait="Units/AnchoriteHeadquarters">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="HQ"
+				heatImpactSound="Impacts/HeatConcrete"
+				heatImpactSoundCount="5"
+				kineticImpactSound="Impacts/KineticConcrete"
+				kineticImpactSoundCount="17"
+				material="Units/AnchoriteHeadquarters"
+				mesh="Units/AnchoriteHeadquarters"
+				normalWeight="0.1"
+				onlyRotateWeapons="1"
+				scale="1 1 1"/>
+	</model>
+	<weapons>
+		<weapon type="Subjugator" count="9">
+			<models>
+				<projectileWeapon fireInterval="1.2"
+						mesh="Units/AnchoriteHeadquartersRifles"
+						material="Units/HeadquartersMissileLauncher"
+						bone="Weapons"
+						muzzleBone="Muzzle"
+						muzzleCount="5"
+						windupDuration="0.0"/>
+ 				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR0"
+						muzzleBone="Muzzle"
+						windupDuration="0.3"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR1"
+						muzzleBone="Muzzle"
+						windupDuration="0.5"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR2"
+						muzzleBone="Muzzle"
+						windupDuration="0.7"/>
+				<projectileWeapon mesh="Units/HeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="AR3"
+						muzzleBone="Muzzle"
+						windupDuration="0.9"/>
+ 			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="3"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<attack>
+			<model>
+				<attack beginFire="1.0"
+						endFire="2.3"
+						responseSound="Responses/Units/HeadquartersAttack"
+						responseSoundCount="3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound=""/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound=""/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersKill"/>
+			</model>
+		</kill>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/HeadquartersSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound=""/>
+			</model>
+		</skip>
+		<setRallyPoint visible="0"/>
+	</actions>
+	<traits>
+		<trait type="Fortification"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

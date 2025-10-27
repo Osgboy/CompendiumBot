@@ -4,7 +4,15 @@
 		<modifier>
 			<effects>
 				<attacks mul="0.33"/>
-				<movement add="2"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait type="Fortification"/>
+				</unit>
+			</conditions>
+			<effects>
 				<movementMax add="2"/>
 			</effects>
 		</modifier>
@@ -16,7 +24,6 @@
 					<modifier effectDescription="OnRemoval" visible="0">
 						<effects>
 							<movement add="-2"/>
-							<movementMax add="-2"/>
 						</effects>
 					</modifier>
 				</modifiers> 

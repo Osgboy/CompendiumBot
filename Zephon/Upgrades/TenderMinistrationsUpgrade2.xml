@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/TwistedMother" tier="6">
+	<requiredUpgrades>
+		<upgrade name="TenderMinistrationsUpgrade"/>
+	</requiredUpgrades>
+	<conditions>
+		<player>
+			<faction name="TwistedMother"/>
+		</player>
+	</conditions>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseLoyaltyScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

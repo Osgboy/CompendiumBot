@@ -11,21 +11,13 @@
 				<research mul="0.2"/>
 			</effects>
 		</modifier>
+		<modifier effectDescription="Every10Turns">
+			<conditions ignoreForTraitVisibility="1">
+				<turn divisible="10"/>
+			</conditions>
+			<effects>
+				<research add="10"/> <!-- ResourceNetwork and LogisticsExpert (flatResourcesFromOutposts) boosts this. Complex to fix. Maybe rather change the effect, +10 research every 10 turns is not that interesting anyway. Could be e.g. a player ability that gives 10 research. -->
+			</effects>
+		</modifier>
 	</modifiers>
-	<onTurnStarted>
-		<feature>
-			<area affect="TilePlayer" sendNotification="1">
-				<modifiers>
-					<modifier effectDescription="Every10Turns">
-						<conditions ignoreForTraitVisibility="1">
-							<turn divisible="10"/>
-						</conditions>
-						<effects>
-							<research add="10"/>
-						</effects>
-					</modifier>
-				</modifiers>
-			</area>
-		</feature>
-	</onTurnStarted>
 </trait>

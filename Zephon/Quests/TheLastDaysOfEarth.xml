@@ -72,7 +72,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addUnitToPlayer type="LandanGrahamAugmented" name="Units/LandanGrahamAugmented" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="LandanGrahamAugmented" name="Units/LandanGrahamAugmented" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>			
 				</playerModifiers>
@@ -124,6 +124,27 @@
 				<option name="OK" resolveConclusionStages="1"/>
 			</options>
 		</stage>
+		<stage name="MessageToTheStars" concludesStage="MessageSent" minVersion="1.1.0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="PraesidiumAbAstris"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
+		</stage>
 		<stage name="PhilosophersStone" concludesStage="TreasureFound">
 			<modifications>
 				<playerSelector>
@@ -136,7 +157,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addUnitToPlayer type="PhenarisEpicurean" name="Units/BanditKing" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="BanditKingMutated" rankMin="9" rankMax="9" name="Units/BanditKing" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>	
 				</playerModifiers>
@@ -230,7 +251,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addUnitToPlayer type="ZandraKyne" name="Units/ZandraKyne" skipOverwatchOnNextTileEnter="1"/>
+							<addUnitToPlayer type="ZandraKyne" name="Units/ZandraKyne" rankMin="4" rankMax="4" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>	
 				</playerModifiers>
@@ -390,6 +411,7 @@
 					<modifier>
 						<effects>
 							<changePlayer/>
+							<hitpointsFromMax add="1.0"/>
 						</effects>
 					</modifier>
 				</unitModifiers>
@@ -405,6 +427,7 @@
 						<type name="ZephonTitan"/>
 					</conditions>
 				</keepUnitsAlive>
+				<killIndependentNonAIPlayers minVersion="1.1.6"/>
 			</objectives>
 		</stage>
 		<stage name="AnchoriteObjectives" nextStageOnSuccess="AnchoriteVictory" nextStageOnFailure="Defeat">
@@ -470,6 +493,7 @@
 					<modifier>
 						<effects>
 							<changePlayer/>
+							<hitpointsFromMax add="1.0"/>
 						</effects>
 					</modifier>
 				</unitModifiers>
@@ -485,6 +509,7 @@
 						<type name="AcrinTitan"/>
 					</conditions>
 				</keepUnitsAlive>
+				<killIndependentNonAIPlayers minVersion="1.1.6"/>
 			</objectives>
 		</stage>
 		<stage name="IndependentObjectives" nextStageOnSuccess="IndependentVictory">
@@ -543,6 +568,7 @@
 						<type name="ZephonTitan"/>
 					</conditions>
 				</killUnit>
+				<killIndependentNonAIPlayers minVersion="1.1.8"/>
 			</objectives>
 		</stage>
 		<stage name="ZephonVictory">

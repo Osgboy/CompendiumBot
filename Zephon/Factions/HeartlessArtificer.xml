@@ -235,9 +235,19 @@
 						missileScale="0.2"/>										
 			</models>
 		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
 	</headquarterWeapons>
 	<likedLabels>
 		<label name="Honorbound"/>
+		<label name="WeWhoAreAboutToDie"/>
 	</likedLabels>
 	<startingResourceModifiers>
 		<modifier>
@@ -253,7 +263,8 @@
 	</startingResourceModifiers>
 	<startingUnits>
 		<unit type="Engineer" count="1"/>
-		<unit type="IshimEnforcer" count="2"/>
+		<unit type="IshimEnforcer" count="1"/>
+		<unit type="MalakimDestroyer" count="1"/>
 	</startingUnits>
 	<traits>
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
@@ -268,7 +279,11 @@
 		<trait type="EngineerLife"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
 		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
-		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
@@ -324,7 +339,4 @@
 			</beginTargets>
 		</unitCast>
 	</unitActions>
-	<unitTraits>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
-	</unitTraits>
 </faction>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Human">
+<unit branch="Human" productionWeight="0.25" support="1">
 	<model>
 		<unit bloodBone="Chest"
 				groupMemberDeltaX="80"
@@ -197,6 +197,7 @@
 			<model>
 				<cast animation="Units/CombatMedicAbility0"
 						blueprint="Effects/BionicImplants"
+						responseSound="Responses/Units/CombatMedicBionicImplant"
 						sound="Units/CombatMedicAbility"
 						soundCount="3"/>
 			</model>
@@ -242,5 +243,6 @@
 		<trait type="Biological"/>
 		<trait type="CombatShield"/>
 		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 	</traits>
 </unit>

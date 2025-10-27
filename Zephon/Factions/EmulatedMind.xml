@@ -32,7 +32,7 @@
 							<modifiers>
 								<modifier effectDescription="ToEnemyCity">
 									<effects>
-										<addTrait type="DataHack" duration="5"/>
+										<addTrait type="DataHack" duration="10"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -130,8 +130,19 @@
 						muzzleBone="HQCannonMuzzle"/>
 			</models>
 		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
 	</headquarterWeapons>
 	<likedLabels>
+		<label name="Abhorrent"/>
+		<label name="ImmaculateDelivery"/>
 		<label name="Independent"/>
 		<label name="WhispersOfTheVoice"/>
 	</likedLabels>
@@ -149,7 +160,8 @@
 	</startingResourceModifiers>
 	<startingUnits>
 		<unit type="Engineer" count="1"/>
-		<unit type="IshimEnforcer" count="2"/>
+		<unit type="IshimEnforcer" count="1"/>
+		<unit type="ExousiaMarauder" count="1"/>
 	</startingUnits>
 	<traits>
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
@@ -164,8 +176,12 @@
 		<trait type="FortressArmament"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
 		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
 		<trait type="ResourceNetwork"/>
-		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Trapped"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
@@ -187,7 +203,4 @@
 			</model>
 		</useWeapon>
 	</unitActions>
-	<unitTraits>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
-	</unitTraits>
 </faction>

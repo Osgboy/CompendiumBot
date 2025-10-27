@@ -129,9 +129,12 @@
         "flavor": "Only that urge to hear the Voice\u2019s call could send any creature back into the dirt. Could you imagine how deep the Worms went? How great the Earth\u2019s pressure was on them? And then they would come roaring to the surface, their guts expanding as that pressure let up, ready to spew acid that could burn a man alive\u2026",
         "modifiers": [
             "- +1 movement through enemy units",
-            "- +2 Movement"
+            "- +2 Movement",
+            "Stealth (1 turn)",
+            "- -1 overwatch attacks from targeting this unit",
+            "- +1 overwatch"
         ],
-        "rawXML": "<tunnel cooldown=\"3\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<ignoreZoneOfControl add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"TunnelingNails\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<targetTile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t</targetTile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</tunnel>\n\t",
+        "rawXML": "<tunnel cooldown=\"3\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<ignoreZoneOfControl add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"TunnelingNails\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Stealth\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<targetTile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t</targetTile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</tunnel>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Tunnel.png",
         "name": "Tunnel",
         "conditions": {
@@ -188,11 +191,58 @@
         },
         "branch": "Cyber"
     },
+    "Cataphora": {
+        "internalID": "Cataphora",
+        "description": null,
+        "cooldown": "5",
+        "flavor": "A survival instinct marked the difference between a Devourer and a Deformity. That and the extra head. Deformities shambled towards death, Devourers sometimes scratched and clawed their way toward life. Catch one regenerating and you could snuff that life out with no skin off your back.",
+        "modifiers": [
+            "Cataphora (2 turns)",
+            "- max 0 Action Points Max",
+            "- max 0 Movement Max",
+            "- max 0 Healing Rate",
+            "Decaying",
+            "- -4 Hitpoints",
+            "- +2 Hitpoints",
+            "- +100% Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Cataphora\" cooldown=\"5\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<addTrait type=\"Cataphora\" duration=\"2\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Cataphora.png",
+        "name": "Cataphora",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "branch": "Voice"
+    },
+    "Set Rally Point": {
+        "internalID": "SetRallyPoint",
+        "description": null,
+        "cooldown": "0",
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<setRallyPoint visible=\"0\"/>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SetRallyPoint.png",
+        "name": "Set Rally Point",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "branch": "Neutral"
+    },
     "Mark Target": {
         "internalID": "MarkTarget",
         "description": null,
         "cooldown": "1",
-        "flavor": "When you're in the thick of combat, having eyes on a ridge above, calling out targets helps a hell of a lot. Puts a nice rhythm in things. Mark the target. Set the target. Execute the target. o",
+        "flavor": "When you're in the thick of combat, having eyes on a ridge above, calling out targets helps a hell of a lot. Puts a nice rhythm in things. Mark the target. Set the target. Execute the target.",
         "modifiers": [
             "Marked Target (1 turn)",
             "- +2 Accuracy"
@@ -298,7 +348,7 @@
         "cooldown": "0",
         "flavor": "Long ago, our ancestors built cities over the course of generations. We didn\u2019t have that luxury. Engineers laid the foundation for massive urban spaces with pre-fabricated buildings and drones that could quickly rig up infrastructure. We could always build over them later\u2026 if the war ever came to an end.",
         "modifiers": [],
-        "rawXML": "<foundCity blueprint=\"NomadicLife\"/>\n\t\t",
+        "rawXML": "<foundCity blueprint=\"NomadicLife\">\n\t\t\t</foundCity>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\FoundCity.png",
         "name": "Found City",
         "conditions": {
@@ -311,7 +361,28 @@
         },
         "branch": "Neutral"
     },
-    "Combat Drones": {
+    "Cauterize Wounds": {
+        "internalID": "CauterizeWounds",
+        "description": null,
+        "cooldown": "5",
+        "flavor": "The first soldiers we augmented with cybernetic tech were still vulnerable to attacks on vital organs. With a little extra programming, our techs could numb their pain sensors. If they already couldn\u2019t feel pain, there was no reason to not let them cauterize their own wounds.",
+        "modifiers": [
+            "- +50% Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"CauterizeWounds\" cooldown=\"5\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\CauterizeWounds.png",
+        "name": "Cauterize Wounds",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "branch": "Cyber"
+    },
+    "Combat Melisai": {
         "internalID": "DeployCombatDrone0",
         "description": null,
         "cooldown": "0",
@@ -319,9 +390,9 @@
         "modifiers": [],
         "rawXML": "<unitCast blueprint=\"DeployCombatDrone\" name=\"DeployCombatDrone0\" requiredUpgrade=\"CombatDrone\">\n\t\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\DeployCombatDrone0.png",
-        "name": "Combat Drones",
+        "name": "Combat Melisai",
         "conditions": {
-            "requiredUpgrade": "Combat Drones",
+            "requiredUpgrade": "Combat Melisai",
             "requiredActionPoints": true,
             "requiredMovement": false,
             "usableInTransport": false,
@@ -374,6 +445,49 @@
             "consumedMovement": false
         },
         "branch": "Cyber"
+    },
+    "Repair": {
+        "internalID": "Repair",
+        "description": null,
+        "cooldown": "3",
+        "flavor": "Executing repairs took time to prepare and meant the technician had to stay close to the machine. If you wanted to make a fast friend, you kept anyone repairing your tech safe. They were doing the same for you, after all. I still can\u2019t believe there were soldiers who\u2019d sacrifice them like pawns.",
+        "modifiers": [
+            "- +8 Hitpoints"
+        ],
+        "rawXML": "<unitCast name=\"Repair\" cooldown=\"3\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Repair.png",
+        "name": "Repair",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "branch": "Neutral"
+    },
+    "\u201cThrash 'em!\u201d": {
+        "internalID": "ThrashEm",
+        "description": null,
+        "cooldown": "5",
+        "flavor": "Reavers didn't care if spinning a big rig around with the claw flailing was dangerous. They always went their own way\u2014as wild as the monsters and as murderous as the machines. The Wastelander was like a great scream into the night that they wouldn't be left behind.",
+        "modifiers": [
+            "\u201cThrash 'em!\u201d (1 turn)",
+            "- +20% Damage"
+        ],
+        "rawXML": "<unitCast name=\"ThrashEm\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"2\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnitsInTheArea\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"ThrashEm\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t \t\t\t\t<modifier>\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n \t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ThrashEm.png",
+        "name": "\u201cThrash 'em!\u201d",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "branch": "Reaver"
     },
     "Paramedic": {
         "internalID": "Paramedic",
@@ -449,7 +563,7 @@
             "\u201cTake Cover!\u201d (1 turn)",
             "- +10%...+30% Cover Damage Reduction"
         ],
-        "rawXML": "<unitCast name=\"TakeCover\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedNonLargeUnitsInTheArea\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"TakeCover\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t \t\t\t\t<modifier>\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n \t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"TakeCover\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedNonLargeUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"TakeCover\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t \t\t\t\t<modifier>\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n \t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\TakeCover.png",
         "name": "\u201cTake Cover!\u201d",
         "conditions": {
@@ -470,7 +584,7 @@
         "modifiers": [
             "- +2...+6 Morale"
         ],
-        "rawXML": "<unitCast name=\"NeverSurrender\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedNonLargeUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\t\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"2\" addMax=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Broken\"/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Shaken\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"NeverSurrender\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"3\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedNonLargeUnitsInTheArea\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\t\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale addMin=\"2\" addMax=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Broken\"/>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Shaken\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\NeverSurrender.png",
         "name": "\u201cNever Surrender!\u201d",
         "conditions": {
@@ -579,10 +693,8 @@
         "modifiers": [
             "Unholy Haste (1 turn)",
             "- +33% Attacks",
-            "- +2 Movement",
             "- +2 Movement Max",
-            "- -2 Movement",
-            "- -2 Movement Max"
+            "- -2 Movement"
         ],
         "rawXML": "<unitCast name=\"UnholyHaste\" cooldown=\"3\" requiredUpgrade=\"UnholyHaste\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"UnholyHaste\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"UnholyHaste\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\UnholyHaste.png",
@@ -624,7 +736,7 @@
         "modifiers": [
             "Spawn Shoch'itris Lair (Level 1)"
         ],
-        "rawXML": "<unitCast name=\"CreateShochitrisLair\" cooldown=\"10\" icon=\"Units/ShochitrisLair\" requiredUpgrade=\"ShochitrisLair\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"ShochitrisLair\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"CreateShochitrisLair\" cooldown=\"10\" icon=\"Units/ShochitrisLair\" requiredUpgrade=\"ShochitrisLair\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"ShochitrisLair\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseAlgaeStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Units\\ShochitrisLair.png",
         "name": "Create Shoch'itris Lair",
         "conditions": {
@@ -747,27 +859,6 @@
         },
         "branch": "Cyber"
     },
-    "Repair": {
-        "internalID": "Repair",
-        "description": null,
-        "cooldown": "1",
-        "flavor": "Executing repairs took time to prepare and meant the technician had to stay close to the machine. If you wanted to make a fast friend, you kept anyone repairing your tech safe. They were doing the same for you, after all. I still can\u2019t believe there were soldiers who\u2019d sacrifice them like pawns.",
-        "modifiers": [
-            "- +8 Hitpoints"
-        ],
-        "rawXML": "<unitCast name=\"Repair\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<trait type=\"Mechanical\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedDamagedMechanicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"8\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
-        "iconPath": "Zephon\\Icons\\Actions\\Repair.png",
-        "name": "Repair",
-        "conditions": {
-            "requiredUpgrade": null,
-            "requiredActionPoints": true,
-            "requiredMovement": false,
-            "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
-        },
-        "branch": "Neutral"
-    },
     "Tune": {
         "internalID": "Tune",
         "description": null,
@@ -798,7 +889,7 @@
         "modifiers": [
             "Spawn Bunker (Level 1)"
         ],
-        "rawXML": "<unitCast name=\"ConstructBunker\" cooldown=\"5\" icon=\"Units/Bunker\" requiredUpgrade=\"Bunker\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Bunker\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"ConstructBunker\" cooldown=\"5\" icon=\"Units/Bunker\" requiredUpgrade=\"Bunker\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Bunker\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseMineralsStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Units\\Bunker.png",
         "name": "Construct Bunker",
         "conditions": {
@@ -835,8 +926,10 @@
         "description": null,
         "cooldown": "1",
         "flavor": "I didn't realize how much I missed proper roads. Months of hauling ass in an Outrider made me used to bumpy rock and hard terrain. But getting that smooth path back helped me focus. Helped me focus on the enemy ahead\u2014and protecting home that lay behind.",
-        "modifiers": [],
-        "rawXML": "<unitCast name=\"ConstructRoad\" cooldown=\"1\" submenu=\"Terraform\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"SpecialResource\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Bleed\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Road\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Fire\"/>\n\t\t\t\t\t\t\t<noEnemyUnit/>\n\t\t\t\t\t\t\t<noCity/>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Road\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\t\t\n\t\t",
+        "modifiers": [
+            "- -1 Minerals Cost"
+        ],
+        "rawXML": "<unitCast name=\"ConstructRoad\" cooldown=\"1\" submenu=\"Terraform\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"10\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"RestlessUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost mul=\"-1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"SpecialResource\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Bleed\"/>\n\t\t\t\t\t\t\t<noFeatureCategory name=\"Road\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Fire\"/>\n\t\t\t\t\t\t\t<noEnemyUnit/>\n\t\t\t\t\t\t\t<noCity/>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Road\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\t\t\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\ConstructRoad.png",
         "name": "Construct Road",
         "conditions": {
@@ -877,6 +970,27 @@
         "rawXML": "<clearTile>\n\t<modifiers>\n\t\t<modifier visible=\"0\">\n\t\t\t<effects>\n\t\t\t\t<productionCost base=\"12.0\"/> \n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</clearTile>",
         "iconPath": "Zephon\\Icons\\Actions\\ClearTile.png",
         "name": "Clear Tile",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "branch": "Neutral"
+    },
+    "Construct Radio Telescope": {
+        "internalID": "ConstructRadioTelescope",
+        "description": null,
+        "cooldown": "0",
+        "flavor": "ZEPHON's word isn't good enough. There must be a way to build your own transceiver.",
+        "modifiers": [
+            "Spawn Radio Telescope (Level 1)"
+        ],
+        "rawXML": "<unitCast name=\"ConstructRadioTelescope\" icon=\"Units/RadioTelescope\" requiredUpgrade=\"RadioTelescope\" useConditionsForVisiblity=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"RadioTelescope\" token=\"RadioTelescope\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Units\\RadioTelescope.png",
+        "name": "Construct Radio Telescope",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": true,
@@ -1003,16 +1117,16 @@
     "Pestilence": {
         "internalID": "Pestilence",
         "description": null,
-        "cooldown": "1",
+        "cooldown": "3",
         "flavor": "Another old trick of war. Rats. Plague carts. Catapults slinging corpses. The first horseman of the Apocalypse was Pestilence, after all. Face down a Fallen Orolos and you'd feel the mold spores choking you on the battlefield, making you wish the monster would just crush you already.",
         "modifiers": [
             "Pestilence",
-            "- attacks: 1.0",
+            "- attacks: 2.0",
             "- armorPen: 1",
             "- damage: 2.0",
             "- accuracy: 8"
         ],
-        "rawXML": "<unitCast name=\"Pestilence\" cooldown=\"1\" requiredUpgrade=\"Pestilence\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Pestilence\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"Pestilence\" cooldown=\"3\" requiredUpgrade=\"Pestilence\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"0\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Pestilence\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Pestilence.png",
         "name": "Pestilence",
         "conditions": {
@@ -1096,7 +1210,7 @@
         "modifiers": [
             "Spawn Tessera Core (Level 1)"
         ],
-        "rawXML": "<unitCast name=\"ConstructTesseraCore\" cooldown=\"5\" icon=\"Units/TesseraCore\" requiredUpgrade=\"TesseraCore\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<antimatterCost base=\"2\"/> \n\t\t\t\t\t\t<chipsCost base=\"20\"/> \n\t\t\t\t\t\t<mineralsCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"TesseraCore\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"ConstructTesseraCore\" cooldown=\"5\" icon=\"Units/TesseraCore\" requiredUpgrade=\"TesseraCore\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<antimatterCost base=\"4\"/> \n\t\t\t\t\t\t<chipsCost base=\"20\"/> \n\t\t\t\t\t\t<mineralsCost base=\"20\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<buildingSlots greater=\"0\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<city/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"TesseraCore\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player match=\"Any\">\n\t\t\t\t\t\t\t<increaseAntimatterStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t\t<increaseChipsStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t\t<increaseMineralsStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Units\\TesseraCore.png",
         "name": "Construct Tessera Core",
         "conditions": {
@@ -1109,24 +1223,26 @@
         },
         "branch": "Cyber"
     },
-    "Set Rally Point": {
-        "internalID": "SetRallyPoint",
+    "Nitro Boost": {
+        "internalID": "NitroBoost",
         "description": null,
-        "cooldown": "0",
-        "flavor": null,
-        "modifiers": [],
-        "rawXML": "<setRallyPoint/>\n\t",
-        "iconPath": "Zephon\\Icons\\Actions\\SetRallyPoint.png",
-        "name": "Set Rally Point",
+        "cooldown": "5",
+        "flavor": "\u201cFuel, fire, and all you could ever desire,\u201d the machine shop worker said when hauling out her so-called \u201cspecial batch\u201d of \u201cScrambler juice.\u201d I wish she hadn't been so\u2026 adolescent about it. This was war, not a backroads race\u2026",
+        "modifiers": [
+            "- +2 Movement"
+        ],
+        "rawXML": "<ghostWalk name=\"NitroBoost\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</ghostWalk>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\NitroBoost.png",
+        "name": "Nitro Boost",
         "conditions": {
             "requiredUpgrade": null,
-            "requiredActionPoints": true,
+            "requiredActionPoints": false,
             "requiredMovement": false,
             "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
+            "consumedActionPoints": false,
+            "consumedMovement": false
         },
-        "branch": "Neutral"
+        "branch": "Human"
     },
     "Construct Greenhouse Farm": {
         "internalID": "ConstructFarm",
@@ -1168,24 +1284,22 @@
         },
         "branch": "Human"
     },
-    "Cauterize Wounds": {
-        "internalID": "CauterizeWounds",
+    "Pathfinder Drone": {
+        "internalID": "PathfinderDrone",
         "description": null,
-        "cooldown": "1",
-        "flavor": "The first soldiers we augmented with cybernetic tech were still vulnerable to attacks on vital organs. With a little extra programming, our techs could numb their pain sensors. If they already couldn\u2019t feel pain, there was no reason to not let them cauterize their own wounds.",
-        "modifiers": [
-            "- +50% Hitpoints"
-        ],
-        "rawXML": "<unitCast name=\"CauterizeWounds\" cooldown=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\t\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
-        "iconPath": "Zephon\\Icons\\Actions\\CauterizeWounds.png",
-        "name": "Cauterize Wounds",
+        "cooldown": "3",
+        "flavor": "That's how it caught me. The fucking drone. I was used to dodging all kinds of sensors and Voice magic but I got undone by a bot smaller than the Combat Melisai. Stupid. The Harbinger didn't need to know everything around it\u2014just precise pieces of information that would allow it to execute its mission.",
+        "modifiers": [],
+        "rawXML": "<unitCast name=\"PathfinderDrone\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMin=\"1\" rangeMax=\"2\" sighted=\"0\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noSighted/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\PathfinderDrone.png",
+        "name": "Pathfinder Drone",
         "conditions": {
             "requiredUpgrade": null,
-            "requiredActionPoints": true,
+            "requiredActionPoints": false,
             "requiredMovement": false,
             "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
+            "consumedActionPoints": false,
+            "consumedMovement": false
         },
         "branch": "Cyber"
     },
@@ -1215,9 +1329,9 @@
         "internalID": "Recon",
         "description": null,
         "cooldown": "3",
-        "flavor": "Outriders were sent out with long photographic lenses, old radar dug up from wartime bunkers and specialized sonar\u2014all so their analysts could spy on enemies from a distance. They\u2019d sit in the back of the Outrider, furiously piecing together information as the vehicle bucked and jolted on the rough road below.",
+        "flavor": "Scouts of all stripes knew pre-war tech could make for better reconnaissance. Snipers dug up old camera lenses, drivers kept pre-war scanners in the backseat\u2026 best tracker I knew studied even older ways. His trick: carrying fresh food and searching out refugee camps. The locals always knew more than even the most sharp-eyed soldier.",
         "modifiers": [],
-        "rawXML": "<unitCast name=\"Recon\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"Recon\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t<beginTargets>\n\t\t<selfTarget>\n\t\t\t<areas>\n\t\t\t\t<area affect=\"Tile\" radius=\"3\">\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<reveal/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</area>\n\t\t\t</areas>\n\t\t</selfTarget>\n\t</beginTargets>\n\t<scoreModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<score add=\"1.0\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</scoreModifiers>\n</unitCast>",
         "iconPath": "Zephon\\Icons\\Actions\\Recon.png",
         "name": "Recon",
         "conditions": {
@@ -1236,7 +1350,7 @@
         "cooldown": "5",
         "flavor": "Outrider operators knew when the bullets started flying, they weren\u2019t combatants: they were bait. Their job was to lay mines in key positions and lure the enemy in. Then once the trap was sprung, they could burn rubber and get away\u2014and whatever was hunting them became easy pickings for the rest of us.",
         "modifiers": [],
-        "rawXML": "<unitAction name=\"Minelayer\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredUpgrade=\"Minelayer\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Mines\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
+        "rawXML": "<unitAction name=\"Minelayer\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"Mines\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Minelayer.png",
         "name": "Minelayer",
         "conditions": {
@@ -1337,13 +1451,13 @@
         },
         "branch": "Cyber"
     },
-    "Repair Drones": {
+    "Repair Melisai": {
         "internalID": "DeployRepairDrone",
         "description": null,
         "cooldown": "5",
         "flavor": "Don\u2019t ignore these drones. Their field repairs made us wish humans were as easy to fix as machines. We joked about what you could get done if mending an arm was as simple as reconnecting some blasted circuitry. Some of us\u2026 some of us decided that wasn\u2019t just a joke.",
         "modifiers": [
-            "Spawn Repair Drones (Level 1)",
+            "Spawn Repair Melisai (Level 1)",
             "Summon (3 turns)",
             "- max 0 Food Upkeep",
             "- max 0 Minerals Upkeep",
@@ -1356,9 +1470,9 @@
             "- max 0 Singularity Cores Upkeep",
             "- max 0 Influence Upkeep"
         ],
-        "rawXML": "<unitCast name=\"DeployRepairDrone\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/RepairDrone\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"RepairDrone\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
+        "rawXML": "<unitCast name=\"DeployRepairDrone\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/RepairDrone\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"RepairDrone\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" avoidWater=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Units\\RepairDrone.png",
-        "name": "Repair Drones",
+        "name": "Repair Melisai",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": false,
@@ -1369,13 +1483,13 @@
         },
         "branch": "Cyber"
     },
-    "EMP Drones": {
+    "EMP Melisai": {
         "internalID": "DeployEMPDrone",
         "description": null,
         "cooldown": "5",
-        "flavor": "Combat Drones can be a distraction, but EMP Drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
+        "flavor": "Combat drones can be a distraction, but EMP drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
         "modifiers": [
-            "Spawn EMP Drones (Level 1)",
+            "Spawn EMP Melisai (Level 1)",
             "Summon (3 turns)",
             "- max 0 Food Upkeep",
             "- max 0 Minerals Upkeep",
@@ -1388,11 +1502,11 @@
             "- max 0 Singularity Cores Upkeep",
             "- max 0 Influence Upkeep"
         ],
-        "rawXML": "<unitCast name=\"DeployEMPDrone\" cooldown=\"5\" icon=\"Units/EMPDrone\" requiredUpgrade=\"EMPDrone\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"EMPDrone\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"DeployEMPDrone\" cooldown=\"5\" icon=\"Units/EMPDrone\" requiredUpgrade=\"EMPDrone\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"EMPDrone\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Units\\EMPDrone.png",
-        "name": "EMP Drones",
+        "name": "EMP Melisai",
         "conditions": {
-            "requiredUpgrade": "EMP Drones",
+            "requiredUpgrade": "EMP Melisai",
             "requiredActionPoints": true,
             "requiredMovement": false,
             "usableInTransport": false,
@@ -1434,7 +1548,7 @@
             "- +5 Cooldown",
             "- -2 Cooldown"
         ],
-        "rawXML": "<unitCast name=\"Nightmare\" cooldown=\"5\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"PhenarisHunter\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"0\" consumedMovement=\"1\" experienceFromSourceUnit=\"1\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTraitToTargetOrSource type=\"Nightmare\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"UnitAction\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<action>\n\t\t\t\t\t\t\t\t\t\t\t<type name=\"Nightmare\"/>\n\t\t\t\t\t\t\t\t\t\t</action>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\" visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"Nightmare\" cooldown=\"5\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"PhenarisHunter\" appearFromSourceUnit=\"0\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"0\" consumedMovement=\"1\" experienceFromSourceUnit=\"1\" spawnedBySourceUnit=\"1\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\t\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTraitToTargetOrSource type=\"Nightmare\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"UnitAction\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<action>\n\t\t\t\t\t\t\t\t\t\t\t<type name=\"Nightmare\"/>\n\t\t\t\t\t\t\t\t\t\t</action>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier requiredUpgrade=\"DreadShadow\" visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<cooldown add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\Nightmare.png",
         "name": "Nightmare",
         "conditions": {
@@ -1500,7 +1614,9 @@
             "Swallowed",
             "- max 0% Action Points Max",
             "- max 0% Movement Max",
+            "- max 0% Healing Rate",
             "- -100% Healing Received",
+            "- max 0% Morale Regeneration",
             "- -20% Hitpoints"
         ],
         "rawXML": "<unitCast name=\"Swallow\" cooldown=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<cargoSlotsFree greater=\"0\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"TargetEnemyNonTitanNonHeroNonHeadquartersUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<embark/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyNonTitanNonHeroNonHeadquartersUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Swallowed\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.75\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t\t",
@@ -1634,7 +1750,7 @@
             "- +1 Hitpoints",
             "- +1 Morale"
         ],
-        "rawXML": "<unitAction name=\"DarkCaress\" passive=\"1\" requiredUpgrade=\"DarkCaress\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedBiologicalUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DarkCaress\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
+        "rawXML": "<unitAction name=\"DarkCaress\" passive=\"1\" requiredUpgrade=\"DarkCaress\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToUnitAndAdjacentAlliedBiologicalUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DarkCaress\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\DarkCaress.png",
         "name": "Dark Caress",
         "conditions": {
@@ -1719,7 +1835,7 @@
         "modifiers": [
             "- +2...+2 Movement"
         ],
-        "rawXML": "<fly name=\"Hast\" cooldownMin=\"4\" cooldownMax=\"2\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement addMin=\"2\" addMax=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</fly>\n\t\t",
+        "rawXML": "<fly name=\"Hast\" cooldownMin=\"4\" cooldownMax=\"2\" rank=\"-1\" rankMax=\"2\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<movement addMin=\"2\" addMax=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\n\t\t</fly>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\Hast.png",
         "name": "Hast",
         "conditions": {
@@ -1931,7 +2047,7 @@
         "modifiers": [
             "Spawn Warden (Level 1)"
         ],
-        "rawXML": "<unitCast name=\"ConstructWarden\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/Warden\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<chipsCost base=\"5\"/> \n\t\t\t\t\t\t<mineralsCost base=\"10\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Warden\" appearFromSourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
+        "rawXML": "<unitCast name=\"ConstructWarden\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" icon=\"Units/Warden\" requiredActionPoints=\"0\" requiredMovement=\"0\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<chipsCost base=\"5\"/> \n\t\t\t\t\t\t<mineralsCost base=\"10\"/> \n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<heightAbsoluteDifference less=\"2\"/>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noFeature type=\"Volcano\"/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"Warden\" spawnedBySourceUnit=\"1\" avoidBleed=\"0\" avoidCity=\"0\" consumedAction=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t",
         "iconPath": "Zephon\\Icons\\Units\\Warden.png",
         "name": "Construct Warden",
         "conditions": {
@@ -1961,11 +2077,11 @@
         "cooldown": "10",
         "flavor": "The Emulated Mind knew the back roads and less-used byways of every networking system. She loathed using such paths, but found there was some purpose to them. She\u2019d reach out her mind, walk through the back door, and have a look at what our enemies were researching. She could accept that function.",
         "modifiers": [
-            "Data Hack (5 turns)",
+            "Data Hack (10 turns)",
             "- +100% Research Copied",
             "- +20% Resources Copied"
         ],
-        "rawXML": "<playerCast name=\"DataHack\" cooldown=\"10\" label=\"1\" requiredUpgrade=\"DataHack\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"City\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToEnemyCity\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DataHack\" duration=\"5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t",
+        "rawXML": "<playerCast name=\"DataHack\" cooldown=\"10\" label=\"1\" requiredUpgrade=\"DataHack\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"City\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToEnemyCity\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DataHack\" duration=\"10\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\DataHack.png",
         "name": "Data Hack",
         "branch": "Cyber"
@@ -2064,13 +2180,29 @@
         "modifiers": [
             "- -50% Influence Cost",
             "Immoral",
-            "- -50%...-1000% Loyalty",
-            "- +25%...+500% Loyalty"
+            "- +0...-10 Loyalty",
+            "- +0...+5 Loyalty"
         ],
         "rawXML": "<buildingGroupCast name=\"QuenchResistance\" autoCycle=\"0\" cooldown=\"1\" executeImmediately=\"1\" useConditionsForVisiblity=\"1\">\n\t\t\t<conditions>\n\t\t\t\t<building>\n\t\t\t\t\t<type name=\"Headquarters\"/>\n\t\t\t\t</building>\n\t\t\t</conditions>\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"ImmoralUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\t\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"City\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeTrait type=\"Immoral\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Immoral\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<city>\n\t\t\t\t\t\t\t<traitWithRank type=\"Immoral\" greater=\"8\"/> \n\t\t\t\t\t\t</city>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</buildingGroupCast>\n \t",
         "iconPath": "Zephon\\Icons\\Actions\\QuenchResistance.png",
         "name": "Quench Resistance",
         "branch": "Cyber"
+    },
+    "Horde Mandate": {
+        "internalID": "HordeMandate",
+        "description": null,
+        "cooldown": "0",
+        "flavor": "The Hollow Warlord was a tactician. Not a brute like the Reavers or Busters who were all rage, all the time, he knew how to WAIT. To watch. To send in an army and let the enemy think they were inches from victory\u2014then he gave the signal. The roar of a bike's engine. That was the sign to let go of everything you ever knew and fight. Like. Hell.",
+        "modifiers": [
+            "Horde Mandate (1 turn)",
+            "- +25% Attacks",
+            "- +2 Movement Max",
+            "- +20% Life Steal"
+        ],
+        "rawXML": "<playerCast name=\"HordeMandate\" cooldown=\"0\" label=\"1\" requiredUpgrade=\"HordeMandate\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"2\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnitsOnTilesInTargetArea\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HordeMandate\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<actionPoints greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"HordeMandate\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\HordeMandate.png",
+        "name": "Horde Mandate",
+        "branch": "Human"
     },
     "Quid Pro Quo (Food)": {
         "internalID": "QuidProQuoFood",
@@ -2154,7 +2286,7 @@
             "Enhanced Probability Augment",
             "- +1 Accuracy"
         ],
-        "rawXML": "<playerCast name=\"EnhancedProbabilityAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"EnhancedProbabilityAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Summon\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\EnhancedProbabilityAugment.png",
         "name": "Enhanced Probability Augment",
         "branch": "Cyber"
@@ -2170,7 +2302,7 @@
             "Liquid Deflection Augment",
             "- +17% Evasion Damage Reduction"
         ],
-        "rawXML": "<playerCast name=\"LiquidDeflectionAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"LiquidDeflectionAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Summon\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\LiquidDeflectionAugment.png",
         "name": "Liquid Deflection Augment",
         "branch": "Cyber"
@@ -2184,10 +2316,9 @@
             "- -25% Influence Cost",
             "- -25% Influence Cost",
             "Nanomachine Accelerator Augment",
-            "- +1 Movement Max",
-            "- +1 Movement"
+            "- +1 Movement Max"
         ],
-        "rawXML": "<playerCast name=\"NanomachineAcceleratorAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"NanomachineAcceleratorAugment\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"AugmentsUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Large\"/>\n\t\t\t\t\t\t\t<noTrait type=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"LiquidDeflectionAugment\"/>\n\t\t\t\t\t\t\t<noTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedNonLargeUnaugmentedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"NanomachineAcceleratorAugment\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Summon\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"EnhancedProbabilityAugment\"/>\n\t\t\t\t<action name=\"LiquidDeflectionAugment\"/>\n\t\t\t\t<action name=\"NanomachineAcceleratorAugment\"/>\n\t\t\t</sharedCooldowns>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\NanomachineAcceleratorAugment.png",
         "name": "Nanomachine Accelerator Augment",
         "branch": "Cyber"
@@ -2199,15 +2330,65 @@
         "flavor": "The Icarus Satellite network was a weapon developed by an old world company named ICAR Corp that never got online. For too long we thought it was just a myth. Then the Rogue Operative showed up on the scene with the missing link: an authorization key that assumed she was the CEO of ICAR. Only she could call down the Icarus' firepower\u2014even if someone killed her and took it, they'd never crack her layers of encryption on the damn thing.",
         "modifiers": [
             "Icarus Satellite",
-            "- attacks: 2.0",
-            "- armorPen: 7",
-            "- damage: 12.0",
+            "- attacks: 3.0",
+            "- armorPen: 6",
+            "- damage: 8.0",
             "- accuracy: 6"
         ],
         "rawXML": "<playerCast name=\"IcarusSatellite\" cooldown=\"3\" label=\"1\" requiredUpgrade=\"IcarusSatellite\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"IcarusSatellite\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\IcarusSatellite.png",
         "name": "Icarus Satellite",
         "branch": "Cyber"
+    },
+    "Mother's Favor": {
+        "internalID": "MothersFavor",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "Mothers shouldn't play favorites. But she did. When the Twisted Mother reached out and grazed her fingers across your cheek you wouldn't mind the blood she drew. Her love cast aside the memories of your birth parents, no matter how hard you clung on to them.",
+        "modifiers": [
+            "- -25% Influence Cost",
+            "- -25% Influence Cost",
+            "Mother's Favor",
+            "- +33% Attacks",
+            "- +25% Invulnerable Damage Reduction",
+            "- -50% Morale Loss",
+            "- +17% Attacks",
+            "- +8% Invulnerable Damage Reduction",
+            "- -10% Hitpoints"
+        ],
+        "rawXML": "<playerCast name=\"MothersFavor\" cooldown=\"1\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"MothersFavor\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"MothersFavor\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.9\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"Engineer\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\MothersFavor.png",
+        "name": "Mother's Favor",
+        "branch": "Voice"
+    },
+    "Inhuman Kindness": {
+        "internalID": "InhumanKindness",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "If you were careless, her warmth, her gaze, her kindness could drain the life out of you. But it was her heart that could give it back. Blood pumping, roaring from a great distance, but then through your veins. Through your arteries, then through your own heart, and life was restored. And you could fight on, ready to die for her.",
+        "modifiers": [
+            "- -25% Influence Cost",
+            "- -25% Influence Cost",
+            "- +20% Hitpoints"
+        ],
+        "rawXML": "<playerCast name=\"InhumanKindness\" cooldown=\"1\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<trait type=\"MothersFavor\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnitWithMothersFavor\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFromMax add=\"0.2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\InhumanKindness.png",
+        "name": "Inhuman Kindness",
+        "branch": "Voice"
+    },
+    "Mother's Scorn": {
+        "internalID": "MothersScorn",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "A memory. A child afraid to lock eyes with a parent. Not because they hit the child but because they might hit the child. The child fears that moment, when the parent's love\u2014the Mother's love\u2014would be yanked away and replaced by icy words, a raised voice, a belt drawn and readied to strike.",
+        "modifiers": [
+            "- -25% Influence Cost",
+            "- -25% Influence Cost"
+        ],
+        "rawXML": "<playerCast name=\"MothersScorn\" cooldown=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"MothersFavorUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<trait type=\"MothersFavor\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"FromTargetAlliedUnitWithMothersFavor\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeTrait type=\"MothersFavor\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea equal=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<control/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n \t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\MothersScorn.png",
+        "name": "Mother's Scorn",
+        "branch": "Voice"
     },
     "Words of the Prophet": {
         "internalID": "WordsOfTheProphet",
@@ -2218,7 +2399,7 @@
             "- -25% Influence Cost",
             "- -25% Influence Cost"
         ],
-        "rawXML": "<playerCast name=\"WordsOfTheProphet\" cooldown=\"5\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<moraleMax greater=\"0\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMoraleBelow50PercentHitpoints\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<changePlayer/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.25\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"WordsOfTheProphet\" cooldown=\"5\" label=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t\t<modifier requiredUpgrade=\"WordsOfTheProphetUpgrade2\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCostFromExperience mul=\"-0.25\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<hitpointsFraction less=\"0.5\"/>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<moraleMax greater=\"0\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Hero\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OfTargetEnemyNonTitanNonHeroNonHeadquartersUnitWithFiniteMoraleBelow50PercentHitpoints\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<changePlayer/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction greater=\"0.25\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Decaying\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"Summon\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<player>\n\t\t\t\t\t\t\t<increaseInfluenceStrategy greater=\"0.5\"/>\n\t\t\t\t\t\t</player>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score max=\"0.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\WordsOfTheProphet.png",
         "name": "Words of the Prophet",
         "branch": "Voice"
@@ -2316,11 +2497,8 @@
         "description": null,
         "cooldown": "Passive",
         "flavor": "The Voice craved loyal followers, and knew that faith wavered as the enemy neared the gates. It found itself new acolytes\u2014preachers who spoke of a disciple named Nihilus. They took up ranks in the Midnight Chorus, and their sonorous chants reached the ears of every soldier surrounding the city; a reminder that the Voice\u2014and its blessings\u2014would be there when needed.",
-        "modifiers": [
-            "Precentor of Nihilus",
-            "- -17% Morale Loss"
-        ],
-        "rawXML": "<buildingGroupAction name=\"VoiceInfantryUpgrade\" passive=\"1\" requiredUpgrade=\"VoiceInfantryUpgrade\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"6\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnits\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"VoiceInfantryUpgrade\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</buildingGroupAction>\n\t",
+        "modifiers": [],
+        "rawXML": "<buildingGroupAction name=\"VoiceInfantryUpgrade\" passive=\"1\" requiredUpgrade=\"VoiceInfantryUpgrade\" visible=\"0\" enabled=\"0\"/>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\VoiceInfantryUpgrade.png",
         "name": "Precentor of Nihilus",
         "branch": "Voice"
@@ -2331,9 +2509,9 @@
         "cooldown": "0",
         "flavor": "Gods, what an awful day it was. We'd sprung on the Voice cultists by surprise, struck their base before they could mobilize. But a high-pitched wail came out from the Masked Hymnal and within seconds good men and women were trapped in its power. Whatever it cost them to pull that off\u2026 it cost my people more.",
         "modifiers": [
-            "- +2 Influence Cost"
+            "- +1 Influence Cost"
         ],
-        "rawXML": "<rushProduction name=\"ChoralCelerity\" requiredUpgrade=\"VoiceOperationsUpgrade\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost add=\"2\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</rushProduction>\n\t",
+        "rawXML": "<rushProduction name=\"ChoralCelerity\" requiredUpgrade=\"VoiceOperationsUpgrade\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost add=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</rushProduction>\n\t",
         "iconPath": "Zephon\\Icons\\Actions\\ChoralCelerity.png",
         "name": "Choral Celerity",
         "branch": "Voice"
@@ -2361,7 +2539,7 @@
             "- -4 Hitpoints",
             "- +10 Energy"
         ],
-        "rawXML": "<playerCast name=\"AntiparticlePurge\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<feature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<feature type=\"Forest\"/>\n\t\t\t\t\t\t\t<feature type=\"Ruins\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetBiologicalUnit\" requiredUpgrade=\"UnrestrainedDisassembly\">\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"-4\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<energy add=\"10\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"AntiparticlePurge\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<feature type=\"AbkhanDrey\"/>\n\t\t\t\t\t\t\t<feature type=\"Bleed\"/>\n\t\t\t\t\t\t\t<feature type=\"Forest\"/>\n\t\t\t\t\t\t\t<feature type=\"Ruins\"/>\n\t\t\t\t\t\t\t<feature type=\"Sandpit\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"AbkhanDrey\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Sandpit\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeTrait type=\"AbkhanRespawn\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetBiologicalUnit\" requiredUpgrade=\"UnrestrainedDisassembly\">\n \t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"-4\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<energy add=\"10\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\AntiparticlePurge.png",
         "name": "Antiparticle Purge",
         "branch": "Cyber"
@@ -2372,16 +2550,19 @@
         "cooldown": "1",
         "flavor": "The stench was the first warning. If your Voice-touched enemy began to stink like a shit-covered corpse, you were seconds from being blasted by its blood and guts. A remote detonator would have killed its host quickly\u2014but these unlucky bastards got to feel their insides rapidly rot before they blew wide open.",
         "modifiers": [
+            null,
+            "- max 0 Death Experience",
+            "- max 0 Death Morale",
             "- -100% Hitpoints",
             "Apotheosis",
             "- attacks: 1.0",
-            "- armorPen: 3",
-            "- damage: 4.0",
+            "- armorPen: 4",
+            "- damage: 6.0",
             "- accuracy: 6",
             "Blinded (2 turns)",
             "- -50% Accuracy"
         ],
-        "rawXML": "<playerCast name=\"Apotheosis\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<own/>\n\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetOwnBiologicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints mul=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t \t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t \t\t\t\t\t\t\t\t<unit>\n\t\t\t\t \t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t \t\t\t\t\t\t\t\t</unit>\n\t\t\t\t \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.1\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Apotheosis\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\" requiredUpgrade=\"NuminousReveries\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Blinded\" duration=\"2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"Apotheosis\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<own/>\n\t\t\t\t\t\t\t<trait type=\"Biological\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"NoDeathMoraleOrExperience\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t \t\t\t\t\t\t\t<unitsInRange greater=\"1\" range=\"1\">\n\t\t\t\t \t\t\t\t\t\t\t\t<unit>\n\t\t\t\t \t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t \t\t\t\t\t\t\t\t</unit>\n\t\t\t\t \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.1\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetOwnBiologicalUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints mul=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Apotheosis\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\" requiredUpgrade=\"NuminousReveries\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Blinded\" duration=\"2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\Apotheosis.png",
         "name": "Apotheosis",
         "branch": "Voice"
@@ -2395,10 +2576,10 @@
             "Atramentous Aura (3 turns)",
             "- +33% Attacks",
             "- +10% Invulnerable Damage Reduction",
-            "- +33% Movement",
+            "- +33% Movement Max",
             "- +10% Invulnerable Damage Reduction"
         ],
-        "rawXML": "<playerCast name=\"AtramentousAura\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAndAdjacentAlliedUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"AtramentousAura\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"AtramentousAura\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"AtramentousAura\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAlliedUnitsOnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"AtramentousAura\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"AtramentousAura\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\AtramentousAura.png",
         "name": "Atramentous Aura",
         "branch": "Voice"
@@ -2414,12 +2595,17 @@
             "- armorPen: 10",
             "- damage: 32.0",
             "- accuracy: 12",
-            "Black Hole (Adjacent)",
-            "- attacks: 0.5",
+            "Black Hole",
+            "- attacks: 1.0",
             "- armorPen: 10",
             "- damage: 32.0",
             "- accuracy: 12",
             "Black Hole (3 turns)",
+            "Black Hole",
+            "- attacks: 1.0",
+            "- armorPen: 10",
+            "- damage: 32.0",
+            "- accuracy: 12",
             "Black Hole",
             "- attacks: 1.0",
             "- armorPen: 10",
@@ -2431,10 +2617,24 @@
             "- min 100 Movement Cost",
             "- -67% Movement Max"
         ],
-        "rawXML": "<playerCast name=\"BlackHole\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHoleAdjacent\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"BlackHole\" duration=\"3\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"2\" excludeRadius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTilesAdjacentToBlackHole\" requiredUpgrade=\"HorizonExpansion\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HorizonExpansion\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"BlackHole\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"BlackHole\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Ruins\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"BlackHole\" factor=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"BlackHole\" duration=\"3\"/> \n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"2\" excludeRadius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTilesAdjacentToBlackHole\" requiredUpgrade=\"HorizonExpansion\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HorizonExpansion\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"BlackHole\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
         "name": "Black Hole",
         "branch": "Cyber"
+    },
+    "Enriched Alloys": {
+        "internalID": "EnrichedAlloys",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "A bad memory always surfaced when I sat down to patch and repair my firearm. A kitchen table. My uncle cleaning his rifles. My aunt\u2026 angry. She'd told him to never bring them in the house. He screamed at her. The gun went off\u2026 and\u2026 that monster had no respect for how a honed weapon made from good material could rip through flesh and bone. He just liked how it gleamed in the sun.",
+        "modifiers": [
+            "Enriched Alloys (3 turns)",
+            "- +33% Damage"
+        ],
+        "rawXML": "<playerCast name=\"EnrichedAlloys\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<rangedWeapons/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnitWithRangedWeapons\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"EnrichedAlloys\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<actionPoints greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\EnrichedAlloys.png",
+        "name": "Enriched Alloys",
+        "branch": "Human"
     },
     "Experimental Drugs": {
         "internalID": "ExperimentalDrugs",
@@ -2446,7 +2646,7 @@
             "- +20% Attacks",
             "- +20% Damage",
             "- +20% Invulnerable Damage Reduction",
-            "- +1 Movement",
+            "- +1 Movement Max",
             "- -20% Hitpoints",
             "Experimental Drugs (Berserk) (1 turn)",
             "- +100 Movement",
@@ -2481,9 +2681,9 @@
             "- armorPen: 2",
             "- damage: 2.0",
             "- accuracy: 6",
-            "- -1 Morale"
+            "- -2 Morale"
         ],
-        "rawXML": "<playerCast name=\"HymnOfDecay\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeature type=\"HymnOfDecay\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"HymnOfDecay\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\" requiredUpgrade=\"AfflictionsAntiphon\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"-1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"HymnOfDecay\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"HymnOfDecay\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<noFeature type=\"HymnOfDecay\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"HymnOfDecay\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\" requiredUpgrade=\"AfflictionsAntiphon\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTile\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"HymnOfDecay\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\HymnOfDecay.png",
         "name": "Hymn of Decay",
         "branch": "Voice"
@@ -2499,7 +2699,7 @@
             "- -33% Movement Max",
             "- -17% Accuracy"
         ],
-        "rawXML": "<playerCast name=\"InterferenceProtocols\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InterferenceProtocols\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"InterferenceProtocols\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"Engineer\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"ShochitrisLair\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"InterferenceProtocols\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\t\t\t\t\t\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyNonTitanUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"InterferenceProtocols\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait type=\"InterferenceProtocols\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"Engineer\"/>\n\t\t\t\t\t\t\t\t\t\t\t<noType name=\"ShochitrisLair\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\t\t\t\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\InterferenceProtocols.png",
         "name": "Interference Protocols",
         "branch": "Cyber"
@@ -2519,7 +2719,7 @@
         "internalID": "LogisticsExperts",
         "description": null,
         "cooldown": "1",
-        "flavor": "Supplies being hauled back from the outposts always had a habit of \u201cfalling off the back of the truck.\u201d Command got tired of the losses and ordered us to round up experts who could monitor each shipment. They were ruthless. If they supervised your shift you weren't getting a wink of sleep until each piece of metal was hauled out of the earth and accounted for.",
+        "flavor": "Supplies being hauled back from the outposts always had a habit of \u201cfalling off the back of the truck.\u201d Command got tired of the losses and ordered us to round up experts who could monitor each shipment. They were ruthless. If they supervised your shift, you weren't getting a wink of sleep until each piece of metal was hauled out of the earth and accounted for.",
         "modifiers": [
             "Logistics Experts (5 turns)",
             "- +400% Flat Resources From Outposts",
@@ -2530,14 +2730,25 @@
         "name": "Logistics Experts",
         "branch": "Human"
     },
+    "Parlay with the Anchorite": {
+        "internalID": "PayResources/CajoleAnchorite",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "A fight\u2014a raid. But wait\u2014a \u201cdisciplined mind.\u201d There's more than one path to victory. Perhaps you could remind the Anchorite that peace, precious peace, is preferable to slaughter\u2026",
+        "modifiers": [],
+        "rawXML": "<playerAction name=\"PayResources/CajoleAnchorite\" durationInSeconds=\"0.1\" icon=\"Actions/ParlayWithTheAnchorite\" interfaceSound=\"Interface/ParlayWithTheAnchorite\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"160\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ParlayWithTheAnchorite.png",
+        "name": "Parlay with the Anchorite",
+        "branch": "Neutral"
+    },
     "Contact the Twisted Augur": {
         "internalID": "PayResources/ContactAugur",
         "description": null,
         "cooldown": "1",
         "flavor": "The Anchorite is so eager to deny these children a touch of the divine. This Twisted Augur may need your aid.",
         "modifiers": [],
-        "rawXML": "<playerAction name=\"PayResources/ContactAugur\" durationInSeconds=\"0.1\" icon=\"Actions/PayResources\" interfaceSound=\"Interface/PayResources\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"10\"/>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
-        "iconPath": "Zephon\\Icons\\Actions\\PayResources.png",
+        "rawXML": "<playerAction name=\"PayResources/ContactAugur\" durationInSeconds=\"0.1\" icon=\"Actions/ContactAugur\" interfaceSound=\"Interface/ParlayWithTheAnchorite\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"10\"/>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ContactAugur.png",
         "name": "Contact the Twisted Augur",
         "branch": "Neutral"
     },
@@ -2547,8 +2758,8 @@
         "cooldown": "1",
         "flavor": "IronFeather wished to replace you. Now she will serve you. Forever.",
         "modifiers": [],
-        "rawXML": "<playerAction name=\"PayResources/FormFunction\" durationInSeconds=\"0.1\" icon=\"Actions/PayResources\" interfaceSound=\"Interface/PayResources\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<energyCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
-        "iconPath": "Zephon\\Icons\\Actions\\PayResources.png",
+        "rawXML": "<playerAction name=\"PayResources/FormFunction\" durationInSeconds=\"0.1\" icon=\"Actions/ImprisonIronFeather\" interfaceSound=\"Interface/ImprisonIronFeather\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<energyCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ImprisonIronFeather.png",
         "name": "Imprison IronFeather",
         "branch": "Neutral"
     },
@@ -2558,8 +2769,8 @@
         "cooldown": "1",
         "flavor": "You have thousands of followers. To take confession from them all at once, you will need to stage a vast ritual\u2026",
         "modifiers": [],
-        "rawXML": "<playerAction name=\"PayResources/MassConfession\" durationInSeconds=\"0.1\" icon=\"Actions/PayResources\" interfaceSound=\"Interface/PayResources\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"80\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
-        "iconPath": "Zephon\\Icons\\Actions\\PayResources.png",
+        "rawXML": "<playerAction name=\"PayResources/MassConfession\" durationInSeconds=\"0.1\" icon=\"Actions/OrganizeMassConfessional\" interfaceSound=\"Interface/OrganizeMassConfessional\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"80\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\OrganizeMassConfessional.png",
         "name": "Organize Mass Confessional",
         "branch": "Neutral"
     },
@@ -2572,6 +2783,17 @@
         "rawXML": "<playerAction name=\"PayResources/MeetYourMaker\" durationInSeconds=\"0.1\" icon=\"Actions/PayResources\" interfaceSound=\"Interface/PayResources\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<energyCost base=\"40\"/>\n\t\t\t\t\t\t<mineralsCost base=\"40\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\PayResources.png",
         "name": "Pay Yetunde",
+        "branch": "Neutral"
+    },
+    "Pay the Constellation": {
+        "internalID": "PayResources/StrikeADeal",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "A middleman emerges. Terms are struck, and you are personally invited to the depths of the fortress the Concordat's agent called \u201cDread Pearlman\u201d.",
+        "modifiers": [],
+        "rawXML": "<playerAction name=\"PayResources/StrikeADeal\" durationInSeconds=\"0.1\" icon=\"Actions/PayResources\" interfaceSound=\"Interface/PayResources\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<transuraniumCost base=\"8\"/>\n\t\t\t\t\t\t<antimatterCost base=\"8\"/>\n\t\t\t\t\t\t<influenceCost base=\"60\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\PayResources.png",
+        "name": "Pay the Constellation",
         "branch": "Neutral"
     },
     "Pay Concordat": {
@@ -2607,6 +2829,39 @@
         "name": "Package Resources",
         "branch": "Neutral"
     },
+    "Try Again": {
+        "internalID": "ProduceChild/Cyber",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "You'll need more potent power to conceive a child.",
+        "modifiers": [],
+        "rawXML": "<playerAction name=\"ProduceChild/Cyber\" durationInSeconds=\"0.1\" icon=\"Actions/ProduceChild\" interfaceSound=\"Interface/ProduceChild\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<chipsCost base=\"10\"/>\n\t\t\t\t\t\t<foodCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ProduceChild.png",
+        "name": "Try Again",
+        "branch": "Neutral"
+    },
+    "Attempt the Impossible": {
+        "internalID": "ProduceChild/Mix",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "Science can only take you so far. Passion will finish the way.",
+        "modifiers": [],
+        "rawXML": "<playerAction name=\"ProduceChild/Mix\" durationInSeconds=\"0.1\" icon=\"Actions/ProduceChild\" interfaceSound=\"Interface/ProduceChild\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"10\"/>\n\t\t\t\t\t\t<chipsCost base=\"10\"/>\n\t\t\t\t\t\t<foodCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ProduceChild.png",
+        "name": "Attempt the Impossible",
+        "branch": "Neutral"
+    },
+    "Try for a Child": {
+        "internalID": "ProduceChild/Voice",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "Your heart pounds. ZEPHON wanted your husband to make a child? Vile. Monstrous. The machine wasn't satisfied with your lover, it wanted to steal your dream.\n\nWell damn ZEPHON. You have the Voice. The Voice can do what machines can't: create life.",
+        "modifiers": [],
+        "rawXML": "<playerAction name=\"ProduceChild/Voice\" durationInSeconds=\"0.1\" icon=\"Actions/ProduceChild\" interfaceSound=\"Interface/ProduceChild\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<algaeCost base=\"10\"/>\n\t\t\t\t\t\t<foodCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</playerAction>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\ProduceChild.png",
+        "name": "Try for a Child",
+        "branch": "Neutral"
+    },
     "Rejuvenation": {
         "internalID": "Rejuvenation",
         "description": null,
@@ -2632,6 +2887,36 @@
         "name": "Satellite Scan",
         "branch": "Human"
     },
+    "Something Wicked": {
+        "internalID": "SomethingWicked",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "Normally you'd bristle at how little work is getting done, but you're too pleased by the Ringmaster's real gift: a code phrase that, when invoked, will cause one of these Erelim angels to strike from the shadows and slit your enemy's throats.",
+        "modifiers": [
+            "Something Wicked",
+            "- attacks: 3.0",
+            "- armorPen: 4",
+            "- damage: 3.0",
+            "- accuracy: 10",
+            "- -2 Hitpoints",
+            "- -2 Morale"
+        ],
+        "rawXML": "<playerCast name=\"SomethingWicked\" cooldown=\"10\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<noAttacking/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"SomethingWicked\"/>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<endTargets>\n\t\t\t\t<target melee=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<destroyed/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"3\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"Assassinate\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"-2\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</endTargets>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SomethingWicked.png",
+        "name": "Something Wicked",
+        "branch": "Neutral"
+    },
+    "Systemic Reset": {
+        "internalID": "SystemicReset",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "\u201cCute,\u201d the Rogue Operative muttered as we huddled in the back of a fleeing Marauder. The alarms were blaring\u2014something hit us and powered down our engines. She punched commands into a terminal. \u201cClassic IT problem. Turn off, turn back on\u2026 same shit, different day.\u201d the alarms cut out and the ship's engines roared back to life, freeing us to die another day.",
+        "modifiers": [],
+        "rawXML": "<playerCast name=\"SystemicReset\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions match=\"Any\">\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<sourcePlayer>\n\t\t\t\t\t\t\t\t<noUpgrade name=\"SystemicResetUpgrade\"/>\n\t\t\t\t\t\t\t</sourcePlayer>\n\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t<sourcePlayer>\n\t\t\t\t\t\t\t\t<upgrade name=\"SystemicResetUpgrade\"/>\n\t\t\t\t\t\t\t</sourcePlayer>\n\t\t\t\t\t\t</conditions>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"FromTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeDebuffs/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<notMovedThisTurn/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<resetMovement/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<notActedThisTurn/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<resetActionPoints/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"FromTargetEnemyUnit\" requiredUpgrade=\"SystemicResetUpgrade\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeBuffs/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t\t<debuffed/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t\t<buffed/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Actions\\SystemicReset.png",
+        "name": "Systemic Reset",
+        "branch": "Cyber"
+    },
     "Tactical Nuclear Missile": {
         "internalID": "TacticalNuclearMissile",
         "description": null,
@@ -2643,16 +2928,29 @@
             "- armorPen: 9",
             "- damage: 24.0",
             "- accuracy: 12",
-            "Tactical Nuclear Missile (Adjacent)",
-            "- attacks: 0.5",
+            "Tactical Nuclear Missile",
+            "- attacks: 1.0",
             "- armorPen: 9",
             "- damage: 24.0",
             "- accuracy: 12"
         ],
-        "rawXML": "<playerCast name=\"TacticalNuclearMissile\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissile\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissileAdjacent\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"NuclearFallout\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
+        "rawXML": "<playerCast name=\"TacticalNuclearMissile\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile match=\"Any\">\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t\t<enemyUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t<tile>\n \t\t\t\t\t\t\t<unitsInRange equal=\"0\" range=\"1\">\n \t\t\t\t\t\t\t\t<unit>\n \t\t\t\t\t\t\t\t\t<noEnemy/>\n \t\t\t\t\t\t\t\t\t<aiControlled/>\n \t\t\t\t\t\t\t\t</unit>\n \t\t\t\t\t\t\t</unitsInRange>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Bleed\"/>\n\t\t\t\t\t\t\t\t\t\t<removeFeature type=\"Forest\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetTileAndHalfOnAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissile\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeTarget=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier visible=\"0\" effectDescription=\"OnAdjacentTilesToTarget\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TacticalNuclearMissile\" factor=\"0.5\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"-1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Tile\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"OnTargetAndAdjacentTiles\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addFeature type=\"NuclearFallout\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
         "name": "Tactical Nuclear Missile",
         "branch": "Human"
+    },
+    "Madrigal of Cr'la": {
+        "internalID": "TempleOfCrla",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "Cultists walking the path of Cr'la could smell these places from a mile away. They said their \u201cgod\u201d blessed them with gifts here, provided food, algae and healing for his weary flock. I wasn't convinced. No other Voice cultists spoke of such kindness. Cr'la wouldn't be the one to demand anything other than pain.",
+        "modifiers": [
+            "- +6 Hitpoints"
+        ],
+        "rawXML": "<playerCast name=\"TempleOfCrla\" icon=\"Features/TempleOfCrla\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\n\t\t</playerCast>\n\t\t",
+        "iconPath": "Zephon\\Icons\\Features\\TempleOfCrla.png",
+        "name": "Madrigal of Cr'la",
+        "branch": "Neutral"
     },
     "The Plague": {
         "internalID": "ThePlague",
@@ -2676,10 +2974,25 @@
             "- -6 Hitpoints",
             "- -3 Morale"
         ],
-        "rawXML": "<playerCast name=\"TormentOfTheVoice\" cooldown=\"10\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"-6\"/>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"-3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t",
+        "rawXML": "<playerCast name=\"TormentOfTheVoice\" cooldown=\"10\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"-6\"/>\n\t\t\t\t\t\t\t\t\t\t<morale add=\"-3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<alliedStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t\t",
         "iconPath": "Zephon\\Icons\\Actions\\TormentOfTheVoice.png",
         "name": "Torment of the Voice",
         "branch": "Neutral"
+    },
+    "Transubstantiation": {
+        "internalID": "Transubstantiation",
+        "description": null,
+        "cooldown": "1",
+        "flavor": "\u201cThere is a word,\u201d the zealot whispered into my ear, pushing her knife toward my chest. \u201cThe disciple, in the role of The Voice, pronounces this word, but their power and grace belong to The Voice\u2014\u201d I pushed back as hard as I could\u2014 \u201cThe Bleed and the Body\u2014\u201d Her blade cut my skin\u2014 \u201cTogether with Construct and Machine\u2014\u201d I rallied and shoved her away, but too late, her eyes shined the color of my blood\u2014 \u201cAre of! The Voice!\u201d",
+        "modifiers": [
+            "Transubstantiation (3 turns)",
+            "- +6 Hitpoints",
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<playerCast name=\"Transubstantiation\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t<noTrait type=\"Transubstantiation\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetAlliedUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Transubstantiation\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<actionPoints greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t\t<hitpointsFraction less=\"0.667\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</playerCast>\n\t",
+        "iconPath": "Zephon\\Icons\\Actions\\Transubstantiation.png",
+        "name": "Transubstantiation",
+        "branch": "Voice"
     },
     "Decoy Flares": {
         "internalID": "DecoyFlares",
@@ -2774,16 +3087,16 @@
         "cooldown": "10",
         "flavor": "I don\u2019t know if you know this, but tanks are\u2026 big. Easy to hit. We rigged up smoke launchers on them to cover our retreats. Plenty of idiot operators thought they were invincible riding in the seat of a Crusader. The smart ones knew when to drop smoke and bug out.",
         "modifiers": [],
-        "rawXML": "<unitCast name=\"SmokeLauncher\" cooldown=\"10\" requiredUpgrade=\"SmokeLauncher\">\n\t<beginTargets>\n\t\t<selfTarget>\n\t\t\t<areas>\n\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<addFeature type=\"SmokeScreen\" duration=\"3\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</area>\n\t\t\t</areas>\n\t\t</selfTarget>\n\t</beginTargets>\n\t<scoreModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<score add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</scoreModifiers>\n</unitCast>",
+        "rawXML": "<unitCast name=\"SmokeLauncher\" consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"10\" requiredActionPoints=\"0\" requiredUpgrade=\"SmokeLauncher\">\n\t<beginTargets>\n\t\t<selfTarget>\n\t\t\t<areas>\n\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<addFeature type=\"SmokeScreen\" duration=\"3\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</area>\n\t\t\t</areas>\n\t\t</selfTarget>\n\t</beginTargets>\n\t<scoreModifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<score add=\"0.5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</scoreModifiers>\n</unitCast>",
         "iconPath": "Zephon\\Icons\\Actions\\SmokeLauncher.png",
         "name": "Smoke Launcher",
         "conditions": {
             "requiredUpgrade": null,
-            "requiredActionPoints": true,
+            "requiredActionPoints": false,
             "requiredMovement": false,
             "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
+            "consumedActionPoints": false,
+            "consumedMovement": false
         },
         "branch": "Neutral"
     },

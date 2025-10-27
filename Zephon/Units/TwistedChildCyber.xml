@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber" icon="Units/MalakimDestroyer" portrait="Units/MalakimDestroyer">
+	<model>
+		<unit explosionsBlueprint="Effects/SmallCyberExplosions"
+				explosionsBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="80"
+				material="Units/MalakimDestroyer"
+				mesh="Units/MalakimDestroyer"
+				normalWeight="0.1"
+				position="0 0 16"
+				scale="0.9 0.9 0.9"/>
+	</model>
+	<weapons>
+		<weapon type="PlasmaGun" count="2">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" 
+						muzzleCount="2"
+						windupDuration="0.6"/>
+			</models>
+		</weapon>
+ 		<weapon type="StickyFoam"
+ 				enabled="0"
+ 				slotName="StickyFoam">
+			<models>
+				<flamerWeapon bone="Chest"
+						effectFaceWeight="0.5"
+						fireDelay="0.7"
+						material="Units/MalakimDestroyerStickyFoam"
+						mesh="Units/MalakimDestroyerStickyFoam"
+						muzzleBone="StickyFoamMuzzle" 
+						muzzleCount="2"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="4"/>
+				<armor base="4"/>
+				<chipsCost base="4"/> <!-- %chipsCost base tier=3 factor=0.25 -->
+				<chipsUpkeep base="0.19"/> <!-- %chipsUpkeep base tier=3 factor=0.25 -->
+				<foodCost base="4"/> <!-- %foodCost base tier=3 factor=0.25 -->
+				<foodUpkeep base="0.19"/> <!-- %foodUpkeep base tier=3 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="6"/> <!-- %hitpointsMax base tier=4 -->
+				<mineralsCost base="4"/> <!-- %mineralsCost base tier=3 factor=0.25 -->
+				<mineralsUpkeep base="0.19"/> <!-- %mineralsUpkeep base tier=3 factor=0.25 -->
+				<moraleMax base="8"/>
+				<movementMax base="4"/>
+				<productionCost base="18.0"/> <!-- %productionCost base tier=3 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/MalakimDestroyerAttack"
+						beginFire="0.2"
+						endFire="1.8"
+						responseSound="Responses/Units/MalakimDestroyerAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/MalakimDestroyerDie"
+						animationCount="2"
+						sound="Units/MediumMechanicalGroundHit"
+						soundCount="3"
+						soundDelay="0.5"
+						voiceSound="Units/MalakimDestroyerDie"
+						voiceSoundCount="11"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/MalakimDestroyerImpact"
+						responseSound="Responses/Units/MalakimDestroyerEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/MalakimDestroyerIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/MalakimDestroyerMove"
+						responseSound="Responses/Units/MalakimDestroyerMove"
+						responseSoundCount="3"
+						sound="Units/MalakimDestroyerMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/MalakimDestroyerHold"/>
+			</model>
+		</skip>
+ 		<useWeapon weaponSlotName="StickyFoam"
+				cooldown="5">
+			<model>
+				<attack animation="Units/MalakimDestroyerAbility0"
+						beginFire="0.2"
+						endFire="2.3"
+						responseSound="Responses/Units/MalakimDestroyerStickyFoam"
+						sound="Units/MalakimDestroyerStickyFoam"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Hovering"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

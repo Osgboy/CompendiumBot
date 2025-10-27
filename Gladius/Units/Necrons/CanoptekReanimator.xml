@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit productionWeight="0.01" dlc="Supplement16">
+	<model>
+		<unit mesh="Units/Necrons/CanoptekReanimator"
+				material="Units/Necrons/CanoptekReanimator"
+				idleAnimation="Units/Necrons/CanoptekReanimatorIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				scale="1 1 1"
+				explosionsBone="Body"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon name="AtomiserBeam" count="2">
+			<model>
+				<weapon fireInterval="0.1"
+						muzzleBone=".Muzzle0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=6 factor=1 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base toughness=5 wounds=6 -->
+				<meleeAccuracy base="6"/> <!-- %meleeAccuracy base weaponSkill=3 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseSupportScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Necrons/CanoptekReanimatorAttack"
+						beginFire="1.0"
+						endFire="2.0"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/CanoptekReanimatorDie0"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.45"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/CanoptekReanimatorMove"
+						sound="Units/Necrons/CanoptekReanimatorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<hammerOfWrath consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredUpgrade="Necrons/HammerOfWrath">
+			<model>
+				<action sound="Actions/PsychicBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="HammerOfWrath" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</hammerOfWrath>
+		<genericUnitAbility passive="1" name="Necrons/NanoscarabReanimationBeam">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Necrons/NanoscarabReanimationBeam"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Necrons/ExtraVehicleArmour"/>
+		<trait name="Fearless"/>
+		<trait name="MonstrousCreature"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Necrons/LivingMetal"/>
+		<trait name="Relentless"/>
+		<trait name="Smash"/>
+	</traits>
+</unit>

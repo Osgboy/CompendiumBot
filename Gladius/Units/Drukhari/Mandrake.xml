@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement16">
+	<model>
+		<unit mesh="Units/Drukhari/Mandrake"
+				material="Units/Drukhari/Mandrake"
+				scale="0.8 0.8 0.8"
+				idleAnimation="Units/Drukhari/MandrakeIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				portraitZoomModifier="1.25"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="6" rowSize="3" memberDeltaX="70" memberDeltaY="70"/>
+	<weapons>
+		<weapon name="CloseCombatWeapon">
+			<model>
+				<weapon fireInterval="0.4"/>
+			</model>
+		</weapon>
+		<weapon name="Baleblast">
+			<model>
+				<flamerWeapon muzzleBone="Hand_L" effectFaceWeight="1.0"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/> <!-- %armor base armor=- -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="2.0"/> <!-- %hitpointsMax base toughness=3 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="5"/> -->
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Drukhari/MandrakeAttack"
+						beginFire="1.5"
+						endFire="2.2"
+						chargeAnimation="Units/Drukhari/MandrakeCharge"
+						chargeBeginFire="0.1"
+						chargeEndFire="1.1"
+						meleeAnimation="Units/Drukhari/MandrakeMelee"
+						meleeBeginSwing="0.001"
+						meleeEndSwing="0.101"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Drukhari/MandrakeDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.05"
+						voiceSound="Units/Drukhari/DrukhariInfantryDie"
+						voiceSoundCount="6"/>
+			</model>
+		</die>
+		<move>
+			<model>
+				<action animation="Units/Drukhari/MandrakeMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<webwayTravel name="Drukhari/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Drukhari/WebwayTravelAction">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<endTargets>
+				<target>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier requiredUpgrade="Drukhari/ShroudGate">
+									<effects>
+										<addTrait duration="3" name="Drukhari/ShroudGate"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</webwayTravel>
+		<combatDrugs consumedActionPoints="0" 
+				consumedMovement="0"
+				cooldown="10"
+				name="Drukhari/CombatDrugs"
+				requiredUpgrade="Drukhari/CombatDrugsUpgrade">
+			<model>
+				<action sound="Actions/CombatDrugs"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Drukhari/CombatDrugs" duration="10"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Drukhari/Hypex">
+									<effects>
+										<addTrait duration="10" name="MoveThroughCover"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</combatDrugs>
+		<fadeAway cooldown="10"
+				consumedMovement="10"
+				requiredMovement="1"
+				name="Drukhari/FadeAway"
+				requiredActionPoints="1">
+			<model>
+				<action animation="Units/Drukhari/MandrakeAbility" sound="Actions/FadeAway"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</fadeAway>
+	</actions>
+	<traits>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Drukhari/ExtraInfantryArmour"/>
+		<trait name="Fleet"/>
+		<trait name="Infiltrate"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="Shrouded"/>
+		<trait name="Stealth"/>
+		<trait name="Drukhari/BladeArtists"/>
+		<trait name="Drukhari/PowerFromPain"/>
+		<trait name="Drukhari/RaidersTactics"/>
+		<trait name="Drukhari/RaidersTacticsHealingRate" requiredUpgrade="Drukhari/RaidersTacticsHealingRate"/>
+		<trait name="Drukhari/SoulHunger"/>
+	</traits>
+</unit>

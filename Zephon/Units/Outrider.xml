@@ -120,39 +120,12 @@
 				<action responseSound="Responses/Units/OutriderHoldPosition"/>
 			</model>
 		</skip>
-		<unitCast name="Recon"
-		 		consumedActionPoints="0"
-				consumedMovement="0"
-				cooldown="3"
-				requiredActionPoints="0"
-				requiredMovement="0">
+		<unitCast blueprint="Recon">
 			<model>
 				<cast casterBlueprint="Effects/Radar"
 						responseSound="Responses/Units/OutriderRecon"
 						sound="Actions/Recon"/>
 			</model>
-			<beginTargets>
-				<selfTarget>
-					<areas>
-						<area affect="Tile" radius="3">
-							<modifiers>
-								<modifier>
-									<effects>
-										<reveal/>
-									</effects>
-								</modifier>
-							</modifiers>
-						</area>
-					</areas>
-				</selfTarget>
-			</beginTargets>
-			<scoreModifiers>
-				<modifier>
-					<effects>
-						<score add="1.0"/>
-					</effects>
-				</modifier>
-			</scoreModifiers>
 		</unitCast>
 		<unitAction name="Minelayer"
 		 		consumedActionPoints="0"
@@ -203,6 +176,7 @@
 	</actions>
 	<traits>
 		<trait type="Large"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="Mechanical"/>
 		<trait type="Transport"/>
 		<trait type="MilitaryBackgroundUpgrade" requiredUpgrade="MilitaryBackgroundUpgrade"/>

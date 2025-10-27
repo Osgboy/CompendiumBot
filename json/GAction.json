@@ -572,6 +572,25 @@
         },
         "faction": "Adeptus Mechanicus"
     },
+    "Cycle Weapon": {
+        "internalID": "CycleWeapon",
+        "description": "Cycle between active weapons.",
+        "cooldown": "0",
+        "flavor": null,
+        "modifiers": [],
+        "rawXML": "<cycleWeapon interfaceSound=\"Interface/CycleWeapon\" weaponSlotNames=\"HuntingLanceFragTip HuntingLanceMeltaTip\"/>\n\t\t",
+        "iconPath": "Gladius\\Icons\\Actions\\CycleWeapon.png",
+        "name": "Cycle Weapon",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "faction": "Neutral"
+    },
     "Create Smoke Screen": {
         "internalID": "CreateSmokeScreen",
         "description": "Increases the ranged damage reduction of the tile.",
@@ -611,25 +630,6 @@
             "consumedMovement": true
         },
         "faction": "Astra Militarum"
-    },
-    "Cycle Weapon": {
-        "internalID": "CycleWeapon",
-        "description": "Cycle between active weapons.",
-        "cooldown": "0",
-        "flavor": null,
-        "modifiers": [],
-        "rawXML": "<cycleWeapon interfaceSound=\"Interface/CycleWeapon\" weaponSlotNames=\"KrakMissileLauncher FragMissileLauncher\"/>\n\t",
-        "iconPath": "Gladius\\Icons\\Actions\\CycleWeapon.png",
-        "name": "Cycle Weapon",
-        "conditions": {
-            "requiredUpgrade": null,
-            "requiredActionPoints": true,
-            "requiredMovement": false,
-            "usableInTransport": false,
-            "consumedActionPoints": true,
-            "consumedMovement": true
-        },
-        "faction": "Neutral"
     },
     "Aura of Discipline": {
         "internalID": "AuraOfDiscipline",
@@ -1504,6 +1504,28 @@
         },
         "faction": "Chaos Space Marines"
     },
+    "Infernal Fusillade": {
+        "internalID": "ChaosSpaceMarines/InfernalFusillade",
+        "description": "Increases the attacks with bolt weapons of this unit.",
+        "cooldown": "5",
+        "flavor": "Arcane invocations imbue the Thousand Sons\u2019 weapons with sorcerous power, rendering them still more lethal to the foe.",
+        "modifiers": [
+            "Infernal Fusillade (1 turn)",
+            "- +1 Ranged Attacks"
+        ],
+        "rawXML": "<infernalFusillade cooldown=\"5\" name=\"ChaosSpaceMarines/InfernalFusillade\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"ChaosSpaceMarines/InfernalFusillade\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</infernalFusillade>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\InfernalFusillade.png",
+        "name": "Infernal Fusillade",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Chaos Space Marines"
+    },
     "Reservoir of Daemonic Energy": {
         "internalID": "ChaosSpaceMarines/ReservoirOfDaemonicEnergy",
         "description": "Reduces the cooldown of Incursion for adjacent allied Masters of Possesion.",
@@ -1946,6 +1968,25 @@
             "usableInTransport": false,
             "consumedActionPoints": false,
             "consumedMovement": false
+        },
+        "faction": "Drukhari"
+    },
+    "Fade Away": {
+        "internalID": "Drukhari/FadeAway",
+        "description": "Teleports to the target explored tile.",
+        "cooldown": "10",
+        "flavor": "The ghastly Drukhari of the shadow-realm of Aelindrach appear to flit between realities, passing from the shadows of one plane to another. By these means, these eldritch horrors can bypass defenses, guards and shields at will.",
+        "modifiers": [],
+        "rawXML": "<fadeAway cooldown=\"10\" consumedMovement=\"10\" requiredMovement=\"1\" name=\"Drukhari/FadeAway\" requiredActionPoints=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</fadeAway>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\Drukhari\\FadeAway.png",
+        "name": "Fade Away",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": true,
+            "requiredMovement": true,
+            "usableInTransport": false,
+            "consumedActionPoints": true,
+            "consumedMovement": true
         },
         "faction": "Drukhari"
     },
@@ -2677,6 +2718,28 @@
         "rawXML": "<quantumShielding cooldown=\"2\" name=\"Necrons/QuantumShielding\" passive=\"1\" requiredUpgrade=\"Necrons/QuantumShielding\">\n\t\t\t<perTurnProcessUseConditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<damagedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</perTurnProcessUseConditions>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Necrons/QuantumShielding\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</quantumShielding>\n\t",
         "iconPath": "Gladius\\Icons\\Actions\\Necrons\\QuantumShielding.png",
         "name": "Quantum Shielding",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Necrons"
+    },
+    "Nanoscarab Reanimation Beam": {
+        "internalID": "Necrons/NanoscarabReanimationBeam",
+        "description": "Restores the hitpoints of adjacent allied Necrons units.",
+        "cooldown": "Passive",
+        "flavor": "The Canoptek Reanimator directs a stream of nanoscarabs at nearby Necron structures and units, activating and boosting their reanimation protocols. In contrast, the effect on organic creatures is entirely destructive.",
+        "modifiers": [
+            "Nanoscarab Reanimation Beam",
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<genericUnitAbility passive=\"1\" name=\"Necrons/NanoscarabReanimationBeam\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Tile\" excludeRadius=\"0\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"Necrons/NanoscarabReanimationBeam\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\Necrons\\NanoscarabReanimationBeam.png",
+        "name": "Nanoscarab Reanimation Beam",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": false,
@@ -4855,7 +4918,7 @@
             "Repulsor Field",
             "- -1 Movement Max"
         ],
-        "rawXML": "<genericUnitAbility passive=\"1\" name=\"SpaceMarines/RepulsorField\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Tile\" excludeRadius=\"0\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"SpaceMarines/RepulsorField\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t",
+        "rawXML": "<genericUnitAbility passive=\"1\" name=\"SpaceMarines/RepulsorField\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Tile\" excludeRadius=\"0\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"SpaceMarines/RepulsorField\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\SpaceMarines\\RepulsorField.png",
         "name": "Repulsor Field",
         "conditions": {
@@ -5900,6 +5963,29 @@
         "rawXML": "<diffusionField cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"Tyranids/DiffusionField\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t\t\t\t\t<faction name=\"Tyranids\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Tyranids/DiffusionField\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</diffusionField>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Tyranids\\DiffusionField.png",
         "name": "Diffusion Field",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Tyranids"
+    },
+    "Singular Purpose": {
+        "internalID": "Tyranids/SingularPurpose",
+        "description": "Increases accuracy and damage against the target enemy unit for Norn Emissaries.",
+        "cooldown": "10",
+        "flavor": "Spawned by Norn queens, this Emissary\u2019s role on a battlefield is the removal of an opposing force\u2019s lynchpin\u2014the leaders or the key troops whose loss will precipitate the collapse of the opposition forces. Gifted with unique knowledge of its target, an Emissary rarely fails in its purpose.",
+        "modifiers": [
+            "Singular Purpose (10 turns)",
+            "- +17% Opponent Accuracy",
+            "- +17% Opponent Damage"
+        ],
+        "rawXML": "<singularPurpose cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\" name=\"Tyranids/SingularPurpose\" icon=\"Traits/Tyranids/SingularPurpose\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Tyranids/SingularPurpose\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"10\" name=\"Tyranids/SingularPurpose\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</singularPurpose>\n\t\t",
+        "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\SingularPurpose.png",
+        "name": "Singular Purpose",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": false,

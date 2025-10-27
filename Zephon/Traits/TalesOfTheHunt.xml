@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onUnitAttacked>
+		<attacker>
+			<area affect="UnitPlayer">
+				<modifiers>
+					<modifier effectDescription="OnAttack">
+						<effects>
+							<influence add="2"/>	
+						</effects>
+					</modifier>
+					<modifier effectDescription="OnAttack" requiredUpgrade="TalesOfTheHuntUpgrade">
+						<effects>
+							<influence add="1"/>	
+						</effects>
+					</modifier>
+					<modifier effectDescription="OnAttack" requiredUpgrade="TalesOfTheHuntUpgrade2">
+						<effects>
+							<influence add="1"/>	
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</attacker>
+	</onUnitAttacked>
+</trait>

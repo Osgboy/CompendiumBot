@@ -50,9 +50,11 @@ ZEPHON_FACTIONS = (
     'Furtive Tribunal',
     'Heartless Artificer',
     'Honorable Aristocrat',
+    'Hollow Warlord',
     'Neutral',
     'Practical Romantic',
     'Rogue Operative',
+    'Twisted Mother',
     'Untold Prophet',
     'Zephon',
 )
@@ -597,7 +599,7 @@ async def zbuilding(interaction: discord.Interaction, buildingname: str, verbose
 @bot.tree.command()
 @app_commands.choices(factionname=[app_commands.Choice(name=k, value=v) for k,v in GLADIUS_FACTIONS.items()])
 @docstring_defaults
-async def gfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
+async def gfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str], verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Gladius faction.
 
     Args:
@@ -609,7 +611,7 @@ async def gfaction(interaction: discord.Interaction, factionname: app_commands.C
 @bot.tree.command()
 @app_commands.choices(factionname=[app_commands.Choice(name=f, value=f) for f in ZEPHON_FACTIONS])
 @docstring_defaults
-async def zfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str] = '', verbose: bool = False, flavor: bool = False, invisible: bool = False):
+async def zfaction(interaction: discord.Interaction, factionname: app_commands.Choice[str], verbose: bool = False, flavor: bool = False, invisible: bool = False):
     """Return info on a Zephon faction.
 
     Args:
@@ -698,7 +700,7 @@ async def gupgrade(interaction: discord.Interaction, upgradename: str, verbose: 
 @bot.tree.command()
 @docstring_defaults
 async def zupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
-    """Broken for most entries until I figure out how to add all Zephon upgrades. Return info on a Zephon upgrade.
+    """Return info on a Zephon upgrade.
 
     Args:
         upgradename (str): Name of upgrade to look up

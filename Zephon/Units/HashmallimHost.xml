@@ -196,7 +196,7 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<antimatterCost base="2"/> <!-- %antimatterCost base tier=8 factor=0.025 -->
+						<antimatterCost base="4"/> <!-- %antimatterCost base tier=8 factor=0.05 -->
 						<chipsCost base="20"/> <!-- %chipsCost base tier=8 factor=0.25 -->
 						<mineralsCost base="20"/> <!-- %mineralsCost base tier=8 factor=0.25 -->
 					</effects>
@@ -219,7 +219,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="TesseraCore" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0" consumedAction="1"/>
+										<addUnit type="TesseraCore" spawnedBySourceUnit="1" avoidBleed="0" avoidCity="0" consumedAction="1"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -239,6 +239,20 @@
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player match="Any">
+							<increaseAntimatterStrategy greater="0.5"/>
+							<increaseChipsStrategy greater="0.5"/>
+							<increaseMineralsStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>

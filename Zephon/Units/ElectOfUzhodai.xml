@@ -63,7 +63,7 @@
 						meleeAnimation="Units/ElectOfUzhodaiMelee"
 						meleeBeginSwing="0.5"
 						meleeEndSwing="0.6"
-						sound="Units/ElectOfUzhodaiMelee"
+						meleeSound="Units/ElectOfUzhodaiMelee"
 						responseSound="Responses/Units/ElectOfUzhodaiAttack"
 						responseSoundCount="3"/>
 			</model>
@@ -182,7 +182,7 @@
 						meleeBeginSwing="0.5"
 						meleeEndSwing="0.6"
 						responseSound="Responses/Units/ElectOfUzhodaiCastigate"
-						sound="Units/ElectOfUzhodaiCastigate"/>
+						meleeSound="Units/ElectOfUzhodaiCastigate"/>
 			</model>
 			<modifiers>
 				<modifier>
@@ -243,5 +243,6 @@
 		<trait type="FerventStrength"/>
 		<trait type="Hero"/>
 		<trait type="Large"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
 	</traits>
 </unit>

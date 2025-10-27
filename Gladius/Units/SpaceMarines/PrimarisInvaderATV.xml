@@ -74,6 +74,27 @@
 						soundCount="3"/>
 			</model>		
 		</move>
+		<turboBoost consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="TurboBoost"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</turboBoost>
 		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
 			<model>
 				<action sound="Actions/ChargeUp"/>

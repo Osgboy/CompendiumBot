@@ -2,11 +2,6 @@
 <foundCity name="NomadicLife"
 		costScalesWithCities="1"
 		icon="Actions/FoundCity">
-	<model>
-		<action animation="Units/ReaverAbility0"
-				sound="Actions/FoundCity"
-				soundFirstActingMemberOnly="1"/>
-	</model>
 	<conditions>
 		<player match="Any">
 			<noTrait type="Trapped"/>

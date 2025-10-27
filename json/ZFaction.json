@@ -21,6 +21,7 @@
         "dislikedLabels": [
             "Gluttony",
             "Immoral",
+            "InhumanKindness",
             "Untrustworthy"
         ],
         "iconPath": "Zephon\\Icons\\Factions\\Anchorite.png",
@@ -40,7 +41,8 @@
         "likedLabels": [
             "Reaver Immigration",
             "Hit and Run",
-            "Scavenger"
+            "Scavenger",
+            "Tales of the Hunt"
         ],
         "dislikedLabels": [
             "Heartfelt Loss",
@@ -61,10 +63,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Ishim Enforcers": "2"
+            "Ishim Enforcers": "1",
+            "Exousia Marauder": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -76,7 +79,11 @@
             "Fortress Armament": null,
             "Ha'sharet Exchange": "HasharetExchange",
             "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
             "Resource Network": null,
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Trapped": null,
@@ -84,6 +91,8 @@
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
+            "Abhorrent",
+            "ImmaculateDelivery",
             "Independent",
             "WhispersOfTheVoice"
         ],
@@ -106,10 +115,11 @@
         "startingUnits": {
             "Engineers": "1",
             "Militants": "2",
+            "Sharpshooters": "1",
             "Outrider": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -121,7 +131,11 @@
             "Ha'sharet Exchange": "HasharetExchange",
             "Holopatter": "Holopatter",
             "Leave No Man Behind": null,
+            "Market Defluctuation": "MarketDefluctuation",
             "Military Background": null,
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Undying": null,
@@ -129,12 +143,14 @@
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
+            "Tender Ministrations",
             "ThereIsHope"
         ],
         "dislikedLabels": [
             "Foundation of Blood",
             "TheOutsider",
-            "Untrustworthy"
+            "Untrustworthy",
+            "We Who Are About To Die"
         ],
         "iconPath": "Zephon\\Icons\\Factions\\FallenSoldier.png",
         "name": "Fallen Soldier"
@@ -150,10 +166,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Abkluth Dragoons": "2"
+            "Abkluth Dragoons": "2",
+            "Abkluths": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -164,7 +181,11 @@
             "Corpse Cities": "CorpseCities",
             "Ha'sharet Exchange": "HasharetExchange",
             "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
             "Mysticism": null,
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
@@ -172,8 +193,9 @@
         },
         "likedLabels": [
             "Armor of Faith",
-            "Undying",
-            "Trapped"
+            "Mother's Favor",
+            "Trapped",
+            "Undying"
         ],
         "dislikedLabels": [
             "Artificer's Precision",
@@ -193,10 +215,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Ishim Enforcers": "2"
+            "Ishim Enforcers": "1",
+            "Malakim Destroyers": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -208,13 +231,18 @@
             "Engineer Life": null,
             "Ha'sharet Exchange": "HasharetExchange",
             "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
-            "Honor-bound"
+            "Honor-bound",
+            "We Who Are About To Die"
         ],
         "dislikedLabels": [
             "Heartfelt Loss",
@@ -224,6 +252,57 @@
         ],
         "iconPath": "Zephon\\Icons\\Factions\\HeartlessArtificer.png",
         "name": "Heartless Artificer"
+    },
+    "Hollow Warlord": {
+        "internalID": "HollowWarlord",
+        "description": "\u201cI came, I conquered, I will again.\u201d",
+        "flavor": "To the Warlord, the end of the world was a rebirth. In his previous life\u2026 well, he wasn\u2019t exactly an alpha. Or even a sigma. Telesales lines, bin trucks, burger flipper, AI wrangler\u2014he\u2019d been fired from them all. His only respite from tedious, grinding work was exercise. Lifting, running, wrestling, sweating away his drawn-out days.\n\nWhen the Fulcrum called, pulling humanity skyward to a rapturous rupture, nearly everyone else gave into the joy, not knowing the pain to come. But the Warlord felt that he\u2019d hadn\u2019t even lived yet, let alone earned redemption. So he fought, clung on to a chunk of rebar, shook off the false euphoria that carried Earth\u2019s billions to the heavens\u2014and in that moment, as colleagues burst and fell about him, he felt alive for the first time. Gore-spattered, exhausted, he roared with exhilaration.\n\nAfter that, he didn\u2019t hide from the horror. He staked his claim on the surface, gathered other survivors, fought the aliens and monsters, built an army, an empire, and then walked away from it. He\u2019s learned to love the chase, racing away from moments of reflection and terrifying introspection.\n\nWith a small core of his followers, he\u2019s survived for years on the surface and is ready to conquer the world again\u2014to find what it has to offer and taste every part of it, take every part of it. He doesn\u2019t know, yet, that his is a hollowness that can never be filled.",
+        "branch": "Human",
+        "actions": {
+            "Horde Mandate": "HordeMandate"
+        },
+        "startingUnits": {
+            "Engineers": "1",
+            "Militants": "1",
+            "Scramblers": "2"
+        },
+        "traits": {
+            "Amoetia's Caress": "AmoetiasCaress",
+            "Amoetia's Embrace": "AmoetiasEmbrace",
+            "Trials of the Eremite": "AnchoriteStanding",
+            "Asymmetric Arbitrage": "AsymmetricArbitrage",
+            "Balanced Progress": "BalancedProgress",
+            "Breach Collector": "BreachCollector",
+            "Reaver Immigration": "ChieftessStanding",
+            "Premium Access": "ConcordatAdvancedResources",
+            "Corpse Cities": "CorpseCities",
+            "Ha'sharet Exchange": "HasharetExchange",
+            "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Restless": null,
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
+            "Spirit of Mankind": "SpiritOfMankind",
+            "Tactical Archeology": "TacticalArcheology",
+            "Tales of the Hunt": null,
+            "We Who Are About To Die": null,
+            "Specimen Containment": "Wildlife",
+            "AI Rights": "ZephonStanding"
+        },
+        "likedLabels": [
+            "FoundationsOfBlood",
+            "Hit and Run"
+        ],
+        "dislikedLabels": [
+            "Dark Omen",
+            "Gluttony",
+            "Military Background",
+            "Trapped",
+            "Untrustworthy"
+        ],
+        "iconPath": "Zephon\\Icons\\Factions\\HollowWarlord.png",
+        "name": "Hollow Warlord"
     },
     "Honorable Aristocrat": {
         "internalID": "HonorableAristocrat",
@@ -237,10 +316,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Militants": "3"
+            "Militants": "2",
+            "Missile Teams": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -254,7 +334,11 @@
             "Holopatter": "Holopatter",
             "Well-Fed": "HonorableAristocratAffinityUpgrade",
             "Honor-bound": null,
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
             "Quid Pro Quo": "QuidProQuo",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
@@ -265,6 +349,7 @@
             "Resource Network"
         ],
         "dislikedLabels": [
+            "Abhorrent",
             "Data Hack",
             "Independent",
             "Untrustworthy"
@@ -293,10 +378,10 @@
         "actions": {},
         "startingUnits": {
             "Engineers": "1",
-            "Militants": "3"
+            "Militants": "4"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -308,7 +393,11 @@
             "Ha'sharet Exchange": "HasharetExchange",
             "Heartfelt Loss": null,
             "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
             "Scavenger": null,
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
@@ -323,6 +412,7 @@
             "Foundation of Blood",
             "Gluttony",
             "Immoral",
+            "Tales of the Hunt",
             "Untrustworthy"
         ],
         "iconPath": "Zephon\\Icons\\Factions\\PracticalRomantic.png",
@@ -354,10 +444,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Ishim Enforcers": "2"
+            "Ishim Enforcers": "1",
+            "Cassiel Shredders": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -368,11 +459,14 @@
             "Premium Access": "ConcordatAdvancedResources",
             "Corpse Cities": "CorpseCities",
             "Ha'sharet Exchange": "HasharetExchange",
-            "Hit and Run": null,
             "Holopatter": "Holopatter",
             "Independent": null,
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
             "Trash Camo": "RogueOperativeAffinityUpgrade",
             "Ghost Corps": "RogueOperativeAffinityUpgrade2",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
@@ -380,9 +474,11 @@
         },
         "likedLabels": [
             "Gluttony",
+            "Restless",
             "SurvivalTraining"
         ],
         "dislikedLabels": [
+            "Tender Ministrations",
             "Untrustworthy",
             "WordsOfTheProphet"
         ],
@@ -402,6 +498,57 @@
         "iconPath": "Zephon\\Icons\\Factions\\Spectator.png",
         "name": "Spectator"
     },
+    "Twisted Mother": {
+        "internalID": "TwistedMother",
+        "description": "\u201cWe take care of our own, here. I take care of the rest.\u201d",
+        "flavor": "Events tell their own story. One day, a town is a bustling prison camp. The next it is empty, its inhabitants vanished overnight, reappearing miles away. A woman is changed by the necessary sacrifice. And her husband has vanished.\n\nThe Mother started out as a housewife. Her husband worked on the oil fields, she kept the home and the farm. They were the heart of their prepper commune. Having their own family was the next step\u2014one they both longed for. Life was bliss.\n\nThen the sky fell.\n\nSoon, the Acrin came. Disarmed the people, interned them. Performed desperate experiments to find the secret of survival in a world molecularly hostile to their alien bodies. The commune turned gradually into a concentration camp. And the people looked to the couple for leadership.\n\nWho knows whether the Acrin experiments touched the couple? How their despair reached the Voice? What she sacrificed to transport her people so far?\n\nAll we see is the Mother and her people, far from their home. Though twisted and transformed, the mother still leads her people, aids them with her uncanny gifts. She\u2019s not always aware that she\u2019s changed\u2014something has broken, she forgets herself. But she retains her hospitality, her care, her charm. She just wants to help her neighbours and guests.\n\nThough woe betide any who turn on those under her protection\u2026",
+        "branch": "Voice",
+        "actions": {
+            "Mother's Favor": null,
+            "Inhuman Kindness": null,
+            "Mother's Scorn": null
+        },
+        "startingUnits": {
+            "Engineers": "1",
+            "Devotees of Throkos": "1",
+            "Amoetia's Devourer": "1"
+        },
+        "traits": {
+            "Abhorrent": null,
+            "Amoetia's Caress": "AmoetiasCaress",
+            "Amoetia's Embrace": "AmoetiasEmbrace",
+            "Trials of the Eremite": "AnchoriteStanding",
+            "Asymmetric Arbitrage": "AsymmetricArbitrage",
+            "Balanced Progress": "BalancedProgress",
+            "Breach Collector": "BreachCollector",
+            "Reaver Immigration": "ChieftessStanding",
+            "Premium Access": "ConcordatAdvancedResources",
+            "Corpse Cities": "CorpseCities",
+            "Ha'sharet Exchange": "HasharetExchange",
+            "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
+            "Spirit of Mankind": "SpiritOfMankind",
+            "Tactical Archeology": "TacticalArcheology",
+            "Tender Ministrations": null,
+            "Specimen Containment": "Wildlife",
+            "AI Rights": "ZephonStanding"
+        },
+        "likedLabels": [
+            "Cost of Conviction",
+            "Heartfelt Loss",
+            "WhispersOfTheVoice"
+        ],
+        "dislikedLabels": [
+            "Tales of the Hunt",
+            "Foundation of Blood",
+            "Untrustworthy"
+        ],
+        "iconPath": "Zephon\\Icons\\Factions\\TwistedMother.png",
+        "name": "Twisted Mother"
+    },
     "Untold Prophet": {
         "internalID": "UntoldProphet",
         "description": "\u201cI may be young, but I am without prejudice or preconception. It is my bendici\u00f3n that I see the choices you lost long ago.\u201d",
@@ -413,10 +560,11 @@
         },
         "startingUnits": {
             "Engineers": "1",
-            "Abkluth Dragoons": "2"
+            "Devotees of Throkos": "1",
+            "Dark Vassael": "1"
         },
         "traits": {
-            "Amoetias Caress": "AmoetiasCaress",
+            "Amoetia's Caress": "AmoetiasCaress",
             "Amoetia's Embrace": "AmoetiasEmbrace",
             "Trials of the Eremite": "AnchoriteStanding",
             "Asymmetric Arbitrage": "AsymmetricArbitrage",
@@ -429,6 +577,10 @@
             "Cult Expansion": null,
             "Ha'sharet Exchange": "HasharetExchange",
             "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
             "Spirit of Mankind": "SpiritOfMankind",
             "Tactical Archeology": "TacticalArcheology",
             "Specimen Containment": "Wildlife",
@@ -440,6 +592,7 @@
         ],
         "dislikedLabels": [
             "Augmentations",
+            "Horde Mandate",
             "Independent",
             "Untrustworthy"
         ],

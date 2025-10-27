@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<unit>
+					<noTrait type="Headquarters"/>
+				</unit>
+			</conditions>
+			<effects>
+				<invulnerableDamageReduction add="0.042"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

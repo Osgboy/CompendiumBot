@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Items/StolenFlesh" visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<hitpoints add="2"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

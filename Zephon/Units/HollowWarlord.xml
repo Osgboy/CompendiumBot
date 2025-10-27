@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" dlc="DLC1" icon="Units/Scrambler" portrait="Units/Scrambler">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
+				explosionsBlueprint="Effects/SmallHumanExplosions"
+				explosionsBone="Bike"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="60"
+				effectsBlueprint="Effects/Scrambler"
+				material="Units/Scrambler"
+				mesh="Units/Scrambler"
+				scale="0.9 0.9 0.9"/>
+	</model>
+	<weapons>
+		<weapon type="Minigun">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"
+						windupDuration="0.6"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="4"/>
+				<attacks add="1"/>
+				<damage add="0.5"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=5 factor=1 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=5 factor=1 -->
+				<moraleMax base="6"/>
+				<movementMax base="5"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+				<rowSizeMax base="4"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/ScramblerAttack"
+						beginFire="0"
+						endFire="2.3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/ScramblerDie"
+						animationCount="2"
+						sound="Units/ScramblerDie"
+						soundCount="3"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/ScramblerImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/ScramblerIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ScramblerMove"
+						sound="Units/ScramblerMove"
+						soundCount="3"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<ghostWalk name="NitroBoost"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<action animation="Units/ScramblerAltMove"
+						effectBlueprint="Effects/ScramblerNitroBoost"
+						sound="Units/ScramblerNitroBoost"
+						soundCount="3"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+			<modifiers>
+				<modifier>
+					<effects>
+						<movement add="2"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</ghostWalk>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Mechanical"/>
+		<trait type="HitAndRun"/>
+	</traits>
+</unit>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait displayedRankModifier="-11"
+        rankMax="20" 
+        rankPerTurnWithPlayerUnitKilledOrLost="1" 
+        rankPerTurnWithoutPlayerUnitKilledOrLost="-1" 
+        visibleOnCity="1">
+    <modifiers>
+        <modifier>
+            <conditions>
+                <building>
+                    <type name="Headquarters"/>
+                </building>
+            </conditions>
+            <effects>
+                <loyalty addMin="-5" addMax="5"/>
+            </effects>
+        </modifier>
+		<modifier requiredUpgrade="WeWhoAreAboutToDieUpgrade2" effectDescription="AtRank14OrHigher">
+            <conditions>
+                <building>
+                    <type name="Headquarters"/>
+                </building>
+ 				<city>
+					<traitWithRank type="WeWhoAreAboutToDie" greater="12"/>
+				</city>
+            </conditions>
+             <effects>
+                <loyalty add="2"/>
+            </effects>
+        </modifier>
+		<modifier requiredUpgrade="WeWhoAreAboutToDieUpgrade" effectDescription="AtRank18OrHigher">
+            <conditions>
+                <building>
+                    <type name="Headquarters"/>
+                </building>
+				<city>
+					<traitWithRank type="WeWhoAreAboutToDie" greater="16"/>
+				</city>
+            </conditions>
+            <effects>
+                <loyalty add="2"/>
+            </effects>
+        </modifier>
+    </modifiers>
+</trait>

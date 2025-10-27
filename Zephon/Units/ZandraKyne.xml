@@ -63,18 +63,11 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
-		<appear>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicAppear"/>
-			</model>
-		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/CombatMedicAttack"
 						beginFire="0.87"
-						endFire="1.63"
-						responseSound="Responses/Units/CombatMedicAttack"
-						responseSoundCount="4"/>
+						endFire="1.63"/>
 			</model>
 		</attack>
 		<die>
@@ -90,64 +83,29 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/CombatMedicImpact"
-						responseSound="Responses/Units/CombatMedicEndureHighDamage"/> 
+				<action animation="Units/CombatMedicImpact"/> 
 			</model>			
 		</endure>
-		<holdPosition>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
-			</model>
-		</holdPosition>
-		<holdPositionUntilHealed>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
-			</model>
-		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/CombatMedicIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
-		<kill>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicKill"/>
-			</model>
-		</kill>
 		<move>
 			<model>
 				<action animation="Units/CombatMedicMove"
-						responseSound="Responses/Units/CombatMedicMove"
-						responseSoundCount="3"
 						sound="Units/CombatMedicMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
-		<poke>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicPoke"/>
-			</model>
-		</poke>
-		<select>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicSelect"
-						responseSoundCount="3"/>
-			</model>
-		</select>
-		<skip>
-			<model>
-				<action responseSound="Responses/Units/CombatMedicHoldPosition"/>
-			</model>
-		</skip>
 		<unitCast name="Paramedic"
 				cooldown="1">
 			<model>
 				<cast animation="Units/CombatMedicAbility0"
-						blueprint="Effects/HealPluses"
-						responseSound="Responses/Units/CombatMedicParamedic"/>
+						blueprint="Effects/HealPluses"/>
 			</model>
 			<beginTargets>
 				<target melee="1">

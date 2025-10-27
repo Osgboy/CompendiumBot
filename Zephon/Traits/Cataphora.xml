@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Actions/Cataphora" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<actionPointsMax max="0"/>
+				<movementMax max="0"/>
+				<healingRate max="0"/>
+				<moraleRegeneration base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTraitAdded>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<removeTrait type="Decaying"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitAdded>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnRemoval">
+						<effects>
+							<addTrait type="Decaying"/>
+							<hitpointsFromMax add="1.0"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<effects>
+							<resetActionPoints/>
+							<resetMovement/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
+</trait>

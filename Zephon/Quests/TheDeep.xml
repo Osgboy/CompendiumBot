@@ -11,30 +11,32 @@
 				</playerSelector>
 			</modifications>
 			<options>
-				<option name="OpenQuestion1" nextStage="OpenQuestion1"/>
-				<option name="OpenQuestion2" nextStage="OpenQuestion2"/>
-				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="OpenQuestion1" nextStage="OpenQuestion1" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhatAreYou"/>
+				<option name="OpenQuestion2" nextStage="OpenQuestion2" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhereAreWe"/>
+				<option name="OpenQuestion3" nextStage="OpenQuestion3" onlyVisibleIfSelectable="1" dlc="DLC1" newIfAchievementLocked="MustWeSufferSo"/>
+				<option name="OpenQuestion4" nextStage="OpenQuestion4" onlyVisibleIfSelectable="1" dlc="DLC1" newIfAchievementLocked="CanFreeWillExist"/>
+				<option name="ZephonVictoryQuestion" nextStage="ZephonVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasZephonTrulyAlive">
 					<conditions>
 						<player>
 							<questStageCompleted quest="TheLastDaysOfEarth" stage="ZephonVictory"/>
 						</player>
 					</conditions>
 				</option>
-				<option name="AcrinVictoryQuestion" nextStage="AcrinVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="AcrinVictoryQuestion" nextStage="AcrinVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidOurSacrificeMeanNothing">
 					<conditions>
 						<player>
 							<questStageCompleted quest="TheLastDaysOfEarth" stage="AnchoriteVictory"/>
 						</player>
 					</conditions>
 				</option>
-				<option name="HumanVictoryQuestion" nextStage="HumanVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="HumanVictoryQuestion" nextStage="HumanVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhyDidHumanityDieAlone">
 					<conditions>
 						<player>
 							<questStageCompleted quest="TheLastDaysOfEarth" stage="IndependentVictory"/>
 						</player>
 					</conditions>
 				</option>
-				<option name="FallenSoldierVictoryQuestion" nextStage="FallenSoldierVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="FallenSoldierVictoryQuestion" nextStage="FallenSoldierVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidMyDeathMeanAnything">
 					<conditions>
 						<player>
 							<faction name="FallenSoldier"/>
@@ -42,7 +44,7 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="UntoldProphetVictoryQuestion" nextStage="UntoldProphetVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="UntoldProphetVictoryQuestion" nextStage="UntoldProphetVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="AreYouTheGreatSpeaker">
 					<conditions>
 						<player>
 							<faction name="UntoldProphet"/>
@@ -50,7 +52,7 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="RogueOperativeVictoryQuestion" nextStage="RogueOperativeVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="RogueOperativeVictoryQuestion" nextStage="RogueOperativeVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhatPriceForLiberty">
 					<conditions>
 						<player>
 							<faction name="RogueOperative"/>
@@ -58,7 +60,7 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="FurtiveTribunalVictoryQuestion" nextStage="FurtiveTribunalVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="FurtiveTribunalVictoryQuestion" nextStage="FurtiveTribunalVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidOurUnificationMatter">
 					<conditions>
 						<player>
 							<faction name="FurtiveTribunal"/>
@@ -66,7 +68,7 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="HeartlessArtificerVictoryQuestion" nextStage="HeartlessArtificerVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="HeartlessArtificerVictoryQuestion" nextStage="HeartlessArtificerVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasPerfectionWorthIt">
 					<conditions>
 						<player>
 							<faction name="HeartlessArtificer"/>
@@ -74,7 +76,7 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="EmulatedMindVictoryQuestion" nextStage="EmulatedMindVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="EmulatedMindVictoryQuestion" nextStage="EmulatedMindVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasITrulyHuman">
 					<conditions>
 						<player>
 							<faction name="EmulatedMind"/>
@@ -82,19 +84,35 @@
 						</player>
 					</conditions>
 				</option>
-				<option name="HonorableAristocratVictoryQuestion" nextStage="HonorableAristocratVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="HonorableAristocratVictoryQuestion" nextStage="HonorableAristocratVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidHonorBalanceGreed">
 					<conditions>
 						<player>
 							<faction name="HonorableAristocrat"/>
-							<questStageCompleted quest="ThePriceOfHonor" stage="RetrieveCornucopiaSuccess"/>
+							<questStageCompleted quest="ThePriceOfHonor" stage="RetrieveCornucopiaPersonallySuccess"/>
 						</player>
 					</conditions>
 				</option>
-				<option name="PracticalRomanticVictoryQuestion" nextStage="PracticalRomanticVictoryQuestion" onlyVisibleIfSelectable="1">
+				<option name="PracticalRomanticVictoryQuestion" nextStage="PracticalRomanticVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanLoveBeMoral">
 					<conditions>
 						<player>
 							<faction name="PracticalRomantic"/>
 							<questStageCompleted quest="ThickerThanWater" stage="StopArshemSuccess"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="HollowWarlordVictoryQuestion" nextStage="HollowWarlordVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAJourneyBeAnEndInItself">
+					<conditions>
+						<player>
+							<faction name="HollowWarlord"/>
+							<questStageCompleted quest="Reyndverra" stage="GiveUpBlade"/>
+						</player>
+					</conditions>
+				</option>
+				<option name="TwistedMotherVictoryQuestion" nextStage="TwistedMotherVictoryQuestion" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAnythingRedeemThisHorror">
+					<conditions>
+						<player>
+							<faction name="TwistedMother"/>
+							<questStageCompleted quest="ImpossibleConception" stage="SaveYourHusbandSuccess"/>
 						</player>
 					</conditions>
 				</option>
@@ -111,6 +129,8 @@
 						<mutatorActive name="WasITrulyHuman"/>
 						<mutatorActive name="DidHonorBalanceGreed"/>
 						<mutatorActive name="CanLoveBeMoral"/>
+						<mutatorActive name="CanAJourneyBeAnEndInItself"/>
+						<mutatorActive name="CanAnythingRedeemThisHorror"/>
 					</conditions>
 				</option>
 			</options>
@@ -132,6 +152,28 @@
 					<modifier>
 						<effects>
 							<unlockMutator name="WhereAreWe"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="OpenQuestion3" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="MustWeSufferSo"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="OpenQuestion4" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="CanFreeWillExist"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
@@ -258,61 +300,93 @@
 				</playerModifiers>
 			</modifications>
 		</stage>
+		<stage name="HollowWarlordVictoryQuestion" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="CanAJourneyBeAnEndInItself"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="TwistedMotherVictoryQuestion" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockMutator name="CanAnythingRedeemThisHorror"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
 		<stage name="Acceptance">
 			<options>
-				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="ZephonMutatorVictory" nextStage="ZephonMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasZephonTrulyAlive2">
 					<conditions>
 						<mutatorActive name="WasZephonTrulyAlive"/>
 					</conditions>
 				</option>
-				<option name="AcrinMutatorVictory" nextStage="AcrinMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="AcrinMutatorVictory" nextStage="AcrinMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidOurSacrificeMeanNothing2">
 					<conditions>
 						<mutatorActive name="DidOurSacrificeMeanNothing"/>
 					</conditions>
 				</option>
-				<option name="HumanMutatorVictory" nextStage="HumanMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="HumanMutatorVictory" nextStage="HumanMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhyDidHumanityDieAlone2">
 					<conditions>
 						<mutatorActive name="WhyDidHumanityDieAlone"/>
 					</conditions>
 				</option>
-				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="FallenSoldierMutatorVictory" nextStage="FallenSoldierMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidMyDeathMeanAnything2">
 					<conditions>
 						<mutatorActive name="DidMyDeathMeanAnything"/>
 					</conditions>
 				</option>
-				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="UntoldProphetMutatorVictory" nextStage="UntoldProphetMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="AreYouTheGreatSpeaker2">
 					<conditions>
 						<mutatorActive name="AreYouTheGreatSpeaker"/>
 					</conditions>
 				</option>
-				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="RogueOperativeMutatorVictory" nextStage="RogueOperativeMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WhatPriceForLiberty2">
 					<conditions>
 						<mutatorActive name="WhatPriceForLiberty"/>
 					</conditions>
 				</option>
-				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="FurtiveTribunalMutatorVictory" nextStage="FurtiveTribunalMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidOurUnificationMatter2">
 					<conditions>
 						<mutatorActive name="DidOurUnificationMatter"/>
 					</conditions>
 				</option>
-				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="HeartlessArtificerMutatorVictory" nextStage="HeartlessArtificerMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasPerfectionWorthIt2">
 					<conditions>
 						<mutatorActive name="WasPerfectionWorthIt"/>
 					</conditions>
 				</option>
-				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="EmulatedMindMutatorVictory" nextStage="EmulatedMindMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="WasITrulyHuman2">
 					<conditions>
 						<mutatorActive name="WasITrulyHuman"/>
 					</conditions>
 				</option>
-				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="HonorableAristocratMutatorVictory" nextStage="HonorableAristocratMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="DidHonorBalanceGreed2">
 					<conditions>
 						<mutatorActive name="DidHonorBalanceGreed"/>
 					</conditions>
 				</option>
-				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory" onlyVisibleIfSelectable="1">
+				<option name="PracticalRomanticMutatorVictory" nextStage="PracticalRomanticMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanLoveBeMoral2">
 					<conditions>
 						<mutatorActive name="CanLoveBeMoral"/>
+					</conditions>
+				</option>
+				<option name="HollowWarlordMutatorVictory" nextStage="HollowWarlordMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAJourneyBeAnEndInItself2">
+					<conditions>
+						<mutatorActive name="CanAJourneyBeAnEndInItself"/>
+					</conditions>
+				</option>
+				<option name="TwistedMotherMutatorVictory" nextStage="TwistedMotherMutatorVictory" onlyVisibleIfSelectable="1" newIfAchievementLocked="CanAnythingRedeemThisHorror2">
+					<conditions>
+						<mutatorActive name="CanAnythingRedeemThisHorror"/>
 					</conditions>
 				</option>
 			</options>
@@ -481,6 +555,28 @@
 					<modifier>
 						<effects>
 							<unlockAchievement name="CanLoveBeMoral2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HollowWarlordMutatorVictory" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="CanAJourneyBeAnEndInItself2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="TwistedMotherMutatorVictory" minVersion="1.1.0">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<unlockAchievement name="CanAnythingRedeemThisHorror2"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

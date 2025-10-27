@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit explosionsBone="Hull_Guide"
+		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Hull_Guide"
 				effectsBlueprint="Effects/PhoenixInterceptor"
 				material="Units/PhoenixInterceptor"
 				mesh="Units/PhoenixInterceptor"
@@ -89,7 +90,7 @@
 		<die>
 			<model>
 				<die animation="Units/PhoenixInterceptorDie0"
-						groundImpact="1.0"
+						groundImpact="1.5"
 						sound="Units/PhoenixInterceptorDie"/> 
 			</model>
 		</die>
@@ -164,7 +165,10 @@
 			</model>
 		</unitCast>
 		<useWeapon weaponSlotName="InterceptorMissile"
+				consumedActionPoints="0"
+				consumedMovement="0"
 				cooldown="3"
+				requiredActionPoints="0"
 				requiredUpgrade="InterceptorMissile">
 			<model>
 				<attack animation=""
@@ -176,6 +180,7 @@
 	<traits>
 		<trait type="Flying"/>
 		<trait type="Large"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="Mechanical"/>
 	</traits>
 </unit>

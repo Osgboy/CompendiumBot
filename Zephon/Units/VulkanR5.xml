@@ -2,11 +2,12 @@
 <unit branch="Human">
 	<model>
 		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
+				effectsBlueprint="Effects/VulkanR5"
 				explosionsBone="Body_Upper"
 				material="Units/VulkanR5"
 				mesh="Units/VulkanR5"
 				normalWeight="0.1"
-				scale="1 1 1"
+				scale="1.1 1.1 1.1"
 				walker="1"/>
 	</model>
 	<weapons>
@@ -218,7 +219,8 @@
 	</actions>
 	<traits>
 		<trait type="Agile"/>
+		<trait type="Large"/>		
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="Mechanical"/>
-		<trait type="Large"/>
 	</traits>
 </unit>

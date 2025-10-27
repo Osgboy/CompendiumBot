@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks mul="0.25"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<movement greater="0"/>
+				</unit>
+			</conditions>
+			<effects>
+				<movementMax add="2"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="HordeMandateUpgrade">
+			<effects>
+				<lifeStealFromDamage add="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

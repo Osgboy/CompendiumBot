@@ -215,6 +215,38 @@
         "name": "Assault Cannon",
         "faction": "Chaos Space Marines"
     },
+    "Atomiser Beam": {
+        "internalID": "AtomiserBeam",
+        "description": null,
+        "flavor": "Canoptek Reanimators prowl the Necron lines, shooting out ethereal beams swarming with nanoscarabs. Necrons touched by these eerie lights stagger to their feet, resurrected, repaired and ready to fight again. Foes are less fortunate, wailing in agony as their atoms are torn apart and recombined in a hideous, gory fashion.",
+        "traits": {
+            "Assault": null,
+            "Gauss": null,
+            "Atomic Flayers": "Necrons/GaussDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\AtomiserBeam.png",
+        "name": "Atomiser Beam",
+        "faction": "Necrons"
+    },
     "Autogun": {
         "internalID": "Autogun",
         "description": null,
@@ -391,6 +423,38 @@
         "iconPath": "Gladius\\Icons\\Weapons\\AvengerGatlingCannon.png",
         "name": "Avenger Gatling Cannon",
         "faction": "Adeptus Mechanicus"
+    },
+    "Baleblast": {
+        "internalID": "Baleblast",
+        "description": null,
+        "flavor": "Mandrakes can channel the energies stolen from their prey into blasts of freezing flame, wreathing their victims in spectral fires that burn through flesh and soul alike.",
+        "traits": {
+            "Deviant Designs": "Drukhari/AssaultWeaponBonus",
+            "Assault": null,
+            "Soul Blaze": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\Baleblast.png",
+        "name": "Baleblast",
+        "faction": "Drukhari"
     },
     "Baleflamer": {
         "internalID": "Baleflamer",
@@ -1453,6 +1517,7 @@
         "flavor": "Haemonculi refer to this extraordinary weapon as \u2018the kin-gift\u2019, for it is especially dangerous to their psychically attuned craftworld cousins. Each crucible contains the essence of psykers tortured to death. When released, their spirits hurtle across the battlefield, shrieking in a cacophony that drives nearby enemies insane.",
         "traits": {
             "Assault": null,
+            "Deviant Designs": "Drukhari/AssaultWeaponBonus",
             "Apocalyptic Blast": null
         },
         "range": "3",
@@ -2643,6 +2708,101 @@
         "name": "Earthshaker Cannon",
         "faction": "Astra Militarum"
     },
+    "Eldar Missile Launcher (Plasma)": {
+        "internalID": "EldarMissileLauncherPlasmaMissile",
+        "description": null,
+        "flavor": "Eldar missile launchers are elegant and well-balanced. They use complex chambered pods that contain several different kinds of ammunition, all but eliminating the need to reload in battle.",
+        "traits": {
+            "Blast": null,
+            "Heavy": null,
+            "Engine of Vaul": "Eldar/HeavyWeaponBonus"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\EldarMissileLauncherPlasmaMissile.png",
+        "name": "Eldar Missile Launcher (Plasma)",
+        "faction": "Eldar"
+    },
+    "Eldar Missile Launcher (Starhawk)": {
+        "internalID": "EldarMissileLauncherStarhawkMissile",
+        "description": null,
+        "flavor": "Eldar missile launchers are elegant and well-balanced. They use complex chambered pods that contain several different kinds of ammunition, all but eliminating the need to reload in battle.",
+        "traits": {
+            "Heavy": null,
+            "Skyfire": null,
+            "Engine of Vaul": "Eldar/HeavyWeaponBonus"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\EldarMissileLauncherStarhawkMissile.png",
+        "name": "Eldar Missile Launcher (Starhawk)",
+        "faction": "Eldar"
+    },
+    "Eldar Missile Launcher (Starshot)": {
+        "internalID": "EldarMissileLauncherStarshotMissile",
+        "description": null,
+        "flavor": "Eldar missile launchers are elegant and well-balanced. They use complex chambered pods that contain several different kinds of ammunition, all but eliminating the need to reload in battle.",
+        "traits": {
+            "Heavy": null,
+            "Engine of Vaul": "Eldar/HeavyWeaponBonus"
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\EldarMissileLauncherStarshotMissile.png",
+        "name": "Eldar Missile Launcher (Starshot)",
+        "faction": "Eldar"
+    },
     "Eldritch Storm": {
         "internalID": "EldritchStorm",
         "description": null,
@@ -2931,8 +3091,10 @@
             "Improved Frag Casings": "SpaceMarines/BlastDamage",
             "Flame": null,
             "Ignores Cover": null,
+            "No Escape": null,
             "Template": null,
-            "Twin-Linked": null
+            "Twin-Linked": null,
+            "Assault": null
         },
         "range": "1",
         "innateStats": {
@@ -3166,6 +3328,7 @@
             "Blast": null,
             "Improved Frag Casings": "SpaceMarines/BlastDamage",
             "Daemonbone Casings": "ChaosSpaceMarines/BlastDamage",
+            "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
             "Grenade": null
         },
         "range": "1",
@@ -3909,6 +4072,7 @@
         "flavor": "Haywire grenades release electromagnetic pulses that damage vehicles.",
         "traits": {
             "Assault": null,
+            "Deviant Designs": "Drukhari/AssaultWeaponBonus",
             "Sub-Molecular Ammunition": "Eldar/AssaultWeaponBonus",
             "Grenade": null,
             "Haywire": null
@@ -4277,7 +4441,7 @@
         "innateStats": {
             "attacks": {
                 "operator": "add",
-                "value": 1.0
+                "value": 2.0
             },
             "rangedArmorPenetration": {
                 "operator": "add",
@@ -4629,6 +4793,53 @@
         "name": "Hunter-Killer Missile",
         "faction": "Neutral"
     },
+    "Hunting Lance (Frag Tip)": {
+        "internalID": "HuntingLanceFragTip",
+        "description": null,
+        "flavor": "Nearly four metres of hollow metal tipped with a shaped charge, the Attilan hunting lance is a perfect combination of ancient cavalry techniques and crude Imperial technology. Though usually containing a Frag blast, Rough Riders expecting to face vehicles will bring the heavier Melta Tips with them.",
+        "traits": {
+            "Blast": null,
+            "Melee": null,
+            "Improved Frag Casings": "AstraMilitarum/BlastDamage"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "mul",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\HuntingLanceFragTip.png",
+        "name": "Hunting Lance (Frag Tip)",
+        "faction": "Astra Militarum"
+    },
+    "Hunting Lance (Melta Tip)": {
+        "internalID": "HuntingLanceMeltaTip",
+        "description": null,
+        "flavor": "Nearly four metres of hollow metal tipped with a shaped charge, the Attilan hunting lance is a perfect combination of ancient cavalry techniques and crude Imperial technology. Though usually containing a Frag blast, Rough Riders expecting to face vehicles will bring the heavier Melta Tips with them.",
+        "traits": {
+            "Melee": null,
+            "Improved Frag Casings": "AstraMilitarum/BlastDamage"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "strengthDamage": {
+                "operator": "add",
+                "value": 0.75
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\HuntingLanceMeltaTip.png",
+        "name": "Hunting Lance (Melta Tip)",
+        "faction": "Astra Militarum"
+    },
     "Huskblade": {
         "internalID": "Huskblade",
         "description": null,
@@ -4736,6 +4947,38 @@
         "iconPath": "Gladius\\Icons\\Weapons\\ImpalerCannon.png",
         "name": "Impaler Cannon",
         "faction": "Tyranids"
+    },
+    "Inferno Boltgun": {
+        "internalID": "InfernoBoltgun",
+        "description": null,
+        "flavor": "The weapons of the Thousand Sons are shaped by the craft of artificers and sorcerers alike. When their guns roar, they fire not only explosive bolts that tear flesh, but uncanny energies that can melt even ceramite. In such a fashion, is the Long War waged anew.",
+        "traits": {
+            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
+            "Bolt Weapon": null,
+            "Rapid Fire": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\InfernoBoltgun.png",
+        "name": "Inferno Boltgun",
+        "faction": "Chaos Space Marines"
     },
     "Ironhail Heavy Stubber": {
         "internalID": "IronhailHeavyStubber",
@@ -5076,6 +5319,7 @@
             "Assault": null,
             "Improved Frag Casings": "SpaceMarines/BlastDamage",
             "Daemonbone Casings": "ChaosSpaceMarines/BlastDamage",
+            "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
             "Grenade": null
         },
         "range": "1",
@@ -5466,7 +5710,9 @@
         "internalID": "LashingWarpEnergies",
         "description": null,
         "flavor": "If it\u2019s loathsome aura wasn\u2019t enough warning, the nearer you get to the Noctilith Crown, the more it\u2019s unholy energies pull at you, shredding the strongest defences, or even pulling weaker assailants wholesale into the warp.",
-        "traits": {},
+        "traits": {
+            "Forbidden Energies": "ChaosSpaceMarines/LasDamage"
+        },
         "range": "2",
         "innateStats": {
             "attacks": {
@@ -6679,6 +6925,7 @@
         "flavor": "Plasma grenades are a highly advanced type of assault grenade, commonly employed by the Aeldari.",
         "traits": {
             "Assault": null,
+            "Deviant Designs": "Drukhari/AssaultWeaponBonus",
             "Sub-Molecular Ammunition": "Eldar/AssaultWeaponBonus",
             "Blast": null,
             "Grenade": null
@@ -7384,6 +7631,64 @@
         "name": "Psychic Scream",
         "faction": "Neutral"
     },
+    "Psychic Tendril (Neuroblast)": {
+        "internalID": "PsychicTendrilNeuroblast",
+        "description": null,
+        "flavor": "The Norn Emissary is a prodigiously psychic creature, able to adapt its mental abilities to target individual opponents, large formations or even vehicles, before closing with its monstrous talons\u2026",
+        "traits": {
+            "Assault": null,
+            "Large Blast": null,
+            "Witchfire": null,
+            "Gigaborer Hives": "Tyranids/ShortRangedDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PsychicTendrilNeuroblast.png",
+        "name": "Psychic Tendril (Neuroblast)",
+        "faction": "Tyranids"
+    },
+    "Psychic Tendril (Neurolance)": {
+        "internalID": "PsychicTendrilNeurolance",
+        "description": null,
+        "flavor": "The Norn Emissary is a prodigiously psychic creature, able to adapt its mental abilities to target individual opponents, large formations or even vehicles, before closing with its monstrous talons\u2026",
+        "traits": {
+            "Assault": null,
+            "Melta": null,
+            "Witchfire": null,
+            "Gigaborer Hives": "Tyranids/ShortRangedDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PsychicTendrilNeurolance.png",
+        "name": "Psychic Tendril (Neurolance)",
+        "faction": "Tyranids"
+    },
     "Pteraxii Talons": {
         "internalID": "PteraxiiTalons",
         "description": null,
@@ -7965,6 +8270,37 @@
         "iconPath": "Gladius\\Icons\\Weapons\\RuptureCannon.png",
         "name": "Rupture Cannon",
         "faction": "Tyranids"
+    },
+    "Saddlegit Weapon": {
+        "internalID": "SaddlegitWeapon",
+        "description": null,
+        "flavor": "Though tougher than other Gretchin, a melee-armed saddlegit is a minor threat compared to the hulking BeastSnagga Boy sat next to him, or its monstrous Squighog.",
+        "traits": {
+            "Assault": null,
+            "Bigga Boltz": "Orks/BoltDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\SaddlegitWeapon.png",
+        "name": "Saddlegit Weapon",
+        "faction": "Orks"
     },
     "Scissorhand": {
         "internalID": "Scissorhand",
@@ -9239,6 +9575,33 @@
         "name": "Spore Mine Launcher",
         "faction": "Tyranids"
     },
+    "Squighog Jaws": {
+        "internalID": "SquighogJaws",
+        "description": null,
+        "flavor": "As if Squighog\u2019s mighty jaws weren\u2019t strong enough, many Beast Snagga boyz have their steed\u2019s jaw augmented by the local Dok or Mek, resulting in a bite that\u2019s easily as strong as an Ogryn. And a Squighog that\u2019s twice as angry.",
+        "traits": {
+            "Melee": null,
+            "Bigga Choppas": "Orks/MeleeDamage"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "meleeAttacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\SquighogJaws.png",
+        "name": "Squighog Jaws",
+        "faction": "Orks"
+    },
     "Staff of Light": {
         "internalID": "StaffOfLight",
         "description": null,
@@ -9394,6 +9757,56 @@
         "iconPath": "Gladius\\Icons\\Weapons\\StingerSalvo.png",
         "name": "Stinger Salvo",
         "faction": "Tyranids"
+    },
+    "Stikka (Melee)": {
+        "internalID": "StikkaMelee",
+        "description": null,
+        "flavor": "A large, crude harpoon used by the Squighog Boyz of the Beast Snagga Ork subculture. Given the culture\u2019s focus on hunting, these are often upgraded with chains to pull down larger prey or rocket boosters to increase their range and penetration.",
+        "traits": {
+            "Melee": null,
+            "Bigga Choppas": "Orks/MeleeDamage"
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "add",
+                "value": 0.5
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\StikkaMelee.png",
+        "name": "Stikka (Melee)",
+        "faction": "Orks"
+    },
+    "Stikka (Ranged)": {
+        "internalID": "StikkaRanged",
+        "description": null,
+        "flavor": "A large, crude harpoon used by the Squighog Boyz of the Beast Snagga Ork subculture. Given the culture\u2019s focus on hunting, these are often upgraded with chains to pull down larger prey or rocket boosters to increase their range and penetration.",
+        "traits": {
+            "Assault": null,
+            "Bigga Boltz": "Orks/BoltDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\StikkaRanged.png",
+        "name": "Stikka (Ranged)",
+        "faction": "Orks"
     },
     "Stikkbomb": {
         "internalID": "Stikkbomb",
@@ -10405,6 +10818,30 @@
         "name": "Transdimensional Thunderbolt (Transcendent)",
         "faction": "Necrons"
     },
+    "Transonic Blade": {
+        "internalID": "TransonicBlade",
+        "description": null,
+        "flavor": "Transonic blades emit a low, insistent buzz that makes stomachs turn and eyes vibrate in their sockets. When they strike armour, these weapons will adjust their hostile sonic field to match its resonant frequency, slicing through it as though it wasn\u2019t there.",
+        "traits": {
+            "Melee": null,
+            "Ryzan Savagery": "AdeptusMechanicus/MeleeWeaponBonus",
+            "Transonic": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "meleeArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "add",
+                "value": 0.5
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TransonicBlade.png",
+        "name": "Transonic Blade",
+        "faction": "Adeptus Mechanicus"
+    },
     "Transuranic Arquebus": {
         "internalID": "TransuranicArquebus",
         "description": null,
@@ -10471,40 +10908,6 @@
         "name": "Twin-Linked Bolt Rifle",
         "faction": "Space Marines"
     },
-    "Twin-Linked Heavy Bolter": {
-        "internalID": "TwinLinkedHeavyBolter",
-        "description": null,
-        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
-        "traits": {
-            "Kraken Bolts": "SpaceMarines/BoltDamage",
-            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
-            "Bolt Weapon": null,
-            "Heavy": null,
-            "Twin-Linked": null
-        },
-        "range": "2",
-        "innateStats": {
-            "attacks": {
-                "operator": "add",
-                "value": 3.0
-            },
-            "rangedArmorPenetration": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "rangedDamage": {
-                "operator": "add",
-                "value": 2.0
-            },
-            "strengthDamage": {
-                "operator": "base",
-                "value": 0.0
-            }
-        },
-        "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedHeavyBolter.png",
-        "name": "Twin-Linked Heavy Bolter",
-        "faction": "Neutral"
-    },
     "Twin-Linked Icarus Rocket Pod": {
         "internalID": "TwinIcarusRocketPod",
         "description": null,
@@ -10538,12 +10941,11 @@
         "name": "Twin-Linked Icarus Rocket Pod",
         "faction": "Space Marines"
     },
-    "Twin-Linked Icarus Ironhail Heavy Bolter": {
+    "Twin-Linked Icarus Ironhail Heavy Stubber": {
         "internalID": "TwinIcarusIronhailHeavyStubber",
         "description": null,
         "flavor": "These are low-tech solutions to ranged warfare on high-tech battlefields. Encompassing such weapons as shotguns, stub guns and heavy stubbers (sometimes called sluggers), the common bond between all of these weapons is that they are, without exception, cumbersome, noisy and fairly primitive firearms. Often employed by gangers, law enforcement officers and even civilians across the Imperium, these weapons make a formidable din when fired, and are easy to maintain.",
         "traits": {
-            "Bolt Weapon": null,
             "Rapid Fire": null,
             "Skyfire": null,
             "Kraken Bolts": "SpaceMarines/BoltDamage",
@@ -10569,7 +10971,7 @@
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\TwinIcarusIronhailHeavyStubber.png",
-        "name": "Twin-Linked Icarus Ironhail Heavy Bolter",
+        "name": "Twin-Linked Icarus Ironhail Heavy Stubber",
         "faction": "Space Marines"
     },
     "Twin-Linked Airbursting Fragmentation Projector": {
@@ -10972,6 +11374,40 @@
         "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedGaussBlaster.png",
         "name": "Twin-Linked Gauss Blaster",
         "faction": "Necrons"
+    },
+    "Twin-Linked Heavy Bolter": {
+        "internalID": "TwinLinkedHeavyBolter",
+        "description": null,
+        "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
+        "traits": {
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
+            "Bolt Weapon": null,
+            "Heavy": null,
+            "Twin-Linked": null
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\TwinLinkedHeavyBolter.png",
+        "name": "Twin-Linked Heavy Bolter",
+        "faction": "Neutral"
     },
     "Twin-Linked Heavy Flamer": {
         "internalID": "TwinLinkedHeavyFlamer",

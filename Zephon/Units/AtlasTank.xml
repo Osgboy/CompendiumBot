@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit branch="Human">
 	<model>
-		<unit 	explosionsBlueprint="Effects/TitanHumanExplosions"
+		<unit explosionsBlueprint="Effects/TitanHumanExplosions"
 				explosionsBone="Hull"
 				groupMemberDeltaX="90"
 				groupMemberDeltaY="50"
@@ -194,8 +194,10 @@
 		</skip>
 		<useWeapon weaponSlotName="GaussCannon"
 				consumedActionPoints="0"
+				consumedMovement="0"
 				cooldown="1"
-				requiredActionPoints="0">
+				requiredActionPoints="0"
+				requiredMovement="0">
 			<model>
 				<attack animation="Units/AtlasTankAbility0"
 						beginFire="0.7"
@@ -209,8 +211,10 @@
 		</useWeapon>
 		<useWeapon weaponSlotName="GaussCannonOvercharged"
 				consumedActionPoints="0"
+				consumedMovement="0"
 				cooldown="1"
-				requiredActionPoints="0">
+				requiredActionPoints="0"
+				requiredMovement="0">
 			<model>
 				<attack animation="Units/AtlasTankAbility0"
 						beginFire="0.7"
@@ -238,8 +242,9 @@
 	</actions>
 	<traits>
 		<trait type="AntimatterPlating" requiredUpgrade="AntimatterPlating"/>
-		<trait type="DozerBlade" requiredUpgrade="DozerBlade"/>
+		<!-- <trait type="DozerBlade" requiredUpgrade="DozerBlade"/> -->
 		<trait type="Large"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="Mechanical"/>
 		<trait type="Titan"/>
 	</traits>

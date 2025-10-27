@@ -194,11 +194,21 @@
 						windupDuration="0.2"/>										
 			</models>
 		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
 	</headquarterWeapons>
 	<likedLabels>
 		<label name="ArmorOfFaith"/>
-		<label name="Undying"/>
+		<label name="MothersFavor"/>
 		<label name="Trapped"/>
+		<label name="Undying"/>
 	</likedLabels>
 	<startingResourceModifiers>
 		<modifier>
@@ -215,6 +225,7 @@
 	<startingUnits>
 		<unit type="Engineer" count="1"/>
 		<unit type="AbkluthDragoon" count="2"/>
+		<unit type="Abkluth" count="1"/>
 	</startingUnits>
 	<traits>
 		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
@@ -228,8 +239,12 @@
 		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
 		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
 		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
 		<trait type="Mysticism"/>
-		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind" duration="10"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
 		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
 		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
 		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
@@ -266,7 +281,4 @@
 			</beginTargets>
 		</unitAction>
 	</unitActions>
-	<unitTraits>
-		<trait type="Bleedwalker" requiredUpgrade="SurthodaisKiss"/>
-	</unitTraits>
 </faction>

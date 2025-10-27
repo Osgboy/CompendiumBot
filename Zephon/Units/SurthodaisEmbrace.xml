@@ -20,17 +20,17 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<algaeCost base="15"/> <!-- %algaeCost base tier=7 factor=0.25 -->
-				<algaeUpkeep base="0.75"/> <!-- %algaeUpkeep base tier=7 factor=0.25 -->
+				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
 				<armor base="2"/>
 				<cargoSlots base="3"/>
-				<foodCost base="30"/> <!-- %foodCost base tier=7 factor=0.5 -->
-				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
 				<moraleMax base="8"/>
 				<movementMax base="3"/>
-				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -54,7 +54,7 @@
 						meleeAnimation="Units/SurthodaisEmbraceMelee"
 						meleeBeginSwing="0.4"
 						meleeEndSwing="0.5"
-						sound="Units/SurthodaisEmbraceMelee"
+						meleeSound="Units/SurthodaisEmbraceMelee"
 						responseSound="Responses/Units/SurthodaisEmbraceAttack"
 						responseSoundCount="3"/>
 			</model>
@@ -127,7 +127,7 @@
 					<areas>
 						<area affect="Tile" radius="1">
 							<modifiers>
-								<modifier effectDescription="ToAdjacentAlliedBiologicalUnits">
+								<modifier effectDescription="ToUnitAndAdjacentAlliedBiologicalUnits">
 									<effects>
 										<addTrait type="DarkCaress"/>
 									</effects>
@@ -183,6 +183,7 @@
 		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="Large"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
 		<trait type="Transport"/>
 	</traits>
 </unit>

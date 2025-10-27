@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<upgrade dlc="Supplement15" position="8" icon="Units/SpaceMarines/PrimarisRepulsorExecutioner"/>
+<upgrade dlc="Supplement15" position="8" icon="Units/SpaceMarines/PrimarisRepulsorExecutioner">
+	<requiredUpgrades>
+		<upgrade name="SpaceMarines/Vehicles"/>
+	</requiredUpgrades>
+</upgrade>

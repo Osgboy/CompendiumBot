@@ -751,6 +751,57 @@
         "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\SicarianInfiltrator.png",
         "name": "Sicarian Infiltrators"
     },
+    "Sicarian Ruststalkers": {
+        "faction": "Adeptus Mechanicus",
+        "combatStats": {
+            "groupSizeMax": "5",
+            "armor": 6,
+            "hitpointsMax": 4.0,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "SicarianRuststalker",
+        "tier": "5",
+        "dlc": "Supplement16",
+        "description": "Doctrina Imperatives elite melee infantry unit that excels in prolonged battles.",
+        "flavor": "The Sicarians are warrior-clades repurposed from the remains of grievously wounded Skitarii. Unlike their Infiltrator kin, Ruststalkers act as assassins, their transonic blades and claws fused permanently into their bionic appendages and pallid, puckered flesh.",
+        "costStats": {
+            "production": "48.0",
+            "food": "40.0",
+            "ore": "40.0"
+        },
+        "upkeepStats": {
+            "food": "4.0"
+        },
+        "weapons": {
+            "Transonic Blade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Bulky": null,
+            "Doctrina Imperatives": null,
+            "Dunestrider": null,
+            "Extra Infantry Armour": "AdeptusMechanicus/ExtraInfantryArmour",
+            "Feel No Pain": null,
+            "Furious Charge": null
+        },
+        "actions": {
+            "Voices in the Code": "AdeptusMechanicus/VoicesInTheCode"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\SicarianRuststalker.png",
+        "name": "Sicarian Ruststalkers"
+    },
     "Skitarii Marshal": {
         "faction": "Adeptus Mechanicus",
         "combatStats": {
@@ -1222,6 +1273,66 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\TechPriestManipulus.png",
         "name": "Tech-Priest Manipulus"
+    },
+    "Attilan Rough Riders": {
+        "faction": "Astra Militarum",
+        "combatStats": {
+            "groupSizeMax": "5",
+            "armor": 6,
+            "hitpointsMax": 6.0,
+            "moraleMax": 6,
+            "movementMax": 4,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 6.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "AttilanRoughRider",
+        "tier": "5",
+        "dlc": "Supplement16",
+        "description": "Fast melee infantry unit.",
+        "flavor": "Horsemen may seem primitive in a galaxy filled with millennia-old horrors, but the Rough Riders of Attila long ago proved their worth to the Astra Militarum. The hunting lances they carry are their concession to modern tactics, with their melta-tipped variants even capable of punching through power armour.",
+        "costStats": {
+            "production": "36.0",
+            "food": "20.0",
+            "ore": "20.0"
+        },
+        "upkeepStats": {
+            "food": "2.0"
+        },
+        "weapons": {
+            "Hunting Lance (Frag Tip)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Hunting Lance (Melta Tip)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Frag Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Fleet": null,
+            "Extra Infantry Armour": "AstraMilitarum/ExtraInfantryArmour",
+            "Move Through Cover": null,
+            "Very Bulky": null
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Hammer of Wrath": "AstraMilitarum/HammerOfWrath"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\AstraMilitarum\\AttilanRoughRider.png",
+        "name": "Attilan Rough Riders"
     },
     "Baneblade": {
         "faction": "Astra Militarum",
@@ -4023,6 +4134,65 @@
         "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\Obliterator.png",
         "name": "Obliterators"
     },
+    "Rubric Marines": {
+        "faction": "Chaos Space Marines",
+        "combatStats": {
+            "groupSizeMax": "5",
+            "armor": 8,
+            "hitpointsMax": 3.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "RubricMarine",
+        "tier": "5",
+        "dlc": "Supplement16",
+        "description": "Elite infernal infantry unit.",
+        "flavor": "These ornate suits of power armour are filled only with dust\u2014the remnants of the proud Space Marines whose spirits are sealed within and animate them still.",
+        "costStats": {
+            "production": "42.0",
+            "food": "30.0",
+            "ore": "30.0"
+        },
+        "upkeepStats": {
+            "food": "3.0"
+        },
+        "weapons": {
+            "Inferno Boltgun": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Melta Bomb": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Aura of Dark Glory": null,
+            "Champion of Chaos": null,
+            "Fearless": null,
+            "Malicious Volleys": null,
+            "Mark of Tzeentch": null,
+            "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
+            "Slow and Purposeful": null,
+            "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
+        },
+        "actions": {
+            "Infernal Fusillade": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\RubricMarine.png",
+        "name": "Rubric Marines"
+    },
     "Venomcrawler": {
         "faction": "Chaos Space Marines",
         "combatStats": {
@@ -4540,7 +4710,7 @@
         "internalID": "Incubi",
         "tier": "6",
         "dlc": "Supplement13",
-        "description": "Powerful melee infantry that can take on any opponent.",
+        "description": "Powerful melee infantry unit that can take on any opponent.",
         "flavor": "The Incubi are warrior-perfectionists of the highest order. Protected by the ornate plates of their ancient warsuits, they move swiftly in for the kill, sweeping giant klaives in practised, decapitating strikes.",
         "costStats": {
             "production": "36.0",
@@ -4594,7 +4764,7 @@
         "internalID": "KabaliteTrueborn",
         "tier": "5",
         "dlc": "Supplement13",
-        "description": "Powerful poisoned infantry that excels against enemy infantry and monstrous creatures.",
+        "description": "Powerful poisoned infantry unit that excels against enemy infantry and monstrous creatures.",
         "flavor": "In every Kabal there exists a clique of those Drukhari who view themselves as superior to their fellow Kabalites. Most often, this is the result of having been born naturally, rather than as a result of cloning or other esoteric sciences. These \u2018Trueborn\u2019 \u2013 as they are known \u2013 view themselves as purer, and are afforded a more prestigious position in Commorrite society. They are able to demand the very best, and learn from an early age to protect their birthright to such power.",
         "costStats": {
             "production": "42.0",
@@ -4682,6 +4852,70 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Drukhari\\KabaliteWarrior.png",
         "name": "Kabalite Warriors"
+    },
+    "Mandrakes": {
+        "faction": "Drukhari",
+        "combatStats": {
+            "groupSizeMax": "6",
+            "armor": 0,
+            "hitpointsMax": 2.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "Mandrake",
+        "tier": "2",
+        "dlc": "Supplement16",
+        "description": "Light skirmish infantry unit that causes fear and teleports to disrupt enemy formations.",
+        "flavor": "Feared even by their Drukhari kin, the origins of the unnatural Mandrakes of Aelindrach are lost in time. They appear like the void incarnate, with their midnight skin, bone-white hair and freezing presence. In battle, they literally slip between shadows, emerging only to plunge their sickle blades into the living or sear their flesh with the cold-fire known as Baleblasts.",
+        "costStats": {
+            "production": "36.0",
+            "food": "20.0",
+            "ore": "20.0"
+        },
+        "upkeepStats": {
+            "food": "2.0"
+        },
+        "weapons": {
+            "Close Combat Weapon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Baleblast": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Extra Infantry Armour": "Drukhari/ExtraInfantryArmour",
+            "Fleet": null,
+            "Infiltrate": null,
+            "Move Through Cover": null,
+            "Shrouded": null,
+            "Stealth": null,
+            "Blade Artists": null,
+            "Power from Pain": null,
+            "Raiders Tactics": null,
+            "Raider Readiness": "Drukhari/RaidersTacticsHealingRate",
+            "Soul Hunger": null
+        },
+        "actions": {
+            "Aura of Fear": null,
+            "Webway Travel": null,
+            "Combat Drugs": "Drukhari/CombatDrugsUpgrade",
+            "Fade Away": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Drukhari\\Mandrake.png",
+        "name": "Mandrakes"
     },
     "Raider": {
         "faction": "Drukhari",
@@ -4947,7 +5181,7 @@
         "internalID": "Scourge",
         "tier": "4",
         "dlc": "Supplement13",
-        "description": "Jump infantry equipped with ranged anti-vehicle weapons.",
+        "description": "Jump infantry unit equipped with ranged anti-vehicle weapons.",
         "flavor": "Airborne messengers and mercenaries who ride the thermals between Commorragh\u2019s highest spires, Scourges have been bodily modified for winged flight. They wear their grotesque new forms with the same pride that they wield their weapons, for their combination of speed and firepower renders them invaluable.",
         "costStats": {
             "production": "36.0",
@@ -5429,7 +5663,7 @@
         "internalID": "Wyche",
         "tier": "1",
         "dlc": "Supplement13",
-        "description": "Fast light melee infantry that can use combat drugs.",
+        "description": "Fast light melee infantry unit that can use combat drugs.",
         "flavor": "The dancers of death, Wyches are acrobatic murder-artists, exhibiting their incredible arena skills to slay with precision and elan. They wield exotic weapons \u2013 hooks, barbed chains or flensing blades \u2013 that require superior ability. These are deadly in Wyches\u2019 hands as they dart, twist and blur around their foes\u2019 clumsy attacks.",
         "costStats": {
             "production": "30.0",
@@ -5700,7 +5934,7 @@
         "internalID": "DarkReaper",
         "tier": "3",
         "dlc": "Supplement12",
-        "description": "Long-range anti-armour infantry equipped with a variety of missiles to deal against fast targets.",
+        "description": "Long-range anti-armour infantry unit equipped with a variety of missiles to deal against fast targets.",
         "flavor": "From far across the battlefield, the Dark Reapers cut down their enemies with devastating salvoes of missiles, each armour-piercing projectile ripping through the air to blast ragged holes in tanks and soldiers alike. Silhouetted against the sky from their position on the high ground, the Reapers are as Khaine himself calling down destruction upon the unworthy. Impassive and all-seeing, they scan the horizon for any signs of movement, complex relays allowing their gaze to be channelled through the barrels of their ritual weaponry at will. Then, with unflinching precision, the Reapers wreak devastation upon their chosen targets.",
         "costStats": {
             "production": "42.0",
@@ -6502,6 +6736,78 @@
         "iconPath": "Gladius\\Icons\\Units\\Eldar\\VaulsWrathSupportBattery.png",
         "name": "Vaul\u2019s Wrath Support Battery"
     },
+    "Vypers": {
+        "faction": "Eldar",
+        "combatStats": {
+            "groupSizeMax": "2",
+            "armor": 6,
+            "hitpointsMax": 16.0,
+            "moraleMax": 10,
+            "movementMax": 5,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 6,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1,
+            "strengthDamage": 1
+        },
+        "internalID": "Vyper",
+        "tier": "4",
+        "dlc": "Supplement16",
+        "description": "Fast reconnaissance skimmer unit with a multipurpose missile launcher.",
+        "flavor": "Following a Saim-Hann craftworld design, the Vyper sits somewhere between a jetbike and weapons platform. Despite its lightweight build and speed, these two-Aeldari vehicles can carry a variety of heavy weapons\u2014though on Gladius Prime, they are known for using only versatile missile launchers.",
+        "costStats": {
+            "production": "42.0",
+            "ore": "60.0"
+        },
+        "upkeepStats": {
+            "ore": "3.0"
+        },
+        "weapons": {
+            "Eldar Missile Launcher (Plasma)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Eldar Missile Launcher (Starshot)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Eldar Missile Launcher (Starhawk)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Twin-Linked Shuriken Catapult": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Open-Topped": null,
+            "Skimmer": null,
+            "Vehicle": null,
+            "Spirit Preservation": null,
+            "Extra Vehicle Armour": "Eldar/ExtraVehicleArmour",
+            "Move Through Cover": "Eldar/GhostwalkMatrix",
+            "Holo-Fields": "Eldar/HoloFields",
+            "Spirit Stones": "Eldar/SpiritStones",
+            "Star Engines": "Eldar/StarEngines"
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Webway Travel": null,
+            "Jink": null,
+            "Crystal Targeting Matrix": "Eldar/CrystalTargetingMatrix",
+            "Vectored Engines": "Eldar/VectoredEngines"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Eldar\\Vyper.png",
+        "name": "Vypers"
+    },
     "War Walkers": {
         "faction": "Eldar",
         "combatStats": {
@@ -6980,6 +7286,61 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Necrons\\AnnihilationBarge.png",
         "name": "Annihilation Barge"
+    },
+    "Canoptek Reanimator": {
+        "faction": "Necrons",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 24.0,
+            "moraleMax": 12,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 6.0,
+            "rangedAccuracy": 6.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 2.0
+        },
+        "internalID": "CanoptekReanimator",
+        "tier": "2",
+        "dlc": "Supplement16",
+        "description": "Support walker unit that regenerates friendly Necrons units.",
+        "flavor": "Like its Canoptek peers, the looming Reanimator\u2019s core role is not destruction but maintenance of a Necron Tomb World. Its remit is to repair damage caused during combat, which it does with streams of nano-scarabs, rebuilding nearby Necrons while they still stand.",
+        "costStats": {
+            "production": "36.0",
+            "energy": "40.0"
+        },
+        "upkeepStats": {
+            "ore": "2.0"
+        },
+        "weapons": {
+            "Atomiser Beam": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Static Targetting": "Necrons/AttackCityBonus",
+            "Extra Vehicle Armour": "Necrons/ExtraVehicleArmour",
+            "Fearless": null,
+            "Monstrous Creature": null,
+            "Move Through Cover": null,
+            "Living Metal": null,
+            "Relentless": null,
+            "Smash": null
+        },
+        "actions": {
+            "Necrodermis Repair": null,
+            "Aura of Fear": null,
+            "Hammer of Wrath": "Necrons/HammerOfWrath",
+            "Nanoscarab Reanimation Beam": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Necrons\\CanoptekReanimator.png",
+        "name": "Canoptek Reanimator"
     },
     "Canoptek Scarabs": {
         "faction": "Necrons",
@@ -10462,6 +10823,78 @@
         "iconPath": "Gladius\\Icons\\Units\\Orks\\Painboy.png",
         "name": "Painboy"
     },
+    "Squighog Boyz": {
+        "faction": "Orks",
+        "combatStats": {
+            "groupSizeMax": "3",
+            "armor": 6,
+            "hitpointsMax": 12.0,
+            "moraleMax": 6,
+            "movementMax": 4,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 4.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 2.0
+        },
+        "internalID": "SquighogBoy",
+        "tier": "6",
+        "dlc": "Supplement16",
+        "description": "Heavy infantry unit that excels at taking down large prey.",
+        "flavor": "Riding four-legged Squigs into battle, these Beast Snagga boyz are nomadic Orks, predominantly from the traditionalist Snakebites Clan. Their goal is always to take down the biggest enemy on the battlefield\u2014be that Tyranid, Necron or Ogryn.",
+        "costStats": {
+            "production": "42.0",
+            "ore": "60.0"
+        },
+        "upkeepStats": {
+            "ore": "3.0",
+            "influence": "3.0"
+        },
+        "weapons": {
+            "Stikka (Ranged)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Stikka (Melee)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Saddlegit Weapon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Squighog Jaws": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Beast Snagga": null,
+            "Mob Rule": null,
+            "Rapid Decomposition": null,
+            "Green Tide": null,
+            "Might Makes Right": null,
+            "Scavenger": null,
+            "Fleet": null,
+            "Furious Charge": null,
+            "Extra Infantry Armour": "Orks/ExtraInfantryArmour",
+            "Fungal Forests": "Orks/OrkoidFungusBonusHealingRate",
+            "Very Bulky": null
+        },
+        "actions": {
+            "'Ere We Go!": null,
+            "Hammer of Wrath": "Orks/HammerOfWrath"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Orks\\SquighogBoy.png",
+        "name": "Squighog Boyz"
+    },
     "Megatrakk Scrapjet": {
         "faction": "Orks",
         "combatStats": {
@@ -13312,7 +13745,7 @@
             "Close-quarters Firepower": null,
             "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
             "Last Stand": "SpaceMarines/LastStand",
-            "Very Bulky": null
+            "Bulky": null
         },
         "actions": {
             "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
@@ -13334,7 +13767,7 @@
         "weaponStats": {
             "meleeAccuracy": 8.0,
             "rangedAccuracy": 8.0,
-            "meleeAttacks": 1.0,
+            "meleeAttacks": 2.0,
             "strengthDamage": 1.5
         },
         "internalID": "PrimarisHellblaster",
@@ -13374,8 +13807,7 @@
         "traits": {
             "And They Shall Know No Fear": null,
             "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
-            "Last Stand": "SpaceMarines/LastStand",
-            "Bulky": null
+            "Last Stand": "SpaceMarines/LastStand"
         },
         "actions": {
             "Cycle Weapon": null,
@@ -13427,7 +13859,7 @@
         },
         "traits": {
             "And They Shall Know No Fear": null,
-            "Very Bulky": null,
+            "Bulky": null,
             "Extra Infantry Armour": "SpaceMarines/ExtraInfantryArmour",
             "Last Stand": "SpaceMarines/LastStand"
         },
@@ -13459,7 +13891,7 @@
         "internalID": "PrimarisIntercessor",
         "tier": "2",
         "dlc": "Supplement15",
-        "description": "Tough versatile infantry unit",
+        "description": "Tough versatile infantry unit.",
         "flavor": "Intercessor Squads are capable of laying down punishing fire while advancing or holding ground against the enemy. They have access to a range of bolt weaponry suited to varied battlefield assignments, from engaging enemies at long range to cleansing bunker complexes.",
         "costStats": {
             "production": "36.0",
@@ -13546,6 +13978,7 @@
             "Very Bulky": null
         },
         "actions": {
+            "Turbo-Boost": null,
             "Jink": null,
             "Orbital Deployment": "SpaceMarines/OrbitalDeployment"
         },
@@ -13575,11 +14008,11 @@
         "description": "Heavy tank with transport capabilities and a significant payload of ranged weapons.",
         "flavor": "Based on the Repulsor chassis, the Repulsor Executioner sacrifices some transport capacity to accommodate powerful turret weaponry. Even the largest battle tanks can be crippled by the beam of a heavy laser destroyer, while the incinerating blasts of a macro plasma incinerator can obliterate infantry formations.",
         "costStats": {
-            "production": "54.0",
-            "requisitions": "120.0"
+            "production": "60.0",
+            "requisitions": "160.0"
         },
         "upkeepStats": {
-            "requisitions": "6.0"
+            "requisitions": "8.0"
         },
         "weapons": {
             "Heavy Laser Destroyer": {
@@ -13607,7 +14040,7 @@
                 "requiredUpgrade": null,
                 "secondary": false
             },
-            "Twin-Linked Icarus Ironhail Heavy Bolter": {
+            "Twin-Linked Icarus Ironhail Heavy Stubber": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": false
@@ -13627,6 +14060,7 @@
             "And They Shall Know No Fear": null,
             "Extra Vehicle Armour": "SpaceMarines/ExtraVehicleArmour",
             "Last Stand": "SpaceMarines/LastStand",
+            "Skimmer": null,
             "Tank": null,
             "Transport": null,
             "Vehicle": null
@@ -13634,7 +14068,8 @@
         "actions": {
             "Create Smoke Screen": "SpaceMarines/SmokeLauncher",
             "Orbital Deployment": "SpaceMarines/OrbitalDeployment",
-            "Repulsor Field": null
+            "Repulsor Field": null,
+            "Power of the Machine Spirit": null
         },
         "iconPath": "Gladius\\Icons\\Units\\SpaceMarines\\PrimarisRepulsorExecutioner.png",
         "name": "Primaris Repulsor Executioner"
@@ -17250,6 +17685,82 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Tyranids\\Maleceptor.png",
         "name": "Maleceptor"
+    },
+    "Norn Emissary": {
+        "faction": "Tyranids",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 36.0,
+            "moraleMax": 12,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 10.0,
+            "rangedAccuracy": 10.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 3.0
+        },
+        "internalID": "NornEmissary",
+        "tier": "8",
+        "dlc": "Supplement16",
+        "description": "Elite Synapse monstrous creature bred to annihilate strategic enemy targets.",
+        "flavor": "Each Norn Emissary is spawned for a specific purpose, be it predating on a strategically gifted commander, abducting a knowledgeable prey-being at the behest of its Norn Queen, or some other ineffable task. Melding terrifying psionic potential with speed, agility and awful strength, the Norn Emissary is more than equal to its mission.",
+        "costStats": {
+            "production": "54.0",
+            "biomass": "120.0"
+        },
+        "upkeepStats": {
+            "biomass": "6.0"
+        },
+        "weapons": {
+            "Scything Talons": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Rending Claws": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Psychic Tendril (Neuroblast)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Psychic Tendril (Neurolance)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Fearless": null,
+            "Move Through Cover": null,
+            "Smash": null,
+            "Extra Monstrous Creature Armour": "Tyranids/ExtraMonstrousCreatureArmour",
+            "Acid Blood": "Tyranids/AcidBlood",
+            "Psyker": null,
+            "Unnatural Resilience": null,
+            "Fleet": "Tyranids/AdrenalGlands",
+            "Furious Charge": "Tyranids/AdrenalGlands",
+            "Monstrous Creature": null,
+            "Regeneration": "Tyranids/Regeneration",
+            "Megaunt Instincts": "Tyranids/VehiclesUpkeep"
+        },
+        "actions": {
+            "Synapse Creature": null,
+            "Aura of Fear": null,
+            "Shadow In The Warp": null,
+            "Singular Purpose": null,
+            "Subterranean Assault": null,
+            "Hammer of Wrath": "Tyranids/HammerOfWrath"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Tyranids\\NornEmissary.png",
+        "name": "Norn Emissary"
     },
     "Raveners": {
         "faction": "Tyranids",

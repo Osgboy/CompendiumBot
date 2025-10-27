@@ -990,6 +990,32 @@
         "iconPath": "Gladius\\Icons\\Traits\\AdeptusMechanicus\\TerranGeneralism.png",
         "name": "Terran Generalism"
     },
+    "Transonic": {
+        "faction": "Adeptus Mechanicus",
+        "internalID": "Transonic",
+        "description": "Increases damage and temporarily increases armor penetration when attacking.",
+        "flavor": "Transonic blades emit a low, insistent buzz that makes stomachs turn and eyes vibrate in their sockets. When they strike armour, these weapons will adjust their hostile sonic field to match its resonant frequency, slicing through it as though it wasn\u2019t there.",
+        "modifiers": [
+            "Transonic Resonance (2 turns)",
+            "- +5 Armour Penetration",
+            "- +10% Damage"
+        ],
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<onCombatSelfModifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<self>\n\t\t\t\t\t\t<attacking/>\n\t\t\t\t\t</self>\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<addTrait name=\"AdeptusMechanicus/TransonicEffect\" duration=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</onCombatSelfModifiers>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\AdeptusMechanicus\\Transonic.png",
+        "name": "Transonic"
+    },
+    "Transonic Resonance": {
+        "faction": "Adeptus Mechanicus",
+        "internalID": "TransonicEffect",
+        "description": "Increases armor penetration.",
+        "flavor": "Transonic blades emit a low, insistent buzz that makes stomachs turn and eyes vibrate in their sockets. When they strike armour, these weapons will adjust their hostile sonic field to match its resonant frequency, slicing through it as though it wasn\u2019t there.",
+        "modifiers": [
+            "- +5 Armour Penetration"
+        ],
+        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"5\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\AdeptusMechanicus\\TransonicEffect.png",
+        "name": "Transonic Resonance"
+    },
     "Triplex Necessity": {
         "faction": "Adeptus Mechanicus",
         "internalID": "TriplexNecessity",
@@ -1717,6 +1743,18 @@
         "iconPath": "Gladius\\Icons\\Traits\\ChaosSpaceMarines\\ArcaneOcculum.png",
         "name": "Arcane Occulum"
     },
+    "Aura of Dark Glory": {
+        "faction": "Chaos Space Marines",
+        "internalID": "AuraOfDarkGlory",
+        "description": "Increases invulnerable damage reduction.",
+        "flavor": "Some champions of Chaos are so blessed by their patron deity that they are supernaturall\u0443 protected from harm. They might be surrounded by a powerful, crackling bubble of psychic energy, or else bullets aimed at them may be strangely turned aside just before they strike. In either case, it is clear that the Dark Gods are watching over them.",
+        "modifiers": [
+            "- min 17% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\ChaosSpaceMarines\\AuraOfDarkGlory.png",
+        "name": "Aura of Dark Glory"
+    },
     "Daemonbone Casings": {
         "faction": "Chaos Space Marines",
         "internalID": "BlastDamage",
@@ -1988,6 +2026,18 @@
         "rawXML": "<trait category=\"Buff\" icon=\"Actions/ChaosSpaceMarines/IconOfWrath\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<damage mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\IconOfWrath.png",
         "name": "Icon of Wrath"
+    },
+    "Infernal Fusillade": {
+        "faction": "Chaos Space Marines",
+        "internalID": "InfernalFusillade",
+        "description": "Increases the attacks with bolt weapons.",
+        "flavor": "Infernal Fusillade",
+        "modifiers": [
+            "- +1 Ranged Attacks"
+        ],
+        "rawXML": "<trait category=\"Buff\" icon=\"Actions/ChaosSpaceMarines/InfernalFusillade\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<weapon>\n\t\t\t\t\t<trait name=\"BoltWeapon\"/>\n\t\t\t\t</weapon>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<rangedAttacks add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\InfernalFusillade.png",
+        "name": "Infernal Fusillade"
     },
     "Infernal Industry": {
         "faction": "Chaos Space Marines",
@@ -3167,7 +3217,7 @@
         "flavor": "Some Drukhari vehicles carry additional racks of anti-personnel weaponry on their decks. This allows passengers to literally empty their weapons\u2019 magazines in great raking fusillades, before discarding their spent guns in favour of fully-loaded replacements as they disembark.",
         "modifiers": [
             "Twin-Linked (1 turn)",
-            "- +2 Ranged Accuracy"
+            "- +2 Accuracy"
         ],
         "rawXML": "<trait category=\"Buff\" visible=\"1\">\n\t<onUnitDisembarked>\n\t\t<area affects=\"Unit\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<addTrait name=\"TwinLinked\" duration=\"1\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</area>\n\t</onUnitDisembarked>\n</trait>",
         "iconPath": "Gladius\\Icons\\Traits\\Drukhari\\WeaponRacks.png",
@@ -5084,6 +5134,18 @@
         "iconPath": "Gladius\\Icons\\Traits\\MeleeDamage.png",
         "name": "Necrodermic Blades"
     },
+    "Nanoscarab Reanimation Beam": {
+        "faction": "Necrons",
+        "internalID": "NanoscarabReanimationBeam",
+        "description": "Restores the hitpoints.",
+        "flavor": "The Canoptek Reanimator directs a stream of nanoscarabs at nearby Necron structures and units, activating and boosting their reanimation protocols. In contrast, the effect on organic creatures is entirely destructive.",
+        "modifiers": [
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<trait category=\"Buff\" icon=\"Actions/Necrons/NanoscarabReanimationBeam\">\n\t<perTurnModifiers endure=\"0\">\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<allied/>\n\t\t\t\t\t<faction name=\"Necrons\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<hitpoints add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</perTurnModifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Actions\\Necrons\\NanoscarabReanimationBeam.png",
+        "name": "Nanoscarab Reanimation Beam"
+    },
     "Nebuloscope": {
         "faction": "Necrons",
         "internalID": "Nebuloscope",
@@ -5359,6 +5421,19 @@
         "iconPath": "Gladius\\Icons\\Traits\\OrkoidFungusBonusHealingRate.png",
         "name": "Fungal Forests",
         "faction": "Orks"
+    },
+    "Beast Snagga": {
+        "faction": "Orks",
+        "internalID": "BeastSnagga",
+        "description": "Increases accuracy against vehicles and monstrous creatures and increases invulnerable damage reduction.",
+        "flavor": "Spying the largest or most dangerous threats on the battlefield \u2013 besides the Orks themselves \u2013 Beast Snaggas chase them down with gleeful enthusiasm.",
+        "modifiers": [
+            "- +17% Accuracy",
+            "- min 17% Invulnerable Damage Reduction"
+        ],
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent match=\"Any\">\n\t\t\t\t\t\t<trait name=\"Vehicle\"/>\n\t\t\t\t\t\t<trait name=\"MonstrousCreature\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<accuracy mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\Orks\\BeastSnagga.png",
+        "name": "Beast Snagga"
     },
     "Big Boss": {
         "faction": "Orks",
@@ -7114,12 +7189,12 @@
     "Close-quarters Firepower": {
         "faction": "Space Marines",
         "internalID": "CloseQuartersFirepower",
-        "description": "Increases armour penetration.",
+        "description": "Increases the ranged armour penetration.",
         "flavor": "At shorter ranges, the range of weapons designed by Belisarius Cawl for his Primaris marines are lethally effective, encouraging the Emperor\u2019s finest to close the distance with their foes.",
         "modifiers": [
-            "- +1 Armour Penetration"
+            "- +1 Ranged Armour Penetration"
         ],
-        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<armorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedArmorPenetration add=\"1\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Traits\\SpaceMarines\\CloseQuartersFirepower.png",
         "name": "Close-quarters Firepower"
     },
@@ -8699,6 +8774,19 @@
         "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\ShortRangedDamage.png",
         "name": "Gigaborer Hives"
     },
+    "Singular Purpose": {
+        "faction": "Tyranids",
+        "internalID": "SingularPurpose",
+        "description": "Norn Emissaries have increased accuracy and damage against this unit.",
+        "flavor": "Spawned by Norn queens, this Emissary\u2019s role on a battlefield is the removal of an opposing force\u2019s lynchpin\u2014the leaders or the key troops whose loss will precipitate the collapse of the opposition forces. Gifted with unique knowledge of its target, an Emissary rarely fails in its purpose.",
+        "modifiers": [
+            "- +17% Opponent Accuracy",
+            "- +17% Opponent Damage"
+        ],
+        "rawXML": "<trait alwaysVisible=\"1\" category=\"Debuff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<conditions>\n\t\t\t\t<encounter>\n\t\t\t\t\t<opponent>\n\t\t\t\t\t\t<type name=\"Tyranids/NornEmissary\"/>\n\t\t\t\t\t</opponent>\n\t\t\t\t</encounter>\n\t\t\t</conditions>\n\t\t\t<effects>\n\t\t\t\t<opponentAccuracy mul=\"0.17\"/>\n\t\t\t\t<opponentDamage mul=\"0.17\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\SingularPurpose.png",
+        "name": "Singular Purpose"
+    },
     "Spore Cloud": {
         "faction": "Tyranids",
         "internalID": "SporeCloud",
@@ -8771,6 +8859,19 @@
         "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\Tunnel2.png",
         "name": "Echiurean Walls"
     },
+    "Unnatural Resilience": {
+        "faction": "Tyranids",
+        "internalID": "UnnaturalResilience",
+        "description": "Increases invulnerable damage reduction and grants additional feel no pain damage reduction.",
+        "flavor": "Imbued with purpose by the Norn Queen, the Emissary adapts instantly to injuries that would cripple another creature, shrugging off death to pursue its goal.",
+        "modifiers": [
+            "- min 33% Invulnerable Damage Reduction",
+            "- +33% Feel No Pain Damage Reduction"
+        ],
+        "rawXML": "<trait>\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<invulnerableDamageReduction min=\"0.33\"/>\n\t\t\t\t<feelNoPainDamageReduction add=\"0.33\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "iconPath": "Gladius\\Icons\\Traits\\Tyranids\\UnnaturalResilience.png",
+        "name": "Unnatural Resilience"
+    },
     "Megaunt Instincts": {
         "faction": "Tyranids",
         "internalID": "VehiclesUpkeep",
@@ -8800,9 +8901,9 @@
         "description": "Increases the accuracy.",
         "flavor": "These weapons are grafted to the same targeting system for greater accuracy.",
         "modifiers": [
-            "- +2 Ranged Accuracy"
+            "- +2 Accuracy"
         ],
-        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<rangedAccuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
+        "rawXML": "<trait category=\"Buff\">\n\t<modifiers>\n\t\t<modifier>\n\t\t\t<effects>\n\t\t\t\t<accuracy add=\"2\"/>\n\t\t\t</effects>\n\t\t</modifier>\n\t</modifiers>\n</trait>",
         "iconPath": "Gladius\\Icons\\Traits\\TwinLinked.png",
         "name": "Twin-Linked",
         "faction": "Neutral"

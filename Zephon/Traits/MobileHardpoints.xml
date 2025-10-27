@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="IfNotMoved">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<notMovedThisTurn/>
+				</unit>
+				<unit>
+					<movementMax greater="0"/>
+					<noTrait type="Flying"/>
+				</unit>
+			</conditions>
+			<effects>
+				<coverDamageReduction add="0.083"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

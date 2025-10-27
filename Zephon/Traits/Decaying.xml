@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait visibleOnUnit="1">
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<healScore max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
 	<onTurnStarted>
 		<unit>
 			<area affect="Unit">
@@ -7,6 +14,11 @@
 					<modifier effectDescription="EachTurn">
 						<effects>
 							<hitpoints add="-4"/>
+						</effects>
+					</modifier>
+					<modifier requiredUpgrade="TwistedMotherAffinityUpgrade">
+						<effects>
+							<hitpoints add="2"/>
 						</effects>
 					</modifier>
 				</modifiers>

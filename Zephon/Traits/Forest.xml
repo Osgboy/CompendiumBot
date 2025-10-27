@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Buff" icon="Features/Forest" visibleOnUnit="1">
 	<modifiers>
+		<modifier>
+			<effects>
+				<blockSight add="1"/>
+			</effects>
+		</modifier>
 		<modifier effectDescription="ForLargeGroundUnits">
 			<conditions>
 				<unit>
@@ -41,7 +46,7 @@
 				</weapon>
 			</conditions>
 			<effects>
-				<coverDamageReduction add="0.33"/>
+				<coverDamageReduction add="0.333"/>
 			</effects>
 		</modifier>
 	</modifiers>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/TwistedMother" tier="5">
+	<conditions>
+		<player>
+			<faction name="TwistedMother"/>
+		</player>
+	</conditions>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

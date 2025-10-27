@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Debuff" icon="Actions/MarkTarget" visibleOnUnit="1">
 	<opponentModifiers>
- 		<modifier effectDescription="AgainstThisUnitWithRangedWeapons">
- 			<conditions ignoreForTraitVisibility="1">
- 				<weapon>
- 					<noTrait type="Melee"/>
-					<noTrait type="TitanMelee"/>
- 				</weapon>
- 			</conditions>
+ 		<modifier effectDescription="AgainstThisUnit">
 			<effects>
 				<accuracy add="2"/>
 			</effects>

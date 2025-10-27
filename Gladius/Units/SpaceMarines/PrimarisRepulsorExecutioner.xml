@@ -31,7 +31,7 @@
 				<projectileWeapon muzzleBone="FrontStubberMuzzle"/>
 			</model>		
 		</weapon>
-		<weapon name="TwinHeavyBolter">
+		<weapon name="TwinLinkedHeavyBolter">
 			<model>
 				<projectileWeapon muzzleBone="FrontBolterMuzzle"
 						muzzleCount="2"/>
@@ -75,10 +75,10 @@
 				<hitpointsMax base="48.0"/> <!-- %hitpointsMax base armor=13/11/10 wounds=4 -->
 				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
 				<movementMax base="4"/>
-				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
 				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
-				<requisitionsUpkeep base="6.0"/> <!-- %requisitionsUpkeep base tier=9 factor=1 -->
-				<requisitionsCost base="120.0"/> <!-- %requisitionsCost base tier=9 factor=1 -->
+				<requisitionsUpkeep base="8.0"/> <!-- %requisitionsUpkeep base tier=10 factor=1 -->
+				<requisitionsCost base="160.0"/> <!-- %requisitionsCost base tier=10 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -100,9 +100,12 @@
 		<die>
 			<model>
 				<action animation="Units/SpaceMarines/PrimarisRepulsorExecutionerDie0"
-						sound="Units/LargeVehicleDie"
-						soundCount="3"
-						soundDelay="0"/>
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.3"
+						voiceSound="Units/LargeVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
 			</model>
 		</die>
 		<move>
@@ -164,13 +167,35 @@
 				</selfTarget>
 			</beginTargets>
 		</genericUnitAbility>
+		<powerOfTheMachineSpirit consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="5">
+			<model>
+				<action sound="Actions/MechanicalBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="PowerOfTheMachineSpirit"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</powerOfTheMachineSpirit>
 	</actions>
 	<traits>
 		<trait name="AndTheyShallKnowNoFear"/>
 		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
 		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Skimmer"/>
 		<trait name="Tank"/>
 		<trait name="Transport"/>
+		<trait name="Skimmer"/>
 		<trait name="Vehicle"/>
 	</traits>
 </unit>

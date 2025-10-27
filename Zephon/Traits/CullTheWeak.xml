@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+ 		<modifier effectDescription="AgainstUnitsBelow50%Hitpoints">
+ 			<conditions ignoreForTraitVisibility="1">
+				<targetUnit>
+					<hitpointsFraction less="0.5"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damage mul="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

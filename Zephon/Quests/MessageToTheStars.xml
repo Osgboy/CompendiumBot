@@ -1,0 +1,167 @@
+<quest lastTurn="60" dlc="DLC1">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Assault" nextStage="Assault"/>
+				<option name="Ignore" nextStage="Drifting"/>
+			</options>
+		</stage>
+		<stage name="Drifting">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<research add="-20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="Assault" nextStageOnSuccess="Contact">
+			<modifications>
+				<nearUnitTileSelector>
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearUnitTileSelector>				
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<addFeature type="ServerFarm"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<objectives>
+				<killCamp name="KillServerDefenders">
+					<defenders>
+						<unit type="Reaver" count="2" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Buster" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="Contact">
+			<modifications>
+				<tileModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeFeature type="ServerFarm"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+			<options>
+				<option name="TrustZephon" nextStage="MessageSent"/>
+				<option name="FindYourWay" nextStage="DoItYourself"/>
+			</options>
+		</stage>
+		<stage name="MessageSent">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="DoItYourself" nextStageOnSuccess="DoItYourself2">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addUpgrade name="RadioTelescope"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<executeUnitOrder name="ExecuteOrderWithEngineers"
+						orderName="ConstructRadioTelescope"/>
+			</objectives>
+		</stage>
+		<stage name="DoItYourself2"
+		nextStageOnFailure="DoItYourselfFailure"
+		nextStageOnSuccess="DoItYourselfSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeUpgrade name="RadioTelescope"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="5" waves="1">
+					<attackers>
+						<unit type="MalakimDestroyer"/>
+						<unit type="ChayotExterminator"/>
+					</attackers>
+				</surviveInvasion>
+				<keepUnitAlive token="RadioTelescope"/>
+			</objectives>
+		</stage>
+		<stage name="DoItYourselfSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="Reaver" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Buster" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Wastelander" count="1" rankMin="0" rankMax="2" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
+			</modifications>
+		</stage>
+		<stage name="DoItYourselfFailure"/>
+	</stages>
+ </quest>

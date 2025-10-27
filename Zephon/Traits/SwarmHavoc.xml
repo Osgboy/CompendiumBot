@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="PerMissingGroupMember">
+			<conditions ignoreForTraitVisibility="1">
+				<unit>
+					<missingGroupMembers greater="0"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<missingGroupMembers greater="1"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<missingGroupMembers greater="2"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<missingGroupMembers greater="3"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<missingGroupMembers greater="4"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<missingGroupMembers greater="5"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

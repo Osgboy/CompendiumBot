@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="OnRoads">
+			<conditions>
+				<unit>
+					<movementMax greater="0"/>
+					<noTrait type="Flying"/>
+					<noTrait type="Titan"/>
+				</unit>
+				<tile match="Any" ignoreForTraitVisibility="1">
+					<feature type="City"/>
+					<feature type="Road"/>
+				</tile>
+				<tile ignoreForTraitVisibility="1">
+					<noFeature type="Fire"/>
+					<noFeature type="Bleed"/>
+				</tile>
+			</conditions>
+			<effects>
+				<movementCost max="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

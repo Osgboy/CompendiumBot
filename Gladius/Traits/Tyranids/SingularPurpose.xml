@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<type name="Tyranids/NornEmissary"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<opponentAccuracy mul="0.17"/>
+				<opponentDamage mul="0.17"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

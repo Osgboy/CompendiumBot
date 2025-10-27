@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" dlc="DLC1">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="80"
+				material="Units/Sharpshooter"
+				mesh="Units/Sharpshooter"
+				normalWeight="0.1"
+				scale="0.85 0.85 0.85"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="SniperRifle">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="ArmorPiercingRounds"
+				enabled="0"
+				requiredUpgrade="ArmorPiercingRounds"
+				slotName="ArmorPiercingRounds">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="10"/>
+				<armor base="4"/>
+				<foodCost base="15"/> <!-- %foodCost base tier=5 factor=0.5 -->
+				<foodUpkeep base="0.75"/> <!-- %foodUpkeep base tier=5 factor=0.5 -->
+				<groupSizeMax base="3"/>
+				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<mineralsCost base="15"/> <!-- %mineralsCost base tier=5 factor=0.5 -->
+				<mineralsUpkeep base="0.75"/> <!-- %mineralsUpkeep base tier=5 factor=0.5 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/SharpshooterAttack"
+						beginFire="1.3"
+						endFire="1.4"
+						responseSound="Responses/Units/SharpshooterAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/SharpshooterDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/SharpshooterDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/SharpshooterImpact"
+						responseSound="Responses/Units/SharpshooterEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/SharpshooterIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/SharpshooterMove"
+						responseSound="Responses/Units/SharpshooterMove"
+						responseSoundCount="3"
+						sound="Units/MilitantMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/SharpshooterHoldPosition"/>
+			</model>
+		</skip>		
+		<useWeapon weaponSlotName="ArmorPiercingRounds"
+				cooldown="5"
+				requiredUpgrade="ArmorPiercingRounds">
+			<model>
+				<attack animation="Units/SharpshooterAbility0"
+						beginFire="1.3"
+						endFire="1.4"
+						responseSound="Responses/Units/SharpshooterArmorPiercingRounds"/>
+			</model>
+		</useWeapon>
+		<unitCast blueprint="Recon">
+			<model>
+				<cast animation="Units/SharpshooterAbility1"
+						casterBlueprint="Effects/Radar"
+						responseSound="Responses/Units/SharpshooterRecon"
+						sound="Actions/Recon"/>
+			</model>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
+		<trait type="Stealth"/>
+	</traits>
+</unit>

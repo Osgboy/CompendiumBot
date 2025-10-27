@@ -28,10 +28,14 @@
 	</strategyModifiers>
 	<actions>
 		<produceUnit unit="Outrider"/>
+		<produceUnit unit="Scrambler" requiredUpgrade="Scrambler"/>
 		<produceUnit unit="Cyclone" requiredUpgrade="Cyclone"/>
 		<produceUnit unit="CrusaderBattleTank" requiredUpgrade="CrusaderBattleTank"/>
 		<produceUnit unit="VanquisherSiegeTank" requiredUpgrade="VanquisherSiegeTank"/>
 		<produceUnit unit="VulkanR5" requiredUpgrade="VulkanR5"/>
 		<produceUnit unit="AtlasTank" requiredUpgrade="AtlasTank"/>
 	</actions>
+	<traits>
+		<trait type="VoiceInfantryUpgrade" requiredUpgrade="VoiceInfantryUpgrade"/>
+	</traits>
 </building>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks mul="0.333"/>
+				<invulnerableDamageReduction add="0.25"/>
+				<moraleLoss mul="-0.5"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="FamilysFavor">
+			<effects>
+				<attacks mul="0.167"/>
+				<invulnerableDamageReduction add="0.083"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<effects>
+				<healScore max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<hitpointsFromMax add="-0.1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" dlc="DLC1">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Larva1"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="60"
+				material="Units/DevoteeOfThrokos"
+				mesh="Units/DevoteeOfThrokos"
+				normalWeight="0.1"
+				scale="0.6 0.6 0.6"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="MangledChelae">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="None" requiredUpgrade="Trochanters">
+			<models>
+				<weapon animationSuffix="Legs"
+						material="Units/DevoteeOfThrokosLegs"
+						mesh="Units/DevoteeOfThrokosLegs"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="0"/>
+				<algaeCost base="5"/> <!-- %algaeCost base tier=5 factor=0.167 -->
+				<algaeUpkeep base="0.25"/> <!-- %algaeUpkeep base tier=5 factor=0.167 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=5 factor=0.666 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=5 factor=0.666 -->
+				<groupSizeMax base="6"/>
+				<hitpointsMax base="3.0"/> <!-- %hitpointsMax base tier=2 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosAppear"
+						responseSoundCount="1"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/DevoteeOfThrokosAttack"
+						beginFire="1.4"
+						endFire="2.1"
+						responseSound="Responses/Units/DevoteeOfThrokosAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/DevoteeOfThrokosDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.4"
+						voiceSound="Units/DevoteeOfThrokosDie"
+						voiceSoundCount="5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/DevoteeOfThrokosImpact"
+						responseSound="Responses/Units/DevoteeOfThrokosEndureHighDamage"
+						responseSoundCount="1"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/DevoteeOfThrokosIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosKill"
+						responseSoundCount="1"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/DevoteeOfThrokosMove"
+						sound="Units/MilitantMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"
+						responseSound="Responses/Units/DevoteeOfThrokosMove"
+						responseSoundCount="3"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosPoke"
+						responseSoundCount="1"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/DevoteeOfThrokosHoldPosition"
+						responseSoundCount="1"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="CullTheWeak"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
+		<trait type="Trochanters" requiredUpgrade="Trochanters"/>
+	</traits>
+</unit>

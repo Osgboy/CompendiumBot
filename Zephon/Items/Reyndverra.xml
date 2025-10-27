@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human" dlc="DLC1" visible="0">
+	<actions>
+		<unitCast cooldown="3"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/Reyndverra"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1" excludeRadius="0">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentEnemyUnits">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="Reyndverra"/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="ToAdjacentAlliedUnits">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

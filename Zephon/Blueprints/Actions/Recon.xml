@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitCast name="Recon"
+ 		consumedActionPoints="0"
+		consumedMovement="0"
+		cooldown="3"
+		requiredActionPoints="0"
+		requiredMovement="0">
+	<beginTargets>
+		<selfTarget>
+			<areas>
+				<area affect="Tile" radius="3">
+					<modifiers>
+						<modifier>
+							<effects>
+								<reveal/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</selfTarget>
+	</beginTargets>
+	<scoreModifiers>
+		<modifier>
+			<effects>
+				<score add="1.0"/>
+			</effects>
+		</modifier>
+	</scoreModifiers>
+</unitCast>

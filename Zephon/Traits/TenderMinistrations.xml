@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="WhileAdjacentToAlliedUnits">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<unitsInRange greater="0" range="1">
+						<unit>
+							<ally/>
+						</unit>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<healingRate mul="1.0"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WhileAdjacentToAlliedUnits"
+				requiredUpgrade="TenderMinistrationsUpgrade">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<unitsInRange greater="0" range="1">
+						<unit>
+							<ally/>
+						</unit>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<healingRate mul="0.5"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="WhileAdjacentToAlliedUnits"
+				requiredUpgrade="TenderMinistrationsUpgrade2">
+			<conditions>
+				<unit ignoreForTraitVisibility="1">
+					<unitsInRange greater="0" range="1">
+						<unit>
+							<ally/>
+						</unit>
+					</unitsInRange>
+				</unit>
+			</conditions>
+			<effects>
+				<canHealPassivelyWithoutFullMovementPoints add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

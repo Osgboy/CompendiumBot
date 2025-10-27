@@ -28,6 +28,7 @@
 	</strategyModifiers>
 	<actions>
 		<produceUnit unit="ExousiaMarauder"/>
+		<produceUnit unit="IthurielHarbinger" requiredUpgrade="IthurielHarbinger"/>
 		<produceUnit unit="ChayotExterminator" requiredUpgrade="ChayotExterminator"/>
 		<produceUnit unit="HashmallimHost" requiredUpgrade="HashmallimHost"/>
 		<produceUnit unit="AkavishProvost" requiredUpgrade="AkavishProvost"/>
@@ -35,5 +36,7 @@
 	</actions>
 	<traits>
 		<trait type="CyberVehiclesUpgrade" requiredUpgrade="CyberVehiclesUpgrade"/>
+		<trait type="HeartlessArtificerAffinityUpgrade" requiredUpgrade="HeartlessArtificerAffinityUpgrade"/>
+		<trait type="VoiceInfantryUpgrade" requiredUpgrade="VoiceInfantryUpgrade"/>
 	</traits>	
 </building>

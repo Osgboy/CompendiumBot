@@ -28,6 +28,7 @@
 	</strategyModifiers>
 	<actions>
 		<produceUnit unit="Militant"/>
+		<produceUnit unit="Sharpshooter" requiredUpgrade="Sharpshooter"/>
 		<produceUnit unit="MissileTeam" requiredUpgrade="MissileTeam"/>
 		<produceUnit unit="CombatMedic" requiredUpgrade="CombatMedic"/>
 		<produceUnit unit="AssaultTrooper" requiredUpgrade="AssaultTrooper"/>
@@ -35,5 +36,6 @@
 	</actions>
 	<traits>
 		<trait type="HumanInfantryUpgrade" requiredUpgrade="HumanInfantryUpgrade"/>
+		<trait type="VoiceInfantryUpgrade" requiredUpgrade="VoiceInfantryUpgrade"/>
 	</traits>
 </building>

@@ -242,6 +242,7 @@ def get_zupgrade_attrs(upgrade: ZUpgrade) -> dict:
              'flavor', 'tier', 'requiredUpgrades')
     kwargs = {}
     kwargs['faction'] = camel_case_split(upgrade.faction)
+    kwargs['modifiers'] = None
     for key in slots:
         try:
             kwargs[key] = getattr(upgrade, key, None)
@@ -547,6 +548,7 @@ with open(pathJoin(OUTPUT_DIR, 'ZAction.json'), 'w') as fout:
 # Get Zephon upgrades
 def add_upgrade(objClsName: str, objName: str, upgradeStr: str):
     if upgradeStr in [upgrade['internalID'] for upgrade in dicts['ZUpgrade'].values()]:
+        print(f'Skipping {upgradeStr}')
         return
     upgrade = ZUpgrade('placeholder')
     upgrade.internalID = upgradeStr
@@ -581,7 +583,10 @@ for objClsName in ZEPHON_CLASSES:
             for action, upgrade in properties['actions'].items():
                 if upgrade:
                     if action[:10] == 'Construct ':
-                        add_upgrade('ZBuilding', action[10:], upgrade)
+                        if objClsName == 'ZBuilding':
+                            add_upgrade('ZBuilding', action[10:], upgrade)
+                        elif objClsName == 'ZUnit': # Engineer's bunker, radio telescope
+                            add_upgrade('ZUnit', action[10:], upgrade)
                     elif action[:8] == 'Produce ':
                         add_upgrade('ZUnit', action[8:], upgrade)
                     else:

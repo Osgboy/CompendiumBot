@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<weapon fireSound="Weapons/HuntingLanceMeltaTip"
+				fireSoundCount="4"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<meleeArmorPenetration add="8"/> <!-- %meleeArmorPenetration add armorPiercing=-4 -->
+				<strengthDamage add="0.75"/> <!-- %strengthDamage add strength=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait name="Melee"/>
+		<trait name="AstraMilitarum/BlastDamage" requiredUpgrade="AstraMilitarum/BlastDamage"/>
+	</traits>
+</weapon>

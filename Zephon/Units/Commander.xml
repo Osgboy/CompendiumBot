@@ -156,7 +156,7 @@
 					<areas>
 						<area affect="Unit" radius="1" excludeRadius="0">
 							<modifiers>
-								<modifier effectDescription="ToAlliedNonLargeUnitsInTheArea">
+								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
 									<conditions>
 										<unit>
 											<ally/>
@@ -208,7 +208,7 @@
 					<areas>
 						<area affect="Unit" radius="3" excludeRadius="0">
 							<modifiers>
-								<modifier effectDescription="ToAdjacentAlliedNonLargeUnits">
+								<modifier effectDescription="ToAlliedNonLargeUnitsInTheArea">
 									<conditions>
 										<unit>
 											<ally/>
@@ -311,6 +311,7 @@
 		<trait type="Biological"/>
 		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
 		<trait type="Hero"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="PracticalRomanticAffinityUpgrade2" requiredUpgrade="PracticalRomanticAffinityUpgrade2"/>
 	</traits>
 </unit>

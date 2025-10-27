@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/Minigun"
+				fireSoundBeginCount="1"
+				fireSoundBeginDuringWindup="1"
+				fireSoundCount="2"
+				fireSoundContinuously="1"
+				fireSoundEndCount="1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="1"/> <!-- %armorPenetration base tier=2 -->
+				<attacks base="3"/>
+				<damage base="1.5"/> <!-- %damage base tier=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+</weapon>

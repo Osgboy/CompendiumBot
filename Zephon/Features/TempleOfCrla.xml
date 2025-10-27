@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/TempleOfCrla" category="SpecialResource" dlc="DLC1">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="TempleOfCrlaResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel material="Features/TempleOfCrla"
+				mesh="Features/TempleOfCrla"
+				groundMaterial="Features/TempleOfCrlaGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="TempleOfCrla"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

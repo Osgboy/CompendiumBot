@@ -54,8 +54,8 @@
 						meleeEndSwing="0.101"
 						responseSound="Responses/Units/DeformityAttack"
 						responseSoundCount="3"
-						sound="Units/DeformityMelee"
-						soundCount="3"/>
+						meleeSound="Units/DeformityMelee"
+						meleeSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
@@ -128,5 +128,6 @@
 		<trait type="Biological"/>
 		<trait type="Deforming"/>
 		<trait type="Decaying"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
 	</traits>
 </unit>

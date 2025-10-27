@@ -6,8 +6,10 @@
 				consumedMovement="0"
 				requiredActionPoints="0">
 			<model>
-				<cast blueprint="Effects/VassaelSpawn"
-						casterBlueprint="Effects/BoneWhistle"/>
+				<cast beginEffect="1.0"
+						blueprint="Effects/VassaelSpawn"
+						casterBlueprint="Effects/BoneWhistle"
+						targetsTile="1"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="1">
@@ -22,7 +24,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="DarkVassael" avoidBleed="0" avoidCity="0"/>
+										<addUnit type="DarkVassael" spawnedBySourceUnit="1" appearFromSourceUnit="0" avoidBleed="0" avoidCity="0"/>
 									</effects>
 								</modifier>
 							</modifiers>

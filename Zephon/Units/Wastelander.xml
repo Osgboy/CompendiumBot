@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Reaver" dlc="DLC1">
+	<model>
+		<unit 	explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Tanker"
+				material="Units/Wastelander"
+				effectsBlueprint="Effects/Wastelander"
+				mesh="Units/Wastelander"
+				scale="0.8 0.8 0.8">
+		</unit>
+	</model>
+	<weapons>
+		<weapon type="Retort">
+			<models>
+				<projectileWeapon muzzleBone="Harpoon"
+						windupDuration="1.6"
+						fireInterval="2"/>
+			</models>
+		</weapon>
+		<weapon type="HeavyMachineGun" count="2">
+			<models>
+				<projectileWeapon muzzleBone="HMGMuzzle" muzzleCount="2"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<cargoSlots base="3"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<mineralsCost base="60"/> <!-- %mineralsCost base tier=7 factor=1 -->
+				<mineralsUpkeep base="3.0"/> <!-- %mineralsUpkeep base tier=7 factor=1 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/WastelanderAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/WastelanderAttack"
+						beginFire="0.167"
+						endFire="2.3"
+						responseSound="Responses/Units/WastelanderAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/WastelanderDie0"
+						sound="Units/WastelanderDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/WastelanderImpact"
+						responseSound="Responses/Units/WastelanderEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/WastelanderHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/WastelanderHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/WastelanderIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/WastelanderKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/WastelanderMove"
+						responseSound="Responses/Units/WastelanderMove"
+						responseSoundCount="3"
+						sound="Units/WastelanderMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/WastelanderPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/WastelanderSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/WastelanderHoldPosition"/>
+			</model>
+		</skip>
+		<foundCity blueprint="NomadicLife">
+			<model>
+				<action animation="Units/WastelanderAbility1"
+						responseSound="Responses/Units/WastelanderFoundCity"
+						sound="Actions/FoundCity"
+						soundFirstActingMemberOnly="1"/>
+			</model>
+		</foundCity>			
+		<unitCast name="Repair"
+				cooldown="3">
+			<model>
+				<cast animation="Units/WastelanderAbility1"
+						blueprint="Effects/Repair"
+						sound="Units/WastelanderWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Responses/Units/WastelanderRepair"
+						responseSoundCount="1"/>
+			</model>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<ally/>
+							<damaged/>
+							<trait type="Mechanical"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedDamagedMechanicalUnit">
+									<effects>
+										<hitpoints add="8"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction less="0.5"/>	
+										</unit>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+		<unitCast name="ThrashEm"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/WastelanderAbility0"
+					blueprint="Effects/Frenzy"
+					casterBlueprint="Effects/ThrashEm"
+					responseSound="Responses/Units/WastelanderThrashEm"
+					sound="Actions/ThrashEm"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="2">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnitsInTheArea">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="ThrashEm" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
+		<submenu name="Terraform"/>
+		<unitCast name="ConstructRoad"
+				cooldown="1"
+				submenu="Terraform">
+			<model>
+				<cast animation="Units/WastelanderAbility1"
+						sound="Units/WastelanderWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Responses/Units/WastelanderConstructRoad"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="10"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="RestlessUpgrade2">
+					<effects>
+						<mineralsCost mul="-1"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<tile>
+							<noFeatureCategory name="SpecialResource"/>
+							<noFeatureCategory name="Bleed"/>
+							<noFeatureCategory name="Road"/>
+							<noFeature type="Fire"/>
+							<noEnemyUnit/>
+							<noCity/>
+							<land/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addFeature type="Road"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>		
+		<unitCast name="RemoveRoad"
+				cooldown="1"
+				submenu="Terraform">
+			<model>
+				<cast animation="Units/WastelanderAbility1"
+						sound="Units/WastelanderWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Responses/Units/WastelanderRemoveRoad"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsCost base="10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target melee="1">
+					<conditions>
+						<tile>
+							<featureCategory name="Road"/>
+							<noEnemyUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="FromTargetTile">
+									<effects>
+										<removeFeature type="Road"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>		
+		<clearTileUnitCast cooldown="1"
+				icon="Actions/ClearTile"
+				name="ClearTile"
+				submenu="Terraform">
+			<model>
+				<cast animation="Units/WastelanderAbility1"
+						sound="Units/WastelanderWork"
+						soundFirstActingMemberOnly="1"
+						responseSound="Responses/Units/WastelanderClearTile"/>
+			</model>
+			<beginTargets>
+				<target melee="1">
+					<conditions match="Any">
+						<unit>
+							<noEnemy/>
+						</unit>
+						<tile>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas/>
+				</target>
+			</beginTargets>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="5"/>
+						<mineralsCost base="5"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</clearTileUnitCast>
+	</actions>
+	<traits>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

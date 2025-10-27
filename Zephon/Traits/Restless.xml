@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="InCitiesOrOutposts">
+			<conditions>
+				<tile ignoreForTraitVisibility="1" match="Any">
+					<alliedCity/>
+					<trait type="Outpost"/>
+				</tile>
+				<unit>
+					<movementMax greater="0"/>
+				</unit>
+			</conditions>
+			<effects>
+				<unitUpkeep mul="0.75"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="RestlessUpgrade" effectDescription="OnRoads">
+			<conditions>
+				<tile ignoreForTraitVisibility="1">
+					<feature type="Road"/>
+				</tile>
+				<unit>
+					<movementMax greater="0"/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -27,6 +27,7 @@
 <entry name="BindingHint" value="[Mouse Left] to change binding.&lt;br/&gt;&lt;style color='GUI/Yellow'/&gt;[Mouse Middle] to add new binding.&lt;br/&gt;&lt;style color='GUI/Red'/&gt;[Mouse Right] to unbind."/>
 <entry name="Block" value="Block"/>
 <entry name="BuildOrders" value="Build Orders"/>
+<entry name="BuildingDisabledDueToEnemy" value="Disabled due to enemy on tile."/>
 <entry name="BuildingSlotHint" value="[&lt;control name='ToggleBuildingPower'/&gt;] to toggle power.&lt;br/&gt;[&lt;control name='DismantleBuilding'/&gt;] to dismantle."/>
 <entry name="BuildingUnpowered" value="Unpowered."/>
 <entry name="Building" value="Building"/>
@@ -38,6 +39,7 @@
 <entry name="BuildingZephon" value="ZEPHON Building"/>
 <entry name="Buildings" value="Buildings"/>
 <entry name="BuildingsConstructed" value="Buildings Constructed"/>
+<entry name="BuildingsDisabledDueToEnemies" value="&lt;style color='GUI/Red'/&gt;%1% disabled due to enemies on tiles.&lt;style color='Default'/&gt;"/> <!-- %1% is amount of buildings. -->
 <entry name="Buy" value="Buy"/>
 <entry name="BuyBackground" value="&lt;icon texture='GUI/LeftArrow'/&gt;&lt;nbsp/&gt;&lt;string name='GUI/Buy'/&gt;"/>
 <entry name="Call" value="Call"/>
@@ -87,6 +89,8 @@
 <entry name="Debug" value="Debug"/>
 <entry name="DeclareWar" value="Declare War"/>
 <entry name="DeclineCall" value="Decline"/>
+<entry name="DeclineCalls" value="Decline Calls"/>
+<entry name="DeclineCallsHint" value="Decline all incoming calls [&lt;control name='NextTask'/&gt;]."/>
 <entry name="Default" value="Default"/>
 <entry name="Defeated" value="Defeated"/>
 <entry name="Delete" value="Delete"/>
@@ -95,7 +99,7 @@
 <entry name="Diplomacy" value="Diplomacy"/>
 <entry name="DirectConnect" value="Direct Connect"/>
 <entry name="Directory" value="Directory"/>
-<entry name="DisableBuildingHint" value="Disable the lowest output building of this type, freeing its allocated population for other buildings.&lt;br/&gt;&lt;br/&gt;To disable a specific building, interact with building slots on the map."/>
+<entry name="DisableBuildingHint" value="Unpower the lowest output building of this type, freeing its allocated population for other buildings.&lt;br/&gt;&lt;br/&gt;To unpower a specific building, interact with building slots on the map."/>
 <entry name="DisableSimultaneousTurns" value="Disable Simultaneous Turns"/>
 <entry name="DisableTips" value="Disable Tips"/>
 <entry name="DisableTipsHint" value="Stop showing pop-up tips. You can re-enable them in the settings."/>
@@ -106,17 +110,18 @@
 <entry name="Economy" value="Economy"/>
 <entry name="Elite" value="Elite"/>
 <entry name="EmptyBuildingSlotHint" value="Empty building slot."/>
-<entry name="EnableBuildingHint" value="Enable the highest output building of this type, allocating population to it.&lt;br/&gt;&lt;br/&gt;To enable a specific building, interact with building slots on the map."/>
+<entry name="EnableBuildingHint" value="Power the highest output building of this type, allocating population to it.&lt;br/&gt;&lt;br/&gt;To power a specific building, interact with building slots on the map."/>
 <entry name="EnableSimultaneousTurns" value="Enable Simultaneous Turns"/>
 <entry name="EnableMod" value="Enable mod."/>
 <entry name="EndTurn" value="End Turn"/>
 <entry name="EndTurnHint" value="End your turn [&lt;control name='NextTask'/&gt;]."/>
+<entry name="EnemyOnTile" value="&lt;style color='GUI/Red'/&gt;Enemy on Tile&lt;style name='Default'/&gt;"/>
 <entry name="Enter" value="Enter"/>
 <entry name="EquipItemHint" value="Right-click to equip."/>
 <entry name="EstimatedCasualties" value="estimated %1%/%2% casualties"/>
 <entry name="Events" value="Events"/>
-<entry name="ExecuteQueuedOrders" value="Execute Queued Orders (%1%)"/>
-<entry name="ExecuteQueuedOrdersHint" value="Execute orders queued in the previous turn [&lt;control name='NextTask'/&gt;]."/>
+<entry name="ExecuteQueuedOrder" value="Execute Queued Order (1/%1%)"/>
+<entry name="ExecuteQueuedOrderHint" value="Execute order queued in the previous turn [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;string name='Controls/MouseRight'/&gt;] to execute all queued orders.&lt;br/&gt;[&lt;control name='SelectNext'/&gt;] to select next unit.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;] to select previous unit."/>
 <entry name="Extra" value="Extra"/>
 <entry name="ExitCity" value="Exit City"/>
 <entry name="ExitCityHint" value="Exit the city screen [&lt;control name='NextTask'/&gt;]."/>
@@ -180,7 +185,7 @@
 <entry name="Locked" value="Locked."/>
 <entry name="MainMenu" value="Main Menu"/>
 <entry name="Map" value="Map"/>
-<entry name="MarkTileHint" value="&lt;style name='Title'/&gt;Mark Tile [&lt;control name='MarkTile'/&gt;]&lt;br/&gt;&lt;style name='Default'/&gt;Place a marker for yourself and your allies. AI allies will tend to move their units towards markers."/>
+<entry name="MarkTileHint" value="&lt;style name='Title'/&gt;Mark / Unmark Tile [&lt;control name='MarkTile'/&gt;]&lt;br/&gt;&lt;style name='Default'/&gt;Place or remove a marker for yourself and your allies. AI allies will tend to move their units towards markers."/>
 <entry name="Max" value="max"/>
 <entry name="Melee" value="Melee"/>
 <entry name="Menu" value="Menu"/>
@@ -204,6 +209,7 @@
 <entry name="NoActionsRemaining" value="No actions remaining."/>
 <entry name="NoChargesRemaining" value="No charges remaining."/>
 <entry name="NoFreeItemSlots" value="No free space in hero's inventory."/>
+<entry name="NoMovementRemaining" value="No movement remaining."/>
 <entry name="NoResearchSelected" value="No Research Selected"/>
 <entry name="NoPointsRemaining" value="No points remaining."/>
 <entry name="NoValidTargets" value="No valid targets."/>
@@ -228,6 +234,8 @@
 <entry name="Or" value="or"/>
 <entry name="OrderCity" value="Order Cities (%1%)"/>
 <entry name="OrderCityHint" value="Select next idle city [&lt;control name='NextTask'/&gt;]."/>
+<entry name="OrderQueuedUnits" value="Order Queued Units (%1%)"/>
+<entry name="OrderQueuedUnitsHint" value="Select next unit with a queued order [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;string name='Controls/MouseRight'/&gt;] to execute all queued orders."/>
 <entry name="OrderUnits" value="Order Units (%1%)"/>
 <entry name="OrderUnitsHint" value="Select next idle unit [&lt;control name='NextTask'/&gt;]."/>
 <entry name="OutsideCity" value="Outside City"/>
@@ -244,12 +252,14 @@
 <entry name="Ping" value="Ping"/>
 <entry name="Play" value="Play"/>
 <entry name="Player" value="Player"/>
+<entry name="PlayerResearchedTechnology" value="%1% has researched this technology."/>
+<entry name="PlayerResearchingTechnology" value="%1% is researching this technology."/>
 <entry name="PlayerXTurn" value="%1%'s Turn"/>
 <entry name="Players" value="Players"/>
 <entry name="PleaseWait" value="Please Wait …"/>
 <entry name="PleaseWaitHint" value="Please wait for other players."/>
 <entry name="Port" value="Port"/>
-<entry name="PoweredBuildingsHint" value="Amount of powered buildings of this type. [&lt;control name='ToggleBuildingPower'/&gt;] on the building icon on the map to toggle power."/>
+<entry name="PoweredBuildingsHint" value="Amount of powered buildings of this type. [&lt;control name='ToggleBuildingPower'/&gt;] on the building icon on the map to toggle power of a specific building."/>
 <entry name="Properties" value="Properties"/>
 <entry name="Quests" value="Quests"/>
 <entry name="QuestOptionHint" value="%4%%7%&lt;style color='Default'/&gt;%8%"/>
@@ -274,6 +284,7 @@
 <entry name="Research" value="Research"/>
 <entry name="ResearchCost" value="Research Cost"/>
 <entry name="ResearchTierLockedHint" value="&lt;style color='GUI/Red'/&gt;Research %1% technologies from the previous tier to unlock."/>
+<entry name="ResearchTierScrollTo" value="&lt;style name='Small'/&gt;[%1%] to scroll to this tier."/>
 <entry name="Resource" value="&lt;icon texture='GUI/Bullet'/&gt;%1%"/>
 <entry name="ResourceAccumulated" value="&lt;icon texture='GUI/Bullet'/&gt;%1% accumulated"/>
 <entry name="ResourceFromBuildings" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from buildings"/>
@@ -283,6 +294,7 @@
 <entry name="ResourceFromFeatures" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from features"/>
 <entry name="ResourceFromLoyalty" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from loyalty"/>
 <entry name="ResourceFromPace" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from game speed"/>
+<entry name="ResourceFromPlayer" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from player"/>
 <entry name="ResourceFromPopulation" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from population"/>
 <entry name="ResourceFromShortage" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from resource shortage"/>
 <entry name="ResourceFromTiles" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from tiles"/>
@@ -332,9 +344,9 @@
 <entry name="ShowNatives" value="Show NPCs"/>
 <entry name="SinglePlayer" value="Single Player"/>
 <entry name="SkipCity" value="Skip City (1/%1%)"/>
-<entry name="SkipCityHint" value="Skip this city [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;control name='SelectNext'/&gt;]: select next idle city.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;]: select previous idle city."/>
+<entry name="SkipCityHint" value="Skip this city [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;control name='SelectNext'/&gt;] to select next idle city.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;] to select previous idle city."/>
 <entry name="SkipUnit" value="Skip Unit (1/%1%)"/>
-<entry name="SkipUnitHint" value="Skip this unit [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;control name='SelectNext'/&gt;]: select next idle unit.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;]: select previous idle unit."/>
+<entry name="SkipUnitHint" value="Skip this unit [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;control name='SelectNext'/&gt;] to select next unit.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;] to select previous unit."/>
 <entry name="Social" value="Social"/>
 <entry name="Spectating" value="Spectating"/>
 <entry name="Start" value="Start"/>

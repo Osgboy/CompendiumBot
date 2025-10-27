@@ -6,7 +6,7 @@
         "flavor": "\u201cAt kirk, or at market, whene'er ye meet me,\nGang by me as tho' that ye car'd na a flie;\nBut steal me a blink o' your bonie black e'e,\nYet look as ye were na lookin' to me,\nYet look as ye were na lookin' to me.\nO whistle an' I'll come, &c.\u201d\n\u2014 Robert Burns",
         "rarity": "Uncommon",
         "influenceCost": "80",
-        "buyCondition": "Amoetias Caress",
+        "buyCondition": "Amoetia's Caress",
         "modifiers": [
             "Spawn Dark Vassael (Level 1)",
             "Summon (3 turns)",
@@ -21,7 +21,7 @@
             "- max 0 Singularity Cores Upkeep",
             "- max 0 Influence Upkeep"
         ],
-        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/VassaelSpawn\" casterBlueprint=\"Effects/BoneWhistle\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"DarkVassael\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast beginEffect=\"1.0\" blueprint=\"Effects/VassaelSpawn\" casterBlueprint=\"Effects/BoneWhistle\" targetsTile=\"1\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"DarkVassael\" spawnedBySourceUnit=\"1\" appearFromSourceUnit=\"0\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"Summon\" duration=\"3\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\AcrinBoneWhistle.png",
         "name": "Acrin Bone Whistle"
     },
@@ -66,7 +66,7 @@
         "buyCondition": "Tactical Archeology",
         "modifiers": [
             "Argosy Targe (2 turns)",
-            "- +50% Invulnerable Damage Reduction"
+            "- +67% Invulnerable Damage Reduction"
         ],
         "rawXML": "<actions>\n\t\t<unitCast consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"5\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/ArgosyTarge\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t<addTrait type=\"ArgosyTarge\" duration=\"2\"/>\n\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t</modifier>\n\t\t\t\t\t</modifiers>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\t\t\n\t\t\t<scoreModifiers>\n\t\t\t\t<modifier>\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</scoreModifiers>\t\t\t\t\t\n\t\t</unitCast>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\ArgosyTarge.png",
@@ -79,7 +79,7 @@
         "flavor": "The humans who bled themselves to get closer to the Voice taught their underlings how to make small vessels that could carry a fragment of its power. I thought these \u201cArks\u201d would be tools for harm, but instead they were instruments of healing. Why did The Voice crave blood one minute, and take away pain the next?",
         "rarity": "Uncommon",
         "influenceCost": "80",
-        "buyCondition": "Amoetias Caress",
+        "buyCondition": "Amoetia's Caress",
         "modifiers": [
             "- +6 Hitpoints"
         ],
@@ -198,6 +198,22 @@
         "iconPath": "Zephon\\Icons\\Items\\CursecharmOfCrla.png",
         "name": "Cursecharm of Cr'la"
     },
+    "Dimensional Shunts": {
+        "internalID": "DimensionalShunts",
+        "branch": "Human",
+        "description": null,
+        "flavor": "You return the agent to the Concordat's forces and inform them of the encounter. They say nothing, handing over your reward\u2014a specialized suit of armor\u2014and head back out to the wasteland.",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "modifiers": [
+            "Dimensional Shunts",
+            "- max 4 Damage Taken"
+        ],
+        "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"DimensionalShunts\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\DimensionalShunts.png",
+        "name": "Dimensional Shunts"
+    },
     "Distorted Lens": {
         "internalID": "DistortedLens",
         "branch": "Voice",
@@ -269,9 +285,9 @@
         "buyCondition": "Tactical Archeology",
         "modifiers": [
             "Gladial Emanator",
-            "- +25% Attacks Per Additional Enemy Group Member"
+            "- +25% Attacks Per Additional Target Group Member"
         ],
-        "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Weapon\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToWeapons\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"GladialEmanator\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"GladialEmanator\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\GladialEmanator.png",
         "name": "Gladial Emanator"
     },
@@ -290,6 +306,22 @@
         "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"HungeringCirclet\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\HungeringCirclet.png",
         "name": "Hungering Circlet"
+    },
+    "ICAR Fluid Deflector": {
+        "internalID": "ICARFluidDeflector",
+        "branch": "Cyber",
+        "description": null,
+        "flavor": "\u201cSo it's a water shield?\u201d I asked the Concordat agent. \u201cFor the THIRD TIME, it's a fluid deflector,\u201d the agent said. \u201cIt's cutting edge pre-war tech. Experimental hydrostatic technology.\u201d \u201cSo a water shield,\u201d I said with a smile. He gave me a discount just so I'd take the thing and go away.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "buyCondition": null,
+        "modifiers": [
+            "ICAR Fluid Deflector",
+            "- +8% Evasion Damage Reduction"
+        ],
+        "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"ICARFluidDeflector\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\ICARFluidDeflector.png",
+        "name": "ICAR Fluid Deflector"
     },
     "Piece of ICAR Logo": {
         "internalID": "ICARLogo5",
@@ -331,7 +363,7 @@
         "flavor": "Iok'la. Just saying the word makes your skin crawl. Damn freaks just said it was \u201ca word made flesh.\u201d And what an emphasis on flesh. It was green, leathery and wrapped itself around you to give you just a bit more\u2026 body. I hated picking one up. But every time I did, I was able to stay in the fight longer and longer.",
         "rarity": "Uncommon",
         "influenceCost": "80",
-        "buyCondition": "Amoetias Caress",
+        "buyCondition": "Amoetia's Caress",
         "modifiers": [
             "Iok'la",
             "- +33% Hitpoints Max"
@@ -421,6 +453,26 @@
         "iconPath": "Zephon\\Icons\\Items\\PhilosophersStone.png",
         "name": "Philosopher's Stone"
     },
+    "Reyndverra": {
+        "internalID": "Reyndverra",
+        "branch": "Human",
+        "description": null,
+        "flavor": "You slice at a stalactite. It cuts clean. You return to the surface, to the burning wreckage of the Chieftess' Wastelander. You swing\u2014once, twice, three times\u2014and it collapses. You point it to the earth and flowers bloom. You raise it to the sky and clouds gather.",
+        "rarity": "Rare",
+        "influenceCost": "160",
+        "buyCondition": null,
+        "modifiers": [
+            "Reyndverra",
+            "- attacks: 3.0",
+            "- armorPen: 4",
+            "- damage: 4.0",
+            "- accuracy: 12",
+            "- +6 Hitpoints"
+        ],
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/Reyndverra\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentEnemyUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"Reyndverra\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToAdjacentAlliedUnits\">\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<ally/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\Reyndverra.png",
+        "name": "Reyndverra"
+    },
     "Quantum Reflector": {
         "internalID": "QuantumReflector",
         "branch": "Cyber",
@@ -476,7 +528,7 @@
         "modifiers": [
             "Schism of Regimina (5 turns)"
         ],
-        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/SchismOfRegimina\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<faction name=\"Zephon\"/>\n\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyZephonNonTitanUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SchismOfRegimina\" duration=\"5\" removeOnSourceDeath=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/SchismOfRegimina\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<faction name=\"Zephon\"/>\n\t\t\t\t\t\t\t<noType name=\"Headquarters\"/>\n\t\t\t\t\t\t\t<noTrait type=\"Titan\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyZephonNonTitanNonHeadquartersUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SchismOfRegimina\" duration=\"5\" removeOnSourceDeath=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\SchismOfRegimina.png",
         "name": "Schism of Regimina"
     },
@@ -495,6 +547,41 @@
         "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"SpotterDrone\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\SpotterDrone.png",
         "name": "Spotter Drone"
+    },
+    "Stolen Flesh": {
+        "internalID": "StolenFlesh",
+        "branch": "Voice",
+        "description": null,
+        "flavor": "Bits of the Fallen Soldier's flesh hit the black market sometimes, scraped from the bodies of his people. Most of it withered away, it was costly to preserve and keep nourished without his influence. The Concordat cracked the code, of course. Was always willing to share their treasures\u2026 for the right price.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "buyCondition": null,
+        "modifiers": [
+            "Stolen Flesh",
+            "- +2 Hitpoints"
+        ],
+        "rawXML": "<actions>\n\t\t<unitAction passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait type=\"StolenFlesh\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</unitAction>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\StolenFlesh.png",
+        "name": "Stolen Flesh"
+    },
+    "Suicide Drones": {
+        "internalID": "SuicideDrones",
+        "branch": "Human",
+        "description": null,
+        "flavor": "These things weren't \u201csuicide\u201d drones. \u201cSuicide\u201d is something only the living can do. Humans, Acrin, maybe Voice cultists, but not machines. Not toys that were grenades on wings. Idiots. Couldn't ever get them to change the name.",
+        "rarity": "Common",
+        "influenceCost": "40",
+        "buyCondition": null,
+        "modifiers": [
+            "Suicide Drones",
+            "- attacks: 3.0",
+            "- armorPen: 2",
+            "- damage: 2.0",
+            "- accuracy: 6"
+        ],
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/SuicideDrones\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"2\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier effectDescription=\"ToTargetEnemyUnit\">\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"SuicideDrones\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "iconPath": "Zephon\\Icons\\Items\\SuicideDrones.png",
+        "name": "Suicide Drones"
     },
     "The False Speaker's Core": {
         "internalID": "TheFalseSpeakersCore",
@@ -541,7 +628,7 @@
         "modifiers": [
             "Spawn Phenaris Hunters (Level 1)"
         ],
-        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast blueprint=\"Effects/VassaelSpawn\" casterBlueprint=\"Effects/BoneWhistle\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"PhenarisHunter\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
+        "rawXML": "<actions>\n\t\t<unitCast cooldown=\"10\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\">\n\t\t\t<model>\n\t\t\t\t<cast beginEffect=\"1.0\"/>\n\t\t\t</model>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t<land/>\n\t\t\t\t\t\t\t<noUnit/>\n\t\t\t\t\t\t</tile>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affect=\"Tile\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addUnit type=\"PhenarisHunter\" spawnedBySourceUnit=\"1\" appearFromSourceUnit=\"0\" avoidBleed=\"0\" avoidCity=\"0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<scoreModifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<tile>\n\t\t\t\t\t\t\t\t\t\t\t<enemyStrengthInTheArea greater=\"0\"/>\n\t\t\t\t\t\t\t\t\t\t</tile>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<score add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</scoreModifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</unitCast>\n\t</actions>\n\t",
         "iconPath": "Zephon\\Icons\\Items\\TribunalsTether.png",
         "name": "Tribunal's Tether"
     },

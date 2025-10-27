@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleInCompendium="0" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<chips add="0.5"/>
+				<minerals add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="ForControllingCity">
+			<effects>
+				<chips mul="0.1"/>
+				<minerals mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="TilePlayer" weight="1197" sendNotification="1">
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="TraumaKit"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="SpotterDrone"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ReactiveTrigger"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="SuicideDrones"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="DistortedLens"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="CandleOfGlory"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="HungeringCirclet"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="StolenFlesh"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ChayotCrospect"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="DynameisPlate"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ExousiaParser"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="3" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ICARFluidDeflector"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="RallyingHolobeacon"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="PhaseFontead"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="GauntletOfRuin"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="AkavishRig"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="CacheOfTheInsensate"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="Archaegis"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="AcrinBoneWhistle"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ArkOfGoldrauch"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="2" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="Iokla"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="PFCManual"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="GladialEmanator"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="ArgosyTarge"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="CursecharmOfCrla"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="VorodaiProselyte"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="AttarOfPhenaris"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="Pathcutter"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="IncandescentIcon"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="TilePlayer" weight="1" sendNotification="1" notificationSound="Actions/CollectCache">
+				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addItem type="SchismOfRegimina"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

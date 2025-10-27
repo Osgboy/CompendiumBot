@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Cyber" dlc="DLC1">
+	<actions>
+		<unitAction passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="ICARFluidDeflector"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="40"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Common"/>
+	</traits>
+</item>

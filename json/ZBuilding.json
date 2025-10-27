@@ -49,7 +49,7 @@
         "traits": {},
         "actions": {
             "Produce Abkluths": null,
-            "Produce Acrin Zealot": null,
+            "Produce Acrin Zealots": null,
             "Produce Acrin Remnants": null
         },
         "iconPath": "Zephon\\Icons\\Buildings\\VoiceInfantry.png",
@@ -186,7 +186,8 @@
             "chips": "1"
         },
         "traits": {
-            "Babellian Beacon": "CyberAircraftUpgrade"
+            "Babellian Beacon": "CyberAircraftUpgrade",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce Ophanim Carrier": null,
@@ -211,10 +212,11 @@
             "chips": "1"
         },
         "traits": {
-            "Part Distribution": "HeartlessArtificerAffinityUpgrade"
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce Ishim Enforcers": null,
+            "Produce Cassiel Shredders": "CassielShredder",
             "Produce Malakim Destroyers": "MalakimDestroyer",
             "Produce Aranean Stalkers": "AraneanStalker",
             "Produce Kriteria Annihilators": "KriteriaAnnihilator",
@@ -243,6 +245,7 @@
         },
         "actions": {
             "Interference Protocols": null,
+            "Systemic Reset": "SystemicReset",
             "Antiparticle Purge": "AntiparticlePurge",
             "Black Hole": "BlackHole"
         },
@@ -265,10 +268,13 @@
             "chips": "1"
         },
         "traits": {
-            "Subatomic Displacement": "CyberVehiclesUpgrade"
+            "Subatomic Displacement": "CyberVehiclesUpgrade",
+            "Part Distribution": "HeartlessArtificerAffinityUpgrade",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce Exousia Marauder": null,
+            "Produce Ithuriel Harbinger": "IthurielHarbinger",
             "Produce Chayot Exterminator": "ChayotExterminator",
             "Produce Hashmallim Host": "HashmallimHost",
             "Produce Akavish Provost": "AkavishProvost",
@@ -293,7 +299,8 @@
         },
         "traits": {
             "Ichor of Uzhodai": "DimensionalEchoesUpgrade",
-            "Eremite Cells": "FurtiveTribunalAffinityUpgrade2"
+            "Eremite Cells": "FurtiveTribunalAffinityUpgrade2",
+            "Amniotic Seal": "TwistedMotherAffinityUpgrade2"
         },
         "actions": {},
         "iconPath": "Zephon\\Icons\\Buildings\\DimensionalEchoes.png",
@@ -394,7 +401,8 @@
             "influence": "2"
         },
         "traits": {
-            "Air Freightnet": "HumanAircraftUpgrade"
+            "Air Freightnet": "HumanAircraftUpgrade",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce TH-3 Corsair": null,
@@ -420,10 +428,12 @@
             "loyalty": "2"
         },
         "traits": {
-            "Itinerant Recruiters": "HumanInfantryUpgrade"
+            "Itinerant Recruiters": "HumanInfantryUpgrade",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce Militants": null,
+            "Produce Sharpshooters": "Sharpshooter",
             "Produce Missile Teams": "MissileTeam",
             "Produce Combat Medics": "CombatMedic",
             "Produce Assault Troopers": "AssaultTrooper",
@@ -452,6 +462,7 @@
         },
         "actions": {
             "Satellite Scan": null,
+            "Enriched Alloys": "EnrichedAlloys",
             "Logistics Experts": "LogisticsExperts",
             "Tactical Nuclear Missile": "TacticalNuclearMissile",
             "Experimental Drugs": "ExperimentalDrugs"
@@ -474,9 +485,12 @@
             "minerals": "2",
             "research": "2"
         },
-        "traits": {},
+        "traits": {
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
+        },
         "actions": {
             "Produce Outrider": null,
+            "Produce Scramblers": "Scrambler",
             "Produce Cyclone": "Cyclone",
             "Produce Crusader Battle Tank": "CrusaderBattleTank",
             "Produce Vanquisher Siege Tank": "VanquisherSiegeTank",
@@ -616,7 +630,8 @@
         "traits": {},
         "actions": {
             "Produce Reavers": null,
-            "Produce Busters": null
+            "Produce Busters": null,
+            "Produce Wastelander": null
         },
         "iconPath": "Zephon\\Icons\\Buildings\\HumanInfantry.png",
         "name": "Reaver Barracks"
@@ -625,7 +640,7 @@
         "internalID": "Research",
         "branch": "Neutral",
         "description": "Generates research",
-        "flavor": "Techs, researchers, scientists\u2014they all holed up here. When I was younger\u2014stupider\u2014I thought this was where the soft hid from the harshness of war. That\u2019s what they wanted us to think, of course. Some of the most monstrous minds found their place here. Why pull the trigger\u2026when you could make the gun?",
+        "flavor": "Techs, researchers, scientists\u2014they all holed up here. When I was younger\u2014stupider\u2014I thought this was where the soft hid from the harshness of war. That\u2019s what they wanted us to think, of course. Some of the most monstrous minds found their place here. Why pull the trigger\u2026 when you could make the gun?",
         "resourceCosts": {
             "energyUpkeep": "1.0",
             "mineralsCost": "20",
@@ -699,7 +714,8 @@
             "algae": "1"
         },
         "traits": {
-            "Antiphon at Daybreak": "VoiceAircraftUpgrade"
+            "Antiphon at Daybreak": "VoiceAircraftUpgrade",
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
         },
         "actions": {
             "Produce Iok Swarm": null,
@@ -723,11 +739,14 @@
             "loyalty": "2",
             "algae": "1"
         },
-        "traits": {},
+        "traits": {
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
+        },
         "actions": {
             "Produce Abkluth Dragoons": null,
+            "Produce Devotees of Throkos": "DevoteeOfThrokos",
             "Produce Aegyllan Worms": "AegyllanWorm",
-            "Produce Cr'la Disciple": "CrlaDisciple",
+            "Produce Cr'la Disciples": "CrlaDisciple",
             "Produce Phenaris Hunters": "PhenarisHunter",
             "Produce Phenaris Epicurean": "PhenarisEpicurean",
             "Precentor of Nihilus": "VoiceInfantryUpgrade"
@@ -753,6 +772,7 @@
         "traits": {},
         "actions": {
             "Hymn of Decay": null,
+            "Transubstantiation": "Transubstantiation",
             "Apotheosis": "Apotheosis",
             "Atramentous Aura": "AtramentousAura",
             "Choral Celerity": "VoiceOperationsUpgrade"
@@ -775,9 +795,12 @@
             "food": "2",
             "algae": "1"
         },
-        "traits": {},
+        "traits": {
+            "Precentor of Nihilus": "VoiceInfantryUpgrade"
+        },
         "actions": {
             "Produce Dark Vassael": null,
+            "Produce Amoetia's Devourer": "AmoetiasDevourer",
             "Produce Surthodai's Embrace": "SurthodaisEmbrace",
             "Produce Fallen Orolos": "FallenOrolos",
             "Produce Plangent Orolos": "PlangentOrolos",

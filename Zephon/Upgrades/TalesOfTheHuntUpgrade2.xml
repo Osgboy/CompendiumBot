@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/HollowWarlord" tier="6">
+	<requiredUpgrades>
+		<upgrade name="TalesOfTheHuntUpgrade"/>
+	</requiredUpgrades>
+	<conditions>
+		<player>
+			<faction name="HollowWarlord"/>
+		</player>
+	</conditions>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfluenceScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+</upgrade>

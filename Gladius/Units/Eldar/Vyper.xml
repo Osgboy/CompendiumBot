@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement16">
+	<model>
+		<unit mesh="Units/Eldar/Vyper"
+				material="Units/Eldar/Vyper"
+				idleAnimation="Units/Eldar/VyperIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				position="0 0 0"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Hull_Shake"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="100" memberDeltaY="100"/>
+	<weapons>
+		<weapon name="EldarMissileLauncherPlasmaMissile" slotName="EldarMissileLauncherPlasmaMissile">
+			<model>
+				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
+			</model>	
+		</weapon>
+		<weapon name="EldarMissileLauncherStarshotMissile" slotName="EldarMissileLauncherStarshotMissile" enabled="0">
+			<model>
+				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
+			</model>
+		</weapon>
+		<weapon name="EldarMissileLauncherStarhawkMissile" slotName="EldarMissileLauncherStarhawkMissile" enabled="0">
+			<model>
+				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
+			</model>	
+		</weapon>
+		<weapon name="TwinLinkedShurikenCatapult">
+			<model>
+				<projectileWeapon muzzleBone=".Muzzle" muzzleCount="3"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<oreCost base="60.0"/> <!-- %oreCost base tier=7 factor=1 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=2 -->
+				<moraleMax base="10"/> <!-- %moraleMax base leadership=8 -->
+				<movementMax base="5"/>
+				<oreUpkeep base="3.0"/> <!-- %oreUpkeep base tier=7 factor=1 -->
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Eldar/VyperAttack"
+						beginFire="1.16"
+						endFire="2.1"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Eldar/VyperDie"
+						animationCount="2"				
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="1.3"
+						voiceSound="Units/Eldar/VehicleDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Eldar/VyperMove"
+						sound="Units/Eldar/SkimmerMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<cycleWeapon interfaceSound="Interface/CycleWeapon" 
+				weaponSlotNames="EldarMissileLauncherStarshotMissile EldarMissileLauncherStarhawkMissile EldarMissileLauncherPlasmaMissile"/>
+		<webwayTravel name="Eldar/WebwayTravel">
+			<model>
+				<action sound="Actions/WebwayTravel"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Eldar/WebwayGateBonus2">
+					<effects>
+						<consumedActionPoints max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</webwayTravel>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<crystalTargetingMatrix consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/CrystalTargetingMatrix"
+				requiredUpgrade="Eldar/CrystalTargetingMatrix">
+			<model>
+				<action sound="Actions/CrystalTargetingMatrix"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/CrystalTargetingMatrix"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</crystalTargetingMatrix>
+		<vectoredEngines consumedActionPoints="0" 
+				consumedMovement="0" 
+				cooldown="5"
+				name="Eldar/VectoredEngines"
+				requiredActionPoints="0"
+				requiredUpgrade="Eldar/VectoredEngines">
+			<model>
+				<action sound="Actions/VectoredEngines"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Eldar/VectoredEngines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</vectoredEngines>
+	</actions>
+	<traits>
+		<trait name="OpenTopped"/>
+		<trait name="Skimmer"/>
+		<trait name="Vehicle"/>
+		<trait name="Eldar/SpiritPreservation"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Eldar/ExtraVehicleArmour"/>
+		<trait name="MoveThroughCover" requiredUpgrade="Eldar/GhostwalkMatrix"/>
+		<trait name="Eldar/HoloFields" requiredUpgrade="Eldar/HoloFields"/>
+		<trait name="Eldar/SpiritStones" requiredUpgrade="Eldar/SpiritStones"/>
+		<trait name="Eldar/StarEngines" requiredUpgrade="Eldar/StarEngines"/>
+	</traits>
+</unit>

@@ -198,9 +198,6 @@
 						<tile>
 							<enemyStrengthInTheArea greater="0"/>
 						</tile>
-<!-- 						<unit>
-							<movement greater="0"/>
-						</unit> -->
 					</conditions>
 					<effects>
 						<score add="1.0"/>
@@ -320,8 +317,9 @@
 	</actions>
 	<traits>
 		<trait type="Flying"/>
-		<trait type="Hero"/>
 		<trait type="Large"/>
+		<trait type="Hero"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
 		<trait type="Mechanical"/>
 		<trait type="PracticalRomanticAffinityUpgrade2" requiredUpgrade="PracticalRomanticAffinityUpgrade2"/>
 	</traits>

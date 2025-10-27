@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Buff" icon="Features/SmokeScreen" visibleOnUnit="1">
 	<modifiers>
+		<modifier>
+			<effects>
+				<blockSight add="1"/>
+			</effects>
+		</modifier>
 		<modifier effectDescription="AgainstRangedWeapons">
 			<conditions>
 				<weapon ignoreForTraitVisibility="1">

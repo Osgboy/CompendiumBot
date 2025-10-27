@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manager>
+<manager fallback="Units/Sentry/Poke"> <!-- Temporary 1.1.6 fix. Remove with DLC2. -->
 	<actions>
 		<playerCast name="AntiparticlePurge">
 			<model>
@@ -10,9 +10,11 @@
 				<target rangeMax="-1">
 					<conditions>
 						<tile match="Any">
+							<feature type="AbkhanDrey"/>
 							<feature type="Bleed"/>
 							<feature type="Forest"/>
 							<feature type="Ruins"/>
+							<feature type="Sandpit"/>
 						</tile>
 					</conditions>					
 					<areas>
@@ -20,9 +22,16 @@
 							<modifiers>
 								<modifier>
 									<effects>
+										<removeFeature type="AbkhanDrey"/>
 										<removeFeature type="Bleed"/>
 										<removeFeature type="Forest"/>
 										<removeFeature type="Ruins"/>
+										<removeFeature type="Sandpit"/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<effects>
+										<removeTrait type="AbkhanRespawn"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -86,9 +95,9 @@
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="ToTargetOwnBiologicalUnit">
+								<modifier visible="0">
 									<effects>
-										<hitpoints mul="-1.0"/>
+										<addTrait type="NoDeathMoraleOrExperience"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -108,7 +117,16 @@
 										<score add="1.0"/>
 									</effects>
 								</modifier>
-							</scoreModifiers>		
+							</scoreModifiers>
+						</area>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetOwnBiologicalUnit">
+									<effects>
+										<hitpoints mul="-1.0"/>
+									</effects>
+								</modifier>
+							</modifiers>
 						</area>
 						<area affect="Unit" radius="1" excludeRadius="0">
 							<modifiers>
@@ -142,15 +160,14 @@
 		<playerCast name="AtramentousAura">
 			<model>
 				<cast blueprint="Effects/AtramentousAura"
-						targetsTile="1"
-						sound=""/>
+						targetsTile="1"/>
 			</model>
 			<beginTargets>
 				<target rangeMax="-1">
 					<areas>
 						<area affect="Unit" radius="1">
 							<modifiers>
-								<modifier effectDescription="ToTargetAndAdjacentAlliedUnits">
+								<modifier effectDescription="ToAlliedUnitsOnTargetAndAdjacentTiles">
 									<conditions>
 										<unit>
 											<ally/>
@@ -243,7 +260,7 @@
 							<modifiers>
 								<modifier visible="0" effectDescription="OnAdjacentTilesToTarget">
 									<effects>
-										<weaponDamage weapon="BlackHoleAdjacent"/>
+										<weaponDamage weapon="BlackHole" factor="0.5"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -302,6 +319,47 @@
 									</effects>
 								</modifier> -->
 							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="EnrichedAlloys">
+			<model>
+				<cast blueprint="Effects/EnrichedAlloys"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<rangedWeapons/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnitWithRangedWeapons">
+									<effects>
+										<addTrait type="EnrichedAlloys" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<actionPoints greater="0"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
 						</area>
 					</areas>
 				</target>
@@ -427,7 +485,7 @@
 								<modifier effectDescription="OnTargetTile"
 										requiredUpgrade="AfflictionsAntiphon">
 									<effects>
-										<morale add="-1"/>
+										<morale add="-2"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -470,12 +528,13 @@
 					<conditions>
 						<unit>
 							<enemy/>
+							<noTrait type="Titan"/>
 						</unit>
 					</conditions>					
 					<areas>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="ToTargetEnemyUnit">
+								<modifier effectDescription="ToTargetEnemyNonTitanUnit">
 									<effects>
 										<addTrait type="InterferenceProtocols" duration="3"/>
 									</effects>
@@ -586,10 +645,22 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerAction name="PayResources/CajoleAnchorite"
+				durationInSeconds="0.1"
+				icon="Actions/ParlayWithTheAnchorite"
+				interfaceSound="Interface/ParlayWithTheAnchorite">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="160"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerAction name="PayResources/ContactAugur"
 				durationInSeconds="0.1"
-				icon="Actions/PayResources"
-				interfaceSound="Interface/PayResources">
+				icon="Actions/ContactAugur"
+				interfaceSound="Interface/ParlayWithTheAnchorite">
 			<modifiers>
 				<modifier visible="0">
 					<effects>
@@ -601,8 +672,8 @@
 		</playerAction>
 		<playerAction name="PayResources/FormFunction"
 				durationInSeconds="0.1"
-				icon="Actions/PayResources"
-				interfaceSound="Interface/PayResources">
+				icon="Actions/ImprisonIronFeather"
+				interfaceSound="Interface/ImprisonIronFeather">
 			<modifiers>
 				<modifier visible="0">
 					<effects>
@@ -614,8 +685,8 @@
 		</playerAction>
 		<playerAction name="PayResources/MassConfession"
 				durationInSeconds="0.1"
-				icon="Actions/PayResources"
-				interfaceSound="Interface/PayResources">
+				icon="Actions/OrganizeMassConfessional"
+				interfaceSound="Interface/OrganizeMassConfessional">
 			<modifiers>
 				<modifier visible="0">
 					<effects>
@@ -633,6 +704,20 @@
 					<effects>
 						<energyCost base="40"/>
 						<mineralsCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/StrikeADeal"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<transuraniumCost base="8"/>
+						<antimatterCost base="8"/>
+						<influenceCost base="60"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -673,6 +758,46 @@
 						<foodCost base="20"/>
 						<mineralsCost base="20"/>
 						<energyCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="ProduceChild/Cyber"
+				durationInSeconds="0.1"
+				icon="Actions/ProduceChild"
+				interfaceSound="Interface/ProduceChild">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsCost base="10"/>
+						<foodCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="ProduceChild/Mix"
+				durationInSeconds="0.1"
+				icon="Actions/ProduceChild"
+				interfaceSound="Interface/ProduceChild">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="10"/>
+						<chipsCost base="10"/>
+						<foodCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="ProduceChild/Voice"
+				durationInSeconds="0.1"
+				icon="Actions/ProduceChild"
+				interfaceSound="Interface/ProduceChild">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="10"/>
+						<foodCost base="20"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -752,6 +877,165 @@
 				</target>
 			</beginTargets>
 		</playerCast>
+		<playerCast name="SomethingWicked"
+			cooldown="10">
+			<model>
+				<cast blueprint="Effects/SomethingWicked"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<enemy/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetEnemyUnit">
+									<conditions>
+										<unit>
+											<noAttacking/>
+										</unit>
+									</conditions>
+									<effects>
+										<weaponDamage weapon="SomethingWicked"/>
+										<hitpoints add="-2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<endTargets>
+				<target melee="1">
+					<conditions>
+						<unit>
+							<destroyed/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit" radius="3">
+							<modifiers>
+								<modifier effectDescription="Assassinate">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<morale add="-2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</endTargets>
+		</playerCast>
+		<playerCast name="SystemicReset">
+			<model>
+				<cast blueprint="Effects/SystemicReset"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions match="Any">
+						<conditions>
+							<sourcePlayer>
+								<noUpgrade name="SystemicResetUpgrade"/>
+							</sourcePlayer>
+							<unit>
+								<ally/>
+							</unit>
+						</conditions>
+						<conditions>
+							<sourcePlayer>
+								<upgrade name="SystemicResetUpgrade"/>
+							</sourcePlayer>
+						</conditions>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="FromTargetAlliedUnit">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<removeDebuffs/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<conditions>
+										<unit>
+											<ally/>
+											<notMovedThisTurn/>
+										</unit>
+									</conditions>
+									<effects>
+										<resetMovement/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<conditions>
+										<unit>
+											<ally/>
+											<notActedThisTurn/>
+										</unit>
+									</conditions>
+									<effects>
+										<resetActionPoints/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="FromTargetEnemyUnit" requiredUpgrade="SystemicResetUpgrade">
+									<conditions>
+										<unit>
+											<enemy/>
+										</unit>
+									</conditions>
+									<effects>
+										<removeBuffs/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<ally/>
+											<debuffed/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<tile>
+											<alliedStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<enemy/>
+											<buffed/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
 		<playerCast name="TacticalNuclearMissile">
 			<model>
 				<cast blueprint="Effects/TacticalNuclearMissile"
@@ -812,7 +1096,7 @@
 							<modifiers>
 								<modifier visible="0" effectDescription="OnAdjacentTilesToTarget">
 									<effects>
-										<weaponDamage weapon="TacticalNuclearMissileAdjacent"/>
+										<weaponDamage weapon="TacticalNuclearMissile" factor="0.5"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -851,6 +1135,54 @@
 					</areas>
 				</target>
 			</beginTargets>
+		</playerCast>
+		<playerCast name="TempleOfCrla" icon="Features/TempleOfCrla">
+			<model>
+				<cast blueprint="Effects/TempleOfCrla"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<damaged/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<hitpointsFraction less="0.667"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 		<playerCast name="ThePlague" cooldown="5">
 			<model>
@@ -915,6 +1247,48 @@
 										<tile>
 											<alliedStrengthInTheArea greater="0"/>
 										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="Transubstantiation">
+			<model>
+				<cast blueprint="Effects/Transubstantiation"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Transubstantiation"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<addTrait type="Transubstantiation" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<actionPoints greater="0"/>
+											<hitpointsFraction less="0.667"/>
+										</unit>
 									</conditions>
 									<effects>
 										<score add="1.0"/>

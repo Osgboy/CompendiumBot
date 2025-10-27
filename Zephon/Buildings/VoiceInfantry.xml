@@ -28,28 +28,18 @@
 	</strategyModifiers>
 	<actions>
 		<produceUnit unit="AbkluthDragoon"/>
+		<produceUnit unit="DevoteeOfThrokos" requiredUpgrade="DevoteeOfThrokos"/>
 		<produceUnit unit="AegyllanWorm" requiredUpgrade="AegyllanWorm"/>
 		<produceUnit unit="CrlaDisciple" requiredUpgrade="CrlaDisciple"/>
 		<produceUnit unit="PhenarisHunter" requiredUpgrade="PhenarisHunter"/>
 		<produceUnit unit="PhenarisEpicurean" requiredUpgrade="PhenarisEpicurean"/>
 		<buildingGroupAction name="VoiceInfantryUpgrade"
 				passive="1"
-				requiredUpgrade="VoiceInfantryUpgrade">
-			<beginTargets>
-				<selfTarget>
-					<areas>
-						<area affect="Tile" radius="6">
-							<modifiers>
-								<modifier effectDescription="ToAlliedUnits">
-									<effects>
-										<addTrait type="VoiceInfantryUpgrade"/>
-									</effects>
-								</modifier>
-							</modifiers>
-						</area>
-					</areas>
-				</selfTarget>
-			</beginTargets>
-		</buildingGroupAction>
+				requiredUpgrade="VoiceInfantryUpgrade"
+				visible="0"
+				enabled="0"/>
 	</actions>
+	<traits>
+		<trait type="VoiceInfantryUpgrade" requiredUpgrade="VoiceInfantryUpgrade"/>
+	</traits>
 </building>

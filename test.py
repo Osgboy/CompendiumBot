@@ -50,9 +50,11 @@ ZEPHON_FACTIONS = (
     'Furtive Tribunal',
     'Heartless Artificer',
     'Honorable Aristocrat',
+    'Hollow Warlord',
     'Neutral',
     'Practical Romantic',
     'Rogue Operative',
+    'Twisted Mother',
     'Untold Prophet',
     'Zephon',
 )
@@ -698,7 +700,7 @@ async def gupgrade(interaction: discord.Interaction, upgradename: str, verbose: 
 @bot.tree.command()
 @docstring_defaults
 async def zupgrade(interaction: discord.Interaction, upgradename: str, verbose: bool = False, flavor: bool = False, invisible: bool = False):
-    """Broken for most entries until I figure out how to add all Zephon upgrades. Return info on a Zephon upgrade.
+    """Return info on a Zephon upgrade.
 
     Args:
         upgradename (str): Name of upgrade to look up

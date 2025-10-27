@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<onCombatSelfModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<self>
+						<attacking/>
+					</self>
+					<!-- <opponent> -->
+						<!-- <noAttacking/> -->
+					<!-- </opponent> -->
+				</encounter>
+			</conditions>
+			<effects>
+				<addTrait name="AdeptusMechanicus/TransonicEffect" duration="2"/>
+			</effects>
+		</modifier>
+	</onCombatSelfModifiers>
+	<modifiers>
+		<modifier>
+			<effects>
+				<damage mul="0.1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

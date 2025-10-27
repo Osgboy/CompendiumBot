@@ -193,7 +193,13 @@
 				</modifier>
 			</scoreModifiers>
 		</unitCast>
-		<foundCity blueprint="NomadicLife"/>
+		<foundCity blueprint="NomadicLife">
+			<model>
+				<action animation="Units/ReaverAbility0"
+						sound="Actions/FoundCity"
+						soundFirstActingMemberOnly="1"/>
+			</model>
+		</foundCity>
 		<unitAction name="Hijack"
 				passive="1">
 			<beginTargets>

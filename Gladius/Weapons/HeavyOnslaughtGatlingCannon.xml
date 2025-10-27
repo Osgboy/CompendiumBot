@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon fireSound="Weapons/Boltgun"
-				fireSoundCount="13"/>
+		<projectileWeapon fireSound="Weapons/AvengerBoltCannon"
+				fireSoundCount="3"
+				fireInterval="0.1"
+				effectScale="1.5"/>
 	</model>
 	<modifiers>
 		<modifier>

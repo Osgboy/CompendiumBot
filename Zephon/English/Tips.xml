@@ -19,10 +19,16 @@ We can do longer explanatory tips that are only in the Compendium. E.g. Camera t
 <entry name="CameraDescription" value="Welcome to post-apocalyptic Earth. To move the camera, &lt;icon height='20' texture='Icons/LeftMouseButton'/&gt;&lt;nbsp/&gt;press over terrain and move your mouse."/>
 <entry name="CloseQuartersFire" value="Close-Quarters Fire"/>
 <entry name="CloseQuartersFireDescription" value="Militants have a weapon with &lt;icon height='20' texture='Icons/Traits/CloseQuartersFire'/&gt;&lt;nbsp/&gt;Close-Quarters Fire and attack at double rate at range 1. Consider your position before attacking."/>
+<entry name="Combat" value="Combat"/>
+<entry name="CombatDescription" value="Inflicted damage is calculated from the weapon's damage, accuracy, amount of attacks and armor penetration, but the weapon's damage is first capped by the hitpoints of a single member of the target group."/>
+<entry name="CombatAdvanced" value="Combat (Advanced)"/>
+<entry name="CombatAdvancedDescription" value="There are a few important concepts to understand about damage calculation.&lt;br/&gt;&lt;br/&gt;Each unit has a number of identical group members, with the unit’s total hitpoints being composed of the hitpoints of each individual group member. When a unit loses hitpoints equivalent to a group member, that member dies and no longer contributes its weapons to attacks, effectively reducing inflicted damage by the fraction that squad member represents. Healing the unit will bring the group member back to life, restoring the unit’s power. Units with only 1 squad member, such as large units, become damaged when below 50% hitpoints which reduces their accuracy by 33%.&lt;br/&gt;&lt;br/&gt;When calculating a weapon’s final inflicted damage, the weapon’s damage value is first capped by the target unit’s group member hitpoints. That means a single attack of a weapon can never do more damage than there are hitpoints for an individual member in the target group. That is, a 6 damage weapon against a Militants group where each Militant has 2 hitpoints can never deal more than 2 damage. For single group member units, such as large units, this is irrelevant as their total hitpoints equals their member hitpoints.&lt;br/&gt;&lt;br/&gt;After the hitpoints cap, attacks, accuracy and the target’s armor and other damage reductions are all applied multiplicatively.&lt;br/&gt;&lt;br/&gt;Attacks specifies the number of attacks a weapon makes against its target when the unit attacks. This is the most valuable stat to increase, because it scales the damage after the hitpoints cap. And unlike accuracy it is unbounded in the upper limit.&lt;br/&gt;&lt;br/&gt;Accuracy can range from 2 to 12, each point being 1/12 or 0.083 that is multiplied into the final damage value. It cannot be decreased below 2 or increased above 12.&lt;br/&gt;&lt;br/&gt;Armor and other damage reductions (cover, evasion, city, invulnerable) of the same type are added together and then each reduce the damage by their corresponding factor multiplicatively, but no individual type can reduce the damage by more than 10/12 or 83%. Armor penetration indicates how many points of armor are ignored. Unless specifically mentioned otherwise, all damage reductions apply to both melee and ranged weapons.&lt;br/&gt;&lt;br/&gt;Traits are built on top of and use these elementary concepts. For example, weapons with the splash trait gain additional attacks for each extra living member in the target group, and weapons with the ignore cover trait ignore cover damage reduction of the target unit.&lt;br/&gt;&lt;br/&gt;Some consequences of all this:&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Increasing the damage of a weapon may not increase the inflicted damage.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Infantry are tankier than their hitpoints might indicate. Single attack high damage non-splash weapons won’t be able to kill more than 1 group member. And at full hitpoints won’t even be able to kill 1 group member unless the weapon has 100% accuracy.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;To kill infantry, it’s better to have high accuracy, more attacks or splash.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Hitpoint gains from leveling are less useful for low hitpoints group members. The increase in hitpoints is canceled out by the increase in group member hitpoints cap, making it worthless against weapons that already exceed the cap.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Healing is more valuable on infantry.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Modifying low accuracy by a flat amount is more valuable than modifying high accuracy. E.g. increasing accuracy from 6 to 8 (50% to 67%) is a 33% damage increase. However, increasing accuracy from 8 to 10 (67% to 83%) is a 25% damage increase.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Damage reduction of the same type has increasing returns. E.g. increasing armor from 0 to 1 will only give an (12-0)/(12-1)=+9% increase in survivability. However, increasing armor from 9 to 10 will give a (12-9)/(12-10)=+50% increase in survivability."/>
 <entry name="ConstructInfantryBuilding" value="Construct Barracks"/>
 <entry name="ConstructInfantryBuildingDescription" value="Construct unit production buildings to reinforce your struggling presence. Click “&lt;icon height='20' texture='Icons/Buildings/HumanInfantry'/&gt;&lt;nbsp/&gt;Barracks” and &lt;icon height='20' texture='Icons/LeftMouseButton'/&gt;&lt;nbsp/&gt;select a valid tile to start construction there."/>
 <entry name="Cover" value="Cover"/>
 <entry name="CoverDescription" value="&lt;icon height='20' texture='Icons/Features/Forest'/&gt;&lt;nbsp/&gt;Forests, &lt;icon height='20' texture='Icons/Features/Ruins'/&gt;&lt;nbsp/&gt;ruins, &lt;icon height='20' texture='Icons/Traits/Outpost'/&gt;&lt;nbsp/&gt;outposts and &lt;icon height='20' texture='Icons/Features/City'/&gt;&lt;nbsp/&gt;cities grant ranged damage reduction for non-large units. Take cover when you can."/>
+<entry name="EnemyInCity" value="Enemy In City"/>
+<entry name="EnemyInCityDescription" value="Enemy units disable buildings, outposts and prevent new building construction on the unit's tile."/>
 <entry name="EquipItem" value="Equip Item"/>
 <entry name="EquipItemDescription" value="&lt;icon height='20' texture='Icons/RightMouseButton'/&gt;&lt;nbsp/&gt;click an item to equip it on your hero. Newly equipped items go on a 1 turn cooldown before being usable."/>
 <entry name="FoundCity" value="Found City"/>
@@ -50,7 +56,7 @@ We can do longer explanatory tips that are only in the Compendium. E.g. Camera t
 <entry name="Recon" value="Recon"/>
 <entry name="ReconDescription" value="Many units have activatable abilities. Outriders can reveal their surroundings with the &lt;icon height='20' texture='Icons/Actions/Recon'/&gt;&lt;nbsp/&gt;Recon ability."/>
 <entry name="Research" value="Research"/>
-<entry name="ResearchDescription" value="Researching a hero is a good place to start. You'll be able to produce them in the headquarters."/>
+<entry name="ResearchDescription" value="Researching a hero is a good place to start. You'll be able to produce them in the headquarters. Note that changing active research will forfeit all partial progress."/>
 <entry name="TheConcordat" value="The Concordat"/>
 <entry name="TheConcordatDescription" value="You can buy and sell resources and hero items at any time at &lt;icon height='20' texture='Icons/Shop'/&gt;&lt;nbsp/&gt;The Concordat."/>
 <entry name="Transports" value="Transports"/>
@@ -66,7 +72,7 @@ We can do longer explanatory tips that are only in the Compendium. E.g. Camera t
 
 <entry name="Loading" value="Loading Screen Tips"/>
 <entry name="Loading/0" value="Bleed and fire stops ground units and damages them."/>
-<entry name="Loading/1" value="Terrain like rivers, forests and ruins reduce ground unit movement."/>
+<entry name="Loading/1" value="Rivers, forests and ruins reduce ground unit movement."/>
 <entry name="Loading/2" value="&lt;string name='Tips/CoverDescription'/&gt;"/>
 <entry name="Loading/3" value="Roads increase ground unit movement."/>
 <entry name="Loading/4" value="&lt;string name='Attributes/HitpointsDescription/Healing'/&gt;"/>
@@ -117,7 +123,7 @@ We can do longer explanatory tips that are only in the Compendium. E.g. Camera t
 <entry name="Loading/49" value="Even leashed neutral units overwatch anyone entering their attack range."/>
 <entry name="Loading/50" value="Consider turning off overwatch to not unleash neutral units with your attacks."/>
 <entry name="Loading/51" value="Damage dealt by a single weapon attack is capped by the target squad member's hitpoints and then reduced by the weapon's accuracy."/>
-<entry name="Loading/52" value="Splash attacks hit up to 2 more squad members, dealing 3x the damage than against a single member."/>
+<entry name="Loading/52" value="Splash weapons deal extra attacks against targets with multiple squad members."/>
 <entry name="Loading/53" value="Large units have -33% accuracy while below half hitpoints."/>
 <entry name="Loading/54" value="[&lt;control name='MarkTile'/&gt;] to mark tiles for yourself and your allies. AI allies will tend to move their units towards your markers."/>
 <entry name="Loading/55" value="&lt;string name='Tips/AllianceVictoryDescription'/&gt;"/>
@@ -126,5 +132,12 @@ We can do longer explanatory tips that are only in the Compendium. E.g. Camera t
 <entry name="Loading/58" value="Outposts and cities grant sight to adjacent tiles."/>
 <entry name="Loading/59" value="The last coordinate of the tile is the tile's height (x, y, height)."/>
 <entry name="Loading/60" value="Move items to adjacent allied heroes by dragging them from the inventory."/>
-<entry name="Loading/Count" value="61"/>
+<entry name="Loading/61" value="[&lt;control name='OrderAllIdleUnits'/&gt;] to order all idle units."/>
+<entry name="Loading/62" value="[&lt;control name='OrderAllUnits'/&gt;] to order all units."/>
+<entry name="Loading/63" value="[&lt;control name='OrderAreaUnits'/&gt;] to order all units in the area (radius 3)."/>
+<entry name="Loading/64" value="Move units large distances by right-clicking on the minimap."/>
+<entry name="Loading/65" value="&lt;string name='Tips/CombatDescription'/&gt;"/>
+<entry name="Loading/66" value="Bleed, forests, ruins, volcanoes and city buildings block unit sight."/>
+<entry name="Loading/67" value="&lt;string name='Tips/EnemyInCityDescription'/&gt;"/>
+<entry name="Loading/Count" value="68"/>
 </language>

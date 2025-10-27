@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurnInBleed">
+						<conditions>
+							<tile ignoreForTraitVisibility="1">
+								<feature type="Bleed"/>
+							</tile>
+						</conditions>
+						<effects>
+							<hitpoints add="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

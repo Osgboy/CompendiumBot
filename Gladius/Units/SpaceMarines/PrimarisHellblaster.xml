@@ -40,7 +40,7 @@
 				<armor base="8"/> <!-- %armor base armor=3+ -->
 				<hitpointsMax base="6.0"/> <!-- %hitpointsMax base toughness=4 wounds=2 -->
 				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
-				<meleeAttacks base="1"/>
+				<meleeAttacks base="2"/>
 				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
 				<!-- <meleeInitiative base="4"/> -->
 				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
@@ -73,7 +73,7 @@
 						animationCount="2"
 						sound="Units/MediumArmoredDie"
 						soundCount="4"
-						soundDelay="0.4"
+						soundDelay="0.75"
 						voiceSound="Units/SpaceMarines/InfantryDie"
 						voiceSoundCount="5"/>
 			</model>		
@@ -123,6 +123,5 @@
 		<trait name="AndTheyShallKnowNoFear"/>
 		<trait name="ExtraInfantryArmour" requiredUpgrade="SpaceMarines/ExtraInfantryArmour"/>
 		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
-		<trait name="Bulky"/>
 	</traits>
 </unit>

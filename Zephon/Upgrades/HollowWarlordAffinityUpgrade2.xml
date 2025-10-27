@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<upgrade image="Images/Factions/HollowWarlord" tier="10">
+	<conditions>
+		<player>
+			<faction name="HollowWarlord"/>
+		</player>
+	</conditions>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+</upgrade>

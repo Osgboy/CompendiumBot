@@ -164,7 +164,7 @@
     "Antimatter Sword": {
         "internalID": "AntimatterSword",
         "description": null,
-        "flavor": "There was power in drawing your blade and striking a single motion\u2014but what good was such power if body and blades were too weak? The answer lay in Antimatter. These blades were the unstoppable force we needed to pierce immovable objects. Antimatter tech made for good shielding\u2026but it made for even better killing.",
+        "flavor": "There was power in drawing your blade and striking a single motion\u2014but what good was such power if body and blades were too weak? The answer lay in Antimatter. These blades were the unstoppable force we needed to pierce immovable objects. Antimatter tech made for good shielding\u2026 but it made for even better killing.",
         "traits": {
             "Antimatter Diffraction": null,
             "Melee": null
@@ -203,7 +203,7 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 3.0
+                "value": 4.0
             },
             "attacks": {
                 "operator": "base",
@@ -211,7 +211,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 4.0
+                "value": 6.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\Apotheosis.png",
@@ -269,6 +269,32 @@
         "iconPath": "Zephon\\Icons\\Weapons\\ArmorPiercingMinigun.png",
         "name": "Armor-Piercing Minigun",
         "branch": "Zephon"
+    },
+    "Armor-Piercing Rounds": {
+        "internalID": "ArmorPiercingRounds",
+        "description": null,
+        "flavor": "Asked the Sharpshooting crew why they had a box of AP rounds with \u201ccold iron\u201d scrawled on it. \u201cKeeps the ghosts from getting out,\u201d the Spotter said. Out? Out of what? She rolled her eyes at me. \u201cThe bodies. Obviously.\u201d",
+        "traits": {
+            "Sniper": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ArmorPiercingRounds.png",
+        "name": "Armor-Piercing Rounds",
+        "branch": "Human"
     },
     "Assault Rifle": {
         "internalID": "AssaultRifle",
@@ -410,6 +436,7 @@
         "flavor": "Our humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
         "traits": {
             "Eventful Horizons": "EmulatedMindAffinityUpgrade2",
+            "Ignores Cover": null,
             "Massive Splash": null
         },
         "range": "0",
@@ -433,37 +460,6 @@
         },
         "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
         "name": "Black Hole",
-        "branch": "Neutral"
-    },
-    "Black Hole (Adjacent)": {
-        "internalID": "BlackHoleAdjacent",
-        "description": null,
-        "flavor": "Our humanity died when we began to rip apart spacetime itself. We saw reality as a machine that could be programmed. Black holes may be the darkest spots in the universe, but there\u2019s nothing darker than a person who's decided it's time for them to play god.",
-        "traits": {
-            "Eventful Horizons": "EmulatedMindAffinityUpgrade2",
-            "Massive Splash": null
-        },
-        "range": "0",
-        "innateStats": {
-            "accuracy": {
-                "operator": "min",
-                "value": 12.0
-            },
-            "armorPenetration": {
-                "operator": "base",
-                "value": 10.0
-            },
-            "attacks": {
-                "operator": "base",
-                "value": 0.5
-            },
-            "damage": {
-                "operator": "base",
-                "value": 32.0
-            }
-        },
-        "iconPath": "Zephon\\Icons\\Actions\\BlackHole.png",
-        "name": "Black Hole (Adjacent)",
         "branch": "Neutral"
     },
     "Bleed": {
@@ -728,7 +724,7 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 2.0
+                "value": 3.0
             },
             "attacks": {
                 "operator": "base",
@@ -736,7 +732,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 2.0
+                "value": 3.0
             }
         },
         "iconPath": "Zephon\\Icons\\Traits\\Deathshriek.png",
@@ -1261,7 +1257,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 6.0
+                "value": 5.0
             },
             "attacks": {
                 "operator": "base",
@@ -1285,7 +1281,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 6.0
+                "value": 7.0
             },
             "attacks": {
                 "operator": "base",
@@ -1293,7 +1289,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 8.0
+                "value": 12.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\GaussCannon.png",
@@ -1319,7 +1315,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 8.0
+                "value": 12.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\GaussCannonOvercharged.png",
@@ -1361,7 +1357,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "attacks": {
                 "operator": "base",
@@ -1411,7 +1407,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "attacks": {
                 "operator": "base",
@@ -1464,7 +1460,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 3.0
+                "value": 2.0
             },
             "attacks": {
                 "operator": "base",
@@ -1478,6 +1474,32 @@
         "iconPath": "Zephon\\Icons\\Weapons\\GaussRifleOvercharged.png",
         "name": "Gauss Rifle (Overcharged)",
         "branch": "Human"
+    },
+    "Golgothan Deluge": {
+        "internalID": "GolgothanDeluge",
+        "description": null,
+        "flavor": "How do you kill an all-consuming flesh beast? Keep away from it, for one. But these fuckers evolved fast. Started spraying us with acid from a distance. If you wanted to live, you needed to fight through the pain, yank off any corroding armor, and then run like hell, because it was sure to be charging in, ready to eat your ass.",
+        "traits": {
+            "Corrosive": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GolgothanDeluge.png",
+        "name": "Golgothan Deluge",
+        "branch": "Voice"
     },
     "Goliath Cannon": {
         "internalID": "GoliathCannon",
@@ -1691,7 +1713,7 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\HeavyMachineGun.png",
         "name": "Heavy Machine Gun",
-        "branch": "Human"
+        "branch": "Neutral"
     },
     "Holy Inferno": {
         "internalID": "HolyInferno",
@@ -1793,15 +1815,15 @@
             },
             "armorPenetration": {
                 "operator": "base",
-                "value": 7.0
+                "value": 6.0
             },
             "attacks": {
                 "operator": "add",
-                "value": 1.0
+                "value": 2.0
             },
             "damage": {
                 "operator": "base",
-                "value": 12.0
+                "value": 8.0
             }
         },
         "iconPath": "Zephon\\Icons\\Actions\\IcarusSatellite.png",
@@ -1857,7 +1879,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 1.0
+                "value": 1.5
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\IncendiaryGrenade.png",
@@ -1896,6 +1918,33 @@
         "name": "Incinerator",
         "branch": "Human"
     },
+    "Indiscriminate Consumption": {
+        "internalID": "IndiscriminateConsumption",
+        "description": null,
+        "flavor": "First it got Rodney. Then Gina. Then the Acrin who'd joined us, Kor'thok. We sprayed bullets, tried to ignore the blood, but each one of us it consumed just restored the decaying flesh. There was only one way out: pulling the pin on a grenade and diving right into that wretched maw\u2026.",
+        "traits": {
+            "Life Steal": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\IndiscriminateConsumption.png",
+        "name": "Indiscriminate Consumption",
+        "branch": "Voice"
+    },
     "Interceptor Missile": {
         "internalID": "InterceptorMissile",
         "description": null,
@@ -1925,7 +1974,7 @@
     "Iok Bile": {
         "internalID": "IokBile",
         "description": null,
-        "flavor": "Iok's freakshow winged worshippers always made a beeline for machines. A swarm of them piled on a Vanquisher Tank I was riding in and sprayed us all with the sludge in their stomachs as we bailed. Felt like a weird dream\u2026to feel the gross liquid hit my skin and just burn a little, then turn and see the tank melting like an ice cube in the desert.",
+        "flavor": "Iok's freakshow winged worshippers always made a beeline for machines. A swarm of them piled on a Vanquisher Tank I was riding in and sprayed us all with the sludge in their stomachs as we bailed. Felt like a weird dream\u2026 to feel the gross liquid hit my skin and just burn a little, then turn and see the tank melting like an ice cube in the desert.",
         "traits": {
             "Corrosive": null,
             "Melee": null
@@ -2014,7 +2063,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 7.0
+                "value": 6.0
             },
             "attacks": {
                 "operator": "base",
@@ -2141,6 +2190,30 @@
         "name": "Machete",
         "branch": "Neutral"
     },
+    "Mangled Chelae": {
+        "internalID": "MangledChelae",
+        "description": null,
+        "flavor": "Oh. That's why these insects wanted human flesh. Using human bodies as\u2026 bone factories. Sharpening rib cages and cartilage into projectiles. I screamed when a fractured femur slammed into the head of my driver one day. Outrider started spinning out of control and I just\u2026 lost it. She didn't deserve to die that way.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\MangledChelae.png",
+        "name": "Mangled Chelae",
+        "branch": "Voice"
+    },
     "Mind Break": {
         "internalID": "MindBreak",
         "description": null,
@@ -2196,6 +2269,30 @@
         "iconPath": "Zephon\\Icons\\Actions\\Minelayer.png",
         "name": "Mines",
         "branch": "Neutral"
+    },
+    "Minigun": {
+        "internalID": "Minigun",
+        "description": null,
+        "flavor": "The big long barrel of a minigun will make any hotblooded sergeant-at-arms excited but all the enthusiasm goes away when you have to oil and clean every single damn barrel. Miniguns are a weapon for the patient, the caring, the ones who will put in the work to spray ten thousand cartridges at two thousand rounds per minute.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Minigun.png",
+        "name": "Minigun",
+        "branch": "Human"
     },
     "Missile Bot": {
         "internalID": "MissileBot",
@@ -2406,7 +2503,7 @@
     "Particle Projector": {
         "internalID": "ParticleProjector",
         "description": null,
-        "flavor": "Some of the weapons produced for AI just\u2026sprayed matter out like a firehose. I don\u2019t know if it was an intended side effect, but that matter would stick on the target, and took days to come off if they retreated. It could really jam up infantry and armor alike, make it hard to get them back on the battlefield.",
+        "flavor": "Some of the weapons produced for AI just\u2026 sprayed matter out like a firehose. I don\u2019t know if it was an intended side effect, but that matter would stick on the target, and took days to come off if they retreated. It could really jam up infantry and armor alike, make it hard to get them back on the battlefield.",
         "traits": {
             "Particle Interfering": null
         },
@@ -2450,7 +2547,7 @@
             },
             "attacks": {
                 "operator": "base",
-                "value": 1.0
+                "value": 2.0
             },
             "damage": {
                 "operator": "base",
@@ -2511,6 +2608,33 @@
         "name": "Pistol",
         "branch": "Neutral"
     },
+    "Plasma Cannon": {
+        "internalID": "PlasmaCannon",
+        "description": null,
+        "flavor": "A bigger cannon-sized plasma weapon meant a bigger explosion when you didn't handle it correctly. Human mechanics struggled to learn that lesson. The burns piled up and the amount of material wasted was\u2026 inconceivable. Only machines could mount them. Maintain them. Burn their foes alive with them.",
+        "traits": {
+            "Splash": null,
+            "Overheating": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\PlasmaCannon.png",
+        "name": "Plasma Cannon",
+        "branch": "Cyber"
+    },
     "Plasma Gun": {
         "internalID": "PlasmaGun",
         "description": null,
@@ -2549,7 +2673,7 @@
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
-                "value": 7.0
+                "value": 8.0
             },
             "attacks": {
                 "operator": "base",
@@ -2557,7 +2681,7 @@
             },
             "damage": {
                 "operator": "base",
-                "value": 12.0
+                "value": 16.0
             }
         },
         "iconPath": "Zephon\\Icons\\Weapons\\PowerFist.png",
@@ -2590,6 +2714,60 @@
         "iconPath": "Zephon\\Icons\\Weapons\\ResonatingScythes.png",
         "name": "Resonating Scythes",
         "branch": "Voice"
+    },
+    "Retort": {
+        "internalID": "Retort",
+        "description": null,
+        "flavor": "Maybe I shouldn't have felt grim joy when watching Reavers fuck up a ballista shot from the back of a Wastelander. They wouldn't lead the target and all they did was skewer their own goons. Made me wish I was fighting an Abkluth instead. At least the thing trying to kill you had two brain cells to rub together.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Retort.png",
+        "name": "Retort",
+        "branch": "Reaver"
+    },
+    "Reyndverra": {
+        "internalID": "Reyndverra",
+        "description": null,
+        "flavor": "You slice at a stalactite. It cuts clean. You return to the surface, to the burning wreckage of the Chieftess' Wastelander. You swing\u2014once, twice, three times\u2014and it collapses. You point it to the earth and flowers bloom. You raise it to the sky and clouds gather.",
+        "traits": {
+            "Antimatter Diffraction": null
+        },
+        "range": "N/A",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 12.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Items\\Reyndverra.png",
+        "name": "Reyndverra",
+        "branch": "Neutral"
     },
     "Sanctified Trephine": {
         "internalID": "SanctifiedTrephine",
@@ -2650,6 +2828,7 @@
         "description": null,
         "flavor": "I couldn't shake that soldier's instinct. To me, the Crodeus Seeds were just another explosive to run from on the battlefield. But the barracks chatter was that the Seeds came from another world. That the Crodeus were dragging multiple dimensions together. It sounded\u2026 no more insane than anything else that Tuesday.",
         "traits": {
+            "Ignores Cover": null,
             "Massive Splash": null
         },
         "range": "0",
@@ -2675,6 +2854,32 @@
         "name": "Seed of Extinction",
         "branch": "Neutral"
     },
+    "Shredder": {
+        "internalID": "Shredder",
+        "description": null,
+        "flavor": "We nearly rang up the engineers once for mutiny after I'd caught them fucking with the Shredders. It looked a lot like sabotage\u2026 but\u2026 they'd found out if you played with the speed of the blades, they sounded like a mechanical chorus. They talked about making a show for the civilians. Like seeing a squad of shrieking drones would somehow distract them from the death and destruction\u2026",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Shredder.png",
+        "name": "Shredder",
+        "branch": "Cyber"
+    },
     "Shiraki Cruise Missile": {
         "internalID": "ShirakiCruiseMissile",
         "description": null,
@@ -2683,7 +2888,7 @@
             "Indirect Fire": null,
             "Large Splash": null
         },
-        "range": "12",
+        "range": "9",
         "innateStats": {
             "accuracy": {
                 "operator": "min",
@@ -2711,6 +2916,7 @@
         "description": null,
         "flavor": "Plangent Orolos lost all hearing during their transfiguration. Anyway, the bass rumble of their guns was so powerful that it would have blown their heads off. Didn't figure Voice Cultists would take such an interest in mechanisms\u2026 but who am I kidding? The Voice loves a megaphone.",
         "traits": {
+            "Concussive": null,
             "Splash": null
         },
         "range": "2",
@@ -2798,7 +3004,7 @@
             "Massive Splash": null,
             "Slow Priming": null
         },
-        "range": "6",
+        "range": "3",
         "innateStats": {
             "armorPenetration": {
                 "operator": "base",
@@ -2816,6 +3022,63 @@
         "iconPath": "Zephon\\Icons\\Weapons\\SingularityBlade.png",
         "name": "Singularity Blade",
         "branch": "Cyber"
+    },
+    "Sniper Rifle": {
+        "internalID": "SniperRifle",
+        "description": null,
+        "flavor": "\u201cIn the end, it's just breathing,\u201d said one veteran sniper on an Abkhan hunt. \u201cAiming is easy. But to land a clean shot you have to exhale in just the right way as you pull the trigger. Pain in the ass to do with the stink of Bleed or hot volcanic air filling your lungs\u2026\u201d",
+        "traits": {
+            "Sniper": null
+        },
+        "range": "3",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SniperRifle.png",
+        "name": "Sniper Rifle",
+        "branch": "Human"
+    },
+    "Something Wicked": {
+        "internalID": "SomethingWicked",
+        "description": null,
+        "flavor": "Normally you'd bristle at how little work is getting done, but you're too pleased by the Ringmaster's real gift: a code phrase that, when invoked, will cause one of these Erelim angels to strike from the shadows and slit your enemy's throats.",
+        "traits": {
+            "Crippling": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\SomethingWicked.png",
+        "name": "Something Wicked",
+        "branch": "Neutral"
     },
     "Gungnir": {
         "internalID": "Spjut",
@@ -2852,6 +3115,10 @@
         },
         "range": "1",
         "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 12.0
+            },
             "armorPenetration": {
                 "operator": "base",
                 "value": 0.0
@@ -2894,6 +3161,37 @@
         "iconPath": "Zephon\\Icons\\Weapons\\Subjugator.png",
         "name": "Subjugator",
         "branch": "Acrin"
+    },
+    "Suicide Drones": {
+        "internalID": "SuicideDrones",
+        "description": null,
+        "flavor": "These things weren't \u201csuicide\u201d drones. \u201cSuicide\u201d is something only the living can do. Humans, Acrin, maybe Voice cultists, but not machines. Not toys that were grenades on wings. Idiots. Couldn't ever get them to change the name.",
+        "traits": {
+            "Indirect Fire": null,
+            "Splash": null
+        },
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Items\\SuicideDrones.png",
+        "name": "Suicide Drones",
+        "branch": "Neutral"
     },
     "Surthodai's Hand": {
         "internalID": "SurthodaisHand",
@@ -2978,6 +3276,7 @@
         "flavor": "There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition.",
         "traits": {
             "Fusion Warhead": "FusionWarhead",
+            "Ignores Cover": null,
             "Massive Splash": null
         },
         "range": "0",
@@ -3001,37 +3300,6 @@
         },
         "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
         "name": "Tactical Nuclear Missile",
-        "branch": "Neutral"
-    },
-    "Tactical Nuclear Missile (Adjacent)": {
-        "internalID": "TacticalNuclearMissileAdjacent",
-        "description": null,
-        "flavor": "There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition.",
-        "traits": {
-            "Fusion Warhead": "FusionWarhead",
-            "Massive Splash": null
-        },
-        "range": "0",
-        "innateStats": {
-            "accuracy": {
-                "operator": "min",
-                "value": 12.0
-            },
-            "armorPenetration": {
-                "operator": "base",
-                "value": 9.0
-            },
-            "attacks": {
-                "operator": "base",
-                "value": 0.5
-            },
-            "damage": {
-                "operator": "base",
-                "value": 24.0
-            }
-        },
-        "iconPath": "Zephon\\Icons\\Actions\\TacticalNuclearMissile.png",
-        "name": "Tactical Nuclear Missile (Adjacent)",
         "branch": "Neutral"
     },
     "The Fog": {
@@ -3090,7 +3358,9 @@
         "internalID": "VorodaiProselyte",
         "description": null,
         "flavor": "One person could never hope to summon a Vorodai on their own. But a piece of their power? A silver claw that reached out from the Bleed to slice at your enemy? That was good enough.",
-        "traits": {},
+        "traits": {
+            "Indirect Fire": null
+        },
         "range": "2",
         "innateStats": {
             "accuracy": {
@@ -3120,6 +3390,7 @@
         "flavor": "Leviathans inhale air as we do. But when they open their titanic maws and exhale\u2014and they exhale impossibly slowly\u2014their inhuman innards ravage the land around them. Even the most vile human being has something to offer the Earth. All these beasts do is take in our air and break our bodies in exchange.",
         "traits": {
             "Cone": null,
+            "Corrosive": null,
             "Large Splash": null
         },
         "range": "1",

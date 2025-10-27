@@ -1,2 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait visibleOnUnit="1"/>
+<trait visibleOnUnit="1">
+	<onUnitDisappeared>
+		<unit>
+			<area affect="Tile">
+				<modifiers>
+					<modifier effectDescription="OnDeath" visible="0">
+						<conditions>
+							<sourcePlayer>
+								<branch name="Cyber"/>
+							</sourcePlayer>
+						</conditions>
+						<effects>
+							<addFeature type="AdvancedCyberCache"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="OnDeath" visible="0">
+						<conditions>
+							<sourcePlayer>
+								<branch name="Human"/>
+							</sourcePlayer>
+						</conditions>
+						<effects>
+							<addFeature type="AdvancedHumanCache"/>
+						</effects>
+					</modifier>
+					<modifier effectDescription="OnDeath" visible="0">
+						<conditions>
+							<sourcePlayer>
+								<branch name="Voice"/>
+							</sourcePlayer>
+						</conditions>
+						<effects>
+							<addFeature type="AdvancedVoiceCache"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onUnitDisappeared>
+</trait>

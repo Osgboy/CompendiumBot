@@ -47,18 +47,11 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
-		<appear>
-			<model>
-				<action responseSound=""/>
-			</model>
-		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/KryptArchaiAttack"
 						beginFire="1.0"
 						endFire="2.0"
-						responseSound="Responses/Units/KryptArchaiAttack"
-						responseSoundCount="3"
 						sound="Units/KryptArchaiAttackParticle"/>
 			</model>
 		</attack>
@@ -71,58 +64,24 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/KryptArchaiImpact"
-						responseSound="Responses/Units/KryptArchaiEndureHighDamage"/> 
+				<action animation="Units/KryptArchaiImpact"/> 
 			</model>
 		</endure>
-		<holdPosition>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiHoldPosition"/>
-			</model>
-		</holdPosition>
-		<holdPositionUntilHealed>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiHoldPosition"/>
-			</model>
-		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/KryptArchaiIdle"
 						animationCount="2"/>
 			</model>	
 		</idle>
-		<kill>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiKill"/>
-			</model>
-		</kill>
 		<move>
 			<model>
 				<action animation="Units/KryptArchaiMove"
-						responseSound="Responses/Units/KryptArchaiMove"
-						responseSoundCount="3"
 						sound="Units/KryptArchaiMove"
 						soundCount="1"
 						soundFadeInDuration="0.25"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
-		<poke>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiPoke"/>
-			</model>
-		</poke>
-		<select>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiSelect"
-						responseSoundCount="3"/>
-			</model>
-		</select>
-		<skip>
-			<model>
-				<action responseSound="Responses/Units/KryptArchaiHoldPosition"/>
-			</model>
-		</skip>
 		<unitCast name="ParticleRepair"
 				cooldown="2"
 				rank="-1"
@@ -130,7 +89,6 @@
 			<model>
 				<cast animation="Units/KryptArchaiAbility0"
 						blueprint="Effects/ParticleRepair"
-						responseSound="Responses/Units/KryptArchaiParticleRepair"
 						sound="Units/KryptArchaiAbility"/>
 			</model>
 			<beginTargets>
@@ -186,7 +144,6 @@
 				rankMax="2">
 			<model>
 				<cast animation="Units/KryptArchaiAbility0"
-						responseSound="Responses/Units/KryptArchaiParticleBarrier"
 						sound="Units/KryptArchaiAbility"/>
 			</model>
 			<beginTargets>
@@ -228,7 +185,6 @@
 			<model>
 				<cast animation="Units/KryptArchaiAbility0"
 						blueprint="Effects/SystemOverload"
-						responseSound="Responses/Units/KryptArchaiSystemOverload"
 						sound="Units/KryptArchaiAbility"/>
 			</model>
 			<beginTargets>
@@ -273,7 +229,6 @@
 			<model>
 				<cast animation="Units/KryptArchaiAbility1"
 						blueprint="Effects/Entomb"
-						responseSound="Responses/Units/KryptArchaiEntomb"
 						sound="Units/KryptArchaiElite"/>
 			</model>
 			<beginTargets>

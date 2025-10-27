@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Cyber" dlc="DLC1" icon="Units/IthurielHarbinger" portrait="Units/IthurielHarbinger">
+	<model>
+		<unit explosionsBlueprint="Effects/MediumCyberExplosions"
+		 		explosionsBone="Body"
+				material="Units/IthurielHarbinger"
+				effectsBlueprint="Effects/IthurielHarbinger"
+				mesh="Units/IthurielHarbinger"
+				normalWeight="0.1"
+				position="0 0 0"
+				scale="0.7 0.7 0.7"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="PlasmaCannon" count="2">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"
+						muzzleCount="2"
+						fireInterval="1.2"/>
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon bone="Drone_Body"
+						material="Units/IthurielHarbingerDrone"
+						mesh="Units/IthurielHarbingerDrone"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<chipsCost base="15"/> <!-- %chipsCost base tier=7 factor=0.25 -->
+				<chipsUpkeep base="0.75"/> <!-- %chipsUpkeep base tier=7 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=7 factor=0.5 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=7 factor=0.5 -->
+				<moraleMax base="10"/>
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseCyberScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/IthurielHarbingerAttack"
+						beginFire="0.7"
+						endFire="1.4"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/IthurielHarbingerDie0"
+						 groundImpact="1.5"
+						 sound="Units/IthurielHarbingerDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/IthurielHarbingerImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/IthurielHarbingerIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/IthurielHarbingerMove"
+						sound="Units/IthurielHarbingerMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<unitCast name="PathfinderDrone"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/IthurielHarbingerAbility0"
+						blueprint="Effects/PathfinderDrone"
+						sound="Units/IthurielHarbingerPathfinderDroneMech"
+						targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target rangeMin="1" rangeMax="2" sighted="0">
+					<areas>
+						<area affect="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+											<noSighted/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

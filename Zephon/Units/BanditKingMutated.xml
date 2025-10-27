@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" icon="Units/PhenarisEpicurean"
+		portrait="Units/PhenarisEpicurean">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="80"
+				material="Units/PhenarisEpicurean"
+				mesh="Units/PhenarisEpicurean"
+				normalWeight="0.1"
+				scale="1 1 1"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="AxiomaticPendulum">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+		<weapon type="ParadoxTheriac" requiredUpgrade="ParadoxTheriac">
+			<models>
+				<flamerWeapon muzzleBone="Shield"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="8"/>
+				<armor base="6"/>
+				<attacks mul="3"/>
+				<dimensionalEchoesCost base="6"/> <!-- %dimensionalEchoesCost base tier=9 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.3"/> <!-- %dimensionalEchoesUpkeep base tier=9 factor=0.05 -->
+				<antimatterCost base="6"/> <!-- %antimatterCost base tier=9 factor=0.05 -->
+				<antimatterUpkeep base="0.3"/> <!-- %antimatterUpkeep base tier=9 factor=0.05 -->
+				<foodCost base="30"/> <!-- %foodCost base tier=9 factor=0.25 -->
+				<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=9 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="32"/> <!-- %hitpointsMax base tier=9 -->
+				<moraleMax base="10"/>
+				<movementMax base="4"/>
+				<productionCost base="54.0"/> <!-- %productionCost base tier=9 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/PhenarisEpicureanAttack"
+						beginFire="1"
+						endFire="2"
+						chargeAnimation="Units/PhenarisEpicureanCharge"
+						chargeBeginFire="0.2"
+						chargeEndFire="1.0"
+						meleeAnimation="Units/PhenarisEpicureanMelee"
+						meleeBeginSwing="0.3"
+						meleeEndSwing="0.4"
+						meleeSound="Units/PhenarisEpicureanMelee"
+						meleeSoundCount="3"
+						responseSound="Responses/Units/PhenarisEpicureanAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/PhenarisEpicureanDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/PhenarisEpicureanDie"
+						voiceSoundCount="5"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/PhenarisEpicureanImpact"
+						responseSound="Responses/Units/PhenarisEpicureanEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/PhenarisEpicureanIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/PhenarisEpicureanMove"
+						sound="Units/PhenarisEpicureanMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"
+						responseSound="Responses/Units/PhenarisEpicureanMove"
+						responseSoundCount="3"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/PhenarisEpicureanHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="Masochism"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="10"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast animation="Units/PhenarisEpicureanAbility0"
+						blueprint="Effects/Masochism"
+						responseSound="Responses/Units/PhenarisEpicureanMasochism"
+						sound="Units/PhenarisEpicureanMasochism"
+						soundCount="3"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="Masochism" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Deathshriek" requiredUpgrade="Deathshriek"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
+		<trait type="VoidDrifter"/>
+	</traits>
+</unit>

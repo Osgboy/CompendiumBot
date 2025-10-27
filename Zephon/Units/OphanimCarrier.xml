@@ -158,7 +158,7 @@
 								<modifier>
 									<effects>
 										<addUnit type="RepairDrone"
-												appearFromSourceUnit="1"
+												spawnedBySourceUnit="1"
 												avoidBleed="0"
 												avoidCity="0"
 												avoidWater="0"/>
@@ -215,7 +215,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="EMPDrone" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0"/>
+										<addUnit type="EMPDrone" spawnedBySourceUnit="1" avoidBleed="0" avoidCity="0"/>
 									</effects>
 								</modifier>
 							</modifiers>

@@ -4,14 +4,30 @@
 		<unit>
 			<area affect="Unit">
 				<modifiers endure="0">
-					<modifier effectDescription="EachTurn">
+					<modifier effectDescription="EachTurnOnCenterTileAndOnAdjacentTiles">
 						<conditions>
+							<tile>
+								<feature type="BlackHole"/>
+							</tile>
 							<unit>
 								<notCargo/>
 							</unit>
 						</conditions>
 						<effects>
 							<weaponDamage weapon="BlackHole"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<conditions>
+							<tile>
+								<noFeature type="BlackHole"/>
+							</tile>
+							<unit>
+								<notCargo/>
+							</unit>
+						</conditions>
+						<effects>
+							<weaponDamage weapon="BlackHole" factor="0.5"/>
 						</effects>
 					</modifier>
 				</modifiers>

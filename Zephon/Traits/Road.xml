@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait icon="Features/Road" visibleOnUnit="1">
+<trait category="Buff" icon="Features/Road" visibleOnUnit="1">
 	<modifiers>
 		<modifier>
 			<conditions>
+				<unit>
+					<noTrait type="Flying"/>
+					<noTrait type="Titan"/>
+				</unit>
 				<tile>
 					<noFeature type="Fire"/>
 					<noFeature type="Bleed"/>
 				</tile>
-				<unit>
-					<noTrait type="Flying"/>
-					<noTrait type="Hovering"/>
-					<noTrait type="Titan"/>
-				</unit>
 			</conditions>
 			<effects>
 				<movementCost max="0.75"/>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<flamerWeapon fireSound="Weapons/Baleblast"
+				fireSoundCount="4"
+				flamesBlueprint="Effects/Baleblast"
+		 		flamesEmitterBlueprint="Effects/BaleblastEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="2"/> <!-- %rangedArmorPenetration add armorPiercing=4 -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait name="Drukhari/AssaultWeaponBonus" requiredUpgrade="Drukhari/AssaultWeaponBonus"/>
+		<trait name="Assault"/>
+		<trait name="SoulBlaze"/>
+	</traits>
+</weapon>

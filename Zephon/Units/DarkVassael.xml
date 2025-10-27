@@ -27,16 +27,16 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
-				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
+				<algaeCost base="10"/> <!-- %algaeCost base tier=5 factor=0.333 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=5 factor=0.333 -->
 				<armor base="0"/>
-				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
-				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<foodCost base="10"/> <!-- %foodCost base tier=5 factor=0.33 3-->
+				<foodUpkeep base="0.5"/> <!-- %foodUpkeep base tier=5 factor=0.333 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
 				<moraleMax base="8"/>
 				<movementMax base="3"/>
-				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -159,7 +159,7 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="ShochitrisLair" appearFromSourceUnit="1" avoidBleed="0" avoidCity="0"/>
+										<addUnit type="ShochitrisLair" spawnedBySourceUnit="1" avoidBleed="0" avoidCity="0"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -179,11 +179,24 @@
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseAlgaeStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 	</actions>
 	<traits>
 		<trait type="Agile"/>
 		<trait type="Biological"/>
 		<trait type="Large"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
 	</traits>
 </unit>

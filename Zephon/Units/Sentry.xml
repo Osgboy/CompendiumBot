@@ -108,6 +108,11 @@
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/SentryPoke"/>
+			</model>
+		</poke>
 		<select>
 			<model>
 				<action responseSound="Responses/Units/SentrySelect"

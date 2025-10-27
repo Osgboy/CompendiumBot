@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="AgainstZephonTitanUnits">
+			<conditions>
+ 				<targetUnit ignoreForTraitVisibility="1">
+					<trait type="Titan"/>
+					<faction name="Zephon"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damage mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -6,15 +6,24 @@
 				<moraleLoss add="0.25"/>
 			</effects>
 		</modifier>
-		<modifier requiredUpgrade="HeartfeltLossUpgrade">
-			<effects>
-				<moraleLoss add="-0.1"/>
-			</effects>
-		</modifier>
 		<modifier requiredUpgrade="HeartfeltLossUpgrade2">
 			<effects>
-				<moraleLoss add="-0.1"/>
+				<canBeShaken add="-1"/>
 			</effects>
 		</modifier>
 	</modifiers>
+	<onMoraleLostFromDeath>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnMoraleLossFromDeath" 
+							requiredUpgrade="HeartfeltLossUpgrade">
+						<effects>
+							<addTrait type="HeartfeltLossUpgrade" duration="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onMoraleLostFromDeath>
 </trait>

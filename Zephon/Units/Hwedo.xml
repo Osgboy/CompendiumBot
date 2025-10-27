@@ -57,19 +57,11 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
-		<appear>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerAppear"
-						responseSoundCount="1"/>
-			</model>
-		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/IshimEnforcerAttack"
 						beginFire="1.3"
-						endFire="2.0"
-						responseSound="Responses/Units/IshimEnforcerAttack"
-						responseSoundCount="3"/>
+						endFire="2.0"/>
 			</model>
 		</attack>
 		<die>
@@ -85,71 +77,29 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/IshimEnforcerImpact"
-						responseSound="Responses/Units/IshimEnforcerEndureHighDamage"
-						responseSoundCount="1"/> 
+				<action animation="Units/IshimEnforcerImpact"/> 
 			</model>
 		</endure>
-		<holdPosition>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
-						responseSoundCount="1"/>
-			</model>
-		</holdPosition>
-		<holdPositionUntilHealed>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
-						responseSoundCount="1"/>
-			</model>
-		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/IshimEnforcerIdle"
 						animationCount="3"/>
 			</model>	
 		</idle>
-		<kill>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerKill"
-						responseSoundCount="1"/>
-			</model>
-		</kill>
 		<move>
 			<model>
 				<action animation="Units/IshimEnforcerMove"
-						responseSound="Responses/Units/IshimEnforcerMove"
-						responseSoundCount="3"
 						sound="Units/IshimEnforcerMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
-		<poke>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerPoke"
-						responseSoundCount="1"/>
-			</model>
-		</poke>
-		<select>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerSelect"
-						responseSoundCount="3"/>
-			</model>
-		</select>
-		<skip>
-			<model>
-				<action responseSound="Responses/Units/IshimEnforcerHoldPosition"
-						responseSoundCount="1"/>
-			</model>
-		</skip>
 		<unitCast name="CauterizeWounds"
 				cooldown="1">
 			<model>
 				<cast animation="Units/IshimEnforcerAbility"
 						blueprint="Effects/CauterizeWounds"
-						responseSound="Responses/Units/IshimEnforcerCauterizeWounds"
-						responseSoundCount="1"
 						sound="Units/IshimEnforcerCauterizeWounds"
 						soundCount="3"/>
 			</model>

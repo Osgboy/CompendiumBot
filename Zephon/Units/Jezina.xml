@@ -14,7 +14,7 @@
 				<projectileWeapon muzzleBone="Muzzle"/>
 			</models>
 		</weapon>
-		<weapon type="None" requiredUpgrade="Minelayer">
+		<weapon type="None">
 			<models>
 				<weapon animationSuffix="Minelayer"
 						mesh="Units/OutriderMinelayer"
@@ -47,18 +47,11 @@
 		</modifier>
 	</strategyModifiers>	
 	<actions>
-		<appear>
-			<model>
-				<action responseSound="Responses/Units/OutriderAppear"/>
-			</model>
-		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/OutriderAttack"
 						beginFire="1.0"
-						endFire="2.3"
-						responseSound="Responses/Units/OutriderAttack"
-						responseSoundCount="3"/>
+						endFire="2.3"/>
 			</model>		
 		</attack>
 		<die>
@@ -69,58 +62,24 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/OutriderImpact"
-						responseSound="Responses/Units/OutriderEndureHighDamage"/> 
+				<action animation="Units/OutriderImpact"/> 
 			</model>
 		</endure>
-		<holdPosition>
-			<model>
-				<action responseSound="Responses/Units/OutriderHoldPosition"/>
-			</model>
-		</holdPosition>
-		<holdPositionUntilHealed>
-			<model>
-				<action responseSound="Responses/Units/OutriderHoldPosition"/>
-			</model>
-		</holdPositionUntilHealed>
 		<idle>
 			<model>
 				<idle animation="Units/OutriderIdle"
 						animationCount="3"/>
 			</model>
 		</idle>
-		<kill>
-			<model>
-				<action responseSound="Responses/Units/OutriderKill"/>
-			</model>
-		</kill>
 		<move>
 			<model>
 				<action animation="Units/OutriderMove"
-						responseSound="Responses/Units/OutriderMove"
-						responseSoundCount="3"
 						sound="Units/OutriderMove"
 						soundCount="1"
 						soundFadeInDuration="0.25"
 						soundFadeOutDuration="0.25"/>
 			</model>
 		</move>
-		<poke>
-			<model>
-				<action responseSound="Responses/Units/OutriderPoke"/>
-			</model>
-		</poke>
-		<select>
-			<model>
-				<action responseSound="Responses/Units/OutriderSelect"
-						responseSoundCount="3"/>
-			</model>
-		</select>
-		<skip>
-			<model>
-				<action responseSound="Responses/Units/OutriderHoldPosition"/>
-			</model>
-		</skip>
 		<unitCast name="Recon"
 		 		consumedActionPoints="0"
 				consumedMovement="0"
@@ -129,7 +88,6 @@
 				requiredMovement="0">
 			<model>
 				<cast casterBlueprint="Effects/Radar"
-						responseSound="Responses/Units/OutriderRecon"
 						sound="Actions/Recon"/>
 			</model>
 			<beginTargets>
@@ -159,12 +117,10 @@
 		 		consumedActionPoints="0"
 				consumedMovement="0"
 				cooldown="5"
-				requiredUpgrade="Minelayer"
 				requiredActionPoints="0"
 				requiredMovement="0">
 			<model>
 				<action animation="Units/OutriderAbility0"
-						responseSound="Responses/Units/OutriderMinelayer"
 						sound="Units/OutriderMinelayer"
 						soundCount="1"/>
 			</model>
@@ -201,6 +157,5 @@
 		<trait type="Large"/>
 		<trait type="Mechanical"/>
 		<trait type="Transport"/>
-		<trait type="MilitaryBackgroundUpgrade" requiredUpgrade="MilitaryBackgroundUpgrade"/>
 	</traits>
 </unit>

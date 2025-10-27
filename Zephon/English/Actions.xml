@@ -27,6 +27,8 @@
 <entry name="BreedDeformities2Flavor" value="&lt;string name='Actions/BreedDeformitiesFlavor'/&gt;"/>
 <entry name="Bombardment" value="Bombardment"/>
 <entry name="BuyHint" value="&lt;style name='Title'/&gt;Buy %1%%2%&lt;style name='Default'/&gt;&lt;br/&gt;&lt;style color='GUI/Red'/&gt;%3%%4%&lt;style name='Default'/&gt;%5%%6%%7%%8%%10%&lt;style name='Italic'/&gt;%11%&lt;style name='Small'/&gt;%12%"/>
+<entry name="BuyHintMax" value="[&lt;string name='Controls/Alt'/&gt;+&lt;string name='Controls/MouseLeft'/&gt;] to buy max (%1% for %2%)."/>
+<entry name="BuyHintMore" value="[&lt;string name='Controls/Control'/&gt;+&lt;string name='Controls/MouseLeft'/&gt;] to buy ×10 (%1% for %2%)."/>
 <entry name="CallTheAfflicted" value="Call the Afflicted"/>
 <entry name="CausalWell" value="&lt;string name='Traits/CausalWell'/&gt;"/>
 <entry name="CausalWellFlavor" value="&lt;string name='Traits/CausalWellFlavor'/&gt;"/>
@@ -34,6 +36,7 @@
 <entry name="CarrionGlut" value="&lt;string name='Traits/CarrionGlut'/&gt;"/>
 <entry name="CarrionGlutFlavor" value="&lt;string name='Traits/CarrionGlutFlavor'/&gt;"/>
 <entry name="CarrionGlutProperties" value="&lt;icon texture='GUI/Bullet'/&gt;&lt;style color='GUI/Green'/&gt;+4&lt;style color='Default'/&gt; &lt;string name='Attributes/HitpointsIcon'/&gt; hitpoints each time a unit dies"/>
+<entry name="Cataphora" value="Cataphora"/>
 <entry name="CauterizeWounds" value="Cauterize Wounds"/>
 <entry name="CherubicHallowing" value="Cherubic Hallowing"/>
 <entry name="ChoralCelerity" value="Choral Celerity"/>
@@ -53,6 +56,8 @@
 <entry name="ConstructFarmFlavor" value="&lt;string name='Buildings/FoodFlavor'/&gt;"/>
 <entry name="ConstructPlayerAction" value="&lt;string name='Actions/ProduceUnit'/&gt;"/>
 <entry name="ConstructPlayerActionHint" value="&lt;string name='Actions/ProduceUnitHint'/&gt;"/>
+<entry name="ConstructRadioTelescope" value="Construct &lt;string name='Units/RadioTelescope'/&gt;"/>
+<entry name="ConstructRadioTelescopeFlavor" value="&lt;string name='Units/RadioTelescopeFlavor'/&gt;"/>
 <entry name="ConstructRoad" value="Construct Road"/>
 <entry name="ConstructTesseraCore" value="Construct &lt;string name='Units/TesseraCore'/&gt;"/>
 <entry name="ConstructTesseraCoreFlavor" value="&lt;string name='Units/TesseraCoreFlavor'/&gt;"/>
@@ -90,6 +95,7 @@
 <entry name="EndbringersReversal" value="Endbringer's Reversal"/>
 <entry name="EndbringersReversalProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Swaps positions with target unit"/>
 <entry name="EnhancedProbabilityAugment" value="Enhanced Probability Augment"/>
+<entry name="EnrichedAlloys" value="Enriched Alloys"/>
 <entry name="Entomb" value="Entomb"/>
 <entry name="EradicateBleed" value="Eradicate Bleed"/>
 <entry name="EvasionProcessor" value="Evasion Processor"/>
@@ -126,9 +132,13 @@
 <entry name="HoldPositionUntilHealedProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Holds position until fully healed&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%1% &lt;string name='Attributes/HitpointsIcon'/&gt; hitpoints each turn from traits&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/HitpointsIcon'/&gt; hitpoints each turn from healing rate while no damage taken and full movement and action points remaining&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3%"/>
 <entry name="HolyBond" value="Holy Bond"/>
 <entry name="HolyInferno" value="Holy Inferno"/>
+<entry name="HordeMandate" value="Horde Mandate"/>
 <entry name="HymnOfDecay" value="Hymn of Decay"/>
 <entry name="IcarusSatellite" value="Icarus Satellite"/>
+<entry name="ImmaculateDelivery" value="Immaculate Delivery"/>
+<entry name="ImmaculateDeliveryProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Teleports to target sighted tile adjacent to allied unit"/>
 <entry name="InevitableEnd" value="Inevitable End"/>
+<entry name="InhumanKindness" value="Inhuman Kindness"/>
 <entry name="InterferenceProtocols" value="Interference Protocols"/>
 <entry name="InternalRepairStation" value="Internal Repair Station"/>
 <entry name="IronWill" value="Iron Will"/>
@@ -145,10 +155,13 @@
 <entry name="MarkTarget" value="Mark Target"/>
 <entry name="Masochism" value="Masochism"/>
 <entry name="Minelayer" value="Minelayer"/>
+<entry name="MothersFavor" value="Mother's Favor"/>
+<entry name="MothersScorn" value="Mother's Scorn"/>
 <entry name="Move" value="Move"/>
 <entry name="NanomachineAcceleratorAugment" value="Nanomachine Accelerator Augment"/>
 <entry name="NeverSurrender" value="“Never Surrender!”"/>
 <entry name="Nightmare" value="Nightmare"/>
+<entry name="NitroBoost" value="Nitro Boost"/>
 <entry name="NomadicLife" value="Nomadic Life"/>
 <entry name="NomadicLifeProperties" value="&lt;string name='Actions/FoundCityProperties'/&gt;&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Double cost when not controlled by &lt;icon texture='Icons/Factions/Chieftess' color='Factions/Chieftess' height='20'/&gt;&lt;nbsp/&gt;&lt;string name='Factions/Chieftess'/&gt;"/>
 <entry name="OrbitalDeployment" value="Orbital Deployment"/>
@@ -160,6 +173,9 @@
 <entry name="Pestilence" value="Pestilence"/>
 <entry name="ParticleBarrier" value="Particle Barrier"/>
 <entry name="ParticleRepair" value="Particle Repair"/>
+<entry name="PathfinderDrone" value="Pathfinder Drone"/>
+<entry name="PayResources/CajoleAnchorite" value="Parlay with the Anchorite"/>
+<entry name="PayResources/CajoleAnchoriteFlavor" value="&lt;string name='Quests/Reyndverra/Intro3'/&gt;"/>
 <entry name="PayResources/ContactAugur" value="Contact the Twisted Augur"/>
 <entry name="PayResources/ContactAugurFlavor" value="&lt;string name='Quests/ChildOfTheNewWorld/Intro/ContactAugurFlavor'/&gt;"/>
 <entry name="PayResources/FormFunction" value="Imprison IronFeather"/>
@@ -168,6 +184,8 @@
 <entry name="PayResources/MassConfessionFlavor" value="&lt;string name='Quests/WhispersOfAFalseProphet/Intro/TakeConfession2'/&gt;"/>
 <entry name="PayResources/MeetYourMaker" value="Pay Yetunde"/>
 <entry name="PayResources/MeetYourMakerFlavor" value="&lt;string name='Quests/MeetYourMaker/DefendSuccess2'/&gt;"/>
+<entry name="PayResources/StrikeADeal" value="Pay the Constellation"/>
+<entry name="PayResources/StrikeADealFlavor" value="&lt;string name='Quests/ConcordatCompromised/ComplyCarefullySuccess2'/&gt;"/>
 <entry name="PayResources/ThePulledThread" value="Pay Concordat"/>
 <entry name="PayResources/ThePulledThreadFlavor" value="&lt;string name='Quests/ThePulledThread/EnemyGlandsSuccess/RecoverTetherFlavor'/&gt;"/>
 <entry name="PayResources/TheSpaceEngine" value="Pay Zandra Kyne"/>
@@ -175,6 +193,12 @@
 <entry name="PayResources/ThickerThanWater" value="Package Resources"/>
 <entry name="PayResources/ThickerThanWaterFlavor" value="&lt;string name='Quests/ThickerThanWater/GatherResources'/&gt;"/>
 <entry name="PowerSpike" value="Power Spike"/>
+<entry name="ProduceChild/Cyber" value="Try Again"/>
+<entry name="ProduceChild/CyberFlavor" value="&lt;string name='Quests/ImpossibleConception/MotherExperiment1/TryAgain2'/&gt;"/>
+<entry name="ProduceChild/Mix" value="Attempt the Impossible"/>
+<entry name="ProduceChild/MixFlavor" value="&lt;string name='Quests/ImpossibleConception/MotherExperiment3/AttemptTheImpossible2'/&gt;"/>
+<entry name="ProduceChild/Voice" value="Try for a Child"/>
+<entry name="ProduceChild/VoiceFlavor" value="&lt;string name='Quests/ImpossibleConception/FindYourTrueLoveSuccess2'/&gt;"/>
 <entry name="ProduceUnit" value="%1%"/>
 <entry name="ProduceUnitHint" value="&lt;style name='Title'/&gt;%1%%2%&lt;style name='Default'/&gt;&lt;br/&gt;&lt;style color='GUI/Red'/&gt;%3%%4%&lt;style name='Default'/&gt;%5%%6%%7%%8%%9%%10%&lt;style name='Italic'/&gt;%11%&lt;style name='Small'/&gt;%12%"/>
 <entry name="QuarryFeed" value="&lt;string name='Traits/QuarryFeed'/&gt;"/>
@@ -196,6 +220,8 @@
 <entry name="SatelliteScan" value="Satellite Scan"/>
 <entry name="SeedOfExtinction" value="Seed of Extinction"/>
 <entry name="SellHint" value="&lt;style name='Title'/&gt;Sell %1%%2%&lt;style name='Default'/&gt;&lt;br/&gt;&lt;style color='GUI/Red'/&gt;%3%%4%&lt;style name='Default'/&gt;%5%%6%%7%%8%%10%&lt;style name='Italic'/&gt;%11%&lt;style name='Small'/&gt;%12%"/>
+<entry name="SellHintMax" value="[&lt;string name='Controls/Alt'/&gt;+&lt;string name='Controls/MouseLeft'/&gt;] to sell all (%1% for %2%)."/>
+<entry name="SellHintMore" value="[&lt;string name='Controls/Control'/&gt;+&lt;string name='Controls/MouseLeft'/&gt;] to sell ×10 (%1% for %2%)."/>
 <entry name="SereneLesion" value="Serene Lesion"/>
 <entry name="SereneLesionProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Teleports from Bleed to target sighted Bleed tile"/>
 <entry name="SetRallyPoint" value="Set Rally Point"/>
@@ -206,17 +232,22 @@
 <entry name="Sleep" value="Sleep"/>
 <entry name="SleepDescription" value="&lt;icon texture='GUI/Bullet'/&gt;Sleeps production until canceled"/>	
 <entry name="SmokeLauncher" value="Smoke Launcher"/>
+<entry name="SomethingWicked" value="&lt;string name='Weapons/SomethingWicked'/&gt;"/>
+<entry name="SomethingWickedFlavor" value="&lt;string name='Quests/CircusCambion/ErelimPuppets2'/&gt;"/>
 <entry name="Soundquake" value="Soundquake"/>
 <entry name="StickyFoam" value="Sticky Foam"/>
 <entry name="Supplication" value="Supplication"/>
 <entry name="SurvivalTraining" value="Survival Training"/>
 <entry name="Swallow" value="Swallow"/>
+<entry name="SystemicReset" value="Systemic Reset"/>
 <entry name="SystemOverload" value="System Overload"/>
 <entry name="TacticalNuclearMissile" value="Tactical Nuclear Missile"/>
 <entry name="TakeCover" value="“Take Cover!”"/>
 <entry name="TameAbkluth" value="Tame Abkluth"/>
 <entry name="TargetingRelay" value="Targeting Relay"/>
 <entry name="TeleportProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Teleports to target sighted tile"/>
+<entry name="TempleOfCrla" value="Madrigal of Cr'la"/>
+<entry name="TempleOfCrlaFlavor" value="&lt;string name='Features/TempleOfCrlaFlavor'/&gt;"/>
 <entry name="Terraform" value="Terraform"/>
 <entry name="TerraformProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Submenu"/>
 <entry name="TheDeepWays" value="Profane Pilgrimage"/>
@@ -226,9 +257,11 @@
 <entry name="ThePlague" value="The Plague"/>
 <entry name="ThePlagueFlavor" value="&lt;string name='Quests/TheLastDaysOfEarth/ThePlague2'/&gt;"/>
 <entry name="ThereIsHope" value="There Is Hope"/>
+<entry name="ThrashEm" value="“Thrash 'em!”"/>
 <entry name="TimeShift" value="Time Shift"/>
 <entry name="TormentOfTheVoice" value="Torment of the Voice"/>
 <entry name="TormentOfTheVoiceFlavor" value="&lt;string name='Quests/TheDream/AskAnchorite'/&gt;"/>
+<entry name="Transubstantiation" value="Transubstantiation"/>
 <entry name="Tune" value="Tune"/>
 <entry name="Tunnel" value="Tunnel"/>
 <entry name="TunnelProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Moves underground to target sighted tile"/>
@@ -264,6 +297,7 @@
 <entry name="BombardmentFlavor" value="Some things never changed with war. One was that if you wanted a reliable artillery strike, you needed a good spotter. We trusted our commanders to call the shots… not just because they could land the kill. They could also make sure our troops got out of the blast zone."/>
 <entry name="BreedDeformitiesFlavor" value="In the belly of a Shoch'itris you would find bubbling pools of organic matter. There should be something sacred about life begetting life like this—but there was nothing holy in here. This beast took the refuse of our world and scraped it back together for one last life as a weapon."/>
 <entry name="CallTheAfflictedFlavor" value="The Voice granted the Whisperer a gift: the power to create life. Not true life though, just a mockery of it. But is a Deformity any different than a mayfly? Maybe we deserved to be laughed at for thinking our lives meant anything."/>
+<entry name="CataphoraFlavor" value="A survival instinct marked the difference between a Devourer and a Deformity. That and the extra head. Deformities shambled towards death, Devourers sometimes scratched and clawed their way toward life. Catch one regenerating and you could snuff that life out with no skin off your back."/>
 <entry name="CauterizeWoundsFlavor" value="The first soldiers we augmented with cybernetic tech were still vulnerable to attacks on vital organs. With a little extra programming, our techs could numb their pain sensors. If they already couldn’t feel pain, there was no reason to not let them cauterize their own wounds."/>
 <entry name="CherubicHallowingFlavor" value="The Cherubim had the power to expand their shielding to other units in the area. The sensation was… comforting. Oddly pleasant. A great weapon of war wrapping you up in its embrace, offering protection, and sanctuary… while its guns pounded the enemy into mulch."/>
 <entry name="ChoralCelerityFlavor" value="Gods, what an awful day it was. We'd sprung on the Voice cultists by surprise, struck their base before they could mobilize. But a high-pitched wail came out from the Masked Hymnal and within seconds good men and women were trapped in its power. Whatever it cost them to pull that off… it cost my people more."/>
@@ -283,6 +317,7 @@
 <entry name="EchoesFromBeyondFlavor" value="The Voice knew things. Impossible things. Was it petty to simply use its premonitions to see our enemies? Or was that how the Voice drew people in? Did it show them knowledge, promise power, then offer more? The Whisperer knew. She didn’t ever say."/>
 <entry name="EndbringersReversalFlavor" value="I'd stolen scrolls that the Furtive Tribunal kept close and was minutes away from being caught by her soldiers. As the end came, I felt the pull of another world wash over me and I was sucked to a safe spot nearby. In the place I had stood was an Uzhodai worshiper, ready to slaughter the Tribunal's surprised troops."/>
 <entry name="EnhancedProbabilityAugmentFlavor" value="Gunslingers of old needed intuition to land a deadeye shot. The Operative looked to them for inspiration for this particular augment. Intuition could be… simulated. Redesigned with equations. She had such an eye for taking what made us human and recreating it with just numbers."/>
+<entry name="EnrichedAlloysFlavor" value="A bad memory always surfaced when I sat down to patch and repair my firearm. A kitchen table. My uncle cleaning his rifles. My aunt… angry. She'd told him to never bring them in the house. He screamed at her. The gun went off… and… that monster had no respect for how a honed weapon made from good material could rip through flesh and bone. He just liked how it gleamed in the sun."/>
 <entry name="EntombFlavor" value="The Archai had the power to exploit every one of your vulnerabilities all at once. If it locked you down… you couldn’t move. You could barely breathe. If there wasn’t someone who could pull you out of there, that was it, you were dead. All you could do is watch, eyes locked open, as your enemies lined up the killing blow."/>
 <entry name="EradicateBleedFlavor" value="The Voice still had to play by our laws of physics, even if it managed to bend them a little. That left the Bleed open to decontamination. ZEPHON and our techs seemed to both figure out that you could clean up the Bleed—if you were willing to risk a little close exposure."/>
 <entry name="EvasionProcessorFlavor" value="The Erelim could let her machine side take over—just a little—to walk in between the hail of bullets. She lured enemies close, thinking they could land a blow at close-quarters. But close-quarters is where the Erelim do their best work."/>
@@ -301,28 +336,35 @@
 <entry name="HiredHandsFlavor" value="The Aristocrat built out entire networks of favors he could call in. It’s something the other warlords and would-be rulers didn’t get. If you could win the loyalty of your people—by trust or with coin—you could cash it in when you most needed it, especially when producing materials or weapons."/>
 <entry name="HolyBondFlavor" value="Artillery slammed into our bunker and everything went white. Thought that was it. But for a second I saw—was it a bridge? A hand reaching for me? And then the smoke cleared. We were still standing, and an Akavish Provost lumbered above our unit. “YOUR TIME IS NOT UP!” it shrieked. “THE ONE ABOVE CALLS FOR YOUR BLADES!” The grunts around me cheered and charged. I just stood there… still feeling the brush of that outstretched hand on my palm."/>
 <entry name="HolyInfernoFlavor" value="Where did the flames come from? The Seraphim didn’t go skybound with explosive fuel like that. I dug through their schematics time after time to try and get an answer. There wasn’t one. The only clue I had was that the melody it made… always shifted frequency when it unleashed the inferno. Was that it? Did it unleash holy fire with a song?"/>
+<entry name="HordeMandateFlavor" value="The Hollow Warlord was a tactician. Not a brute like the Reavers or Busters who were all rage, all the time, he knew how to WAIT. To watch. To send in an army and let the enemy think they were inches from victory—then he gave the signal. The roar of a bike's engine. That was the sign to let go of everything you ever knew and fight. Like. Hell."/>
 <entry name="HymnOfDecayFlavor" value="When I first felt the toxic touch of this tortured hymnal I assumed there was a strategic reason for poisoning the earth like this. But after so many battles… there had to be more to it. Was it spiritual? Or was it an act of childish spite? I imagined doomed aliens lashing back at our world for daring to resist their apocalyptic mission. The thought chilled me to the bone."/>
 <entry name="IcarusSatelliteFlavor" value="The Icarus Satellite network was a weapon developed by an old world company named ICAR Corp that never got online. For too long we thought it was just a myth. Then the Rogue Operative showed up on the scene with the missing link: an authorization key that assumed she was the CEO of ICAR. Only she could call down the Icarus' firepower—even if someone killed her and took it, they'd never crack her layers of encryption on the damn thing."/>
+<entry name="ImmaculateDeliveryFlavor" value="Was it a mother's instinct? Did she remember walking children to the park, before the war? Maybe instinct like that breeds power… the power to move armies over vast distances in the blink of an eye. Like when she ported her people from the camp to the wasteland, knowing the toxic air was safer than the prison."/>
 <entry name="IncendiaryGrenadeFlavor" value="Alien, machine, human. All burned at a hot enough temperature. But the smells were different. The screams were different. No matter how you came into this world, being burned alive was a terrible way to leave it."/>
 <entry name="InevitableEndFlavor" value="A Cr'la worshiper was talking my ear off about how he could see “the threads of life” that “connected every person to this mortal coil.” I was being an ass, asked if he could cut those threads and save us a heap of trouble. He reached out, pulled at something floating over my head and I hit the ground, choking. “I can,” he said. “Oh, I can indeed.”"/>
+<entry name="InhumanKindnessFlavor" value="If you were careless, her warmth, her gaze, her kindness could drain the life out of you. But it was her heart that could give it back. Blood pumping, roaring from a great distance, but then through your veins. Through your arteries, then through your own heart, and life was restored. And you could fight on, ready to die for her."/>
 <entry name="InterferenceProtocolsFlavor" value="Machines do what you tell them to do, not what you want them to do. With the right programming, you could tell your enemy’s machines all kinds of interesting lies. They’d think up was down, friend was foe, and light was dark. Of course, enemy techs worked to counteract that programming, so it wasn’t a silver bullet. But it made it easier to dodge their shots for a short period of time."/>
 <entry name="InternalRepairStationFlavor" value="A group of aspiring young technicians came to me with a plan to install repair stations in our Marauder transports. Their superiors pushed back—called it a waste of time. I pointed out that there are plenty more spare parts close to the battlefield—and if the senior techs were so eager to run repairs, they could be assigned elsewhere. They relented."/>
 <entry name="IronWillFlavor" value="When giving up began to feel more comforting than the struggle, you needed to remind yourself why you fought. Every soldier would whisper a different story to themselves. Some would just utter a name. Those words would fill your blood with fire and make the struggle feel worthwhile again."/>
 <entry name="JumpPackFlavor" value="Antigravity technology vastly outpaced whatever a rocket could do in keeping soldiers airborne. That was fine. Slow airborne units made for easier targets. There was still value in using precision rocket bursts to reposition our elite infantry. War is a game of positioning, after all."/>
 <entry name="LiquidDeflectionAugmentFlavor" value="The Operative’s troops couldn’t dodge every shot. She turned her attention to reducing the brunt of the blows. “Be like water,” a great master once said. With some experimentation, she could make that a… literal improvement."/>
-<entry name="LogisticsExpertsFlavor" value="Supplies being hauled back from the outposts always had a habit of “falling off the back of the truck.” Command got tired of the losses and ordered us to round up experts who could monitor each shipment. They were ruthless. If they supervised your shift you weren't getting a wink of sleep until each piece of metal was hauled out of the earth and accounted for."/>
-<entry name="MarkTargetFlavor" value="When you're in the thick of combat, having eyes on a ridge above, calling out targets helps a hell of a lot. Puts a nice rhythm in things. Mark the target. Set the target. Execute the target. o"/>
+<entry name="LogisticsExpertsFlavor" value="Supplies being hauled back from the outposts always had a habit of “falling off the back of the truck.” Command got tired of the losses and ordered us to round up experts who could monitor each shipment. They were ruthless. If they supervised your shift, you weren't getting a wink of sleep until each piece of metal was hauled out of the earth and accounted for."/>
+<entry name="MarkTargetFlavor" value="When you're in the thick of combat, having eyes on a ridge above, calling out targets helps a hell of a lot. Puts a nice rhythm in things. Mark the target. Set the target. Execute the target."/>
 <entry name="MasochismFlavor" value="“The fuck are you doing?!” I remembered shouting at one of those damned Epicureans as it walked right over our trench, soaking up a spree of bullets that weren't set to hit anything. “Calm yourself… mentor,” it said. How did it… it didn't have a face but I swear it was smiling at me. “We both know pain is a constant. You run from it…” It jerked as another round of bullets ripped into its shoulder. “I savor it.”"/>
 <entry name="MinelayerFlavor" value="Outrider operators knew when the bullets started flying, they weren’t combatants: they were bait. Their job was to lay mines in key positions and lure the enemy in. Then once the trap was sprung, they could burn rubber and get away—and whatever was hunting them became easy pickings for the rest of us."/>
+<entry name="MothersFavorFlavor" value="Mothers shouldn't play favorites. But she did. When the Twisted Mother reached out and grazed her fingers across your cheek you wouldn't mind the blood she drew. Her love cast aside the memories of your birth parents, no matter how hard you clung on to them."/>
+<entry name="MothersScornFlavor" value="A memory. A child afraid to lock eyes with a parent. Not because they hit the child but because they might hit the child. The child fears that moment, when the parent's love—the Mother's love—would be yanked away and replaced by icy words, a raised voice, a belt drawn and readied to strike."/>
 <entry name="NanomachineAcceleratorAugmentFlavor" value="The Operative was quite comfortable with the creation of… certain performance enhancements. On machines and biologicals alike, she could boost stamina and speed with the help of nanomachines. Her troops couldn’t move much faster but they could get a hell of a lot farther."/>
 <entry name="NeverSurrenderFlavor" value="A Commander’s job is to keep troops on the battlefield—to make sure they don’t flee when fear takes over. Too many of us would have gladly surrendered if it meant we could live another day. But the right leader in the right place could make you willing to lay down your life for a better world."/>
 <entry name="NightmareFlavor" value="Intel could never keep up with how many Phenaris Hunters were out on the battlefield. They weren't breeding, they were just… I don't know. Pulling a version of themselves in from another dimension? Fooling everyone, even the machines? I don't know. Too many monsters and too many tricks to keep in my head. I just wanted to rest…"/>
+<entry name="NitroBoostFlavor" value="“Fuel, fire, and all you could ever desire,” the machine shop worker said when hauling out her so-called “special batch” of “Scrambler juice.” I wish she hadn't been so… adolescent about it. This was war, not a backroads race…"/>
 <entry name="NomadicLifeFlavor" value="Reavers know how to make the wilderness their own. They're skilled at taking the goods they pillage and turning them into supplies for a camp. Be careful if they set up one near your territory—it won't be long before a swarm of them comes crawling over the walls."/>
 <entry name="OrbitalDeploymentFlavor" value="Assault troopers rocketing to orbit for long-range deployment came back down either terrified as shit or as the most serene motherfuckers you ever met on the battlefield. Some thought seeing Earth floating among the stars was the most beautiful thing ever. Others were terrified at just how small we were in this big black void of nothing."/>
 <entry name="PandemoniumFlavor" value="Elohim made all kinds of sounds but I swear I heard them… purr with delight when a singularity core was near. You'd install one, and their spines arced and stretched as they sucked it into their system. A second later they'd fire a blast so far… jesus, you couldn't even hear the explosion. Just see the light shining in the distance. All you'd hear was that damn purring."/>
 <entry name="ParamedicFlavor" value="Stray bolt of plasma had taken a chunk of meat right out of my ass. I watched the Medic hustle to me under heavy fire, ready with a nanite injector. I told her that the agony of regenerating flesh wouldn’t be worth it—I’d rather die. She fixed me up anyway. But her snickering told me everyone was going to hear how she literally saved my ass."/>
 <entry name="ParticleBarrierFlavor" value="No other shielding behaved the way the Krypt Archai’s Particle Barrier could. Shields normally needed a power source—I lost too many soldiers trying to keep that power online. These barriers… they just… worked. Maybe the particles were the power source? Drawing energy from within and clustering to catch incoming fire? It was… otherworldly."/>
 <entry name="ParticleRepairFlavor" value="The particles pouring out of a Krypt Archai’s… shell could work wonders on mechanical units. It was like something out of a fairy tale. All it took was a stream of glowing lights to bring battered and broken machines back online. Wiring, servos, energy conduits—they could fix it all."/>
+<entry name="PathfinderDroneFlavor" value="That's how it caught me. The fucking drone. I was used to dodging all kinds of sensors and Voice magic but I got undone by a bot smaller than the Combat Melisai. Stupid. The Harbinger didn't need to know everything around it—just precise pieces of information that would allow it to execute its mission."/>
 <entry name="PestilenceFlavor" value="Another old trick of war. Rats. Plague carts. Catapults slinging corpses. The first horseman of the Apocalypse was Pestilence, after all. Face down a Fallen Orolos and you'd feel the mold spores choking you on the battlefield, making you wish the monster would just crush you already."/>
 <entry name="PowerSpikeFlavor" value="The techs plastered the Vulkan manuals with all kinds of restrictions. Vulkan pilots knew how and why to break them. If you overcharged the power past its limits, you’d blow out whole pieces of the Vulkan. But in exchange you could fuel that power into all of the Vulkan’s weapons. Risking that extra damage was a gamble but it paid off frequently."/>
 <entry name="QuenchResistanceFlavor" value="The Artificer knew there would be consequences to how she treated people. Other leaders would be blind to the backlash or assume fear was enough to keep people in line. She was not so foolish. She knew from day one that violence was inevitable. And she used it without a moment of hesitation."/>
@@ -330,7 +372,7 @@
 <entry name="QuidProQuoFoodFlavor" value="Everyone was always squirreling away food. The Aristocrat was the only one who could get people to part with it. It was like the old fable about a savior who could feed his followers with an infinite supply of bread and fish. If that savior was real, maybe he and the Aristocrat spoke the same language—the language of mutual aid and survival."/>
 <entry name="QuidProQuoMineralsFlavor" value="The world of mineral trading was full of colorful characters. The Aristocrat could work all of them like a showman on the stage. He’d ply them with favors and gifts to sweeten the deal whenever he needed extra resources."/>
 <entry name="ReallocateFlavor" value="Spend enough time digging in the junk and every piece of trash looks like treasure. Don’t know how he did it, but the Romantic knew how to make the most of everything. He tasked factory operators to follow the same logic—weapons, armor, tools—they could all be re-used for a greater purpose."/>
-<entry name="ReconFlavor" value="Outriders were sent out with long photographic lenses, old radar dug up from wartime bunkers and specialized sonar—all so their analysts could spy on enemies from a distance. They’d sit in the back of the Outrider, furiously piecing together information as the vehicle bucked and jolted on the rough road below."/>
+<entry name="ReconFlavor" value="Scouts of all stripes knew pre-war tech could make for better reconnaissance. Snipers dug up old camera lenses, drivers kept pre-war scanners in the backseat… best tracker I knew studied even older ways. His trick: carrying fresh food and searching out refugee camps. The locals always knew more than even the most sharp-eyed soldier."/>
 <entry name="ReconstructFlavor" value="Metal that healed like flesh? In the last days of the war, everything was a fever dream… I didn't bat an eye when ZEPHON's Titans sewed steel back together like raw meat. This was what it wanted, wasn't it? Machines that were truly alive? Maybe to truly live, you had to bleed…"/>
 <entry name="RemoveRoadFlavor" value="That's the thing about infrastructure—you can build it, but then your enemy might take it. When things got bad we'd send the Engineers out to begin knocking down roads while we gave them covering fire. If we played our cards right, our enemies would be stuck in the mud, exposed, and ready for us to rain hell down upon them."/>
 <entry name="RepairFlavor" value="Executing repairs took time to prepare and meant the technician had to stay close to the machine. If you wanted to make a fast friend, you kept anyone repairing your tech safe. They were doing the same for you, after all. I still can’t believe there were soldiers who’d sacrifice them like pawns."/>
@@ -344,6 +386,7 @@
 <entry name="SupplicationFlavor" value="A drunk engineer made her way down to our barracks, babbling about her work on the Provost. Talked about code written in languages she'd never seen. Functions that could command all in its presence to listen to its screeching lectures. “That's not fucking code in there,” she said between swigs of toilet ale. “That's primal. Laws of the universe shit. That machine may be closer to God than any of us ever will be.”"/>
 <entry name="SurvivalTrainingFlavor" value="Strong soldiers saw value in sharing knowledge. If you lived this long, you’ve learned a thousand lessons the hard way. There was value in passing what you know to the next generation. I hope there’s still truth in that."/>
 <entry name="SwallowFlavor" value="The sky was that gut-sickening dark gray you get with a strong summer storm. I thought we'd won the battle. But our cheers turned to screams as lightning flashed and a Crodeus dropped through the clouds. It gulped down a whole Vanquisher tank then soared over our position. I could hear the screech of tearing metal and the screaming of the crew even over the roar of thunder."/>
+<entry name="SystemicResetFlavor" value="“Cute,” the Rogue Operative muttered as we huddled in the back of a fleeing Marauder. The alarms were blaring—something hit us and powered down our engines. She punched commands into a terminal. “Classic IT problem. Turn off, turn back on… same shit, different day.” the alarms cut out and the ship's engines roared back to life, freeing us to die another day."/>
 <entry name="SystemOverloadFlavor" value="The Krypt Archai had some kind of… universal sabotage protocol. It didn’t make any sense, drove our techs up the wall. It seemed to work on weaponry by making ammo explode, but it could play havoc with networked systems, or choke Voice weapons on their own power. What was this thing? Where did it get this power?"/>
 <entry name="TacticalNuclearMissileFlavor" value="There was a time when firing one of these would have been unthinkable. Good men would rather die than be the ones who pulled the trigger. The rubes. They thought they stood on the edge of the apocalypse. Once you're at the end of the world, speeding things up doesn't sound like a bad proposition."/>
 <entry name="TakeCoverFlavor" value="I dropped behind cover on so many different battlefields that I started to get a taste for different kinds of dirt. Fresh farm soil has a wetness to it. Desert sand can lure you in with the taste of salt. And land where the Voice bled through… it made you want to spit until your mouth was dry."/>
@@ -353,7 +396,9 @@
 <entry name="TheFogFlavor" value="It was a death trap. They sent us in anyway. Even when pierced by our lanterns the fog crept in through our orifices and made our insides burn. The Acrin in the mist taunted us from a distance, laughing at how the mildewy air that made them glow with power was making us choke on our own bile."/>
 <entry name="TheOutsiderFlavor" value="Whatever body that the Voice spoke from, it never set foot on earth. It had a servant though. The Tribunal whispered about it, told us that it walked just on the other side of a thin veil. I knew the trio wanted to bring it through—they thought it was a gift for our world. I… disagreed. Loudly."/>
 <entry name="ThereIsHopeFlavor" value="Hope. The Romantic never convinced me to believe in such foolishness. He could never describe a world after the war, but he believed in it anyway. There was strength in that. Cynics like me could only see what was right in front of our faces. He taught his troops how to look toward the future."/>
+<entry name="ThrashEmFlavor" value="Reavers didn't care if spinning a big rig around with the claw flailing was dangerous. They always went their own way—as wild as the monsters and as murderous as the machines. The Wastelander was like a great scream into the night that they wouldn't be left behind."/>
 <entry name="TimeShiftFlavor" value="I didn't see it happen often, but whatever force the Kriteria could tap into warped time itself. In those rare moments, this hulking machine carrying a god-like energy generator would burst across the land. Nothing was meant to move so fast—I worried it would be too useful, too efficient. That there would be a price to pay for warping time itself."/>
+<entry name="TransubstantiationFlavor" value="“There is a word,” the zealot whispered into my ear, pushing her knife toward my chest. “The disciple, in the role of The Voice, pronounces this word, but their power and grace belong to The Voice—” I pushed back as hard as I could— “The Bleed and the Body—” Her blade cut my skin— “Together with Construct and Machine—” I rallied and shoved her away, but too late, her eyes shined the color of my blood— “Are of! The Voice!”"/>
 <entry name="TuneFlavor" value="Mass-producing weapons left them with flaws, unfortunately. In the field, an Engineer could hack together short-term fixes that could make your rifle fire like it was the living embodiment of destiny. Then physics took their toll and you were left with interchangeable junk."/>
 <entry name="TunnelFlavor" value="Only that urge to hear the Voice’s call could send any creature back into the dirt. Could you imagine how deep the Worms went? How great the Earth’s pressure was on them? And then they would come roaring to the surface, their guts expanding as that pressure let up, ready to spew acid that could burn a man alive…"/>
 <entry name="UnearthlyPassageFlavor" value="The Voice cultists learned how to pierce the walls between worlds. You knew it was coming when a sour stink of rotting flesh came over you and the sky began to shimmer. A great claw would cut through the air itself. You had moments to run, and if you began to hear the hushed whispers of an Elect of Uzhodai you had seconds before it would flay you alive."/>

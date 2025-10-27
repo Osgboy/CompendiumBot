@@ -54,9 +54,9 @@
 			<objectives>
 				<killCamp name="KillAugursMonsters">
 					<defenders>
-						<unit type="Abkluth" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 						<unit type="AegyllanWorm" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 						<unit type="DarkVassael" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="DevoteeOfThrokos" count="2" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
 			</objectives>
@@ -125,10 +125,10 @@
 			<objectives>
 				<surviveInvasion name="SurviveAugursMonsters" strength="16" waves="3">
 					<attackers>
-						<unit type="Abkluth" rankMin="3" rankMax="5"/>
 						<unit type="AegyllanWorm" rankMin="3" rankMax="5"/>
 						<unit type="CrlaDisciple" rankMin="3" rankMax="5"/>
 						<unit type="DarkVassael" rankMin="3" rankMax="5"/>
+						<unit type="DevoteeOfThrokos" rankMin="3" rankMax="5"/>
 						<unit type="SurthodaisEmbrace" rankMin="3" rankMax="5"/>
 					</attackers>
 				</surviveInvasion>
@@ -232,6 +232,7 @@
 					<defenders>
 						<unit type="Abkluth" count="3" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 						<unit type="AcrinMilitia" count="6" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="AcrinZealot" count="6" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 						<unit type="Dreameater" count="1" rankMin="3" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
 					</defenders>
 				</killCamp>
@@ -259,7 +260,8 @@
 			<objectives>
 				<visitTile name="VisitPassage">
 					<defenders>
-						<unit type="AcrinMilitia" count="3" rankMin="3" rankMax="5"/>
+						<unit type="AcrinMilitia" count="2" rankMin="3" rankMax="5"/>
+						<unit type="AcrinZealot" count="1" rankMin="3" rankMax="5"/>
 					</defenders>
 				</visitTile>
 			</objectives>

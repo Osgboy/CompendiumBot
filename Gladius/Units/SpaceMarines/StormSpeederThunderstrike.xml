@@ -67,12 +67,13 @@
 		</attack>
 		<die>
 			<model>
-				<action animation="Units/SpaceMarines/StormSpeederThunderstrikeDie0"
-						sound="Units/MediumVehicleDie"
-						soundCount="3"
-						soundDelay="0.1"
-						voiceSound="Units/SpaceMarines/InfantryDie"
-						voiceSoundCount="5"/>
+				<action animation="Units/SpaceMarines/StormSpeederThunderstrikeDie0"		
+						sound="Units/LargeArmoredDie"
+						soundCount="4"
+						soundDelay="1.1"
+						voiceSound="Units/MediumVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="0"/>
 			</model>
 		</die>
 		<move>

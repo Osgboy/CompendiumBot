@@ -5,8 +5,13 @@
 			<area affect="Tile">
 				<modifiers>
 					<modifier>
+						<conditions>
+							<tile>
+								<feature type="AbkhanDrey"/>
+							</tile>
+						</conditions>
 						<effects>
-							<addUnit type="Abkhan" homeTile="1"/>
+							<addUnit type="Abkhan" homeTile="1" neutralPlayer="1"/>
 						</effects>
 					</modifier>
 				</modifiers> 

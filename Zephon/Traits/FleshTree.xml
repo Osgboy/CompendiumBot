@@ -19,6 +19,9 @@
 					<modifier effectDescription="Every10Turns">
 						<conditions ignoreForTraitVisibility="1">
 							<turn divisible="10"/>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
 						</conditions>
 						<effects>
 							<addPlayerAction type="FleshTree" charges="1"/>

@@ -78,6 +78,7 @@
 <entry name="ConstructRegionDensity3" value="Medium"/>
 <entry name="ConstructRegionDensity4" value="High"/>
 <entry name="ConstructRegionDensity5" value="Very High"/>
+<entry name="DLC1" value="The Twisted &amp; The Hollow DLC"/> <!-- DLC name. Do not translate. -->
 <entry name="DesertRegionDensity" value="Desert Region Density"/>
 <entry name="DesertRegionDensity0" value="None"/>
 <entry name="DesertRegionDensity1" value="Very Low"/>
@@ -97,16 +98,16 @@
 <entry name="Difficulty2Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; no advantage or disadvantage given."/>
 <entry name="Difficulty2RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for turn-based strategy fans."/>
 <entry name="Difficulty3" value="Hard"/>
-<entry name="Difficulty3Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; small city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty3Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; small city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%4% &lt;icon texture='Icons/Notifications/Diplomacy1' height='20'/&gt; aggressiveness"/>
 <entry name="Difficulty3RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended for veterans of Proxy Studios games."/>
 <entry name="Difficulty4" value="Very Hard"/>
-<entry name="Difficulty4Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; moderate city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty4Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; moderate city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%4% &lt;icon texture='Icons/Notifications/Diplomacy1' height='20'/&gt; aggressiveness"/>
 <entry name="Difficulty4RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended after beating Hard."/>
 <entry name="Difficulty5" value="Ultra Hard"/>
-<entry name="Difficulty5Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; large city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty5Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; large city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%4% &lt;icon texture='Icons/Notifications/Diplomacy1' height='20'/&gt; aggressiveness"/>
 <entry name="Difficulty5RecommendationHint" value="&lt;style name='Italic'/&gt;Recommended after beating Very Hard."/>
 <entry name="Difficulty6" value="Nightmare"/>
-<entry name="Difficulty6Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; extreme city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level"/>
+<entry name="Difficulty6Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; extreme city loyalty and unit level advantage given.&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%2% &lt;string name='Attributes/LoyaltyIcon'/&gt; loyalty&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%3% &lt;string name='Attributes/LevelIcon'/&gt; level&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;%4% &lt;icon texture='Icons/Notifications/Diplomacy1' height='20'/&gt; aggressiveness"/>
 <entry name="Difficulty6RecommendationHint" value="&lt;style name='Italic'/&gt;Not recommended."/>
 <entry name="DustStormDensity" value="Sandstorm Density"/>
 <entry name="DustStormDensity0" value="None"/>
@@ -175,6 +176,12 @@
 <entry name="Mutators/AreYouTheGreatSpeakerHint" value="Doubled loyalty effect."/>
 <entry name="Mutators/CanLoveBeMoral" value="&lt;string name='Settings/Achievements/CanLoveBeMoral'/&gt;"/>
 <entry name="Mutators/CanLoveBeMoralHint" value="Breaking a unit's morale captures it."/>
+<entry name="Mutators/CanAJourneyBeAnEndInItself" value="&lt;string name='Settings/Achievements/CanAJourneyBeAnEndInItself'/&gt;"/>
+<entry name="Mutators/CanAJourneyBeAnEndInItselfHint" value="Units have an additional action point."/>
+<entry name="Mutators/CanAnythingRedeemThisHorror" value="&lt;string name='Settings/Achievements/CanAnythingRedeemThisHorror'/&gt;"/>
+<entry name="Mutators/CanAnythingRedeemThisHorrorHint" value="Purchasing units from NPCs is 50% cheaper."/>
+<entry name="Mutators/CanFreeWillExist" value="&lt;string name='Settings/Achievements/CanFreeWillExist'/&gt;"/>
+<entry name="Mutators/CanFreeWillExistHint" value="Weapon damage is randomized by ±20%."/>
 <entry name="Mutators/DidHonorBalanceGreed" value="&lt;string name='Settings/Achievements/DidHonorBalanceGreed'/&gt;"/>
 <entry name="Mutators/DidHonorBalanceGreedHint" value="Whenever you cancel any agreement you become Untrustworthy forever."/>
 <entry name="Mutators/DidMyDeathMeanAnything" value="&lt;string name='Settings/Achievements/DidMyDeathMeanAnything'/&gt;"/>
@@ -183,6 +190,8 @@
 <entry name="Mutators/DidOurSacrificeMeanNothingHint" value="Non-neutral units lose 5% hitpoints each turn when outside of allied cities or outposts."/>
 <entry name="Mutators/DidOurUnificationMatter" value="&lt;string name='Settings/Achievements/DidOurUnificationMatter'/&gt;"/>
 <entry name="Mutators/DidOurUnificationMatterHint" value="Non-Deformity biological units that die become neutral Deformities. Triggers after other death effects."/>
+<entry name="Mutators/MustWeSufferSo" value="&lt;string name='Settings/Achievements/MustWeSufferSo'/&gt;"/>
+<entry name="Mutators/MustWeSufferSoHint" value="Start the game with Research Laboratory, Holo Theater, Habitation Block, Construction Yard and Engineer researched."/>
 <entry name="Mutators/WasITrulyHuman" value="&lt;string name='Settings/Achievements/WasITrulyHuman'/&gt;"/>
 <entry name="Mutators/WasITrulyHumanHint" value="Damage is divided between all adjacent allies of the target unit."/>
 <entry name="Mutators/WasPerfectionWorthIt" value="&lt;string name='Settings/Achievements/WasPerfectionWorthIt'/&gt;"/>
@@ -192,7 +201,7 @@
 <entry name="Mutators/WhatAreYou" value="&lt;string name='Settings/Achievements/WhatAreYou'/&gt;"/>
 <entry name="Mutators/WhatAreYouHint" value="Can only research technologies with your affinity or no affinity."/>
 <entry name="Mutators/WhatPriceForLiberty" value="&lt;string name='Settings/Achievements/WhatPriceForLiberty'/&gt;"/>
-<entry name="Mutators/WhatPriceForLibertyHint" value="Leaders have no research affinities."/>
+<entry name="Mutators/WhatPriceForLibertyHint" value="Leaders have all research affinities."/>
 <entry name="Mutators/WhereAreWe" value="&lt;string name='Settings/Achievements/WhereAreWe'/&gt;"/>
 <entry name="Mutators/WhereAreWeHint" value="All tiles are explored from the start."/>
 <entry name="Mutators/WhyDidHumanityDieAlone" value="&lt;string name='Settings/Achievements/WhyDidHumanityDieAlone'/&gt;"/>
@@ -320,6 +329,8 @@
 <entry name="TurnTimer3" value="Moderate (3 minutes)"/>
 <entry name="TurnTimer4" value="Long (4 minutes)"/>
 <entry name="TurnTimer5" value="Very Long (5 minutes)"/>
+<entry name="VictoryRequiresDefeatingNPCs" value="Victory Requires Defeating NPCs"/>
+<entry name="VictoryRequiresDefeatingNPCsHint" value="If defeating the NPCs (Anchorite, Chieftess, ZEPHON) is required to win an elimination victory."/>
 <entry name="VolcanicRegionDensity" value="Volcanic Region Density"/>
 <entry name="VolcanicRegionDensity0" value="None"/>
 <entry name="VolcanicRegionDensity1" value="Very Low"/>
