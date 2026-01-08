@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1"
+		category="Buff">
+	<onEnemyKilledSelfModifiers>
+		<modifier>
+			<effects>
+				<addTrait duration="2" name="Necrons/MultiThreatElimination"/>
+			</effects>
+		</modifier>
+	</onEnemyKilledSelfModifiers>
+</trait>

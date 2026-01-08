@@ -9,6 +9,7 @@
 	<actions>
 		<playerAction name="TheSureThingShort"
 				cooldown="5"
+				costScalesWithPace="0"
 				label="1"
 				interfaceSound="Interface/TheSureThingShort">
 			<modifiers>
@@ -48,12 +49,13 @@
 		</playerAction>
 		<playerAction name="TheSureThingMedium"
 				cooldown="5"
+				costScalesWithPace="0"
 				label="1"
 				interfaceSound="Interface/TheSureThingMedium">
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<mineralsCost base="60"/>
+						<mineralsCost base="80"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -87,12 +89,13 @@
 		</playerAction>
 		<playerAction name="TheSureThingLong"
 				cooldown="5"
+				costScalesWithPace="0"
 				label="1"
 				interfaceSound="Interface/TheSureThingLong">
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<mineralsCost base="80"/>
+						<mineralsCost base="120"/>
 					</effects>
 				</modifier>
 			</modifiers>
@@ -145,7 +148,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile>
 							<alliedCity/>
@@ -199,18 +202,13 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCostFromExperience base="20"/>
+						<influenceCostFromExperience base="10"/>
 					</effects>
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
-						<unit>
-							<actionPoints greater="0"/>
-							<notMovedThisTurn/>
-							<control/>
-						</unit>
 						<unit match="Any">
 							<trait type="JustShipItDebuffAttacks"/>
 							<trait type="JustShipItDebuffAttacksTaken"/>
@@ -270,7 +268,7 @@
 						targetsTile="1"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<type name="CherubimTitan"/>

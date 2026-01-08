@@ -19,6 +19,7 @@ DLCS = {
     'Supplement14': 'Demolition Pack',
     'Supplement15': 'Ultima Founding',
     'Supplement16': 'Onslaught Pack',
+    'Supplement17': 'Rampage Pack',
     'LordOfSkulls': 'Lord of Skulls'
 }
 RARITY_COLORS = {
@@ -959,8 +960,11 @@ def create_zupgrade_embed(name: str, attrs: dict, verbose: bool, flavorFlag: boo
 
         # Required upgrades
         if (requiredUpgrades := attrs['requiredUpgrades']):
-            embed.add_field(name='Required Upgrades', value='\n'.join(
-                requiredUpgrades), inline=False)
+            if requiredUpgrades:
+                value = '\n'.join(requiredUpgrades)
+            else:
+                value = 'None'
+            embed.add_field(name='Required Upgrades', value=value, inline=False)
         
         # Modifiers
         if (modifiers := attrs['modifiers']):

@@ -108,7 +108,7 @@
 						blueprint="Effects/HealPluses"/>
 			</model>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<unit>
 							<ally/>
@@ -162,7 +162,7 @@
 						blueprint="Effects/BionicImplants"/>
 			</model>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<unit>
 							<ally/>

@@ -165,13 +165,6 @@
 						<area affects="Unit">
 							<modifiers>
 								<modifier>
-									<effects>
-										<addTrait name="SistersOfBattle/MiraculousIntervention"/>
-									</effects>
-								</modifier>
-							</modifiers>
-							<modifiers>
-								<modifier>
 									<conditions>
 										<unit>
 											<destroyed/>
@@ -321,6 +314,7 @@
 	<traits>
 		<trait name="SistersOfBattle/ShieldOfFaith"/>
 		<trait name="SistersOfBattle/Martyrdom"/>
+		<trait name="SistersOfBattle/MiraculousIntervention"/>
 		<trait name="SistersOfBattle/OathOfFaith"/>
 		<trait name="SistersOfBattle/ArmourOfSaintKatherine"/>
 		<trait name="ExtraInfantryArmour" requiredUpgrade="SistersOfBattle/ExtraInfantryArmour"/>

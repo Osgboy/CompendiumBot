@@ -153,6 +153,7 @@
 <entry name="JumpPack" value="Jump Pack"/>
 <entry name="JumpPackProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Flies to target sighted tile"/>
 <entry name="JustShipItUpgrade2" value="Product Recall"/>
+<entry name="JustShipItUpgrade2Properties" value="&lt;string name='Actions/WordsOfTheProphetProperties'/&gt;"/>
 <entry name="Landmines" value="Landmines"/>
 <entry name="LandminesFlavor" value="&lt;string name='Quests/TheLastDaysOfEarth/TheTiesThatBind2'/&gt;"/>
 <entry name="LevelUp" value="Level Up"/>
@@ -175,7 +176,7 @@
 <entry name="NomadicLife" value="Nomadic Life"/>
 <entry name="NomadicLifeProperties" value="&lt;string name='Actions/FoundCityProperties'/&gt;&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Double cost when not controlled by &lt;icon texture='Icons/Factions/Chieftess' color='Factions/Chieftess' height='20'/&gt;&lt;nbsp/&gt;&lt;string name='Factions/Chieftess'/&gt;"/>
 <entry name="OrbitalDeployment" value="Orbital Deployment"/>
-<entry name="OrbitalDeploymentProperties" value="&lt;icon texture='GUI/Bullet'/&gt; Teleports from allied city to target sighted tile"/>
+<entry name="OrbitalDeploymentProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Teleports from allied city to target sighted tile"/>
 <entry name="Overwatch" value="Overwatch"/>
 <entry name="OverwatchDescription" value="&lt;icon texture='GUI/Bullet'/&gt;Attacks enemy units that end their movement in attack range"/>
 <entry name="Pandemonium" value="Pandemonium"/>
@@ -230,7 +231,7 @@
 <entry name="QuidProQuoFood" value="Quid Pro Quo (Food)"/>
 <entry name="QuidProQuoMinerals" value="Quid Pro Quo (Minerals)"/>
 <entry name="Reallocate" value="Reallocate"/>
-<entry name="ReallocateProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Use the production building to disband target non-summon non-decaying unit in the city and regain invested resources"/>
+<entry name="ReallocateProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Use a production building to disband target non-summon non-decaying unit in the city and regain invested resources"/>
 <entry name="Recon" value="Recon"/>
 <entry name="Reconstruct" value="Reconstruct"/>
 <entry name="Rejuvenation" value="Rejuvenation"/>
@@ -288,6 +289,7 @@
 <entry name="TheSureThingShort" value="The Sure Thing (Small)"/>
 <entry name="ThrashEm" value="“Thrash 'em!”"/>
 <entry name="TimeOutOfJoint" value="Time Out of Joint"/>
+<entry name="TimeOutOfJointProperties" value="&lt;string name='Actions/WordsOfTheProphetProperties'/&gt;"/>
 <entry name="TimeShift" value="Time Shift"/>
 <entry name="TormentOfTheVoice" value="Torment of the Voice"/>
 <entry name="TormentOfTheVoiceFlavor" value="&lt;string name='Quests/TheDream/AskAnchorite'/&gt;"/>
@@ -313,7 +315,7 @@
 <entry name="WordsOfTheProphet" value="Words of the Prophet"/>
 <entry name="WordsOfTheProphetProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Cost scales with the strength of the target unit"/>
 	
-	<!-- Flavor. -->
+	<!-- Flavor. %1% is filled in with player name. To display '%', it must written as '%%'. -->
 <entry name="AblativeShellFlavor" value="I had the kill shot. I know I did. Gauss Rifle was burning hot in my hands, all spent, and my heart sank as I saw the Orb shed that layer of charred armor like skin. Then it fixed its eye on me and I heard the whine of its laser array before—pain. Burning, agonizing pain."/>
 <entry name="AbyssalRageFlavor" value="You've never known an anger like this. Humans feel rage because we find the world unfair. But the Voice could bring out something deeper. Something that fills its creations with a hatred of the universe itself. If you find yourself facing down such anger… run."/>
 <entry name="AcquireTileFlavor" value="I couldn't believe we were still doing safety inspections and site surveys, all this pre-war nonsense. But the city planners knew what they were doing. What good was it to build something if it would just fall down again? They learned to work under heavy fire and harsh conditions to make sure it was safe to expand our territory."/>
@@ -446,7 +448,7 @@
 <entry name="TheOutsiderFlavor" value="Whatever body that the Voice spoke from, it never set foot on earth. It had… something like a servant though. The Tribunal whispered about it, told us that it walked just on the other side of a thin veil. I knew the trio wanted to bring it through—they thought it was a gift for our world. I… disagreed. Loudly."/>
 <entry name="ThereIsHopeFlavor" value="Hope. The Romantic never convinced me to believe in such foolishness. He could never describe a world after the war, but he believed in it anyway. There was strength in that. Cynics like me could only see what was right in front of our faces. He taught his troops how to look toward the future."/>
 <entry name="TheSureThingLongFlavor" value="“Why spend minerals on a squad of Ishim Enforcers now when you could invest and use the returns later to recruit a platoon?” Fine. The spoiled brat had a point. But it boiled my blood to see this whelp muttering in the corner about “R&amp;D to ROI” instead of leading his troops into battle."/>
-<entry name="TheSureThingMediumFlavor" value="If we could afford to recruit extra Ishim Enforcers, we could have kept this fucking Warden from blasting missiles at our HQ. Instead, yours truly had to drag the Scion to the emergency bunker while our garrison fought it off. At least he was in a good mood. Giggling over a tablet and mumbling about a “100% increase” while glass shattered above our heads…"/>
+<entry name="TheSureThingMediumFlavor" value="If we could afford to recruit extra Ishim Enforcers, we could have kept this fucking Warden from blasting missiles at our HQ. Instead, yours truly had to drag the Scion to the emergency bunker while our garrison fought it off. At least he was in a good mood. Giggling over a tablet and mumbling about a “100%% increase” while glass shattered above our heads…"/>
 <entry name="TheSureThingShortFlavor" value="The Scion was pitching his investment plan to me. Again. “It's all about the R, O, and I buddy. Return on Investment. We loan out some minerals to our partners. They pay us back in a few months. Even a caveman like you should get it!” Of course I got it. What I didn't get was why he needed me to be excited about his idea."/>
 <entry name="ThrashEmFlavor" value="Reavers didn't care if spinning a big rig around with the claw flailing was dangerous. They always went their own way—as wild as the monsters and as murderous as the machines. The Wastelander was like a great scream into the night that they wouldn't be left behind."/>
 <entry name="TimeOutOfJointFlavor" value="Fuck this temporal BULLSHIT. I wish I said that to the Count's face. His power felt good at first, a rush of energy on the battlefield that kept you moving and shooting—but there is always a price for fucking with the timestream. I paid it far too often."/>

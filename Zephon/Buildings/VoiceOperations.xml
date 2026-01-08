@@ -12,6 +12,7 @@
 				<modifier requiredUpgrade="FurtiveTribunalAffinityUpgrade">
 					<effects>
 						<algaeCost mul="-0.5"/>
+						<algaeUpkeep mul="-0.5"/> <!-- Upkeep change from upgrade should also be here in addition to ActionTypeManager so it shows up in the research screen. -->
 					</effects>
 				</modifier>
 			</modifiers>
@@ -93,6 +94,7 @@
 				<modifier requiredUpgrade="UntoldProphetAffinityUpgrade2">
 					<effects>
 						<dimensionalEchoesCost mul="-0.5"/>
+						<dimensionalEchoesUpkeep mul="-0.5"/> <!-- Upkeep change from upgrade should also be here in addition to ActionTypeManager so it shows up in the research screen. -->
 					</effects>
 				</modifier>
 			</modifiers>

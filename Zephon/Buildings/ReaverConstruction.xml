@@ -26,7 +26,28 @@
 		</modifier>
 	</strategyModifiers>
 	<actions>
-		<acquireTile/>
+		<acquireTile>
+			<beginTargets>
+				<target>
+					<conditions>
+						<tile>
+							<land/>
+							<noCity/>
+							<noEnemyUnit/>
+							<noFeatureCategory name="Fire"/>
+							<noFeatureCategory name="Volcano"/>
+							<tilesInRange greater="0" range="1">
+								<tile>
+									<selfCity/>
+								</tile>
+							</tilesInRange>
+							<inTileAcquisitionRange/>
+							<pathToCityInTileAcquisitionRange levelDeltaMax="1"/>
+						</tile>
+					</conditions>
+				</target>
+			</beginTargets>
+		</acquireTile>
 		<clearTile/>
 		<constructBuilding building="ReaverInfantry"/>
 		<constructBuilding building="Food"/>

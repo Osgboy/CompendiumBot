@@ -279,7 +279,7 @@
         "internalID": "Loyalty",
         "dlc": "None",
         "description": "Building that increases loyalty.",
-        "flavor": "The ageless Wyches and Succubi of the Drukhari Arenas treat its murderous combat as the height of elegance, turning up elegantly atired in the latest flayfashions to decapitate and torment groups of combatants at a time, in styles that will define murder for many, many hours. The audience gets to share in the suffering and the entertainment, emerging refreshed and invigorated by the mass slaughter.",
+        "flavor": "The ageless Wyches and Succubi of the Drukhari arenas treat its murderous combat as the height of elegance, turning up elegantly attired in the latest flayfashions to decapitate and torment groups of combatants at a time, in styles that will define murder for many, many hours. The audience gets to share in the suffering and the entertainment, emerging refreshed and invigorated by the mass slaughter.",
         "tier": "3",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Buildings\\Drukhari\\Loyalty.png",
@@ -942,6 +942,19 @@
         "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\ArchaeopterStratoraptor.png",
         "name": "Archaeopter Stratoraptor"
     },
+    "Armiger Helverin": {
+        "faction": "Adeptus Mechanicus",
+        "internalID": "ArmigerHelverin",
+        "dlc": "Supplement17",
+        "description": "Long-range heavy walker.",
+        "flavor": "These smaller Imperial Knights act as highly mobile gun platforms, equipped with paired long-range autocannons. Their pilots are lower-ranking nobles that act as Bondsmen to Knights Preceptor and are often seen working in groups of three to focus their firepower.",
+        "tier": "8",
+        "requiredUpgrades": [
+            "AdeptusMechanicus/Vehicles"
+        ],
+        "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\ArmigerHelverin.png",
+        "name": "Armiger Helverin"
+    },
     "Fulgurite Electro-Priests": {
         "faction": "Adeptus Mechanicus",
         "internalID": "FulguriteElectroPriest",
@@ -1207,6 +1220,19 @@
         ],
         "iconPath": "Gladius\\Icons\\Units\\AstraMilitarum\\Chimera.png",
         "name": "Chimera"
+    },
+    "Deathstrike": {
+        "faction": "Astra Militarum",
+        "internalID": "Deathstrike",
+        "dlc": "Supplement17",
+        "description": "Long-range artillery vehicle carrying a single, destructive missile.",
+        "flavor": "The sanctioned use of a Deathstrike launcher \u2013 designated \u2018Ordnance Extremis\u2019 \u2013 is often an excessive measure to combat the Imperium\u2019s most heinous enemies. Its huge Deathstrike missile can deliver the undiluted wrath of the Emperor to foes half a world away, and is capable of mounting various catastrophic payloads \u2013 such as the armour-sundering godspear warhead, fiery plasma barrage warhead, and warp-based vortex warhead.",
+        "tier": "7",
+        "requiredUpgrades": [
+            "AstraMilitarum/Vehicles"
+        ],
+        "iconPath": "Gladius\\Icons\\Units\\AstraMilitarum\\Deathstrike.png",
+        "name": "Deathstrike"
     },
     "Devil Dog": {
         "faction": "Astra Militarum",
@@ -1542,6 +1568,19 @@
         ],
         "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\Obliterator.png",
         "name": "Obliterators"
+    },
+    "Plague Marines": {
+        "faction": "Chaos Space Marines",
+        "internalID": "PlagueMarine",
+        "dlc": "Supplement17",
+        "description": "Short-range heavy infantry unit carrying poisoned weapons.",
+        "flavor": "Sworn to Nurgle\u2019s service, Plague Marines are bloated with festering corruption, horrific disfigurements, and stinking, decayed bodies. Unlike many traitors from the Horus Heresy, their numbers have only swollen as the millennia have passed. In battle, the putrescent slime that oozes from their sores corrodes armour and boils away skin, and each blow of their corroded weapons brings horrible infection.",
+        "tier": "4",
+        "requiredUpgrades": [
+            "ChaosSpaceMarines/Infantry"
+        ],
+        "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\PlagueMarine.png",
+        "name": "Plague Marines"
     },
     "Rubric Marines": {
         "faction": "Chaos Space Marines",
@@ -2164,6 +2203,17 @@
         "iconPath": "Gladius\\Icons\\Units\\Necrons\\HeavyDestroyer.png",
         "name": "Heavy Destroyers"
     },
+    "Hexmark Destroyer": {
+        "faction": "Necrons",
+        "internalID": "HexmarkDestroyer",
+        "dlc": "Supplement17",
+        "description": "Short range specialist able to teleport.",
+        "flavor": "A Hexmark Destroyer was once a Deathmark, before it fell to the Destroyer Curse and joined a Destroyer Cult. Now each one is like a mobile gun battery, all but unrivalled in close-range firepower and able to blast its way through hordes of enemy infantry with impunity.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "iconPath": "Gladius\\Icons\\Units\\Necrons\\HexmarkDestroyer.png",
+        "name": "Hexmark Destroyer"
+    },
     "Immortals": {
         "faction": "Necrons",
         "internalID": "Immortal",
@@ -2380,6 +2430,17 @@
         "iconPath": "Gladius\\Icons\\Units\\Orks\\KillaKan.png",
         "name": "Killa Kans"
     },
+    "Kommandos": {
+        "faction": "Orks",
+        "internalID": "Kommando",
+        "dlc": "Supplement17",
+        "description": "Melee unit specialized in infiltration and elimination of priority targets.",
+        "flavor": "Where most Orks love getting stuck in with a minimum of muckin\u2019 about, Kommandos take the average Ork\u2019s low cunning to the extreme. Rather than run at an enemy yelling, they would rather sneak up and stick a dagger through their victim\u2019s ribs. Their greatest satisfaction is the thump of exploding ammo dumps or the screams of enemies as stikkbombs clatter into their barracks. Other Orks grumble, calling it \u2018un-Orky\u2019, but can\u2019t deny its effectiveness.",
+        "tier": "3",
+        "requiredUpgrades": [],
+        "iconPath": "Gladius\\Icons\\Units\\Orks\\Kommando.png",
+        "name": "Kommandos"
+    },
     "Meganobz": {
         "faction": "Orks",
         "internalID": "Meganob",
@@ -2435,7 +2496,7 @@
         "internalID": "SquighogBoy",
         "dlc": "Supplement16",
         "description": "Heavy infantry unit that excels at taking down large prey.",
-        "flavor": "Riding four-legged Squigs into battle, these Beast Snagga boyz are nomadic Orks, predominantly from the traditionalist Snakebites Clan. Their goal is always to take down the biggest enemy on the battlefield\u2014be that Tyranid, Necron or Ogryn.",
+        "flavor": "Riding Squigs into battle, these Beast Snagga boyz are nomadic Orks, predominantly from the traditionalist Snakebites Clan. Their goal is always to take down the biggest enemy on the battlefield\u2014be that Tyranid, Necron or Ogryn.",
         "tier": "6",
         "requiredUpgrades": [
             "Orks/Vehicles"
@@ -2651,6 +2712,17 @@
         ],
         "iconPath": "Gladius\\Icons\\Units\\SistersOfBattle\\SaintCelestine.png",
         "name": "Saint Celestine"
+    },
+    "Seraphim": {
+        "faction": "Sisters Of Battle",
+        "internalID": "Seraphim",
+        "dlc": "Supplement17",
+        "description": "Jump infantry equipped with potent hand flamers.",
+        "flavor": "The Seraphim fight in the Adepta Sororitas\u2019 advanced guard. Only Battle Sisters with exceptional dexterity are selected to join their ranks, firing with pinpoint accuracy while moving at great speeds. They must be able to land with incredible precision, cut down foes and retreat within a few heartbeats.",
+        "tier": "5",
+        "requiredUpgrades": [],
+        "iconPath": "Gladius\\Icons\\Units\\SistersOfBattle\\Seraphim.png",
+        "name": "Seraphim"
     },
     "Sisters Repentia": {
         "faction": "Sisters Of Battle",
@@ -3119,11 +3191,22 @@
         "iconPath": "Gladius\\Icons\\Units\\Tau\\HammerheadGunship.png",
         "name": "TX7 Hammerhead Gunship"
     },
+    "Krootox Rampagers": {
+        "faction": "Tau",
+        "internalID": "KrootoxRampager",
+        "dlc": "Supplement17",
+        "description": "Disruptive skirmish cavalry.",
+        "flavor": "Terrifying skirmish cavalry, Krootox Rampagers combine the aggression and agility of juvenile Krootox with the vicious skill and cunning of a Kroot rider\u2014if the latter can hold on as the Krootox plunges into the enemy.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Gladius\\Icons\\Units\\Tau\\KrootoxRampager.png",
+        "name": "Krootox Rampagers"
+    },
     "Krootox Riders": {
         "faction": "Tau",
         "internalID": "KrootoxRider",
         "dlc": "Supplement8",
-        "description": "Sneaky infantry unit with both ranged and close combat capabilities.",
+        "description": "Sneaky cavalry unit with both ranged and close combat capabilities.",
         "flavor": "Surging from the undergrowth with their rifles blazing, the warriors of the Kroot Carnivore squads fall upon their victims with feral shrieks. In their midst lumber massive Krootoxes, gunners perched upon their backs as they direct sawing bursts of heavy fire into the foe.",
         "tier": "3",
         "requiredUpgrades": [],
@@ -3312,6 +3395,17 @@
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Units\\Tyranids\\Gargoyle.png",
         "name": "Gargoyles"
+    },
+    "Genestealers": {
+        "faction": "Tyranids",
+        "internalID": "Genestealer",
+        "dlc": "Supplement17",
+        "description": "Elite infiltration melee unit.",
+        "flavor": "Encountered long before the Tyranids, Genestealer infestations have been a thorn in the Imperium\u2019s side for millenia. In battle, this xenos is a swift and powerful predator with lightning-fast reflexes and serrated claws that can tear through even the thickest of armour. Genestealers also have large, highly adaptive brains and possess a form of brood telepathy that allows them to function with full independence from the Hive Mind. This autonomy allows them to destroy through stealth and guile that which cannot be defeated through numbers alone.",
+        "tier": "2",
+        "requiredUpgrades": [],
+        "iconPath": "Gladius\\Icons\\Units\\Tyranids\\Genestealer.png",
+        "name": "Genestealers"
     },
     "Haruspex": {
         "faction": "Tyranids",
@@ -3547,7 +3641,7 @@
         "internalID": "BlessedConduits",
         "dlc": "None",
         "description": "Reduces the cooldown of Power Surge.",
-        "flavor": "\u201cAnd when at last he came upon the vehicle, he perceived the distress of the engine therein and forthwith struck the rune and it was good. Thereupon the engine ignited and was filled with strength\u2026\u201c\n\u2014Lord of the Engines, 16th Tome, Verse 2001",
+        "flavor": "\u201cAnd when at last he came upon the vehicle, he perceived the distress of the engine therein and forthwith struck the rune and it was good. Thereupon the engine ignited and was filled with strength\u2026\u201c\n  \u2014 Lord of the Engines, 16th Tome, Verse 2001",
         "tier": "10",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Upgrades\\AdeptusMechanicus\\BlessedConduits.png",
@@ -3628,7 +3722,7 @@
         "internalID": "CommandUplink",
         "dlc": "None",
         "description": "Ability for Archaeopter Transvector and Archaeopter Stratoraptor that reduces the morale loss of adjacent Adeptus Mechanicus units.",
-        "flavor": "\u201cYou may feel fear, you may want to flee; but when your Magos can, with a thought, stop your limbs taking a single step back, well, then you fight anyway.\u201d\n\u2014Marshal Diktum",
+        "flavor": "\u201cYou may feel fear, you may want to flee; but when your Magos can, with a thought, stop your limbs taking a single step back, well, then you fight anyway.\u201d\n  \u2014 Marshal Diktum",
         "tier": "9",
         "requiredUpgrades": [
             "AdeptusMechanicus/Aircraft"
@@ -3698,7 +3792,7 @@
         "faction": "Tyranids",
         "internalID": "HammerOfWrath",
         "dlc": "None",
-        "description": "Grants Exocrines, Gargoyles, Haruspexes, Hive Crones, Hive Tyrants, Maleceptors, Scythed Hierodules, Tervigons, Trygons, Tyrannocytes and Tyrannofexes the ability to perform more devastating attacks.",
+        "description": "Grants Exocrines, Gargoyles, Haruspexes, Hive Crones, Hive Tyrants, Maleceptors, Norn Emissaries, Scythed Hierodules, Tervigons, Trygons, Tyrannocytes and Tyrannofexes the ability to perform more devastating attacks.",
         "flavor": "Many warriors hurl themselves headlong into combat, seeking to crush or trample the foe.",
         "tier": "9",
         "requiredUpgrades": [
@@ -3708,6 +3802,7 @@
             "Tyranids/Haruspex",
             "Tyranids/HiveTyrant",
             "Tyranids/Maleceptor",
+            "Tyranids/NornEmissary",
             "Tyranids/ScythedHierodule",
             "Tyranids/Tervigon",
             "Tyranids/Trygon",
@@ -3931,11 +4026,12 @@
         "faction": "Adeptus Mechanicus",
         "internalID": "VoicesInTheCode",
         "dlc": "None",
-        "description": "Increases the morale loss of enemy units adjacent to Sicarian Infiltrators.",
+        "description": "Increases the morale loss of enemy units adjacent to Sicarian Infiltrators and Sicarian Ruststalkers.",
         "flavor": "Closing with a Sicarian Infiltrator is a mistake\u2014their augmented craniums broadcast a brutally disruptive audiovisual assault, causing enemies to fall deafened and blinded; battles are often decided before even a single kill is confirmed.",
         "tier": "5",
         "requiredUpgrades": [
-            "AdeptusMechanicus/SicarianInfiltrator"
+            "AdeptusMechanicus/SicarianInfiltrator",
+            "AdeptusMechanicus/SicarianRuststalker"
         ],
         "iconPath": "Gladius\\Icons\\Actions\\AdeptusMechanicus\\VoicesInTheCode.png",
         "name": "Voices in the Code"
@@ -4115,7 +4211,7 @@
         "faction": "Space Marines",
         "internalID": "FragGrenade",
         "dlc": "None",
-        "description": "Grants Apothecaries, Assault Space Marines, Captains, Devastator Space Marines, Librarians, Scouts, Scout Bikers, Tactical Space Marines and Thunderfire Cannons the ability to throw anti-infantry grenades.",
+        "description": "Grants Apothecaries, Assault Space Marines, Captains, Devastator Space Marines, Librarians, Primaris Hellblasters, Primaris Intercessors, Scouts, Scout Bikers, Tactical Space Marines and Thunderfire Cannons the ability to throw anti-infantry grenades.",
         "flavor": "The lethal storm of shrapnel from these grenades drives opponents further under the cover for a few precious moments, allowing attackers more time to close in and, hopefully, get the first blow in against a disoriented foe.",
         "tier": "1",
         "requiredUpgrades": [],
@@ -4161,7 +4257,7 @@
         "faction": "Space Marines",
         "internalID": "KrakGrenade",
         "dlc": "None",
-        "description": "Grants Apothecaries, Assault Space Marines, Captains, Devastator Space Marines, Librarians, Scouts, Scout Bikers, Tactical Space Marines and Thunderfire Cannons the ability to throw anti-armour grenades.",
+        "description": "Grants Apothecaries, Assault Space Marines, Captains, Devastator Space Marines, Librarians, Primaris Hellblasters, Primaris Intercessors, Scouts, Scout Bikers, Tactical Space Marines and Thunderfire Cannons the ability to throw anti-armour grenades.",
         "flavor": "Krak grenades are implosive charges designed to crack vehicle armour.",
         "tier": "2",
         "requiredUpgrades": [],
@@ -4393,7 +4489,7 @@
         "faction": "Chaos Space Marines",
         "internalID": "GiftOfMutation",
         "dlc": "None",
-        "description": "Grants Chaos Lord, Chaos Space Marines, Chaos Terminators, Havocs, Khorne Berzerkers, Master of Possession, Warp Talons and Warpsmith one random unlocked Boon of Chaos.",
+        "description": "Grants Chaos Lord, Chaos Space Marines, Chaos Terminators, Havocs, Khorne Berzerkers, Master of Possession, Rubric Marines, Warp Talons and Warpsmith one random unlocked Boon of Chaos.",
         "flavor": "The Dark Gods have granted their champion a malign reward, which is as likely to be a razor-sharp appendage as it is to be an inconveniently placed tongue.",
         "tier": "9",
         "requiredUpgrades": [
@@ -4835,7 +4931,7 @@
         "internalID": "HeavyWeaponBonus",
         "dlc": "None",
         "description": "Increases the armour penetration of heavy weapons.",
-        "flavor": "\u201cDo not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night\u2014and eternal torment.\u201d \u2013 Gyrthineus Roche, Archon of The Last Blade",
+        "flavor": "\u201cDo not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night\u2014and eternal torment.\u201d \u2014 Gyrthineus Roche, Archon of The Last Blade",
         "tier": "8",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Traits\\WeaponBonus.png",
@@ -4863,7 +4959,7 @@
         "internalID": "MeleeWeaponBonus",
         "dlc": "None",
         "description": "Increases the armour penetration of melee weapons.",
-        "flavor": "\u201cPain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.\u201d \u2013 Urien Rakarth, Master of the Haemonculi",
+        "flavor": "\u201cPain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.\u201d\n  \u2014 Urien Rakarth, Master of the Haemonculi",
         "tier": "3",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Traits\\WeaponBonus.png",
@@ -4955,7 +5051,7 @@
         "internalID": "RaidersTacticsHealingRate",
         "dlc": "None",
         "description": "Increases the healing rate of infantry units embarked in transport.",
-        "flavor": "\u201cFriends\u2014I call you that, though I know you\u2019d knife me in the back at a glance from Vect\u2014friends, hold yourselves ready. The moment is almost here, the herd do not even know we\u2019re coming. In but minutes, we will descend, flay, rend, torment, murder and drink their souls\u2026 with style, of course. We\u2019re not savages.\u201d \u2013 Gyrthineus Roche, Archon of The Last Blade",
+        "flavor": "\u201cFriends\u2014I call you that, though I know you\u2019d knife me in the back at a glance from Vect\u2014friends, hold yourselves ready. The moment is almost here, the herd do not even know we\u2019re coming. In but minutes, we will descend, flay, rend, torment, murder and drink their souls\u2026 with style, of course. We\u2019re not savages.\u201d\n  \u2014 Gyrthineus Roche, Archon of The Last Blade",
         "tier": "5",
         "requiredUpgrades": [
             "Drukhari/Vehicles"
@@ -4979,7 +5075,7 @@
         "internalID": "ShroudGate",
         "dlc": "None",
         "description": "Increases the ranged damage reduction of units passing through a webway gate or a webway portal.",
-        "flavor": "\u201cIt was a wise to lay the ambush at the webway gate, brave little human. Hush, now. But you did not know when and where we would emerge, and that was your mistake. To we Drukhari, the gates are an unnecessary convenience\u2026 but your suffering, that I am afraid, is a necessity.\u201d \u2013 Gyrthineus Roche, Archon of The Last Blade",
+        "flavor": "\u201cIt was wise to lay the ambush at the webway gate, brave little human. Hush, now. But you did not know when and where we would emerge, and that was your mistake. To us Drukhari, the gates are an unnecessary convenience\u2026 but your suffering, that I am afraid, is a necessity.\u201d\n  \u2014 Gyrthineus Roche, Archon of The Last Blade",
         "tier": "9",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Traits\\Drukhari\\ShroudGate.png",
@@ -5031,7 +5127,7 @@
         "internalID": "SoulHungerUpgrade",
         "dlc": "None",
         "description": "Increases the influence granted by Drukhari units when they kill an enemy.",
-        "flavor": "\u201cYou must drug them. Kill the guards. Open the gate. Wake them carefully. Lead them out to freedom. Give them hope of escape. Start the pursuit in earnest. Fake your death. Show them an exit. Then reveal the charade. And return them to the torture chamber, grinning wickedly. Without touching them, you have imbued them with a rich, spiritual pain that will never leave.\u201d \u2013 Gyrthineus Roche, Archon of The Last Blade",
+        "flavor": "\u201cYou must drug them. Kill the guards. Open the gate. Wake them carefully. Lead them out to freedom. Give them hope of escape. Start the pursuit in earnest. Fake your death. Show them an exit. Then reveal the charade. And return them to the torture chamber, grinning wickedly. Without touching them, you have imbued them with a rich, spiritual pain that will never leave.\u201d\n  \u2014 Gyrthineus Roche, Archon of The Last Blade",
         "tier": "10",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Upgrades\\Drukhari\\SoulHungerUpgrade.png",
@@ -5053,7 +5149,7 @@
         "internalID": "SoulShelling",
         "dlc": "None",
         "description": "Soul Hunger ability that damages target enemy unit.",
-        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a Raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
+        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
         "tier": "10",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Actions\\Drukhari\\SoulShelling.png",
@@ -5096,7 +5192,7 @@
         "internalID": "WealthPlunder",
         "dlc": "None",
         "description": "Soul Hunger ability that makes all Drukhari units grant research when killing enemies.",
-        "flavor": "\u201cNear to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations\u2026 everything spilled. To stop the pain. Why should it stop, though. When it is so\u2026 productive.\u201d \u2013 Arkanic, Haemonculus to Kabal of The Last Blade",
+        "flavor": "\u201cNear to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations\u2026 everything spilled. To stop the pain. Why should it stop, though. When it is so\u2026 productive.\u201d\n  \u2014 Arkanic, Haemonculus to Kabal of The Last Blade",
         "tier": "5",
         "requiredUpgrades": [],
         "iconPath": "Gladius\\Icons\\Traits\\Drukhari\\WealthPlunder.png",
@@ -5236,12 +5332,13 @@
         "faction": "Eldar",
         "internalID": "CrystalTargetingMatrix",
         "dlc": "None",
-        "description": "Grants Fire Prisms, Hornets, Wave Serpents and War Walkers the ability to temporarily increase their accuracy.",
+        "description": "Grants Fire Prisms, Hornets, Vypers, Wave Serpents and War Walkers the ability to temporarily increase their accuracy.",
         "flavor": "Utilising advanced scanner technologies, this targeting matrix allows pinpoint fire even when on the move.",
         "tier": "7",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WarWalker",
             "Eldar/WaveSerpent"
         ],
@@ -5314,12 +5411,13 @@
         "faction": "Eldar",
         "internalID": "GhostwalkMatrix",
         "dlc": "None",
-        "description": "Allows Fire Prisms, Hornets, Wave Serpents and War Walkers to move through cover.",
+        "description": "Allows Fire Prisms, Hornets, Vypers, Wave Serpents and War Walkers to move through cover.",
         "flavor": "A ghostwalk matrix utilises the knowledge and wisdom contained within a spirit stone to guide the vehicle on its path.",
         "tier": "8",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WarWalker",
             "Eldar/WaveSerpent"
         ],
@@ -5341,12 +5439,13 @@
         "faction": "Eldar",
         "internalID": "HoloFields",
         "dlc": "None",
-        "description": "Grants Fire Prisms, Hornets and Wave Serpents invulnerable damage reduction after having moved.",
+        "description": "Grants Fire Prisms, Hornets, Vypers and Wave Serpents invulnerable damage reduction after having moved.",
         "flavor": "Harnessing kinetic energy to shimmer and distort the vehicle\u2019s silhouette, holo-fields prevent the foe from accurately targeting the craft as it sweeps across the battlefield.",
         "tier": "9",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WaveSerpent"
         ],
         "iconPath": "Gladius\\Icons\\Traits\\Eldar\\HoloFields.png",
@@ -5435,12 +5534,13 @@
         "faction": "Eldar",
         "internalID": "SpiritStones",
         "dlc": "None",
-        "description": "Reduces the morale loss of Fire Prisms, Hornets, War Walkers and Wave Serpents.",
+        "description": "Reduces the morale loss of Fire Prisms, Hornets, Vypers, War Walkers and Wave Serpents.",
         "flavor": "Some Aeldari vehicles incorporate large spirit stones with a captive animus that can control the vehicle should it be disabled.",
         "tier": "6",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WarWalker",
             "Eldar/WaveSerpent"
         ],
@@ -5451,12 +5551,13 @@
         "faction": "Eldar",
         "internalID": "StarEngines",
         "dlc": "None",
-        "description": "Increases the movement of Fire Prisms, Hornets, Scorpions, War Walkers and Wave Serpents.",
+        "description": "Increases the movement of Fire Prisms, Hornets, Scorpions, Vypers, War Walkers and Wave Serpents.",
         "flavor": "Whilst all Aeldari vehicles are swift and agile, those that mount star engines are often able to move faster than the eye can follow. Lesser races can only marvel at the phenomenal speed and manoeuvrability of a craft so equipped.",
         "tier": "10",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WarWalker",
             "Eldar/WaveSerpent",
             "Eldar/Scorpion"
@@ -5492,12 +5593,13 @@
         "faction": "Eldar",
         "internalID": "VectoredEngines",
         "dlc": "None",
-        "description": "Grants Fire Prisms, Hornets, War Walkers, Wave Serpents and Scorpions the ability to temporarily increase their armour against enemy ranged weapons.",
+        "description": "Grants Fire Prisms, Hornets, Vypers, War Walkers, Wave Serpents and Scorpions the ability to temporarily increase their armour against enemy ranged weapons.",
         "flavor": "Vectored engines allow the pilot of an Aeldari vehicle to rapidly alter its facing, placing deadly weapons, or stronger armour, to the fore. Often, this can mean the difference between sustaining critical damage and taking an indirect blow that can soon be shrugged off.",
         "tier": "7",
         "requiredUpgrades": [
             "Eldar/FirePrism",
             "Eldar/Hornet",
+            "Eldar/Vyper",
             "Eldar/WarWalker",
             "Eldar/WaveSerpent",
             "Eldar/Scorpion"
@@ -5802,6 +5904,7 @@
         "flavor": "In some abstruse sense, the Necron's machines now remember their former glory and endlessly strive to regain it, flowing their living metal rapidly back to cover any damage.",
         "tier": "3",
         "requiredUpgrades": [
+            "Necrons/CanoptekReanimator",
             "Necrons/CanoptekSpyder",
             "Necrons/CanoptekWraith",
             "Necrons/Vehicles"

@@ -20,7 +20,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit match="Any">
 							<enemy/>
@@ -38,6 +38,16 @@
 									</conditions>
 									<effects>
 										<addTrait type="PerfectForever" duration="3"/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<conditions>
+										<unit>
+											<control/>
+										</unit>
+									</conditions>
+									<effects>
+										<removeTrait type="Infinite"/>
 									</effects>
 								</modifier>
 								<modifier effectDescription="ToTargetOwnUnit">
@@ -109,7 +119,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<control/>
@@ -175,7 +185,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<areas>
 						<area affect="Unit" radius="3">
 							<modifiers>

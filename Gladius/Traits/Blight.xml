@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Traits/Blighted" alwaysVisible="1" category="Buff" visibilityCategory="Weapon">
+	<onCombatOpponentModifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<!-- <self>
+						<attacking/>
+					</self> -->
+					<opponent>
+						<noAttacking/>
+						<noTrait name="Fortification"/>
+						<noTrait name="Vehicle"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<addTrait name="Blighted" duration="2"/>
+			</effects>
+		</modifier>
+	</onCombatOpponentModifiers>
+</trait>

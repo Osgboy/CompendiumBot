@@ -4,7 +4,13 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
-					<modifier>
+					<modifier effectDescription="ToNonTitanEnemy">
+						<conditions ignoreForTraitVisibility="1">
+							<unit>
+								<noTrait type="Fortification"/>
+								<noTrait type="Titan"/>
+							</unit>
+						</conditions>
 						<effects>
 							<addTrait type="Hobbled" duration="1"/>
 						</effects>

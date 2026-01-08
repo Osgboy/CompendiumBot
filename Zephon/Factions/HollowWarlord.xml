@@ -21,7 +21,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<areas>
 						<area affect="Unit" radius="2">
 							<modifiers>
@@ -46,6 +46,7 @@
 											<actionPoints greater="0"/>
 											<ally/>
 											<hitpointsFraction greater="0.667"/>
+											<movement greater="0"/>
 											<noTrait type="HordeMandate"/>
 										</unit>
 									</conditions>

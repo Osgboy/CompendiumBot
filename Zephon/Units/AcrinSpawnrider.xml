@@ -12,7 +12,7 @@
 	<weapons>
 		<weapon type="BleedIncitation">
 			<models>
-				<beamWeapon muzzleBone="Muzzle" muzzleCount="3"/>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="3" effectFaceWeight="0.9"/>
 			</models>
 		</weapon>
 		<weapon type="ThricefoldHunger"
@@ -60,7 +60,8 @@
 						beginFire="1.0"
 						endFire="2.0"
 						responseSound="Responses/Units/AcrinSpawnriderAttack"
-						responseSoundCount="3"/>
+						responseSoundCount="3"
+						sound="Units/AcrinSpawnriderAttack"/>
 			</model>
 		</attack>
 		<die>
@@ -69,7 +70,7 @@
 						groundImpact="1.3"
 						groundImpactBlueprint="Effects/TitanGroundImpact"
 						groundImpactIntensity="2"
-						sound="Units/ReamingCrodeusDie"
+						sound="Units/AcrinSpawnriderDie"
 						voiceSound="Units/AcrinSpawnriderDieVoice"
 						voiceSoundCount="1"/> 
 			</model>
@@ -106,7 +107,7 @@
 				<action animation="Units/AcrinSpawnriderMove"
 						responseSound="Responses/Units/AcrinSpawnriderMove"
 						responseSoundCount="3"
-						sound="Units/ReamingCrodeusMove"
+						sound="Units/AcrinSpawnriderMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
 			</model>
@@ -152,6 +153,7 @@
 						meleeAnimation="Units/AcrinSpawnriderMelee"
 						meleeBeginSwing="0.3"
 						meleeEndSwing="0.4"
+						meleeSound="Units/AcrinSpawnriderMelee"
 						responseSound="Responses/Units/AcrinSpawnriderThricefoldHunger"/>
 			</model>
 		</useWeapon>

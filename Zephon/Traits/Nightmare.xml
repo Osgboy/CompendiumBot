@@ -2,6 +2,11 @@
 <trait category="Debuff" icon="Actions/Nightmare" visibleOnUnit="1" visibleToNonAllies="0">
 	<modifiers>
 		<modifier>
+			<conditions>
+				<unit>
+					<destroyed/> <!-- So it does not show in the level hint and reveal that it's a nightmare to enemies. -->
+				</unit>
+			</conditions>
 			<effects>
 				<deathExperience max="0"/>
 				<deathMorale max="0"/>

@@ -115,6 +115,59 @@
         "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\ArchaeopterStratoraptor.png",
         "name": "Archaeopter Stratoraptor"
     },
+    "Armiger Helverin": {
+        "faction": "Adeptus Mechanicus",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 48.0,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 3.0
+        },
+        "internalID": "ArmigerHelverin",
+        "tier": "8",
+        "dlc": "Supplement17",
+        "description": "Long-range heavy walker.",
+        "flavor": "These smaller Imperial Knights act as highly mobile gun platforms, equipped with paired long-range autocannons. Their pilots are lower-ranking nobles that act as Bondsmen to Knights Preceptor and are often seen working in groups of three to focus their firepower.",
+        "costStats": {
+            "production": "54.0",
+            "ore": "120.0"
+        },
+        "upkeepStats": {
+            "ore": "6.0"
+        },
+        "weapons": {
+            "Armiger Autocannon": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Meltagun": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Extra Vehicle Armour": "AdeptusMechanicus/ExtraVehicleArmour",
+            "Ion Shield": null,
+            "Vehicle": null,
+            "Walker": null
+        },
+        "actions": {
+            "Hammer of Wrath": "AdeptusMechanicus/HammerOfWrath"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\AdeptusMechanicus\\ArmigerHelverin.png",
+        "name": "Armiger Helverin"
+    },
     "Cybernetica Datasmith": {
         "faction": "Adeptus Mechanicus",
         "combatStats": {
@@ -1596,6 +1649,67 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\AstraMilitarum\\Chimera.png",
         "name": "Chimera"
+    },
+    "Deathstrike": {
+        "faction": "Astra Militarum",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 36.0,
+            "moraleMax": 8,
+            "movementMax": 4,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 6,
+            "rangedAccuracy": 6.0,
+            "meleeAttacks": 1,
+            "strengthDamage": 1
+        },
+        "internalID": "Deathstrike",
+        "tier": "7",
+        "dlc": "Supplement17",
+        "description": "Long-range artillery vehicle carrying a single, destructive missile.",
+        "flavor": "The sanctioned use of a Deathstrike launcher \u2013 designated \u2018Ordnance Extremis\u2019 \u2013 is often an excessive measure to combat the Imperium\u2019s most heinous enemies. Its huge Deathstrike missile can deliver the undiluted wrath of the Emperor to foes half a world away, and is capable of mounting various catastrophic payloads \u2013 such as the armour-sundering godspear warhead, fiery plasma barrage warhead, and warp-based vortex warhead.",
+        "costStats": {
+            "production": "48.0",
+            "ore": "80.0"
+        },
+        "upkeepStats": {
+            "ore": "4.0"
+        },
+        "weapons": {
+            "Heavy Bolter": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Deathstrike Missile": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Hunter-Killer Missile": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Camo Netting": "AstraMilitarum/CamoNetting",
+            "Dozer Blade": "AstraMilitarum/DozerBlade",
+            "Extra Vehicle Armour": "AstraMilitarum/ExtraVehicleArmour",
+            "Recovery Gear": "AstraMilitarum/RecoveryGear",
+            "Relic Plating": "AstraMilitarum/RelicPlating",
+            "Tank": null,
+            "Vehicle": null
+        },
+        "actions": {
+            "Create Smoke Screen": "AstraMilitarum/SmokeLauncher"
+        },
+        "iconPath": "Gladius\\Icons\\Units\\AstraMilitarum\\Deathstrike.png",
+        "name": "Deathstrike"
     },
     "Devil Dog": {
         "faction": "Astra Militarum",
@@ -4134,6 +4248,73 @@
         "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\Obliterator.png",
         "name": "Obliterators"
     },
+    "Plague Marines": {
+        "faction": "Chaos Space Marines",
+        "combatStats": {
+            "groupSizeMax": "2",
+            "armor": 8,
+            "hitpointsMax": 4.0,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "PlagueMarine",
+        "tier": "4",
+        "dlc": "Supplement17",
+        "description": "Short-range heavy infantry unit carrying poisoned weapons.",
+        "flavor": "Sworn to Nurgle\u2019s service, Plague Marines are bloated with festering corruption, horrific disfigurements, and stinking, decayed bodies. Unlike many traitors from the Horus Heresy, their numbers have only swollen as the millennia have passed. In battle, the putrescent slime that oozes from their sores corrodes armour and boils away skin, and each blow of their corroded weapons brings horrible infection.",
+        "costStats": {
+            "production": "42.0",
+            "food": "30.0",
+            "ore": "30.0"
+        },
+        "upkeepStats": {
+            "food": "3.0"
+        },
+        "weapons": {
+            "Plague Spewer": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Blight Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Krak Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Melta Bomb": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Fearless": null,
+            "Feel No Pain": null,
+            "Champion of Chaos": null,
+            "Mark of Nurgle": null,
+            "Extra Infantry Armour": "ChaosSpaceMarines/ExtraInfantryArmour",
+            "Gift of Mutation": "ChaosSpaceMarines/GiftOfMutation",
+            "Veterans of the Long War": "ChaosSpaceMarines/VeteransOfTheLongWar"
+        },
+        "actions": {
+            "Nurgle's Gift": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\ChaosSpaceMarines\\PlagueMarine.png",
+        "name": "Plague Marines"
+    },
     "Rubric Marines": {
         "faction": "Chaos Space Marines",
         "combatStats": {
@@ -4503,7 +4684,6 @@
             "Feel No Pain": null,
             "Move Through Cover": null,
             "Power from Pain": null,
-            "Relentless": null,
             "Smash": null,
             "Soul Hunger": null
         },
@@ -5354,7 +5534,6 @@
             "Feel No Pain": null,
             "Move Through Cover": null,
             "Power from Pain": null,
-            "Relentless": null,
             "Smash": null,
             "Soul Hunger": null
         },
@@ -6727,7 +6906,8 @@
             "Battle Focus": null,
             "Extra Vehicle Armour": "Eldar/ExtraVehicleArmour",
             "Fleet": null,
-            "Spirit Preservation": null
+            "Spirit Preservation": null,
+            "Very Bulky": null
         },
         "actions": {
             "Webway Travel": null,
@@ -6766,17 +6946,17 @@
             "ore": "3.0"
         },
         "weapons": {
-            "Eldar Missile Launcher (Plasma)": {
+            "Eldar Missile Launcher (Starshot)": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": false
             },
-            "Eldar Missile Launcher (Starshot)": {
+            "Eldar Missile Launcher (Starhawk)": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": true
             },
-            "Eldar Missile Launcher (Starhawk)": {
+            "Eldar Missile Launcher (Plasma)": {
                 "count": "1",
                 "requiredUpgrade": null,
                 "secondary": true
@@ -7318,7 +7498,7 @@
         },
         "weapons": {
             "Atomiser Beam": {
-                "count": "1",
+                "count": "2",
                 "requiredUpgrade": null,
                 "secondary": false
             }
@@ -8050,6 +8230,59 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Necrons\\HeavyDestroyer.png",
         "name": "Heavy Destroyers"
+    },
+    "Hexmark Destroyer": {
+        "faction": "Necrons",
+        "combatStats": {
+            "groupSizeMax": "1",
+            "armor": 8,
+            "hitpointsMax": 16.0,
+            "moraleMax": 12,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 2.0
+        },
+        "internalID": "HexmarkDestroyer",
+        "tier": "3",
+        "dlc": "Supplement17",
+        "description": "Short range specialist able to teleport.",
+        "flavor": "A Hexmark Destroyer was once a Deathmark, before it fell to the Destroyer Curse and joined a Destroyer Cult. Now each one is like a mobile gun battery, all but unrivalled in close-range firepower and able to blast its way through hordes of enemy infantry with impunity.",
+        "costStats": {
+            "production": "36.0",
+            "energy": "40.0"
+        },
+        "upkeepStats": {
+            "ore": "2.0"
+        },
+        "weapons": {
+            "Enmitic Disintegrator Pistol": {
+                "count": "6",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Static Targetting": "Necrons/AttackCityBonus",
+            "Extra Infantry Armour": "Necrons/ExtraInfantryArmour",
+            "Bulky": null,
+            "Inescapable Death": null,
+            "Multi-Threat Eliminator": null,
+            "Reanimation Protocols": null,
+            "Hardwired For Destruction": null
+        },
+        "actions": {
+            "Necrodermis Repair": null,
+            "Dimensional Corridor": "Necrons/DimensionalCorridor",
+            "Dimensional Translocation": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Necrons\\HexmarkDestroyer.png",
+        "name": "Hexmark Destroyer"
     },
     "Immortals": {
         "faction": "Necrons",
@@ -10582,6 +10815,68 @@
         "iconPath": "Gladius\\Icons\\Units\\Orks\\KillaKan.png",
         "name": "Killa Kans"
     },
+    "Kommandos": {
+        "faction": "Orks",
+        "combatStats": {
+            "groupSizeMax": "6",
+            "armor": 2,
+            "hitpointsMax": 3.0,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 4.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.0
+        },
+        "internalID": "Kommando",
+        "tier": "3",
+        "dlc": "Supplement17",
+        "description": "Melee unit specialized in infiltration and elimination of priority targets.",
+        "flavor": "Where most Orks love getting stuck in with a minimum of muckin\u2019 about, Kommandos take the average Ork\u2019s low cunning to the extreme. Rather than run at an enemy yelling, they would rather sneak up and stick a dagger through their victim\u2019s ribs. Their greatest satisfaction is the thump of exploding ammo dumps or the screams of enemies as stikkbombs clatter into their barracks. Other Orks grumble, calling it \u2018un-Orky\u2019, but can\u2019t deny its effectiveness.",
+        "costStats": {
+            "production": "30.0",
+            "food": "15.0",
+            "ore": "15.0"
+        },
+        "upkeepStats": {
+            "food": "1.5",
+            "influence": "1.5"
+        },
+        "weapons": {
+            "Kustom Shoota": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Stikkbomb": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Bosspole": "Orks/Bosspole",
+            "Rapid Decomposition": null,
+            "Extra Infantry Armour": "Orks/ExtraInfantryArmour",
+            "Green Tide": null,
+            "Infiltrate": null,
+            "Might Makes Right": null,
+            "Move Through Cover": null,
+            "Mob Rule": null,
+            "Fungal Forests": "Orks/OrkoidFungusBonusHealingRate",
+            "Scavenger": null,
+            "Stealth": null
+        },
+        "actions": {
+            "'Ere We Go!": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Orks\\Kommando.png",
+        "name": "Kommandos"
+    },
     "Meganobz": {
         "faction": "Orks",
         "combatStats": {
@@ -10844,7 +11139,7 @@
         "tier": "6",
         "dlc": "Supplement16",
         "description": "Heavy infantry unit that excels at taking down large prey.",
-        "flavor": "Riding four-legged Squigs into battle, these Beast Snagga boyz are nomadic Orks, predominantly from the traditionalist Snakebites Clan. Their goal is always to take down the biggest enemy on the battlefield\u2014be that Tyranid, Necron or Ogryn.",
+        "flavor": "Riding Squigs into battle, these Beast Snagga boyz are nomadic Orks, predominantly from the traditionalist Snakebites Clan. Their goal is always to take down the biggest enemy on the battlefield\u2014be that Tyranid, Necron or Ogryn.",
         "costStats": {
             "production": "42.0",
             "ore": "60.0"
@@ -12556,6 +12851,7 @@
         "traits": {
             "Shield of Faith": null,
             "Martyrdom": null,
+            "Miraculous Intervention": null,
             "Oath Of Faith": null,
             "Armour Of Saint Katherine": null,
             "Extra Infantry Armour": "SistersOfBattle/ExtraInfantryArmour",
@@ -12576,6 +12872,73 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\SistersOfBattle\\SaintCelestine.png",
         "name": "Saint Celestine"
+    },
+    "Seraphim": {
+        "faction": "Sisters Of Battle",
+        "combatStats": {
+            "groupSizeMax": "5",
+            "armor": 8,
+            "hitpointsMax": 2.0,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 8.0,
+            "meleeAttacks": 1.0,
+            "strengthDamage": 1.0
+        },
+        "internalID": "Seraphim",
+        "tier": "5",
+        "dlc": "Supplement17",
+        "description": "Jump infantry equipped with potent hand flamers.",
+        "flavor": "The Seraphim fight in the Adepta Sororitas\u2019 advanced guard. Only Battle Sisters with exceptional dexterity are selected to join their ranks, firing with pinpoint accuracy while moving at great speeds. They must be able to land with incredible precision, cut down foes and retreat within a few heartbeats.",
+        "costStats": {
+            "production": "42.0",
+            "requisitions": "60.0"
+        },
+        "upkeepStats": {
+            "requisitions": "3.0"
+        },
+        "weapons": {
+            "Hand Flamer": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Frag Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Krak Grenade": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Melta Bomb": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Angelic Visage": null,
+            "Bulky": null,
+            "Hit & Run": null,
+            "Martyr Spirit": null,
+            "Oath Of Faith": null,
+            "Extra Infantry Armour": "SistersOfBattle/ExtraInfantryArmour",
+            "Sister Superior": "SistersOfBattle/SisterSuperior"
+        },
+        "actions": {
+            "Jump Pack": null,
+            "The Emperor's Deliverance": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\SistersOfBattle\\Seraphim.png",
+        "name": "Seraphim"
     },
     "Sisters Repentia": {
         "faction": "Sisters Of Battle",
@@ -12650,7 +13013,7 @@
             "groupSizeMax": "5",
             "armor": 8,
             "hitpointsMax": 2.0,
-            "moraleMax": 8,
+            "moraleMax": 10,
             "movementMax": 3,
             "cargoSlots": 0,
             "itemSlots": 0
@@ -15716,7 +16079,6 @@
             "Drone Controller In Range": null,
             "Jet Pack": null,
             "Relentless": null,
-            "Skyfire": null,
             "Supporting Fire": null,
             "Extra Infantry Armour": "Tau/ExtraInfantryArmour"
         },
@@ -15726,6 +16088,62 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Tau\\InterceptorDrone.png",
         "name": "MV17 Interceptor Drones"
+    },
+    "Krootox Rampagers": {
+        "faction": "Tau",
+        "combatStats": {
+            "groupSizeMax": "3",
+            "armor": 4,
+            "hitpointsMax": 4.0,
+            "moraleMax": 6,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 8.0,
+            "rangedAccuracy": 6.0,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 3.0
+        },
+        "internalID": "KrootoxRampager",
+        "tier": "2",
+        "dlc": "Supplement17",
+        "description": "Disruptive skirmish cavalry.",
+        "flavor": "Terrifying skirmish cavalry, Krootox Rampagers combine the aggression and agility of juvenile Krootox with the vicious skill and cunning of a Kroot rider\u2014if the latter can hold on as the Krootox plunges into the enemy.",
+        "costStats": {
+            "production": "36.0",
+            "food": "20.0",
+            "ore": "20.0"
+        },
+        "upkeepStats": {
+            "food": "2.0"
+        },
+        "weapons": {
+            "Kroot Pistol and Hunting Javelin": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Close Combat Weapon": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Bulky": null,
+            "Extra Infantry Armour": "Tau/ExtraInfantryArmour",
+            "Infiltrate": null,
+            "Move Through Cover": null,
+            "Forest Stealth": null,
+            "Kroot Linebreakers": null
+        },
+        "actions": {
+            "Scout": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Tau\\KrootoxRampager.png",
+        "name": "Krootox Rampagers"
     },
     "Krootox Riders": {
         "faction": "Tau",
@@ -15747,7 +16165,7 @@
         "internalID": "KrootoxRider",
         "tier": "3",
         "dlc": "Supplement8",
-        "description": "Sneaky infantry unit with both ranged and close combat capabilities.",
+        "description": "Sneaky cavalry unit with both ranged and close combat capabilities.",
         "flavor": "Surging from the undergrowth with their rifles blazing, the warriors of the Kroot Carnivore squads fall upon their victims with feral shrieks. In their midst lumber massive Krootoxes, gunners perched upon their backs as they direct sawing bursts of heavy fire into the foe.",
         "costStats": {
             "production": "36.0",
@@ -17103,6 +17521,57 @@
         },
         "iconPath": "Gladius\\Icons\\Units\\Tyranids\\Gargoyle.png",
         "name": "Gargoyles"
+    },
+    "Genestealers": {
+        "faction": "Tyranids",
+        "combatStats": {
+            "groupSizeMax": "5",
+            "armor": 4,
+            "hitpointsMax": 3.0,
+            "moraleMax": 10,
+            "movementMax": 3,
+            "cargoSlots": 0,
+            "itemSlots": 0
+        },
+        "weaponStats": {
+            "meleeAccuracy": 12.0,
+            "rangedAccuracy": 6,
+            "meleeAttacks": 2.0,
+            "strengthDamage": 1.5
+        },
+        "internalID": "Genestealer",
+        "tier": "2",
+        "dlc": "Supplement17",
+        "description": "Elite infiltration melee unit.",
+        "flavor": "Encountered long before the Tyranids, Genestealer infestations have been a thorn in the Imperium\u2019s side for millenia. In battle, this xenos is a swift and powerful predator with lightning-fast reflexes and serrated claws that can tear through even the thickest of armour. Genestealers also have large, highly adaptive brains and possess a form of brood telepathy that allows them to function with full independence from the Hive Mind. This autonomy allows them to destroy through stealth and guile that which cannot be defeated through numbers alone.",
+        "costStats": {
+            "production": "36.0",
+            "biomass": "40.0"
+        },
+        "upkeepStats": {
+            "biomass": "2.0"
+        },
+        "weapons": {
+            "Rending Claws": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Extra Infantry Armour": "Tyranids/ExtraInfantryArmour",
+            "Fleet": null,
+            "Furious Charge": "Tyranids/AdrenalGlands",
+            "Gaunt Instincts": "Tyranids/InfantryUpkeep",
+            "Infiltrate": null,
+            "Move Through Cover": null,
+            "Toxin Sacs": "Tyranids/ToxinSacs"
+        },
+        "actions": {
+            "Subterranean Assault": null
+        },
+        "iconPath": "Gladius\\Icons\\Units\\Tyranids\\Genestealer.png",
+        "name": "Genestealers"
     },
     "Haruspex": {
         "faction": "Tyranids",

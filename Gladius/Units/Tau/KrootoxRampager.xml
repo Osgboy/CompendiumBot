@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement17">
+	<model>
+		<unit mesh="Units/Tau/KrootoxRampager"
+				material="Units/Tau/KrootoxRampager"
+				idleAnimation="Units/Tau/KrootoxRampagerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"
+				bloodBone="Krootox_Chest"
+				walker="1"/>
+	</model>
+	<group size="3" rowSize="3" memberDeltaX="70" memberDeltaY="60"/>
+	<weapons>
+		<weapon name="KrootPistolAndHuntingJavelin">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="0.5"/>
+			</model>
+		</weapon>
+		<weapon name="CloseCombatWeapon">
+ 			<model>
+				<weapon fireInterval="10"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="4"/> <!-- %armor base armor=5+ -->
+				<foodUpkeep base="2.0"/> <!-- %foodUpkeep base tier=6 factor=1 -->
+				<foodCost base="20.0"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=3 wounds=2 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<oreCost base="20.0"/> <!-- %oreCost base tier=6 factor=0.5 -->
+				<strengthDamage base="3"/> <!-- %strengthDamage base strength=6 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="3"/>
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="6"/> <!-- %rangedAccuracy base ballisticSkill=3 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/Tau/KrootoxRampagerAttack"
+						beginFire="0.5"
+						endFire="1.1"
+						chargeAnimation="Units/Tau/KrootoxRampagerCharge"
+						chargeBeginFire="0.3"
+						chargeEndFire="0.9"
+						meleeAnimation="Units/Tau/KrootoxRampagerMelee"
+						meleeBeginSwing="0.4"
+						meleeEndSwing="0.5"
+						sound="Weapons/KrootPistolAndHuntingJavelin"
+						soundCount="3"
+						soundDelay="0.5"
+						soundOnSourceTile="1"
+						soundOnTargetTile="0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Tau/KrootoxRampagerDie"
+						animationCount="2"
+						sound="Units/MediumUnarmoredDie"
+						soundCount="4"
+						soundDelay="1.0"
+						voiceSound="Units/Tau/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Tau/KrootoxRampagerMove"
+						sound="Units/AstraMilitarum/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<scout consumedActionPoints="0" consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Scan"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</scout>
+	</actions>
+	<traits>
+		<trait name="Bulky"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Tau/ExtraInfantryArmour"/>
+		<trait name="Infiltrate"/>
+		<trait name="MoveThroughCover"/>
+		<trait name="ForestStealth"/>
+		<trait name="Tau/KrootLinebreakers"/>
+	</traits>
+</unit>

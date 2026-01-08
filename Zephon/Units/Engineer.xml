@@ -167,7 +167,7 @@
 						responseSoundCount="1"/>
 			</model>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<unit>
 							<ally/>
@@ -207,7 +207,7 @@
 						responseSoundCount="1"/>
 			</model>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<unit>
 							<ally/>
@@ -264,7 +264,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<tile>
 							<buildingSlots greater="0"/>
@@ -337,13 +337,14 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<tile>
 							<noFeatureCategory name="SpecialResource"/>
 							<noFeatureCategory name="Bleed"/>
 							<noFeatureCategory name="Road"/>
 							<noFeature type="Fire"/>
+							<noFeature type="Volcano"/>
 							<noEnemyUnit/>
 							<noCity/>
 							<land/>
@@ -381,7 +382,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<tile>
 							<featureCategory name="Road"/>
@@ -414,7 +415,7 @@
 						responseSoundCount="1"/>
 			</model>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions match="Any">
 						<unit>
 							<noEnemy/>
@@ -454,7 +455,7 @@
 				</modifier>
 			</modifiers>
 			<beginTargets>
-				<target melee="1">
+				<target melee="1" rangeMax="1">
 					<conditions>
 						<tile>
 							<buildingSlots greater="0"/>

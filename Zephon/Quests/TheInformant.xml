@@ -2,7 +2,7 @@
 	<stages>
 		<stage name="Intro">
 			<modifications>
-				<playerSelector>
+				<randomPlayerSelector count="1">
 					<conditions>
 						<player>
 							<aiControlled/>
@@ -13,7 +13,7 @@
 							<contact/>
 						</player>
 					</conditions>
-				</playerSelector>
+				</randomPlayerSelector>
 			</modifications>
 			<options>
 				<option name="Pay">

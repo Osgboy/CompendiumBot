@@ -187,6 +187,55 @@
         "iconPath": "Zephon\\Icons\\Units\\AcrinMilitia.png",
         "name": "Acrin Remnants"
     },
+    "Acrin Spawnrider": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 4,
+            "hitpointsMax": 48,
+            "moraleMax": 8,
+            "movementMax": 5,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "AcrinSpawnrider",
+        "branch": "Acrin",
+        "tier": "N/A",
+        "description": "Large biological flyer that defiles its enemies and bolsters the morale of its allies",
+        "flavor": "The one time I wished I was Acrin. Humans couldn't get ten feet near an Acrin Spawn without losing their head (literally). Only the Acrin\u2026 I'd see them flying in the distance. I remembered holoshows from when I was a kid with knights flying dragons. Wanted to be one then. Maybe I still want to be one now.",
+        "costStats": {
+            "production": "60.0",
+            "food": "80",
+            "algae": "40"
+        },
+        "upkeepStats": {
+            "food": "4.0",
+            "algae": "2.0"
+        },
+        "weapons": {
+            "Bleed Incitation": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Thricefold Hunger": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Flying": null,
+            "Large": null,
+            "Regeneration": null
+        },
+        "actions": {
+            "Psychic Spoor": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\AcrinSpawnrider.png",
+        "name": "Acrin Spawnrider"
+    },
     "Acrin Titan": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -242,7 +291,7 @@
             "accuracy": 6,
             "armor": 2,
             "hitpointsMax": 3.0,
-            "moraleMax": 6,
+            "moraleMax": 8,
             "movementMax": 3,
             "cargoSlots": "0",
             "itemSlots": "0"
@@ -432,6 +481,60 @@
         "iconPath": "Zephon\\Icons\\Units\\AmoetiasDevourer.png",
         "name": "Amoetia's Devourer"
     },
+    "Anashim Enforcers": {
+        "combatStats": {
+            "groupSizeMax": 3,
+            "accuracy": 4,
+            "armor": 6,
+            "hitpointsMax": 6,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "AnashimEnforcer",
+        "branch": "Cyber",
+        "tier": "3",
+        "description": "Bio-mech infantry that can adjust its function to many situations",
+        "flavor": "If you ever thought there was a way back from giving into the machines\u2026 the Anashim did away with that. The engineers let them keep their skin as a practical joke, so that some of the poor soldiers thought they still had a soul. The nastiest of the subjects just ripped it all off. They were bored of being human.",
+        "costStats": {
+            "production": "42.0",
+            "food": "20",
+            "minerals": "20",
+            "chips": "10"
+        },
+        "upkeepStats": {
+            "food": "1.0",
+            "minerals": "1.0",
+            "chips": "0.5"
+        },
+        "weapons": {
+            "Missile Pod": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Scissorhand": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
+            "Move Function": null,
+            "Dermal Patching": "DermalPatching",
+            "Mechanical": null
+        },
+        "actions": {
+            "Move Function": null,
+            "Attack Function": null,
+            "Evade Function": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\AnashimEnforcer.png",
+        "name": "Anashim Enforcers"
+    },
     "Anchorite Camp": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -565,7 +668,7 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 8,
+            "armor": 6,
             "hitpointsMax": 24,
             "moraleMax": 10,
             "movementMax": 0,
@@ -761,6 +864,57 @@
         "iconPath": "Zephon\\Icons\\Units\\Reaver.png",
         "name": "Bandit King"
     },
+    "Bandit King (Mutated)": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 8,
+            "armor": 6,
+            "hitpointsMax": 32,
+            "moraleMax": 10,
+            "movementMax": 4,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "BanditKingMutated",
+        "branch": "Voice",
+        "tier": "N/A",
+        "description": "A bandit leader transformed by the Philosopher's Stone",
+        "flavor": "You almost don't recognize the bandit when he appears on your doorstep. His gang is gone. Some of their limbs might be the ones now hanging off his twisted body. The Voice whispered to him through that damned Stone\u2014a rare survivor in the wasteland touched by its power that didn't consent to its grasp.",
+        "costStats": {
+            "production": "54.0",
+            "food": "30",
+            "antimatter": "6",
+            "dimensionalEchoes": "6"
+        },
+        "upkeepStats": {
+            "food": "1.5",
+            "antimatter": "0.3",
+            "dimensionalEchoes": "0.3"
+        },
+        "weapons": {
+            "Axiomatic Pendulum": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Paradox Theriac": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Deathshriek": null,
+            "Surthodai's Kiss": null,
+            "Void Drifter": null
+        },
+        "actions": {
+            "Masochism": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\PhenarisEpicurean.png",
+        "name": "Bandit King (Mutated)"
+    },
     "Bunker": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -894,6 +1048,90 @@
         },
         "iconPath": "Zephon\\Icons\\Units\\IshimEnforcer.png",
         "name": "Brynn"
+    },
+    "Caelum Cete": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 48,
+            "moraleMax": 10,
+            "movementMax": 0,
+            "cargoSlots": 3,
+            "itemSlots": "0"
+        },
+        "internalID": "CaelumCete",
+        "branch": "Neutral",
+        "tier": "N/A",
+        "description": null,
+        "flavor": "You finally caught up with the airborne city. It\u2019s called Caelum Cete, an absurd phrase that means \u201cSky Whale.\u201d Kept aloft by the core of a Cherubim Titan, it is, in theory, controlled by the Constellation.",
+        "costStats": {},
+        "upkeepStats": {},
+        "weapons": {},
+        "traits": {
+            "Caelum Cete (Twenty-Eight Dragons)": "CaelumCeteRebel",
+            "Fortification": null,
+            "Flying": null,
+            "Large": null,
+            "Mechanical": null,
+            "Transport": null
+        },
+        "actions": {
+            "Construct Ophanim Carrier": "CaelumCeteRuler"
+        },
+        "iconPath": "Zephon\\Icons\\Units\\CaelumCete.png",
+        "name": "Caelum Cete"
+    },
+    "Caitiffs": {
+        "combatStats": {
+            "groupSizeMax": 3,
+            "accuracy": 6,
+            "armor": 2,
+            "hitpointsMax": 8,
+            "moraleMax": 8,
+            "movementMax": 4,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "Caitiff",
+        "branch": "Voice",
+        "tier": "3",
+        "description": "Biological melee monsters that hobble enemies, burn easily and return to life after death",
+        "flavor": "\u201cWhat, no made-up god for this flavor of freak?\u201d I'd killed one of these new horrorshows and wanted one of its hooks for a trophy. But then it was like the fucker heard me. It grabbed me with the human left arm and clubbed my head with the right, getting back to its feet and\u2014why did it sound like it was laughing?!",
+        "costStats": {
+            "production": "42.0",
+            "food": "20",
+            "energy": "20",
+            "algae": "10"
+        },
+        "upkeepStats": {
+            "food": "1.0",
+            "energy": "1.0",
+            "algae": "0.5"
+        },
+        "weapons": {
+            "Fused Billhooks": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Leeching Touch": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Biological": null,
+            "Desiccated": null,
+            "Elusive": "Elusive",
+            "Surthodai's Kiss": "SurthodaisKiss"
+        },
+        "actions": {
+            "Infinite": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Caitiff.png",
+        "name": "Caitiffs"
     },
     "Calem Vorshole": {
         "combatStats": {
@@ -1090,7 +1328,7 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 8,
+            "armor": 6,
             "hitpointsMax": 32,
             "moraleMax": 8,
             "movementMax": 3,
@@ -1132,6 +1370,59 @@
         },
         "iconPath": "Zephon\\Icons\\Units\\Wastelander.png",
         "name": "Chieftess"
+    },
+    "Chosen of Throkos": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 2,
+            "hitpointsMax": 48,
+            "moraleMax": 8,
+            "movementMax": 4,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "ChosenOfThrokos",
+        "branch": "Voice",
+        "tier": "4",
+        "description": "Large biological worm that can tunnel and ruin enemy fortifications",
+        "flavor": "Was this what all the other Throkos cultists were trying to become? Not torn up freaks, but a gigantic worm? Just a singular body chewing through the Earth. If you went to the Voice with a bottomless hunger\u2026 maybe this was the only way to satisfy it.",
+        "costStats": {
+            "production": "42.0",
+            "food": "30",
+            "minerals": "30",
+            "algae": "15"
+        },
+        "upkeepStats": {
+            "food": "1.5",
+            "minerals": "1.5",
+            "algae": "0.75"
+        },
+        "weapons": {
+            "Bladed Labrum": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Earthly Ruin": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Agile": null,
+            "Biological": null,
+            "Large": null,
+            "Regeneration": null,
+            "Transport": "AnnelidHarness",
+            "Surthodai's Kiss": "SurthodaisKiss"
+        },
+        "actions": {
+            "Stone Crawl": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\ChosenOfThrokos.png",
+        "name": "Chosen of Throkos"
     },
     "Circus Abkhan": {
         "combatStats": {
@@ -1601,7 +1892,6 @@
         "traits": {
             "Biological": null,
             "Cull the Weak": null,
-            "Interpolated Production": "CyberInfantryUpgrade",
             "Surthodai's Kiss": "SurthodaisKiss",
             "Trochanters": "Trochanters"
         },
@@ -1820,7 +2110,7 @@
         "branch": "Cyber",
         "tier": "7",
         "description": "Mechanical hover infantry that detonate themselves to stun mechanical units",
-        "flavor": "Combat drones can be a distraction, but EMP drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
+        "flavor": "Combat Drones can be a distraction, but EMP Drones should be a high-priority target. You can\u2019t kill the operator if one of these floating trash cans has knocked out all of your electronics. They\u2019ll blow themselves up just to soften you up for the kill.",
         "costStats": {
             "production": "24.0",
             "minerals": "10",
@@ -2040,6 +2330,55 @@
         "iconPath": "Zephon\\Icons\\Units\\FallenOrolos.png",
         "name": "Fallen Orolos"
     },
+    "Galgalim Orb": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 32,
+            "moraleMax": 8,
+            "movementMax": 4,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "GalgalimOrb",
+        "branch": "Cyber",
+        "tier": "4",
+        "description": "Large mechanical orb that ignores zone of control and overwhelms enemies with its laser array or crushes them under its weight",
+        "flavor": "On the outside of a Galgalim: lasers, graphene plating, and carbyne spikes. Inside\u2026 a microscopic black hole? No, a feral AI put in a sphere so it could run like a hamster in an orb. Maybe the brain of a child. Who cares? You won't worry about it after it shreds your Crusader tank to pieces.",
+        "costStats": {
+            "production": "48.0",
+            "minerals": "40",
+            "chips": "20"
+        },
+        "upkeepStats": {
+            "minerals": "2.0",
+            "chips": "1.0"
+        },
+        "weapons": {
+            "Laser Array": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Crush Sequence": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Elusive": null,
+            "Galgalim Plating": "GalgalimPlating",
+            "Large": null,
+            "Mechanical": null
+        },
+        "actions": {
+            "Ablative Shell": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\GalgalimOrb.png",
+        "name": "Galgalim Orb"
+    },
     "Hades Bomber": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -2054,7 +2393,7 @@
         "internalID": "HadesBomber",
         "branch": "Human",
         "tier": "8",
-        "description": "Mechanical flyer that dematerializes enemies with its antimatter bomb",
+        "description": "Large mechanical flyer that dematerializes enemies with its antimatter bomb",
         "flavor": "Hades Bombers only took off once. It was expensive for them to take off and land repeatedly while carrying such earth-shattering payloads. Maintenance and crew cycling had to happen while it was airborne. They only came back down to earth in a very destructive blaze\u2014and all that was left were these big, empty craters. They were so smooth\u2014just like glass.",
         "costStats": {
             "production": "60.0",
@@ -2645,6 +2984,60 @@
         },
         "iconPath": "Zephon\\Icons\\Units\\IthurielHarbinger.png",
         "name": "Ithuriel Harbinger"
+    },
+    "Jaeger R-2": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 8,
+            "armor": 6,
+            "hitpointsMax": 24,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "JaegerR2",
+        "branch": "Human",
+        "tier": "4",
+        "description": "Large mechanical robot constructed for frontal assaults",
+        "flavor": "The Jaeger engineers picked their own pilots. They wanted kids, barely 16 or 17 at the oldest. They droned on about needing still-developing brains for some reason I didn\u2019t give a shit about\u2026 I hated it. We were supposed to keep these kids safe. Not turn them into weapons.",
+        "costStats": {
+            "production": "42.0",
+            "minerals": "60"
+        },
+        "upkeepStats": {
+            "minerals": "3.0"
+        },
+        "weapons": {
+            "Breacher Shotgun (Shell)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Breacher Shotgun (Slug)": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": true
+            },
+            "Grenade Pod": {
+                "count": "2",
+                "requiredUpgrade": null,
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Agile": null,
+            "Large": null,
+            "Doomed Youth": "HollowWarlordAffinityUpgrade2",
+            "Mechanical": null,
+            "Vanguard Shield": null
+        },
+        "actions": {
+            "Cycle Weapon": null,
+            "Vertical Thrusters": "VerticalThrusters"
+        },
+        "iconPath": "Zephon\\Icons\\Units\\JaegerR2.png",
+        "name": "Jaeger R-2"
     },
     "Jezina": {
         "combatStats": {
@@ -3464,7 +3857,7 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 8,
+            "armor": 6,
             "hitpointsMax": 24,
             "moraleMax": 10,
             "movementMax": 0,
@@ -3490,6 +3883,67 @@
         "actions": {},
         "iconPath": "Zephon\\Icons\\Units\\RadioTelescope.png",
         "name": "Radio Telescope"
+    },
+    "Rangers": {
+        "combatStats": {
+            "groupSizeMax": 6,
+            "accuracy": 8,
+            "armor": 6,
+            "hitpointsMax": 2,
+            "moraleMax": 8,
+            "movementMax": 3,
+            "cargoSlots": "0",
+            "itemSlots": "0"
+        },
+        "internalID": "Ranger",
+        "branch": "Human",
+        "tier": "3",
+        "description": "Biological infantry with short range weapons trained for ambushing from covered positions",
+        "flavor": "I didn't know we were still doing \u201cdeep cover\u201d in a war with giant robots and four-eyed freaks but Rangers kept the old ways alive. These guys had jobs, friends, even families that they'd abandon at a moment's notice when someone showed up with the right codeword.",
+        "costStats": {
+            "production": "36.0",
+            "food": "20",
+            "minerals": "20"
+        },
+        "upkeepStats": {
+            "food": "1.0",
+            "minerals": "1.0"
+        },
+        "weapons": {
+            "Submachine Gun": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Katana": {
+                "count": "1",
+                "requiredUpgrade": null,
+                "secondary": false
+            },
+            "Anti-Armor Grenade": {
+                "count": "1",
+                "requiredUpgrade": "AntiArmorGrenade",
+                "secondary": true
+            },
+            "Fragmentation Grenade": {
+                "count": "1",
+                "requiredUpgrade": "FragmentationGrenade",
+                "secondary": true
+            }
+        },
+        "traits": {
+            "Agile": null,
+            "Ambush": null,
+            "Biological": null,
+            "Interpolated Production": "CyberInfantryUpgrade",
+            "Doomed Youth": "HollowWarlordAffinityUpgrade2",
+            "Stealth": null
+        },
+        "actions": {
+            "Smoke Grenade": "SmokeGrenade"
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Ranger.png",
+        "name": "Rangers"
     },
     "Reaming Crodeus": {
         "combatStats": {
@@ -3878,6 +4332,39 @@
         "iconPath": "Zephon\\Icons\\Units\\ShochitrisLair.png",
         "name": "Shoch'itris Lair"
     },
+    "Stormhearth Facility": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 6,
+            "hitpointsMax": 24,
+            "moraleMax": 0,
+            "movementMax": 0,
+            "cargoSlots": 2,
+            "itemSlots": "0"
+        },
+        "internalID": "StormhearthFacility",
+        "branch": "Neutral",
+        "tier": "N/A",
+        "description": null,
+        "flavor": "It starts with a meteor. A star crashing to the surface of the wasteland, revealed to be an Acrin ship fallen from orbit. But by the time your scouts arrive at the crash site, a convoy of scavengers has already torn the craft's guts apart and liberated whatever alien tech lay within.",
+        "costStats": {},
+        "upkeepStats": {
+            "energy": "4"
+        },
+        "weapons": {},
+        "traits": {
+            "Fortification": null,
+            "Large": null,
+            "Mechanical": null,
+            "Transport": null
+        },
+        "actions": {
+            "Deploy Storm": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\StormhearthFacility.png",
+        "name": "Stormhearth Facility"
+    },
     "Surthodai's Embrace": {
         "combatStats": {
             "groupSizeMax": 1,
@@ -4119,15 +4606,15 @@
         "description": null,
         "flavor": "The two of you stare at your latest failure. It looks like a Malakim Destroyer but its body is riddled with pus and Bleed. Your husband had suggested binding your tentacles into his neural system through a patch of Bleed, and while this was closer to what you expected, it's still not the child.",
         "costStats": {
-            "production": "18.0",
-            "food": "4",
-            "minerals": "4",
-            "chips": "4"
+            "production": "24.0",
+            "food": "5",
+            "minerals": "5",
+            "chips": "5"
         },
         "upkeepStats": {
-            "food": "0.19",
-            "minerals": "0.19",
-            "chips": "0.19"
+            "food": "0.25",
+            "minerals": "0.25",
+            "chips": "0.25"
         },
         "weapons": {
             "Plasma Gun": {
@@ -4167,13 +4654,13 @@
         "description": null,
         "flavor": "You plant it in the ground, watch it grow in a matter of hours and\u2014alas. Merely a mutated Deformity. It flails on the ground\u2014pathetic, but thankfully you know it is not your child.",
         "costStats": {
-            "production": "30.0",
-            "food": "10",
-            "algae": "10"
+            "production": "18.0",
+            "food": "5",
+            "algae": "5"
         },
         "upkeepStats": {
-            "food": "0.5",
-            "algae": "0.5"
+            "food": "0.25",
+            "algae": "0.25"
         },
         "weapons": {
             "Rake": {
@@ -4302,6 +4789,37 @@
         "actions": {},
         "iconPath": "Zephon\\Icons\\Units\\VanquisherSiegeTank.png",
         "name": "Vanquisher Siege Tank"
+    },
+    "Village": {
+        "combatStats": {
+            "groupSizeMax": 1,
+            "accuracy": 6,
+            "armor": 4,
+            "hitpointsMax": 24,
+            "moraleMax": 10,
+            "movementMax": 0,
+            "cargoSlots": 2,
+            "itemSlots": "0"
+        },
+        "internalID": "Village",
+        "branch": "Neutral",
+        "tier": "N/A",
+        "description": null,
+        "flavor": "You turn to the king, and you turn to your war council, and you give the same order: slaughter three villages. Then your enemy will be exposed.",
+        "costStats": {},
+        "upkeepStats": {},
+        "weapons": {},
+        "traits": {
+            "Fortification": null,
+            "Large": null,
+            "Mechanical": null,
+            "Transport": null
+        },
+        "actions": {
+            "Set Rally Point": null
+        },
+        "iconPath": "Zephon\\Icons\\Units\\Village.png",
+        "name": "Village"
     },
     "Vorodai's Leviathan": {
         "combatStats": {
@@ -4517,7 +5035,7 @@
         "combatStats": {
             "groupSizeMax": 1,
             "accuracy": 6,
-            "armor": 8,
+            "armor": 6,
             "hitpointsMax": 32,
             "moraleMax": 8,
             "movementMax": 3,

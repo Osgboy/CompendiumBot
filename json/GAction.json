@@ -26,7 +26,7 @@
         "internalID": "AdeptusMechanicus/CommandUplink",
         "description": "Reduces the morale loss of this unit and adjacent allied Adeptus Mechanicus units.",
         "cooldown": "Passive",
-        "flavor": "\u201cYou may feel fear, you may want to flee; but when your Magos can, with a thought, stop your limbs taking a single step back, well, then you fight anyway.\u201d\n\u2014Marshal Diktum",
+        "flavor": "\u201cYou may feel fear, you may want to flee; but when your Magos can, with a thought, stop your limbs taking a single step back, well, then you fight anyway.\u201d\n  \u2014 Marshal Diktum",
         "modifiers": [
             "Command Uplink",
             "- -17% Morale Loss"
@@ -43,6 +43,28 @@
             "consumedMovement": false
         },
         "faction": "Adeptus Mechanicus"
+    },
+    "Hammer of Wrath": {
+        "internalID": "HammerOfWrath",
+        "description": "Increases the damage of non-Bomb weapons.",
+        "cooldown": "3",
+        "flavor": "Many warriors hurl themselves headlong into combat, seeking to crush or trample the foe.",
+        "modifiers": [
+            "Hammer of Wrath (1 turn)",
+            "- +25% Damage"
+        ],
+        "rawXML": "<hammerOfWrath consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredUpgrade=\"AdeptusMechanicus/HammerOfWrath\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"HammerOfWrath\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</hammerOfWrath>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\HammerOfWrath.png",
+        "name": "Hammer of Wrath",
+        "conditions": {
+            "requiredUpgrade": "Hammer of Wrath",
+            "requiredActionPoints": true,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Neutral"
     },
     "Found City": {
         "internalID": "FoundCity",
@@ -80,7 +102,7 @@
         "internalID": "AdeptusMechanicus/MasterOfMachines",
         "description": "Restores the hitpoints of the target allied Adeptus Mechanicus, vehicle or fortification unit.",
         "cooldown": "1",
-        "flavor": "\u201cOur enemies may rest but rust never sleeps.\u201d\n\u2014Tech-Priest Jung, Forge World Gehenna",
+        "flavor": "\u201cOur enemies may rest but rust never sleeps.\u201d\n  \u2014 Tech-Priest Jung, Forge World Gehenna",
         "modifiers": [
             "- +6 Hitpoints"
         ],
@@ -115,28 +137,6 @@
             "consumedMovement": true
         },
         "faction": "Adeptus Mechanicus"
-    },
-    "Hammer of Wrath": {
-        "internalID": "HammerOfWrath",
-        "description": "Increases the damage of non-Bomb weapons.",
-        "cooldown": "3",
-        "flavor": "Many warriors hurl themselves headlong into combat, seeking to crush or trample the foe.",
-        "modifiers": [
-            "Hammer of Wrath (1 turn)",
-            "- +25% Damage"
-        ],
-        "rawXML": "<hammerOfWrath consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"3\" requiredUpgrade=\"AdeptusMechanicus/HammerOfWrath\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"HammerOfWrath\" duration=\"1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</hammerOfWrath>\n\t",
-        "iconPath": "Gladius\\Icons\\Actions\\HammerOfWrath.png",
-        "name": "Hammer of Wrath",
-        "conditions": {
-            "requiredUpgrade": "Hammer of Wrath",
-            "requiredActionPoints": true,
-            "requiredMovement": false,
-            "usableInTransport": false,
-            "consumedActionPoints": false,
-            "consumedMovement": false
-        },
-        "faction": "Neutral"
     },
     "Set Rally Point": {
         "internalID": "SetRallyPoint",
@@ -421,7 +421,7 @@
         "internalID": "AdeptusMechanicus/LordOfTheMachineCult",
         "description": "Increases the accuracy of adjacent Adeptus Mechanicus vehicle units.",
         "cooldown": "Passive",
-        "flavor": "\u201cYou may say, it is impossible for a man to become like the Machine. And I would reply, that only the smallest mind strives to comprehend its limits.\u201d\n\u2014Fabricator General Kane",
+        "flavor": "\u201cYou may say, it is impossible for a man to become like the Machine. And I would reply, that only the smallest mind strives to comprehend its limits.\u201d\n  \u2014 Fabricator General Kane",
         "modifiers": [
             "Lord of the Machine Cult",
             "- +1...+3 Accuracy"
@@ -1504,6 +1504,32 @@
         },
         "faction": "Chaos Space Marines"
     },
+    "Nurgle's Gift": {
+        "internalID": "ChaosSpaceMarines/NurglesGift",
+        "description": "Damages adjacent enemy infantry and monstrous creature units each turn.",
+        "cooldown": "Passive",
+        "flavor": "The Death Guard are warriors of the Plague God Nurgle, carrying his foul blessings. Hence their bloated bodies are riddled with corruption, and their mere presence causes the foe to sicken and wither in the grip of supernatural diseases while the battlefield falls to rot and ruin around them.",
+        "modifiers": [
+            "Afflicted",
+            "Afflicted",
+            "- attacks: 5.0",
+            "- armorPen: 0",
+            "- damage: 1.00",
+            "- accuracy: 12"
+        ],
+        "rawXML": "<genericUnitAbility name=\"ChaosSpaceMarines/NurglesGift\" passive=\"1\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Tile\" excludeRadius=\"0\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"ChaosSpaceMarines/Afflicted\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</genericUnitAbility>\n\t\t",
+        "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\NurglesGift.png",
+        "name": "Nurgle's Gift",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Chaos Space Marines"
+    },
     "Infernal Fusillade": {
         "internalID": "ChaosSpaceMarines/InfernalFusillade",
         "description": "Increases the attacks with bolt weapons of this unit.",
@@ -1659,7 +1685,7 @@
     },
     "Webway Travel": {
         "internalID": "Drukhari/WebwayTravel",
-        "description": "Travels from one allied Webway Gate, Raider Fortress or Web Portal to another.",
+        "description": "Travels from one allied Webway Gate, Raider Fortress or Webway Portal to another.",
         "cooldown": "0",
         "flavor": "The unique Webway sub-structure riddling Gladius Prime enables the Aeldari and Drukhari to travel rapidly between the gateways dotted across the planet\u2014though now that they are active, wise opposing races will recognise their threat and eliminate them on first sight.",
         "modifiers": [
@@ -1818,13 +1844,13 @@
     },
     "Reservoir of Pain": {
         "internalID": "Drukhari/ReservoirOfPain",
-        "description": "Restores the hitpoints of an allied Drukhari infantry unit if this unit attacked this turn.",
+        "description": "Restores the hitpoints of an allied Drukhari unit if this unit attacked this turn.",
         "cooldown": "1",
         "flavor": "The Cronos parasite engines are an arcane blend of alchemy and science that leeches both the body and spirit of any victim. Inside its urchin-spined form, the stolen essence is magnified before being redistributed to any nearby Drukhari, refreshing and invigorating them\u2026",
         "modifiers": [
             "- +6 Hitpoints"
         ],
-        "rawXML": "<blessingsOfTheOmnissiah cooldown=\"1\" consumedActionPoints=\"0\" requiredActionPoints=\"0\" name=\"Drukhari/ReservoirOfPain\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<attackedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Vehicle\"/>\n\t\t\t\t\t\t\t<faction name=\"Drukhari\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</blessingsOfTheOmnissiah>\n\t\t",
+        "rawXML": "<blessingsOfTheOmnissiah cooldown=\"1\" consumedActionPoints=\"0\" requiredActionPoints=\"0\" name=\"Drukhari/ReservoirOfPain\">\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<attackedThisTurn/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<allied/>\n\t\t\t\t\t\t\t<damaged/>\n\t\t\t\t\t\t\t<faction name=\"Drukhari\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpoints add=\"6\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</blessingsOfTheOmnissiah>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Drukhari\\ReservoirOfPain.png",
         "name": "Reservoir of Pain",
         "conditions": {
@@ -1839,7 +1865,7 @@
     },
     "Spirit Probe": {
         "internalID": "Drukhari/SpiritProbe",
-        "description": "Grants additional feel no pain damage reduction to this unit and adjacent Drukhari infantry units at and above level 3.",
+        "description": "Grants additional feel no pain damage reduction to this unit and adjacent Drukhari infantry units and monstrous creatures at and above level 3.",
         "cooldown": "Passive",
         "flavor": "A spirit probe is a conductor for agony; a device that ensures no scrap of pain or misery escapes the Cronos\u2019 contra-empathic net. Running hot on tides of excruciation, it boosts the resilience of nearby Drukhari, allowing them to stride laughing amid volleys of fire and rains of blows that would otherwise tear them apart.",
         "modifiers": [
@@ -2131,7 +2157,7 @@
             "No Escape (2 turns)",
             "- -1...-3 Movement Max"
         ],
-        "rawXML": "<noEscape cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"Drukhari/NoEscape\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Drukhari/NoEscape\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</noEscape>\n\t\t",
+        "rawXML": "<noEscape cooldown=\"3\" consumedActionPoints=\"0\" consumedMovement=\"0\" name=\"Drukhari/NoEscape\" rank=\"-1\" rankMax=\"2\" requiredActionPoints=\"0\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t<noTrait name=\"Flyer\"/>\n\t\t\t\t\t\t\t<noTrait name=\"Fortification\"/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"2\" name=\"Drukhari/NoEscape\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</noEscape>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Drukhari\\NoEscape.png",
         "name": "No Escape",
         "conditions": {
@@ -3115,6 +3141,25 @@
             "requiredMovement": false,
             "usableInTransport": false,
             "consumedActionPoints": true,
+            "consumedMovement": true
+        },
+        "faction": "Necrons"
+    },
+    "Dimensional Translocation": {
+        "internalID": "Necrons/DimensionalTranslocation",
+        "description": "Teleports to target explored tile.",
+        "cooldown": "10",
+        "flavor": "The Necrons are unparalleled masters of powerful, archaic technology, with the Hexmark Destroyers even bending the dimensions of space to suit their whims. Bursting from dimensional oubliettes like ambush predators, these hunchbacked monsters then unleash inescapable hails of enmitic fire on ill-prepared enemies.",
+        "modifiers": [],
+        "rawXML": "<huntersFromHyperspace cooldown=\"10\" consumedActionPoints=\"0\" name=\"Necrons/DimensionalTranslocation\" requiredActionPoints=\"0\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier visible=\"0\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<influenceCost base=\"20\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t</huntersFromHyperspace>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\Necrons\\DimensionalTranslocation.png",
+        "name": "Dimensional Translocation",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
             "consumedMovement": true
         },
         "faction": "Necrons"
@@ -4249,7 +4294,7 @@
         "internalID": "SistersOfBattle/DivineGuidance",
         "description": "Increases the damage and armour penetration.\n\nAct of Faith. Usable if the unit is not shaken or broken.",
         "cooldown": "10",
-        "flavor": "As the combatants of the sorority recite rites of destruction, their aim faithfully falls where it will cause the most harm \u2013 every shot and every strike becoming a mortal blow that condemns another heretic to oblivion.",
+        "flavor": "Guided by the will of the Emperor himself, the sisters\u2019 shots shatter the armour of the enemy with contemptuous ease.",
         "modifiers": [
             "- -50% Cooldown",
             "Rending (1 turn)",
@@ -4409,13 +4454,9 @@
         "flavor": "Not even death can stop the Emperor\u2019s chosen servants, and through his benevolence they rise again to serve the Master of Mankind\u2019s will.",
         "modifiers": [
             "- -50% Cooldown",
-            "Miraculous Intervention",
-            "- max 0 Death Experience",
-            "- max 0 Death Morale",
-            "Used Act Of Faith (1 turn)",
             "- +100% Hitpoints"
         ],
-        "rawXML": "<miraculousIntervention beginOnDisappear=\"1\" cooldown=\"10\" name=\"SistersOfBattle/MiraculousIntervention\" passive=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"SistersOfBattle/SimulacrumImperialis\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown mul=\"-0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait name=\"SistersOfBattle/MiraculousIntervention\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<destroyed/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Broken\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Shaken\"/>\n\t\t\t\t\t\t\t\t\t\t\t<trait name=\"SistersOfBattle/LaudHailer\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</miraculousIntervention>\n\t\t",
+        "rawXML": "<miraculousIntervention beginOnDisappear=\"1\" cooldown=\"10\" name=\"SistersOfBattle/MiraculousIntervention\" passive=\"1\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"SistersOfBattle/SimulacrumImperialis\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown mul=\"-0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<destroyed/>\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Broken\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t\t\t\t\t\t\t<noTrait name=\"Shaken\"/>\n\t\t\t\t\t\t\t\t\t\t\t<trait name=\"SistersOfBattle/LaudHailer\"/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"1.0\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</miraculousIntervention>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\SistersOfBattle\\MiraculousIntervention.png",
         "name": "Miraculous Intervention",
         "conditions": {
@@ -4507,6 +4548,30 @@
         "rawXML": "<theEmperorsVengeance cooldown=\"5\" consumedActionPoints=\"0\" consumedMovement=\"0\" requiredActionPoints=\"0\" elite=\"1\" levelUpPriority=\"1\" rank=\"-1\" rankMax=\"0\" name=\"SistersOfBattle/TheEmperorsVengeance\">\n\t\t\t<beginTargets>\n\t\t\t\t<target rangeMax=\"-1\">\n\t\t\t\t\t<conditions>\n\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t</unit>\n\t\t\t\t\t</conditions>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<conditions>\n\t\t\t\t\t\t\t\t\t\t<unit>\n\t\t\t\t\t\t\t\t\t\t\t<enemy/>\n\t\t\t\t\t\t\t\t\t\t</unit>\n\t\t\t\t\t\t\t\t\t</conditions>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"TheEmperorsVengeance\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</target>\n\t\t\t</beginTargets>\n\t\t</theEmperorsVengeance>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\SistersOfBattle\\TheEmperorsVengeance.png",
         "name": "The Emperor's Vengeance",
+        "conditions": {
+            "requiredUpgrade": null,
+            "requiredActionPoints": false,
+            "requiredMovement": false,
+            "usableInTransport": false,
+            "consumedActionPoints": false,
+            "consumedMovement": false
+        },
+        "faction": "Sisters Of Battle"
+    },
+    "The Emperor's Deliverance": {
+        "internalID": "SistersOfBattle/TheEmperorsDeliverance",
+        "description": "Increases the damage.\n\nAct of Faith. Usable if the unit is not shaken or broken.",
+        "cooldown": "10",
+        "flavor": "As the Seraphim recite rites of destruction, their aim faithfully falls where it will cause the most harm \u2013 every shot becoming a mortal blow that condemns another heretic to oblivion.",
+        "modifiers": [
+            "- -50% Cooldown",
+            "Shred (1 turn)",
+            "- +33% Damage",
+            "Used Act Of Faith (1 turn)"
+        ],
+        "rawXML": "<theEmperorsDeliverance consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"10\" name=\"SistersOfBattle/TheEmperorsDeliverance\" requiredActionPoints=\"0\">\n\t\t\t<modifiers>\n\t\t\t\t<modifier requiredUpgrade=\"SistersOfBattle/SimulacrumImperialis\">\n\t\t\t\t\t<effects>\n\t\t\t\t\t\t<cooldown mul=\"-0.5\"/>\n\t\t\t\t\t</effects>\n\t\t\t\t</modifier>\n\t\t\t</modifiers>\n\t\t\t<conditions>\n\t\t\t\t<unit>\n\t\t\t\t\t<noTrait name=\"Broken\"/>\n\t\t\t\t</unit>\n\t\t\t\t<unit match=\"Any\">\n\t\t\t\t\t<noTrait name=\"Shaken\"/>\n\t\t\t\t\t<trait name=\"SistersOfBattle/LaudHailer\"/>\n\t\t\t\t</unit>\n\t\t\t</conditions>\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"Shred\"/>\n\t\t\t\t\t\t\t\t\t\t<addTrait duration=\"1\" name=\"SistersOfBattle/UsedActOfFaith\"/>\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t</theEmperorsDeliverance>\n\t",
+        "iconPath": "Gladius\\Icons\\Actions\\SistersOfBattle\\TheEmperorsDeliverance.png",
+        "name": "The Emperor's Deliverance",
         "conditions": {
             "requiredUpgrade": null,
             "requiredActionPoints": false,
@@ -5503,7 +5568,7 @@
             "- damage: 0.75",
             "- accuracy: 6"
         ],
-        "rawXML": "<novaElectromagneticShockwave consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"2\" name=\"Tau/NovaElectromagneticShockwave\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"NovaElectromagneticShockwave\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"Tau/NovaBoost\"/>\n\t\t\t\t<action name=\"Tau/NovaFire\"/>\n\t\t\t\t<action name=\"Tau/NovaShield\"/>\n\t\t\t</sharedCooldowns>\n\t\t</novaElectromagneticShockwave>\n\t\t",
+        "rawXML": "<novaElectromagneticShockwave consumedActionPoints=\"0\" consumedMovement=\"0\" cooldown=\"2\" name=\"Tau/NovaElectromagneticShockwave\">\n\t\t\t<beginTargets>\n\t\t\t\t<selfTarget>\n\t\t\t\t\t<areas>\n\t\t\t\t\t\t<area affects=\"Unit\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<hitpointsFactorFromMax add=\"-0.1\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t\t<area affects=\"Unit\" radius=\"1\" excludeRadius=\"0\">\n\t\t\t\t\t\t\t<modifiers>\n\t\t\t\t\t\t\t\t<modifier>\n\t\t\t\t\t\t\t\t\t<effects>\n\t\t\t\t\t\t\t\t\t\t<weaponDamage weapon=\"NovaElectromagneticShockwave\"/>\n\t\t\t\t\t\t\t\t\t</effects>\n\t\t\t\t\t\t\t\t</modifier>\n\t\t\t\t\t\t\t</modifiers>\n\t\t\t\t\t\t</area>\n\t\t\t\t\t</areas>\n\t\t\t\t</selfTarget>\n\t\t\t</beginTargets>\n\t\t\t<sharedCooldowns>\n\t\t\t\t<action name=\"Tau/NovaBoost\"/>\n\t\t\t\t<action name=\"Tau/NovaFire\"/>\n\t\t\t\t<action name=\"Tau/NovaShield\"/>\n\t\t\t</sharedCooldowns>\n\t\t</novaElectromagneticShockwave>\n\t\t",
         "iconPath": "Gladius\\Icons\\Actions\\Tau\\NovaElectromagneticShockwave.png",
         "name": "Nova Electromagnetic Shockwave",
         "conditions": {
@@ -6196,7 +6261,7 @@
         "internalID": "AdeptusMechanicus/PowerSurge",
         "description": "Increases the ouput of non-headquarters buildings on the target tile.",
         "cooldown": "6",
-        "flavor": "\u201cThrow open the transonic oscillator and escalate the dereactor another three points. I require those forges running at optimal efficiency!\u201d\n\u2014Archmagos Dyatskin, shortly before the loss of Arklis Hive Primus",
+        "flavor": "\u201cThrow open the transonic oscillator and escalate the dereactor another three points. I require those forges running at optimal efficiency!\u201d\n  \u2014 Archmagos Dyatskin, shortly before the loss of Arklis Hive Primus",
         "modifiers": [
             "- -50% Cooldown",
             "Power Surge (6 turns)",
@@ -6567,7 +6632,7 @@
         "internalID": "Drukhari/WealthPlunder",
         "description": "Soul Hunger ability that makes all Drukhari units grant research when killing enemies.",
         "cooldown": "10",
-        "flavor": "\u201cNear to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations\u2026 everything spilled. To stop the pain. Why should it stop, though. When it is so\u2026 productive.\u201d \u2013 Arkanic, Haemonculus to Kabal of The Last Blade",
+        "flavor": "\u201cNear to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations\u2026 everything spilled. To stop the pain. Why should it stop, though. When it is so\u2026 productive.\u201d\n  \u2014 Arkanic, Haemonculus to Kabal of The Last Blade",
         "modifiers": [
             "- -20% Influence Cost",
             "Studies in Agony (10 turns)",
@@ -6627,7 +6692,7 @@
         "internalID": "Drukhari/SoulShelling",
         "description": "Soul Hunger ability that damages target enemy unit.",
         "cooldown": "3",
-        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a Raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
+        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
         "modifiers": [
             "- -20% Influence Cost",
             "Webway Artillery",

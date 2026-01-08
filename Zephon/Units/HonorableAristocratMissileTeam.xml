@@ -51,16 +51,14 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamAppear"/>
+				<action/>
 			</model>
 		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/MissileTeamAttack"
 						beginFire="1.36"
-						endFire="1.9"
-						responseSound="Responses/Units/MissileTeamAttack"
-						responseSoundCount="3"/>
+						endFire="1.9"/>
 			</model>
 		</attack>
 		<die>
@@ -76,18 +74,17 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/MissileTeamImpact"
-						responseSound="Responses/Units/MissileTeamEndureHighDamage"/> 
+				<action animation="Units/MissileTeamImpact"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
+				<action/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
+				<action/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -98,14 +95,12 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamKill"/>
+				<action/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/MissileTeamMove"
-						responseSound="Responses/Units/MissileTeamMove"
-						responseSoundCount="3"
 						sound="Units/MissileTeamMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
@@ -114,18 +109,17 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamPoke"/>
+				<action/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamSelect"
-						responseSoundCount="3"/>
+				<action/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Responses/Units/MissileTeamHoldPosition"/>
+				<action/>
 			</model>
 		</skip>
 		<useWeapon name="GroundedFire"
@@ -135,7 +129,6 @@
 				<attack animation="Units/MissileTeamAbility0"
 						beginFire="1.21"
 						endFire="1.75"
-						responseSound="Responses/Units/MissileTeamGroundedFire"
 						sound="Units/MissileTeamGroundedFire"
 						soundCount="3"/>
 			</model>

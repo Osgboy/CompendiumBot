@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement17">
+	<model>
+		<unit mesh="Units/ChaosSpaceMarines/PlagueMarine"
+				material="Units/ChaosSpaceMarines/PlagueMarine"
+				idleAnimation="Units/ChaosSpaceMarines/PlagueMarineIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1 1 1"
+				bloodBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="2" rowSize="2" memberDeltaX="80" memberDeltaY="90"/>
+	<weapons>
+		<weapon name="PlagueSpewer">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle"
+						fireInterval="0.2"/>
+			</model>
+		</weapon>
+		<weapon name="BlightGrenade" slotName="BlightGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="KrakGrenade" slotName="KrakGrenade" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+		<weapon name="MeltaBomb" slotName="MeltaBomb" enabled="0">
+			<model>
+				<grenadeWeapon muzzleBone="Hand_L"/>
+			</model>		
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<hitpointsMax base="4.0"/> <!-- %hitpointsMax base toughness=5 wounds=1 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="1"/>
+				<strengthDamage base="1.5"/> <!-- %strengthDamage base strength=4 -->
+				<!-- <meleeInitiative base="3"/> -->
+				<moraleMax base="8"/> <!-- %moraleMax base leadership=7 -->
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<foodUpkeep base="3.0"/> <!-- %foodUpkeep base tier=7 factor=1 -->
+				<foodCost base="30.0"/> <!-- %foodCost base tier=7 factor=0.5 -->
+				<oreCost base="30.0"/> <!-- %oreCost base tier=7 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineAttack"
+						beginFire="0.76"
+						endFire="1.93"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineDie"
+						animationCount="2"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="0.8"
+						voiceSound="Units/ChaosSpaceMarines/InfantryDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<idle>
+			<model>
+				<action/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineMove"
+						sound="Units/SpaceMarines/TerminatorMove"
+						soundCount="1"/>
+			</model>
+		</move>
+		<genericUnitAbility name="ChaosSpaceMarines/NurglesGift"
+				passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="ChaosSpaceMarines/Afflicted"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</genericUnitAbility>
+		<throwGrenade weaponSlotName="BlightGrenade"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				cooldown="10">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineGrenade"
+						beginFire="1.56"
+						sound="Weapons/BlightGrenade0"
+						soundCount="1"
+						soundDelay="0.25"
+						soundOnSourceTile="1"
+						soundOnTargetTile="0"/>
+			</model>
+		</throwGrenade>
+		<throwGrenade weaponSlotName="KrakGrenade" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/KrakGrenade">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineGrenade"
+						beginFire="1.56"/>
+			</model>
+		</throwGrenade>
+		<throwGrenade weaponSlotName="MeltaBomb" cooldown="10"
+				requiredUpgrade="ChaosSpaceMarines/MeltaBomb">
+			<model>
+				<action animation="Units/ChaosSpaceMarines/PlagueMarineGrenade"
+						beginFire="1.56"/>
+			</model>				
+		</throwGrenade>
+	</actions>
+	<traits>
+		<trait name="Fearless"/>
+		<trait name="FeelNoPain"/>
+		<trait name="ChaosSpaceMarines/ChampionOfChaos"/>
+		<trait name="ChaosSpaceMarines/MarkOfNurgle"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="ChaosSpaceMarines/ExtraInfantryArmour"/>
+		<trait name="ChaosSpaceMarines/GiftOfMutation" requiredUpgrade="ChaosSpaceMarines/GiftOfMutation"/>
+		<trait name="ChaosSpaceMarines/VeteransOfTheLongWar" requiredUpgrade="ChaosSpaceMarines/VeteransOfTheLongWar"/>
+	</traits>
+</unit>

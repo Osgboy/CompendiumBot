@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trait category="Buff" icon="Actions/Infinite" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<deathExperience max="0"/>
+				<deathMorale max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
 	<onUnitDisappeared>
 		<unit>
 			<area affect="Unit">

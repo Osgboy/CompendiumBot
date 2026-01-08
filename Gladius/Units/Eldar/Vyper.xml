@@ -12,17 +12,17 @@
 	</model>
 	<group size="2" rowSize="2" memberDeltaX="100" memberDeltaY="100"/>
 	<weapons>
-		<weapon name="EldarMissileLauncherPlasmaMissile" slotName="EldarMissileLauncherPlasmaMissile">
-			<model>
-				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
-			</model>	
-		</weapon>
-		<weapon name="EldarMissileLauncherStarshotMissile" slotName="EldarMissileLauncherStarshotMissile" enabled="0">
+		<weapon name="EldarMissileLauncherStarshotMissile" slotName="EldarMissileLauncherStarshotMissile">
 			<model>
 				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
 			</model>
 		</weapon>
 		<weapon name="EldarMissileLauncherStarhawkMissile" slotName="EldarMissileLauncherStarhawkMissile" enabled="0">
+			<model>
+				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
+			</model>	
+		</weapon>
+		<weapon name="EldarMissileLauncherPlasmaMissile" slotName="EldarMissileLauncherPlasmaMissile" enabled="0">
 			<model>
 				<missileWeapon fireDelay="0.5" fireInterval="10" muzzleBone=".MissileMuzzle"/>
 			</model>	

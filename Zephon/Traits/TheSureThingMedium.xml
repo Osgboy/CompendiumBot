@@ -4,17 +4,17 @@
 		<traitSourcePlayer>
 			<modifier effectDescription="OnRemoval">
 				<effects>
-					<minerals add="75"/>
+					<minerals add="100"/>
 				</effects>
 			</modifier>
 			<modifier effectDescription="OnRemoval" requiredUpgrade="TheSureThingUpgrade">
 				<effects>
-					<minerals mul="0.2"/>
+					<minerals add="10"/>
 				</effects>
 			</modifier>
 			<modifier effectDescription="OnRemoval" requiredUpgrade="TheSureThingUpgrade2">
 				<effects>
-					<minerals mul="0.2"/>
+					<minerals add="10"/>
 				</effects>
 			</modifier>
 		</traitSourcePlayer>

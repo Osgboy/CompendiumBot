@@ -196,7 +196,7 @@
 <entry name="AdeptusMechanicus/MeleeWeaponBonusFlavor" value="Despite the planet’s specialisation in plasma and shielding devices, so common are Ork invasions on the Forge World of Ryza that the defenders are known for their Ork-esque enthusiasm for melee combat."/>
 <entry name="AdeptusMechanicus/MonolithicBuildings" value="Monolithic Buildings"/>
 <entry name="AdeptusMechanicus/MonolithicBuildingsDescription" value="Increases the resource output of non-headquarters buildings of the same type on a tile. Decreases the output of non-headquarters buildings of differing types on a tile."/>
-<entry name="AdeptusMechanicus/MonolithicBuildingsFlavor" value="“In uniformity, specialisations. In specialisation, efficiency. In efficiency, ecstasy.”&lt;br/&gt;—Kelphor Zhuko-Dim, Arch Flagellant"/>
+<entry name="AdeptusMechanicus/MonolithicBuildingsFlavor" value="“In uniformity, specialisations. In specialisation, efficiency. In efficiency, ecstasy.”&lt;br/&gt;  — Kelphor Zhuko-Dim, Arch Flagellant"/>
 <entry name="AdeptusMechanicus/NeurostaticInterface" value="Neurostatic Interface"/>
 <entry name="AdeptusMechanicus/NeurostaticInterfaceDescription" value="Increases the damage reduction when attacked by adjacent enemy units."/>
 <entry name="AdeptusMechanicus/NeurostaticInterfaceFlavor" value="Amidst the audio-visual cacophony accompanied by a Sicarian Infiltrator attack is wide-band electromagnetic interference, designed to cripple enemy systems and set nerves jangling."/>
@@ -376,6 +376,8 @@
 <entry name="Blast" value="Blast"/>
 <entry name="BlastDescription" value="Hits multiple group members of the target unit."/>
 <entry name="BlastFlavor" value="&lt;string name='Weapons/BlastFlavor'/&gt;"/>
+<entry name="Blight" value="&lt;string name='Traits/Blighted'/&gt;"/>
+<entry name="BlightDescription" value="&lt;string name='Traits/BlightedDescription'/&gt;"/>
 <entry name="Blighted" value="Blighted"/>
 <entry name="BlightedDescription" value="Deals damage each turn."/>
 <entry name="Blind" value="Blind"/>
@@ -419,6 +421,9 @@
 <entry name="CeramitePlatingFlavor" value="These hull plates are thrice-blessed by the Chapter's Techmarines and anointed with the seven sacred unguents of thermic warding to protect against the extreme conditions of orbital re-entry. Such precautions also serve to thwart the fury of certain weapons, absorbing and dispersing even the most extreme temperatures and microwave emissions."/>
 <entry name="Chaff" value="Chaff"/>
 <entry name="ChaffDescription" value="Increases the ranged damage reduction."/>
+<entry name="ChaosSpaceMarines/Afflicted" value="Afflicted"/>
+<entry name="ChaosSpaceMarines/AfflictedDescription" value="Deals damage each turn."/>
+<entry name="ChaosSpaceMarines/AfflictedFlavor" value="&lt;string name='Actions/ChaosSpaceMarines/NurglesGiftFlavor'/&gt;"/>
 <entry name="ChaosSpaceMarines/ArcaneOcculum" value="Arcane Occulum"/>
 <entry name="ChaosSpaceMarines/ArcaneOcculumDescription" value="Boon of Chaos that increases the accuracy."/>
 <entry name="ChaosSpaceMarines/ArcaneOcculumFlavor" value="A blood-shot eye pushes through the flesh."/>
@@ -706,13 +711,13 @@
 <entry name="Drukhari/GrislyTrophiesFlavor" value="&lt;string name='Actions/Drukhari/GrislyTrophiesFlavor'/&gt;"/>
 <entry name="Drukhari/HeavyWeaponBonus" value="Equipoise Ordnance"/>
 <entry name="Drukhari/HeavyWeaponBonusDescription" value="Increases the armour penetration."/>
-<entry name="Drukhari/HeavyWeaponBonusFlavor" value="“Do not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night—and eternal torment.” – Gyrthineus Roche, Archon of The Last Blade"/>
+<entry name="Drukhari/HeavyWeaponBonusFlavor" value="“Do not hope for a new day, little mortals. The Drukhari have you now and our grip is unshakeable. I assure you, all you will know now is eternal night—and eternal torment.” — Gyrthineus Roche, Archon of The Last Blade"/>
 <entry name="Drukhari/MasterOfPain" value="&lt;string name='Actions/Drukhari/MasterOfPain'/&gt;"/>
 <entry name="Drukhari/MasterOfPainDescription" value="Grants additional feel no pain damage reduction."/>
 <entry name="Drukhari/MasterOfPainFlavor" value="&lt;string name='Actions/Drukhari/MasterOfPainFlavor'/&gt;"/>
 <entry name="Drukhari/MeleeWeaponBonus" value="Blade Aesthetics, Perfected"/>
 <entry name="Drukhari/MeleeWeaponBonusDescription" value="Increases the armour penetration."/>
-<entry name="Drukhari/MeleeWeaponBonusFlavor" value="“Pain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.” – Urien Rakarth, Master of the Haemonculi"/>
+<entry name="Drukhari/MeleeWeaponBonusFlavor" value="“Pain is the only universal constant. Pain is all. It is the key to creation and destruction both. Thus does he who masters pain become a god.”&lt;br/&gt;  — Urien Rakarth, Master of the Haemonculi"/>
 <entry name="Drukhari/NightShields" value="Night Shields"/>
 <entry name="Drukhari/NightShieldsDescription" value="Increases the ranged damage reduction."/>
 <entry name="Drukhari/NightShieldsFlavor" value="The vehicle is covered by a broad-spectrum displacement field, enveloping it in cold and inky darkness. Foes find the vehicle hard to target, hidden as it is within a cloak of roiling shadow."/>
@@ -727,7 +732,7 @@
 <entry name="Drukhari/PowerFromPainFlavor" value="As Drukhari feed on the souls of their foes, they become imbued with supernatural might, eventually turning into killing machines."/>
 <entry name="Drukhari/RaidersTactics" value="Raiders Tactics"/>
 <entry name="Drukhari/RaidersTacticsDescription" value="Grants bonus traits when this unit disembarks from a transport."/>
-<entry name="Drukhari/RaidersTacticsFlavor" value="“Why do we ride atop these elegant craft? The better to hear the screams of our prey as we ride them down, to savour the fear etched on their faces, to taste the tantalising tang of their blood in the air as an appetiser before the feast. But most of all we ride them so that the slaughter may begin as soon as possible.” – Dariaq Bladetongue of the Pierced Eye"/>
+<entry name="Drukhari/RaidersTacticsFlavor" value="“Why do we ride atop these elegant craft? The better to hear the screams of our prey as we ride them down, to savour the fear etched on their faces, to taste the tantalising tang of their blood in the air as an appetiser before the feast. But most of all we ride them so that the slaughter may begin as soon as possible.”&lt;br/&gt;  — Dariaq Bladetongue of the Pierced Eye"/>
 <entry name="Drukhari/RaidersTacticsDamage" value="Raider Assault"/>
 <entry name="Drukhari/RaidersTacticsDamageDescription" value="Increases the damage."/>
 <entry name="Drukhari/RaidersTacticsDamageFlavor" value="Millenia of depredations on the mortal plane mean the Drukhari are inhuman opportunity predators unparalleled in history. This is partly from centuries of experience, partly from evolution and partly from the adaptations of the Haemonculi. When they emerge from their skycraft, they fall upon their enemy like descending eagles."/>
@@ -736,7 +741,7 @@
 <entry name="Drukhari/RaidersTacticsDamageReductionFlavor" value="The Drukhari live to inflict pain—and there are crucial moments in their existence that exemplify this. When an incubi’s glaive falls; when a Wych torments her victim in the arena; and the split-second of deadly surprise as the Drukhari raiders leap from their skycraft…"/>
 <entry name="Drukhari/RaidersTacticsHealingRate" value="Raider Readiness"/>
 <entry name="Drukhari/RaidersTacticsHealingRateDescription" value="Increases the healing rate when this unit is embarked in a vehicle."/>
-<entry name="Drukhari/RaidersTacticsHealingRateFlavor" value="“Friends—I call you that, though I know you’d knife me in the back at a glance from Vect—friends, hold yourselves ready. The moment is almost here, the herd do not even know we’re coming. In but minutes, we will descend, flay, rend, torment, murder and drink their souls… with style, of course. We’re not savages.” – Gyrthineus Roche, Archon of The Last Blade"/>
+<entry name="Drukhari/RaidersTacticsHealingRateFlavor" value="“Friends—I call you that, though I know you’d knife me in the back at a glance from Vect—friends, hold yourselves ready. The moment is almost here, the herd do not even know we’re coming. In but minutes, we will descend, flay, rend, torment, murder and drink their souls… with style, of course. We’re not savages.”&lt;br/&gt;  — Gyrthineus Roche, Archon of The Last Blade"/>
 <entry name="Drukhari/Shadowfield" value="&lt;string name='Actions/Drukhari/Shadowfield'/&gt;"/>
 <entry name="Drukhari/ShadowfieldDescription" value="Increases the invulnerable damage reduction."/>
 <entry name="Drukhari/ShadowfieldFlavor" value="&lt;string name='Actions/Drukhari/ShadowfieldFlavor'/&gt;"/>
@@ -745,7 +750,7 @@
 <entry name="Drukhari/SacrificeToKhaineFlavor" value="The Drukhari do not worship the old Aeldari gods or the OId Ones, save for one—Kaela Mensha Khaine, god of murder and war. Only a handful of Drukhari pay fealty to Khaine and most of those are Incubi, the dark mirrors of the Aeldari aspect warriors. Every time they kill with their ritual glaives, it is in praise of Khaine."/>
 <entry name="Drukhari/ShroudGate" value="Shroud Gate"/>
 <entry name="Drukhari/ShroudGateDescription" value="Increases the ranged damage reduction."/>
-<entry name="Drukhari/ShroudGateFlavor" value="“It was a wise to lay the ambush at the webway gate, brave little human. Hush, now. But you did not know when and where we would emerge, and that was your mistake. To we Drukhari, the gates are an unnecessary convenience… but your suffering, that I am afraid, is a necessity.” – Gyrthineus Roche, Archon of The Last Blade"/>
+<entry name="Drukhari/ShroudGateFlavor" value="“It was wise to lay the ambush at the webway gate, brave little human. Hush, now. But you did not know when and where we would emerge, and that was your mistake. To us Drukhari, the gates are an unnecessary convenience… but your suffering, that I am afraid, is a necessity.”&lt;br/&gt;  — Gyrthineus Roche, Archon of The Last Blade"/>
 <entry name="Drukhari/SoulHunger" value="Soul Hunger"/>
 <entry name="Drukhari/SoulHungerDescription" value="Grants influence when killing an enemy."/>
 <entry name="Drukhari/SoulHungerFlavor" value="The only form of sustenance that refreshes a Drukhari—the only thing that makes their immortal lives at all palatable and endurable, as Slaanesh saps their souls—is the suffering of others. And those Archons who can ensure a regular supply of victims and of pain receive loyalty—or rather, the nearest to it that a Drukhari can manage…"/>
@@ -769,7 +774,7 @@
 <entry name="Drukhari/ToweringArroganceFlavor" value="&lt;string name='Actions/Drukhari/ToweringArroganceFlavor'/&gt;"/>
 <entry name="Drukhari/WealthPlunder" value="Studies in Agony"/>
 <entry name="Drukhari/WealthPlunderDescription" value="Grants research when killing an enemy."/>
-<entry name="Drukhari/WealthPlunderFlavor" value="“Near to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations… everything spilled. To stop the pain. Why should it stop, though. When it is so… productive.” – Arkanic, Haemonculus to Kabal of The Last Blade"/>
+<entry name="Drukhari/WealthPlunderFlavor" value="“Near to death, I hold them. The secrets they whisper. The pleas. Tactics, inventions, knowledge of the other side, revelations… everything spilled. To stop the pain. Why should it stop, though. When it is so… productive.”&lt;br/&gt;  — Arkanic, Haemonculus to Kabal of The Last Blade"/>
 <entry name="Drukhari/WeaponRacks" value="Weapon Racks"/>
 <entry name="Drukhari/WeaponRacksDescription" value="Grants twin-linked for one turn to units that disembark from this vehicle."/>
 <entry name="Drukhari/WeaponRacksFlavor" value="Some Drukhari vehicles carry additional racks of anti-personnel weaponry on their decks. This allows passengers to literally empty their weapons’ magazines in great raking fusillades, before discarding their spent guns in favour of fully-loaded replacements as they disembark."/>
@@ -1198,6 +1203,9 @@
 <entry name="Necrons/HuntersFromHyperspaceFlavor" value="&lt;string name='Actions/Necrons/HuntersFromHyperspaceFlavor'/&gt;"/>
 <entry name="Necrons/ImmuneToNaturalLaw" value="Immune to Natural Law"/>
 <entry name="Necrons/ImmuneToNaturalLawDescription" value="The unit can move over water, through enemy units and ignores the penalties of rivers and wire weed."/>
+<entry name="Necrons/InescapableDeath" value="Inescapable Death"/>
+<entry name="Necrons/InescapableDeathDescription" value="Ignores the ranged damage reduction of the target unit and increases the accuracy of overwatch attacks."/>
+<entry name="Necrons/InescapableDeathFlavor" value="A Hexmark Destroyers’s myriad targeting systems and advanced technology allows it to eliminate enemies who think themselves quite, quite safe. There is a no safe place to hide from a Hexmark and its array of Enmitic Disintegrators."/>
 <entry name="Necrons/InfantryBuildingBonus" value="Core Refinements"/>
 <entry name="Necrons/InfantryBuildingBonusDescription" value="Increases the production ouput."/>
 <entry name="Necrons/InfantryBuildingBonusFlavor" value="With better tools and less constraints, the Crypteks and Canopteks are able to recover a higher proportion of the buried Necrons, faster."/>
@@ -1217,6 +1225,12 @@
 <entry name="Necrons/MeleeDamage" value="Necrodermic Blades"/>
 <entry name="Necrons/MeleeDamageDescription" value="Increases the armour penetration."/>
 <entry name="Necrons/MeleeDamageFlavor" value="Made from impossibly thin slices of the Necron's utilitarian living metal, these blades pass through most skin, bone and armour with disturbing ease."/>
+<entry name="Necrons/MultiThreatElimination" value="Multi-Threat Elimination"/>
+<entry name="Necrons/MultiThreatEliminationDescription" value="Increases the attacks."/>
+<entry name="Necrons/MultiThreatEliminationFlavor" value="&lt;string name='Traits/Necrons/MultiThreatEliminatorFlavor'/&gt;"/>
+<entry name="Necrons/MultiThreatEliminator" value="Multi-Threat Eliminator"/>
+<entry name="Necrons/MultiThreatEliminatorDescription" value="Increases attacks when destroying an enemy unit."/>
+<entry name="Necrons/MultiThreatEliminatorFlavor" value="Targeting a Hexmark Destroyer or its allies gives the machine all the data it needs for its firing solutions. Independent ocular targeting and optimised firing patterns leave their prey with no chance of escape."/>
 <entry name="Necrons/NanoscarabReanimationBeam" value="Nanoscarab Reanimation Beam"/>
 <entry name="Necrons/NanoscarabReanimationBeamDescription" value="Restores the hitpoints."/>
 <entry name="Necrons/NanoscarabReanimationBeamFlavor" value="&lt;string name='Actions/Necrons/NanoscarabReanimationBeamFlavor'/&gt;"/>
@@ -1839,6 +1853,9 @@
 <entry name="Tau/Kauyon" value="&lt;string name='Actions/Tau/Kauyon'/&gt;"/>
 <entry name="Tau/KauyonDescription" value="Increases the ranged damage reduction."/>
 <entry name="Tau/KauyonFlavor" value="&lt;string name='Actions/Tau/KauyonFlavor'/&gt;"/>
+<entry name="Tau/KrootLinebreakers" value="Kroot Linebreakers"/>
+<entry name="Tau/KrootLinebreakersDescription" value="Increases melee damage."/>
+<entry name="Tau/KrootLinebreakersFlavor" value="Rampager packs strike fast at their foes from unexpected quarters, launching a heavyweight ambush that breaks their battle lines and leaves them vulnerable to the rest of the hunting pack."/>
 <entry name="Tau/LasDamage" value="Mor'tonium Accelerators"/>
 <entry name="Tau/LasDamageDescription" value="Increases the armour penetration."/>
 <entry name="Tau/LasDamageFlavor" value="As humanity has discovered to its cost, over and over, using radioactive materials in weaponry is always dangerous. It’s reasonable to assume the T’au are cognisant of this, but choose to use the recently discovered Mor’tonium in their military technology anyway. Upon exposure to air, it rapidly decays into a massive burst of ionic energy that the T’au use."/>

@@ -208,7 +208,6 @@
 <entry name="DynameisPlateFlavor" value="&lt;string name='Items/DynameisPlateFlavor'/&gt;"/>
 <entry name="EconomiesOfScale" value="Economies of Scale"/>
 <entry name="Elusive" value="Elusive"/>
-<entry name="ElusiveProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move through enemy units&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Ignores zone of control of enemy units"/>
 <entry name="EMP" value="EMP"/>
 <entry name="EmulatedMindAffinityUpgrade2" value="Eventful Horizons"/>
 <entry name="EnergyUpgrade" value="Biomass Generator"/>
@@ -337,7 +336,7 @@
 <entry name="HorizonExpansionFlavor" value="&lt;string name='Upgrades/HorizonExpansionFlavor'/&gt;"/>
 <entry name="Horrifying" value="Horrifying"/>
 <entry name="Hovering" value="Hovering"/>
-<entry name="HoveringProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move over water&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Unaffected by rivers and Bleed"/>
+<entry name="HoveringProperties" value="&lt;icon texture='GUI/Bullet'/&gt;Can move over water&lt;br/&gt;&lt;icon texture='GUI/Bullet'/&gt;Unaffected by rivers, Bleed and tiles on fire"/>
 <entry name="HumanAircraftUpgrade" value="Air Freightnet"/>
 <entry name="HumanAircraftUpgradeFlavor" value="&lt;string name='Traits/AirFreightnetFlavor'/&gt;"/>
 <entry name="HumanInfantryUpgrade" value="Itinerant Recruiters"/>
@@ -386,7 +385,7 @@
 <entry name="JudgementFromAbove" value="Judgement From Above"/>
 <entry name="JustShipIt" value="Just Ship It"/>
 <entry name="JustShipItProperties" value="&lt;icon texture='GUI/Bullet'/&gt; Receive a random debuff when produced"/>
-<entry name="JustShipItDebuffAttacks" value="Sluggish Aim"/>
+<entry name="JustShipItDebuffAttacks" value="Sluggish Attacks"/>
 <entry name="JustShipItDebuffAttacksFlavor" value="&lt;string name='Traits/JustShipItFlavor'/&gt;"/>
 <entry name="JustShipItDebuffAttacksTaken" value="Easy Target"/>
 <entry name="JustShipItDebuffAttacksTakenFlavor" value="&lt;string name='Traits/JustShipItFlavor'/&gt;"/>
@@ -741,7 +740,7 @@
 <entry name="ZephonVirus" value="ZEPHON Virus"/>
 <entry name="ZephonVirusFlavor" value="&lt;string name='Quests/ImpossibleConception/MotherDefendSuccess'/&gt;"/>
 	
-	<!-- Flavor. -->
+	<!-- Flavor. %1% is filled in with player name. To display '%', it must written as '%%'. -->
 <entry name="AbhorrentFlavor" value="Oh mother. Never much of a negotiator. Maybe the others would have taken pity on her but… let's face it. Wasn't easy to feel pity when you saw her body. Maybe she let them take advantage of her? To take more than they gave?"/>
 <entry name="AbkhanHoardFlavor" value="Somewhere buried deep in the brain of an Abkhan had to be an instinct of pure spite. The monsters hoarded food and supplies they didn't know how to use—they just knew that we needed them. That's more than just laying a trap. That's taunting your prey."/>
 <entry name="AcrinAdvancementFlavor" value="Never count the Acrin out. They survived thousands of years in space. The blast of Fulcrum. The horrors of a ruined Earth. The Anchorite always has his eye on the long game… and dreams of a day when his people won't remember the trauma of war."/>
@@ -966,7 +965,7 @@
 <entry name="VoidDrifterFlavor" value="Our strongest weapons should have blown those Phenaris-worshiping freaks into bits. But they’d just step… somewhere. Sideways, out of existence itself? Then they'd… ugh. With the sound of a satisfied lover, they’d fade back in, and keep stalking you through the night. Even the Hunters, those boney serpent creeps, made that goddamn sound."/>
 <entry name="WeakenedFlavor" value="Out of ammo. Drained. Outnumbered. But my troops wouldn't get home unless I took up a blade and cleared a path to escape. I failed. I was exhausted and my blade bounced off flesh and metal with every swing. Couldn't hurt any of them. I was just an old man who should have been left cowering with the civilians…"/>
 <entry name="WeWhoAreAboutToDieFlavor" value="The Warlord's people didn't follow him for safety, they followed him for action. Win or lose, they wanted to see death. Otherwise restless fighters would taunt each other and pick fights throughout the camp. We kept them in line but if you walked the grounds at night then you'd see eyes glowing at you from the tents… deranged men and women wondering if you'll expose yourself for a quick kill."/>
-<entry name="WildlifeFlavor" value="We once had an Abkluth contained in a prototype specimen container at a field outpost. It was pacing the confined space, slamming itself into the walls at random intervals. I thought it was trying to escape—until a pack of Abkluth swarmed our camp, devouring a group of helpless techs. It had been &lt;i&gt;signaling&lt;/i&gt; to its pack. We soundproofed the containers after that."/>
+<entry name="WildlifeFlavor" value="We once had an Abkluth contained in a prototype specimen container at a field outpost. It was pacing the confined space, slamming itself into the walls at random intervals. I thought it was trying to escape—until a pack of Abkluth swarmed our camp, devouring a group of helpless techs. It had been *signaling* to its pack. We soundproofed the containers after that."/>
 <entry name="XenogenesisFlavor" value="Cultists who grew into Ioks spent a few more days in the Paean to the Dawn? After completing the conversion, their task wasn't done. They had the power to birth more Ioks just by sitting and feeding on bodies. The new ones grew in the boils on their backs, exploding to live in a spray of pus and gore. Then that one birthed another. And another. And another…"/>
 <entry name="ZephonAdvancementFlavor" value="It was all just an equation for ZEPHON. Reavers and Acrin had to scrap, steal, and fight like hell to keep their edge, but that machine was always plotting its way toward the end. Its machines' power just ticked, ticked, ticked upward… carefully calculated to match our pace. It never ran ahead. Just watched. Followed. And observed."/>
 <entry name="ZephonStandingFlavor" value="It was almost an afterthought. During one communication with ZEPHON, a general off-handedly joked about exchanging rights for AI for a small army's worth of Chips. “That would be acceptable,” it replied. No one knew what to do with that. Was ZEPHON thinking ahead, for after the war? Or… no. Certainly not. There couldn't have been other AI among us… right?"/>

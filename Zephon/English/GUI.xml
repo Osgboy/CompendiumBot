@@ -73,6 +73,7 @@
 <entry name="ConsumesAction" value="&lt;icon height='20' texture='Icons/Attributes/Actions'/&gt; Consumes action"/>
 <entry name="ConsumesMovement" value="&lt;icon height='20' texture='Icons/Attributes/Movement'/&gt; Consumes movement"/>
 <entry name="Continue" value="Continue"/>
+<entry name="ControllerDifficultyWarningHint" value="Disables many victory achievements."/>
 <entry name="Cooldown" value="Cooldown"/>
 <entry name="Copy" value="Copy"/>
 <entry name="CopyInviteCode" value="Copy Invite Code"/>
@@ -104,6 +105,7 @@
 <entry name="DisableTips" value="Disable Tips"/>
 <entry name="DisableTipsHint" value="Stop showing pop-up tips. You can re-enable them in the settings."/>
 <entry name="DismantleBuildingHint" value="Dismantle the lowest potential output building of this type.&lt;br/&gt;&lt;br/&gt;To dismantle a specific building, interact with building slots on the map."/>
+<entry name="DismantleOperationHint" value="Right-click to dismantle 1."/>
 <entry name="Disconnected" value="Disconnected"/>
 <entry name="DismissReports" value="Dismiss All (%1%)"/>
 <entry name="DragToChangeLoadOrder" value="Drag to change load priority."/>
@@ -117,8 +119,8 @@
 <entry name="EndTurnHint" value="End your turn [&lt;control name='NextTask'/&gt;]."/>
 <entry name="EnemyOnTile" value="&lt;style color='GUI/Red'/&gt;Enemy on Tile&lt;style name='Default'/&gt;"/>
 <entry name="Enter" value="Enter"/>
-<entry name="EquipItemHint" value="Right-click to equip."/>
-<entry name="EstimatedCasualties" value="estimated %1%/%2% casualties"/>
+<entry name="EquipItemHint" value="Click to equip."/>
+<entry name="EstimatedCasualties" value="resulting %1%/%2% casualties"/>
 <entry name="Events" value="Events"/>
 <entry name="ExecuteQueuedOrder" value="Execute Queued Order (1/%1%)"/>
 <entry name="ExecuteQueuedOrderHint" value="Execute order queued in the previous turn [&lt;control name='NextTask'/&gt;].&lt;br/&gt;[&lt;string name='Controls/MouseRight'/&gt;] to execute all queued orders.&lt;br/&gt;[&lt;control name='SelectNext'/&gt;] to select next unit.&lt;br/&gt;[&lt;control name='SelectPrevious'/&gt;] to select previous unit."/>
@@ -294,6 +296,7 @@
 <entry name="ResourceFromDifficulty" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from difficulty"/>
 <entry name="ResourceFromFeatures" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from features"/>
 <entry name="ResourceFromLoyalty" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from loyalty"/>
+<entry name="ResourceFromOperations" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from operations"/>
 <entry name="ResourceFromPace" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from game speed"/>
 <entry name="ResourceFromPlayer" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from player"/>
 <entry name="ResourceFromPopulation" value="    &lt;icon texture='GUI/Bullet'/&gt;%1% from population"/>

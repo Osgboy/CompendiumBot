@@ -5,9 +5,10 @@
 			<area affect="Tile">
 				<modifiers>
 					<modifier effectDescription="OnDeath">
-						<conditions>
+						<conditions ignoreForTraitVisibility="1">
 							<unit>
-								<noTrait type="Infinite"/>
+								<noEnabledTrait type="Hijack"/>
+								<destroyed/>
 							</unit>
 						</conditions>
 						<effects>
@@ -22,8 +23,7 @@
 				<modifiers>
 					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="PerfectForeverUpgrade">
 						<conditions>
-							<unit match="Any">
-								<noTrait type="Infinite"/>
+							<unit>
 								<ally/>
 							</unit>
 						</conditions>
@@ -33,8 +33,7 @@
 					</modifier>
 					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="PerfectForeverUpgrade2">
 						<conditions>
-							<unit match="Any">
-								<noTrait type="Infinite"/>
+							<unit>
 								<ally/>
 							</unit>
 						</conditions>
@@ -44,8 +43,7 @@
 					</modifier>
 					<modifier effectDescription="ToSpawnedUnit">
 						<conditions>
-							<unit match="Any">
-								<noTrait type="Infinite"/>
+							<unit>
 								<ally/>
 							</unit>
 						</conditions>
@@ -55,8 +53,7 @@
 					</modifier>
 					<modifier effectDescription="ToSpawnedUnit" requiredUpgrade="InfiniteCountAffinityUpgrade">
 						<conditions>
-							<unit match="Any">
-								<noTrait type="Infinite"/>
+							<unit>
 								<ally/>
 							</unit>
 						</conditions>

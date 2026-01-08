@@ -19,7 +19,10 @@
 		</weapon>
 		<weapon type="ParadoxTheriac" requiredUpgrade="ParadoxTheriac">
 			<models>
-				<flamerWeapon muzzleBone="Shield"/>
+				<flamerWeapon bone="Shield"
+						material="Units/PhenarisEpicurean" 
+						mesh="Units/PhenarisEpicureanParadoxTheriac"
+						muzzleBone="Shield"/>
 			</models>
 		</weapon>
 	</weapons>

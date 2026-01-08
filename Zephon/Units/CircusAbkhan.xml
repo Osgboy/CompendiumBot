@@ -46,8 +46,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Responses/Units/AbkluthAppear"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</appear>
 		<attack>
@@ -57,9 +56,7 @@
 						meleeBeginSwing="0.5"
 						meleeEndSwing="0.6"
 						meleeSound="Units/AbkhanMelee"
-						meleeSoundCount="1"
-						responseSound="Responses/Units/AbkluthAttack"
-						responseSoundCount="3"/>
+						meleeSoundCount="1"/>
 			</model>
 		</attack>
 		<die>
@@ -76,21 +73,17 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/AbkluthImpact"
-						responseSound="Responses/Units/AbkluthEndureHighDamage"
-						responseSoundCount="1"/> 
+				<action animation="Units/AbkluthImpact"/> 
 			</model>			
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Responses/Units/AbkluthHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Responses/Units/AbkluthHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -101,8 +94,7 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Responses/Units/AbkluthKill"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</kill>
 		<move>
@@ -111,27 +103,22 @@
 						sound="Units/AbkhanMove"
 						soundCount="1"
 						soundFadeInDuration="1.0"
-						soundFadeOutDuration="0.25"
-						responseSound="Responses/Units/AbkluthMove"
-						responseSoundCount="3"/> 
+						soundFadeOutDuration="0.25"/> 
 			</model>
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Responses/Units/AbkluthPoke"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Responses/Units/AbkluthSelect"
-						responseSoundCount="3"/>
+				<action/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Responses/Units/AbkluthHoldPosition"
-						responseSoundCount="1"/>
+				<action/>
 			</model>
 		</skip>
 		<useWeapon weaponSlotName="FrostBreath"
@@ -141,9 +128,7 @@
 			<model>
 				<attack animation="Units/AbkluthAbility0"
 						beginFire="0.2"
-						endFire="2.0"
-						responseSound="Responses/Units/AbkluthAttack"
-						responseSoundCount="3"/>
+						endFire="2.0"/>
 			</model>
 		</useWeapon>
 	</actions>

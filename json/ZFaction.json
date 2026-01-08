@@ -19,6 +19,7 @@
             "WordsOfTheProphet"
         ],
         "dislikedLabels": [
+            "Ageless Hunger",
             "Gluttony",
             "Immoral",
             "InhumanKindness",
@@ -42,10 +43,12 @@
             "Reaver Immigration",
             "Hit and Run",
             "Scavenger",
+            "SeeAsISee",
             "Tales of the Hunt"
         ],
         "dislikedLabels": [
             "Heartfelt Loss",
+            "TheSureThing",
             "Trapped",
             "Undying",
             "Untrustworthy"
@@ -99,6 +102,7 @@
         "dislikedLabels": [
             "Cult Expansion",
             "Honor-bound",
+            "Personal Visit",
             "Untrustworthy"
         ],
         "iconPath": "Zephon\\Icons\\Factions\\EmulatedMind.png",
@@ -143,6 +147,7 @@
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
+            "Personal Visit",
             "Tender Ministrations",
             "ThereIsHope"
         ],
@@ -199,6 +204,7 @@
         ],
         "dislikedLabels": [
             "Artificer's Precision",
+            "Time Out of Joint",
             "Untrustworthy",
             "WordsOfTheProphet"
         ],
@@ -247,6 +253,7 @@
         "dislikedLabels": [
             "Heartfelt Loss",
             "Independent",
+            "Just Ship It",
             "Leave No Man Behind",
             "Untrustworthy"
         ],
@@ -291,6 +298,7 @@
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
+            "Ageless Hunger",
             "FoundationsOfBlood",
             "Hit and Run"
         ],
@@ -345,8 +353,10 @@
             "AI Rights": "ZephonStanding"
         },
         "likedLabels": [
+            "Ageless Hunger",
             "Artificer's Precision",
-            "Resource Network"
+            "Resource Network",
+            "TheSureThing"
         ],
         "dislikedLabels": [
             "Abhorrent",
@@ -356,6 +366,56 @@
         ],
         "iconPath": "Zephon\\Icons\\Factions\\HonorableAristocrat.png",
         "name": "Honorable Aristocrat"
+    },
+    "Infinite Count": {
+        "internalID": "InfiniteCount",
+        "description": "\u201cOnce more, we meet for the first time.\u201d",
+        "flavor": "\u2014And you are sitting with a young lawyer and his friends, two sisters and two poets, pouring out your impossible tale, resisting as long as you can before the pull takes you again\u2014\n\n\u2014the other sisters (three!) lecture you and your friends (there is devoted Simone, whose spine one day bursts insectoid from her shrivelled form; there is Petre, who change-burgeoned until you could travel like babes in his ribcage) on the steps to take, on the binding of the eyes, of the flayings to come\u2014\n\n\u2014and you are again a thousand years before that time, emerging from the chrysalis of your existence repeatedly, born anew each time, sometimes bestial on all fours, occasionally winged like the night, oft the most delightful specimen of nocturnal humanity, sharp-toothed and hungry for experience, but always fascinating, always with your future trapped\u2014\n\n\u2014and forever and forever and forever you are journeying back to that room in the bunker and what-will-be-The Tribunal (so definite that name!), learning at their heels as they become one and many and forget you and leave you all behind and none of you truly died but only they truly departed\u2014\n\n\u2014and you return and the woman are fled and the young men are all gone, dead of plague or drowning or at their own hand, each leaving a tale of the horror that alludes to the curse you birthed that night by the lake near Geneva\u2014\n\n\u2014and you are insensate, following The Voice for the first time, and the hunger for the real starting certainties of your form and time falling away\u2014\n\n\u2014and you live backwards through the life of a king, his infallible adviser and you know then and now and forever that you are neither one thing or another, one time or another\u2014\n\n\u2014and the brash poet pulls you sodden from the lake and the lawyer gasps at you \u2018Vampyre\u2019 and your canines retract\u2014",
+        "branch": "Voice",
+        "actions": {
+            "Perfect Forever": null,
+            "Time Out of Joint": null,
+            "See as I See": "SeeAsISee"
+        },
+        "startingUnits": {
+            "Engineers": "1",
+            "Caitiffs": "1"
+        },
+        "traits": {
+            "Ageless Hunger": null,
+            "Amoetia's Caress": "AmoetiasCaress",
+            "Amoetia's Embrace": "AmoetiasEmbrace",
+            "Trials of the Eremite": "AnchoriteStanding",
+            "Asymmetric Arbitrage": "AsymmetricArbitrage",
+            "Balanced Progress": "BalancedProgress",
+            "Breach Collector": "BreachCollector",
+            "Reaver Immigration": "ChieftessStanding",
+            "Premium Access": "ConcordatAdvancedResources",
+            "Corpse Cities": "CorpseCities",
+            "Ha'sharet Exchange": "HasharetExchange",
+            "Holopatter": "Holopatter",
+            "Infectious Appetites": "InfiniteCountAffinityUpgrade2",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
+            "Spirit of Mankind": "SpiritOfMankind",
+            "Tactical Archeology": "TacticalArcheology",
+            "Specimen Containment": "Wildlife",
+            "AI Rights": "ZephonStanding"
+        },
+        "likedLabels": [
+            "Honor-bound",
+            "Trapped",
+            "We Who Are About To Die"
+        ],
+        "dislikedLabels": [
+            "Abhorrent",
+            "ThereIsHope",
+            "Untrustworthy"
+        ],
+        "iconPath": "Zephon\\Icons\\Factions\\InfiniteCount.png",
+        "name": "Infinite Count"
     },
     "Neutral": {
         "internalID": "Neutral",
@@ -369,6 +429,60 @@
         "dislikedLabels": [],
         "iconPath": "Zephon\\Icons\\Factions\\Neutral.png",
         "name": "Neutral"
+    },
+    "Platinum Scion": {
+        "internalID": "PlatinumScion",
+        "description": "\u201cMoney can\u2019t get you everything. But nothing else comes close.\u201d",
+        "flavor": "ICAR wasn\u2019t just Phinnicus. Theoretically, he only had a tiny share of the company. But he was in total control of it. Moreover, his extended family were seeded throughout it, sons on the board, cousins in subsidiaries, distant Phinnicus scions managing distant territory desks. Their loyalty was both familial and practical\u2014who else would give a Phinnicus a job, knowing the reputation of the family firm?\n\nOne cousin, however, was different. By the standards of the world, he was a rat, promising the world and rarely delivering. By the standards of his family, he was an angel, too well-intentioned for the corp so the order to fire him came from the top. He had to learn to make his own way in the world, with only a small fortune to his name.\n\nHowever, he thrived. Built up a firm, almost rivalling ICAR. When his business got too big? Phinnicus\u2026 didn\u2019t like competition. Didn\u2019t like a relative making it big without his help. Put out the hit. The message got across\u2014a Daed doesn\u2019t leave ICAR outside of a box.\n\nThe Scion, however, proved harder to kill than that. His health insurance was the best money could buy, shipping his barely living parts to a special facility, buried too deep for even the rumored ICAR satellites to get him. The doctors were in the second year of rebuilding him when the Acrin arrived.",
+        "branch": "Cyber",
+        "actions": {
+            "The Sure Thing (Small)": null,
+            "The Sure Thing (Medium)": null,
+            "The Sure Thing (Large)": null,
+            "Personal Visit": "PersonalVisit",
+            "Product Recall": "JustShipItUpgrade2",
+            "Flagship Product": "PlatinumScionAffinityUpgrade2"
+        },
+        "startingUnits": {
+            "Engineers": "1",
+            "Ishim Enforcers": "2"
+        },
+        "traits": {
+            "Economies of Scale": null,
+            "Amoetia's Caress": "AmoetiasCaress",
+            "Amoetia's Embrace": "AmoetiasEmbrace",
+            "Trials of the Eremite": "AnchoriteStanding",
+            "Asymmetric Arbitrage": "AsymmetricArbitrage",
+            "Balanced Progress": "BalancedProgress",
+            "Breach Collector": "BreachCollector",
+            "Reaver Immigration": "ChieftessStanding",
+            "Premium Access": "ConcordatAdvancedResources",
+            "Corpse Cities": "CorpseCities",
+            "Ha'sharet Exchange": "HasharetExchange",
+            "Holopatter": "Holopatter",
+            "Market Defluctuation": "MarketDefluctuation",
+            "Mobile Hardpoints": "MobileHardpoints",
+            "We Can Rebuild Him": "PlatinumScionAffinityUpgrade",
+            "Railgun Roads": "RailgunRoads",
+            "Shield Dome": "ShieldDome",
+            "Spirit of Mankind": "SpiritOfMankind",
+            "Tactical Archeology": "TacticalArcheology",
+            "Specimen Containment": "Wildlife",
+            "AI Rights": "ZephonStanding"
+        },
+        "likedLabels": [
+            "Cult Expansion",
+            "Engineer Life",
+            "IcarusSatellite"
+        ],
+        "dislikedLabels": [
+            "Mysticism",
+            "SeeAsISee",
+            "Tender Ministrations",
+            "Untrustworthy"
+        ],
+        "iconPath": "Zephon\\Icons\\Factions\\PlatinumScion.png",
+        "name": "Platinum Scion"
     },
     "Practical Romantic": {
         "internalID": "PracticalRomantic",
@@ -478,6 +592,7 @@
             "SurvivalTraining"
         ],
         "dislikedLabels": [
+            "Economies of Scale",
             "Tender Ministrations",
             "Untrustworthy",
             "WordsOfTheProphet"
@@ -588,6 +703,7 @@
         },
         "likedLabels": [
             "Fortress Armament",
+            "Perfect Forever",
             "ThereIsHope"
         ],
         "dislikedLabels": [
@@ -611,6 +727,7 @@
         "startingUnits": {},
         "traits": {},
         "likedLabels": [
+            "Economies of Scale",
             "Engineer Life",
             "Hired Hands",
             "Resource Network",

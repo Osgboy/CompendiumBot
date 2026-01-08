@@ -439,7 +439,7 @@
             "Ignores Cover": null,
             "Massive Splash": null
         },
-        "range": "0",
+        "range": "-1",
         "innateStats": {
             "accuracy": {
                 "operator": "min",
@@ -462,10 +462,38 @@
         "name": "Black Hole",
         "branch": "Neutral"
     },
+    "Bladed Labrum": {
+        "internalID": "BladedLabrum",
+        "description": null,
+        "flavor": "We needed a goddamn *biologist* to figure out why this giant worm wouldn't go down no matter what we pumped into it. \u201cStop sending mechs and tanks after it,\u201d they said after reviewing headcam footage. \u201cIt's *eating* the metal. Those teeth are dripping with acid that starts digestion while it's tearing your armor apart.\u201d",
+        "traits": {
+            "Large Splash": null,
+            "Melee": null,
+            "Rustbinging": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BladedLabrum.png",
+        "name": "Bladed Labrum",
+        "branch": "Voice"
+    },
     "Bleed": {
         "internalID": "Bleed",
         "description": null,
-        "flavor": "The Voice's tendrils bled out from one reality and into our own, prying open a door to madness. These should not have plagued our earth. Their sickly, slimy extremities reached out in search of flesh\u2014or metal-to ensnare. I can't even escape the sight of them in my sleep. Some nights\u2014often on a full moon\u2014I wake, sweating, still feeling the phantom pull of them dragging me to the earth. I assumed this was all in my head, but I've heard the whispers in the mess hall. Others dream of being crushed too.",
+        "flavor": "The Voice's tendrils bled out from one reality and into our own, prying open a door to madness. These should not have plagued our earth. Their sickly, slimy extremities reached out in search of flesh\u2014or metal\u2014to ensnare. I can't even escape the sight of them in my sleep. Some nights\u2014often on a full moon\u2014I wake, sweating, still feeling the phantom pull of them dragging me to the earth. I assumed this was all in my head, but I've heard the whispers in the mess hall. Others dream of being crushed too.",
         "traits": {},
         "range": "0",
         "innateStats": {
@@ -489,6 +517,33 @@
         "iconPath": "Zephon\\Icons\\Features\\Bleed.png",
         "name": "Bleed",
         "branch": "Neutral"
+    },
+    "Bleed Incitation": {
+        "internalID": "BleedIncitation",
+        "description": null,
+        "flavor": "Thank the gods a medic found me quick. I was careless, thought I could take whatever the Spawnrider shot at me. I went down, blood soaked out of me like sweat. I asked if she'd ever seen anything like it. \u201cNo. But that doesn't mean much anymore.\u201d",
+        "traits": {
+            "Splash": null,
+            "Defiling": null
+        },
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 5.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 6.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BleedIncitation.png",
+        "name": "Bleed Incitation",
+        "branch": "Acrin"
     },
     "Blest Cannon": {
         "internalID": "BlestCannon",
@@ -516,6 +571,56 @@
         "iconPath": "Zephon\\Icons\\Weapons\\BlestCannon.png",
         "name": "Blest Cannon",
         "branch": "Cyber"
+    },
+    "Breacher Shotgun (Shell)": {
+        "internalID": "BreacherShotgunShell",
+        "description": null,
+        "flavor": "Kid was practically jumping up and down in the mess hall. \u201cI rocketed in there and BOOM melted the Ishim! But then this Galgalim Orb rolled up so I cycled the rounds and BOOM, punched a hole in it! But then a squad of ANASHIM showed up so I cycled again and BOOM, BOOM, BOOM!\u201d Days later he ignored a retreat order and an Aranean Stalker blew off his head with a clean shot into the Jaeger's cockpit.",
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 8.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BreacherShotgunShell.png",
+        "name": "Breacher Shotgun (Shell)",
+        "branch": "Human"
+    },
+    "Breacher Shotgun (Slug)": {
+        "internalID": "BreacherShotgunSlug",
+        "description": null,
+        "flavor": "Kid was practically jumping up and down in the mess hall. \u201cI rocketed in there and BOOM melted the Ishim! But then this Galgalim Orb rolled up so I cycled the rounds and BOOM, punched a hole in it! But then a squad of ANASHIM showed up so I cycled again and BOOM, BOOM, BOOM!\u201d Days later he ignored a retreat order and an Aranean Stalker blew off his head with a clean shot into the Jaeger's cockpit.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\BreacherShotgunSlug.png",
+        "name": "Breacher Shotgun (Slug)",
+        "branch": "Human"
     },
     "Bombardment": {
         "internalID": "Bombardment",
@@ -655,6 +760,33 @@
         "iconPath": "Zephon\\Icons\\Weapons\\CrlasGambit.png",
         "name": "Cr'la's Gambit",
         "branch": "Voice"
+    },
+    "Crush Sequence": {
+        "internalID": "CrushSequence",
+        "description": null,
+        "flavor": "If a Galgalim Orb had your squad in its sights, then the last thing you ever saw was a massive wall of steel and lasers towering over you. I saw that POV from some camera footage recovered from one of our platoons. Got a little sick when I realized it picked up the sounds of bone crunching before going dark.",
+        "traits": {
+            "Large Splash": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\CrushSequence.png",
+        "name": "Crush Sequence",
+        "branch": "Cyber"
     },
     "Crodeus Bite": {
         "internalID": "CrodeusBite",
@@ -924,9 +1056,37 @@
         "name": "Dragoon Spear",
         "branch": "Voice"
     },
+    "Earthly Ruin": {
+        "internalID": "EarthlyRuin",
+        "description": null,
+        "flavor": "Once a scout spotted the first Throkos worm, I called for us to abandon the fort. Barely made it out\u2014my Corsair just got airborne when the Chosen of Throkos crashed through the barricade. Pilot couldn't believe it. What did she expect? These things dug through solid rock, what was one wall going to do?",
+        "traits": {
+            "Large Splash": null,
+            "Melee": null,
+            "Sapping": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 8.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 16.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\EarthlyRuin.png",
+        "name": "Earthly Ruin",
+        "branch": "Voice"
+    },
     "EMP": {
         "internalID": "EMP",
-        "description": null,
+        "description": "Usable against mechanical non-titan enemies",
         "flavor": "I hated EMPs. Against ZEPHON and Cyber enemies, sure, they were vital tools. But shutting down electronics was a two-way street, and I hated being exposed without fire support.",
         "traits": {
             "EMP": null,
@@ -1194,6 +1354,33 @@
         },
         "iconPath": "Zephon\\Icons\\Weapons\\FrostBreath.png",
         "name": "Frost Breath",
+        "branch": "Voice"
+    },
+    "Fused Billhooks": {
+        "internalID": "FusedBillhooks",
+        "description": null,
+        "flavor": "Pull a hook off a dead Caitiff and you might vomit from the smell. Found out why after having a scientist look at them. \u201cNot made in a factory,\u201d she said. \u201cIt grew on the host's body. It's basically a tumor.\u201d",
+        "traits": {
+            "Melee": null,
+            "Hobbling": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\FusedBillhooks.png",
+        "name": "Fused Billhooks",
         "branch": "Voice"
     },
     "Galgalim Missile Battery": {
@@ -1662,6 +1849,30 @@
         "name": "Grenade Launcher",
         "branch": "Reaver"
     },
+    "Grenade Pod": {
+        "internalID": "GrenadePod",
+        "description": null,
+        "flavor": "Got pinned down by enemy Sharpshooters. They got Torres first. Thought I was done for but then one of those Jaeger pilots came over the comlink shouting \u201cCavalry!!\u201d He charged in, fired a cluster of grenades and spread body parts all over the cliffside. One hit the mech's windshield. We cheered but\u2014the kid sounded shaken after that. He wasn't ready for the gore.",
+        "traits": {},
+        "range": "2",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 3.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\GrenadePod.png",
+        "name": "Grenade Pod",
+        "branch": "Human"
+    },
     "Hades Cannon": {
         "internalID": "HadesCannon",
         "description": null,
@@ -1772,11 +1983,11 @@
     "Hymn of Decay": {
         "internalID": "HymnOfDecay",
         "description": null,
-        "flavor": "When I first felt the toxic touch of this tortured hymnal I assumed there was a strategic reason for poisoning the earth like this. But after so many battles\u2026 there had to be more to it. Was it spiritual? Or was it an act of childish spite? I imagined doomed aliens lashing back at our world for daring to resist their apocalyptic mission. The thought chilled me to the bone.",
+        "flavor": "When I first felt the toxic touch of this tortured hymnal I assumed there was a strategic reason for poisoning the earth like this. But after so many battles\u2026 there had to be more to it. Was it spiritual? Or was it an act of childish spite\u2014doomed aliens lashing back at our world for daring to resist their apocalyptic mission?",
         "traits": {
             "Ignores Cover": null
         },
-        "range": "0",
+        "range": "-1",
         "innateStats": {
             "accuracy": {
                 "operator": "base",
@@ -1998,6 +2209,36 @@
         "name": "Iok Bile",
         "branch": "Voice"
     },
+    "Ion Discharge": {
+        "internalID": "IonDischarge",
+        "description": null,
+        "flavor": "\u201cMOVE!\u201d I shook off the concussion and got back on the Crusader guns. CO was sweating. \u201cLock down that Anchor or we're gonna get fried!\u201d But we were already out of time. Soon as the words left his mouth, the Anchor lit up like a Roman candle and the whole crew screamed and\u2014",
+        "traits": {
+            "Large Splash": null
+        },
+        "range": "-1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "min",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Actions\\IonDischarge.png",
+        "name": "Ion Discharge",
+        "branch": "Neutral"
+    },
     "Jagged Cradle": {
         "internalID": "JaggedCradle",
         "description": null,
@@ -2024,6 +2265,32 @@
         "iconPath": "Zephon\\Icons\\Weapons\\JaggedCradle.png",
         "name": "Jagged Cradle",
         "branch": "Voice"
+    },
+    "Katana": {
+        "internalID": "Katana",
+        "description": null,
+        "flavor": "Most soldiers who picked up the blade didn't bother learning old-world forms. You'd be laughed at if you did. But out on dawn patrol I'd find some of our troops gathered away from camp, striking the air in unison, flowing from stance to stance. They tended to be the ones who survived the longest too.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.5
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Katana.png",
+        "name": "Katana",
+        "branch": "Human"
     },
     "Landan Graham's Disintegrator": {
         "internalID": "LandanGrahamsDisintegrator",
@@ -2077,6 +2344,36 @@
         "iconPath": "Zephon\\Icons\\Weapons\\LandanGrahamsDisintegratorOvercharged.png",
         "name": "Landan Graham's Disintegrator (Overcharged)",
         "branch": "Human"
+    },
+    "Laser Array": {
+        "internalID": "LaserArray",
+        "description": null,
+        "flavor": "Another argument between me and the chief engineer. \u201cWhy does it need lasers? Galgalim crush everything in their path.\u201d \u201cNot for long,\u201d I shot back. \u201cEverything we're fighting out there is getting bigger.\u201d I knew she knew that. When we were alone, she told me how scared she was about the little time we had left.",
+        "traits": {
+            "Laser": null
+        },
+        "range": "2",
+        "innateStats": {
+            "accuracy": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\LaserArray.png",
+        "name": "Laser Array",
+        "branch": "Cyber"
     },
     "Larvae Cannon": {
         "internalID": "LarvaeCannon",
@@ -2163,6 +2460,33 @@
         "iconPath": "Zephon\\Icons\\Weapons\\LaserRifle.png",
         "name": "Laser Gun",
         "branch": "Neutral"
+    },
+    "Leeching Touch": {
+        "internalID": "LeechingTouch",
+        "description": null,
+        "flavor": "Voice energy that brought these freaks to life could be turned against the enemy. Made sense. They were already bits of limbs molded together. Stretch that energy a little further and maybe they'd add another limb, another eyeball\u2026 I saw them scrape some juice off machines too. Maybe it just fed off metal.",
+        "traits": {
+            "Leeching Touch": null,
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 10.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\LeechingTouch.png",
+        "name": "Leeching Touch",
+        "branch": "Voice"
     },
     "Machete": {
         "internalID": "Machete",
@@ -2688,6 +3012,30 @@
         "name": "Power Fist",
         "branch": "Human"
     },
+    "Quakecaller": {
+        "internalID": "Quakecaller",
+        "description": null,
+        "flavor": "Your blood chills when you hear the details. The Quakecaller smashes fault lines under the earth to make minor earthquakes. A weapon that could tip the fate of the war in your favor. How did Karro get their hands on one? These troops weren't reckless gloryseekers\u2014they were fighting for you the whole time.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 3.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Items\\Quakecaller.png",
+        "name": "Quakecaller",
+        "branch": "Neutral"
+    },
     "Resonating Scythes": {
         "internalID": "ResonatingScythes",
         "description": null,
@@ -2822,6 +3170,32 @@
         "iconPath": "Zephon\\Icons\\Weapons\\SaturationSystem.png",
         "name": "Saturation System",
         "branch": "Zephon"
+    },
+    "Scissorhand": {
+        "internalID": "Scissorhand",
+        "description": null,
+        "flavor": "Yes, I know they weren't *scissors.* Scissors use two blades to cut with a sliding motion. Anashim Enforcers have *claws.* And a *dumbass* is someone stupid enough to tell that to an eight-foot tall killing machine who will use their claws *like scissors* to decapitate anyone who annoys them.",
+        "traits": {
+            "Melee": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 1.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 4.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\Scissorhand.png",
+        "name": "Scissorhand",
+        "branch": "Cyber"
     },
     "Seed of Extinction": {
         "internalID": "SeedOfExtinction",
@@ -3136,6 +3510,34 @@
         "name": "Sticky Foam",
         "branch": "Cyber"
     },
+    "Storm Of Storms": {
+        "internalID": "StormOfStorms",
+        "description": null,
+        "flavor": "You brush off the loss at first. But all that changes when a storm the likes of which no one has ever seen forms over the desert. Sand, snow, lightning, rain, tornadoes, hail\u2014it has it all. The Storm of Storms.",
+        "traits": {},
+        "range": "-1",
+        "innateStats": {
+            "accuracy": {
+                "operator": "base",
+                "value": 6.0
+            },
+            "armorPenetration": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 4.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 2.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Features\\StormOfStorms.png",
+        "name": "Storm Of Storms",
+        "branch": "Neutral"
+    },
     "Subjugator": {
         "internalID": "Subjugator",
         "description": null,
@@ -3161,6 +3563,30 @@
         "iconPath": "Zephon\\Icons\\Weapons\\Subjugator.png",
         "name": "Subjugator",
         "branch": "Acrin"
+    },
+    "Submachine Gun": {
+        "internalID": "SubmachineGun",
+        "description": null,
+        "flavor": "Never felt great giving up an assault rifle's range\u2014which wasn't what you'd call \u201clong\u201d by the way\u2014but sometimes that was the price of speed. And given what we were fighting\u2026 let's just say you didn't always need to outrun the Abkhan. You just needed to run faster than the guy next to you.",
+        "traits": {},
+        "range": "1",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 0.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 1.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\SubmachineGun.png",
+        "name": "Submachine Gun",
+        "branch": "Human"
     },
     "Suicide Drones": {
         "internalID": "SuicideDrones",
@@ -3279,7 +3705,7 @@
             "Ignores Cover": null,
             "Massive Splash": null
         },
-        "range": "0",
+        "range": "-1",
         "innateStats": {
             "accuracy": {
                 "operator": "min",
@@ -3329,6 +3755,34 @@
         "iconPath": "Zephon\\Icons\\Features\\TheFog.png",
         "name": "The Fog",
         "branch": "Neutral"
+    },
+    "Thricefold Hunger": {
+        "internalID": "ThricefoldHunger",
+        "description": null,
+        "flavor": "Ranger Squad Gladius. Specialized in hunting Spawnriders. Took bets on which head would strike first in each fight. Wiped out when one of the beasts attacked with all three at once.",
+        "traits": {
+            "Life Steal": null,
+            "Melee": null,
+            "Splash": null
+        },
+        "range": "Melee",
+        "innateStats": {
+            "armorPenetration": {
+                "operator": "base",
+                "value": 7.0
+            },
+            "attacks": {
+                "operator": "base",
+                "value": 2.0
+            },
+            "damage": {
+                "operator": "base",
+                "value": 12.0
+            }
+        },
+        "iconPath": "Zephon\\Icons\\Weapons\\ThricefoldHunger.png",
+        "name": "Thricefold Hunger",
+        "branch": "Acrin"
     },
     "Valkyria Autocannon": {
         "internalID": "ValkyrieAutocannon",

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unit dlc="DLC2">
 	<model>
-		<unit explosionsBlueprint="Effects/MediumHumanExplosions"
-				explosionsBone="Bone"
+		<unit explosionsBlueprint="Effects/TitanHumanExplosions"
+				explosionsBone="CloudCity"
+				effectsBlueprint="Effects/CaelumCete"
 				heatImpactSound="Impacts/HeatConcrete"
 				heatImpactSoundCount="5"
 				kineticImpactSound="Impacts/KineticConcrete"
@@ -12,7 +13,7 @@
 				normalWeight="0.1"
 				onlyRotateWeapons="1"
 				position="0 0 48"
-				scale="1 1 1"
+				scale="0.9 0.9 0.9"
 				transparent="1"/>
 	</model>
 	<modifiers>
@@ -29,6 +30,20 @@
 		</modifier>
 	</modifiers>
 	<actions>
+		<die>
+			<model>
+				<die animation="Units/CaelumCeteDie0"
+						groundImpact="1.5"
+						groundImpactBlueprint="Effects/TitanGroundImpact"
+						groundImpactIntensity="2"
+						sound="Units/CaelumCeteDie"/> 
+			</model>
+		</die>
+		<idle>
+			<model>
+				<idle animation="Units/CaelumCeteIdle0"/>
+			</model>
+		</idle>
 		<unitAction name="ConstructOphanimCarrier"
 				consumedActionPoints="0"
 				consumedMovement="0"

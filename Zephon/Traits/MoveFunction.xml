@@ -3,8 +3,21 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<movementMax add="2"/>
+				<movementMax add="1"/>
 			</effects>
 		</modifier>
 	</modifiers>
+	<onTraitRemoved>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier effectDescription="OnRemoval" visible="0">
+						<effects>
+							<movement add="-1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitRemoved>
 </trait>

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<flamerWeapon flamesBlueprint="Effects/FrostBreath"
-				fireSound="Weapons/FrostBreath"
-				fireSoundContinuously="1"
-				fireSoundBeginCount="1"
-				fireSoundBeginDuringWindup="1"/>
+		<weapon/>
 	</model>
 	<modifiers>
 		<modifier>
@@ -16,13 +12,7 @@
 			</effects>
 		</modifier>
 	</modifiers>
-	<target rangeMax="1">
-		<conditions>
-			<unit>
-				<noTrait type="Titan"/>
-			</unit>
-		</conditions>
-	</target>
+	<target rangeMax="1"/>
 	<traits>
 		<trait type="LargeSplash"/>
 		<trait type="Melee"/>

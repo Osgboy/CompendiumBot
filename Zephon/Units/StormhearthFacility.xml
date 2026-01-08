@@ -22,7 +22,7 @@
 				<energyUpkeep base="4"/>
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
-				<moraleMax base="10"/>
+				<moraleMax base="0"/>
 				<movementMax base="0"/>
 			</effects>
 		</modifier>
@@ -48,7 +48,7 @@
 				cooldown="10"
 				icon="Features/StormOfStorms">
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile match="Any">
 							<noUnit/>

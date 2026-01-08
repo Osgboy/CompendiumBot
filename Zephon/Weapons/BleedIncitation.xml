@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<beamWeapon beamsBlueprint="Effects/TachyonCannon"
-				explosionsBlueprint="Effects/TachyonCannonExplosions"
-				fireInterval="0.05"
-				muzzleFlashesBlueprint="Effects/TachyonBeamMuzzleFlashes"/>
+		<projectileWeapon projectilesBlueprint="Effects/BleedIncitationProjectiles"
+				explosionsBlueprint="Effects/BleedIncitationExplosions"
+				fireInterval="0.1"
+				fireSound="Weapons/BleedIncitation"
+				fireSoundCount="6"
+				muzzleFlashesBlueprint="Effects/BleedIncitationMuzzleFlashes"/>
 	</model>
 	<modifiers>
 		<modifier>

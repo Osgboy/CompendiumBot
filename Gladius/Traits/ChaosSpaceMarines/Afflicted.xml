@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff"
+		icon="Actions/ChaosSpaceMarines/NurglesGift"
+		stacking="1">
+	<perTurnModifiers endure="0">
+		<modifier>
+			<conditions>
+				<unit>
+					<enemy/>
+					<noTrait name="Fortification"/>
+					<noTrait name="Vehicle"/>
+				</unit>
+			</conditions>
+			<effects>
+				<weaponDamage weapon="Afflicted"/>
+			</effects>
+		</modifier>
+	</perTurnModifiers>
+</trait>

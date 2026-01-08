@@ -2,6 +2,18 @@
 <trait category="Buff" icon="Actions/SistersOfBattle/MiraculousIntervention">
 	<modifiers>
 		<modifier>
+			<conditions>
+                		<unit>
+                    			<noCooldownAction name="SistersOfBattle/MiraculousIntervention"/>
+                		</unit>
+                                <unit>
+                                    	<noTrait name="Broken"/>
+                                </unit>
+                                <unit match="Any">
+                                    	<noTrait name="Shaken"/>
+                                    	<trait name="SistersOfBattle/LaudHailer"/>
+                                </unit>
+                        </conditions>
 			<effects>
 				<deathExperience max="0"/>
 				<deathMorale max="0"/>

@@ -50,7 +50,8 @@
         "actions": {
             "Produce Abkluths": null,
             "Produce Acrin Zealots": null,
-            "Produce Acrin Remnants": null
+            "Produce Acrin Remnants": null,
+            "Produce Acrin Spawnrider": null
         },
         "iconPath": "Zephon\\Icons\\Buildings\\VoiceInfantry.png",
         "name": "Acrin Midnight Chorus"
@@ -119,7 +120,7 @@
         "internalID": "Construction",
         "branch": "Neutral",
         "description": "Acquires tiles, clears tiles, produces Engineers and constructs buildings as well as generates minerals and influence",
-        "flavor": "We built things, at first, how we'd always done. With sweat and vigor. In the construction yard, there was nothing fancy--diggers, trucks, cranes, geopolymer concretes, girders. But, even with that primitive tech, we could build anything.",
+        "flavor": "We built things, at first, how we'd always done. With sweat and vigor. In the construction yard, there was nothing fancy--diggers, trucks, cranes, geopolymer concrete, girders. But, even with that primitive tech, we could build anything.",
         "resourceCosts": {
             "energyUpkeep": "2.0",
             "mineralsCost": "40",
@@ -218,6 +219,7 @@
             "Produce Ishim Enforcers": null,
             "Produce Cassiel Shredders": "CassielShredder",
             "Produce Malakim Destroyers": "MalakimDestroyer",
+            "Produce Anashim Enforcers": "AnashimEnforcer",
             "Produce Aranean Stalkers": "AraneanStalker",
             "Produce Kriteria Annihilators": "KriteriaAnnihilator",
             "Produce Elohim Maelstrom": "ElohimMaelstrom"
@@ -247,6 +249,7 @@
             "Interference Protocols": null,
             "Systemic Reset": "SystemicReset",
             "Antiparticle Purge": "AntiparticlePurge",
+            "Clone Wave": "CloneWave",
             "Black Hole": "BlackHole"
         },
         "iconPath": "Zephon\\Icons\\Buildings\\CyberOperations.png",
@@ -276,6 +279,7 @@
             "Produce Exousia Marauder": null,
             "Produce Ithuriel Harbinger": "IthurielHarbinger",
             "Produce Chayot Exterminator": "ChayotExterminator",
+            "Produce Galgalim Orb": "GalgalimOrb",
             "Produce Hashmallim Host": "HashmallimHost",
             "Produce Akavish Provost": "AkavishProvost",
             "Produce Seraphim Archangel": "SeraphimArchangel"
@@ -330,7 +334,7 @@
         "internalID": "Food",
         "branch": "Neutral",
         "description": "Generates food",
-        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026 so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.\u201d",
+        "flavor": "Our first harvests didn\u2019t account for the mutated soil. That cost\u2026 so many lives. We never took food for granted again after that. Every edible scrap would be accounted for. As long as we had power, no one would go hungry. Of course, our enemies were all too happy to see us starve.",
         "resourceCosts": {
             "energyUpkeep": "1.0",
             "mineralsCost": "20",
@@ -435,6 +439,7 @@
             "Produce Militants": null,
             "Produce Sharpshooters": "Sharpshooter",
             "Produce Missile Teams": "MissileTeam",
+            "Produce Rangers": "Ranger",
             "Produce Combat Medics": "CombatMedic",
             "Produce Assault Troopers": "AssaultTrooper",
             "Produce Praetorians": "Praetorian"
@@ -464,6 +469,7 @@
             "Satellite Scan": null,
             "Enriched Alloys": "EnrichedAlloys",
             "Logistics Experts": "LogisticsExperts",
+            "Tactical Insertion": "TacticalInsertion",
             "Tactical Nuclear Missile": "TacticalNuclearMissile",
             "Experimental Drugs": "ExperimentalDrugs"
         },
@@ -493,6 +499,7 @@
             "Produce Scramblers": "Scrambler",
             "Produce Cyclone": "Cyclone",
             "Produce Crusader Battle Tank": "CrusaderBattleTank",
+            "Produce Jaeger R-2": "JaegerR2",
             "Produce Vanquisher Siege Tank": "VanquisherSiegeTank",
             "Produce Vulkan R-5": "VulkanR5",
             "Produce Atlas Tank": "AtlasTank"
@@ -681,7 +688,7 @@
         "internalID": "Transuranium",
         "branch": "Neutral",
         "description": "Converts minerals into transuranium",
-        "flavor": "Now, this, I won't pretend to understand. I know the transuranic elements are unstable. I know that in that instability, there's huge amounts of latent energy. I don't know how the machines worked that stopped it escaping\u2014that made those elements into something dense and unearthly strong. I don't know if there's anyone alive who understands, to be fair.",
+        "flavor": "Now, this, I won't pretend to understand. I know transuranic elements are unstable. I know that instability holds huge amounts of latent energy. But. I don't know how the AI excavators stopped it escaping\u2014why the materials were dense and unearthly strong. I don't know if there's any human that knows, to be fair.",
         "resourceCosts": {
             "energyUpkeep": "1.0",
             "mineralsCost": "20",
@@ -747,6 +754,7 @@
             "Produce Devotees of Throkos": "DevoteeOfThrokos",
             "Produce Aegyllan Worms": "AegyllanWorm",
             "Produce Cr'la Disciples": "CrlaDisciple",
+            "Produce Caitiffs": "Caitiff",
             "Produce Phenaris Hunters": "PhenarisHunter",
             "Produce Phenaris Epicurean": "PhenarisEpicurean",
             "Precentor of Nihilus": "VoiceInfantryUpgrade"
@@ -774,6 +782,7 @@
             "Hymn of Decay": null,
             "Transubstantiation": "Transubstantiation",
             "Apotheosis": "Apotheosis",
+            "Vorodai's Bargain": "VorodaisBargain",
             "Atramentous Aura": "AtramentousAura",
             "Choral Celerity": "VoiceOperationsUpgrade"
         },
@@ -784,7 +793,7 @@
         "internalID": "VoiceVehicles",
         "branch": "Voice",
         "description": "Produces Voice creatures as well as generates food and algae\nInitially produces  Dark Vassael\n    <style color='GUI/Gray'/>Large biological creature with a horrifying attack that reduces enemy morale",
-        "flavor": "Not all alterations of the Voice achieve enlightenment, I'm told, especially those subacrin in some way. Nor do they die. Those failed drift out of the passion, healed, but changed, often bestial. I wonder if this is where the Acrin's weird creatures come from\u2014failed zealots\u2014or whether they are just creatures native to their home, who joined them in the journey across the stars.",
+        "flavor": "Not all alterations of the Voice achieve enlightenment, I'm told, especially those sub-Acrin in some way. Nor do they die. Those failed drift out of the passion, healed, but changed, often bestial. I wonder if this is where the Acrin's weird creatures come from\u2014failed zealots\u2014or whether they are just creatures native to their home, who joined them in the journey across the stars.",
         "resourceCosts": {
             "energyUpkeep": "2.0",
             "mineralsCost": "40",
@@ -802,6 +811,7 @@
             "Produce Dark Vassael": null,
             "Produce Amoetia's Devourer": "AmoetiasDevourer",
             "Produce Surthodai's Embrace": "SurthodaisEmbrace",
+            "Produce Chosen of Throkos": "ChosenOfThrokos",
             "Produce Fallen Orolos": "FallenOrolos",
             "Produce Plangent Orolos": "PlangentOrolos",
             "Produce Vorodai's Leviathan": "VorodaisLeviathan",

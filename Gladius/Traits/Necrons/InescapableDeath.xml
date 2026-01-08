@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait>
+	<modifiers>
+		<modifier>
+			<effects>
+				<rangedDamageReductionBypass add="1.0"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<unit>
+					<overwatching/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy add="2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement17">
+	<model>
+		<unit mesh="Units/Necrons/HexmarkDestroyer"
+				material="Units/Necrons/HexmarkDestroyer"
+				idleAnimation="Units/Necrons/HexmarkDestroyerIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="0.1"
+				scale="1.1 1.1 1.1"
+				explosionsBone="Chest"
+				walker="1"/>
+	</model>
+	<group size="1" rowSize="3" memberDeltaX="64" memberDeltaY="64"/>
+	<weapons>
+		<weapon name="EnmiticDisintegratorPistol" count="6">
+			<model>
+				<beamWeapon muzzleBone="Muzzle" muzzleCount="6"
+						fireInterval="1.15"/>
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=3+ -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=6 factor=1 -->
+				<hitpointsMax base="16.0"/> <!-- %hitpointsMax base toughness=5 wounds=4 -->
+				<meleeAccuracy base="8"/> <!-- %meleeAccuracy base weaponSkill=4 -->
+				<meleeAttacks base="2"/>
+				<strengthDamage base="2"/> <!-- %strengthDamage base strength=5 -->
+				<!-- <meleeInitiative base="2"/> -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=10 -->
+				<movementMax base="3"/>
+				<oreUpkeep base="2.0"/> <!-- %oreUpkeep base tier=6 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseInfantryScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Necrons/HexmarkDestroyerAttack"
+						beginFire="0.85"
+						endFire="2.0"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Necrons/HexmarkDestroyerDie0"
+						sound="Units/MediumArmoredDie"
+						soundCount="4"
+						soundDelay="1.1"
+						voiceSound="Units/Necrons/Die"
+						voiceSoundCount="7"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/Necrons/HexmarkDestroyerMove"
+						sound="Units/Necrons/InfantryMove"
+						soundCount="4"/>
+			</model>
+		</move>
+		<necrodermisRepair consumedActionPoints="0" consumedMovement="0"
+				cooldown="1"
+				name="Necrons/NecrodermisRepair"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/Heal"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="60"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/NecrodermisRepair3">
+					<effects>
+						<cooldown max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<conditions>
+				<unit>
+					<damaged/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="Necrons/NecrodermisRepair2">
+									<effects>
+										<hitpoints add="2"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</necrodermisRepair>
+		<dimensionalCorridor cooldown="3"
+				name="Necrons/DimensionalCorridor"
+				requiredUpgrade="Necrons/DimensionalCorridor">
+			<model>
+				<action sound="Actions/Teleport"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="30"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor2">
+					<effects>
+						<influenceCost mul="-0.33"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="Necrons/DimensionalCorridor3">
+					<effects>
+						<consumedActionPoints max="0"/>
+						<consumedMovement max="0"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</dimensionalCorridor>
+		<huntersFromHyperspace cooldown="10"
+				consumedActionPoints="0"
+				name="Necrons/DimensionalTranslocation"
+				requiredActionPoints="0">
+			<model>
+				<action sound="Actions/HuntersFromHyperspace"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</huntersFromHyperspace>
+	</actions>
+	<traits>
+		<trait name="Necrons/AttackCityBonus" requiredUpgrade="Necrons/AttackCityBonus"/>
+		<trait name="ExtraInfantryArmour" requiredUpgrade="Necrons/ExtraInfantryArmour"/>
+		<trait name="Bulky"/>
+		<trait name="Necrons/InescapableDeath"/>
+		<trait name="Necrons/MultiThreatEliminator"/>
+		<trait name="Necrons/ReanimationProtocols"/>
+		<trait name="Necrons/HardwiredForDestruction"/>
+	</traits>
+</unit>

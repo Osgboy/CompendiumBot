@@ -1,4 +1,38 @@
 {
+    "Afflicted": {
+        "internalID": "Afflicted",
+        "description": null,
+        "flavor": "The Death Guard are warriors of the Plague God Nurgle, carrying his foul blessings. Hence their bloated bodies are riddled with corruption, and their mere presence causes the foe to sicken and wither in the grip of supernatural diseases while the battlefield falls to rot and ruin around them.",
+        "traits": {
+            "Ignores Cover": null
+        },
+        "range": "N/A",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 5.0
+            },
+            "rangedAccuracy": {
+                "operator": "max",
+                "value": 12.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Actions\\ChaosSpaceMarines\\NurglesGift.png",
+        "name": "Afflicted",
+        "faction": "Neutral"
+    },
     "Agoniser": {
         "internalID": "Agoniser",
         "description": null,
@@ -10,10 +44,6 @@
         },
         "range": "Melee",
         "innateStats": {
-            "strengthDamage": {
-                "operator": "add",
-                "value": 0.0
-            },
             "meleeArmorPenetration": {
                 "operator": "add",
                 "value": 4.0
@@ -180,6 +210,40 @@
         "iconPath": "Gladius\\Icons\\Weapons\\ArchiteGlaive.png",
         "name": "Archite Glaive",
         "faction": "Drukhari"
+    },
+    "Armiger Autocannon": {
+        "internalID": "ArmigerAutocannon",
+        "description": null,
+        "flavor": "Capable of firing hundreds of armour piercing shells per solar minute, even a single Armiger Autocannon can swiftly whittle down infantry ranks or shred lightly armoured vehicles. With Helverins mounting two of these formidable weapons each, and hunting in packs up to three Knights strong, their withering fusillades can rapidly break an army's flank or blunt the foe's assault well before it can hit home.",
+        "traits": {
+            "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Warpborne Bolts": "ChaosSpaceMarines/BoltDamage",
+            "Enhanced Ordnance": "SistersOfBattle/HeavyWeaponBonus",
+            "Bolt Weapon": null,
+            "Heavy": null
+        },
+        "range": "3",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\ArmigerAutocannon.png",
+        "name": "Armiger Autocannon",
+        "faction": "Adeptus Mechanicus"
     },
     "Assault Cannon": {
         "internalID": "AssaultCannon",
@@ -882,6 +946,37 @@
         "name": "Blighted",
         "faction": "Neutral"
     },
+    "Blight Grenade": {
+        "internalID": "BlightGrenade",
+        "description": null,
+        "flavor": "The use of the diseases contained in Blight Grenades was a war crime in ancient history. Modern examples are rare, but the Chaos Marines of Nurgle often create their own, with the shrapnel forcing lethal pathogens into the tiniest cracks in armour.",
+        "traits": {
+            "Ignores Cover": null,
+            "Blighted": null
+        },
+        "range": "N/A",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 6.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Items\\BlightGrenade.png",
+        "name": "Blight Grenade",
+        "faction": "Chaos Space Marines"
+    },
     "Blinding Venom": {
         "internalID": "BlindingVenom",
         "description": null,
@@ -1576,6 +1671,10 @@
             "attacks": {
                 "operator": "mul",
                 "value": 1.0
+            },
+            "strengthDamage": {
+                "operator": "mul",
+                "value": 0.5
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\ClawedLimbs.png",
@@ -2199,6 +2298,40 @@
         "iconPath": "Gladius\\Icons\\Weapons\\Deathspitter.png",
         "name": "Deathspitter",
         "faction": "Tyranids"
+    },
+    "Deathstrike Missile": {
+        "internalID": "DeathstrikeMissile",
+        "description": null,
+        "flavor": "Though these deadly artefacts are unpredictable and relatively rare, few weapons can unleash the same devastation as a Deathstrike missile. Mounting an exceptionally deadly warhead and able to strike at targets across vast distances, they descend upon the foe like the fiery sword of the Emperor\u2019s justice.",
+        "traits": {
+            "Apocalyptic Blast": null,
+            "Barrage": null,
+            "Ignores Cover": null,
+            "Improved Frag Casings": "AstraMilitarum/BlastDamage",
+            "Ordnance": null
+        },
+        "range": "2 - 12",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 8.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 12.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\DeathstrikeMissile.png",
+        "name": "Deathstrike Missile",
+        "faction": "Astra Militarum"
     },
     "Defensive Heavy Stubber": {
         "internalID": "DefensiveHeavyStubber",
@@ -2867,6 +3000,36 @@
         "iconPath": "Gladius\\Icons\\Weapons\\ElectroleechStave.png",
         "name": "Electroleech Stave",
         "faction": "Adeptus Mechanicus"
+    },
+    "Enmitic Disintegrator Pistol": {
+        "internalID": "EnmiticDisintegratorPistol",
+        "description": null,
+        "flavor": "Enmitic technology reverses the attraction of a target\u2019s atoms, rewriting its information using the basal language of reality itself. Practically, this causes them to violently repel one another, tearing the target apart. And the Hexmark Destroyer carries six of these.",
+        "traits": {
+            "Assault": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\EnmiticDisintegratorPistol.png",
+        "name": "Enmitic Disintegrator Pistol",
+        "faction": "Necrons"
     },
     "Eviscerating Claws": {
         "internalID": "EvisceratingClaws",
@@ -4000,6 +4163,46 @@
         "name": "Hades Gatling Cannon",
         "faction": "Neutral"
     },
+    "Hand Flamer": {
+        "internalID": "HandFlamer",
+        "description": null,
+        "flavor": "Flamers are short-ranged weapons that spew out highly volatile clouds of liquid chemicals that ignite on contact with air. They are primarily used to scour the enemy from defended positions, as walls are of no defence against blasts of superheated vapour.",
+        "traits": {
+            "Assault": null,
+            "Improved Frag Casings": "SpaceMarines/BlastDamage",
+            "Daemonbone Casings": "ChaosSpaceMarines/BlastDamage",
+            "Sub-Molecular Ammunition": "Eldar/AssaultWeaponBonus",
+            "Dispersed Targetting": "Necrons/BlastDamage",
+            "Blast Phasing": "Tau/BlastDamage",
+            "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
+            "Flame": null,
+            "Ignores Cover": null,
+            "No Escape": null,
+            "Template": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\HandFlamer.png",
+        "name": "Hand Flamer",
+        "faction": "Sisters Of Battle"
+    },
     "Havoc Launcher": {
         "internalID": "HavocLauncher",
         "description": null,
@@ -4832,8 +5035,8 @@
                 "value": 8.0
             },
             "strengthDamage": {
-                "operator": "add",
-                "value": 0.75
+                "operator": "mul",
+                "value": 1.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\HuntingLanceMeltaTip.png",
@@ -5434,6 +5637,37 @@
         },
         "iconPath": "Gladius\\Icons\\Weapons\\KrootGun.png",
         "name": "Kroot Gun",
+        "faction": "Tau"
+    },
+    "Kroot Pistol and Hunting Javelin": {
+        "internalID": "KrootPistolAndHuntingJavelin",
+        "description": null,
+        "flavor": "Though the Kroot Riders atop a juvenile Krootox do have their own ranged weapons, they are very much secondary to guiding the Krootox to a place where it can use its fists.",
+        "traits": {
+            "Assault": null,
+            "Mor'tonium Accelerators": "Tau/LasDamage"
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\KrootPistolAndHuntingJavelin.png",
+        "name": "Kroot Pistol and Hunting Javelin",
         "faction": "Tau"
     },
     "Kustom Mega-Blasta": {
@@ -6099,7 +6333,7 @@
         },
         "iconPath": "Gladius\\Icons\\Weapons\\Meltagun.png",
         "name": "Meltagun",
-        "faction": "Chaos Space Marines"
+        "faction": "Neutral"
     },
     "Meteoric Descent": {
         "internalID": "MeteoricDescent",
@@ -6756,6 +6990,41 @@
         "iconPath": "Gladius\\Icons\\Weapons\\PhotonGrenade.png",
         "name": "Photon Grenade",
         "faction": "Tau"
+    },
+    "Plague Spewer": {
+        "internalID": "PlagueSpewer",
+        "description": null,
+        "flavor": "During the Horus Heresy, the Death Guard were known for their use of alchem, a horrifyingly corrosive mixture of flamer and chem technology. After ten thousand years of corruption, today\u2019s Plague Marines carry the descendants of those weapons, now host to Father Nurgle\u2019s many infectious plagues. These unleash highly concentrated toxic slime and noxious filth causing enemies\u2019 bodies to writhe and contort under the onslaught of countless ailments, deteriorating and swelling until they collapse into a mass of infectious decay.",
+        "traits": {
+            "Assault": null,
+            "Daemonbone Casings": "ChaosSpaceMarines/BlastDamage",
+            "Ignores Cover": null,
+            "No Escape": null,
+            "Poisoned": null,
+            "Template": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 1.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\PlagueSpewer.png",
+        "name": "Plague Spewer",
+        "faction": "Chaos Space Marines"
     },
     "Plasma Cutter": {
         "internalID": "PlasmaCutter",
@@ -7654,6 +7923,10 @@
             "rangedDamage": {
                 "operator": "add",
                 "value": 3.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\PsychicTendrilNeuroblast.png",
@@ -7683,6 +7956,10 @@
             "rangedDamage": {
                 "operator": "add",
                 "value": 12.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\PsychicTendrilNeurolance.png",
@@ -7771,6 +8048,37 @@
         "iconPath": "Gladius\\Icons\\Weapons\\QuadIonTurretStandard.png",
         "name": "Quad Ion Turret (Standard)",
         "faction": "Tau"
+    },
+    "Questor Cognis Heavy Stubber": {
+        "internalID": "QuestorCognisHeavyStubber",
+        "description": null,
+        "flavor": "Adding yet more heavy firepower to the Armiger Helverin, it\u2019s worth noting that the Questor Heavy Stubber is a Cognis weapon. This means that its machine spirits have been awoken to the degree that the weapon is capable of action independent of the Knight\u2019s pilot.",
+        "traits": {
+            "Heavy": null,
+            "Scriptorum Ordinatus": "AdeptusMechanicus/HeavyWeaponBonus"
+        },
+        "range": "2",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\QuestorCognisHeavyStubber.png",
+        "name": "Questor Cognis Heavy Stubber",
+        "faction": "Neutral"
     },
     "Rad-Saturation": {
         "internalID": "RadSaturation",
@@ -9311,7 +9619,7 @@
     "Webway Artillery": {
         "internalID": "SoulShelling",
         "description": null,
-        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a Raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
+        "flavor": "The most powerful Drukhari weapons aren\u2019t light enough to take on a raid, instead reserved for the defense of the Kabal\u2019s base in Comorroragh or on Battleships for realspace incursions\u2014Phantom Lances and Scythe Missile Launchers and so on. But a wily Archon might allow his minions to fire one of these weapons through a temporary portal, knowing all the while the weapon might be turned on them\u2026",
         "traits": {
             "Heavy": null,
             "Equipoise Ordnance": "Drukhari/HeavyWeaponBonus",
@@ -9376,6 +9684,38 @@
         "iconPath": "Gladius\\Icons\\Weapons\\SpaceMarineShotgun.png",
         "name": "Space Marine Shotgun",
         "faction": "Space Marines"
+    },
+    "Kustom Shoota": {
+        "internalID": "KustomShoota",
+        "description": null,
+        "flavor": "Though Kommandos are sneaky for Orks, that doesn\u2019t mean that they\u2019re not Orks. Their loadouts reflect that, dispensing with the precision fire of more professional scouts in favour of multi-barreled kustom shootas that throw out a barrage of dakka.",
+        "traits": {
+            "Assault": null,
+            "Bigga Boltz": "Orks/BoltDamage",
+            "Bolt Weapon": null
+        },
+        "range": "1",
+        "innateStats": {
+            "attacks": {
+                "operator": "add",
+                "value": 4.0
+            },
+            "rangedArmorPenetration": {
+                "operator": "add",
+                "value": 0.0
+            },
+            "rangedDamage": {
+                "operator": "add",
+                "value": 1.5
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
+            }
+        },
+        "iconPath": "Gladius\\Icons\\Weapons\\KustomShoota.png",
+        "name": "Kustom Shoota",
+        "faction": "Orks"
     },
     "Spine Banks": {
         "internalID": "SpineBanks",
@@ -9773,7 +10113,7 @@
                 "value": 4.0
             },
             "strengthDamage": {
-                "operator": "add",
+                "operator": "mul",
                 "value": 0.5
             }
         },
@@ -9802,6 +10142,10 @@
             "rangedDamage": {
                 "operator": "add",
                 "value": 2.0
+            },
+            "strengthDamage": {
+                "operator": "base",
+                "value": 0.0
             }
         },
         "iconPath": "Gladius\\Icons\\Weapons\\StikkaRanged.png",
@@ -9871,6 +10215,7 @@
         "traits": {
             "Assault": null,
             "Kraken Bolts": "SpaceMarines/BoltDamage",
+            "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
             "Bolt Weapon": null
         },
         "range": "2",
@@ -11655,6 +12000,7 @@
             "Gets Hot": null,
             "Blast": null,
             "Blast Phasing": "Tau/BlastDamage",
+            "Skyfire": null,
             "Twin-Linked": null
         },
         "range": "2",
@@ -11687,6 +12033,7 @@
         "traits": {
             "Rapid Fire": null,
             "Mor'tonium Accelerators": "Tau/LasDamage",
+            "Skyfire": null,
             "Twin-Linked": null
         },
         "range": "2",
@@ -12117,10 +12464,10 @@
         "description": null,
         "flavor": "The boltgun, or bolter, fires small missiles known as 'bolts'. Each self-propelled bolt explodes with devastating effect once it has penetrated its target. There are many variations of boltguns, from the short-barreled bolt pistol to the Vulcan mega-bolter often mounted on Titans and other super-heavy vehicles.",
         "traits": {
+            "Assault": null,
             "Kraken Bolts": "SpaceMarines/BoltDamage",
             "Furious Fusillade": "SistersOfBattle/AssaultWeaponBonus",
             "Bolt Weapon": null,
-            "Rapid Fire": null,
             "Twin-Linked": null
         },
         "range": "2",

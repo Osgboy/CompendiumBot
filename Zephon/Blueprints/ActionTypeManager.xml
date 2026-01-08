@@ -6,8 +6,15 @@
 				<cast blueprint="Effects/AntiparticlePurge"
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsUpkeep base="0.5"/> <!-- %chipsUpkeep base tier=4 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile match="Any">
 							<feature type="AbkhanDrey"/>
@@ -84,8 +91,15 @@
 				<cast blueprint="Effects/Apotheosis"
 						onlyVisualizedOnTarget="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=4 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<own/>
@@ -162,8 +176,20 @@
 				<cast blueprint="Effects/AtramentousAura"
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<dimensionalEchoesUpkeep base="0.2"/> <!-- %dimensionalEchoesUpkeep base tier=6 factor=0.1 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="UntoldProphetAffinityUpgrade2" visible="0">
+					<effects>
+						<dimensionalEchoesUpkeep mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<areas>
 						<area affect="Unit" radius="1">
 							<modifiers>
@@ -204,8 +230,16 @@
 				<cast blueprint=""
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterUpkeep base="1.2"/> <!-- %antimatterUpkeep base tier=11 factor=0.1 -->
+						<singularityCoresUpkeep base="0.6"/> <!-- %singularityCoresUpkeep base tier=11 factor=0.05 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile match="Any">
 							<noUnit/>
@@ -328,8 +362,16 @@
 			<model>
 				<cast blueprint="Effects/CloneWave"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsUpkeep base="0.5"/> <!-- %chipsUpkeep base tier=5 factor=0.333 -->
+						<energyUpkeep base="0.5"/> <!-- %energyUpkeep base tier=5 factor=0.333 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<city>
 							<populationLimitFree greater="0"/>
@@ -374,8 +416,20 @@
 			<model>
 				<cast blueprint="Effects/EnrichedAlloys"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsUpkeep base="0.75"/> <!-- %mineralsUpkeep base tier=3 factor=1 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="EnrichedAlloysUpgrade" visible="0">
+					<effects>
+						<mineralsUpkeep mul="-0.667"/>
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<ally/>
@@ -416,8 +470,15 @@
 				<cast blueprint="Effects/Pill"
 						sound="Actions/ExperimentalDrugs"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<energyUpkeep base="0.5"/> <!-- %energyUpkeep base tier=2 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<ally/>
@@ -469,7 +530,7 @@
 						sound="Actions/MeatHarvest"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<city>
 							<populationLimitFree greater="0"/>
@@ -509,8 +570,20 @@
 			<model>
 				<cast sound="Actions/HymnOfDecay"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=4 factor=0.5 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="FurtiveTribunalAffinityUpgrade" visible="0">
+					<effects>
+						<algaeUpkeep mul="-0.5"/>
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile>
 							<noFeature type="HymnOfDecay"/>
@@ -569,8 +642,15 @@
 				<cast blueprint="Effects/InterferenceProtocols"
 						sound="Actions/InterferenceProtocols"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsUpkeep base="0.5"/> <!-- %chipsUpkeep base tier=4 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<enemy/>
@@ -614,7 +694,7 @@
 						targetsTile="1"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<enemy/>
@@ -652,7 +732,7 @@
 						targetsTile="1"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile>
 							<noFeature type="Mines"/>
@@ -694,8 +774,15 @@
 				<cast blueprint="Effects/LogisticsExperts"
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=4 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile>
 							<noTrait type="LogisticsExperts"/>
@@ -938,7 +1025,7 @@
 				<cast blueprint="Effects/Rejuvenation"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<ally/>
@@ -979,6 +1066,18 @@
 				<cast blueprint="Effects/SatteliteScan"
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<mineralsUpkeep base="0.5"/> <!-- %mineralsUpkeep base tier=2 factor=1 -->
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="SatelliteScanUpgrade" visible="0">
+					<effects>
+						<mineralsUpkeep mul="-1.0"/>
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
 				<target rangeMax="-1" sighted="0">
 					<areas>
@@ -1009,12 +1108,12 @@
 			</beginTargets>
 		</playerCast>
 		<playerCast name="SomethingWicked"
-			cooldown="10">
+				cooldown="10">
 			<model>
 				<cast blueprint="Effects/SomethingWicked"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<enemy/>
@@ -1040,7 +1139,7 @@
 				</target>
 			</beginTargets>
 			<endTargets>
-				<target melee="1">
+				<target>
 					<conditions>
 						<unit>
 							<destroyed/>
@@ -1069,8 +1168,16 @@
 			<model>
 				<cast blueprint="Effects/SystemicReset"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<chipsUpkeep base="0.38"/> <!-- %chipsUpkeep base tier=5 factor=0.25 -->
+						<energyUpkeep base="0.75"/> <!-- %energyUpkeep base tier=5 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions match="Any">
 						<conditions>
 							<sourcePlayer>
@@ -1168,19 +1275,36 @@
 			</beginTargets>
 		</playerCast>
 		<playerAction name="TacticalInsertion">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<foodUpkeep base="1.5"/> <!-- %foodUpkeep base tier=7 factor=0.5 -->
+						<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=7 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile>
+							<land/>
 							<noUnit/>
+							<noEnemyCity/>
+						</tile>
+						<tile match="Any">
+							<feature type="Forest"/>
+							<feature type="Ruins"/>
+							<feature type="SmokeScreen"/>
 						</tile>
 					</conditions>
 					<areas>
 						<area affect="Tile">
 							<modifiers>
-								<modifier effectDescription="OnTargetTile">
+								<modifier effectDescription="TacticalInsertion">
 									<effects>
-										<addUnit type="Ranger"/>
+										<addUnit type="Ranger"
+												avoidBleed="0"
+												avoidCity="0"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -1216,8 +1340,16 @@
 				<cast blueprint="Effects/TacticalNuclearMissile"
 						targetsTile="1"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterUpkeep base="0.6"/> <!-- %antimatterUpkeep base tier=9 factor=0.1 -->
+						<transuraniumUpkeep base="0.6"/> <!-- %transuraniumUpkeep base tier=9 factor=0.1 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<tile match="Any">
 							<noUnit/>
@@ -1316,7 +1448,7 @@
 				<cast blueprint="Effects/TempleOfCrla"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<ally/>
@@ -1364,7 +1496,7 @@
 				<cast blueprint="Effects/ThePlague"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<city>
 							<population greater="1"/>
@@ -1400,7 +1532,7 @@
 				<cast blueprint="Effects/TormentOfTheVoice"/>
 			</model>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<enemy/>
@@ -1437,8 +1569,15 @@
 			<model>
 				<cast blueprint="Effects/Transubstantiation"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeUpkeep base="0.38"/> <!-- %algaeUpkeep base tier=3 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<ally/>
@@ -1479,8 +1618,15 @@
 			<model>
 				<cast blueprint="Effects/VorodaisBargain"/>
 			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeUpkeep base="0.25"/> <!-- %algaeUpkeep base tier=2 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
 			<beginTargets>
-				<target rangeMax="-1">
+				<target>
 					<conditions>
 						<unit>
 							<control/>

@@ -23,6 +23,7 @@
 						effectsBlueprint="Effects/AbkluthDragoonToxicSpear"
 						material="Units/AbkluthDragoonToxicSpear"
 						mesh="Units/AbkluthDragoonToxicSpear"
+						requiredUpgrade="ToxicSpearhead"
 						unavailableMaterial="Units/AbkluthDragoonSpear"
 						unavailableMesh="Units/AbkluthDragoonSpear"/>
 			</models>
@@ -73,7 +74,7 @@
 	<actions>
 		<appear>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonAppear"/>
+				<action/>
 			</model>
 		</appear>
 		<attack>
@@ -83,9 +84,7 @@
 						meleeBeginSwing="0.25"
 						meleeEndSwing="0.35"
 						meleeSound="Units/AbkluthDragoonMelee"
-						meleeSoundCount="3"
-						responseSound="Responses/Units/AbkluthDragoonAttack"
-						responseSoundCount="3"/>
+						meleeSoundCount="3"/>
 			</model>		
 		</attack>
 		<die>
@@ -101,18 +100,17 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/AbkluthDragoonImpact"
-						responseSound="Responses/Units/AbkluthDragoonEndureHighDamage"/> 
+				<action animation="Units/AbkluthDragoonImpact"/> 
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+				<action/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+				<action/>
 			</model>
 		</holdPositionUntilHealed>	
 		<idle>
@@ -123,14 +121,12 @@
 		</idle>
 		<kill>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonKill"/>
+				<action/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AbkluthDragoonMove"
-						responseSound="Responses/Units/AbkluthDragoonMove"
-						responseSoundCount="3"
 						sound="Units/AbkluthDragoonMove"
 						soundCount="3"
 						soundFadeInDuration="1.0"
@@ -139,18 +135,17 @@
 		</move>
 		<poke>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonPoke"/>
+				<action/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonSelect"
-						responseSoundCount="3"/>
+				<action/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action responseSound="Responses/Units/AbkluthDragoonHoldPosition"/>
+				<action/>
 			</model>
 		</skip>
 		<unitCast name="TameAbkluth"
@@ -158,7 +153,6 @@
 			<model>
 				<cast animation="Units/AbkluthDragoonAbility"
 						blueprint="Effects/TameAbkluth"
-						responseSound="Responses/Units/AbkluthDragoonTameAbkluth"
 						sound="Actions/TameAbkluthCaster"
 						soundFirstActingMemberOnly="1"/>
 			</model>
