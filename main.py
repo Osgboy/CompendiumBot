@@ -10,24 +10,6 @@ from dotenv import load_dotenv
 from discord.ext import commands
 from discord import app_commands
 
-DLCS = {
-    'None': 'None',
-    'Supplement1': 'Reinforcement Pack',
-    'Supplement2': 'Tyranids',
-    'Supplement3': 'Chaos Space Marines',
-    'Supplement4': 'Fortification Pack',
-    'Supplement5': 'Tau',
-    'Supplement6': 'Assault Pack',
-    'Supplement7': 'Eldar',
-    'Supplement8': 'Specialist Pack',
-    'Supplement9': 'Adeptus Mechanicus',
-    'Supplement10': 'Escalation Pack',
-    'Supplement11': 'Adepta Sororitas',
-    'Supplement12': 'Firepower Pack',
-    'Supplement13': 'Drukhari',
-    'Supplement14': 'Demolition Pack',
-    'LordOfSkulls': 'Lord of Skulls'
-}
 GLADIUS_FACTIONS = {
     'Neutral': 'Neutral',
     'Adeptus Mechanicus': 'Adeptus Mechanicus',
@@ -354,14 +336,16 @@ class GladiusList(app_commands.Group):
 
     @app_commands.command()
     @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
-    @app_commands.choices(dlc=[app_commands.Choice(name=v, value=k) for k, v in DLCS.items()])
+    @app_commands.choices(dlc=[app_commands.Choice(name=v, value=k) for k, v in embed.DLCS.items()])
+    @app_commands.choices(tier=[app_commands.Choice(name=t, value=t) for t in ['N/A'] + [str(i) for i in range(1, 11)]])
     async def unit(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '', dlc: app_commands.Choice[str] = '',
-                   weaponname: str = '', traitname: str = '', actionname: str = '', invisible: bool = False):
+                   tier: app_commands.Choice[str] = '', weaponname: str = '', traitname: str = '', actionname: str = '', invisible: bool = False):
         """List Gladius units according to given filters.
 
         Args:
             faction (str): Filter by faction
             dlc (str): Filter by DLC
+            tier (str): Filter by tier
             weaponname (str): Filter by weapon
             traitname (str): Filter by trait
             actionname (str): Filter by action
@@ -372,11 +356,13 @@ class GladiusList(app_commands.Group):
             faction = faction.value
         if dlc:
             dlc = dlc.value
-        await return_list(interaction, invisible, 'GUnit', objList.create_gunit_list, faction=faction, dlc=dlc, GWeapon=weaponname, GTrait=traitname, GAction=actionname)
+        if tier:
+            tier = tier.value
+        await return_list(interaction, invisible, 'GUnit', objList.create_gunit_list, faction=faction, dlc=dlc, tier=tier, GWeapon=weaponname, GTrait=traitname, GAction=actionname)
 
     @app_commands.command()
     @app_commands.choices(faction=[app_commands.Choice(name=f, value=f) for f in GLADIUS_FACTIONS])
-    @app_commands.choices(dlc=[app_commands.Choice(name=v, value=k) for k, v in DLCS.items()])
+    @app_commands.choices(dlc=[app_commands.Choice(name=v, value=k) for k, v in embed.DLCS.items()])
     @app_commands.choices(tier=[app_commands.Choice(name=t, value=t) for t in ['Not Researchable'] + [str(i) for i in range(1, 11)]])
     async def upgrade(self, interaction: discord.Interaction, faction: app_commands.Choice[str] = '', dlc: app_commands.Choice[str] = '',
                       tier: app_commands.Choice[str] = '', requiredupgrade: str = '', invisible: bool = False):
@@ -494,12 +480,14 @@ class ZephonList(app_commands.Group):
     
     @app_commands.command()
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])
-    async def unit(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '',
+    @app_commands.choices(tier=[app_commands.Choice(name=t, value=t) for t in ['N/A'] + [str(i) for i in range(1, 11)]])
+    async def unit(self, interaction: discord.Interaction, branch: app_commands.Choice[str] = '', tier: app_commands.Choice[str] = '',
                    weaponname: str = '', traitname: str = '', actionname: str = '', invisible: bool = False):
         """List Zephon units according to given filters.
 
         Args:
             branch (str): Filter by branch
+            tier (str): Filter by tier
             weaponname (str): Filter by weapon
             traitname (str): Filter by trait
             actionname (str): Filter by action
@@ -508,7 +496,9 @@ class ZephonList(app_commands.Group):
         # branch, combatStats, resourceStats, weapon, trait, action
         if branch:
             branch = branch.value
-        await return_list(interaction, invisible, 'ZUnit', objList.create_zunit_list, branch=branch, ZWeapon=weaponname, ZTrait=traitname, ZAction=actionname)
+        if tier:
+            tier = tier.value
+        await return_list(interaction, invisible, 'ZUnit', objList.create_zunit_list, branch=branch, tier=tier, ZWeapon=weaponname, ZTrait=traitname, ZAction=actionname)
 
     @app_commands.command()
     @app_commands.choices(branch=[app_commands.Choice(name=b, value=b) for b in ZEPHON_BRANCHES])

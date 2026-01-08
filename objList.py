@@ -185,13 +185,14 @@ def create_ztrait_list(classDict: dict, *, branch: str = None) -> str:
         traitList.append(trait)
     return partition_embed(embed, traitList)
 
-def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, GWeapon: str = None, GTrait: str = None, GAction: str = None) -> str:
+def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, tier: str = None, GWeapon: str = None, GTrait: str = None, GAction: str = None) -> str:
     embed = discord.Embed(title='Gladius Unit search results')
     unitList = []
     for unit, attrs in classDict.items():
         if (
             (faction and faction != attrs['faction'])
             or (dlc and dlc != attrs['dlc'])
+            or (tier and tier != attrs['tier'])
             or (GWeapon and GWeapon not in attrs['weapons'])
             or (GTrait and GTrait not in attrs['traits'])
             or (GAction and GAction not in attrs['actions'])
@@ -200,12 +201,13 @@ def create_gunit_list(classDict: dict, *, faction: str = None, dlc: str = None, 
         unitList.append(unit)
     return partition_embed(embed, unitList)
 
-def create_zunit_list(classDict: dict, *, branch: str = None, ZWeapon: str = None, ZTrait: str = None, ZAction: str = None) -> str:
+def create_zunit_list(classDict: dict, *, branch: str = None, tier: str = None, ZWeapon: str = None, ZTrait: str = None, ZAction: str = None) -> str:
     embed = discord.Embed(title='Zephon Unit search results')
     unitList = []
     for unit, attrs in classDict.items():
         if (
             (branch and branch != attrs['branch'])
+            or (tier and tier != attrs['tier'])
             or (ZWeapon and ZWeapon not in attrs['weapons'])
             or (ZTrait and ZTrait not in attrs['traits'])
             or (ZAction and ZAction not in attrs['actions'])
