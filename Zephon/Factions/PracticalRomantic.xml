@@ -45,6 +45,7 @@
 							<control/>
 							<selfCity/>
 							<noTrait type="Decaying"/>
+							<noTrait type="Nightmare"/>
 							<noTrait type="Summon"/>
 						</unit>
 					</conditions>
@@ -156,7 +157,8 @@
 		</weapon>		
 	</headquarterWeapons>
 	<likedLabels>
-		<label name="HonorBound"/>
+		<label name="DutyOfCare"/>
+		<label name="Honorbound"/>
 		<label name="LeaveNoManBehind"/>
 		<label name="WordsOfTheProphet"/>
 	</likedLabels>
@@ -212,7 +214,7 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<influenceCost base="10"/>
+						<influenceCost base="5"/>
 					</effects>
 				</modifier>
 			</modifiers>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/DutyOfCare" rankMax="3"
+		visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<hitpointsMax mulMin="-0.2" mulMax="-0.8"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="DutyOfCareUpgrade">
+			<effects>
+				<damage mulMin="0.1" mulMax="0.4"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

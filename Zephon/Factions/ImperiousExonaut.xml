@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Human"
+		dlc="DLC3"
+		generosity="0.625"
+		initialTrack="Music/Human2DLC3"
+		peacefulness="0.375"
+		quest="TheEmpathsDefense">
+	<actions>
+		<playerCast name="Encircle"
+				cooldown="1"
+				label="1">
+			<model>
+				<cast blueprint="Effects/Encircle"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="TacticsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+				<modifier visible="0">
+					<conditions>
+						<player>
+							<trait type="KolyasContempt"/>
+						</player>
+					</conditions>
+					<effects>
+						<influenceCost mul="0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnitsInTargetArea">
+									<conditions>
+										<unit>
+											<ally/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="Encircle" duration="1"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="TacticsUpgrade2">
+									<conditions>
+										<action/>
+									</conditions>
+									<effects>
+										<radius add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<actionPoints greater="0"/>
+											<ally/>
+											<hitpointsFraction greater="0.667"/>
+											<movement greater="0"/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="Defend"/>
+				<action name="Withdraw"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="Defend"
+				cooldown="1"
+				label="1">
+			<model>
+				<cast blueprint="Effects/Defend"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="TacticsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnitsInTargetArea">
+									<conditions>
+										<unit>
+											<ally/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="Defend" duration="1"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="TacticsUpgrade2">
+									<conditions>
+										<action/>
+									</conditions>
+									<effects>
+										<radius add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<actionPoints greater="0"/>
+											<ally/>
+											<hitpointsFraction less="0.5"/>
+											<movement greater="0"/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="Encircle"/>
+				<action name="Withdraw"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="Withdraw"
+				cooldown="1"
+				label="1">
+			<model>
+				<cast blueprint="Effects/Withdraw"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="20"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="TacticsUpgrade">
+					<effects>
+						<influenceCost mul="-0.25"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToUnmovedAlliedUnitsInTargetArea">
+									<conditions>
+										<unit>
+											<ally/>
+											<notMovedThisTurn/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="Withdraw" duration="1"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="TacticsUpgrade2">
+									<conditions>
+										<action/>
+									</conditions>
+									<effects>
+										<radius add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<actionPoints greater="0"/>
+											<ally/>
+											<hitpointsFraction less="0.333"/>
+											<movement greater="0"/>
+											<noTrait type="Fortification"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+			<sharedCooldowns>
+				<action name="Defend"/>
+				<action name="Encircle"/>
+			</sharedCooldowns>
+		</playerCast>
+		<playerCast name="ViewFromAbove"
+				cooldown="3"
+				label="1">
+			<model>
+				<cast blueprint="Effects/ViewFromAboveCast" targetsTile="1"/>
+			</model>
+			<beginTargets>
+				<target sighted="0">
+					<areas>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+											<noSighted/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+						<area affect="Tile" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToEnemyUnitsOnTargetAndAdjacentTiles"
+										requiredUpgrade="ViewFromAboveUpgrade">
+									<effects>
+										<addTrait type="ViewFromAboveUpgrade" duration="1"/> 
+									</effects>
+								</modifier>
+								<modifier effectDescription="ToEnemyUnitsOnTargetAndAdjacentTiles"
+										requiredUpgrade="ViewFromAboveUpgrade2">
+									<effects>
+										<addTrait type="ViewFromAboveUpgrade2" duration="1"/> 
+									</effects>
+								</modifier>
+							</modifiers>
+							<modifiers>
+								<modifier requiredUpgrade="ViewFromAboveUpgrade" visible="0">
+									<effects>
+										<addTrait type="ViewFromAboveUpgradeTile" duration="1"/> 
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="ViewFromAboveUpgrade2" visible="0">
+									<effects>
+										<addTrait type="ViewFromAboveUpgrade2Tile" duration="1"/> 
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+						<area affect="Tile">
+							<modifiers>
+								<modifier visible="0">
+									<conditions>
+										<sourcePlayer match="Any">
+											<upgrade name="ViewFromAboveUpgrade"/>
+											<upgrade name="ViewFromAboveUpgrade2"/>
+										</sourcePlayer>
+									</conditions>
+									<effects>
+										<addFeature type="ViewFromAbove" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+	</actions>
+	<dislikedLabels>
+		<label name="FoundationOfBlood"/>
+		<label name="LeaveNoManBehind"/>
+		<label name="TenderMinistrations"/>
+		<label name="Untrustworthy"/>
+		<label name="WordsOfTheProphet"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/ImperiousExonautHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="HQAR"
+						muzzleBone="Muzzle"
+						muzzleCount="9"
+						windupDuration="0.0"/>
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="HitAndRun"/>
+		<label name="Honorbound"/>
+		<label name="PersonalVisit"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="Militant" count="2"/>
+		<unit type="Scrambler" count="1"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="HumanitysFinest" requiredUpgrade="HumanitysFinest"/>
+		<trait type="ImperiousExonautAffinityUpgrade" requiredUpgrade="ImperiousExonautAffinityUpgrade"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="QualityTellsPlayer"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+	<unitTraits>
+		<trait type="QualityTells"/>
+	</unitTraits>
+</faction>

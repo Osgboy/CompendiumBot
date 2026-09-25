@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Upgrades/ViewFromAboveUpgrade" visibleOnUnit="1">
+	<opponentModifiers>
+		<modifier effectDescription="AgainstThisUnit">
+			<conditions>
+				<unit>
+					<enemy/>
+				</unit>
+			</conditions>
+			<effects>
+				<accuracy mul="0.167"/>
+			</effects>
+		</modifier>
+	</opponentModifiers>
+</trait>

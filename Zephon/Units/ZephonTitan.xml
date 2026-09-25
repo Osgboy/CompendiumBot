@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Zephon">
+<unit branch="Zephon" minAdvancement="8">
 	<model>
 		<unit 	explosionsBlueprint="Effects/ZephonTitanExplosions"
 		 		effectsBlueprint="Effects/ZephonTitan"
@@ -36,8 +36,12 @@
 			<effects>
 				<accuracy base="6"/>
 				<armor base="10"/>
+				<chipsCost base="120"/> <!-- %chipsCost base tier=13 factor=0.25 -->
+				<chipsUpkeep base="6.0"/> <!-- %chipsUpkeep base tier=13 factor=0.25 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="96"/> <!-- %hitpointsMax base tier=12 -->
+				<mineralsCost base="240"/> <!-- %mineralsCost base tier=13 factor=0.5 -->
+				<mineralsUpkeep base="12.0"/> <!-- %mineralsUpkeep base tier=13 factor=0.5 -->
 				<moraleMax base="0"/>
 				<movementMax base="3"/>
 				<productionCost base="78.0"/> <!-- %productionCost base tier=13 factor=1 -->
@@ -47,17 +51,24 @@
 	<strategyModifiers>
 		<modifier>
 			<effects>
-				<increaseVehiclesScore base="0.5"/>
-				<increaseVoiceScore base="0.5"/>
+				<increaseCyberScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/> <!-- Native leader units are all built from infantry building -->
 			</effects>
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/ZephonTitanAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
 				<attack animation="Units/ZephonTitanAttack"
 						beginFire="1.3"
 						endFire="1.6"
+						responseSound="Responses/Units/ZephonTitanAttack"
+						responseSoundCount="3"
 						sound="Units/ZephonTitanAttack"/>
 			</model>
 		</attack>
@@ -72,17 +83,18 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/ZephonTitanImpact"/> 
+				<action animation="Units/ZephonTitanImpact"
+						responseSound="Responses/Units/ZephonTitanEndureHighDamage"/>
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -93,12 +105,14 @@
 		</idle>
 		<kill>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanKill"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/ZephonTitanMove"
+						responseSound="Responses/Units/ZephonTitanMove"
+						responseSoundCount="3"
 						sound="Units/ZephonTitanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
@@ -106,17 +120,18 @@
 		</move>
 		<poke>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanSelect"
+						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/ZephonTitanHoldPosition"/>
 			</model>
 		</skip>
 		<unitAction name="QuarryFeed"
@@ -148,6 +163,7 @@
 				<cast animation="Units/ZephonTitanAbility1"
 						blueprint="Effects/Reconstruct"
 						casterBlueprint="Effects/ReconstructCaster"
+						responseSound="Responses/Units/ZephonTitanReconstruct"
 						sound="Units/ZephonTitanReconstruct"/>
 			</model>
 			<beginTargets>
@@ -191,6 +207,7 @@
 				<cast animation="Units/ZephonTitanAbility0"
 						beginEffect="1.2"
 						casterBlueprint="Effects/ZephonTitanConstruct"
+						responseSound="Responses/Units/ZephonTitanConstructWarden"
 						sound="Units/ZephonTitanConstructWarden"/>
 			</model>
 			<modifiers>

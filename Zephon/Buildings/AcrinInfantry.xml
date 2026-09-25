@@ -31,5 +31,12 @@
 		<produceUnit unit="AcrinZealot"/>
 		<produceUnit unit="AcrinMilitia"/>
 		<produceUnit unit="AcrinSpawnrider"/>
+		<produceUnit unit="AcrinTitan">
+			<conditions>
+				<player>
+					<mutatorActive name="WhatCarriesAcross"/>
+				</player>
+			</conditions>
+		</produceUnit>
 	</actions>
 </building>

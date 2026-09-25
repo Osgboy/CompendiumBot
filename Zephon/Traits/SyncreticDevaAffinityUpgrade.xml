@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="WhileAdjacentToAlliedNonCyberUnits">
+ 			<conditions ignoreForTraitVisibility="1">
+				<unit>
+                    <unitsInRange greater="0" range="1">
+ 						<unit>
+ 							<ally/>
+							<noBranch name="Cyber"/>
+							<noTrait type="Headquarters"/>
+ 						</unit>
+ 					</unitsInRange>
+					<branch name="Cyber"/>
+                </unit>
+			</conditions>
+			<effects>
+				<damage mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

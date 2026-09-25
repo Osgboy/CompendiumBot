@@ -70,7 +70,7 @@
 		<stage name="Blockade">
 			<options>
 				<option name="PayToll" nextStage="PayToll">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<foodCost add="10"/>
@@ -78,7 +78,7 @@
 								<energyCost add="10"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 				</option>
 				<option name="ScareOff" nextStage="ScareOff">
 					<conditions>

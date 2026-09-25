@@ -1,4 +1,4 @@
-<quest lastTurn="80">
+<quest lastTurn="60">
 	<stages>
 		<stage name="Intro">
 			<modifications>
@@ -12,14 +12,14 @@
 			</modifications>
 			<options>
 				<option name="HelpThem" nextStage="HelpThem">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<foodCost add="20"/>
 								<mineralsCost add="20"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 				</option>
 				<option name="BringThemBack">
 					<nextStages>

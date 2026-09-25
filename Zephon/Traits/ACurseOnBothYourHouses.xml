@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="AgainstNonHumanUnits">
+ 			<conditions ignoreForTraitVisibility="1">
+				<targetUnit match="Any">
+					<branch name="Cyber"/>
+					<branch name="Voice"/>
+				</targetUnit>
+			</conditions>
+			<effects>
+				<damage mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

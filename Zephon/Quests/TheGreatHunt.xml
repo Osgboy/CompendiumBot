@@ -12,13 +12,13 @@
 			</modifications>
 			<options>
 				<option name="Pay">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<mineralsCost add="30"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 					<nextStages>
 						<nextStage name="PaySuccess" weight="2"/>
 						<nextStage name="PayFailure" weight="1"/>

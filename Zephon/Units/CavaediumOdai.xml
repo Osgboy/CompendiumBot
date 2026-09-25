@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" dlc="DLC3">
+	<model>
+		<unit bloodBlueprint="Effects/LargeBlood"
+				bloodBone="Body"
+				explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Tower"
+				material="Units/CavaediumOdai"
+				mesh="Units/CavaediumOdai"
+				normalWeight="0.1"
+				scale="0.9 0.9 0.9"/>
+	</model>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="4"/>
+				<dimensionalEchoesCost base="3"/> <!-- %dimensionalEchoesCost base tier=7 factor=0.05 -->
+				<dimensionalEchoesUpkeep base="0.15"/> <!-- %dimensionalEchoesUpkeep base tier=7 factor=0.05 -->
+				<energyCost base="15"/> <!-- %energyCost base tier=7 factor=0.25 -->
+				<energyUpkeep base="0.75"/> <!-- %energyUpkeep base tier=7 factor=0.25 -->
+				<foodCost base="15"/> <!-- %foodCost base tier=7 factor=0.25 -->
+				<foodUpkeep base="0.75"/> <!-- %foodUpkeep base tier=7 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<moraleMax base="8"/>
+				<movementMax base="3"/>
+				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseVehiclesScore base="0.5"/>
+				<increaseVoiceScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action sound="Units/ShochitrisLairAppear"
+						soundDelay="0.5"
+						responseSound="Responses/Units/CavaediumOdaiAppear"/>
+			</model>
+		</appear>
+		<die>
+			<model>
+				<die animation="Units/CavaediumOdaiDie0"
+						groundImpact="2.0"
+						sound="Units/CavaediumOdaiDie"
+						soundCount="1"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/CavaediumOdaiImpact"
+						responseSound="Responses/Units/CavaediumOdaiEndureHighDamage"/>
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/CavaediumOdaiHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/CavaediumOdaiHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/CavaediumOdaiIdle0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/CavaediumOdaiMove"
+						responseSound="Responses/Units/CavaediumOdaiMove"
+						responseSoundCount="3"
+						sound="Units/CavaediumOdaiMove"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/CavaediumOdaiPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/CavaediumOdaiSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/CavaediumOdaiHoldPosition"/>
+			</model>
+		</skip>
+		<unitCast name="FailedTransfigurations"
+				cooldown="1"
+				icon="Units/LamentingOdai">
+			<model>
+				<cast animation="Units/CavaediumOdaiAbility0"
+						beginEffect="1.0"
+						casterBlueprint="Effects/FailedTransfigurations"
+						responseSound="Responses/Units/CavaediumOdaiFailedTransfigurations"
+						responseSoundCount="3"
+						sound="Units/CavaediumOdaiFailedTransfigurations"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="2">
+					<conditions>
+						<tile>
+							<land/>
+							<noFeature type="FragmentOfTheFulcrum"/>
+							<noFeature type="Volcano"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addUnit type="LamentingOdai"
+												avoidBleed="0"
+												avoidCity="0"
+												avoidWater="0"
+												spawnedBySourceUnit="1"
+												appearFromSourceUnit="0"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<enemyStrengthInTheArea greater="0"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>			
+		</unitCast>
+	</actions>
+	<traits>
+		<trait type="Agile"/>
+		<trait type="Biological"/>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
+		<trait type="TerminalTransition"/>
+	</traits>
+</unit>

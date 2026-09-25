@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/TransdimensionalProjector"
+				fireSoundCount="3"
+				fireInterval="0.5"
+				beamsBlueprint="Effects/ParticleBeams"
+		 		beamsEmitterBlueprint="Effects/ParticleBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+		 		explosionsBlueprint="Effects/NecronExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=-2 -->
+				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+		<trait name="LargeBlast"/>
+		<trait name="Necrons/BlastDamage" requiredUpgrade="Necrons/BlastDamage"/>
+	</traits>
+</weapon>

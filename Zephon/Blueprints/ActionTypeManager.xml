@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manager>
 	<actions>
+		<playerCast name="AnchoritesCharm">
+			<model>
+				<cast blueprint="Effects/AnchoritesCharm"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<algaeCost base="20"/>
+						<foodCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<conditions>
+						<unit>
+							<enemy/>
+							<type name="Dreameater"/>
+							<token name="InvaderDreameater"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="OfInvadingDreameater">
+									<effects>
+										<changePlayer changeOwner="1"/>
+									</effects>
+								</modifier>
+							</modifiers>			
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
 		<playerCast name="AntiparticlePurge">
 			<model>
 				<cast blueprint="Effects/AntiparticlePurge"
@@ -20,10 +55,12 @@
 							<feature type="AbkhanDrey"/>
 							<feature type="Bleed"/>
 							<feature type="Forest"/>
+							<feature type="Rocks"/>
 							<feature type="Ruins"/>
+							<feature type="ServerFarm"/>
 							<feature type="Sandpit"/>
 						</tile>
-					</conditions>					
+					</conditions>
 					<areas>
 						<area affect="Tile">
 							<modifiers>
@@ -32,6 +69,7 @@
 										<removeFeature type="AbkhanDrey"/>
 										<removeFeature type="Bleed"/>
 										<removeFeature type="Forest"/>
+										<removeFeature type="Rocks"/>
 										<removeFeature type="Ruins"/>
 										<removeFeature type="Sandpit"/>
 									</effects>
@@ -674,6 +712,8 @@
 										</tile>
 										<unit>
 											<noTrait type="InterferenceProtocols"/>
+											<noType name="Abkluth"/>
+											<noType name="CombatMedic"/>
 											<noType name="Engineer"/>
 											<noType name="ShochitrisLair"/>
 										</unit>
@@ -696,10 +736,11 @@
 			<beginTargets>
 				<target>
 					<conditions>
-						<unit>
-							<enemy/>
-						</unit>
-					</conditions>					
+						<tile>
+							<!-- <noAllyUnit/> -->
+							<noTrait type="IonDischarge"/>
+						</tile>
+					</conditions>
 					<areas>
 						<area affect="Unit">
 							<modifiers>
@@ -715,12 +756,24 @@
 										<tile>
 											<alliedStrengthInTheArea greater="0"/>
 										</tile>
+										<unit>
+											<enemy/>
+										</unit>
 									</conditions>
 									<effects>
 										<score add="1.0"/>
 									</effects>
 								</modifier>
 							</scoreModifiers>
+						</area>
+						<area affect="Tile">
+							<modifiers>
+								<modifier effectDescription="OnTargetTile">
+									<effects>
+										<addTrait type="IonDischarge" duration="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
 						</area>
 					</areas>
 				</target>
@@ -734,6 +787,14 @@
 			<beginTargets>
 				<target>
 					<conditions>
+						<conditions match="Any">
+							<tile>
+								<noUnit/>
+							</tile>
+							<unit>
+								<noTrait type="Fortification"/>
+							</unit>
+						</conditions>
 						<tile>
 							<noFeature type="Mines"/>
 						</tile>
@@ -759,6 +820,40 @@
 											</unitsInRange>
 										</tile>
 									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="LegacyExploit" cooldown="5">
+			<model>
+				<cast blueprint="Effects/SchismOfRegimina"/>
+			</model>
+			<beginTargets>
+				<target rangeMax="-1">
+					<conditions>
+						<unit>
+							<faction name="Zephon"/>
+							<noType name="Headquarters"/>
+							<noTrait type="Titan"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetZephonNonTitanNonHeadquartersUnit">
+									<effects>
+										<addTrait type="LegacyExploit" duration="5" removeOnSourceDeath="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
 									<effects>
 										<score add="1.0"/>
 									</effects>
@@ -815,6 +910,107 @@
 					</areas>
 				</target>
 			</beginTargets>
+		</playerCast>
+		<playerCast name="NaturalStimulants">
+			<model>
+				<cast blueprint="Effects/NaturalStimulants"
+						sound="Actions/ExperimentalDrugs"/>
+			</model>
+			<beginTargets>
+				<target>
+					<conditions>
+						<unit>
+							<ally/>
+							<noTrait type="Fortification"/>
+							<noTrait type="NaturalStimulants"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<addTrait type="NaturalStimulants" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="MachineMind">
+			<model>
+				<cast blueprint="Effects/MachineMind"
+						targetsTile="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<singularityCoresUpkeep base="0.2"/> <!-- %singularityCoresUpkeep base tier=6 factor=0.1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<areas>
+						<area affect="Unit" radius="3">
+							<modifiers>
+								<modifier effectDescription="ToAlliedUnitsInTargetArea">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="MachineMind" duration="3"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+										<unit>
+											<ally/>
+											<moraleFraction less="0.5"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 		<playerAction name="PayResources/CarveFaceSun"
 				durationInSeconds="0.1"
@@ -898,6 +1094,54 @@
 				</modifier>
 			</modifiers>
 		</playerAction>
+		<playerAction name="PayResources/PromotePeace"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/PromotePeace2"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
+		<playerAction name="PayResources/PromoteWar"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>		
+		<playerAction name="PayResources/PromoteWar2"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="40"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>		
 		<playerAction name="PayResources/RepurposeFunds"
 				durationInSeconds="0.1"
 				icon="Actions/PayResources"
@@ -1020,6 +1264,19 @@
 				</modifier>
 			</modifiers>
 		</playerAction>
+		<playerAction name="ProvideKarelWithEquipment"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/PayResources">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<transuraniumCost base="6"/>
+						<singularityCoresCost base="12"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerCast name="Rejuvenation" cooldown="10">
 			<model>
 				<cast blueprint="Effects/Rejuvenation"/>
@@ -1060,6 +1317,74 @@
 					</areas>
 				</target>
 			</beginTargets>
+		</playerCast>
+		<playerCast name="SaboteurInsurrection">
+			<model>
+				<cast blueprint="Effects/SaboteurInsurrection"
+						targetsTile="1"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<antimatterUpkeep base="0.4"/> <!-- %antimatterUpkeep base tier=8 factor=0.1 -->
+						<mineralsUpkeep base="2.0"/> <!-- %mineralsUpkeep base tier=8 factor=0.5 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<conditions>
+						<city>
+							<enemy/>
+						</city>
+					</conditions>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<removeTrait type="SaboteurInsurrection"/>
+									</effects>
+								</modifier>
+								<modifier effectDescription="ToNonHeadquartersBuildingsOnTargetEnemyCityTile">
+									<effects>
+										<addTrait type="SaboteurInsurrection" duration="3"/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="SaboteurRevolution">
+									<effects>
+										<changeTraitDuration type="SaboteurInsurrection" add="1"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+				 				<modifier>
+ 									<conditions>
+										<tile>
+											<buildingSlotsUsed greater="1"/>
+										</tile>
+									</conditions>
+ 									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</playerCast>
 		<playerCast name="SatelliteScan">
 			<model>
@@ -1108,7 +1433,7 @@
 			</beginTargets>
 		</playerCast>
 		<playerCast name="SomethingWicked"
-				cooldown="10">
+				cooldown="5">
 			<model>
 				<cast blueprint="Effects/SomethingWicked"/>
 			</model>
@@ -1123,14 +1448,8 @@
 						<area affect="Unit">
 							<modifiers>
 								<modifier effectDescription="ToTargetEnemyUnit">
-									<conditions>
-										<unit>
-											<noAttacking/>
-										</unit>
-									</conditions>
 									<effects>
 										<weaponDamage weapon="SomethingWicked"/>
-										<hitpoints add="-2"/>
 									</effects>
 								</modifier>
 							</modifiers>
@@ -1164,6 +1483,18 @@
 				</target>
 			</endTargets>
 		</playerCast>
+		<playerAction name="StudyKolya"
+				durationInSeconds="0.1"
+				icon="Actions/PayResources"
+				interfaceSound="Interface/StudyKolya">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCost base="80"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</playerAction>
 		<playerCast name="SystemicReset">
 			<model>
 				<cast blueprint="Effects/SystemicReset"/>
@@ -1189,6 +1520,15 @@
 						</conditions>
 						<conditions>
 							<sourcePlayer>
+								<noUpgrade name="SystemicResetUpgrade"/>
+							</sourcePlayer>
+							<unit>
+								<own/>
+								<trait type="DreamPrison"/>
+							</unit>
+						</conditions>
+						<conditions>
+							<sourcePlayer>
 								<upgrade name="SystemicResetUpgrade"/>
 							</sourcePlayer>
 						</conditions>
@@ -1204,6 +1544,17 @@
 									</conditions>
 									<effects>
 										<removeDebuffs/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<conditions>
+										<unit>
+											<own/>
+											<trait type="DreamPrison"/>
+										</unit>
+									</conditions>
+									<effects>
+										<removeTrait type="DreamPrison"/>
 									</effects>
 								</modifier>
 								<modifier visible="0">
@@ -1582,6 +1933,7 @@
 						<unit>
 							<ally/>
 							<noTrait type="Transubstantiation"/>
+							<weapons/>
 						</unit>
 					</conditions>
 					<areas>
@@ -1602,6 +1954,59 @@
 										<unit>
 											<actionPoints greater="0"/>
 											<hitpointsFraction less="0.667"/>
+											<weapons/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+		</playerCast>
+		<playerCast name="UzhodaisCall">
+			<model>
+				<cast blueprint="Effects/UzhodaisCall"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<dimensionalEchoesUpkeep base="0.15"/> <!-- %dimensionalEchoesUpkeep base tier=5 factor=0.1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<conditions>
+						<unit>
+							<own/>
+							<noTrait type="Fortification"/>
+							<noTrait type="Titan"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="TargetOwnNonTitanNonFortificationUnit">
+									<effects>
+										<teleportToClosestOwnCity/>
+									</effects>
+								</modifier>
+								<modifier requiredUpgrade="PleasantReception">
+									<effects>
+										<hitpointsFromMax add="0.333"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<control/>
+											<hitpointsFraction less="0.5"/>
 										</unit>
 									</conditions>
 									<effects>
@@ -1659,7 +2064,7 @@
 						</area>
 						<area affect="Unit">
 							<modifiers>
-								<modifier effectDescription="ToTargetAlliedUnit">
+								<modifier effectDescription="ToTargetOwnUnit">
 									<effects>
 										<hitpointsFromMax add="-1.0"/>
 									</effects>

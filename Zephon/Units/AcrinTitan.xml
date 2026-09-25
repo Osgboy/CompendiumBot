@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<unit branch="Acrin">
+<unit branch="Acrin" minAdvancement="8">
 	<model>
-	<unit bloodBlueprint="Effects/TitanBlackBlood"
+	<unit 	bloodBlueprint="Effects/TitanBlackBlood"
+			bloodTrailBlueprint="Effects/LargeBlackBloodTrail"
 			bloodBone="Body"
 			material="Units/AcrinTitan"
 			mesh="Units/AcrinTitan"
@@ -35,7 +36,11 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
+				<algaeCost base="120"/> <!-- %algaeCost base tier=13 factor=0.25 -->
+				<algaeUpkeep base="6.0"/> <!-- %algaeUpkeep base tier=13 factor=0.25 -->
 				<armor base="8"/>
+				<foodCost base="240"/> <!-- %foodCost base tier=13 factor=0.5 -->
+				<foodUpkeep base="12.0"/> <!-- %foodUpkeep base tier=13 factor=0.5 -->
 				<groupSizeMax base="1"/>
 				<hitpointsMax base="128"/> <!-- %hitpointsMax base tier=13 -->
 				<moraleMax base="0"/>
@@ -47,18 +52,25 @@
 	<strategyModifiers>
 		<modifier>
 			<effects>
-				<increaseVehiclesScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/> <!-- Native leader units are all built from infantry building -->
 				<increaseVoiceScore base="0.5"/>
 			</effects>
 		</modifier>
 	</strategyModifiers>	
 	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/AcrinTitanAppear"/>
+			</model>
+		</appear>
 		<attack>
 			<model>
 				<attack meleeAnimation="Units/AcrinTitanMelee"
 						meleeBeginSwing="1.2"
 						meleeEndSwing="1.3"
-						meleeSound="Units/AcrinTitanMelee"/>
+						meleeSound="Units/AcrinTitanMelee"
+						responseSound="Responses/Units/AcrinTitanAttack"
+						responseSoundCount="3"/>
 			</model>
 		</attack>
 		<die>
@@ -72,17 +84,18 @@
 		</die>
 		<endure>
 			<model>
-				<action animation="Units/AcrinTitanImpact"/> 
+				<action animation="Units/AcrinTitanImpact"
+						responseSound="Responses/Units/AcrinTitanEndureHighDamage"/>
 			</model>
 		</endure>
 		<holdPosition>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanHoldPosition"/>
 			</model>
 		</holdPosition>
 		<holdPositionUntilHealed>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanHoldPosition"/>
 			</model>
 		</holdPositionUntilHealed>
 		<idle>
@@ -93,12 +106,15 @@
 		</idle>
 		<kill>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanKill"
+						responseSoundCount="2"/>
 			</model>
 		</kill>
 		<move>
 			<model>
 				<action animation="Units/AcrinTitanMove"
+						responseSound="Responses/Units/AcrinTitanMove"
+						responseSoundCount="3"
 						sound="Units/AcrinTitanMove"
 						soundFadeInDuration="1.0"
 						soundFadeOutDuration="0.25"/>
@@ -106,17 +122,18 @@
 		</move>
 		<poke>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanPoke"/>
 			</model>
 		</poke>
 		<select>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanSelect"
+						responseSoundCount="3"/>
 			</model>
 		</select>
 		<skip>
 			<model>
-				<action/>
+				<action responseSound="Responses/Units/AcrinTitanHoldPosition"/>
 			</model>
 		</skip>
 		<unitAction name="CausalWell"
@@ -148,6 +165,7 @@
 				<attack animation="Units/AcrinTitanAttack"
 						beginFire="1.1"
 						endFire="1.9"
+						responseSound="Responses/Units/AcrinTitanAbyssalMiasma"
 						sound="Units/AcrinTitanAttack"/>
 			</model>
 		</useWeapon>
@@ -163,6 +181,7 @@
 						beginEffect="1.2"
 						beginFire="0.6"
 						endFire="0.7"
+						responseSound="Responses/Units/AcrinTitanExtirpate"
 						sound="Units/AcrinTitanExtirpate"/>
 			</model>
 		</useWeapon>

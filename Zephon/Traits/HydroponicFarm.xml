@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Features/FleshTree" visibleOnTile="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<effects>
+				<food add="1"/>
+				<research add="1"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
+			<effects>
+				<flatResourcesFromOutposts mul="2.0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<tile>
+			<area affect="TilePlayer" sendNotification="1">
+				<modifiers>
+					<modifier effectDescription="Every10Turns">
+						<conditions ignoreForTraitVisibility="1">
+							<turn divisible="10"/>
+							<player>
+								<noFaction name="Neutral"/>
+							</player>
+						</conditions>
+						<effects>
+							<addPlayerAction type="NaturalStimulants" charges="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</tile>
+	</onTurnStarted>
+</trait>

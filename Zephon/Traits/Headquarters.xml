@@ -11,7 +11,8 @@
 							</sourcePlayer>
 						</conditions>
 						<effects>
-							<addFeature type="AdvancedCyberCache"/>
+							<addFeature type="AdvancedCyberCache"
+									scaleTriggerCountWithSourceUnitProductionCost="1"/>
 						</effects>
 					</modifier>
 					<modifier effectDescription="OnDeath" visible="0">
@@ -21,7 +22,8 @@
 							</sourcePlayer>
 						</conditions>
 						<effects>
-							<addFeature type="AdvancedHumanCache"/>
+							<addFeature type="AdvancedHumanCache"
+									scaleTriggerCountWithSourceUnitProductionCost="1"/>
 						</effects>
 					</modifier>
 					<modifier effectDescription="OnDeath" visible="0">
@@ -31,7 +33,8 @@
 							</sourcePlayer>
 						</conditions>
 						<effects>
-							<addFeature type="AdvancedVoiceCache"/>
+							<addFeature type="AdvancedVoiceCache"
+									scaleTriggerCountWithSourceUnitProductionCost="1"/>
 						</effects>
 					</modifier>
 				</modifiers>

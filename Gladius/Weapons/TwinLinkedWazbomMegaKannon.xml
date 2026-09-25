@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/PlasmaExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"
+				fireSound="Weapons/TwinLinkedWazbomMegaKannon"
+				fireSoundCount="1"
+				muzzleFlashesBlueprint="Effects/PlasmaMuzzleFlashes"
+				directionalMuzzleFlashesBlueprint="Effects/PlasmaDirectionalMuzzleFlashes"
+				projectilesBlueprint="Effects/PlasmaProjectiles"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="4"/> <!-- %rangedArmorPenetration add armorPiercing=-2 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="Orks/BlastDamage" requiredUpgrade="Orks/BlastDamage"/>
+		<trait name="HeavyWeapon"/>
+		<trait name="Blast"/>
+		<trait name="TwinLinked"/>
+		<trait name="GetsHot"/>
+	</traits>
+</weapon>

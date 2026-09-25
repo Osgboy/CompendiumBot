@@ -8,7 +8,6 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<attacks add="1"/>
 				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=2 -->
 				<rangedDamage add="3"/> <!-- %rangedDamage add strength=6 -->
 				<strengthDamage base="0"/>
@@ -16,7 +15,9 @@
 		</modifier>
 	</modifiers>
 	<traits>
+		<trait name="ChaosSpaceMarines/BlastDamage" requiredUpgrade="ChaosSpaceMarines/BlastDamage"/>
 		<trait name="IgnoresCover"/>
 		<trait name="Blight"/>
+		<trait name="Grenade"/>
 	</traits>
 </weapon>

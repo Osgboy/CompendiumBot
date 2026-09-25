@@ -1,0 +1,639 @@
+<quest firstTurn="60" dlc="DLC3">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="HelpEradicators" nextStage="HelpEradicators"/>
+				<option name="KillEradicators" nextStage="KillEradicators"/>
+			</options>
+		</stage>
+		<stage name="KillEradicators" nextStageOnSuccess="KillEradicatorsSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>				
+			</modifications>
+			<objectives>
+				<killCamp name="KillEradicators">
+					<defenders>
+						<unit type="EradicatorZero" name="Units/EradicatorZero" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="EradicatorOne" name="Units/EradicatorOne" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</defenders>
+				</killCamp>
+			</objectives>
+		</stage>
+		<stage name="KillEradicatorsSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpEradicators" 
+				nextStageOnFailure="HelpEradicatorsFailure"
+				nextStageOnSuccess="HelpEradicatorsSuccess">
+			<modifications>
+				<nearCityTileSelector targetDistance="3">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="EradicatorZero" name="Units/EradicatorZero" token="Zero" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="EradicatorOne" name="Units/EradicatorOne" token="One" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>			
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<hitpoints mul="-0.5"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<setPrimaryEnemy/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<hitpoints mul="-0.5"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<setPrimaryEnemy/>
+						</effects>
+					</modifier>
+				</unitModifiers>				
+				<nearUnitTileSelector count="2" targetDistance="3">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+					<unitConditions>
+						<token name="Zero"/>
+					</unitConditions>
+				</nearUnitTileSelector>			
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="24" waves="3">
+					<attackers>
+						<unit type="Warden" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Hammerhead" count="2" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</attackers>
+				</surviveInvasion>
+				<keepUnitAlive token="Zero"/>
+				<keepUnitAlive token="One"/>
+			</objectives>
+		</stage>
+		<stage name="HelpEradicatorsFailure">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>	
+		</stage>
+		<stage name="HelpEradicatorsSuccess">
+			<options>
+				<option name="HelpZero" nextStage="HelpZero"/>
+				<option name="HelpOne" nextStage="HelpOne"/>
+				<option name="HelpBoth" nextStage="HelpBoth"/>
+				<option name="ReturnToZephon" nextStage="ReturnToZephon"/>
+			</options>
+		</stage>
+		<stage name="ReturnToZephon" nextStageOnSuccess="ReturnToZephonSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<changePlayer faction="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>			
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<changePlayer faction="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>			
+			</modifications>
+			<objectives>
+				<killMarkedUnit token="Zero"/>
+				<killMarkedUnit token="One"/>
+			</objectives>
+		</stage>
+		<stage name="ReturnToZephonSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpZero" 
+				nextStageOnFailure="HelpZeroOneFailure"
+				nextStageOnSuccess="HelpZeroSuccess">
+			<modifications>	
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<changePlayer faction="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitModifiers sourcePlayerFromSelection="1">
+					<modifier visible="0">
+						<effects>
+							<setPrimaryEnemy/>
+						</effects>
+					</modifier>
+				</unitModifiers>				
+			</modifications>
+			<objectives>
+				<keepUnitAlive token="Zero"/>
+				<killMarkedUnit token="One"/>
+			</objectives>
+		</stage>
+		<stage name="HelpZeroSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="PlanetShieldProtocol"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpOne" 
+				nextStageOnFailure="HelpZeroOneFailure"
+				nextStageOnSuccess="HelpOneSuccess">
+			<modifications>	
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<changePlayer faction="Neutral"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+			<objectives>
+				<keepUnitAlive token="One"/>
+				<killMarkedUnit token="Zero"/>
+			</objectives>
+		</stage>
+		<stage name="HelpOneSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="CivilizationShieldProtocol"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpZeroOneFailure"/>
+		<stage name="HelpBoth" 
+				nextStageOnFailure="HelpBothStageOneFailure"
+				nextStageOnSuccess="HelpBothStageOneSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="ProvideKarelWithEquipment" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="24" waves="6" waveInterval="2" requiresCompletion="0">
+					<attackers>
+						<unit type="Warden" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Hammerhead" count="2" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</attackers>
+				</surviveInvasion>
+				<executePlayerOrder name="ExecuteOrder"
+						orderName="ProvideKarelWithEquipment"/>
+				<keepUnitAlive token="Zero"/>
+				<keepUnitAlive token="One"/>
+			</objectives>
+		</stage>
+		<stage name="HelpBothStageOneFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpBothStageOneSuccess">
+			<options>
+				<option name="HelpBothStageTwo" nextStage="HelpBothStageTwo"/>
+			</options>
+		</stage>
+		<stage name="HelpBothStageTwo"
+				nextStageOnFailure="HelpBothStageTwoFailure"
+				nextStageOnSuccess="HelpBothStageTwoSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="DirectiveDeviance"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="EngineerKarel" name="Units/EngineerKarel" token="Karel" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="24" waves="6" waveInterval="2" requiresCompletion="0">
+					<attackers>
+						<unit type="Warden" count="1" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						<unit type="Hammerhead" count="2" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+					</attackers>
+				</surviveInvasion>
+				<executeUnitOrder count="2" name="MimicDistressSignal"
+						orderName="MimicDistressSignal">
+				</executeUnitOrder>
+				<keepUnitAlive token="Zero"/>
+				<keepUnitAlive token="One"/>
+				<keepUnitAlive token="Karel"/>
+			</objectives>
+		</stage>
+		<stage name="HelpBothStageTwoFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="Zephon"/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<standingTier add="-2"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Karel"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+			</modifications>
+		</stage>
+		<stage name="HelpBothStageTwoSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Karel"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Zero"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="DirectiveDeviance"/>
+							<removeTrait type="DistressSignalMimicked"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="One"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="DirectiveDeviance"/>
+							<removeTrait type="DistressSignalMimicked"/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUpgrade name="CivilizationShieldProtocol"/>
+							<addUpgrade name="PlanetShieldProtocol"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

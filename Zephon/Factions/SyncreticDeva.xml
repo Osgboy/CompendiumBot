@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<faction branch="Cyber"
+		coerciveness="0.625"
+		dlc="DLC3"
+		generosity="0.375"
+		initialTrack="Music/Cyber2DLC3"
+		trustworthiness="0.375"
+		quest="FitForAdoration">
+	<actions>
+		<playerCast name="DutyOfCare"
+				cooldown="1"
+				label="1"
+				requiredUpgrade="DutyOfCare">
+			<model>
+				<cast blueprint="Effects/DutyOfCare"/>
+			</model>
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<influenceCostFromExperience base="10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+			<beginTargets>
+				<target>
+					<conditions>
+						<unit>
+							<ally/>
+						</unit>
+						<unit match="Any">
+							<noTrait type="DutyOfCare"/>
+							<traitWithRank type="DutyOfCare" less="3"/>
+						</unit>
+					</conditions>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier effectDescription="ToTargetAlliedUnit">
+									<effects>
+										<hitpointsFromMax add="1"/>
+									</effects>
+								</modifier>
+								<modifier visible="0">
+									<conditions>
+										<unit>
+											<trait type="DutyOfCare"/>
+										</unit>
+									</conditions>
+									<effects>
+										<traitRank type="DutyOfCare" add="1"/>
+									</effects>
+								</modifier>
+								<modifier>
+									<conditions>
+										<unit>
+											<noTrait type="DutyOfCare"/>
+										</unit>
+									</conditions>
+									<effects>
+										<addTrait type="DutyOfCare"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<control/>
+											<hitpointsFraction less="0.3"/>
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</target>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+ 					<conditions>
+						<player>
+							<increaseInfluenceStrategy greater="0.5"/>
+						</player>
+					</conditions>
+					<effects>
+						<score max="0.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</playerCast>
+	</actions>
+	<buildingActions>
+		<buildingGroupAction name="FormIsFunction"
+				icon="Traits/FormIsFunction"
+				label="1"
+				useConditionsForVisiblity="1"
+				wait="1">
+			<conditions>
+				<building match="Any">
+					<type name="Construction"/>
+					<type name="HumanInfantry"/>
+					<type name="HumanVehicles"/>
+					<type name="HumanAircraft"/>
+					<type name="HumanOperations"/>
+					<type name="VoiceInfantry"/>
+					<type name="VoiceVehicles"/>
+					<type name="VoiceAircraft"/>
+					<type name="VoiceOperations"/>
+					<type name="CyberInfantry"/>
+					<type name="CyberVehicles"/>
+					<type name="CyberAircraft"/>
+					<type name="CyberOperations"/>
+				</building>
+			</conditions>
+			<modifiers>
+				<modifier>
+					<effects>
+						<loyalty add="3"/>
+					</effects>
+				</modifier>
+				<modifier requiredUpgrade="FormIsFunctionUpgrade2">
+					<effects>
+						<loyalty add="3"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</buildingGroupAction>
+	</buildingActions>
+	<dislikedLabels>
+		<label name="AgelessHunger"/>
+		<label name="HordeMandate"/>
+		<label name="JustShipIt"/>
+		<label name="Tactics"/>
+		<label name="Untrustworthy"/>
+		<label name="WordsOfTheProphet"/>
+	</dislikedLabels>
+	<headquarterWeapons>
+		<weapon type="AssaultRifle" count="9">
+			<models>
+				<projectileWeapon mesh="Units/SyncreticDevaHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="HQAR0"
+						muzzleBone="Muzzle"
+						muzzleCount="3"
+						windupDuration="0.0"/>
+				<projectileWeapon mesh="Units/SyncreticDevaHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="HQAR1"
+						muzzleBone="Muzzle"
+						muzzleCount="3"
+						windupDuration="0.1"/>
+				<projectileWeapon mesh="Units/SyncreticDevaHeadquartersAssaultRifle"
+						material="Units/HeadquartersMissileLauncher"
+						bone="HQAR2"
+						muzzleBone="Muzzle"
+						muzzleCount="3"
+						windupDuration="0.2"/>												
+			</models>
+		</weapon>
+		<weapon type="MissileLauncher" count="3">
+			<models>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML0"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.0"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML1"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.1"/>
+				<missileWeapon mesh="Units/HeadquartersMissileLauncher"
+						material="Units/HeadquartersMissileLauncher"
+						bone="ML2"
+						muzzleBone="Muzzle"
+						muzzleCount="2"
+						missileScale="0.2"
+						windupDuration="0.2"/>										
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon	bone="HQ"
+						effectsBlueprint="Effects/ShieldDome"
+						material="Units/HeadquartersMissileLauncher"
+						mesh="Units/HeadquartersShieldDome"
+						requiredUpgrade="ShieldDome"/>
+			</models>
+		</weapon>		
+	</headquarterWeapons>
+	<likedLabels>
+		<label name="Augmentations"/>
+		<label name="Mysticism"/>
+		<label name="TenderMinistrations"/>
+	</likedLabels>
+	<startingResourceModifiers>
+		<modifier>
+			<effects>
+				<algae add="10"/>
+				<chips add="10"/>
+				<energy add="20"/>
+				<food add="20"/>
+				<influence add="20"/>
+				<minerals add="60"/>
+			</effects>
+		</modifier>
+	</startingResourceModifiers>
+	<startingUnits>
+		<unit type="Engineer" count="1"/>
+		<unit type="MalakimDestroyer" count="1"/>
+		<unit type="CassielShredder" count="1"/>
+	</startingUnits>
+	<traits>
+		<trait type="AmoetiasCaress" requiredUpgrade="AmoetiasCaress"/>
+		<trait type="AmoetiasEmbrace" requiredUpgrade="AmoetiasEmbrace"/>
+		<trait type="AnchoriteStanding" requiredUpgrade="AnchoriteStanding"/>
+		<trait type="AsymmetricArbitrage" requiredUpgrade="AsymmetricArbitrage"/>
+		<trait type="BalancedProgress" requiredUpgrade="BalancedProgress"/>
+		<trait type="BreachCollector" requiredUpgrade="BreachCollector"/>
+		<trait type="ChieftessStanding" requiredUpgrade="ChieftessStanding"/>
+		<trait type="ConcordatAdvancedResources" requiredUpgrade="ConcordatAdvancedResources"/>
+		<trait type="CorpseCities" requiredUpgrade="CorpseCities"/>
+		<trait type="FormIsFunction"/>
+		<trait type="ForTheFew"/>
+		<trait type="HasharetExchange" requiredUpgrade="HasharetExchange"/>
+		<trait type="HiddenWisdom" duration="10"/>
+		<trait type="HiddenWisdomUpgrade" duration="10" requiredUpgrade="HiddenWisdomUpgrade"/>
+		<trait type="HiddenWisdomUpgrade2" duration="10" requiredUpgrade="HiddenWisdomUpgrade2"/>
+		<trait type="Holopatter" requiredUpgrade="Holopatter"/>
+		<trait type="MarketDefluctuation" requiredUpgrade="MarketDefluctuation"/>
+		<trait type="MobileHardpoints" requiredUpgrade="MobileHardpoints"/>
+		<trait type="RailgunRoads" requiredUpgrade="RailgunRoads"/>
+		<trait type="ShieldDome" requiredUpgrade="ShieldDome"/>
+		<trait type="SpiritOfMankind" requiredUpgrade="SpiritOfMankind"/>
+		<trait type="SyncreticDevaAffinityUpgrade" requiredUpgrade="SyncreticDevaAffinityUpgrade"/>
+		<trait type="SyncreticDevaAffinityUpgrade2" requiredUpgrade="SyncreticDevaAffinityUpgrade2"/>
+		<trait type="TacticalArcheology" requiredUpgrade="TacticalArcheology"/>
+		<trait type="Wildlife" requiredUpgrade="Wildlife"/>
+		<trait type="ZephonStanding" requiredUpgrade="ZephonStanding"/>
+	</traits>
+</faction>

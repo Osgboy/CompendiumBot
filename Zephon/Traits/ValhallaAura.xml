@@ -5,8 +5,23 @@
 			<area affect="Unit">
 				<modifiers>
 					<modifier>
+						<conditions>
+							<unit>
+								<trait type="Valhalla"/>
+							</unit>
+						</conditions>
 						<effects>
 							<traitRank type="Valhalla" add="1"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="Valhalla"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpointsFromMax add="0.1"/>
 						</effects>
 					</modifier>
 				</modifiers>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature category="FragmentOfTheFulcrumResource">
+	<model>
+		<vegetation material="Terrain/Vegetation"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<antimatter mul="0.2"/>
+				<buildingSlots add="-1"/>
+				<dimensionalEchoes mul="0.2"/>
+				<singularityCores mul="0.2"/>
+				<transuranium mul="0.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="FragmentOfTheFulcrumResource"/>
+	</traits>
+	<vegetation>
+		<trees clusterOriginRadius="0" clusterRadius="64"
+				clusterSizeMax="20" clusterSizeMin="10"
+				scaleMax="1.0" scaleMin="0.5">
+			<meshes>
+				<mesh name="Terrain/Vegetation/Fulcrum0"/>
+				<mesh name="Terrain/Vegetation/Fulcrum1"/>
+				<mesh name="Terrain/Vegetation/Fulcrum2"/>
+				<mesh name="Terrain/Vegetation/Fulcrum3"/>
+				<mesh name="Terrain/Vegetation/Fulcrum4"/>
+			</meshes>
+		</trees>		
+	</vegetation>
+</feature>

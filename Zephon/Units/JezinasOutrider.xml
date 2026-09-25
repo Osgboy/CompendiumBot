@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" icon="Units/Outrider" portrait="Units/Outrider">
+	<model>
+		<unit effectsBlueprint="Effects/Outrider"
+				explosionsBlueprint="Effects/MediumHumanExplosions"
+				explosionsBone="Chassis"
+				material="Units/Outrider"
+				mesh="Units/Outrider"
+				scale="25 25 25"/>
+	</model>
+	<weapons>
+		<weapon type="HeavyMachineGun">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle"/>
+			</models>
+		</weapon>
+		<weapon type="None">
+			<models>
+				<weapon animationSuffix="Minelayer"
+						mesh="Units/OutriderMinelayer"
+						material="Units/OutriderMinelayer"/>
+			</models>
+		</weapon>		
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/>
+				<cargoSlots base="2"/>
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="24"/> <!-- %hitpointsMax base tier=8 -->
+				<mineralsCost base="30"/> <!-- %mineralsCost base tier=5 factor=1 -->
+				<mineralsUpkeep base="1.5"/> <!-- %mineralsUpkeep base tier=5 factor=1 -->
+				<moraleMax base="8"/>
+				<movementMax base="5"/>
+				<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseVehiclesScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<attack>
+			<model>
+				<attack animation="Units/OutriderAttack"
+						beginFire="1.0"
+						endFire="2.3"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/OutriderDie0"
+						sound="Units/OutriderDie"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/OutriderImpact"/> 
+			</model>
+		</endure>
+		<idle>
+			<model>
+				<idle animation="Units/OutriderIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action animation="Units/OutriderMove"
+						sound="Units/OutriderMove"
+						soundCount="1"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<unitCast name="Recon"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<cast casterBlueprint="Effects/Radar"
+						sound="Actions/Recon"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile" radius="3">
+							<modifiers>
+								<modifier>
+									<effects>
+										<reveal/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<effects>
+						<score add="1.0"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
+		</unitCast>
+		<unitAction name="Minelayer"
+		 		consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="5"
+				requiredActionPoints="0"
+				requiredMovement="0">
+			<model>
+				<action animation="Units/OutriderAbility0"
+						sound="Units/OutriderMinelayer"
+						soundCount="1"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Tile">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="Mines"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<tile>
+											<enemyStrengthInTheArea greater="0"/>
+										</tile>
+									</conditions>
+									<effects>
+										<score add="0.5"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>			
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<traits>
+		<trait type="Large"/>
+		<trait type="Mechanical"/>
+		<trait type="Transport"/>
+	</traits>
+</unit>

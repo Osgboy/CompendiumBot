@@ -13,14 +13,14 @@
 			<options>
 				<option name="KillHim" nextStage="KillHim"/>
 				<option name="AskMystics" nextStage="AskMystics">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<algaeCost add="20"/>
 								<researchCost add="40"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 				</option>
 				<option name="Ignore">
 					<nextStages>

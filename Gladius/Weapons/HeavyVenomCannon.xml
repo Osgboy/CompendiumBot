@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <weapon>
 	<model>
-		<projectileWeapon fireSound="Weapons/HeavyVenomCannon"
+		<projectileWeapon fireSound="Weapons/Deathspitter"
 				fireSoundCount="3"
-				muzzleFlashesBlueprint="Effects/ShardMuzzleFlashes"
-				muzzleFlashesEmitterBlueprint="Effects/ShardMuzzleFlashesEmitter"
+		 		muzzleFlashesBlueprint="Effects/HeavyVenomMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/HeavyVenomMuzzleFlashesEmitter"
 				directionalMuzzleFlashesBlueprint=""
-				projectilesBlueprint="Effects/ShardProjectiles"
-				projectilesEmitterBlueprint="Effects/ShardProjectilesEmitter"
-				explosionsBlueprint="Effects/ShardExplosions"
+				directionalMuzzleFlashesEmitterBlueprint=""
+				projectilesBlueprint="Effects/HeavyVenomProjectiles"
+				projectilesEmitterBlueprint="Effects/HeavyVenomProjectilesEmitter"
+				explosionsBlueprint="Effects/HeavyVenomExplosions"
 				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
 	</model>
 	<modifiers>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<branch name="Cyber"/>
+				</unit>
+			</conditions>
+			<effects>
+				<gainExperienceOnAnyCyberDeath add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

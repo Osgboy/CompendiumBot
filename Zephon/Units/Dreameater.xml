@@ -3,6 +3,7 @@
 	<model>
 		<unit bloodBlueprint="Effects/LargeBlackBlood"
 				bloodBone="Body"
+				bloodTrailBlueprint="Effects/LargeBlackBloodTrail"
 				effectsBlueprint="Effects/DreamEater"
 				material="Units/Dreameater"
 				mesh="Units/Dreameater"
@@ -148,6 +149,11 @@
 					<areas>
 						<area affect="Unit">
 							<modifiers>
+								<modifier visible="0">
+									<effects>
+										<removeTrait type="DreamPrison"/>
+									</effects>
+								</modifier>
 								<modifier effectDescription="DreamPrison">
 									<effects>
 										<addTrait type="DreamPrison" removeOnSourceDeath="1"/>

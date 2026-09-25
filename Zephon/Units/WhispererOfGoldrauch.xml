@@ -188,7 +188,8 @@
 				rankMax="2">
 			<model>
 				<cast animation="Units/WhispererOfGoldrauchAbility0"
-					responseSound="Responses/Units/WhispererOfGoldrauchCallTheAfflicted"/>
+						beginEffect="0.5"
+						responseSound="Responses/Units/WhispererOfGoldrauchCallTheAfflicted"/>
 			</model>
 			<modifiers>
 				<modifier visible="0">
@@ -202,6 +203,8 @@
 					<conditions>
 						<tile>
 							<land/>
+							<noFeature type="FragmentOfTheFulcrum"/>
+							<noFeature type="Volcano"/>
 							<noUnit/>
 						</tile>
 					</conditions>
@@ -210,7 +213,8 @@
 							<modifiers>
 								<modifier>
 									<effects>
-										<addUnit type="Deformity" rankMin="0" rankMax="8" avoidBleed="0" avoidCity="0"/>
+										<addUnit type="Deformity" rankMin="0" rankMax="8" avoidBleed="0" avoidCity="0"
+												spawnedBySourceUnit="1" appearFromSourceUnit="0"/>
 									</effects>
 								</modifier>
 							</modifiers>

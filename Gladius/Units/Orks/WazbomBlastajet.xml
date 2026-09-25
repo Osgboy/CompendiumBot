@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement18">
+	<model>
+		<unit mesh="Units/Orks/WazbomBlastajet"
+				material="Units/Orks/WazbomBlastajet"
+				position="0 0 0"
+				idleAnimation="Units/Orks/WazbomBlastajetIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				normalWeight="1.0"
+				portraitFocusHeightModifier="48"
+				scale="0.8 0.8 0.8"
+				explosionsBone="Hull"/>
+	</model>
+	<weapons>
+		<weapon name="TwinLinkedSupaShoota">
+			<model>
+				<projectileWeapon muzzleBone="TurretMuzzle" muzzleCount="2"/>			
+			</model>
+		</weapon>
+		<weapon name="TwinLinkedWazbomMegaKannon">
+			<model>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2" fireInterval="0.5" cycleMuzzles="0"/>			
+			</model>
+		</weapon>
+		<weapon name="SmashaGun">
+			<model>
+				<beamWeapon muzzleBone="LaserMuzzle" fireInterval="10"/>			
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="6"/> <!-- %armor base armor=10/10/10 -->
+				<energyUpkeep base="4.0"/> <!-- %energyUpkeep base tier=8 factor=1 -->
+				<energyCost base="40.0"/> <!-- %energyCost base tier=8 factor=0.5 -->
+				<hitpointsMax base="24.0"/> <!-- %hitpointsMax base armor=10/10/10 wounds=3 -->
+				<influenceUpkeep base="4.0"/> <!-- %influenceUpkeep base tier=8 factor=1 -->
+				<moraleMax base="6"/> <!-- %moraleMax base leadership=6 -->
+				<movementMax base="6"/>
+				<oreCost base="40.0"/> <!-- %oreCost base tier=8 factor=0.5 -->
+				<productionCost base="48.0"/> <!-- %productionCost base tier=8 factor=1 -->
+				<rangedAccuracy base="4"/> <!-- %rangedAccuracy base ballisticSkill=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action	animation="Units/Orks/WazbomBlastajetAttack"
+						beginFire="0.63"
+						endFire="1.86"/>
+			</model>		
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/Orks/WazbomBlastajetDie0"
+						sound="Units/MediumVehicleDie"
+						soundCount="3"
+						soundDelay="0.3"
+						voiceSound="Units/SmallVehicleDie"
+						voiceSoundCount="3"
+						voiceSoundDelay="2.2"/>
+			</model>		
+		</die>
+		<idle>
+			<model>
+				<action animationSpeed="1.0"/>
+			</model>
+		</idle>
+		<move>
+			<model>
+				<action sound="Units/Orks/BurnaBommerMove"
+						soundCount="3"/>
+			</model>
+		</move>
+		<supersonic consumedMovement="0"
+				cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Supersonic"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</supersonic>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+	</actions>
+	<traits>
+		<trait name="Orks/BlastajetAttackRun"/>
+		<trait name="Orks/BlastajetForceField"/>
+		<trait name="Orks/CreateOrkoidFungusOnDeath"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="Orks/ExtraVehicleArmour"/>
+		<trait name="Flyer"/>
+		<trait name="Orks/GreenTideHealing"/>
+		<trait name="Orks/MightMakesRight"/>
+		<trait name="RedPaintJob" requiredUpgrade="Orks/RedPaintJob"/>
+		<trait name="Orks/Scavenger"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

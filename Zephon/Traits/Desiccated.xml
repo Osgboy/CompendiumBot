@@ -15,22 +15,4 @@
 			</effects>
 		</modifier>
 	</modifiers>
-	<onTurnStarted>
-		<unit>
-			<area affect="Unit">
-				<modifiers>
-					<modifier visible="0">
-						<conditions>
-							<unit>
-								<trait type="OnFire"/>
-							</unit>
-						</conditions>
-						<effects>
-							<hitpoints add="-3"/>
-						</effects>
-					</modifier>
-				</modifiers>
-			</area>
-		</unit>
-	</onTurnStarted>
 </trait>

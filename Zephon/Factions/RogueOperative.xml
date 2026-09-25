@@ -21,11 +21,7 @@
 						<influenceCost mul="-0.25"/>
 					</effects>
 				</modifier>
-				<modifier requiredUpgrade="AugmentsUpgrade2">
-					<effects>
-						<influenceCost mul="-0.25"/>
-					</effects>
-				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2"/>
 			</modifiers>
 			<beginTargets>
 				<target>
@@ -34,9 +30,16 @@
 							<ally/>
 							<noTrait type="Large"/>
 							<noTrait type="EnhancedProbabilityAugment"/>
-							<noTrait type="LiquidDeflectionAugment"/>
-							<noTrait type="NanomachineAcceleratorAugment"/>
 						</unit>
+						<conditions match="Any">
+							<player>
+								<upgrade name="AugmentsUpgrade2"/>
+							</player>
+							<unit>
+								<noTrait type="LiquidDeflectionAugment"/>
+								<noTrait type="NanomachineAcceleratorAugment"/>
+							</unit>
+						</conditions>
 					</conditions>
 					<areas>
 						<area affect="Unit">
@@ -71,7 +74,7 @@
 				<modifier>
 					<conditions>
 						<player>
-							<increaseInfluenceStrategy greater="0.5"/>
+							<increaseInfluenceStrategy greater="0.25"/>
 						</player>
 					</conditions>
 					<effects>
@@ -102,11 +105,7 @@
 						<influenceCost mul="-0.25"/>
 					</effects>
 				</modifier>
-				<modifier requiredUpgrade="AugmentsUpgrade2">
-					<effects>
-						<influenceCost mul="-0.25"/>
-					</effects>
-				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2"/>
 			</modifiers>
 			<beginTargets>
 				<target>
@@ -114,10 +113,17 @@
 						<unit>
 							<ally/>
 							<noTrait type="Large"/>
-							<noTrait type="EnhancedProbabilityAugment"/>
 							<noTrait type="LiquidDeflectionAugment"/>
-							<noTrait type="NanomachineAcceleratorAugment"/>
 						</unit>
+						<conditions match="Any">
+							<player>
+								<upgrade name="AugmentsUpgrade2"/>
+							</player>
+							<unit>
+								<noTrait type="EnhancedProbabilityAugment"/>
+								<noTrait type="NanomachineAcceleratorAugment"/>
+							</unit>
+						</conditions>
 					</conditions>
 					<areas>
 						<area affect="Unit">
@@ -152,7 +158,7 @@
 				<modifier>
 					<conditions>
 						<player>
-							<increaseInfluenceStrategy greater="0.5"/>
+							<increaseInfluenceStrategy greater="0.25"/>
 						</player>
 					</conditions>
 					<effects>
@@ -183,11 +189,7 @@
 						<influenceCost mul="-0.25"/>
 					</effects>
 				</modifier>
-				<modifier requiredUpgrade="AugmentsUpgrade2">
-					<effects>
-						<influenceCost mul="-0.25"/>
-					</effects>
-				</modifier>
+				<modifier requiredUpgrade="AugmentsUpgrade2"/>
 			</modifiers>
 			<beginTargets>
 				<target>
@@ -195,10 +197,17 @@
 						<unit>
 							<ally/>
 							<noTrait type="Large"/>
-							<noTrait type="EnhancedProbabilityAugment"/>
-							<noTrait type="LiquidDeflectionAugment"/>
 							<noTrait type="NanomachineAcceleratorAugment"/>
 						</unit>
+						<conditions match="Any">
+							<player>
+								<upgrade name="AugmentsUpgrade2"/>
+							</player>
+							<unit>
+								<noTrait type="EnhancedProbabilityAugment"/>
+								<noTrait type="LiquidDeflectionAugment"/>
+							</unit>
+						</conditions>
 					</conditions>
 					<areas>
 						<area affect="Unit">
@@ -233,7 +242,7 @@
 				<modifier>
 					<conditions>
 						<player>
-							<increaseInfluenceStrategy greater="0.5"/>
+							<increaseInfluenceStrategy greater="0.25"/>
 						</player>
 					</conditions>
 					<effects>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Debuff">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<encounter>
+					<opponent>
+						<type name="SistersOfBattle/CelestianInsidiant"/>
+					</opponent>
+				</encounter>
+			</conditions>
+			<effects>
+				<opponentAccuracy mul="0.33"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

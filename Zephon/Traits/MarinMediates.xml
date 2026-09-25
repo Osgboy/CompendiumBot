@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Traits/PoliticalFallout" visibleOnCity="1" dlc="DLC3">
+	<modifiers>
+		<modifier>
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="3"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

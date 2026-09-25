@@ -4,10 +4,22 @@
 		<attacker>
 			<area affect="Unit">
 				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<unit ignoreForTraitVisibility="1">
+								<firingMeleeWeapons/>
+								<trait type="Blighted"/>
+							</unit>
+						</conditions>
+						<effects>
+							<traitRank type="Blighted" add="1"/>
+						</effects>
+					</modifier>
 					<modifier effectDescription="ToMeleeAttackers">
 						<conditions>
 							<unit ignoreForTraitVisibility="1">
 								<firingMeleeWeapons/>
+								<noTrait type="Blighted"/>
 							</unit>
 						</conditions>
 						<effects>

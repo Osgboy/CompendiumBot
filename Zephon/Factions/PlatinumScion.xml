@@ -3,7 +3,7 @@
 		coerciveness="0.625"
 		dlc="DLC2"
 		generosity="0.375"
-		initialTrack="Music/Voice1DLC2"
+		initialTrack="Music/Cyber1DLC2"
 		trustworthiness="0.375"
 		quest="TouchTheSky">
 	<actions>
@@ -132,7 +132,7 @@
 				label="1"
 				requiredUpgrade="PersonalVisit">
 			<model>
-				<cast blueprint="Effects/PersonalVisit"
+				<cast blueprint="Effects/PersonalVisitCast"
 						targetsTile="1"/>
 			</model>
 			<modifiers>
@@ -157,6 +157,11 @@
 					<areas>
 						<area affect="Tile">
 							<modifiers>
+								<modifier>
+									<effects>
+										<addFeature type="PersonalVisit" duration="5"/>
+									</effects>
+								</modifier>
 								<modifier effectDescription="ToNonHeadquartersBuildingsOnTargetAlliedCityTile">
 									<effects>
 										<addTrait type="PersonalVisit" duration="5"/>
@@ -361,6 +366,7 @@
 		<label name="CultExpansion"/>
 		<label name="EngineerLife"/>
 		<label name="IcarusSatellite"/>
+		<label name="ViewFromAbove"/>
 	</likedLabels>
 	<startingResourceModifiers>
 		<modifier>

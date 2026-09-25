@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/SmashaGun"
+				fireSoundCount="1"
+				beamsBlueprint="Effects/SmashaBeams"
+				beamsEmitterBlueprint="Effects/SmashaBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/SmashaMuzzleFlashes"
+		 		muzzleFlashesEmitterBlueprint="Effects/SmashaMuzzleFlashesEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="1"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=-3 -->
+				<rangedDamage add="8"/> <!-- %rangedDamage add strength=9 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="Orks/BlastDamage" requiredUpgrade="Orks/BlastDamage"/>
+		<trait name="Blast"/>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

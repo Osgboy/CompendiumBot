@@ -3,28 +3,160 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<populationLoyaltyUpkeep mul="0.25"/>
+				<populationLoyaltyUpkeep mul="0.5"/>
 			</effects>
 		</modifier>
 		<modifier effectDescription="IndependentUpgrade" requiredUpgrade="IndependentUpgrade">
+			<conditions ignoreForTraitVisibility="1">
+				<building>
+					<type name="Headquarters"/>
+				</building>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade">
 			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
 				<city>
-					<population less="7"/>
+					<population greater="1"/>
 				</city>
 			</conditions>
 			<effects>
-				<populationLoyaltyUpkeep mul="-0.25"/>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="2"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="3"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="4"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="5"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
 			</effects>
 		</modifier>
 		<modifier effectDescription="IndependentUpgrade2" requiredUpgrade="IndependentUpgrade2">
-			<conditions>
+			<conditions ignoreForTraitVisibility="1">
+				<building>
+					<type name="Headquarters"/>
+				</building>
 				<city>
 					<population greater="6"/>
-					<population less="13"/>
 				</city>
 			</conditions>
 			<effects>
-				<populationLoyaltyUpkeep mul="-0.25"/>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="7"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="8"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="9"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="10"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier visible="0" requiredUpgrade="IndependentUpgrade2">
+			<conditions>
+				<building>
+					<type name="Headquarters"/>
+				</building>
+				<city>
+					<population greater="11"/>
+				</city>
+			</conditions>
+			<effects>
+				<loyalty add="0.5"/>
 			</effects>
 		</modifier>
 	</modifiers>

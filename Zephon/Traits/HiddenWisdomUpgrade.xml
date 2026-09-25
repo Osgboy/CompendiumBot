@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" icon="Upgrades/HiddenWisdomUpgrade" visibleOnPlayer="1">
+	<modifiers>
+		<modifier effectDescription="EachTurn">
+			<conditions>
+				<onlyPlayer/>
+			</conditions>
+			<effects>
+				<research add="17.2"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -23,26 +23,26 @@
 			</modifications>			
 			<options>
 				<option name="ArrangeTheMeet">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<influenceCost add="30"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 					<nextStages>
 						<nextStage name="ArrangeTheMeetSuccess" weight="3"/>
 						<nextStage name="ArrangeTheMeetFailure" weight="1"/>
 					</nextStages>
 				</option>
 				<option name="Investigate">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<influenceCost add="15"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 					<nextStages>
 						<nextStage name="InvestigateSuccess" weight="3"/>
 						<nextStage name="InvestigateFailure" weight="1"/>

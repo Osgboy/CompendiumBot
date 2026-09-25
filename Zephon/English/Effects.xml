@@ -10,6 +10,8 @@
 <entry name="AddUnit" value="&lt;icon texture='GUI/Bullet'/&gt;Spawns %1%&lt;nbsp/&gt;%2%%3%%4%%5%%6%"/>
 <entry name="AddUnitToPlayer" value="&lt;string name='Effects/AddUnit'/&gt;"/>
 <entry name="AddUpgrade" value="&lt;icon texture='GUI/Bullet'/&gt;Unlocks %1%&lt;nbsp/&gt;%2%%3%%4%"/>
+<entry name="ChangeTraitDuration+" value="&lt;icon texture='GUI/Bullet'/&gt;Extends %1%&lt;nbsp/&gt;%2%%3% by %4%"/>
+<entry name="ChangeTraitDuration-" value="&lt;icon texture='GUI/Bullet'/&gt;Shortens %1%&lt;nbsp/&gt;%2%%3% by %4%"/>
 <entry name="RemoveFeature" value="&lt;string name='Effects/RemoveTrait'/&gt;"/>
 <entry name="RemoveTrait" value="&lt;icon texture='GUI/Bullet'/&gt;Removes %1%&lt;nbsp/&gt;%2%%3%%4%"/>
 	
@@ -26,6 +28,7 @@
 <entry name="ResetCooldowns" value="&lt;icon texture='GUI/Bullet'/&gt;Resets cooldowns%1%"/>
 <entry name="ResetMovement" value="&lt;icon texture='GUI/Bullet'/&gt;Restores movement points%1%"/>
 <entry name="Reveal" value="&lt;icon texture='GUI/Bullet'/&gt;Reveals tiles%1%"/>
+<entry name="TeleportToClosestOwnCity" value="&lt;icon texture='GUI/Bullet'/&gt;Teleports%1% to closest owned city"/>
 
 	<!-- %1% name, %2% conditional from Modifiers.xml -->
 	<!-- <entry name="UnlockItem" value="%1% is now available at The Concordat for this and future playthroughs"/> -->
@@ -39,5 +42,11 @@
 	
 	<!-- %1% conditional from Modifiers.xml, %2% details -->
 <entry name="WeaponDamage" value="&lt;icon texture='GUI/Bullet'/&gt;Deals damage%1%%2%"/>
+
+	<!-- %1% turns -->
+<entry name="DelayTitanBattle+" value="&lt;icon texture='GUI/Bullet'/&gt;Delays escalation by %1% turns"/>
+<entry name="DelayTitanBattle-" value="&lt;icon texture='GUI/Bullet'/&gt;Advances escalation by %1% turns"/>
+<entry name="FailQuest" value="&lt;icon texture='GUI/Bullet'/&gt;Fails %1%&lt;nbsp/&gt;%2%%3%%4%"/>
+<entry name="StartQuest" value="&lt;icon texture='GUI/Bullet'/&gt;Starts %1%&lt;nbsp/&gt;%2%%3%%4%"/>
 	
 </language>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onWeaponAttacked>
+		<defender>
+			<area affect="Unit" weight="1"/>
+			<area affect="Unit" weight="1">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<weaponDamage triggerEffects="0" useAttackerWeapon="1" factor="0.5"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onWeaponAttacked>
+</trait>

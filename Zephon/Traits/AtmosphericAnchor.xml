@@ -3,14 +3,18 @@
 	<modifiers>
 		<modifier effectDescription="EachTurn">
 			<effects>
-				<chips add="1"/>
 				<energy add="1"/>
+				<chips add="0.5"/>
 			</effects>
 		</modifier>
-		<modifier effectDescription="ForControllingCity">
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
 			<effects>
-				<chips mul="0.1"/>
-				<energy mul="0.1"/>
+				<flatResourcesFromOutposts mul="2.0"/>
 			</effects>
 		</modifier>
 	</modifiers>

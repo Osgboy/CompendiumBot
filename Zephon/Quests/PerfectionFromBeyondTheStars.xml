@@ -9,13 +9,13 @@
 			<options>
 				<option name="ConstructDefensesWithoutCreche" nextStage="ConstructDefensesWithoutCreche"/>
 				<option name="ConstructDefensesWithCreche" nextStage="ConstructDefensesWithCreche">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<mineralsCost add="40"/>
 							</effects>
 						</modifier>
-					</modifiers>	
+					</costModifiers>	
 				</option>
 				<option name="Abandon" nextStage=""/>
 			</options>

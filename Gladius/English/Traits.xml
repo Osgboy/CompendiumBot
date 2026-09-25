@@ -585,6 +585,9 @@
 <entry name="ChaosSpaceMarines/TemporalDistortion" value="Temporal Distortion"/>
 <entry name="ChaosSpaceMarines/TemporalDistortionDescription" value="Boon of Chaos that increases the movement."/>
 <entry name="ChaosSpaceMarines/TemporalDistortionFlavor" value="Time is altered around the champion."/>
+<entry name="ChaosSpaceMarines/TerrifyingCrescendo" value="Terrifying Crescendo"/>
+<entry name="ChaosSpaceMarines/TerrifyingCrescendoDescription" value="Attacked units lose morale."/>
+<entry name="ChaosSpaceMarines/TerrifyingCrescendoFlavor" value="As the discordant notes ring from a Noise Marine’s insane weaponry, they build to a peak of symphonic destruction that leaves even the bravest foe on their knees or fleeing the battlefield, desperate to get away from Slaanesh’s agonizing sonic onslaught. Those who stand and fight will see their armour and bones shattered, and organs ruptured."/>
 <entry name="ChaosSpaceMarines/ToxicHaemorrhage" value="Toxic Haemorrhage"/>
 <entry name="ChaosSpaceMarines/ToxicHaemorrhageDescription" value="Increases the damage against infantry and monstrous creature units."/>
 <entry name="ChaosSpaceMarines/ToxicHaemorrhageFlavor" value="Spurting vile vapours and heinous fluids, the Chaos Spawn’s cursed innards could spell the death of a less-blessed creature."/> <!-- MutatedBeyondReason result. -->
@@ -836,6 +839,9 @@
 <entry name="Eldar/ExpertHunter" value="Expert Hunter"/>
 <entry name="Eldar/ExpertHunterDescription" value="Increases the damage against monstrous creatures, vehicles and fortifications."/>
 <entry name="Eldar/ExpertHunterFlavor" value="The Shining Spears weaponry might be short-ranged but their Star Lances and Laser Lances are incredibly powerful, as they weave around larger targets, spying out their weak points."/>
+<entry name="Eldar/Flickerjump" value="Flickerjump"/>
+<entry name="Eldar/FlickerjumpDescription" value="Increases ranged damage reduction."/>
+<entry name="Eldar/FlickerjumpFlavor" value="As the Warp Spiders blink in and out of existence, flitting between the hell dimension of the warp and the real, second by second... it’s unsurprisingly hard to draw a clear bead on them. And before the target knows it, the death spinners have strewn monomolecular monofilament across the area, and it’s already too late for anything but a final prayer."/>
 <entry name="Eldar/FoodBuildingBonus" value="Exquisite Cultivation"/>
 <entry name="Eldar/FoodBuildingBonusDescription" value="Increases the food output."/>
 <entry name="Eldar/FoodBuildingBonusFlavor" value="So intensely do the Aeldari feel that even their basic foodstuffs are works of art, cultivated by craftsmen that have spent millenia perfecting their cuisine. With a wider range of ingredients and seasonings, they can work miracles with the seeming simplest foodstuffs."/>
@@ -1166,6 +1172,9 @@
 <entry name="Necrons/ConstructionBuildingBonus" value="Slave Enrichment"/>
 <entry name="Necrons/ConstructionBuildingBonusDescription" value="Increases the production output."/>
 <entry name="Necrons/ConstructionBuildingBonusFlavor" value="Minor modifications to your slaves' bodies and minds enables them to sleep less and work more, for as long as their fragile bodies last."/>
+<entry name="Necrons/ContainmentField" value="Containment Field"/>
+<entry name="Necrons/ContainmentFieldDescription" value="Increases invulnerable damage reduction."/>
+<entry name="Necrons/ContainmentFieldFlavor" value="To withstand both eternity and the worst that the universe can throw at it, the Seraptek Heavy Construct exists inside its own semi-permeable containment field. Though the arcane technology is unknown to Imperial science, it still functions perfectly after so many millenia."/>
 <entry name="Necrons/CtanNecrodermis" value="C'tan Necrodermis"/>
 <entry name="Necrons/CtanNecrodermisDescription" value="Increases the damage reduction."/>
 <entry name="Necrons/CtanNecrodermisBlast" value="C'tan Necrodermis Blast"/>
@@ -1305,6 +1314,12 @@
 <entry name="Orks/BeastSnaggaFlavor" value="Spying the largest or most dangerous threats on the battlefield – besides the Orks themselves – Beast Snaggas chase them down with gleeful enthusiasm."/>
 <entry name="Orks/BigBoss" value="&lt;string name='Actions/Orks/BigBoss'/&gt;"/>
 <entry name="Orks/BigBossDescription" value="Increases the hitpoints."/>
+<entry name="Orks/BlastajetAttackRun" value="Blastajet Attack Run"/>
+<entry name="Orks/BlastajetAttackRunDescription" value="Increases accuracy against ground targets."/>
+<entry name="Orks/BlastajetAttackRunFlavor" value="Devoid of such abstruse concerns as ammunition conservation or his own safety, the Mek pilot takes his Blastjet low. At this level, he strafes any infantry he can see, saturating the ground with fire, bombs and the occasional errant squig."/>
+<entry name="Orks/BlastajetForceField" value="Blastajet Force Field"/>
+<entry name="Orks/BlastajetForceFieldDescription" value="Increases invulnerable damage reduction."/>
+<entry name="Orks/BlastajetForceFieldFlavor" value="The Mek who built and pilots the Blastajet might be crazed with inventive bloodlust, but he loves his monstrous creation (and, secondarily, his own life). Only the best Force Field will do to protect his precious machine."/>
 <entry name="Orks/BlastDamage" value="&lt;string name='Traits/AstraMilitarum/BlastDamage'/&gt;"/>
 <entry name="Orks/BlastDamageDescription" value="&lt;string name='Traits/AstraMilitarum/BlastDamageDescription'/&gt;"/>
 <entry name="Orks/BlastDamageFlavor" value="&lt;string name='Traits/AstraMilitarum/BlastDamageFlavor'/&gt;"/>
@@ -1548,6 +1563,9 @@
 <entry name="SistersOfBattle/CityTier3" value="Sanctuary Fortress"/>
 <entry name="SistersOfBattle/CityTier3Description" value="Increases the tile acquisition radius."/>
 <entry name="SistersOfBattle/CityTier3Flavor" value="The Preceptory is more of a city now, resembling the hive cities that once dotted the planet’s surface. Beneath its bulk lies an undercity, above it tower spires and chantries. Perhaps only the Fortress-Monasteries of the Adeptus Astartes rival it in scale and holy adornment."/>
+<entry name="SistersOfBattle/DenunciaOratory" value="Denuncia Oratory"/>
+<entry name="SistersOfBattle/DenunciaOratoryDescription" value="Resets the cooldown of Virtue of Intolerance when this unit kills an enemy unit with the Quarry trait."/>
+<entry name="SistersOfBattle/DenunciaOratoryFlavor" value="Once the sisters of the Celestian Insidiants have identified a quarry, they will spare no effort to bring it down. Should they do so, they are reinvigorated by their faith and push themselves to find the next heretic."/>
 <entry name="SistersOfBattle/DivineDeliverance" value="&lt;string name='Actions/SistersOfBattle/DivineDeliverance'/&gt;"/>
 <entry name="SistersOfBattle/DivineDeliveranceDescription" value="&lt;string name='Actions/SistersOfBattle/DivineDeliveranceDescription'/&gt;"/>
 <entry name="SistersOfBattle/DivineDeliveranceFlavor" value="&lt;string name='Actions/SistersOfBattle/DivineDeliveranceFlavor'/&gt;"/>
@@ -1614,12 +1632,18 @@
 <entry name="SistersOfBattle/PurifyingRecitations" value="Purifying Recitations"/>
 <entry name="SistersOfBattle/PurifyingRecitationsDescription" value="Increases the damage."/>
 <entry name="SistersOfBattle/PurifyingRecitationsFlavor" value="“Our foes call us cold, inhuman, unfeeling. But we feel, we mourn, we rage. Let them feel our warmth—in our flamers, our meltas.”&lt;br/&gt;  — Canoness Vandire, In Nomine Strategi"/>
+<entry name="SistersOfBattle/Quarry" value="Quarry"/>
+<entry name="SistersOfBattle/QuarryDescription" value="Celestian Insidiants have increased accuracy against this unit."/>
+<entry name="SistersOfBattle/QuarryFlavor" value="&lt;string name='Traits/SistersOfBattle/DenunciaOratoryFlavor'/&gt;"/>
 <entry name="SistersOfBattle/RagingFervour" value="Raging Fervour"/>
 <entry name="SistersOfBattle/RagingFervourDescription" value="Increases the damage."/>
 <entry name="SistersOfBattle/RagingFervourFlavor" value="“The weapons in our hands are the instruments of our faith. Each bolt is a prayer sent to the heart of the faithless, spreading its word into their very being.”&lt;br/&gt;  — Canoness Vandire, In Nomine Strategi"/>
 <entry name="SistersOfBattle/RighteousJudgement" value="&lt;string name='Actions/SistersOfBattle/RighteousJudgement'/&gt;"/>
 <entry name="SistersOfBattle/RighteousJudgementDescription" value="&lt;string name='Actions/SistersOfBattle/RighteousJudgementDescription'/&gt;"/>
 <entry name="SistersOfBattle/RighteousJudgementFlavor" value="&lt;string name='Actions/SistersOfBattle/RighteousJudgementFlavor'/&gt;"/>
+<entry name="SistersOfBattle/RitualeNullificatus" value="Rituale Nullificatus"/>
+<entry name="SistersOfBattle/RitualeNullificatusDescription" value="Increases witchfire damage reduction."/>
+<entry name="SistersOfBattle/RitualeNullificatusFlavor" value="With the spiritual talismans and wrought-iron crowns embedded into their ornate power armour and their Simulacrum Nullificatus icon bearing the skull of a Pariah, psykers targeting these Sisters of Battle will find unholy powers sliding aside from their targets, leaving them miraculously unharmed…"/>
 <entry name="SistersOfBattle/SacresantShield" value="Sacresant Shield"/>
 <entry name="SistersOfBattle/SacresantShieldDescription" value="Increases the damage reduction."/>
 <entry name="SistersOfBattle/SacresantShieldFlavor" value="The faithful Celestian Sacresants stand firm against the worst horrors of the galaxy. Hordes of mutants and heretics crash futilely against their shield walls before being laid low with righteous fury."/>

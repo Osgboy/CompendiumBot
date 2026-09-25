@@ -6,9 +6,14 @@
 				<influence add="2"/>
 			</effects>
 		</modifier>
-		<modifier effectDescription="ForControllingCity">
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
 			<effects>
-				<influence mul="0.2"/>
+				<flatResourcesFromOutposts mul="2.0"/>
 			</effects>
 		</modifier>
 		<modifier>

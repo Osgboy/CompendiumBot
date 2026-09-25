@@ -9,6 +9,7 @@
 							<unit>
 								<enemy/>
 								<noTrait type="Headquarters"/>
+								<noTrait type="Hero"/>
 								<noTrait type="Titan"/>
 								<trait type="Large"/>
 								<trait type="Mechanical"/>
@@ -19,6 +20,7 @@
 							<killCargo/>
 							<changePlayer/>
 							<hitpointsFromMax min="0.333"/>
+							<addTrait type="HijackEffect"/>
 						</effects>
 					</modifier>
 				</modifiers>

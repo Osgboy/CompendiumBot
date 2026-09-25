@@ -5,8 +5,8 @@
 			<modifiers>
 				<modifier visible="0">
 					<effects>
-						<chipsCost base="10"/> <!-- %chipsCost base tier=4 factor=0.5 -->
-						<productionCost base="24.0"/> <!-- %productionCost base tier=4 factor=1 -->
+						<chipsCost base="8"/> <!-- %chipsCost base tier=3 factor=0.5 -->
+						<productionCost base="18.0"/> <!-- %productionCost base tier=3 factor=1 -->
 					</effects>
 				</modifier>
 			</modifiers>
@@ -26,7 +26,7 @@
 					<effects>
 						<chipsCost base="8"/> <!-- %chipsCost base tier=5 factor=0.25 -->
 						<energyCost base="15"/> <!-- %energyCost base tier=5 factor=0.5 -->
-						<productionCost base="18.0"/> <!-- %productionCost base tier=3 factor=1 -->
+						<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
 					</effects>
 				</modifier>
 			</modifiers>
@@ -66,6 +66,25 @@
 						<chipsCost base="10"/> <!-- %chipsCost base tier=5 factor=0.333 -->
 						<energyCost base="10"/> <!-- %energyCost base tier=5 factor=0.333 -->
 						<productionCost base="30.0"/> <!-- %productionCost base tier=5 factor=1 -->
+					</effects>
+				</modifier>
+			</modifiers>
+			<strategyModifiers>
+				<modifier>
+					<effects>
+						<increaseCyberScore base="0.5"/>
+						<increaseOperationsScore base="0.5"/>
+					</effects>
+				</modifier>
+			</strategyModifiers>
+		</constructPlayerAction>
+		<constructPlayerAction action="MachineMind"
+				requiredUpgrade="MachineMind">
+			<modifiers>
+				<modifier visible="0">
+					<effects>
+						<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+						<singularityCoresCost base="4"/> <!-- %singularityCoresCost base tier=6 factor=0.1 -->
 					</effects>
 				</modifier>
 			</modifiers>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unitAction name="Hijack"
+		passive="1">
+	<beginTargets>
+		<selfTarget>
+			<areas>
+				<area affect="Tile" radius="1" excludeRadius="0">
+					<modifiers>
+						<modifier effectDescription="ToAdjacentEnemyLargeMechanicalNonTitanNonHeroUnits">
+							<effects>
+								<addTrait type="Hijack"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</area>
+			</areas>
+		</selfTarget>
+	</beginTargets>
+</unitAction>

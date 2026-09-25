@@ -3,14 +3,18 @@
 	<modifiers>
 		<modifier effectDescription="EachTurn">
 			<effects>
-				<algae add="0.5"/>
 				<food add="1"/>
+				<algae add="0.5"/>
 			</effects>
 		</modifier>
-		<modifier effectDescription="ForControllingCity">
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
 			<effects>
-				<food mul="0.1"/>
-				<algae mul="0.1"/>
+				<flatResourcesFromOutposts mul="2.0"/>
 			</effects>
 		</modifier>
 	</modifiers>

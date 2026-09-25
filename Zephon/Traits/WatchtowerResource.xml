@@ -7,10 +7,14 @@
 				<research add="1"/>
 			</effects>
 		</modifier>
-		<modifier effectDescription="ForControllingCity">
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
 			<effects>
-				<influence mul="0.1"/>
-				<research mul="0.1"/>
+				<flatResourcesFromOutposts mul="2.0"/>
 			</effects>
 		</modifier>
 	</modifiers>

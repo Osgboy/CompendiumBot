@@ -29,18 +29,16 @@
 		<modifier visible="0">
 			<effects>
 				<accuracy base="6"/>
-				<algaeCost base="10"/> <!-- %algaeCost base tier=7 factor=0.167 -->
-				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=7 factor=0.167 -->
+				<algaeCost base="10"/> <!-- %algaeCost base tier=6 factor=0.25 -->
+				<algaeUpkeep base="0.5"/> <!-- %algaeUpkeep base tier=6 factor=0.25 -->
 				<armor base="2"/>
-				<energyCost base="20"/> <!-- %energyCost base tier=7 factor=0.333 -->
-				<energyUpkeep base="1.0"/> <!-- %energyUpkeep base tier=7 factor=0.333 -->
-				<foodCost base="20"/> <!-- %foodCost base tier=7 factor=0.333 -->
-				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=7 factor=0.333 -->
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
 				<groupSizeMax base="3"/>
 				<hitpointsMax base="8"/> <!-- %hitpointsMax base tier=5 -->
 				<moraleMax base="8"/>
 				<movementMax base="4"/>
-				<productionCost base="42.0"/> <!-- %productionCost base tier=7 factor=1 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
 			</effects>
 		</modifier>
 	</modifiers>
@@ -56,6 +54,7 @@
 		<appear>
 			<model>
 				<action animation="Units/CaitiffAbility0"
+						effectBlueprint="Effects/DeformityAppear"
 						responseSound="Responses/Units/CaitiffAppear"
 						sound="Units/CaitiffAppear"
 						soundCount="3"/>
@@ -162,7 +161,7 @@
 			</beginTargets>
 		</unitAction>
 		<useWeapon weaponSlotName="LeechingTouch"
-				cooldown="1">
+				cooldown="5">
 			<model>
 				<attack chargeAnimation="Units/CaitiffCharge"
 						meleeAnimation="Units/CaitiffAbility1"
@@ -172,6 +171,33 @@
 						meleeSoundCount="5"
 						responseSound="Responses/Units/CaitiffLeechingTouch"/>
 			</model>
+			<endTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<hitpointsFromMax add="0.333"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<conditions>
+										<unit>
+											<hitpointsFraction less="0.667"/>	
+										</unit>
+									</conditions>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</endTargets>
 		</useWeapon>
 	</actions>
 	<traits>

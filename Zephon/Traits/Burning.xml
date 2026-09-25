@@ -4,7 +4,22 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="OnFire"/>
+							</unit>
+						</conditions>
+						<effects>
+							<traitRank type="OnFire" add="1"/>
+						</effects>
+					</modifier>
 					<modifier effectDescription="ToEnemy">
+						<conditions>
+							<unit>
+								<noTrait type="OnFire"/>
+							</unit>
+						</conditions>
 						<effects>
 							<addTrait type="OnFire" duration="1"/>
 						</effects>

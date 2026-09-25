@@ -3,13 +3,13 @@
 		<stage name="Intro">
 			<options>
 				<option name="WelcomeCircus">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<foodCost add="30"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 					<nextStages>
 						<nextStage name="FortuneTelling" weight="1"/>
 						<nextStage name="AbkluthJousting" weight="1"/>
@@ -189,7 +189,7 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<addTrait type="Blackout" duration="3"/>
+							<addTrait type="HighVoltage" duration="3"/>
 						</effects>
 					</modifier>
 				</playerModifiers>

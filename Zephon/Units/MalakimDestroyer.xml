@@ -142,7 +142,10 @@
 			</model>
 		</skip>
  		<useWeapon weaponSlotName="StickyFoam"
-				cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				cooldown="3"
+				requiredActionPoints="0"
 				requiredUpgrade="StickyFoam">
 			<model>
 				<attack animation="Units/MalakimDestroyerAbility0"

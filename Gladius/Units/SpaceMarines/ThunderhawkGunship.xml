@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit dlc="Supplement18">
+	<model>		
+		<unit mesh="Units/SpaceMarines/ThunderhawkGunship"
+				material="Units/SpaceMarines/ThunderhawkGunship"
+				idleAnimation="Units/SpaceMarines/ThunderhawkGunshipIdle"
+				idleAnimationCount="3"
+				idleContinuously="1"
+				portraitFocusHeightModifier="48"
+				portraitZoomModifier="1.1"
+				position="0 0 0"
+				scale="1.4 1.4 1.4"
+				normalWeight="1.0"
+				explosionsBone="Hull_Master"
+				uvAnimated="0"/>
+	</model>
+	<weapons>
+		<weapon name="ThunderhawkCannon">
+			<model>
+				<projectileWeapon muzzleBone="CannonMuzzle" fireDelay="1.1" fireInterval="10"/>
+			</model>					
+		</weapon>
+		<weapon name="TwinLinkedHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone="Bolter_Front_L_Muzzle" muzzleCount="2"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinLinkedHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone="Bolter_Front_R_Muzzle" muzzleCount="2"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinLinkedHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone="Bolter_Wing_L_Muzzle" muzzleCount="2"/>
+			</model>		
+		</weapon>
+		<weapon name="TwinLinkedHeavyBolter">
+			<model>
+				<projectileWeapon muzzleBone="Bolter_Wing_R_Muzzle" muzzleCount="2"/>
+			</model>		
+		</weapon>
+		<weapon name="Lascannon" count="2">
+			<model>
+				<beamWeapon muzzleBone="LasMuzzle" muzzleCount="2" fireDelay="0.7" cycleMuzzles="0"/>
+			</model>
+		</weapon>
+		<weapon name="HellstrikeMissile" count="6" slotName="HellstrikeMissile" enabled="0">
+			<model>
+				<missileWeapon muzzleBone="MissileMuzzle" muzzleCount="6" fireInterval="1.33"/> 
+			</model>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="8"/> <!-- %armor base armor=12/12/10 -->
+				<cargoSlots base="9"/> <!-- %cargoSlots base capacity=30 -->
+				<energyUpkeep base="24.0"/> <!-- %energyUpkeep base tier=13 factor=1 -->
+				<energyCost base="240.0"/> <!-- %energyCost base tier=13 factor=0.5 -->
+				<hitpointsMax base="108.0"/> <!-- %hitpointsMax base armor=12/12/10 wounds=9 -->
+				<moraleMax base="12"/> <!-- %moraleMax base leadership=9 -->
+				<movementMax base="6"/>
+				<productionCost base="78.0"/> <!-- %productionCost base tier=13 factor=1 -->
+				<rangedAccuracy base="8"/> <!-- %rangedAccuracy base ballisticSkill=4 -->
+				<requisitionsCost base="240.0"/> <!-- %requisitionsCost base tier=13 factor=0.5 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="1.0"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>
+	<actions>
+		<attack>
+			<model>
+				<action
+						animation="Units/SpaceMarines/ThunderhawkGunshipAttack"
+						beginFire="0.67"
+						endFire="2.0"/>
+			</model>				
+		</attack>
+		<die>
+			<model>
+				<action animation="Units/SpaceMarines/ThunderhawkGunshipDie0"
+						sound="Units/LargeVehicleDie"
+						soundCount="3"
+						soundDelay="0.1"
+						voiceSound="Units/HugeArmoredDie"
+						voiceSoundCount="1"
+						voiceSoundDelay="2.2"/>
+			</model>		
+		</die>
+		<move>
+			<model>
+				<action sound="Units/SpaceMarines/StormravenGunshipMove"
+						soundCount="3"/>
+			</model>				
+		</move>
+		<auraOfFear passive="1">
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Tile" excludeRadius="0" radius="1">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait name="Fear"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</auraOfFear>
+		<useWeapon cooldown="5"
+				requiredActionPoints="0"
+				consumedActionPoints="0"
+				weaponSlotName="HellstrikeMissile">
+			<model>
+				<action	animation="Units/SpaceMarines/ThunderhawkGunshipAbility"
+						beginFire="0.67"
+						endFire="2.0"/>
+			</model>	
+		</useWeapon>
+		<jink consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="3">
+			<model>
+				<action sound="Actions/ChargeUp"/>
+			</model>
+			<conditions>
+				<unit>
+					<notAttackedThisTurn/>
+				</unit>
+			</conditions>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="Jink"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</jink>
+		<powerOfTheMachineSpirit consumedActionPoints="0" consumedMovement="0" requiredActionPoints="0" cooldown="5">
+			<model>
+				<action sound="Actions/MechanicalBuff"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affects="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait duration="1" name="PowerOfTheMachineSpirit"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</powerOfTheMachineSpirit>
+	</actions>
+	<traits>
+		<trait name="AndTheyShallKnowNoFear"/>
+		<trait name="AssaultVehicle"/>
+		<trait name="CeramitePlating" requiredUpgrade="SpaceMarines/CeramitePlating"/>
+		<trait name="ExtraVehicleArmour" requiredUpgrade="SpaceMarines/ExtraVehicleArmour"/>
+		<trait name="LastStand" requiredUpgrade="SpaceMarines/LastStand"/>
+		<trait name="Flyer"/>
+		<trait name="SuperHeavy"/>
+		<trait name="Transport"/>
+		<trait name="Vehicle"/>
+	</traits>
+</unit>

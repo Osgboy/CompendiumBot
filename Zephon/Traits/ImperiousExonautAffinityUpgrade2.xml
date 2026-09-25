@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Upgrades/ImperiousExonautAffinityUpgrade2" visibleOnWeapon="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<accuracy min="7"/> <!-- Just for hint. Effect is set in ShirakiCruiseMissile.xml -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<onWeaponAttacked>
+		<defender>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<effects>
+							<addFeature type="NuclearFallout" duration="2"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onWeaponAttacked>
+</trait>

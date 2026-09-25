@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon explosionsBlueprint="Effects/GravitonExplosions"
+				muzzleFlashesBlueprint="Effects/GravitonEmitterMuzzleFlashes"
+				projectilesBlueprint="Effects/HiddenProjectiles"
+				fireSound="Weapons/GravitonEmitter"
+				fireSoundCount="2"
+				fireSoundContinuously="1"
+				fireSoundEndCount="2"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="2"/> <!-- %armorPenetration base tier=3 -->
+				<attacks base="2"/>
+				<damage base="1.5"/> <!-- %damage base tier=2 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="1"/>
+	<traits>
+		<trait type="GravitationalCompression"/>
+		<trait type="IgnoresCover"/>
+	</traits>
+</weapon>
+

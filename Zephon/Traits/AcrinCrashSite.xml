@@ -6,9 +6,14 @@
 				<research add="2"/>
 			</effects>
 		</modifier>
-		<modifier effectDescription="ForControllingCity">
+		<modifier effectDescription="EachTurnWhileInsideCity">
+			<conditions ignoreForTraitVisibility="1">
+				<tile>
+					<city/>
+				</tile>
+			</conditions>
 			<effects>
-				<research mul="0.2"/>
+				<flatResourcesFromOutposts mul="2.0"/>
 			</effects>
 		</modifier>
 		<modifier effectDescription="Every10Turns">
@@ -16,7 +21,7 @@
 				<turn divisible="10"/>
 			</conditions>
 			<effects>
-				<research add="10"/> <!-- ResourceNetwork and LogisticsExpert (flatResourcesFromOutposts) boosts this. Complex to fix. Maybe rather change the effect, +10 research every 10 turns is not that interesting anyway. Could be e.g. a player ability that gives 10 research. -->
+				<flatResourcesFromOutposts mul="5.0"/>
 			</effects>
 		</modifier>
 	</modifiers>

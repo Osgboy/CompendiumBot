@@ -4,6 +4,12 @@
         <modifier>
             <effects>
                 <canCaptureOutposts add="-1"/>
+                <canPickUpCaches add="-1"/>
+            </effects>
+        </modifier>
+        <modifier visible="0">
+            <effects>
+                <canFly add="1"/>
             </effects>
         </modifier>
     </modifiers>

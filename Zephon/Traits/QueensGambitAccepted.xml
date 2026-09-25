@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnPlayer="1">
+	<modifiers>
+		<modifier effectDescription="Every5Turns">
+			<conditions ignoreForTraitVisibility="1">
+				<onlyPlayer/>
+				<turn divisible="5"/>
+			</conditions>
+			<effects>
+				<influence add="30"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

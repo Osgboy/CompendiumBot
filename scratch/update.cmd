@@ -1,4 +1,4 @@
-set base=C:\Users\olive\Documents\GitHub\CompendiumBot
+set base=C:\Users\olive\Documents\Projects\CompendiumBot
 
 python %base%\scratch\update.py %base%
 

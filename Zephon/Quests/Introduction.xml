@@ -1,0 +1,75 @@
+<quest firstTurn="-1">
+	<stages>
+		<stage name="FoundCity"
+				nextStageOnSuccess="ConstructBarracks">
+			<objectives>
+				<executeUnitOrder name="FoundCity" 
+						orderName="FoundCity"/>
+			</objectives>
+		</stage>
+		<stage name="ConstructBarracks"
+				nextStageOnSuccess="EstablishContacts">
+			<objectives>
+				<executeBuildingGroupOrder name="ConstructBarracks"
+						orderName="ConstructBuilding/HumanInfantry"/>
+			</objectives>
+		</stage>
+		<stage name="EstablishContacts" 
+				nextStageOnSuccess="FormTradeAgreementWithNPC">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<noControl/>
+							<noFaction name="Neutral"/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<objectives>
+				<accomplishPlayerConditions name="EstablishContacts" count="2">
+					<playerConditions>
+						<contact/>
+					</playerConditions>
+				</accomplishPlayerConditions>
+			</objectives>
+		</stage>
+		<stage name="FormTradeAgreementWithNPC" 
+				nextStageOnSuccess="DefeatHeartlessArtificer">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<native/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<objectives>
+				<accomplishPlayerConditions name="FormTradeAgreementWithNPC" count="1">
+					<playerConditions>
+						<tradeAgreement/>
+					</playerConditions>
+				</accomplishPlayerConditions>
+			</objectives>
+		</stage>
+		<stage name="DefeatHeartlessArtificer">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<faction name="HeartlessArtificer"/>
+						</player>
+					</conditions>
+				</playerSelector>
+			</modifications>
+			<objectives>
+				<accomplishPlayerConditions name="DefeatHeartlessArtificer" count="1">
+					<playerConditions>
+						<lost/>
+					</playerConditions>
+				</accomplishPlayerConditions>
+			</objectives>
+		</stage>
+	</stages>
+ </quest>

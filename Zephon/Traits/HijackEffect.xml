@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visible="0" addEffect="Effects/Hijack">
+	<onUnitAppeared>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<removeTrait type="HijackEffect"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onUnitAppeared>
+</trait>

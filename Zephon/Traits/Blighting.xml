@@ -4,7 +4,22 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="Blighted"/>
+							</unit>
+						</conditions>
+						<effects>
+							<traitRank type="Blighted" add="1"/>
+						</effects>
+					</modifier>
 					<modifier effectDescription="ToEnemy">
+						<conditions>
+							<unit>
+								<noTrait type="Blighted"/>
+							</unit>
+						</conditions>
 						<effects>
 							<addTrait type="Blighted" duration="1"/>
 						</effects>

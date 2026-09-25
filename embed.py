@@ -20,6 +20,7 @@ DLCS = {
     'Supplement15': 'Ultima Founding',
     'Supplement16': 'Onslaught Pack',
     'Supplement17': 'Rampage Pack',
+    'Supplement18': 'Eradication Pack',
     'LordOfSkulls': 'Lord of Skulls'
 }
 RARITY_COLORS = {

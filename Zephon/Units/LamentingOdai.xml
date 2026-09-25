@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Voice" dlc="DLC3">
+	<model>
+		<unit bloodBone="Body"
+				explosionsBone="Body"
+				groupMemberDeltaX="70"
+				groupMemberDeltaY="70"
+				material="Units/LamentingOdai"
+				mesh="Units/LamentingOdai"
+				normalWeight="0.1"
+				position="0 0 32"
+				scale="0.8 0.8 0.8"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="ReturnToSurthodai">
+			<models>
+				<weapon/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<armor base="0"/>
+				<algaeCost base="3"/> <!-- %algaeCost base tier=2 factor=0.333 -->
+				<algaeUpkeep base="0.17"/> <!-- %algaeUpkeep base tier=2 factor=0.333 -->
+				<foodCost base="3"/> <!-- %foodCost base tier=2 factor=0.333 -->
+				<foodUpkeep base="0.17"/> <!-- %foodUpkeep base tier=2 factor=0.333 -->
+				<groupSizeMax base="5"/>
+				<healingRate base="0"/>
+				<hitpointsMax base="2"/> <!-- %hitpointsMax base tier=1 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<productionCost base="12.0"/> <!-- %productionCost base tier=2 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<actions>
+		<appear>
+			<model>
+				<action animation="Units/LamentingOdaiAbility0"
+						beginEffect="0.01"
+						effectBlueprint="Effects/LamentingOdaiAppear"
+						responseSound="Responses/Units/LamentingOdaiAppear"
+						sound="Units/LamentingOdaiAppear"
+						soundCount="3"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack meleeAnimation="Units/LamentingOdaiMelee"
+						meleeBeginSwing="0.5"
+						meleeEndSwing="0.6"
+						effectBlueprint="Effects/ReturnToSurthodai"
+						responseSound="Responses/Units/LamentingOdaiAttack"
+						responseSoundCount="3"
+						suicideBomber="1"
+						meleeSound="Units/LamentingOdaiMelee"
+						meleeSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/LamentingOdaiDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.8"
+						voiceSound="Units/LamentingOdaiDie"
+						voiceSoundCount="3"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/LamentingOdaiImpact"
+						responseSound="Responses/Units/LamentingOdaiEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/LamentingOdaiIdle"
+						animationCount="3"/>
+			</model>	
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/LamentingOdaiMove"
+						responseSound="Responses/Units/LamentingOdaiMove"
+						responseSoundCount="3"
+						sound="Units/LamentingOdaiMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/> 
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/LamentingOdaiHoldPosition"/>
+			</model>
+		</skip>
+	</actions>
+	<traits>
+		<trait type="Biological"/>
+		<trait type="Decaying"/>
+		<trait type="DeviantProliferation" requiredUpgrade="DeviantProliferation"/>
+		<trait type="Hovering"/>
+		<trait type="SurthodaisKiss" requiredUpgrade="SurthodaisKiss"/>
+	</traits>
+</unit>

@@ -6,15 +6,14 @@
 	<modifiers>
 		<modifier>
 			<effects>
-				<armorPenetration base="10"/> <!-- %armorPenetration base tier=11 -->
-				<attacks base="1"/>
+				<armorPenetration base="3"/> <!-- %armorPenetration base tier=4 -->
+				<attacks base="2"/>
 				<damage base="3"/> <!-- %damage base tier=4 -->
 			</effects>
 		</modifier>
 	</modifiers>
 	<target rangeMax="1"/>
 	<traits>
-		<trait type="LeechingTouch"/>
 		<trait type="Melee"/>
 	</traits>
 </weapon>

@@ -1,0 +1,166 @@
+<quest firstTurn="-1">
+ 	<conditions>
+		<player>
+			<faction name="SyncreticDeva"/>
+		</player>
+	</conditions>
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="SeekOracle" nextStage="SeekOracle"/>
+				<option name="Reject" nextStage=""/>
+			</options>
+		</stage>
+		<stage name="SeekOracle" 
+				nextStageOnSuccess="SeekOracleSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="8">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitOracleShard"/>
+			</objectives>
+		</stage>
+		<stage name="SeekOracleSuccess">
+			<options>
+				<option name="FindAnotherWiseMan" nextStage="FindAnotherWiseMan"/>
+				<option name="FeedFamilies" nextStage="FeedFamilies"/>
+			</options>
+		</stage>
+		<stage name="FindAnotherWiseMan" 
+				nextStageOnSuccess="FindAnotherWiseManSuccess">
+			<objectives>
+				<executeBuildingGroupOrder name="ConstructHoloTheater"
+						orderName="ConstructBuilding/Loyalty"/>
+			</objectives>
+		</stage>
+		<stage name="FindAnotherWiseManSuccess">
+			<options>
+				<option name="MakeFriends" nextStage="MakeFriends"/>
+				<option name="PickUpSticks" nextStage="PickUpSticks"/>
+			</options>
+		</stage>
+		<stage name="FeedFamilies" 
+				nextStageOnSuccess="FeedFamiliesSuccess">
+			<objectives>
+				<executeBuildingGroupOrder name="ConstructGreenhouseFarm"
+						orderName="ConstructBuilding/Food"/>
+			</objectives>
+		</stage>
+		<stage name="FeedFamiliesSuccess">
+			<options>
+				<option name="MakeFriends" nextStage="MakeFriends"/>
+				<option name="PickUpSticks" nextStage="PickUpSticks"/>
+			</options>
+		</stage>
+		<stage name="MakeFriends" 
+				nextStageOnSuccess="MakeFriendsSuccess">
+			<objectives>
+				<executeDiplomacyAction name="ExecutePraise"
+						count="3">
+					<targetActions>
+						<action name="AcceptPraise"/>
+					</targetActions>
+				</executeDiplomacyAction>
+			</objectives>
+		</stage>
+		<stage name="MakeFriendsSuccess">
+			<options>
+				<option name="StudyHeavens" nextStage="StudyHeavens"/>
+				<option name="CountRice" nextStage="CountRice"/>
+			</options>
+		</stage>
+		<stage name="PickUpSticks" 
+				nextStageOnSuccess="PickUpSticksSuccess">
+			<objectives>
+				<executeBuildingGroupOrder name="AcquireTiles"
+						count="3"
+						orderName="AcquireTile"/>
+			</objectives>
+		</stage>
+		<stage name="PickUpSticksSuccess">
+			<options>
+				<option name="StudyHeavens" nextStage="StudyHeavens"/>
+				<option name="CountRice" nextStage="CountRice"/>
+			</options>
+		</stage>
+		<stage name="StudyHeavens" 
+				nextStageOnSuccess="StudyHeavensSuccess">
+			<objectives>
+				<produceUnit name="ProduceFlyingUnit" traitType="Flying" count="3" ignoreExisting="1"/>
+			</objectives>
+		</stage>
+		<stage name="StudyHeavensSuccess">
+			<options>
+				<option name="FalseChoiceGod" nextStage="FalseChoice"/>
+				<option name="FalseChoiceNotGod" nextStage="FalseChoice"/>
+			</options>
+		</stage>
+		<stage name="CountRice" 
+				nextStageOnSuccess="CountRiceSuccess">
+			<objectives>
+				<accumulateFood count="126"/>
+			</objectives>
+		</stage>
+		<stage name="CountRiceSuccess">
+			<options>
+				<option name="FalseChoiceGod" nextStage="FalseChoice"/>
+				<option name="FalseChoiceNotGod" nextStage="FalseChoice"/>
+			</options>
+		</stage>
+		<stage name="FalseChoice">
+			<options>
+				<option name="ZephonGod" nextStage="ZephonGod"/>
+				<option name="ZephonNotGod" nextStage="ZephonNotGod"/>
+			</options>
+		</stage>
+		<stage name="ZephonGod">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<influence add="80"/>
+							<chips add="40"/>
+							<addUpgrade name="ZephonUnitProduction"/>
+							<unlockAchievement name="FitForAdoration"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="ZephonNotGod">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addPlayerAction type="LegacyExploit"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+</quest>

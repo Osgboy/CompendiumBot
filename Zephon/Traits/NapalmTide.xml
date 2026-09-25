@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait icon="Weapons/NapalmTide" visibleOnWeapon="1">
+	<onWeaponAttacked>
+		<defender>
+			<area affect="Tile">
+				<modifiers>
+					<modifier>
+						<effects>
+							<addFeature type="Fire" duration="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</defender>
+	</onWeaponAttacked>
+</trait>

@@ -1,0 +1,194 @@
+<quest lastTurn="60" dlc="DLC3">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Search" nextStage="Search"/>
+				<option name="Ignore" nextStage="Ignore"/>
+			</options>
+		</stage>
+		<stage name="Ignore">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="GrainRaiders" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="Search"
+				nextStageOnFailure="Ignore"
+				nextStageOnSuccess="SearchSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="5">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="5" waves="1">
+					<attackers>
+						<unit type="Militant" token="Invader"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="SearchSuccess">
+			<options>
+				<option name="Capture" nextStage="Capture"/>
+			</options>
+		</stage>
+		<stage name="Capture" nextStageOnSuccess="CaptureSuccess">
+			<modifications>
+				<unitSelector>
+					<conditions>
+						<unit>
+							<token name="Invader"/>
+						</unit>
+					</conditions>
+				</unitSelector>
+				<unitModifiers>
+					<modifier>
+						<effects>
+							<removeUnit/>
+						</effects>
+					</modifier>
+				</unitModifiers>
+				<nearCityTileSelector count="3" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<visitTile name="VisitNewBunker"/>
+			</objectives>
+		</stage>
+		<stage name="CaptureSuccess">
+			<options>
+				<option name="RecruitMarin">
+					<nextStages>
+						<nextStage name="RecruitMarinSuccess" weight="2"/>
+						<nextStage name="RecruitMarinFailure" weight="1"/>
+					</nextStages>
+				</option>
+				<option name="IntroduceMarinChieftess" nextStage="IntroduceMarinChieftess">
+					<conditions>
+						<playerWithFaction faction="Chieftess">
+							<standingTier greater="3"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="RejectMarin" nextStage="RejectMarin"/>
+			</options>
+		</stage>
+		<stage name="RecruitMarinSuccess">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="MarinMediates" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="RecruitMarinFailure">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="ProfessionalAgitator" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+			</modifications>
+		</stage>
+		<stage name="IntroduceMarinChieftess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<influence add="80"/>
+							<!--Add level 10 Wastelander in Endgame -->
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="RejectMarin">
+			<modifications>
+				<randomCitySelector count="1">
+					<conditions>
+						<city>
+							<control/>
+						</city>
+					</conditions>
+				</randomCitySelector>
+				<cityModifiers>
+					<modifier>
+						<effects>
+							<addTrait type="TheMythThatWasMarin" duration="10"/>
+						</effects>
+					</modifier>
+				</cityModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addItem type="RallyingHolobeacon"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

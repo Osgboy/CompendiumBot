@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait alwaysVisible="1" category="Buff">
+	<onEnemyKilledSelf>
+		<area affects="UnitAction">
+			<modifiers>
+				<modifier>
+					<conditions>
+						<unit>
+							<cooldownAction name="SistersOfBattle/VirtueOfIntolerance"/>
+						</unit>
+					</conditions>
+					<effects>
+						<cooldown add="-10"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</onEnemyKilledSelf>
+</trait>

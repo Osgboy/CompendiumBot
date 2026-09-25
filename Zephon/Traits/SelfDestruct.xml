@@ -4,6 +4,15 @@
 		<attacker>
 			<area affect="Unit">
 				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<addTrait type="NoDeathMoraleOrExperience"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="Unit">
+				<modifiers>
 					<modifier>
 						<effects>
 							<hitpointsFromMax add="-1.0"/>

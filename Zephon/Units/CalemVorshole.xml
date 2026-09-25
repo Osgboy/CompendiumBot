@@ -190,24 +190,7 @@
 				</modifier>
 			</scoreModifiers>
 		</unitCast>
-		<unitAction name="Hijack"
-				passive="1">
-			<beginTargets>
-				<selfTarget>
-					<areas>
-						<area affect="Tile" radius="1" excludeRadius="0">
-							<modifiers>
-								<modifier effectDescription="ToAdjacentEnemyLargeMechanicalNonTitanUnits">
-									<effects>
-										<addTrait type="Hijack"/>
-									</effects>
-								</modifier>
-							</modifiers>
-						</area>
-					</areas>
-				</selfTarget>
-			</beginTargets>
-		</unitAction>
+		<unitAction blueprint="Hijack"/>
 	</actions>
 	<traits>
 		<trait type="Biological"/>

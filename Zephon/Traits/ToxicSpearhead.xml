@@ -4,9 +4,21 @@
 		<defender>
 			<area affect="Unit">
 				<modifiers>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="Biological"/>
+								<trait type="Poisoned"/>
+							</unit>
+						</conditions>
+						<effects>
+							<traitRank type="Poisoned" add="1"/>
+						</effects>
+					</modifier>
 					<modifier effectDescription="ToBiologicalEnemy">
 						<conditions>
 							<unit>
+								<noTrait type="Poisoned"/>
 								<trait type="Biological"/>
 							</unit>
 						</conditions>

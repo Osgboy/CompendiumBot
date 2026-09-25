@@ -4,8 +4,8 @@
 <entry name="BetaStartTitle" value="Welcome to the Beta"/>
 <entry name="CallDeclined" value="Call Declined"/>
 <entry name="ConfirmDelete" value="Are you sure you want to delete “%1%”?"/>
-<entry name="ConfirmDisband" value="Are you sure you want to disband “%1%”?"/>
-<entry name="ConfirmDismantle" value="Are you sure you want to dismantle “%1%”?"/>
+<entry name="ConfirmDisband" value="Are you sure you want to disband “%1%”? Its production cost will not be refunded."/>
+<entry name="ConfirmDismantle" value="Are you sure you want to dismantle “%1%”? Its construction cost will not be refunded."/>
 <entry name="ConfirmOverwrite" value="Are you sure you want to overwrite “%1%”?"/>
 <entry name="ConfirmRemoveItem" value="Are you sure you want to destroy “%1%”?"/>
 <entry name="ConfirmRestoreDefaults" value="Are you sure you want to restore the default %1% settings?"/>
@@ -27,6 +27,8 @@
 <entry name="GraphicsDriverOutdated" value="Your graphics driver is outdated.&lt;br/&gt;&lt;br/&gt;To improve stability and performance, please update your graphics driver by visiting your graphics card manufacturer's support website."/>
 <entry name="IncompatibleVersion" value="Incompatible game version."/>
 <entry name="Info" value="Info"/>
+<entry name="IntelCPUPossiblyDegraded" value="Your system is already using Intel's recommended microcode, but 13th and 14th-generation desktop processors that were already damaged can still crash or freeze.&lt;br/&gt;&lt;br/&gt;If you experience unexplained crashes, try lowering the P-core multiplier. If that stops the crashes, contact Intel, your computer manufacturer, or the retailer about a warranty replacement."/>
+<entry name="IntelCPUStability" value="Some Intel 13th and 14th-generation desktop processors may cause unexplained crashes or freezes.&lt;br/&gt;&lt;br/&gt;If you experience this, update your motherboard BIOS to the latest version, load Intel Default Settings if available, and remove any CPU overclocking or undervolting. Intel has extended warranty coverage for eligible processors."/>
 <entry name="Kicked" value="You have been kicked from the server."/>
 <entry name="MasterServerUnreachable" value="Could not connect to master server."/>
 <entry name="MissingDLC" value="Missing DLC."/>
@@ -52,6 +54,8 @@
 <entry name="ScreenShotSaveError" value="Error saving screen shot"/>
 <entry name="ServerUnreachable" value="Could not connect to server.&lt;br/&gt;&lt;br/&gt;To improve connectivity, ensure you have disabled your firewalls and enabled UPnP on your router or forwarded TCP port %1% to your local machine."/>
 <entry name="SelectTarget" value="Select target"/>
+<entry name="StatsExportError" value="Error exporting stats"/>
+<entry name="StatsExported" value="Stats exported"/>
 <entry name="TerminatedWithDisableMods" value="Mods have been disabled because of a crash. Visit the mods screen to re-enable them."/>
 <entry name="TermsAndConditions" value="Terms and Conditions"/>
 <entry name="TurnTimerPaused" value="%1% paused timer."/>

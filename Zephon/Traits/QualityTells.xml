@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<onTraitAdded>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier>
+						<effects>
+							<level add="1"/>
+						</effects>
+					</modifier>
+					<modifier requiredUpgrade="QualityTellsUpgrade">
+						<effects>
+							<level add="1"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+			<area affect="UnitPlayer">
+				<modifiers>
+					<modifier requiredUpgrade="QualityTellsUpgrade2" effectDescription="WhenProduced">
+						<effects>
+							<research add="12"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTraitAdded>
+</trait>

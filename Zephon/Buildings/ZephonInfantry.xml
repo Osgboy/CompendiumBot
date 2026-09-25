@@ -30,5 +30,13 @@
 		<produceUnit unit="Sentry"/>
 		<produceUnit unit="Hammerhead"/>
 		<produceUnit unit="Warden"/>
+		<produceUnit unit="Eradicator"/>
+		<produceUnit unit="ZephonTitan">
+			<conditions>
+				<player>
+					<mutatorActive name="WhatCarriesAcross"/>
+				</player>
+			</conditions>
+		</produceUnit>
 	</actions>
 </building>

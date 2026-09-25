@@ -30,13 +30,13 @@
 			</modifications>
 			<options>
 				<option name="Feed">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<mineralsCost add="20"/>
 							</effects>
 						</modifier>
-					</modifiers>
+					</costModifiers>
 					<nextStages>
 						<nextStage name="FeedFailure" weight="1"/>
 						<nextStage name="FeedSuccess" weight="2"/>

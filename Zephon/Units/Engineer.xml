@@ -195,6 +195,18 @@
 					</areas>
 				</target>
 			</beginTargets>
+			<scoreModifiers>
+				<modifier>
+					<conditions>
+						<tile>
+							<feature type="Bleed"/>
+						</tile>
+					</conditions>
+					<effects>
+						<score add="-0.75"/>
+					</effects>
+				</modifier>
+			</scoreModifiers>
 		</unitCast>
 		<unitCast name="Tune"
 				cooldown="1">
@@ -344,6 +356,7 @@
 							<noFeatureCategory name="Bleed"/>
 							<noFeatureCategory name="Road"/>
 							<noFeature type="Fire"/>
+							<noFeature type="FragmentOfTheFulcrum"/>
 							<noFeature type="Volcano"/>
 							<noEnemyUnit/>
 							<noCity/>

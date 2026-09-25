@@ -47,7 +47,10 @@
 <entry name="AttacksPerAdditionalEnemyGroupMember" value="Attacks Per Additional Target Group Member"/>
 <entry name="AttacksPerAdditionalEnemyGroupMemberIcon" value="&lt;icon height='20' texture='Icons/Attributes/Attacks'/&gt;"/>
 <entry name="BuildingSlots" value="Building Slots"/>
+<entry name="BuildingSlotsDescription" value="The number of buildings that can be constructed on a tile."/>
 <entry name="BuildingSlotsIcon" value="&lt;icon height='20' texture='Icons/Attributes/BuildingSlots'/&gt;"/>
+<entry name="BlockMovement" value="movement for non-flying units"/>
+<entry name="BlockMovement+" value="Blocks"/>
 <entry name="BlockSight" value="sight from non-adjacent tiles"/>
 <entry name="BlockSight+" value="Blocks"/>
 <entry name="CanBeShaken" value="shaken"/>
@@ -57,10 +60,12 @@
 <entry name="CanCaptureOutposts" value="capture outposts"/>
 <entry name="CanCaptureOutposts+" value="Can"/>
 <entry name="CanCaptureOutposts-" value="Cannot"/>
-<entry name="CanCaptureOutpostsIcon" value="&lt;icon height='20' texture='Icons/Traits/Outpost'/&gt;"/>
 <entry name="CanEnemyOverwatch" value="overwatch attacks from targeting this unit"/>
 <entry name="CanEnemyOverwatch-" value="Prevents"/>
 <entry name="CanEnemyOverwatchIcon" value="&lt;icon height='20' texture='Icons/Actions/Overwatch'/&gt;"/>
+<entry name="CanFly" value="fly"/>
+<entry name="CanFly+" value="Can"/>
+<entry name="CanFly-" value="Cannot"/>
 <entry name="CanHealPassivelyWithoutFullMovementPoints" value="heal passively without full movement points"/>
 <entry name="CanHealPassivelyWithoutFullMovementPoints+" value="Can"/>
 <entry name="CanHealPassivelyWithoutFullMovementPoints-" value="Cannot"/>
@@ -69,6 +74,12 @@
 <entry name="CanOverwatch+" value="Can"/>
 <entry name="CanOverwatch-" value="Cannot"/>
 <entry name="CanOverwatchIcon" value="&lt;icon height='20' texture='Icons/Actions/Overwatch'/&gt;"/>
+<entry name="CanPickUpCaches" value="pick up caches"/>
+<entry name="CanPickUpCaches+" value="Can"/>
+<entry name="CanPickUpCaches-" value="Cannot"/>
+<entry name="CanZoneOfControl" value="zone of control"/>
+<entry name="CanZoneOfControl+" value="Can"/>
+<entry name="CanZoneOfControl-" value="Cannot"/>
 <entry name="CargoSlots" value="Cargo Slots"/>
 <entry name="CargoSlotsDescription" value="The number of non-large units this unit can transport in its cargo hold."/>
 <entry name="CargoSlotsIcon" value="&lt;icon height='20' texture='Icons/Attributes/CargoSlots'/&gt;"/>
@@ -132,7 +143,7 @@
 <entry name="Experience" value="Experience"/>
 <entry name="ExperienceIcon" value="&lt;icon height='20' texture='Icons/Attributes/Level'/&gt;"/>
 <entry name="ExperienceGainRate" value="Experience Gain Rate"/>
-<entry name="FlatResourcesFromOutposts" value="Flat Resources From Outposts"/>
+<entry name="FlatResourcesFromOutposts" value="Resources From Outposts"/>
 <entry name="Food" value="Food"/>
 <entry name="FoodDescription" value="Used to sustain the population in cities as well as produce and maintain primarily Human and Voice units."/>
 <entry name="FoodIcon" value="&lt;icon height='20' texture='Icons/Attributes/Food'/&gt;"/>
@@ -164,6 +175,8 @@
 <entry name="HitpointsFromMaxIcon" value="&lt;icon height='20' texture='Icons/Attributes/Hitpoints'/&gt;"/>
 <entry name="HitpointsMax" value="Hitpoints Max"/>
 <entry name="HitpointsMaxIcon" value="&lt;icon height='20' texture='Icons/Attributes/Hitpoints'/&gt;"/>
+<entry name="HitpointsPerGroupMember" value="Hitpoints Per Group Member"/>
+<entry name="HitpointsPerGroupMemberIcon" value="&lt;icon height='20' texture='Icons/Attributes/Hitpoints'/&gt;"/>
 <entry name="IgnoreLineOfSight" value="line of sight"/>
 <entry name="IgnoreLineOfSight+" value="Ignores"/>
 <entry name="IgnoreZoneOfControl" value="movement through enemy units and their zone of control"/>
@@ -204,11 +217,13 @@
 <entry name="LoyaltyDescription/Effect" value="Each positive point of loyalty increases the city's total resource output by 1% while each negative point decreases it by 2% (down to -50%)."/>
 <entry name="LoyaltyDescription/CityPenalty" value="Each city after the first decreases the loyalty in all cities by 6."/>
 <entry name="LoyaltyIcon" value="&lt;icon height='20' texture='Icons/Attributes/Loyalty'/&gt;"/>
+<entry name="LoyaltyPerBuildingType" value="Loyalty Per Building Type"/>
+<entry name="LoyaltyPerBuildingTypeIcon" value="&lt;icon height='20' texture='Icons/Attributes/Loyalty'/&gt;"/>
+<entry name="LoyaltyPerDuplicateBuilding" value="Loyalty Per Duplicate Building"/>
+<entry name="LoyaltyPerDuplicateBuildingIcon" value="&lt;icon height='20' texture='Icons/Attributes/Loyalty'/&gt;"/>
 <entry name="LoyaltyUpkeep" value="Loyalty Upkeep"/>
 <entry name="LoyaltyUpkeepDescription" value="The amount of loyalty it costs each turn for the entity to be maintained."/>
 <entry name="LoyaltyUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Loyalty'/&gt;"/>
-<entry name="MaximumHitpointsPerGroupMember" value="Maximum Hitpoints Per Group Member"/>
-<entry name="MaximumHitpointsPerGroupMemberIcon" value="&lt;icon height='20' texture='Icons/Attributes/Hitpoints'/&gt;"/>
 <entry name="Morale" value="Morale"/>
 <entry name="MoraleDescription" value="The psychological state of the unit. &lt;string name='Attributes/MoraleDescription/Regeneration'/&gt; &lt;string name='Attributes/MoraleDescription/Shaken'/&gt; &lt;string name='Attributes/MoraleDescription/Broken'/&gt;&lt;br/&gt;&lt;br/&gt;&lt;string name='Attributes/MoraleDescription/Death'/&gt;"/>
 <entry name="MoraleDescription/Regeneration" value="Morale regenerates if the unit has not taken damage the previous turn."/>
@@ -245,13 +260,18 @@
 <entry name="PopulationCost" value="Population Cost"/>
 <entry name="PopulationCostDescription" value="The amount of population consumed by the action."/>
 <entry name="PopulationCostIcon" value="&lt;icon height='20' texture='Icons/Attributes/Population'/&gt;"/>
+<entry name="PopulationEnergyUpkeep" value="Population Energy Upkeep"/>
+<entry name="PopulationEnergyUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Energy'/&gt;"/>
 <entry name="PopulationFoodUpkeep" value="Population Food Upkeep"/>
+<entry name="PopulationFoodUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Food'/&gt;"/>
 <entry name="PopulationInfluenceUpkeep" value="Population Influence Upkeep"/>
+<entry name="PopulationInfluenceUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Influence'/&gt;"/>
 <entry name="PopulationLimit" value="Housing"/>
 <entry name="PopulationLimitDescription" value="The living space available for population."/>
 <entry name="PopulationLimitIcon" value="&lt;icon height='20' texture='Icons/Attributes/PopulationLimit'/&gt;"/>
 <entry name="PopulationLoyaltyUpkeep" value="Population Loyalty Upkeep"/>
 <entry name="PopulationMineralsUpkeep" value="Population Minerals Upkeep"/>
+<entry name="PopulationMineralsUpkeepIcon" value="&lt;icon height='20' texture='Icons/Attributes/Minerals'/&gt;"/>
 <entry name="Production" value="Production"/>
 <entry name="ProductionDescription" value="How fast the building produces. Completing a task preserves any excess production."/>
 <entry name="ProductionIcon" value="&lt;icon height='20' texture='Icons/Attributes/Production'/&gt;"/>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<projectileWeapon fireSound="Weapons/SonicBlaster"
+				fireSoundCount="4"
+				fireInterval="0.1"
+				muzzleFlashesBlueprint="Effects/SonicMuzzleFlashes"
+				muzzleFlashesEmitterBlueprint="Effects/SonicMuzzleFlashesEmitter"
+				directionalMuzzleFlashesBlueprint=""
+				projectilesBlueprint="Effects/SonicProjectiles"
+				projectilesEmitterBlueprint="Effects/SonicProjectilesEmitter"
+				explosionsBlueprint="Effects/DustExplosions"
+				smokeBlueprint=""/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="3"/>
+				<rangedArmorPenetration add="1"/> <!-- %rangedArmorPenetration add armorPiercing=5 -->
+				<rangedDamage add="1.5"/> <!-- %rangedDamage add strength=4 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait name="ChaosSpaceMarines/LasDamage" requiredUpgrade="ChaosSpaceMarines/LasDamage"/>
+		<trait name="Assault"/>
+		<trait name="IgnoresCover"/>
+		<trait name="Salvo"/>
+	</traits>
+</weapon>

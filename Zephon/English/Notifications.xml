@@ -1,44 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <language>
 	<!-- %1% = subject, %2% = object -->
-<entry name="Diplomacy1Summary" value="%1% declared war on %2%."/>
-<entry name="Diplomacy2Summary" value="%1% signed peace treaty with %2%."/>
-<entry name="Diplomacy3Summary" value="%1% signed trade agreement with %2%."/>
-<entry name="Diplomacy4Summary" value="%1% entered alliance with %2%."/>
+<entry name="CityFounded" value="City Founded"/>
 <entry name="CityFoundedSummary" value="%1% founded."/>
+<entry name="CityGrown" value="City Growth"/>
 <entry name="CityGrownSummary" value="%1% grown to %2% population."/>
+<entry name="Diplomacy1" value="War Declared"/>
+<entry name="Diplomacy1Summary" value="%1% declared war on %2%."/>
+<entry name="Diplomacy2" value="Peace Treaty"/>
+<entry name="Diplomacy2Summary" value="%1% signed peace treaty with %2%."/>
+<entry name="Diplomacy3" value="Trade Agreement"/>
+<entry name="Diplomacy3Summary" value="%1% signed trade agreement with %2%."/>
+<entry name="Diplomacy4" value="Alliance"/>
+<entry name="Diplomacy4Summary" value="%1% entered alliance with %2%."/>
 <entry name="FactionDefeated" value="Faction Defeated"/>
 <entry name="FactionDiscovered" value="Faction Discovered"/>
 <entry name="FactionDiscoveredSummary" value="%1% discovered."/>
+<entry name="FeatureTypeDiscovered" value="Feature Discovered"/>
 <entry name="FeatureTypeDiscoveredSummary" value="%1% discovered."/>
 <entry name="Foundations" value="Shallow Foundations"/>
 <entry name="FoundationsWithMutator" value="Altered Foundations"/>
-<entry name="Interlude0" value="A Scintilla of Hope"/>
-<entry name="Interlude0Info" value="Your people hoped they would return to the surface and find untended wilderness—not a world of monsters and vile ZEPHON machines. Reports regularly come in of refugees who wandered too close to the Wardens' territory—and were slaughtered for their trespass.&lt;br/&gt;&lt;br/&gt;What is ZEPHON doing in there? Ironically it is the monsters who know something about the machines. Your comms team is surprised one day to hear the voice of an Acrin leader—The Anchorite—broadcasting on an old AM radio frequency.&lt;br/&gt;&lt;br/&gt;He sounds like a preacher whose voice would have once haunted the airwaves of the empty countryside. In his sermons, he proclaims that his people want peace. “To seek a new future, without the Voice,” he says. “To know it was the Voice who hunted humans—who hunted ZEPHON—not my people.”&lt;br/&gt;&lt;br/&gt;His preaching sometimes descends to rambling. He mumbles about mysterious factories belching fire and smoke into the night. He mourns his people slain by the Wardens who guard them.&lt;br/&gt;&lt;br/&gt;“To want peace, simple peace. Peace must light up the land like the sun rising over a glimmering ocean.” the Anchorite intones.&lt;br/&gt;&lt;br/&gt;You listen to his sermon, keenly aware that if peace is a distant sunrise, there is still a long night ahead of you."/>
-<entry name="Interlude1" value="Portents of Despair"/>
-<entry name="Interlude1Info" value="The Anchorite has taken to the airwaves again. He seems particularly agitated. “To mourn the loss of my people slaughtered by ZEPHON,” he declaims into a microphone. “To hear the crushing sound of ZEPHON's factories rumbling in the night. To agonize over what weapon it forges in the depths.”&lt;br/&gt;&lt;br/&gt;“The depths”—that information is new. ZEPHON acts like the factories don't exist. But if their goods are being shipped to the coast, to the bottom of the ocean… no one could ever know what it was making.&lt;br/&gt;&lt;br/&gt;The Anchorite continues. “To recall our mission to this planet was one of… genocide,” he slowly says. “To hope the mission had died with the Acrin fleet.”&lt;br/&gt;&lt;br/&gt;You tense at his next words. “The fleet still hangs in orbit. Horrible creatures of war lie sleeping in its bowels.”&lt;br/&gt;&lt;br/&gt;How does he know this? No one should be able to access the fleet. The Anchorite's voice falters as if he can hear your thoughts across a great distance.&lt;br/&gt;&lt;br/&gt;“To prepare-,” he says—but then cuts himself off. “To know” he says with a harsher tone, “that we must do what is necessary to prevent our own genocide.”"/>
+<entry name="Interlude0" value="&lt;string name='Quests/AScintillaOfHope'/&gt;"/>
+<entry name="Interlude0Info" value="&lt;string name='Quests/AScintillaOfHope/Intro'/&gt;"/>
+<entry name="Interlude1" value="&lt;string name='Quests/PortentsOfDespair'/&gt;"/>
+<entry name="Interlude1Info" value="&lt;string name='Quests/PortentsOfDespair/Intro'/&gt;"/>
+<entry name="PlayerAdvancedTitanBattle" value="Escalation Advanced"/>
+<entry name="PlayerAdvancedTitanBattleSummary" value="%1% advanced escalation by %2% turns."/>
+<entry name="PlayerCondemned" value="Condemnation"/>
 <entry name="PlayerCondemnedSummary" value="%1% condemned %2%."/>
+<entry name="PlayerDelayedTitanBattle" value="Escalation Delayed"/>
+<entry name="PlayerDelayedTitanBattleSummary" value="%1% delayed escalation by %2% turns."/>
 <entry name="PlayerLost" value="Defeat!"/>
 <entry name="PlayerLostSummary" value="%1% defeated!"/>
+<entry name="PlayerPraised" value="Praise"/>
 <entry name="PlayerPraisedSummary" value="%1% praised %2%."/>
+<entry name="PlayerRegrouped" value="Regrouped"/>
 <entry name="PlayerRegroupedSummary" value="%1% regrouped."/>
+<entry name="PlayerUsedActionOn" value="Ability Used"/>
 <entry name="PlayerUsedActionOnSummary" value="&lt;string name='Notifications/UnitUsedActionOnSummary'/&gt;"/>
 <entry name="PlayerWon" value="Victory!"/>
 <entry name="PlayerWonSummary" value="%1% victorious!"/>
+<entry name="ProductionCompleted" value="Production Completed"/>
 <entry name="ProductionCompletedSummary" value="%1% produced %2%."/>
+<entry name="QuestAdded" value="Quest Added"/>
+<entry name="QuestAddedSummary" value="Quest received: %1%."/>
+<entry name="QuestCompleted" value="Quest Completed"/>
+<entry name="QuestCompletedSummary" value="Quest completed: %1%."/>
+<entry name="QuestUpdated" value="Quest Updated"/>
+<entry name="QuestUpdatedSummary" value="Quest updated: %1%."/>
+<entry name="RegionDiscovered" value="Region Discovered"/>
 <entry name="RegionDiscoveredSummary" value="%1% discovered."/>
 <entry name="ResearchCompleted" value="Research Completed"/>
 <entry name="ResearchCompletedSummary" value="%1% researched."/>
+<entry name="RewardGained" value="Reward Gained"/>
 <entry name="RewardGainedSummary" value="Gained %2%."/>
+<entry name="TileAcquired" value="Tile Acquired"/>
 <entry name="TileAcquiredSummary" value="%1% acquired tile."/>
+<entry name="TileCaptured" value="Tile Captured"/>
 <entry name="TileCapturedSummary" value="%1% captured %2%."/>
+<entry name="TileCleared" value="Tile Cleared"/>
 <entry name="TileClearedSummary" value="%1% cleared %2%."/>
+<entry name="UnitAttacked" value="Unit Attacked"/>
 <entry name="UnitAttackedSummary" value="%1% attacked %2%."/>
+<entry name="UnitCaptured" value="Unit Captured"/>
 <entry name="UnitCapturedSummary" value="%1% captured %2%."/>
+<entry name="UnitDamaged" value="Unit Damaged"/>
 <entry name="UnitDamagedSummary" value="%1% damaged %2%."/>
-<entry name="UnitKilledSummary" value="%1% killed %2%."/>
 <entry name="UnitGainedTraitSummary" value="%1% gained %2%."/>
+<entry name="UnitKilled" value="Unit Killed"/>
+<entry name="UnitKilledSummary" value="%1% killed %2%."/>
+<entry name="UnitTransformed" value="Unit Transformed"/>
 <entry name="UnitTransformedSummary" value="%1% transformed into %2%."/>
+<entry name="UnitTypeDiscovered" value="Unit Type Discovered"/>
 <entry name="UnitTypeDiscoveredSummary" value="%1% discovered."/>
+<entry name="UnitUsedActionOn" value="Ability Used"/>
 <entry name="UnitUsedActionOnSummary" value="%1% used %2% on %3%."/>
 </language>

@@ -1,0 +1,105 @@
+<quest firstTurn="-1">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="Ignore"/>
+				<option name="Peace" nextStage="Peace"/>
+				<option name="War" nextStage="War"/>
+			</options>
+		</stage>
+		<stage name="Peace"
+				nextStageOnSuccess="PeaceSuccess"
+				nextStageOnFailure="PeaceFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/PromotePeace" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/PromotePeace"
+						turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="PeaceSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<delayTitanBattle turns="10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="PeaceFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removePlayerAction type="PayResources/PromotePeace"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>		
+		<stage name="War"
+				nextStageOnSuccess="WarSuccess"
+				nextStageOnFailure="WarFailure">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="PayResources/PromoteWar" charges="1"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+			<objectives>
+				<executePlayerOrder name="ExecuteOrderWithinTurns"
+						orderName="PayResources/PromoteWar"
+						turns="10"/>
+			</objectives>
+		</stage>
+		<stage name="WarSuccess">
+			<modifications>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<delayTitanBattle turns="-10"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="WarFailure">
+			<modifications>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removePlayerAction type="PayResources/PromoteWar"/>
+						</effects>
+					</modifier>
+				</playerModifiers>	
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

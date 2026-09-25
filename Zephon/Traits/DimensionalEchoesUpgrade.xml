@@ -3,8 +3,9 @@
 	<modifiers>
 		<modifier effectDescription="OnBleed">
 			<conditions>
-				<tile>
+				<tile match="Any">
 					<feature type="Bleed"/>
+					<feature type="FragmentOfTheFulcrumResource"/>
 				</tile>
 			</conditions>
 			<effects>

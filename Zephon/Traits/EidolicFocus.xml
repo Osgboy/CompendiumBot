@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<opponentModifiers>
+        <modifier effectDescription="AtRange1">
+            <conditions>
+                <targetUnit ignoreForTraitVisibility="1">
+                    <distance equal="1"/>
+                </targetUnit>
+            </conditions>
+            <effects>
+                <attacks mul="-0.167"/>
+            </effects>
+        </modifier>
+		<modifier effectDescription="AtRange2OrHigher">
+			<conditions>
+                <targetUnit ignoreForTraitVisibility="1">
+                    <distance greater="1"/>
+                </targetUnit>
+            </conditions>
+            <effects>
+                <attacks mul="0.167"/>
+            </effects>
+        </modifier>
+    </opponentModifiers>
+</trait>

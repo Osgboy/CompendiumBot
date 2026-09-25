@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Human" dlc="DLC3">
+	<model>
+		<unit bloodBlueprint="Effects/Blood"
+				bloodBone="Chest"
+				groupMemberDeltaX="80"
+				groupMemberDeltaY="70"
+				material="Units/Provocator"
+				mesh="Units/Provocator"
+				normalWeight="0.1"
+				scale="0.7 0.7 0.7"
+				walker="1"/>
+	</model>
+	<weapons>
+		<weapon type="EinheriAutocannon">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="EinheriAutocannonSuppressiveFire"
+				enabled="0"
+				slotName="EinheriAutocannonSuppressiveFire">
+			<models>
+				<projectileWeapon muzzleBone="Muzzle" muzzleCount="2"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<foodCost base="20"/> <!-- %foodCost base tier=6 factor=0.5 -->
+				<foodUpkeep base="1.0"/> <!-- %foodUpkeep base tier=6 factor=0.5 -->
+				<groupSizeMax base="3"/>
+				<hitpointsMax base="4"/> <!-- %hitpointsMax base tier=3 -->
+				<moraleMax base="6"/>
+				<movementMax base="3"/>
+				<mineralsCost base="20"/> <!-- %mineralsCost base tier=6 factor=0.5 -->
+				<mineralsUpkeep base="1.0"/> <!-- %mineralsUpkeep base tier=6 factor=0.5 -->
+				<productionCost base="36.0"/> <!-- %productionCost base tier=6 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseHumanScore base="0.5"/>
+				<increaseInfantryScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/ProvocatorAttack"
+						beginFire="0.87"
+						endFire="2.16"
+						responseSound="Responses/Units/ProvocatorAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/ProvocatorDie"
+						animationCount="2"
+						sound="Units/MediumBiologicalGroundHit"
+						soundCount="3"
+						soundDelay="0.6"
+						voiceSound="Units/ProvocatorDie"
+						voiceSoundCount="5"/>
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/ProvocatorImpact"
+						responseSound="Responses/Units/ProvocatorEndureHighDamage"/> 
+			</model>			
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/ProvocatorIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation="Units/ProvocatorMove"
+						responseSound="Responses/Units/ProvocatorMove"
+						responseSoundCount="3"
+						sound="Units/AssaultTrooperMove"
+						soundCount="3"
+						soundFadeInDuration="1.0"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/ProvocatorHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="EinheriAutocannonSuppressiveFire"
+				cooldown="1">
+			<model>
+				<attack animation="Units/ProvocatorAbility0"
+						beginFire="0.83"
+						endFire="2.1"
+						responseSound="Responses/Units/ProvocatorSuppressiveFire"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="BallisticDevotion" requiredUpgrade="BallisticDevotion"/>
+		<trait type="Biological"/>
+		<trait type="CyberInfantryUpgrade" requiredUpgrade="CyberInfantryUpgrade"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
+	</traits>
+</unit>

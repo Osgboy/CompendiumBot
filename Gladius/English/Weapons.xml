@@ -170,6 +170,8 @@
 <entry name="CombiPlasmaFlavor" value="Many races use combi-weapons, from the taped-together creations of Ork Mekboyz to Imperial relic weapons, specially modified by skilled artisans millennia ago. Most of these creations feature a bolter in combination with another weapon, to increase the combination’s flexibility and power at the cost of its ease of handling."/>
 <entry name="CondemnorBoltgunSilverStake" value="Condemnor Boltgun's Silver Stake"/>
 <entry name="CondemnorBoltgunSilverStakeFlavor" value="The condemnor boltgun is a highly specialised combi-weapon used almost exclusively by the operatives of the Ordo Hereticus and Adepta Sororitas. Combining a boltgun with a single-shot crossbow armature, these archaic-seeming weapons fire a silver stake engraved with sigils of disruption that destabilise a psyker’s connection with the Warp."/>
+<entry name="CondemnorBoltPistol" value="Condemnor Bolt Pistol"/>
+<entry name="CondemnorBoltPistolFlavor" value="Despite their name, Condemnor bolters are in fact highly specialised combi-weapons used almost exclusively by the operatives of the Ordo Hereticus and Adepta Sororitas. Combining a bolt-firing weapon with a single-shot crossbow armature, these archaic-seeming devices fire a silver stake engraved with sigils of disruption that destabilise a psyker’s connection with the Warp."/>
 <entry name="ControlStave" value="Control Stave"/>
 <entry name="ControlStaveFlavor" value="Serving as a staff of office, control mechanism and weapon, a Control Stave is carried only by Skitarii Marshals. Despite its multidinous roles, it functions well at all of them—a brutal close combat weapon, that also enables the Marshal to control his Skitarii closely through Control Edicts and Aggression Overrides."/>
 <entry name="CroziusArcanum" value="Crozius Arcanum"/>
@@ -191,6 +193,8 @@
 <entry name="DeathRayFlavor" value="&lt;string name='Weapons/BlastFlavor'/&gt;"/>
 <entry name="Deathshriek" value="&lt;string name='Traits/Deathshriek'/&gt;"/>
 <entry name="DeathshriekFlavor" value="&lt;string name='Traits/DeathshriekFlavor'/&gt;"/>
+<entry name="DeathSpinner" value="Death Spinner"/>
+<entry name="DeathSpinnerFlavor" value="&lt;string name='Weapons/MonofilamentFlavor'/&gt;"/>
 <entry name="Deathspitter" value="Deathspitter"/>
 <entry name="DeathspitterFlavor" value="This multi-creature symbiote fires maggot-like organisms with corrosive innards. A spider-jawed set of fangs drags an organism from the weapon's brooding chamber and strips off its shell, before the deathspitter reacts to the caustic flesh with a spasm, firing the maggot to explode in a shower of caustic slime against its target."/>
 <entry name="DeathstrikeMissile" value="Deathstrike Missile"/>
@@ -484,6 +488,8 @@
 <entry name="NoseDrillFlavor" value="Though the Flyboy was doubtless furious to see his treasured Dakkajet confined to Gladius Prime’s surface, the Meks can present one positive—the ability to put a giant drill in the empty nosecone, enabling the Scrapjet to cut through enemies the way it used to cut through the air."/>
 <entry name="NovaElectromagneticShockwave" value="&lt;string name='Actions/Tau/NovaElectromagneticShockwave'/&gt;"/>
 <entry name="NovaElectromagneticShockwaveFlavor" value="&lt;string name='Actions/Tau/NovaElectromagneticShockwaveFlavor'/&gt;"/>
+<entry name="NullMace" value="Null Mace"/>
+<entry name="NullMaceFlavor" value="These heavy maces both mark the bearer as an Insidiant and aid them in their battle against Psykers. Against the warp-touched, they are horrifyingly effective, but even against a normal target they inflict devastating wounds, blasting apart armour."/>
 <entry name="OmnissianStaff" value="Omnissian Staff"/>
 <entry name="OnslaughtGatlingCannon" value="Onslaught Gatling Cannon"/>
 <entry name="OnslaughtGatlingCannonFlavor" value="Like many rotary machine guns through Terra’s long history, the Onslaught makes up for its lack of armour penetration with an absolute hail of high calibre bullets. Given its relative reliability of fire, the Adeptus Mechanicus have mounted it on many Primaris vehicles, ranging from the light Invader right up to heavier versions on Redemptor Dreadnoughts and Repulsor Executioners."/>
@@ -510,6 +516,8 @@
 <entry name="PhotonGrenadeFlavor" value="Defensive grenades, such as the photon grenades of the T'au, which emit multi-spectrum light and a sonic burst, have dual uses. When being charged, these are thrown to disorient the enemy attack; against shooting, they’re hurled to throw up clouds of concealing gas or smoke."/>
 <entry name="PlagueSpewer" value="Plague Spewer"/>
 <entry name="PlagueSpewerFlavor" value="During the Horus Heresy, the Death Guard were known for their use of alchem, a horrifyingly corrosive mixture of flamer and chem technology. After ten thousand years of corruption, today’s Plague Marines carry the descendants of those weapons, now host to Father Nurgle’s many infectious plagues. These unleash highly concentrated toxic slime and noxious filth causing enemies’ bodies to writhe and contort under the onslaught of countless ailments, deteriorating and swelling until they collapse into a mass of infectious decay."/>
+<entry name="PlasmaCannon" value="Plasma Cannon"/>
+<entry name="PlasmaCannonFlavor" value="&lt;string name='Weapons/PlasmaFlavor'/&gt;"/>
 <entry name="PlasmaCutter" value="Plasma Cutter"/>
 <entry name="PlasmaCutterFlavor" value="&lt;string name='Weapons/PlasmaFlavor'/&gt;"/>
 <entry name="PlasmaExterminatorStandard" value="Plasma Exterminator (Standard)"/>
@@ -669,10 +677,14 @@
 <entry name="SkystrikeMissileFlavor" value="&lt;string name='Weapons/BlastFlavor'/&gt;"/>
 <entry name="Slugga" value="Slugga"/>
 <entry name="SluggaFlavor" value="This ugly and brutish handgun is perfectly designed for its ugly and brutish owner to kill his foes, either by shooting them through the face at point-blank range or by beating them to death with it."/>
+<entry name="SmashaGun" value="Smasha Gun"/>
+<entry name="SmashaGunFlavor" value="Based on Ork Traktor technology, the Smasha gun grabs its target, lifts them aloft and, as its name implies, smashes them against the ground. Repeatedly. This gives the Mek pilot great delight."/>
 <entry name="Snazzgun" value="Snazzgun"/>
 <entry name="SnazzgunFlavor" value="Snazzguns are marvels of Orky know-wotz. Their owners pour countless teef into having additional barrels, drum magazines, and all manner of widgets and gubbinz attached to their prized guns. The resultant weapons have been known to fire clouds of flaming bullets, blasts of plasma or volleys of rocket-propelled grenades."/>
 <entry name="SniperRifle" value="Sniper Rifle"/>
 <entry name="SniperRifleFlavor" value="Sniper rifles have powerful telescopic sights, enabling the firer to target weak points and distant foes with unerring accuracy. Some commanders see the sniper rifle as a dishonourable weapon, but they are in the minority. Most understand that pragmatism, and dead enemies, win more battles than honour ever will."/>
+<entry name="SonicBlaster" value="Sonic Blaster"/>
+<entry name="SonicBlasterFlavor" value="As a Noise Marine riffs on his Sonic Blaster, wave upon wave of devastating harmonics fly from the instrument, tearing his target apart with extreme sound and sending their soul straight to the Prince of Pleasure."/>
 <entry name="SoulBlaze" value="Soul Blaze"/>
 <entry name="SoulBlazeFlavor" value="Some psychically-imbued weapons set the very soul ablaze, consuming the unfortunate victim in clouds of ethereal fire."/>
 <entry name="SoulburnerCannon" value="Soulburner Cannon"/>
@@ -695,7 +707,10 @@
 <entry name="SplinterPodsFlavor" value="&lt;string name='Weapons/SplinterFlavor'/&gt;"/>
 <entry name="SplinterRifle" value="Splinter Rifle"/>
 <entry name="SplinterRifleFlavor" value="&lt;string name='Weapons/SplinterFlavor'/&gt;"/>
+<entry name="SporeMineCysts" value="Spore Mine Cysts"/>
+<entry name="SporeMineCystsFlavor" value="These drifting horrors possess a rudimentary intelligence, but their intellect is not their threat. Instead, their fragile forms are packed with poisons, toxins, viruses and corrosive chemicals. When their delicate feelers detect an enemy, the entire cluster of mines will explode, scattering their lethal contents across a wide area."/>
 <entry name="SporeMineLauncher" value="Spore Mine Launcher"/>
+<entry name="SporeMineLauncherFlavor" value="&lt;string name='Weapons/SporeMineCystsFlavor'/&gt;"/>
 <entry name="SquighogJaws" value="Squighog Jaws"/>
 <entry name="SquighogJawsFlavor" value="As if Squighog’s mighty jaws weren’t strong enough, many Beast Snagga boyz have their steed’s jaw augmented by the local Dok or Mek, resulting in a bite that’s easily as strong as an Ogryn. And a Squighog that’s twice as angry."/>
 <entry name="StaffOfLight" value="Staff of Light"/>
@@ -734,6 +749,8 @@
 <entry name="SuperHeavyExplosion" value="Super-Heavy Explosion"/>
 <entry name="SynapticDisintegrator" value="Synaptic Disintegrator"/>
 <entry name="SynapticDisintegratorFlavor" value="This rifle fires a compressed leptonic beam that destroys synaptic tissue. Beginning within the target’s brain and spreading in microseconds throughout their entire body, molecules unbond with one another, causing the luckless target to crumple limply to the ground like a puppet with its strings severed."/>
+<entry name="SynapticObliterator" value="Synaptic Obliterator"/>
+<entry name="SynapticObliteratorFlavor" value="A particularly horribly Necron design, the Synaptic Obliterator uses a concentrated burst of sub-atomic particles to separate the molecular bonds of any target, tearing them apart in a radioactive blast."/>
 <entry name="TacticalSupportTurret" value="DS8 Tactical Support Turret"/>
 <entry name="TacticalSupportTurretFlavor" value="Carried in racks along the flanks of Orca Dropships, tactical support turrets are automated defence batteries that provide support for Fire Warrior Strike Teams. These armoured turrets plummet into battle and deploy as fixed positions to add their firepower to the fight. Each turret is programmed to self-destruct should its sensors register the possibility of capture or tampering. This feature means that the T'au's superior weaponry can never be turned upon them by their enemies."/>
 <entry name="TankbustaBomb" value="Tankbusta Bomb"/>
@@ -759,6 +776,8 @@
 <entry name="ThresherScytheFlavor" value="&lt;string name='Weapons/TailBiomorphFlavor'/&gt;"/>
 <entry name="ThunderHammer" value="Thunder Hammer"/>
 <entry name="ThunderHammerFlavor" value="Thunder hammers release a tremendous blast of energy when they strike, slamming the foe to the ground and leaving him stunned (if he survives at all). This, combined with the crushing weight of the hammer itself, makes for an incredibly deadly weapon."/>
+<entry name="ThunderhawkCannon" value="Thunderhawk Cannon"/>
+<entry name="ThunderhawkCannonFlavor" value="The Thunderhawk mostly relies on proven technology to get its Adeptus Astartes payload to their landing point. Its weaponry is similarly robust. Heavy Bolters, Lascannons… and a very large Heavy Cannon. These provide covering fire capable of dealing with any threat."/>
 <entry name="ThunderfireCannon" value="Thunderfire Cannon"/>
 <entry name="ThunderfireCannonFlavor" value="The thunderfire cannon is a colossal multibarrelled artillery weapon. It is far too large to be carried by an individual and so is conveyed into battle on a set of tracks and accompanied by a Techmarine gunner."/>
 <entry name="ThunderstrikeLasTalon" value="Thunderstrike Las Talon"/>
@@ -771,6 +790,8 @@
 <entry name="ToxinspikeFlavor" value="&lt;string name='Weapons/TailBiomorphFlavor'/&gt;"/>
 <entry name="TraktorKannon" value="Traktor Kannon"/>
 <entry name="TraktorKannonFlavor" value="The traktor kannon fires a thrumming beam of force high into the air. The grot crew swing this beam about wildly until they manage to latch the humming column onto an airborne target. Once snagged, their hapless victim is wrenched out of the air and smashed to bits on the ground below."/>
+<entry name="TransdimensionalProjector" value="Transdimensional Projector"/>
+<entry name="TransdimensionalProjectorFlavor" value="Whatever impossible energies there are contained in this ancient device are far beyond the key of Imperial Science. Suffice to say, rather than attempting to attack their target, they shift any target matter into a pocket dimension, dooming them utterly."/>
 <entry name="TransdimensionalThunderboltCoalescent" value="Transdimensional Thunderbolt (Coalescent)"/>
 <entry name="TransdimensionalThunderboltCoalescentFlavor" value="The C'tan Shard projects a crackling bolt of energy from its outstretched palm, blasting its foe into oblivion."/>
 <entry name="TransdimensionalThunderboltTranscendent" value="Transdimensional Thunderbolt (Transcendent)"/>
@@ -817,6 +838,8 @@
 <entry name="TwinLinkedHeavyPhosphorBlasterFlavor" value="&lt;string name='Weapons/PhosphorFlavor'/&gt;"/>
 <entry name="TwinLinkedHeavyRailRifle" value="Twin-Linked Heavy Rail Rifle"/>
 <entry name="TwinLinkedHeavyRailRifleFlavor" value="&lt;string name='Weapons/RailFlavor'/&gt;"/>
+<entry name="TwinLinkedHeavyVenomCannon" value="Heavy Venom Cannon"/>
+<entry name="TwinLinkedHeavyVenomCannonFlavor" value="&lt;string name='Weapons/HeavyVenomCannonFlavor'/&gt;"/>
 <entry name="TwinLinkedHydraAutocannon" value="Twin-Linked Hydra Autocannon"/>
 <entry name="TwinLinkedHydraAutocannonFlavor" value="Essentially a long-barrelled, outsized autocannon on an anti-aircraft mount, the Hydra autocannon is guided by its predictive logic spirit to fill the skies with sawing lines of deadly fire."/>
 <entry name="TwinLinkedIcarusAutocannon" value="Twin-Linked Icarus Autocannon"/>
@@ -859,6 +882,8 @@
 <entry name="TwinLinkedSupaShootaFlavor" value="&lt;string name='Weapons/ShootaFlavor'/&gt;"/>
 <entry name="TwinLinkedTeslaDestructor" value="Twin-Linked Tesla Destructor"/>
 <entry name="TwinLinkedTeslaDestructorFlavor" value="&lt;string name='Weapons/TeslaFlavor'/&gt;"/>
+<entry name="TwinLinkedWazbomMegaKannon" value="Twin-Linked Wazbom Mega Kannon"/>
+<entry name="TwinLinkedWazbomMegaKannonFlavor" value="Only the best for the crazed Mek piloting the Wazbom Blastajet. Save his finest MegaKannons for the Boss or a Stompa? Nah. Stick two of them on the ‘wings’ of his aircraft and take off before anyone has a chance to argue…"/>
 <entry name="TwinPowerFists" value="Twin-Linked Power Fists"/>
 <entry name="TwinPowerFistsFlavor" value="&lt;string name='Weapons/PowerFlavor'/&gt;"/>
 <entry name="TyranidCity" value="&lt;string name='Traits/Tyranids/CityDamage'/&gt;"/>

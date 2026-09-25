@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Human" dlc="DLC2">
+	<actions>
+		<unitCast cooldown="5"
+				consumedActionPoints="0"
+				consumedMovement="0"
+				requiredActionPoints="0">
+			<model>
+				<cast blueprint="Effects/EngineeredCicadas"/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit" radius="1">
+							<modifiers>
+								<modifier effectDescription="ToAdjacentAlliedUnits">
+									<conditions>
+										<unit>
+											<ally/>
+										</unit>
+									</conditions>
+									<effects>
+										<hitpoints add="6"/>
+									</effects>
+								</modifier>
+							</modifiers>
+							<scoreModifiers>
+								<modifier>
+									<effects>
+										<score add="1.0"/>
+									</effects>
+								</modifier>
+							</scoreModifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitCast>
+	</actions>
+	<buyConditions>
+		<player>
+			<trait type="TacticalArcheology"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

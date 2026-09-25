@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnCity="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<loyaltyPerBuildingType add="1"/>
+				<loyaltyPerDuplicateBuilding add="-1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ForTheFewUpgrade">
+			<effects>
+				<loyaltyPerBuildingType add="0.5"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="ForTheFewUpgrade2">
+			<effects>
+				<loyaltyPerBuildingType add="0.5"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

@@ -6,8 +6,27 @@
 	</model>
 	<modifiers>
 		<modifier>
+			<conditions>
+				<player>
+					<upgrade name="ImperiousExonautAffinityUpgrade2"/>
+				</player>
+			</conditions>
+			<effects>
+				<accuracy min="7" max="7"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<conditions>
+				<player>
+					<noUpgrade name="ImperiousExonautAffinityUpgrade2"/>
+				</player>
+			</conditions>
 			<effects>
 				<accuracy min="6" max="6"/>
+			</effects>
+		</modifier>
+		<modifier>
+			<effects>
 				<armorPenetration base="7"/> <!-- %armorPenetration base tier=8 -->
 				<attacks base="1"/>
 				<damage base="12"/> <!-- %damage base tier=8 -->
@@ -16,6 +35,8 @@
 	</modifiers>
 	<target rangeMax="9"/>
 	<traits>
+		<trait type="FixedAccuracy"/>
+		<trait type="ImperiousExonautAffinityUpgrade2" requiredUpgrade="ImperiousExonautAffinityUpgrade2"/>
 		<trait type="IndirectFire"/>
 		<trait type="LargeSplash"/>
 	</traits>

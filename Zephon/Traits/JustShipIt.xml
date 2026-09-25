@@ -47,12 +47,25 @@
 					<modifier>
 						<conditions>
 							<unit>
+								<movementMax greater="0"/>
 								<noTrait type="Headquarters"/>
 								<noTrait type="Hero"/>
 							</unit>
 						</conditions>
 						<effects>
 							<addTrait type="JustShipItDebuffMovement"/>
+						</effects>
+					</modifier>
+					<modifier>
+						<conditions>
+							<unit>
+								<movementMax equal="0"/>
+								<noTrait type="Headquarters"/>
+								<noTrait type="Hero"/>
+							</unit>
+						</conditions>
+						<effects>
+							<addTrait type="JustShipItDebuffAttacks"/>
 						</effects>
 					</modifier>
 					<modifier visible="0">

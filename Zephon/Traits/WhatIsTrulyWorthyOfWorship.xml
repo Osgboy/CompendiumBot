@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Buff" rankMax="2" rankPerTurn="1" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<armor addMin="2" addMax="6"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTileEntered>
+		<unit>
+			<area affect="Unit">
+				<modifiers>
+					<modifier visible="0">
+						<effects>
+							<removeTrait type="WhatIsTrulyWorthyOfWorship"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTileEntered>
+</trait>

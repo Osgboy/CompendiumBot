@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon fireSound="Weapons/SynapticObliterator"
+				fireSoundCount="3"
+				fireInterval="0.5"
+				beamsBlueprint="Effects/ParticleBeams"
+		 		beamsEmitterBlueprint="Effects/ParticleBeamsEmitter"
+		 		muzzleFlashesBlueprint="Effects/GaussMuzzleFlashes"
+		 		explosionsBlueprint="Effects/NecronExplosions"
+				explosionsEmitterBlueprint="Effects/NecronExplosionsEmitter"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<attacks add="2"/>
+				<rangedArmorPenetration add="6"/> <!-- %rangedArmorPenetration add armorPiercing=-3 -->
+				<rangedDamage add="12"/> <!-- %rangedDamage add strength=10 -->
+				<strengthDamage base="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="3"/>
+	<traits>
+		<trait name="HeavyWeapon"/>
+	</traits>
+</weapon>

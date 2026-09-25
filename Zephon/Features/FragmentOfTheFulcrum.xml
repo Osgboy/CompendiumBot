@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/FragmentOfTheFulcrum"
+		category="FragmentOfTheFulcrum">
+	<model>
+		<simpleModel decorationAnimation="Features/FragmentOfTheFulcrumIdle%1%Shard"
+				decorationAnimationCount="2"
+				decorationMaterial="Features/FragmentOfTheFulcrumShard"
+				decorationMesh="Features/FragmentOfTheFulcrumShard"
+				flow="1"
+				groundFlow="1"
+				groundMaterial="Features/FragmentOfTheFulcrumGround"
+				groundMesh="Features/FragmentOfTheFulcrumGround"
+				material="Features/FragmentOfTheFulcrumCrater"
+				mesh="Features/FragmentOfTheFulcrumCrater"
+				scale="1 1 1"
+				transparent="0"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<blockMovement add="1"/>
+				<blockSight add="1"/>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</feature>

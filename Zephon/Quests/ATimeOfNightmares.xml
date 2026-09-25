@@ -1,0 +1,128 @@
+<quest firstTurn="40" dlc="DLC3">
+	<stages>
+		<stage name="Intro">
+			<options>
+				<option name="TameDreameaters" nextStage="TameDreameaters">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<standingTier greater="4"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="KillDreameaters" nextStage="KillDreameaters"/>
+			</options>
+		</stage>
+		<stage name="KillDreameaters" nextStageOnSuccess="KillDreameatersSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="12" waves="3">
+					<attackers>
+						<unit type="Dreameater" token="InvaderDreameater" rankMin="0" rankMax="2"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="TameDreameaters" nextStageOnSuccess="TameDreameatersSuccess">
+			<modifications>
+				<nearCityTileSelector count="1" targetDistance="6">
+					<conditions>
+						<tile>
+							<buildingSlots greater="0"/>
+							<noCity/>
+							<noFeature type="Bleed"/>
+							<noFeatureCategory name="Cache"/>
+							<noUnit/>
+						</tile>
+					</conditions>
+				</nearCityTileSelector>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<addPlayerAction type="AnchoritesCharm"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+			<objectives>
+				<surviveInvasion name="SurviveInvasion" strength="12" waves="3">
+					<attackers>
+						<unit type="Dreameater" token="InvaderDreameater" rankMin="0" rankMax="2"/>
+					</attackers>
+				</surviveInvasion>
+			</objectives>
+		</stage>
+		<stage name="KillDreameatersSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="20"/>
+							<food add="20"/>
+							<influence add="20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+		<stage name="TameDreameatersSuccess">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier visible="0">
+						<effects>
+							<removePlayerAction type="AnchoritesCharm"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<minerals add="20"/>
+							<food add="20"/>
+							<influence add="20"/>
+						</effects>
+					</modifier>
+				</playerModifiers>
+			</modifications>
+		</stage>
+	</stages>
+ </quest>

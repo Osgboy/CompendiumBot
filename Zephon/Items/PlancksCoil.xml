@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item branch="Cyber" dlc="DLC2">
+	<actions>
+		<unitAction name="PlancksCoil"
+				cooldown="10"
+				disableable="1"
+				passive="1">
+			<model>
+				<action/>
+			</model>
+			<beginTargets>
+				<selfTarget>
+					<areas>
+						<area affect="Unit">
+							<modifiers>
+								<modifier>
+									<effects>
+										<addTrait type="PlancksCoil"/>
+									</effects>
+								</modifier>
+							</modifiers>
+						</area>
+					</areas>
+				</selfTarget>
+			</beginTargets>
+		</unitAction>
+	</actions>
+	<buyConditions>
+		<player>
+			<trait type="HasharetExchange"/>
+		</player>
+	</buyConditions>
+	<modifiers>
+		<modifier>
+			<effects>
+				<influenceCost base="160"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="Rare"/>
+	</traits>
+</item>

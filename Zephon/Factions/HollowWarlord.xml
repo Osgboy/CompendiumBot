@@ -25,7 +25,7 @@
 					<areas>
 						<area affect="Unit" radius="2">
 							<modifiers>
-								<modifier effectDescription="ToAlliedUnitsOnTilesInTargetArea">
+								<modifier effectDescription="ToAlliedUnitsInTargetArea">
 									<conditions>
 										<unit>
 											<ally/>
@@ -167,8 +167,9 @@
 	</headquarterWeapons>
 	<likedLabels>
 		<label name="AgelessHunger"/>
-		<label name="FoundationsOfBlood"/>
+		<label name="FoundationOfBlood"/>
 		<label name="HitAndRun"/>
+		<label name="Tactics"/>
 	</likedLabels>
 	<startingResourceModifiers>
 		<modifier>

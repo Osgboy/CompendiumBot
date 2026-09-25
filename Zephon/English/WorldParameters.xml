@@ -7,6 +7,13 @@
 <entry name="AbkhanDreyDensity3" value="Medium"/>
 <entry name="AbkhanDreyDensity4" value="High"/>
 <entry name="AbkhanDreyDensity5" value="Very High"/>
+<entry name="AcrinCrashSiteDensity" value="Acrin Crash Site Density"/>
+<entry name="AcrinCrashSiteDensity0" value="None"/>
+<entry name="AcrinCrashSiteDensity1" value="Very Low"/>
+<entry name="AcrinCrashSiteDensity2" value="Low"/>
+<entry name="AcrinCrashSiteDensity3" value="Medium"/>
+<entry name="AcrinCrashSiteDensity4" value="High"/>
+<entry name="AcrinCrashSiteDensity5" value="Very High"/>
 <entry name="AIControlDisconnectedPlayers" value="AI-Control Disconnected Players"/>
 <entry name="AIControlDisconnectedPlayersHint" value="Allow the AI to take over disconnected players.&lt;br/&gt;&lt;br/&gt;Only available with ironman off."/>
 <entry name="AdaptiveTurnTimer" value="Adaptive Turn Timer"/>
@@ -32,10 +39,17 @@
 <entry name="ArcticRegionDensity3" value="Medium"/>
 <entry name="ArcticRegionDensity4" value="High"/>
 <entry name="ArcticRegionDensity5" value="Very High"/>	
+<entry name="AtmosphericAnchorDensity" value="Atmospheric Anchor Density"/>
+<entry name="AtmosphericAnchorDensity0" value="None"/>
+<entry name="AtmosphericAnchorDensity1" value="Very Low"/>
+<entry name="AtmosphericAnchorDensity2" value="Low"/>
+<entry name="AtmosphericAnchorDensity3" value="Medium"/>
+<entry name="AtmosphericAnchorDensity4" value="High"/>
+<entry name="AtmosphericAnchorDensity5" value="Very High"/>
 <entry name="AutoDisableSimultaneousTurns" value="Auto-Disable Simultaneous Turns"/>
 <entry name="AutoDisableSimultaneousTurnsHint" value="Automatically disable simultaneous turns when non-AI enemy units come within 5 tiles of each other."/>
 <entry name="AvoidDuplicateRandomFactions" value="Avoid Duplicate Random Factions"/>
-<entry name="AvoidDuplicateRandomFactionsHint" value="Adjust random faction chances so that each faction appears an equal amount of times in the game."/>
+<entry name="AvoidDuplicateRandomFactionsHint" value="Adjusts random faction chances so that each faction appears an equal amount of times in the game."/>
 <entry name="BleedDensity" value="Bleed Density"/>
 <entry name="BleedDensity0" value="None"/>
 <entry name="BleedDensity1" value="Very Low"/>
@@ -78,8 +92,17 @@
 <entry name="ConstructRegionDensity3" value="Medium"/>
 <entry name="ConstructRegionDensity4" value="High"/>
 <entry name="ConstructRegionDensity5" value="Very High"/>
+<entry name="CrystalBasinDensity" value="Crystal Basin Density"/>
+<entry name="CrystalBasinDensity0" value="None"/>
+<entry name="CrystalBasinDensity1" value="Very Low"/>
+<entry name="CrystalBasinDensity2" value="Low"/>
+<entry name="CrystalBasinDensity3" value="Medium"/>
+<entry name="CrystalBasinDensity4" value="High"/>
+<entry name="CrystalBasinDensity5" value="Very High"/>
 <entry name="DLC1" value="The Twisted &amp; The Hollow DLC"/> <!-- DLC name. Do not translate. -->
 <entry name="DLC2" value="The Platinum &amp; The Infinite DLC"/> <!-- DLC name. Do not translate. -->
+<entry name="DLC3" value="The Syncretic &amp; The Imperious DLC"/> <!-- DLC name. Do not translate. -->
+<entry name="DLCHint" value="Allows units and research from this DLC."/>
 <entry name="DesertRegionDensity" value="Desert Region Density"/>
 <entry name="DesertRegionDensity0" value="None"/>
 <entry name="DesertRegionDensity1" value="Very Low"/>
@@ -117,6 +140,13 @@
 <entry name="DustStormDensity3" value="Medium"/>
 <entry name="DustStormDensity4" value="High"/>
 <entry name="DustStormDensity5" value="Very High"/>
+<entry name="ErebusExcavatorDensity" value="Erebus Excavator Density"/>
+<entry name="ErebusExcavatorDensity0" value="None"/>
+<entry name="ErebusExcavatorDensity1" value="Very Low"/>
+<entry name="ErebusExcavatorDensity2" value="Low"/>
+<entry name="ErebusExcavatorDensity3" value="Medium"/>
+<entry name="ErebusExcavatorDensity4" value="High"/>
+<entry name="ErebusExcavatorDensity5" value="Very High"/>
 <entry name="EscalationPace" value="Escalation Pace"/>
 <entry name="EscalationPaceHint" value="Adjusts how quickly the escalation towards the finale progresses and if at all."/>
 <entry name="EscalationPace0" value="None"/>
@@ -125,8 +155,31 @@
 <entry name="EscalationPace3" value="Standard"/>
 <entry name="EscalationPace4" value="Fast"/>
 <entry name="EscalationPace5" value="Very Fast"/>
-<entry name="FixedTeams" value="Fixed Teams"/>
-<entry name="FixedTeamsHint" value="Don't allow players to change war and alliance status."/>
+<entry name="Diplomacy" value="Diplomacy"/>
+<entry name="DiplomacyHint" value="How much you can change war, peace, and alliances after the game starts."/>
+<entry name="Diplomacy0" value="Strict Fixed Teams"/>
+<entry name="Diplomacy0Hint" value="The strictest rules: war, peace, and alliances are fixed for everyone and cannot be changed through diplomacy during the game."/>
+<entry name="Diplomacy1" value="Fixed Teams + No NPC Allies"/>
+<entry name="Diplomacy1Hint" value="You can still deal with NPCs, but you cannot ally with them. Other players cannot change alliances between themselves."/>
+<entry name="Diplomacy2" value="Fixed Teams + Standard NPCs"/>
+<entry name="Diplomacy2Hint" value="You can negotiate with NPCs in the usual way. Other players cannot change alliances between themselves."/>
+<entry name="Diplomacy3" value="Standard"/>
+<entry name="Diplomacy3Hint" value="You can negotiate freely with other players and with NPCs: war, peace, and alliances can all change during the game."/>
+<entry name="TradeGain" value="Trade Gain"/>
+<entry name="TradeGainHint" value="Whether trade agreements and alliances grant extra income from a partner's production."/>
+<entry name="TradeGain0" value="None"/>
+<entry name="TradeGain0Hint" value="No trade gain from partners: trade agreements and alliances do not add income from another leader's production."/>
+<entry name="TradeGain1" value="NPC Only"/>
+<entry name="TradeGain1Hint" value="Trade gain applies only when one side is an NPC faction. Other players do not gain from each other's trade."/>
+<entry name="TradeGain2" value="Standard"/>
+<entry name="TradeGain2Hint" value="Trade gain applies between all leaders that have a trade agreement or alliance."/>
+<entry name="FleshTreeDensity" value="Flesh Tree Density"/>
+<entry name="FleshTreeDensity0" value="None"/>
+<entry name="FleshTreeDensity1" value="Very Low"/>
+<entry name="FleshTreeDensity2" value="Low"/>
+<entry name="FleshTreeDensity3" value="Medium"/>
+<entry name="FleshTreeDensity4" value="High"/>
+<entry name="FleshTreeDensity5" value="Very High"/>
 <entry name="ForestDensity" value="Forest Density"/>
 <entry name="ForestDensity0" value="None"/>
 <entry name="ForestDensity1" value="Very Low"/>
@@ -134,6 +187,13 @@
 <entry name="ForestDensity3" value="Medium"/>
 <entry name="ForestDensity4" value="High"/>
 <entry name="ForestDensity5" value="Very High"/>
+<entry name="FragmentOfTheFulcrumDensity" value="Fragment of the Fulcrum Density"/>
+<entry name="FragmentOfTheFulcrumDensity0" value="None"/>
+<entry name="FragmentOfTheFulcrumDensity1" value="Very Low"/>
+<entry name="FragmentOfTheFulcrumDensity2" value="Low"/>
+<entry name="FragmentOfTheFulcrumDensity3" value="Medium"/>
+<entry name="FragmentOfTheFulcrumDensity4" value="High"/>
+<entry name="FragmentOfTheFulcrumDensity5" value="Very High"/>
 <entry name="GameName" value="Game Name"/>
 <entry name="GameNameHint" value="How this game shows in the multiplayer game list."/>
 <entry name="GameVisibility" value="Game Visibility"/> 
@@ -151,6 +211,20 @@
 <entry name="Growth2" value="Medium"/>
 <entry name="Growth3" value="High"/>
 <entry name="Growth4" value="Very High"/>
+<entry name="HydroponicFarmDensity" value="Hydroponic Farm Density"/>
+<entry name="HydroponicFarmDensity0" value="None"/>
+<entry name="HydroponicFarmDensity1" value="Very Low"/>
+<entry name="HydroponicFarmDensity2" value="Low"/>
+<entry name="HydroponicFarmDensity3" value="Medium"/>
+<entry name="HydroponicFarmDensity4" value="High"/>
+<entry name="HydroponicFarmDensity5" value="Very High"/>
+<entry name="IkonOfVorodaiDensity" value="Ikon of Vorodai Density"/>
+<entry name="IkonOfVorodaiDensity0" value="None"/>
+<entry name="IkonOfVorodaiDensity1" value="Very Low"/>
+<entry name="IkonOfVorodaiDensity2" value="Low"/>
+<entry name="IkonOfVorodaiDensity3" value="Medium"/>
+<entry name="IkonOfVorodaiDensity4" value="High"/>
+<entry name="IkonOfVorodaiDensity5" value="Very High"/>
 <entry name="Ironman" value="Ironman"/>
 <entry name="IronmanHint" value="Restricts the player's control over their save file, effectively removing the ability to correct mistakes and change decisions made during the course of play.&lt;br/&gt;&lt;br/&gt;Some achievements can only be unlocked with ironman on."/>
 <entry name="LandMass" value="Land Mass"/>
@@ -173,6 +247,13 @@
 <entry name="MaximumTechnologyTier8" value="8"/>
 <entry name="MaximumTechnologyTier9" value="9"/>
 <entry name="MaximumTechnologyTier10" value="10"/>
+<entry name="MicrochipFabricatorDensity" value="Microchip Fabricator Density"/>
+<entry name="MicrochipFabricatorDensity0" value="None"/>
+<entry name="MicrochipFabricatorDensity1" value="Very Low"/>
+<entry name="MicrochipFabricatorDensity2" value="Low"/>
+<entry name="MicrochipFabricatorDensity3" value="Medium"/>
+<entry name="MicrochipFabricatorDensity4" value="High"/>
+<entry name="MicrochipFabricatorDensity5" value="Very High"/>
 <entry name="Mutators/AreYouTheGreatSpeaker" value="&lt;string name='Settings/Achievements/AreYouTheGreatSpeaker'/&gt;"/>
 <entry name="Mutators/AreYouTheGreatSpeakerHint" value="Doubled loyalty effect."/>
 <entry name="Mutators/CanLoveBeMoral" value="&lt;string name='Settings/Achievements/CanLoveBeMoral'/&gt;"/>
@@ -197,6 +278,8 @@
 <entry name="Mutators/IsWisdomTheMeasureOfWorthHint" value="Doubled experience gain."/>
 <entry name="Mutators/MustWeSufferSo" value="&lt;string name='Settings/Achievements/MustWeSufferSo'/&gt;"/>
 <entry name="Mutators/MustWeSufferSoHint" value="Start the game with Research Laboratory, Administration Complex, Holo Theater, Habitation Block, Construction Yard and Engineer researched."/>
+<entry name="Mutators/WasAnyOfItReal" value="&lt;string name='Settings/Achievements/WasAnyOfItReal'/&gt;"/>
+<entry name="Mutators/WasAnyOfItRealHint" value="Neutrals have all upgrades."/>
 <entry name="Mutators/WasITheBestPersonAliveOrWhat" value="&lt;string name='Settings/Achievements/WasITheBestPersonAliveOrWhat'/&gt;"/>
 <entry name="Mutators/WasITheBestPersonAliveOrWhatHint" value="Accumulated resources compound at 10% per turn."/>
 <entry name="Mutators/WasITrulyHuman" value="&lt;string name='Settings/Achievements/WasITrulyHuman'/&gt;"/>
@@ -209,6 +292,12 @@
 <entry name="Mutators/WhatAmITrulyHint" value="Doubled unit production speed."/>
 <entry name="Mutators/WhatAreYou" value="&lt;string name='Settings/Achievements/WhatAreYou'/&gt;"/>
 <entry name="Mutators/WhatAreYouHint" value="Can only research technologies with your affinity or no affinity."/>
+<entry name="Mutators/WhatCarriesAcross" value="&lt;string name='Settings/Achievements/WhatCarriesAcross'/&gt;"/>
+<entry name="Mutators/WhatCarriesAcrossHint" value="Anchorite and ZEPHON can build titans."/>
+<entry name="Mutators/WhatIsTheWorthOfAHumanLife" value="&lt;string name='Settings/Achievements/WhatIsTheWorthOfAHumanLife'/&gt;"/>
+<entry name="Mutators/WhatIsTheWorthOfAHumanLifeHint" value="Can check stats screen during the game."/>
+<entry name="Mutators/WhatIsTrulyWorthyOfWorship" value="&lt;string name='Settings/Achievements/WhatIsTrulyWorthyOfWorship'/&gt;"/>
+<entry name="Mutators/WhatIsTrulyWorthyOfWorshipHint" value="Units gain +2 armor each turn while stationary, up to +6. Bonus is lost when moving."/>
 <entry name="Mutators/WhatPriceForLiberty" value="&lt;string name='Settings/Achievements/WhatPriceForLiberty'/&gt;"/>
 <entry name="Mutators/WhatPriceForLibertyHint" value="Leaders have all research affinities."/>
 <entry name="Mutators/WhereAreWe" value="&lt;string name='Settings/Achievements/WhereAreWe'/&gt;"/>
@@ -222,6 +311,21 @@
 <entry name="Pace2" value="Standard"/>
 <entry name="Pace3" value="Fast"/>
 <entry name="Pace4" value="Very Fast"/>
+<entry name="PhaseGeneratorDensity" value="Phase Generator Density"/>
+<entry name="PhaseGeneratorDensity0" value="None"/>
+<entry name="PhaseGeneratorDensity1" value="Very Low"/>
+<entry name="PhaseGeneratorDensity2" value="Low"/>
+<entry name="PhaseGeneratorDensity3" value="Medium"/>
+<entry name="PhaseGeneratorDensity4" value="High"/>
+<entry name="PhaseGeneratorDensity5" value="Very High"/>
+<entry name="AIAggressiveness" value="AI Aggressiveness"/>
+<entry name="AIAggressivenessHint" value="Adjusts the willingness of AI players to stay at peace."/>
+<entry name="AIAggressiveness0" value="None"/>
+<entry name="AIAggressiveness1" value="Very Peaceful"/>
+<entry name="AIAggressiveness2" value="Peaceful"/>
+<entry name="AIAggressiveness3" value="Standard"/>
+<entry name="AIAggressiveness4" value="Aggressive"/>
+<entry name="AIAggressiveness5" value="Very Aggressive"/>
 <entry name="QuestPace" value="Quest Pace"/>
 <entry name="QuestPaceHint" value="Adjusts how quickly new quests trigger and if at all."/>
 <entry name="QuestPace0" value="None"/>
@@ -230,6 +334,22 @@
 <entry name="QuestPace3" value="Standard"/>
 <entry name="QuestPace4" value="Fast"/>
 <entry name="QuestPace5" value="Very Fast"/>
+<entry name="Random" value="Random"/>
+<entry name="RandomHint" value="A random option will be selected when the game starts."/>
+<entry name="ReaverDepotDensity" value="Reaver Depot Density"/>
+<entry name="ReaverDepotDensity0" value="None"/>
+<entry name="ReaverDepotDensity1" value="Very Low"/>
+<entry name="ReaverDepotDensity2" value="Low"/>
+<entry name="ReaverDepotDensity3" value="Medium"/>
+<entry name="ReaverDepotDensity4" value="High"/>
+<entry name="ReaverDepotDensity5" value="Very High"/>
+<entry name="RecyclingTanksDensity" value="Recycling Tanks Density"/>
+<entry name="RecyclingTanksDensity0" value="None"/>
+<entry name="RecyclingTanksDensity1" value="Very Low"/>
+<entry name="RecyclingTanksDensity2" value="Low"/>
+<entry name="RecyclingTanksDensity3" value="Medium"/>
+<entry name="RecyclingTanksDensity4" value="High"/>
+<entry name="RecyclingTanksDensity5" value="Very High"/>
 <entry name="RegionDensity" value="Region Density"/>
 <entry name="RegionDensity0" value="None"/>
 <entry name="RegionDensity1" value="Very Low"/>
@@ -311,6 +431,10 @@
 <entry name="Size3Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 6 players."/>
 <entry name="Size4" value="Huge"/>
 <entry name="Size4Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 8 players."/>
+<entry name="Size5" value="Massive"/>
+<entry name="Size5Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 10 players."/>
+<entry name="Size6" value="Colossal"/>
+<entry name="Size6Hint" value="&lt;style name='Bold'/&gt;%1%:&lt;style name='Default'/&gt; %2%x%3%&lt;br/&gt;&lt;br/&gt;&lt;style name='Italic'/&gt;Recommended for 12 players."/>
 <entry name="SpecialResourceDensity" value="Outpost Density"/>
 <entry name="SpecialResourceDensity0" value="None"/>
 <entry name="SpecialResourceDensity1" value="Very Low"/>
@@ -324,6 +448,13 @@
 <entry name="StartingResource2" value="Medium"/>
 <entry name="StartingResource3" value="High"/>
 <entry name="StartingResource4" value="Very High"/>
+<entry name="SurvivorsBazaarDensity" value="Survivors' Bazaar Density"/>
+<entry name="SurvivorsBazaarDensity0" value="None"/>
+<entry name="SurvivorsBazaarDensity1" value="Very Low"/>
+<entry name="SurvivorsBazaarDensity2" value="Low"/>
+<entry name="SurvivorsBazaarDensity3" value="Medium"/>
+<entry name="SurvivorsBazaarDensity4" value="High"/>
+<entry name="SurvivorsBazaarDensity5" value="Very High"/>
 <entry name="SwampRegionDensity" value="Swamp Region Density"/>
 <entry name="SwampRegionDensity0" value="None"/>
 <entry name="SwampRegionDensity1" value="Very Low"/>
@@ -331,6 +462,17 @@
 <entry name="SwampRegionDensity3" value="Medium"/>
 <entry name="SwampRegionDensity4" value="High"/>
 <entry name="SwampRegionDensity5" value="Very High"/>	
+<entry name="SymmetricMap" value="Symmetric Map"/>
+<entry name="SymmetricMapHint" value="Generates symmetric terrain and paired starting positions for fairer competitive games."/>
+<entry name="TeamStarts" value="Team Starts"/>
+<entry name="TeamStartsHint" value="Places players on the same team near each other, approximately 8 tiles apart."/>
+<entry name="TempleOfCrlaDensity" value="Temple of Crla Density"/>
+<entry name="TempleOfCrlaDensity0" value="None"/>
+<entry name="TempleOfCrlaDensity1" value="Very Low"/>
+<entry name="TempleOfCrlaDensity2" value="Low"/>
+<entry name="TempleOfCrlaDensity3" value="Medium"/>
+<entry name="TempleOfCrlaDensity4" value="High"/>
+<entry name="TempleOfCrlaDensity5" value="Very High"/>
 <entry name="TurnTimer" value="Turn Timer"/>
 <entry name="TurnTimer0" value="None"/>
 <entry name="TurnTimer1" value="Very Short (1 minute)"/>
@@ -362,8 +504,8 @@
 <entry name="WildlifeDensity4" value="High"/>
 <entry name="WildlifeDensity5" value="Very High"/>
 <entry name="WorldSeed" value="World Seed"/>
-<entry name="WorldString" value="World String"/>
-<entry name="WorldStringHint" value="An encoded string of all the world parameters, including the mutators, but without the players.&lt;br/&gt;&lt;br/&gt;Use this to share your world setup with others or to save it for later."/>
+<entry name="WorldParameters" value="World Parameters"/>
+<entry name="WorldParametersHint" value="An encoded string of all the world parameters, including the mutators, but without the players.&lt;br/&gt;&lt;br/&gt;Use this to share your world setup with others or to save it for later."/>
 <entry name="WastelandRegionDensity" value="Wasteland Region Density"/>
 <entry name="WastelandRegionDensity0" value="None"/>
 <entry name="WastelandRegionDensity1" value="Very Low"/>
@@ -371,6 +513,13 @@
 <entry name="WastelandRegionDensity3" value="Medium"/>
 <entry name="WastelandRegionDensity4" value="High"/>
 <entry name="WastelandRegionDensity5" value="Very High"/>
+<entry name="WatchtowerDensity" value="Watchtower Density"/>
+<entry name="WatchtowerDensity0" value="None"/>
+<entry name="WatchtowerDensity1" value="Very Low"/>
+<entry name="WatchtowerDensity2" value="Low"/>
+<entry name="WatchtowerDensity3" value="Medium"/>
+<entry name="WatchtowerDensity4" value="High"/>
+<entry name="WatchtowerDensity5" value="Very High"/>
 <entry name="WhisperingWightsDensity" value="Whispering Wights Density"/>
 <entry name="WhisperingWightsDensity0" value="None"/>
 <entry name="WhisperingWightsDensity1" value="Very Low"/>

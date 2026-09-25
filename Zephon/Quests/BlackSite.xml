@@ -5,13 +5,13 @@
 				<option name="Assault" nextStage="Assault"/>
 				<option name="Infiltrate" nextStage="Infiltrate"/>
 				<option name="Assist" nextStage="Assist">
-					<modifiers>
+					<costModifiers>
 						<modifier>
 							<effects>
 								<researchCost add="20"/>
 							</effects>
 						</modifier>
-					</modifiers>				
+					</costModifiers>				
 				</option>
 				<option name="Inform" nextStage="Inform">
 					<conditions>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait category="Debuff" icon="Actions/OrolosianSanctuary" visibleOnUnit="1">
+	<modifiers>
+		<modifier>
+			<effects>
+				<blockSight add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<onTurnStarted>
+		<unit>
+			<area affect="Unit">
+				<modifiers endure="0">
+					<modifier effectDescription="EachTurn">
+						<effects>
+							<weaponDamage weapon="OrolosianSanctuary"/>
+						</effects>
+					</modifier>
+				</modifiers>
+			</area>
+		</unit>
+	</onTurnStarted>
+</trait>

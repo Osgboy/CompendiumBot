@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/HydroponicFarm" category="SpecialResource" dlc="DLC3">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="HydroponicFarmResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel groundMaterial="Features/HydroponicFarmGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/HydroponicFarm"
+				mesh="Features/HydroponicFarm"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="HydroponicFarm"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

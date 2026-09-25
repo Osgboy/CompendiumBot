@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trait visibleOnUnit="1">
+	<modifiers>
+		<modifier effectDescription="ForReachedLevels4710">
+			<conditions ignoreForTraitVisibility="1">
+				<unit>
+					<level greater="2"/>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mul="0.10"/>
+				<hitpointsMax mul="0.10"/>
+				<moraleMax mul="0.20"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<level greater="5"/>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mul="0.10"/>
+				<hitpointsMax mul="0.10"/>
+				<moraleMax mul="0.20"/>
+			</effects>
+		</modifier>
+		<modifier visible="0">
+			<conditions>
+				<unit>
+					<level greater="8"/>
+				</unit>
+			</conditions>
+			<effects>
+				<damage mul="0.10"/>
+				<hitpointsMax mul="0.10"/>
+				<moraleMax mul="0.20"/>
+			</effects>
+		</modifier>
+		<modifier effectDescription="EachTurnForReachedLevels4710" requiredUpgrade="HumanitysFinestUpgrade">
+			<conditions ignoreForTraitVisibility="1">
+				<unit>
+					<level greater="2"/>
+				</unit>
+			</conditions>
+			<effects>
+				<influence add="1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="HumanitysFinestUpgrade" visible="0">
+			<conditions>
+				<unit>
+					<level greater="5"/>
+				</unit>
+			</conditions>
+			<effects>
+				<influence add="1"/>
+			</effects>
+		</modifier>
+		<modifier requiredUpgrade="HumanitysFinestUpgrade" visible="0">
+			<conditions>
+				<unit>
+					<level greater="8"/>
+				</unit>
+			</conditions>
+			<effects>
+				<influence add="1"/>
+			</effects>
+		</modifier>
+	</modifiers>
+</trait>

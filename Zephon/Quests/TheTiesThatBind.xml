@@ -66,7 +66,7 @@
 					<modifier visible="0">
 						<effects>
 							<reveal/>
-							<addUnit type="Jezina" name="Units/Jezina" capturable="1" neutralPlayer="1" token="Jezina" skipOverwatchOnNextTileEnter="1"/>
+							<addUnit type="Jezina" name="Units/Jezina" capturable="1" neutralPlayer="1" rankMin="5" rankMax="5" token="Jezina" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>
 				</tileModifiers>
@@ -178,10 +178,17 @@
 				<playerModifiers>
 					<modifier>
 						<effects>
-							<minerals add="80"/>
+							<minerals add="40"/>
 						</effects>
 					</modifier>
 				</playerModifiers>
+				<tileSelector>
+					<conditions>
+						<unit>
+							<token name="Jezina"/>
+						</unit>
+					</conditions>
+				</tileSelector>
 				<unitSelector>
 					<conditions>
 						<unit>
@@ -196,6 +203,13 @@
 						</effects>
 					</modifier>
 				</unitModifiers>
+				<tileModifiers>
+					<modifier>
+						<effects>
+							<addUnit type="JezinasOutrider" name="Units/JezinasOutrider" rankMin="5" rankMax="5" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>
+				</tileModifiers>
 			</modifications>
 		</stage>
 		<stage name="HelpJezinaEscapeFailure"/>

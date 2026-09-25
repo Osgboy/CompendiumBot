@@ -11,6 +11,7 @@
 <entry name="AgainstLargeUnits" value=" against large units"/>
 <entry name="AgainstNonAdjacentUnits" value=" against non-adjacent units"/>
 <entry name="AgainstNonFlyingUnits" value=" against non-flying units"/>
+<entry name="AgainstNonHumanUnits" value=" against non-Human units"/>
 <entry name="AgainstNonLargeUnits" value=" against non-large units"/>
 <entry name="AgainstNonSourceUnit" value=" against non-source unit"/>
 <entry name="AgainstRangedWeapons" value=" against ranged weapons"/>
@@ -21,7 +22,10 @@
 <entry name="AgainstUnitsAtRange1Or2" value=" against units at range 1 or 2"/>
 <entry name="AgainstUnitsBelow50%Hitpoints" value=" against units below 50% hitpoints"/>
 <entry name="AlgaeUpgrade" value=" for each Greenhouse Farm in the city"/>
-<entry name="AntimatterUpgrade" value=" in construct and desert terrain"/>
+<entry name="AtRange1" value=" at range 1"/>
+<entry name="AtRange2OrHigher" value=" at range 2 or higher"/>
+<entry name="OfInvadingDreameater" value=" of invading Dreameater"/>
+<entry name="AntimatterUpgrade" value=" in construct and desert terrain or on &lt;string name='Features/FragmentOfTheFulcrumResource'/&gt;"/>
 <entry name="ArchaiConstruct" value=" unless healed by &lt;string name='Actions/ParticleRepair'/&gt;"/>
 <entry name="Assassinate" value=" to enemy units in the area if target dies"/>
 <entry name="AtMostPerAttack" value=" at most per attack"/>
@@ -29,13 +33,17 @@
 <entry name="AtRank14OrHigher" value=" at rank 3 or higher"/>
 <entry name="CannibalizeMachines" value=" for melee attacks against mechanical units"/>
 <entry name="CyberInfantryUpgrade" value=" for each Synthetic Printer in the city"/>
+<entry name="Defend" value=" while adjacent to allied units with &lt;string name='Traits/Defend'/&gt;"/>
 <entry name="DreamPrison" value=" to target broken non-headquarters enemy unit"/>
 <entry name="DreamPrisonRestore" value=" when Dreameater dies"/>
 <entry name="EachTurn" value=" each turn"/>
+<entry name="EachTurnForReachedLevels4710" value=" each turn for reached levels 4, 7 and 10"/>
 <entry name="EachTurnInBleed" value=" each turn in Bleed"/>
 <entry name="EachTurnLogisticsExperts" value=" each turn (&lt;icon texture='Icons/Traits/LogisticsExperts' height='20'/&gt;&lt;nbsp/&gt;&lt;string name='Traits/LogisticsExperts'/&gt;)"/>
 <entry name="EachTurnOnCenterTileAndOnAdjacentTiles" value=" each turn on center tile and with half attacks on adjacent tiles"/>
 <entry name="EachTurnResourceNetwork" value=" each turn (&lt;icon texture='Icons/Traits/ResourceNetwork' height='20'/&gt;&lt;nbsp/&gt;&lt;string name='Traits/ResourceNetwork'/&gt;)"/>
+<entry name="EachTurnWhileInsideCity" value=" each turn while inside city"/>
+<entry name="Encircle" value=" when attacking an enemy unit that is adjacent to at least two allied units with &lt;string name='Traits/Encircle'/&gt;"/>
 <entry name="EnergyUpgrade" value=" in arctic and swamp terrain"/>
 <entry name="Every5Turns" value=" every 5 turns"/>
 <entry name="Every10Turns" value=" every 10 turns"/>
@@ -43,7 +51,7 @@
 <entry name="ForAdministrationComplex" value=" for &lt;string name='Buildings/Influence'/&gt;"/>
 <entry name="ForAlliedUnits" value=" for allied units"/>
 <entry name="ForConstructionYard" value=" for &lt;string name='Buildings/Construction'/&gt;"/>
-<entry name="ForControllingCity" value=" inside city"/>
+<entry name="ForControllingCity" value=" for controlling city"/>
 <entry name="ForCyberUnits" value=" for Cyber units"/>
 <entry name="ForCyberTechnologies" value=" for Cyber technologies"/>
 <entry name="ForCyberProductionBuildings" value=" for Cyber production buildings"/>
@@ -96,7 +104,7 @@
 <entry name="OfTargetEnemyAbkluth" value=" of target enemy Abkluth"/>
 <entry name="OnAdjacentTilesToTarget" value=" on adjacent tiles to target"/>
 <entry name="OnAttack" value=" on attack"/>
-<entry name="OnBleed" value=" on Bleed"/>
+<entry name="OnBleed" value=" on Bleed or &lt;string name='Features/FragmentOfTheFulcrumResource'/&gt;"/>
 <entry name="OnCliffs" value=" on cliffs"/>
 <entry name="OnCoast" value=" on the coast"/>
 <entry name="OnDeath" value=" on death"/>
@@ -124,6 +132,7 @@
 <entry name="TacticalInsertion" value=" on target forest, ruins or smoke screen with no enemy city"/>
 <entry name="TargetEnemyNonTitanNonHeroNonHeadquartersUnit" value=" target enemy non-titan non-hero non-headquarters unit"/>
 <entry name="TargetNonTitanNonFortificationUnit" value=" target non-titan non-fortification unit"/>
+<entry name="TargetOwnNonTitanNonFortificationUnit" value=" target own non-titan non-fortification unit"/>
 <entry name="TargetUnit" value=" target unit"/>
 <entry name="ToAdjacentAlliedBiologicalUnits" value=" to adjacent allied biological units"/>
 <entry name="ToAdjacentAlliedNonLargeUnits" value=" to adjacent allied non-large units"/>
@@ -133,6 +142,8 @@
 <entry name="ToAdjacentEnemyUnitsOnDeath" value=" to adjacent enemy units on death"/>
 <entry name="ToAdjacentEnemyLargeMechanicalUnits" value=" to adjacent enemy large mechanical units"/>
 <entry name="ToAdjacentEnemyLargeMechanicalNonTitanUnits" value=" to adjacent enemy large mechanical non-titan units"/>
+<entry name="ToAdjacentEnemyLargeMechanicalNonTitanNonHeroUnits" value=" to adjacent enemy large mechanical non-titan non-hero units"/>
+<entry name="ToAdjacentTiles" value=" to adjacent tiles"/>
 <entry name="ToAdjacentUnits" value=" to adjacent units"/>
 <entry name="ToAdjacentUnitsWhileBelow75PercentHitpoints" value=" to adjacent units while below 75% hitpoints"/>
 <entry name="ToAlliedBiologicalUnitsEachTurn" value=" to allied biological units each turn"/>
@@ -142,7 +153,7 @@
 <entry name="ToAlliedUnitsEachTurn" value=" to allied units each turn"/>
 <entry name="ToAlliedUnitsInTheArea" value=" to allied units in the area"/>
 <entry name="ToAlliedUnitsOnTargetAndAdjacentTiles" value=" to allied units on target and adjacent tiles"/>
-<entry name="ToAlliedUnitsOnTilesInTargetArea" value=" to allied units on tiles in target area"/>
+<entry name="ToAlliedUnitsInTargetArea" value=" to allied units in the target area"/>
 <entry name="ToAnchorite" value=" to Anchorite"/>
 <entry name="ToAttackedEnemy" value=" to attacked enemy"/>
 <entry name="ToAttacker" value=" to attacker"/>
@@ -158,10 +169,12 @@
 <entry name="ToEnemyUnitAndAdjacentEnemyUnitsOnRemoval" value=" to enemy unit and with half attacks to adjacent enemy units on removal"/>
 <entry name="ToEnemyUnits" value=" to enemy units"/>
 <entry name="ToEnemyUnitsEachTurn" value=" to enemy units each turn"/>
+<entry name="ToEnemyUnitsOnTargetAndAdjacentTiles" value=" to enemy units on target and adjacent tiles"/>
 <entry name="ToMechanicalEnemy" value=" to mechanical enemy"/>
 <entry name="ToMechanicalNonTitanEnemy" value=" to mechanical non-titan enemy"/>
 <entry name="ToMeleeAttackers" value=" to melee attackers"/>
 <entry name="ToNonHeadquartersBuildingsOnTargetAlliedCityTile" value=" to non-headquarters buildings on target allied city tile"/>
+<entry name="ToNonHeadquartersBuildingsOnTargetEnemyCityTile" value=" to non-headquarters buildings on target enemy city tile"/>
 <entry name="ToNonLargeEnemy" value=" to non-large enemy"/>
 <entry name="ToNonLargeAlliedUnits" value=" to non-large allied units"/>
 <entry name="ToNonLowPowerWeapon" value=" to non-Low Power weapon"/>
@@ -170,6 +183,7 @@
 <entry name="ToSpawnedUnit" value=" to spawned unit"/>
 <entry name="ToUnitAndAdjacentAlliedBiologicalUnits" value=" to unit and adjacent allied biological units"/>
 <entry name="ToUnitAndAdjacentAlliedUnits" value=" to unit and adjacent allied units"/>
+<entry name="ToUnmovedAlliedUnitsInTargetArea" value=" to unmoved allied units in the target area"/>
 <entry name="ToTargetAlliedBiologicalUnit" value=" to target allied biological unit"/>
 <entry name="ToTargetAlliedCity" value=" to target allied city"/>
 <entry name="ToTargetAlliedCherubimTitan" value=" to target allied &lt;string name='Units/CherubimTitan'/&gt;"/>
@@ -178,6 +192,7 @@
 <entry name="ToTargetAlliedDamagedUnit" value=" to target allied damaged unit"/>
 <entry name="ToTargetAlliedMechanicalUnit" value=" to target allied mechanical unit"/>
 <entry name="ToTargetAlliedNonLargeUnaugmentedUnit" value=" to target allied non-large unaugmented unit"/>
+<entry name="ToTargetAlliedNonLargeUnit" value=" to target allied non-large unit"/>
 <entry name="ToTargetAlliedNonTitanUnit" value=" to target allied non-titan unit"/>
 <entry name="ToTargetAlliedOutpost" value=" to target allied outpost"/>
 <entry name="ToTargetAlliedUnit" value=" to target allied unit"/>
@@ -187,18 +202,20 @@
 <entry name="ToTargetBiologicalUnit" value=" to target biological unit"/>
 <entry name="ToTargetEnemyCity" value=" to target enemy city"/>
 <entry name="ToTargetEnemyNonLargeUnit" value=" to target enemy non-large unit"/>
-<entry name="ToTargetEnemyNonTitanUnit" value=" to target enemy non-titan non-hero unit"/>
+<entry name="ToTargetEnemyNonTitanUnit" value=" to target enemy non-titan unit"/>
 <entry name="ToTargetEnemyNonTitanNonHeroNonHeadquartersUnit" value=" to target enemy non-titan non-hero non-headquarters unit"/>
 <entry name="ToTargetEnemyUnit" value=" to target enemy unit"/>
 <entry name="ToTargetEnemyUnitAndWithHalfAttacksToEnemiesLeftAndRightOfTargetTile" value=" to target enemy unit and with half attacks to enemies left and right of target tile"/>
 <entry name="ToTargetEnemyZephonUnit" value=" to target enemy ZEPHON unit"/>
 <entry name="ToTargetEnemyZephonNonTitanUnit" value=" to target enemy ZEPHON non-titan unit"/>
-<entry name="ToTargetEnemyZephonNonTitanNonHeadquartersUnit" value=" to target enemy ZEPHON non-titan non-headquarters unit"/>
 <entry name="ToTargetOwnUnit" value=" to target own unit"/>
 <entry name="ToTargetOwnBiologicalUnit" value=" to target own biological unit"/>
+<entry name="ToTargetZephonNonTitanNonHeadquartersUnit" value=" to target ZEPHON non-titan non-headquarters unit"/>
 <entry name="ToWeapons" value=" to weapons"/>
 <entry name="ToZephon" value=" to ZEPHON"/>
+<entry name="ToZeroOrOneBeforeDistressSignalMimicked" value=" to ZERO or ONE before they have mimicked a distress signal"/>
 <entry name="UnitsOnDeath" value=" units on death"/>
+<entry name="UponDiscovery" value=" upon discovery"/>
 <entry name="UzhodaisZeal" value=" for each adjacent enemy unit"/>
 <entry name="VoiceAircraftUpgrade" value=" for produced units for each Paean to the Dawn in each own city"/>
 <entry name="VoiceVehiclesUpgrade" value=" is gained on death as production on each Canticle of Dusk in the city"/>
@@ -211,13 +228,17 @@
 <entry name="WhenKillingBiologicalUnit" value=" when killing a biological unit"/>
 <entry name="WhenKillingNonDeformingBiologicalUnit" value=" when killing a non-deforming biological unit"/>
 <entry name="WhenKillingUnit" value=" when killing a unit"/>
+<entry name="WhenProduced" value=" when produced"/>
+<entry name="ForReachedLevels4710" value=" for reached levels 4, 7 and 10"/>
 <entry name="WhenUnitMoves" value=" when unit moves"/>
 <entry name="WhenTakingDirectDamage" value=" when taking direct damage"/>
 <entry name="WhileAbove2Loyalty" value=" while above 2 loyalty"/>
 <entry name="WhileAbove8Loyalty" value=" while above 8 loyalty"/>
 <entry name="WhileAdjacentToAlliedUnits" value=" while adjacent to allied units"/>
-<entry name="WhileBelow50%Hitpoints" value=" while below 50% hitpoints"/>
+<entry name="WhileAdjacentToAlliedNonCyberUnits" value=" while adjacent to allied non-Cyber units"/>
 <entry name="WhileAlliedNonFlyingUnitOnTile" value=" while allied non-flying unit is on tile"/>
+<entry name="WhileBelow50%Hitpoints" value=" while below 50% hitpoints"/>
+<entry name="WhileInsideCity" value=" while inside city"/>
 <entry name="WithMeleeWeapons" value=" with melee weapons"/>
 <entry name="WithoutBleedCultivation" value=" without &lt;string name='Upgrades/BleedCultivation'/&gt;"/>
 </language>

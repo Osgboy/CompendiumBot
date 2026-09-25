@@ -34,7 +34,7 @@
 							<standingTier greater="1"/>
 						</playerWithFaction>
 					</conditions>
-				</option>
+				</option>			
 				<option name="Anchorite" nextStage="Anchorite">
 					<conditions>
 						<playerWithFaction faction="Anchorite">
@@ -47,12 +47,66 @@
 		</stage>
 		<stage name="Zephon">
 			<options>
-				<option name="ZephonObjectives" nextStage="ZephonObjectives" resolveConclusionStages="1"/>
+				<option name="ZephonObjectives" nextStage="ZephonObjectives" onlyVisibleIfSelectable="1" resolveConclusionStages="1">
+					<conditions>
+						<playerWithFaction faction="Zephon">
+							<standingTier less="6"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="ZephonOfferTitan" nextStage="ZephonOfferTitan" onlyVisibleIfSelectable="1">
+					<conditions>
+						<playerWithFaction faction="Zephon">
+							<standingTier greater="5"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+			</options>
+		</stage>
+		<stage name="ZephonOfferTitan" minVersion="1.2.21">
+			<options>
+				<option name="TakeControl" nextStage="ZephonObjectives" resolveConclusionStages="1">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addPlayerToken name="TitanControl"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</option>
+				<option name="TurnDown" nextStage="ZephonObjectives" resolveConclusionStages="1"/>
 			</options>
 		</stage>
 		<stage name="Anchorite">
 			<options>
-				<option name="AnchoriteObjectives" nextStage="AnchoriteObjectives" resolveConclusionStages="1"/>
+				<option name="AnchoriteObjectives" nextStage="AnchoriteObjectives" onlyVisibleIfSelectable="1" resolveConclusionStages="1">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<standingTier less="6"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+				<option name="AnchoriteOfferTitan" nextStage="AnchoriteOfferTitan" onlyVisibleIfSelectable="1">
+					<conditions>
+						<playerWithFaction faction="Anchorite">
+							<standingTier greater="5"/>
+						</playerWithFaction>
+					</conditions>
+				</option>
+			</options>
+		</stage>
+		<stage name="AnchoriteOfferTitan" minVersion="1.2.21">
+			<options>
+				<option name="TakeControl" nextStage="AnchoriteObjectives" resolveConclusionStages="1">
+					<modifiers>
+						<modifier>
+							<effects>
+								<addPlayerToken name="TitanControl"/>
+							</effects>
+						</modifier>
+					</modifiers>
+				</option>
+				<option name="TurnDown" nextStage="AnchoriteObjectives" resolveConclusionStages="1"/>
 			</options>
 		</stage>
 		<stage name="Independent">
@@ -158,6 +212,27 @@
 					<modifier>
 						<effects>
 							<addUnitToPlayer type="BanditKingMutated" rankMin="9" rankMax="9" name="Units/BanditKing" skipOverwatchOnNextTileEnter="1"/>
+						</effects>
+					</modifier>	
+				</playerModifiers>
+			</modifications>
+			<options>
+				<option name="OK" resolveConclusionStages="1"/>
+			</options>
+		</stage>
+		<stage name="PoliticalFallout" concludesStage="IntroduceMarinChieftess" minVersion="1.3.0">
+			<modifications>
+				<playerSelector>
+					<conditions>
+						<player>
+							<control/>
+						</player>
+					</conditions>
+				</playerSelector>
+				<playerModifiers>
+					<modifier>
+						<effects>
+							<addUnitToPlayer type="Wastelander" rankMin="9" rankMax="9" skipOverwatchOnNextTileEnter="1"/>
 						</effects>
 					</modifier>	
 				</playerModifiers>
@@ -430,8 +505,24 @@
 				</unitSelector>
 				<unitModifiers sourcePlayerFromSelection="1">
 					<modifier>
+						<conditions>
+							<player>
+								<noToken name="TitanControl" tokenPrefixFromSourcePlayer="0"/>
+							</player>
+						</conditions>
 						<effects>
 							<changePlayer/>
+							<hitpointsFromMax add="1.0"/>
+						</effects>
+					</modifier>
+					<modifier>
+						<conditions>
+							<player>
+								<token name="TitanControl" tokenPrefixFromSourcePlayer="0"/>
+							</player>
+						</conditions>
+						<effects>
+							<addAdvancementTrait type="ZephonAdvancement" faction="Zephon"/>
 							<hitpointsFromMax add="1.0"/>
 						</effects>
 					</modifier>
@@ -512,8 +603,24 @@
 				</unitSelector>
 				<unitModifiers sourcePlayerFromSelection="1">
 					<modifier>
+						<conditions>
+							<player>
+								<noToken name="TitanControl" tokenPrefixFromSourcePlayer="0"/>
+							</player>
+						</conditions>
 						<effects>
 							<changePlayer/>
+							<hitpointsFromMax add="1.0"/>
+						</effects>
+					</modifier>
+					<modifier>
+						<conditions>
+							<player>
+								<token name="TitanControl" tokenPrefixFromSourcePlayer="0"/>
+							</player>
+						</conditions>
+						<effects>
+							<addAdvancementTrait type="AcrinAdvancement" faction="Anchorite"/>
 							<hitpointsFromMax add="1.0"/>
 						</effects>
 					</modifier>

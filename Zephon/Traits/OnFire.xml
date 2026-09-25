@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trait category="Debuff" visibleOnUnit="1">
+<trait category="Debuff" rankMax="9" visibleOnUnit="1">
 	<onTurnStarted>
 		<unit>
 			<area affect="Unit">
 				<modifiers endure="0">
 					<modifier effectDescription="EachTurn">
 						<effects>
-							<hitpoints add="-3"/>
+							<hitpoints addMin="-3" addMax="-30"/>
+						</effects>
+					</modifier>
+					<modifier visible="0">
+						<conditions>
+							<unit>
+								<trait type="Desiccated"/>
+							</unit>
+						</conditions>
+						<effects>
+							<hitpoints addMin="-3" addMax="-30"/>
 						</effects>
 					</modifier>
 				</modifiers>

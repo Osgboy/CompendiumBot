@@ -31,7 +31,18 @@
 		<produceUnit unit="IthurielHarbinger" requiredUpgrade="IthurielHarbinger"/>
 		<produceUnit unit="ChayotExterminator" requiredUpgrade="ChayotExterminator"/>
 		<produceUnit unit="GalgalimOrb" requiredUpgrade="GalgalimOrb"/>
+		<produceUnit unit="Warden" requiredUpgrade="ZephonUnitProduction"/>
+		<produceUnit unit="ZephonTitan"
+				requiredUpgrade="ZephonUnitProduction"
+				useConditionsForVisiblity="1">
+			<conditions>
+				<player>
+					<mutatorActive name="WhatCarriesAcross"/>
+				</player>
+			</conditions>
+		</produceUnit>
 		<produceUnit unit="HashmallimHost" requiredUpgrade="HashmallimHost"/>
+		<produceUnit unit="AbanimCatalyst" requiredUpgrade="AbanimCatalyst"/>
 		<produceUnit unit="AkavishProvost" requiredUpgrade="AkavishProvost"/>
 		<produceUnit unit="SeraphimArchangel" requiredUpgrade="SeraphimArchangel"/>
 	</actions>

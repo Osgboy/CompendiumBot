@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unit branch="Zephon" dlc="DLC3" icon="Units/Eradicator" minAdvancement="5" portrait="Units/Eradicator">
+	<model>
+		<unit explosionsBone="Hull"
+			explosionsBlueprint="Effects/MediumHumanExplosions"
+			material="Units/Eradicator"
+			mesh="Units/Eradicator"
+			normalWeight="0.1"
+			position="0 0 36"
+			scale="1 1 1"/>
+	</model>
+	<weapons>
+		<weapon type="LaserRifle" count="6">
+			<models>
+				<beamWeapon muzzleBone="LasMuzzle"
+						muzzleCount="6"/>
+			</models>
+		</weapon>
+		<weapon type="MissilePod" count="1">
+			<models>
+				<missileWeapon fireInterval="0.75"
+						missileScale="0.3"
+						muzzleBone="MissileMuzzle"
+						muzzleCount="3"/>
+			</models>
+		</weapon>
+		<weapon type="Autocannon" count="2">
+			<models>
+				<projectileWeapon fireInterval="0.2"
+						muzzleBone="GatlingMuzzle"
+						muzzleCount="2"/>
+			</models>
+		</weapon>
+		<weapon type="NapalmTide"
+				enabled="0"
+				slotName="NapalmTide">
+			<models>
+				<flamerWeapon effectFaceWeight="0"
+						muzzleBone="Eye_Front"/>
+			</models>
+		</weapon>
+	</weapons>
+	<modifiers>
+		<modifier visible="0">
+			<effects>
+				<accuracy base="6"/>
+				<armor base="6"/>
+				<chipsCost base="40"/> <!-- %chipsCost base tier=10 factor=0.25 -->
+				<chipsUpkeep base="2.0"/> <!-- %chipsUpkeep base tier=10 factor=0.25 -->
+				<groupSizeMax base="1"/>
+				<hitpointsMax base="48"/> <!-- %hitpointsMax base tier=10 -->
+				<mineralsCost base="80"/> <!-- %mineralsCost base tier=10 factor=0.5 -->
+				<mineralsUpkeep base="4.0"/> <!-- %mineralsUpkeep base tier=10 factor=0.5 -->
+				<moraleMax base="10"/>
+				<movementMax base="5"/>
+				<productionCost base="60.0"/> <!-- %productionCost base tier=10 factor=1 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<strategyModifiers>
+		<modifier>
+			<effects>
+				<increaseAircraftScore base="0.5"/>
+				<increaseCyberScore base="0.5"/>
+			</effects>
+		</modifier>
+	</strategyModifiers>	
+	<actions>
+		<appear>
+			<model>
+				<action responseSound="Responses/Units/EradicatorAppear"/>
+			</model>
+		</appear>
+		<attack>
+			<model>
+				<attack animation="Units/EradicatorAttack"
+						beginFire="0.5"
+						endFire="2.0"
+						responseSound="Responses/Units/EradicatorAttack"
+						responseSoundCount="3"/>
+			</model>
+		</attack>
+		<die>
+			<model>
+				<die animation="Units/EradicatorDie0"
+						groundImpact="1.4"
+						sound="Units/EradicatorDie"/> 
+			</model>
+		</die>
+		<endure>
+			<model>
+				<action animation="Units/EradicatorImpact"
+						responseSound="Responses/Units/EradicatorEndureHighDamage"/> 
+			</model>
+		</endure>
+		<holdPosition>
+			<model>
+				<action responseSound="Responses/Units/EradicatorHoldPosition"/>
+			</model>
+		</holdPosition>
+		<holdPositionUntilHealed>
+			<model>
+				<action responseSound="Responses/Units/EradicatorHoldPosition"/>
+			</model>
+		</holdPositionUntilHealed>
+		<idle>
+			<model>
+				<idle animation="Units/EradicatorIdle"
+						animationCount="3"/>
+			</model>
+		</idle>
+		<kill>
+			<model>
+				<action responseSound="Responses/Units/EradicatorKill"/>
+			</model>
+		</kill>
+		<move>
+			<model>
+				<action animation=""
+						responseSound="Responses/Units/EradicatorMove"
+						responseSoundCount="3"
+						sound="Units/EradicatorMove"
+						soundFadeInDuration="0.25"
+						soundFadeOutDuration="0.25"/>
+			</model>
+		</move>
+		<poke>
+			<model>
+				<action responseSound="Responses/Units/EradicatorPoke"/>
+			</model>
+		</poke>
+		<select>
+			<model>
+				<action responseSound="Responses/Units/EradicatorSelect"
+						responseSoundCount="3"/>
+			</model>
+		</select>
+		<skip>
+			<model>
+				<action responseSound="Responses/Units/EradicatorHoldPosition"/>
+			</model>
+		</skip>
+		<useWeapon weaponSlotName="NapalmTide"
+				consumedActionPoints="0"
+				cooldown="5"
+				requiredActionPoints="0">
+			<model>
+				<attack animation="Units/EradicatorAbility0"
+						responseSound="Responses/Units/EradicatorNapalmTide"
+						sound="Units/EradicatorNapalmTide"/>
+			</model>
+		</useWeapon>
+	</actions>
+	<traits>
+		<trait type="CivilizationShieldProtocol" requiredUpgrade="CivilizationShieldProtocol"/>
+		<trait type="Flying"/>
+		<trait type="Large"/>
+		<trait type="HollowWarlordAffinityUpgrade2" requiredUpgrade="HollowWarlordAffinityUpgrade2"/>
+		<trait type="Mechanical"/>
+	</traits>
+</unit>

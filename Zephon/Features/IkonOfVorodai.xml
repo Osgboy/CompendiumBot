@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feature ambientSound="Ambient/Features/IkonOfVorodai" category="SpecialResource" dlc="DLC3">
+	<areas>
+		<area affect="Tile" radius="1" excludeRadius="0">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="IkonOfVorodaiResourceMul"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+		<area affect="Tile" radius="3">
+			<modifiers>
+				<modifier>
+					<effects>
+						<addTrait type="IkonOfVorodaiUnit"/>
+					</effects>
+				</modifier>
+			</modifiers>
+		</area>
+	</areas>
+	<model>
+		<simpleModel groundMaterial="Features/IkonOfVorodaiGround"
+				groundMesh="Features/MicrochipFabricatorGround"
+				material="Features/IkonOfVorodai"
+				mesh="Features/IkonOfVorodai"
+				scale="1 1 1"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<buildingSlots max="0"/>
+			</effects>
+		</modifier>
+	</modifiers>
+	<traits>
+		<trait type="IkonOfVorodaiResource"/>
+		<trait type="Outpost"/>
+		<trait type="UnexploredOutpost"/>
+	</traits>
+</feature>

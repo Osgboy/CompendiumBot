@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon>
+	<model>
+		<beamWeapon beamsBlueprint="Effects/CoilsOfSodomArcs"
+				chargeBlueprint="Effects/CoilsOfSodomCharge"
+				explosionsBlueprint="Effects/LaserExplosions"
+				fireInterval="0.05"
+				fireSound="Weapons/CoilsOfSodom"
+				fireSoundBeginCount="3"
+				fireSoundBeginDuringWindup="1"
+				muzzleFlashesBlueprint="Effects/HiddenProjectiles"/>
+	</model>
+	<modifiers>
+		<modifier>
+			<effects>
+				<armorPenetration base="6"/> <!-- %armorPenetration base tier=7 -->
+				<attacks base="2"/>
+				<damage base="8"/> <!-- %damage base tier=7 -->
+			</effects>
+		</modifier>
+	</modifiers>
+	<target rangeMax="2"/>
+	<traits>
+		<trait type="Coil"/>
+		<trait type="Concussive"/>
+		<trait type="LargeSplash"/>
+	</traits>
+</weapon>
